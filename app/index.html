@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SAS Quiz</title>
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="brand">
+        <p class="eyebrow">Preparación SAS · ADM 2023</p>
+        <h1>SAS Quiz</h1>
+      </header>
+
+      <section id="start-view" class="panel start-view" aria-labelledby="start-title">
+        <div>
+          <p class="step">Práctica individual</p>
+          <h2 id="start-title">Elige cómo quieres empezar</h2>
+          <p class="lede">78 preguntas reales, corrección al instante y sin registros.</p>
+        </div>
+        <fieldset class="mode-picker">
+          <legend>Orden de las preguntas</legend>
+          <label><input type="radio" name="mode" value="sequential" checked> Secuencial</label>
+          <label><input type="radio" name="mode" value="random"> Aleatorio sin repetir</label>
+        </fieldset>
+        <button id="start-button" class="primary" type="button">Comenzar cuestionario</button>
+        <p id="load-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section id="quiz-view" class="panel" hidden aria-live="polite">
+        <div class="status-bar">
+          <span id="progress">Pregunta 1 de 78</span>
+          <span id="timer" aria-label="Tiempo transcurrido">00:00</span>
+          <span><b id="correct-count">0</b> aciertos · <b id="incorrect-count">0</b> errores</span>
+        </div>
+        <div class="question-heading">
+          <p id="question-number" class="step"></p>
+          <span id="question-status" class="badge" hidden></span>
+        </div>
+        <h2 id="question-text"></h2>
+        <div id="options" class="options" role="group" aria-labelledby="question-text"></div>
+        <p id="feedback" class="feedback" aria-live="assertive"></p>
+        <button id="next-button" class="primary next" type="button" hidden>Siguiente</button>
+      </section>
+
+      <section id="summary-view" class="panel summary" hidden aria-labelledby="summary-title">
+        <p class="step">Intento completado</p>
+        <h2 id="summary-title">Buen trabajo</h2>
+        <p id="summary-time" class="lede"></p>
+        <div class="score-grid">
+          <div><strong id="summary-correct">0</strong><span>Aciertos</span></div>
+          <div><strong id="summary-incorrect">0</strong><span>Errores</span></div>
+        </div>
+        <div class="actions">
+          <button id="retry-button" class="primary" type="button">Repetir falladas</button>
+          <button id="restart-button" class="secondary" type="button">Nuevo cuestionario</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

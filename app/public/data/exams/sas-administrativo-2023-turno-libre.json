@@ -1,0 +1,2120 @@
+{
+  "schemaVersion": "1.0",
+  "id": "sas-administrativo-2023-turno-libre",
+  "title": "SAS Administrativo/A 2023 - Turno Libre",
+  "category": "Administrativo/A",
+  "year": 2023,
+  "source": {
+    "questionPdf": "Examen_ADM_L_2023.pdf",
+    "answersPdf": null,
+    "sha256": "837277c67df08acf1df1f708d29d781585551b063e65c3987a0bc002e98a72a5"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2023-turno-libre-q001",
+      "number": 1,
+      "text": "El derecho a la protección de la salud se reconoce por la Constitución Española en el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 44."
+        },
+        {
+          "id": "B",
+          "text": "Artículo 46."
+        },
+        {
+          "id": "C",
+          "text": "Artículo 43."
+        },
+        {
+          "id": "D",
+          "text": "Artículo 41."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q002",
+      "number": 2,
+      "text": "Las Leyes de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Serán promulgadas, en nombre del Rey, por el Presidente del Parlamento."
+        },
+        {
+          "id": "B",
+          "text": "Sólo se publicarán en el Boletín Oficial del Estado cuando afecten a la organización de las instituciones básicas."
+        },
+        {
+          "id": "C",
+          "text": "A efectos de su vigencia regirá la fecha de publicación en el Boletín Oficial del Estado."
+        },
+        {
+          "id": "D",
+          "text": "Se publicarán en el Boletín Oficial de la Junta de Andalucía y en el Boletín Oficial del Estado."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q003",
+      "number": 3,
+      "text": "La Ley 2/1998 de Salud de Andalucía, establece que los ciudadanos con respecto a los servicios sanitarios públicos en Andalucía tienen derecho:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la participación en los servicios y actividades sanitarias previstas en esta Ley."
+        },
+        {
+          "id": "B",
+          "text": "A negarse al tratamiento en todos los casos."
+        },
+        {
+          "id": "C",
+          "text": "A la confidencialidad de toda la información relacionada con su proceso mientras esté hospitalizado."
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q004",
+      "number": 4,
+      "text": "Según el art. 12 de la Ley General de Sanidad, los poderes públicos orientarán sus políticas de gasto sanitario a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Establecer tanto programas dirigidos a grupos de mayor riesgo como a la prevención de deficiencias congénitas y adquiridas."
+        },
+        {
+          "id": "B",
+          "text": "Ampliar la atención primaria integral de la Salud y a la prevención de la enfermedad del individuo y de la comunidad."
+        },
+        {
+          "id": "C",
+          "text": "Corregir desigualdades sanitarias y garantizar la igualdad de acceso a los Servicios Sanitarios Públicos en todo el territorio español."
+        },
+        {
+          "id": "D",
+          "text": "Al control sanitario y prevención de riesgos para la salud derivados de los productos alimentarios."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q005",
+      "number": 5,
+      "text": "¿En qué Decreto se establece la estructura orgánica del Servicio Andaluz de Salud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 105/2019."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 177/2018."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 208/2020."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 156/2022."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q006",
+      "number": 6,
+      "text": "Según recoge el Decreto que establece su estructura orgánica, el Servicio Andaluz de Salud es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una entidad de derecho privado."
+        },
+        {
+          "id": "B",
+          "text": "Una agencia administrativa."
+        },
+        {
+          "id": "C",
+          "text": "El órgano de dirección y gestión de la sanidad en Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "Dependiente jurídicamente de la Consejería de Igualdad y Bienestar Social."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q007",
+      "number": 7,
+      "text": "Según la Ley Orgánica de Protección de Datos personales y garantía de los derechos digitales, la Presidencia de la Agencia Española de Protección de Datos estará asesorada por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un Comité de expertos."
+        },
+        {
+          "id": "B",
+          "text": "Un Consejo de Administración."
+        },
+        {
+          "id": "C",
+          "text": "Un Consejo Consultivo."
+        },
+        {
+          "id": "D",
+          "text": "Una Junta de Gobierno."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q008",
+      "number": 8,
+      "text": "Según la Ley Orgánica de Protección de datos personales y garantía de los derechos digitales, el derecho de acceso está regulado en el artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12."
+        },
+        {
+          "id": "B",
+          "text": "13."
+        },
+        {
+          "id": "C",
+          "text": "14."
+        },
+        {
+          "id": "D",
+          "text": "15."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q009",
+      "number": 9,
+      "text": "Según la Ley 31/1995, de Prevención de Riesgos Laborales, corresponde garantizar a los trabajadores la vigilancia periódica de su estado de salud en función de los riesgos inherentes al trabajo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Médico del Trabajo."
+        },
+        {
+          "id": "B",
+          "text": "Al empresario."
+        },
+        {
+          "id": "C",
+          "text": "A la Inspección de Trabajo."
+        },
+        {
+          "id": "D",
+          "text": "Al Comité de Empresa."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q010",
+      "number": 10,
+      "text": "La Ley 12/2007, de 26 de noviembre, para la promoción de la igualdad de género en Andalucía, se entiende por representación equilibrada aquella situación que garantice la presencia de mujeres y hombres de forma que, en el conjunto de personas a que se refiera cada sexo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ni supere el sesenta por ciento ni sea menos del cuarenta por ciento."
+        },
+        {
+          "id": "B",
+          "text": "Represente como mínimo el cuarenta y tres por ciento."
+        },
+        {
+          "id": "C",
+          "text": "Represente como mínimo el cuarenta y cinco por ciento."
+        },
+        {
+          "id": "D",
+          "text": "Represente un cincuenta por ciento del total."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q011",
+      "number": 11,
+      "text": "Según la Ley 13/2007, de 26 de noviembre, de medidas de prevención y protección integral contra la violencia de género, ¿cada cuánto tiempo se aprobará el Plan Integral de sensibilización y prevención contra la violencia de género en Andalucía?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cada 5 años."
+        },
+        {
+          "id": "B",
+          "text": "Cada 4 años."
+        },
+        {
+          "id": "C",
+          "text": "Cada 3 años."
+        },
+        {
+          "id": "D",
+          "text": "Cada 2 años."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q012",
+      "number": 12,
+      "text": "De acuerdo con lo establecido en la legislación de incompatibilidades del personal al servicio de las Administraciones Públicas, se consideran actividades cuyo ejercicio precisa solicitud de autorización de compatibilidad:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Asistencia ocasional a congresos de carácter profesional."
+        },
+        {
+          "id": "B",
+          "text": "Participación del personal docente en exámenes distintos de los que habitualmente le corresponden."
+        },
+        {
+          "id": "C",
+          "text": "La función docente como profesor universitario asociado en régimen de dedicación no superior a treinta horas semanales y con duración determinada."
+        },
+        {
+          "id": "D",
+          "text": "Participación en Tribunales calificadores de pruebas selectivas para el ingreso en las Administraciones Públicas."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q013",
+      "number": 13,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco del personal estatutario de los servicios de salud, la suspensión firme de funciones:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se impondrá en virtud de sentencia dictada por los órganos judiciales."
+        },
+        {
+          "id": "B",
+          "text": "La suspensión firme por sanción disciplinaria no podrá exceder de 5 años"
+        },
+        {
+          "id": "C",
+          "text": "Determinará la pérdida del puesto de trabajo cuando exceda de seis meses."
+        },
+        {
+          "id": "D",
+          "text": "No procederá en virtud de sanción disciplinaria."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q014",
+      "number": 14,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco, la clasificación del personal estatutario sanitario según el nivel académico del título exigido para su ingreso es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Personal licenciado sanitario y personal diplomado sanitario."
+        },
+        {
+          "id": "B",
+          "text": "Personal estatutario sanitario y Personal estatutario de gestión y servicios."
+        },
+        {
+          "id": "C",
+          "text": "Personal de formación universitaria y personal de formación profesional."
+        },
+        {
+          "id": "D",
+          "text": "Personal de formación universitaria y personal técnico sanitario."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q015",
+      "number": 15,
+      "text": "Según la Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica, los centros sanitarios tienen la obligación de conservar la documentación clínica como mínimo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 años."
+        },
+        {
+          "id": "B",
+          "text": "5 años."
+        },
+        {
+          "id": "C",
+          "text": "10 años."
+        },
+        {
+          "id": "D",
+          "text": "25 años."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q016",
+      "number": 16,
+      "text": "Según el Decreto 1/2013, de 8 de enero, que regula los Biobancos del Sistema Sanitario Público de Andalucía, las funciones de dirección, control y supervisión general del Biobanco del Sistema Sanitario Público de Andalucía corresponden:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Consejo Rector del citado Biobanco."
+        },
+        {
+          "id": "B",
+          "text": "Al Comité Científico del citado Biobanco."
+        },
+        {
+          "id": "C",
+          "text": "Al Consejero competente en la materia."
+        },
+        {
+          "id": "D",
+          "text": "Al Presidente de la Junta de Andalucía."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q017",
+      "number": 17,
+      "text": "El último Plan de calidad del Sistema Sanitario Público de Andalucía está diseñado sobre tres líneas de acción en torno a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sanitarios, no sanitarios y funcionarios."
+        },
+        {
+          "id": "B",
+          "text": "Ciudadanía, profesionales y espacio compartido."
+        },
+        {
+          "id": "C",
+          "text": "Derechos, deberes y sugerencias."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas anteriores es correcta."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q018",
+      "number": 18,
+      "text": "La norma por la que se regula la libre elección de médico general y pediatra en la Comunidad Autónoma de Andalucía es el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 60/1999, de 9 de marzo."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 128/1997, de 6 de mayo."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 5/2001, de 5 de abril."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 22/1993, de 8 de abril."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q019",
+      "number": 19,
+      "text": "En el ámbito del Sistema Sanitario Público de Andalucía, elegido por el usuario médico general en el nivel primario de atención, para realizar nueva elección debe de haber transcurrido, al menos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un mes."
+        },
+        {
+          "id": "B",
+          "text": "Dos meses."
+        },
+        {
+          "id": "C",
+          "text": "Tres meses."
+        },
+        {
+          "id": "D",
+          "text": "Cuatro meses."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q020",
+      "number": 20,
+      "text": "En un puesto de trabajo administrativo, el espacio:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Deberá tener unas dimensiones mínimas de 2 x 2 m2 entre diferentes puestos de trabajo."
+        },
+        {
+          "id": "B",
+          "text": "Deberá tener una dimensión suficiente que permita cambios de postura y movimientos."
+        },
+        {
+          "id": "C",
+          "text": "Deberá garantizar unas condiciones mínimas de iluminación y ruidos que eviten molestias a trabajadores y usuarios."
+        },
+        {
+          "id": "D",
+          "text": "Deberá ser lo más amplio posible que permita la instalación de muebles auxiliares y equipos informáticos."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q021",
+      "number": 21,
+      "text": "El Decreto que regula las disposiciones mínimas de seguridad y salud relativas al trabajo con equipos que incluyen pantallas de visualización (PVD) es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 75/1998, de 6 de abril."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 322/1997, de 6 de marzo."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 92/1999, de 18 de marzo."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 488/1997, de 14 de abril."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q022",
+      "number": 22,
+      "text": "Según lo establecido en el Estatuto Básico del Empleado Público, la renuncia a la condición de funcionario de carrera es causa de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pérdida del puesto de trabajo, pero no de la plaza de funcionario."
+        },
+        {
+          "id": "B",
+          "text": "Suspensión de la condición de funcionario de carrera por un plazo de 2 años."
+        },
+        {
+          "id": "C",
+          "text": "Interrupción temporal de la condición de funcionario."
+        },
+        {
+          "id": "D",
+          "text": "Pérdida de la condición de funcionario de carrera."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q023",
+      "number": 23,
+      "text": "Según lo dispuesto en el Estatuto Básico del Empleado Público, con relación al código de conducta, los empleados públicos deberán actuar entre otros con arreglo al principio de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Promoción del entorno cultural y medioambiental."
+        },
+        {
+          "id": "B",
+          "text": "Subjetividad."
+        },
+        {
+          "id": "C",
+          "text": "Compromiso político."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A) y B) son correctas."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q024",
+      "number": 24,
+      "text": "El principio por el que la Administración Pública actúa con sometimiento pleno a la Ley y al Derecho, está recogido expresamente en la Constitución en el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 9."
+        },
+        {
+          "id": "B",
+          "text": "Artículo 23."
+        },
+        {
+          "id": "C",
+          "text": "Artículo 93."
+        },
+        {
+          "id": "D",
+          "text": "Artículo 103."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q025",
+      "number": 25,
+      "text": "Según la Ley de Régimen Jurídico del Sector Público (En adelante Ley 40/2015), cuando un órgano superior requiere para si el conocimiento de uno o varios asuntos cuya resolución corresponda a un órgano dependiente, dicha técnica se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Revocación."
+        },
+        {
+          "id": "B",
+          "text": "Asunción."
+        },
+        {
+          "id": "C",
+          "text": "Avocación."
+        },
+        {
+          "id": "D",
+          "text": "Detracción."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q026",
+      "number": 26,
+      "text": "Según la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (En adelante Ley 39/2015), los procedimientos podrán iniciarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De oficio o a solicitud del interesado."
+        },
+        {
+          "id": "B",
+          "text": "De oficio o a solicitud del representante del interesado."
+        },
+        {
+          "id": "C",
+          "text": "Sólo a petición de interesado."
+        },
+        {
+          "id": "D",
+          "text": "Sólo a petición de órgano superior."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q027",
+      "number": 27,
+      "text": "Según la Ley 39/2015, salvo disposición expresa en contrario los informes serán:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Facultativos y vinculantes."
+        },
+        {
+          "id": "B",
+          "text": "Facultativos y no vinculantes."
+        },
+        {
+          "id": "C",
+          "text": "Vinculantes y no facultativos."
+        },
+        {
+          "id": "D",
+          "text": "Ni facultativos ni vinculantes."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q028",
+      "number": 28,
+      "text": "Según la Ley 39/2015, respecto al cómputo de plazos, cuando el último día del plazo sea inhábil:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se entenderá prorrogado al primer día hábil siguiente."
+        },
+        {
+          "id": "B",
+          "text": "Se entenderá prorrogado al primer día natural siguiente."
+        },
+        {
+          "id": "C",
+          "text": "Se entiende que el plazo finaliza el día hábil anterior."
+        },
+        {
+          "id": "D",
+          "text": "Se entenderá que el plazo finaliza el día natural anterior."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q029",
+      "number": 29,
+      "text": "Según la Ley 40/2015, respecto al principio de proporcionalidad de la potestad sancionadora, se recoge que cuando de la comisión de una infracción derive necesariamente la comisión de otra u otras:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El órgano competente para resolver decidirá la sanción a imponer considerando los perjuicios causados y la existencia de intencionalidad."
+        },
+        {
+          "id": "B",
+          "text": "Se deberá imponer la sanción correspondiente a todas las infracciones cometidas."
+        },
+        {
+          "id": "C",
+          "text": "Se deberá imponer la sanción correspondiente a la infracción más leve cometida."
+        },
+        {
+          "id": "D",
+          "text": "Se deberá imponer únicamente la sanción correspondiente a la infracción más grave cometida."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q030",
+      "number": 30,
+      "text": "De conformidad con lo dispuesto en la Ley 40/2015, los motivos de abstención de las autoridades y el personal al servicio de las Administraciones vienen reguladas en el artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "32."
+        },
+        {
+          "id": "B",
+          "text": "23."
+        },
+        {
+          "id": "C",
+          "text": "41."
+        },
+        {
+          "id": "D",
+          "text": "30."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q031",
+      "number": 31,
+      "text": "Según la Ley 40/2015, para ser indemnizado por las Administraciones Públicas, el daño alegado por un particular deberá ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Efectivo y culposo."
+        },
+        {
+          "id": "B",
+          "text": "Efectivo, evaluable económicamente e individualizado."
+        },
+        {
+          "id": "C",
+          "text": "Efectivo, referido a una persona concreta y ratificado por un Juzgado."
+        },
+        {
+          "id": "D",
+          "text": "Efectivo y reparable."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q032",
+      "number": 32,
+      "text": "Según el Decreto que establece su estructura y funciones, la resolución de los procedimientos de responsabilidad patrimonial en el Servicio Andaluz de Salud (SAS) corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Gestión Económica del SAS."
+        },
+        {
+          "id": "B",
+          "text": "La persona titular de la Consejería de Salud y Consumo."
+        },
+        {
+          "id": "C",
+          "text": "La Secretaría General Técnica de la Consejería de Salud y Consumo."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Gerencia del SAS."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q033",
+      "number": 33,
+      "text": "Según la normativa vigente en Andalucía sobre la eliminación del lenguaje sexista en los textos y documentos administrativos, en los documentos abiertos, la mención de puestos y cargos administrativos se formulará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En sustantivo genérico."
+        },
+        {
+          "id": "B",
+          "text": "En género masculino."
+        },
+        {
+          "id": "C",
+          "text": "En género femenino."
+        },
+        {
+          "id": "D",
+          "text": "En femenino y masculino conjuntamente."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q034",
+      "number": 34,
+      "text": "Las denuncias formuladas de conformidad con el Decreto 262/1988, de 2 de agosto, por el que se establece el Libro de Sugerencias y Reclamaciones de la Junta de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No paralizan los plazos establecidos en la normativa para interponer recurso administrativo."
+        },
+        {
+          "id": "B",
+          "text": "Paralizan los plazos establecidos en la normativa para interponer recurso administrativo."
+        },
+        {
+          "id": "C",
+          "text": "Paralizan los plazos establecidos en la normativa para interponer recurso administrativo, durante un mes."
+        },
+        {
+          "id": "D",
+          "text": "Paralizan los plazos establecidos en la normativa para interponer recurso administrativo durante dos meses."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q035",
+      "number": 35,
+      "text": "Según establece el Decreto 622/2019, de administración electrónica, simplificación de procedimientos y racionalización organizativa de la Junta de Andalucía, los formularios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Incluirán una cláusula que garantice el cumplimiento de los requisitos establecidos en materia de confidencialidad."
+        },
+        {
+          "id": "B",
+          "text": "Indicarán los informes que sea obligatorio aportar por parte del usuario."
+        },
+        {
+          "id": "C",
+          "text": "Deberán estar inscritos en el Registro de Modelos de la Junta de Andalucía. sancionadoras."
+        },
+        {
+          "id": "D",
+          "text": "De procedimientos administrativos advertirán que las personas interesadas recibirán notificaciones por medios electrónicos."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q036",
+      "number": 36,
+      "text": "De acuerdo con lo establecido en el Libro de estilo del Servicio Andaluz de Salud se entiende por información necesaria para el usuario:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La que solicite el usuario en relación con los temas que le afecten."
+        },
+        {
+          "id": "B",
+          "text": "La que se refiere a aspectos de salud colectiva de especial incidencia o riesgo."
+        },
+        {
+          "id": "C",
+          "text": "La que ayuda al usuario a mantener un estado óptimo de salud."
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas anteriores son correctas."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q037",
+      "number": 37,
+      "text": "La última versión del Plan de Ordenación de Recursos Humanos del Servicio Andaluz de Salud se aprobó mediante:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 136/2001, de 12 de junio, con las modificaciones introducidas por el Decreto 176/2006, de 10 de octubre."
+        },
+        {
+          "id": "B",
+          "text": "Resolución de 20 de mayo de 2019, de la Dirección Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 132/2021, de 6 de abril."
+        },
+        {
+          "id": "D",
+          "text": "Resolución de 21 de febrero de 2023, de la Dirección Gerencia del Servicio Andaluz de Salud."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q038",
+      "number": 38,
+      "text": "La norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Resolución de 20 de mayo de 2019, de la Dirección Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 136/2001, de 12 de junio, con las modificaciones introducidas por el Decreto 176/2006, de 10 de octubre."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 54/2002, de 19 de febrero."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 132/2021, de 6 de abril."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q039",
+      "number": 39,
+      "text": "Según el Decreto que regula la provisión de puestos directivos en el Servicio Andaluz de Salud:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las personas aspirantes aportarán junto a la solicitud, un proyecto técnico de gestión del puesto solicitado."
+        },
+        {
+          "id": "B",
+          "text": "Es necesario que los aspirantes estén vinculados al SAS con nombramiento estatutario fijo."
+        },
+        {
+          "id": "C",
+          "text": "Es obligatorio que los aspirantes estén vinculados al SAS con nombramiento estatutario fijo o interino."
+        },
+        {
+          "id": "D",
+          "text": "El personal directivo estará sujeto a evaluación con arreglo a los criterios de eficacia y eficiencia, responsabilidad por su gestión cada cuatro años."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q040",
+      "number": 40,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, los órganos de control y seguimiento del pacto son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Comisión Central de Control y Seguimiento."
+        },
+        {
+          "id": "B",
+          "text": "Comisión de Control y Seguimiento de Centro."
+        },
+        {
+          "id": "C",
+          "text": "Comisión Central y Comisión de Centro."
+        },
+        {
+          "id": "D",
+          "text": "Comisión Central, Comisión de Centro y Mesa Sectorial de Sanidad."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q041",
+      "number": 41,
+      "text": "Según la Directiva 2003/88/CE del Parlamento Europeo y del Consejo, relativa a determinados aspectos de la ordenación del tiempo de trabajo, los Estados miembros adoptarán las medidas necesarias para todos los trabajadores dispongan de un periodo de vacaciones retribuidas de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 días naturales, pudiendo fraccionarse en un máximo de 4 periodos."
+        },
+        {
+          "id": "B",
+          "text": "30 días naturales."
+        },
+        {
+          "id": "C",
+          "text": "1 mes natural o 22 días laborables."
+        },
+        {
+          "id": "D",
+          "text": "Al menos cuatro semanas."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q042",
+      "number": 42,
+      "text": "Según el Manual de vacaciones, permisos y licencias del personal de centros e instituciones sanitarias del SAS, la duración mínima de un permiso sin sueldo en el supuesto general es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 día natural."
+        },
+        {
+          "id": "B",
+          "text": "10 días naturales."
+        },
+        {
+          "id": "C",
+          "text": "1 mes."
+        },
+        {
+          "id": "D",
+          "text": "7 días naturales."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q043",
+      "number": 43,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, el abuso de autoridad en el ejercicio de sus funciones tendrá la consideración de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Falta muy grave."
+        },
+        {
+          "id": "B",
+          "text": "Falta grave."
+        },
+        {
+          "id": "C",
+          "text": "Falta leve."
+        },
+        {
+          "id": "D",
+          "text": "Dependerá de si hay reincidencia."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q044",
+      "number": 44,
+      "text": "La medida cautelar de suspensión de funciones durante la tramitación de un expediente disciplinario por falta grave o muy grave en el Servicio Andaluz de Salud, no podrá exceder, salvo paralización del procedimiento imputable al interesado, de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 meses."
+        },
+        {
+          "id": "B",
+          "text": "6 meses."
+        },
+        {
+          "id": "C",
+          "text": "3 meses."
+        },
+        {
+          "id": "D",
+          "text": "1 mes."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q045",
+      "number": 45,
+      "text": "En materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía y de Sector Público Andaluz, las solicitudes de compatibilidad referidas a actividades privadas serán resueltas y notificadas en el plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 meses."
+        },
+        {
+          "id": "B",
+          "text": "3 meses."
+        },
+        {
+          "id": "C",
+          "text": "2 meses."
+        },
+        {
+          "id": "D",
+          "text": "1 mes."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q046",
+      "number": 46,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, el concepto de Complemento Atención Continuada, modalidad “A” que se abona a determinadas categorías profesionales en hospitales, retribuye:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "B",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "C",
+          "text": "La realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, los días laborables de lunes a sábado."
+        },
+        {
+          "id": "D",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, los días laborables de lunes a sábado."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q047",
+      "number": 47,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, y en relación al Complemento Atención Continuada, modalidad “Continuidad Asistencial”, durante el disfrute de las vacaciones anuales reglamentarias:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los seis meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "B",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los tres meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "C",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en el mes anterior al inicio de su disfrute."
+        },
+        {
+          "id": "D",
+          "text": "No corresponde la percepción de este concepto ni prorrateo alguno por el mismo."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q048",
+      "number": 48,
+      "text": "La asignación a los ciudadanos del número de afiliación a la Seguridad Social corresponde:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Instituto Nacional de la Seguridad Social ya sea como trabajador por cuenta propia o como trabajador por cuenta ajena."
+        },
+        {
+          "id": "B",
+          "text": "A la Tesorería General de la Seguridad Social."
+        },
+        {
+          "id": "C",
+          "text": "Al Servicio de Salud de la correspondiente Comunidad Autónoma."
+        },
+        {
+          "id": "D",
+          "text": "Al Ministerio de Trabajo y Economía Social."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q049",
+      "number": 49,
+      "text": "El tipo de cotización vigente durante el año 2.023 en el Régimen General de la Seguridad Social por contingencias comunes es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 32,60 %, siendo el 27,90 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "B",
+          "text": "El 32,30 %, siendo el 27,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "C",
+          "text": "El 32,60 %, siendo el 28,00 % a cargo de la empresa y el 4,60 % a cargo del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "El 28,30 %, siendo el 23,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q050",
+      "number": 50,
+      "text": "Según la normativa vigente en materia de Seguridad Social, un trabajador que cumpla 65 años durante el año 2023 podrá jubilarse de forma ordinaria al cumplir dicha edad si tiene acreditada una cotización mínima de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "37 años y 6 meses o más."
+        },
+        {
+          "id": "B",
+          "text": "37 años y 9 meses o más."
+        },
+        {
+          "id": "C",
+          "text": "35 años."
+        },
+        {
+          "id": "D",
+          "text": "15 años."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q051",
+      "number": 51,
+      "text": "Según la Ley General de la Hacienda Pública de la Junta de Andalucía, aprobar el Proyecto de Ley del Presupuesto corresponde:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Parlamento andaluz."
+        },
+        {
+          "id": "B",
+          "text": "Al Presidente de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Al Consejo de Gobierno."
+        },
+        {
+          "id": "D",
+          "text": "A la consejería competente en materia de Hacienda."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q052",
+      "number": 52,
+      "text": "Según la Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía, el órgano superior de control interno de la Junta de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Intervención General de la Junta de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "La Cámara de Cuentas de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "El Tribunal de Cuentas."
+        },
+        {
+          "id": "D",
+          "text": "El Parlamento de Andalucía."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q053",
+      "number": 53,
+      "text": "Según se recoge en la Orden que regula la contabilidad pública de la Junta de Andalucía, el documento contable “A” se utiliza en la fase de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Autorización contable."
+        },
+        {
+          "id": "B",
+          "text": "Autorización de apertura del ejercicio contable."
+        },
+        {
+          "id": "C",
+          "text": "Autorización del crédito."
+        },
+        {
+          "id": "D",
+          "text": "Autorización del gasto."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q054",
+      "number": 54,
+      "text": "Según lo establecido en la Ley de Contratos del Sector Público, NO se considerarán contratos de suministro:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los que tengan por objeto la adquisición y el arrendamiento de equipos y sistemas de telecomunicaciones."
+        },
+        {
+          "id": "B",
+          "text": "Los que tengan por objeto la adquisición y arrendamiento de equipos para el tratamiento de la información, con sus dispositivos y programas."
+        },
+        {
+          "id": "C",
+          "text": "Los que tengan por objeto la adquisición de energía primaria o transformada."
+        },
+        {
+          "id": "D",
+          "text": "Los que tengan por objeto la adquisición de programas de ordenador desarrollados a medida."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q055",
+      "number": 55,
+      "text": "Según la Ley de Contratos del Sector Público, se consideran contratos menores:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los contratos de obras de valor estimado interior a 50.000 euros o los contratos de suministro o de servicios inferior a 15.000 euros."
+        },
+        {
+          "id": "B",
+          "text": "Los contratos de obras de valor estimado interior a 40.000 euros o los contratos de suministro o de servicios inferior a 15.000 euros."
+        },
+        {
+          "id": "C",
+          "text": "Los contratos de obras de valor estimado interior a 50.000 euros o los contratos de suministro o de servicios inferior a 25.000 euros."
+        },
+        {
+          "id": "D",
+          "text": "Los contratos de obras de valor estimado interior a 40.000 euros o los contratos de suministro o de servicios inferior a 25.000 euros."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q056",
+      "number": 56,
+      "text": "En las Mesas de Contratación del SAS en su ámbito provincial, la Secretaría estará ocupada por un/a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Auxiliar Administrativo/a."
+        },
+        {
+          "id": "B",
+          "text": "Administrativo/a."
+        },
+        {
+          "id": "C",
+          "text": "Técnico/a de función administrativa."
+        },
+        {
+          "id": "D",
+          "text": "Letrado/a de la Administración Sanitaria."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q057",
+      "number": 57,
+      "text": "En la gestión de almacenes a la cantidad exacta de inventario que se precisa para cumplir con la demanda habitual sin que se produzca una rotura de stocks se le denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stock máximo."
+        },
+        {
+          "id": "B",
+          "text": "Stock mínimo."
+        },
+        {
+          "id": "C",
+          "text": "Stock medio."
+        },
+        {
+          "id": "D",
+          "text": "Stock óptimo."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q058",
+      "number": 58,
+      "text": "A efectos de contabilidad analítica de hospitales y distritos, la unidad funcional con personalidad propia dentro del centro sanitario y con una estructura y actividad homogénea, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Centro de responsabilidad de costes controlables."
+        },
+        {
+          "id": "B",
+          "text": "Centro de responsabilidad de contabilidad sanitaria."
+        },
+        {
+          "id": "C",
+          "text": "Centro de responsabilidad de costo sanitario."
+        },
+        {
+          "id": "D",
+          "text": "Centro de responsabilidad de valoración sanitaria."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q059",
+      "number": 59,
+      "text": "Los residuos no peligrosos derivados de la actividad hospitalaria que no necesitan una gestión especial, como pueden ser vendajes, gasas, guantes etc., se recogen en una bolsa de color:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Negra."
+        },
+        {
+          "id": "B",
+          "text": "Amarilla."
+        },
+        {
+          "id": "C",
+          "text": "Roja."
+        },
+        {
+          "id": "D",
+          "text": "Verde."
+        }
+      ],
+      "correctOption": null,
+      "status": "annulled",
+      "topic": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q060",
+      "number": 60,
+      "text": "Las intervenciones de mantenimiento sobre una máquina o equipo con objeto de mantener la calidad de servicio dentro de ciertos límites constituyen el mantenimiento:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Preventivo."
+        },
+        {
+          "id": "B",
+          "text": "Predictivo."
+        },
+        {
+          "id": "C",
+          "text": "Correctivo."
+        },
+        {
+          "id": "D",
+          "text": "Circunstancial."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q061",
+      "number": 61,
+      "text": "El Registro de Implantes Quirúrgicos del Sistema Sanitario Público de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Existirá uno por cada provincia y será gestionado por cada uno de los centros hospitalarios del SAS donde se realicen intervenciones quirúrgicas."
+        },
+        {
+          "id": "B",
+          "text": "Será único en Andalucía y será gestionado de manera descentralizada en cada uno de los centros hospitalarios del SAS."
+        },
+        {
+          "id": "C",
+          "text": "Está adscrito a la Dirección General de Asistencia Sanitaria del SAS."
+        },
+        {
+          "id": "D",
+          "text": "Está adscrito a la Dirección General de Gestión Económica y Servicios del SAS."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q062",
+      "number": 62,
+      "text": "Todos los artículos y genéricos de centro que pueden ser objeto de adquisición y consumo por parte de los centros del SAS, expresados en términos generales, están recogidos en el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Registro de bienes y servicios del SAS."
+        },
+        {
+          "id": "B",
+          "text": "Revista de bienes y servicios del SAS."
+        },
+        {
+          "id": "C",
+          "text": "Banco de bienes y servicios el SAS."
+        },
+        {
+          "id": "D",
+          "text": "Catálogo de bienes y servicios del SAS."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q063",
+      "number": 63,
+      "text": "La aplicación corporativa que posibilita el control y gestión de las tesorerías de la Junta de Andalucía y sus Agencias Administrativas se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "GIRO."
+        },
+        {
+          "id": "B",
+          "text": "SUR."
+        },
+        {
+          "id": "C",
+          "text": "GERHONTE."
+        },
+        {
+          "id": "D",
+          "text": "SIGLO."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q064",
+      "number": 64,
+      "text": "En relación a los sistemas de información del Servicio Andaluz de Salud, indique cuál de las siguientes afirmaciones es la correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El sistema Unificado de Recursos (SUR), es el sistema para gestión de los recursos patrimoniales del SAS."
+        },
+        {
+          "id": "B",
+          "text": "El alta de un nombramiento de personal estatutario en el SAS se realiza en GERHONTE, módulo Nóminas."
+        },
+        {
+          "id": "C",
+          "text": "El Sistema Unificado de Recursos (SUR), es el sistema para la Gestión que se encarga de la gestión, liquidación y recaudación de los tributos propios o cedidos de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas B) y C) son correctas."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q065",
+      "number": 65,
+      "text": "¿Cuál es la función principal de BDU?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dotar a cada ciudadano de un Número Único de Historia de Salud de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "Fijar los criterios de relación entre los diferentes niveles asistenciales."
+        },
+        {
+          "id": "C",
+          "text": "Contener y gestionar los diferentes datos administrativos y clínicos de los profesionales."
+        },
+        {
+          "id": "D",
+          "text": "Realizar las comunicaciones interiores, mediante vía telemática, de una forma sencilla y segura, quedando registro de cada uno de los pasos y sirviendo como registro documental para el futuro."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q066",
+      "number": 66,
+      "text": "El proceso de certificación de la Agencia de Calidad Sanitaria de Andalucía se desarrolla a lo largo de las siguientes fases:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inicio del proceso, Evaluación y Certificación."
+        },
+        {
+          "id": "B",
+          "text": "Inicio, Autoevaluación, Certificación y Seguimiento."
+        },
+        {
+          "id": "C",
+          "text": "Inicio, Evaluación, Certificación y Seguimiento."
+        },
+        {
+          "id": "D",
+          "text": "Inicio, Autoevaluación, Evaluación y Certificación."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q067",
+      "number": 67,
+      "text": "La entidad que evalúa las tecnologías sanitarias cuya finalidad puede ser diagnóstica, de tratamiento, prevención o incluso fórmulas de organización sanitaria en el ámbito del Sistema Sanitario Público de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "ACSA."
+        },
+        {
+          "id": "B",
+          "text": "AETSA."
+        },
+        {
+          "id": "C",
+          "text": "IAVANTE."
+        },
+        {
+          "id": "D",
+          "text": "TSA."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q068",
+      "number": 68,
+      "text": "En informática se denomina IDS:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Verificadores de integridad del Sistema informático."
+        },
+        {
+          "id": "B",
+          "text": "Sistema de identificación de Antivirus."
+        },
+        {
+          "id": "C",
+          "text": "Sistema de identificación de Firewall."
+        },
+        {
+          "id": "D",
+          "text": "Sistema de detección de intrusos."
+        }
+      ],
+      "correctOption": "D",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q069",
+      "number": 69,
+      "text": "Los componentes físicos de un ordenador se agrupan bajo el concepto de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Software."
+        },
+        {
+          "id": "B",
+          "text": "Disco Duro."
+        },
+        {
+          "id": "C",
+          "text": "Hardware."
+        },
+        {
+          "id": "D",
+          "text": "Firewall."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q070",
+      "number": 70,
+      "text": "En un documento de texto en formato Word, para insertar una nota a pie de página tendremos que ir a la pestaña:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Referencias."
+        },
+        {
+          "id": "B",
+          "text": "Correspondencia."
+        },
+        {
+          "id": "C",
+          "text": "Diseño de página."
+        },
+        {
+          "id": "D",
+          "text": "Insertar."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q071",
+      "number": 71,
+      "text": "En una base de datos, la columna o un conjunto de columnas de una tabla cuyos valores corresponden a los valores de la clave primaria de otra tabla se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clave subprimaria."
+        },
+        {
+          "id": "B",
+          "text": "Clave foránea."
+        },
+        {
+          "id": "C",
+          "text": "Clave primaria."
+        },
+        {
+          "id": "D",
+          "text": "Registro."
+        }
+      ],
+      "correctOption": "B",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q072",
+      "number": 72,
+      "text": "Es una plataforma virtual de teleformación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Writer."
+        },
+        {
+          "id": "B",
+          "text": "Excel."
+        },
+        {
+          "id": "C",
+          "text": "Moodle."
+        },
+        {
+          "id": "D",
+          "text": "Edge."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q073",
+      "number": 73,
+      "text": "¿Cuál de los siguientes programas es un navegador de internet?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft Edge."
+        },
+        {
+          "id": "B",
+          "text": "Mozilla Thunderbird."
+        },
+        {
+          "id": "C",
+          "text": "Google Chromecast."
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Office."
+        }
+      ],
+      "correctOption": "A",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q074",
+      "number": 74,
+      "text": "El componente que tiene como finalidad la gestión de comunicaciones electrónicas entre organismos y otras unidades organizativas de la Administración es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Notific@"
+        },
+        {
+          "id": "B",
+          "text": "@ries"
+        },
+        {
+          "id": "C",
+          "text": "eCO"
+        },
+        {
+          "id": "D",
+          "text": "@rchiva."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q075",
+      "number": 75,
+      "text": "El registro telemático de Entrada y Salida unificado para toda la Junta de Andalucía se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Registr@."
+        },
+        {
+          "id": "B",
+          "text": "Compuls@."
+        },
+        {
+          "id": "C",
+          "text": "@ries."
+        },
+        {
+          "id": "D",
+          "text": "@rchiva."
+        }
+      ],
+      "correctOption": "C",
+      "status": "valid",
+      "topic": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q151",
+      "number": 151,
+      "text": "Según la normativa vigente en materia de Seguridad Social, serán beneficiarios del subsidio por incapacidad temporal por enfermedad común, las personas incluidas en el Régimen General que cumplan los requisitos establecidos en la norma y además acrediten los siguientes periodos mínimos de cotización:",
+      "options": [
+        {
+          "id": "A",
+          "text": "365 días dentro de los cinco años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "B",
+          "text": "365 días en cualquier momento anterior al hecho causante."
+        },
+        {
+          "id": "C",
+          "text": "180 días dentro de los cinco años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "D",
+          "text": "180 días en cualquier momento anterior al hecho causante."
+        }
+      ],
+      "correctOption": "C",
+      "status": "reserve",
+      "topic": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q152",
+      "number": 152,
+      "text": "Según la Ley General de la Hacienda Pública de la Junta de Andalucía, referente a las modificaciones presupuestarias, la persona titular de la Consejería competente en materia de Hacienda podrá autorizar transferencias de créditos siempre que no excedan de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un millón de euros."
+        },
+        {
+          "id": "B",
+          "text": "Dos millones de euros."
+        },
+        {
+          "id": "C",
+          "text": "Tres millones de euros."
+        },
+        {
+          "id": "D",
+          "text": "Cuatro millones de euros."
+        }
+      ],
+      "correctOption": "C",
+      "status": "reserve",
+      "topic": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre-q153",
+      "number": 153,
+      "text": "Según la Ley de Contratos del Sector Público, en el caso de que el pliego de cláusulas exija la constitución de una garantía provisional hasta la adjudicación provisional del contrato, ésta no podrá superar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 5 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "B",
+          "text": "El 3 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "C",
+          "text": "El 2 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "D",
+          "text": "El 1 % del presupuesto base de licitación del contrato."
+        }
+      ],
+      "correctOption": "B",
+      "status": "reserve",
+      "topic": null,
+      "sourcePage": 17
+    }
+  ]
+}

@@ -15,6 +15,9 @@ const ids = [
   "summary-correct", "summary-wrong", "summary-accuracy", "summary-time", "summary-pending",
   "summary-mastered", "summary-catalog-button", "study-strategy-label", "strategy-warning",
   "strategy-warning-copy", "cancel-strategy-change", "confirm-strategy-change",
+  "all-failed-button", "all-failed-count", "all-failed-error", "exam-failed-count",
+  "start-failed-button", "study-source", "summary-pending-label", "summary-mastered-label",
+  "summary-pending-list-wrap", "summary-pending-list",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"]];
@@ -31,6 +34,8 @@ let selectedExam;
 let study;
 let statuses = new Map();
 let activeStrategies = new Map();
+let pendingFailures = new Map();
+let activeFailedAttempt;
 let pendingActiveSeconds = 0;
 let lastActivityAt = Date.now();
 let timer;
@@ -64,20 +69,48 @@ function formatDuration(minutes) {
 
 function statusFor(examId) { return statuses.get(examId) || "Sin empezar"; }
 
+function eligibleFailureSources(scopeExamId = null) {
+  const exams = scopeExamId ? catalog.filter(({ id }) => id === scopeExamId) : catalog;
+  return exams.flatMap((exam) => exam.questions
+    .filter(({ id }) => pendingFailures.get(exam.id)?.has(id))
+    .map(({ id }) => ({
+      exam_id: exam.id,
+      exam_version_id: exam.version,
+      exam_version_path: exam.versionPath,
+      question_id: id,
+    })));
+}
+
 async function refreshStatuses() {
   const { data, error } = await supabase
     .from("attempts")
-    .select("exam_id,status,completed_at,strategy");
+    .select("id,exam_id,status,completed_at,strategy,kind,failed_scope_exam_id");
   if (error) throw error;
+
+  const { data: progress, error: progressError } = await supabase
+    .from("question_progress")
+    .select("exam_id,question_id")
+    .eq("pending_failure", true);
+  if (progressError) throw progressError;
 
   statuses = new Map();
   activeStrategies = new Map();
+  pendingFailures = new Map();
+  activeFailedAttempt = undefined;
   for (const attempt of data) {
+    if (attempt.kind === "failed") {
+      if (attempt.status === "active") activeFailedAttempt = attempt;
+      continue;
+    }
     if (attempt.status === "active") activeStrategies.set(attempt.exam_id, attempt.strategy);
     if (attempt.status === "completed") statuses.set(attempt.exam_id, "Finalizado");
   }
   for (const examId of activeStrategies.keys()) {
     if (!statuses.has(examId)) statuses.set(examId, "En curso");
+  }
+  for (const row of progress) {
+    if (!pendingFailures.has(row.exam_id)) pendingFailures.set(row.exam_id, new Set());
+    pendingFailures.get(row.exam_id).add(row.question_id);
   }
 }
 
@@ -95,15 +128,24 @@ function renderCatalog() {
     const state = document.createElement("p");
     state.className = "card-status";
     state.textContent = statusFor(exam.id);
+    const failures = document.createElement("p");
+    failures.className = "card-failures";
+    failures.textContent = `${eligibleFailureSources(exam.id).length} Falladas pendientes`;
     const button = document.createElement("button");
     button.className = "secondary";
     button.type = "button";
     button.textContent = "Elegir examen";
     button.addEventListener("click", () => selectExam(exam.id));
-    card.append(heading, facts, state, button);
+    card.append(heading, facts, state, failures, button);
     return card;
   }));
   elements["catalog-status"].hidden = true;
+  const allFailedCount = eligibleFailureSources().length;
+  elements["all-failed-count"].textContent = allFailedCount;
+  elements["all-failed-button"].disabled = !activeFailedAttempt && allFailedCount === 0;
+  elements["all-failed-button"].textContent = activeFailedAttempt
+    ? "Continuar Sesión de falladas activa"
+    : "Empezar Todas mis falladas";
   elements["exam-grid"].hidden = false;
 }
 
@@ -142,6 +184,8 @@ async function selectExam(id, { updateHash = true } = {}) {
   elements["exam-title"].textContent = exam.title;
   elements["exam-count"].textContent = exam.activeCount;
   elements["exam-duration"].textContent = formatDuration(exam.durationMinutes);
+  const failedCount = eligibleFailureSources(exam.id).length;
+  elements["exam-failed-count"].textContent = failedCount;
   const state = statusFor(exam.id);
   elements["exam-study-status"].textContent = state;
   const activeStrategy = activeStrategies.get(exam.id);
@@ -151,12 +195,19 @@ async function selectExam(id, { updateHash = true } = {}) {
   elements["start-random-study-button"].textContent = activeStrategy === "random"
     ? "Continuar estudio aleatorio"
     : activeStrategy ? "Cambiar a estudio aleatorio" : "Empezar estudio aleatorio";
+  elements["start-failed-button"].disabled = !activeFailedAttempt && failedCount === 0;
+  elements["start-failed-button"].textContent = activeFailedAttempt
+    ? "Continuar Sesión de falladas activa"
+    : "Empezar Solo falladas";
   if (updateHash) window.location.hash = `exam=${encodeURIComponent(exam.id)}`;
   showOnly(elements["exam-view"]);
 }
 
 function normalizeRow(data) { return Array.isArray(data) ? data[0] : data; }
-function studyStorageKey() { return study ? `normal-study:${study.attempt.id}` : null; }
+function studyStorageKey() {
+  if (!study) return null;
+  return `${study.attempt.kind === "failed" ? "failed-study" : "normal-study"}:${study.attempt.id}`;
+}
 
 function restoreLocalState() {
   try {
@@ -203,7 +254,8 @@ async function fetchAttemptAnswers(attemptId) {
 }
 
 async function callConfirmation(payload) {
-  const { data, error } = await supabase.rpc("confirm_normal_answer", payload);
+  const rpc = study.attempt.kind === "failed" ? "confirm_failed_answer" : "confirm_normal_answer";
+  const { data, error } = await supabase.rpc(rpc, payload);
   if (error) throw error;
   return normalizeRow(data);
 }
@@ -223,7 +275,10 @@ async function retryPendingConfirmation(payload) {
   }
 }
 
-function strategyName(strategy) { return strategy === "random" ? "aleatorio" : "normal"; }
+function strategyName(strategy) {
+  if (strategy === "failed") return "Solo falladas";
+  return strategy === "random" ? "aleatorio" : "normal";
+}
 
 function warnBeforeStrategyChange(strategy) {
   pendingStrategyChange = strategy;
@@ -285,6 +340,103 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
   }
 }
 
+async function loadFailedSessionQuestions(attempt) {
+  const { data: sources, error } = await supabase
+    .from("attempt_question_sources")
+    .select("position,exam_id,exam_version_id,exam_version_path,question_id")
+    .eq("attempt_id", attempt.id)
+    .order("position", { ascending: true });
+  if (error) throw error;
+  if (!sources?.length || sources.length !== attempt.question_ids.length) {
+    throw new Error("La cola persistida de la Sesión de falladas no es válida.");
+  }
+
+  const pinnedExams = new Map();
+  for (const source of sources) {
+    const key = `${source.exam_id}\u0000${source.exam_version_id}\u0000${source.exam_version_path}`;
+    if (pinnedExams.has(key)) continue;
+    const current = catalog.find((exam) => (
+      exam.id === source.exam_id
+      && exam.version === source.exam_version_id
+      && exam.versionPath === source.exam_version_path
+    ));
+    if (current) {
+      pinnedExams.set(key, { exam: current.package, title: current.title });
+    } else {
+      const pinned = await loadPinnedExam(fetch, bankBaseUrl, {
+        exam_id: source.exam_id,
+        exam_version_id: source.exam_version_id,
+        exam_version_path: source.exam_version_path,
+      });
+      pinnedExams.set(key, { exam: pinned.exam, title: pinned.exam.title });
+    }
+  }
+
+  return sources.map((source) => {
+    const key = `${source.exam_id}\u0000${source.exam_version_id}\u0000${source.exam_version_path}`;
+    const pinned = pinnedExams.get(key);
+    const question = pinned.exam.questions.find(({ id }) => id === source.question_id);
+    if (!question) throw new Error("Una pregunta de la cola ya no existe en su versión fijada.");
+    return {
+      ...question,
+      sourceExamId: source.exam_id,
+      sourceExamTitle: pinned.title,
+      sourceVersionId: source.exam_version_id,
+      sourceVersionPath: source.exam_version_path,
+    };
+  });
+}
+
+async function startFailedStudy(scopeExamId = null) {
+  const errorElement = scopeExamId ? elements["exam-error"] : elements["all-failed-error"];
+  clearError(errorElement);
+  elements["start-failed-button"].disabled = true;
+  elements["all-failed-button"].disabled = true;
+  try {
+    const eligible = eligibleFailureSources(scopeExamId);
+    const sources = scopeExamId ? eligible : shuffled(eligible);
+    const { data, error } = await supabase.rpc("start_or_resume_failed_attempt", {
+      p_scope_exam_id: scopeExamId,
+      p_sources: sources,
+    });
+    if (error) throw error;
+    const attempt = normalizeRow(data);
+    const questions = await loadFailedSessionQuestions(attempt);
+    const answers = await fetchAttemptAnswers(attempt.id);
+    study = new NormalStudySession({
+      id: attempt.exam_id,
+      version: { id: attempt.exam_version_id },
+      questions,
+    }, attempt, answers);
+    activeFailedAttempt = attempt;
+    selectedExam = attempt.failed_scope_exam_id
+      ? catalog.find(({ id }) => id === attempt.failed_scope_exam_id)
+      : undefined;
+    pendingActiveSeconds = 0;
+    pendingConfirmationPayload = null;
+    confirmationRetryAvailable = false;
+    pendingSavePayload = null;
+    const pendingConfirmation = restoreLocalState();
+    window.location.hash = `failed=${encodeURIComponent(attempt.failed_scope_exam_id || "all")}`;
+    renderStudy();
+    if (pendingSavePayload) {
+      try {
+        await saveAttempt();
+      } catch (saveError) {
+        showError(elements["study-error"], `El guardado de tiempo sigue pendiente de conexión. ${saveError.message}`);
+      }
+    }
+    await retryPendingConfirmation(pendingConfirmation);
+    renderStudy();
+  } catch (error) {
+    showError(errorElement, `No se pudo iniciar o recuperar la Sesión de falladas. ${error.message}`);
+  } finally {
+    const count = eligibleFailureSources(scopeExamId).length;
+    elements["start-failed-button"].disabled = !activeFailedAttempt && count === 0;
+    elements["all-failed-button"].disabled = !activeFailedAttempt && eligibleFailureSources().length === 0;
+  }
+}
+
 function renderNavigation() {
   elements["question-numbers"].replaceChildren(...study.questions.map((question, index) => {
     const button = document.createElement("button");
@@ -343,12 +495,24 @@ function renderStudy() {
   elements["study-panel"].dataset.attemptId = study.attempt.id;
   elements["study-panel"].dataset.questionId = question.id;
   elements["study-panel"].dataset.strategy = study.attempt.strategy;
-  elements["study-exam-title"].textContent = selectedExam?.title || study.attempt.exam_id;
-  elements["study-strategy-label"].textContent = `Estudio ${strategyName(study.attempt.strategy)}`;
+  elements["study-panel"].dataset.kind = study.attempt.kind;
+  elements["study-panel"].dataset.sourceExamId = question.sourceExamId || study.attempt.exam_id;
+  elements["study-exam-title"].textContent = study.attempt.kind === "failed"
+    ? selectedExam?.title || "Todas mis falladas"
+    : selectedExam?.title || study.attempt.exam_id;
+  elements["study-strategy-label"].textContent = study.attempt.kind === "failed"
+    ? "Solo falladas"
+    : `Estudio ${strategyName(study.attempt.strategy)}`;
   elements["study-progress"].textContent = `${study.index + 1} de ${study.questions.length}`;
   elements["active-time"].textContent = `Tiempo activo: ${formatActiveTime(study.attempt.active_seconds + pendingActiveSeconds)}`;
-  elements["version-pin"].textContent = `Versión fijada: ${study.attempt.exam_version_id}`;
-  elements["version-pin"].dataset.versionPath = study.attempt.exam_version_path;
+  const versionId = question.sourceVersionId || study.attempt.exam_version_id;
+  const versionPath = question.sourceVersionPath || study.attempt.exam_version_path;
+  elements["version-pin"].textContent = `Versión fijada: ${versionId}`;
+  elements["version-pin"].dataset.versionPath = versionPath;
+  elements["study-source"].hidden = study.attempt.kind !== "failed";
+  elements["study-source"].textContent = study.attempt.kind === "failed"
+    ? `Examen de origen: ${question.sourceExamTitle}`
+    : "";
   elements["question-label"].textContent = question.displayLabel || `Pregunta ${question.sourceNumber}`;
   elements["question-text"].textContent = question.text;
   elements["answer-options"].replaceChildren(...question.options.map((option) => optionLabel(question, option, latest, corrected)));
@@ -458,10 +622,15 @@ async function togglePause() {
 }
 
 async function exitStudy() {
+  const exitingAttempt = study.attempt;
   try { await saveAttempt(); } catch { /* Local state retains the unsaved delta and position. */ }
   await refreshStatuses();
+  if (exitingAttempt.kind === "failed" && !exitingAttempt.failed_scope_exam_id) {
+    await showCatalog();
+    return;
+  }
   renderCatalog();
-  await selectExam(study.attempt.exam_id);
+  await selectExam(exitingAttempt.failed_scope_exam_id || exitingAttempt.exam_id);
   study = undefined;
 }
 
@@ -470,7 +639,8 @@ async function completeStudy() {
   elements["complete-button"].disabled = true;
   try {
     await saveAttempt();
-    const { data, error } = await supabase.rpc("complete_normal_attempt", { p_attempt_id: study.attempt.id });
+    const rpc = study.attempt.kind === "failed" ? "complete_failed_attempt" : "complete_normal_attempt";
+    const { data, error } = await supabase.rpc(rpc, { p_attempt_id: study.attempt.id });
     if (error) throw error;
     study.attempt.status = "completed";
     localStorage.removeItem(studyStorageKey());
@@ -484,13 +654,33 @@ async function completeStudy() {
 
 function showSummary(summary) {
   window.location.hash = `summary=${encodeURIComponent(study.attempt.id)}`;
-  elements["summary-title"].textContent = `Resumen · ${selectedExam?.title || `Estudio ${strategyName(study.attempt.strategy)}`}`;
+  const failed = study.attempt.kind === "failed";
+  elements["summary-title"].textContent = failed
+    ? `Resumen · ${selectedExam?.title || "Todas mis falladas"}`
+    : `Resumen · ${selectedExam?.title || `Estudio ${strategyName(study.attempt.strategy)}`}`;
   elements["summary-correct"].textContent = summary.correct;
   elements["summary-wrong"].textContent = summary.wrong;
   elements["summary-accuracy"].textContent = `${summary.accuracy} %`;
   elements["summary-time"].textContent = formatActiveTime(summary.active_seconds);
-  elements["summary-pending"].textContent = summary.newly_pending_failures;
-  elements["summary-mastered"].textContent = summary.newly_mastered;
+  elements["summary-pending-label"].textContent = failed
+    ? "Continúan pendientes"
+    : "Nuevas falladas pendientes";
+  elements["summary-mastered-label"].textContent = failed
+    ? "Preguntas dominadas"
+    : "Nuevas dominadas";
+  elements["summary-pending"].textContent = failed ? summary.still_pending.length : summary.newly_pending_failures;
+  elements["summary-mastered"].textContent = failed ? summary.mastered : summary.newly_mastered;
+  elements["summary-pending-list-wrap"].hidden = !failed || summary.still_pending.length === 0;
+  elements["summary-pending-list"].replaceChildren(...(failed ? summary.still_pending.map((pending) => {
+    const question = study.questions.find((candidate) => (
+      candidate.id === pending.question_id && candidate.sourceExamId === pending.exam_id
+    ));
+    const item = document.createElement("li");
+    item.textContent = question
+      ? `${question.sourceExamTitle} · ${question.displayLabel || `Pregunta ${question.sourceNumber}`}`
+      : `${pending.exam_id} · ${pending.question_id}`;
+    return item;
+  }) : []));
   showOnly(elements["summary-view"]);
 }
 
@@ -500,8 +690,13 @@ async function routePrivateView() {
     await Promise.all([ensureCatalog(), refreshStatuses()]);
     if (serial !== routeSerial) return;
     const studyId = window.location.hash.match(/^#study=([^&]+)$/)?.[1];
+    const failedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
     const examId = window.location.hash.match(/^#exam=([^&]+)$/)?.[1];
-    if (studyId) {
+    if (failedScope) {
+      const scope = decodeURIComponent(failedScope);
+      if (scope !== "all" && !catalog.some(({ id }) => id === scope)) return showCatalog();
+      await startFailedStudy(scope === "all" ? null : scope);
+    } else if (studyId) {
       await selectExam(decodeURIComponent(studyId), { updateHash: false });
       await startStudy();
     } else if (examId) {
@@ -566,6 +761,8 @@ async function boot() {
   elements["back-button"].addEventListener("click", showCatalog);
   elements["start-study-button"].addEventListener("click", () => startStudy("normal"));
   elements["start-random-study-button"].addEventListener("click", () => startStudy("random"));
+  elements["start-failed-button"].addEventListener("click", () => startFailedStudy(selectedExam?.id));
+  elements["all-failed-button"].addEventListener("click", () => startFailedStudy(null));
   elements["cancel-strategy-change"].addEventListener("click", () => {
     pendingStrategyChange = null;
     elements["strategy-warning"].close();

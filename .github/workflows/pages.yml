@@ -27,10 +27,22 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
-      - name: Upload static app
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Upload built application
         uses: actions/upload-pages-artifact@v5
         with:
-          path: ./app
+          path: ./dist
 
       - name: Deploy to Pages
         id: deployment

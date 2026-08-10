@@ -66,15 +66,6 @@ test("finaliza y construye un nuevo conjunto solo con las falladas", () => {
   assert.equal(retry.currentQuestion.id, "q1");
 });
 
-test("el DATA_URL configurado por la aplicación existe", async () => {
-  const appSource = await readFile(new URL("../app/src/app.js", import.meta.url), "utf8");
-  const configuredUrl = appSource.match(/const DATA_URL = ["'](.+?)["'];/)?.[1];
-  assert.ok(configuredUrl, "app.js debe declarar DATA_URL");
-  const appRoot = new URL("../app/", import.meta.url);
-  const dataFile = new URL(configuredUrl.replace(/^\.\//, ""), appRoot);
-  assert.ok((await readFile(dataFile)).length > 0, `${configuredUrl} debe existir`);
-});
-
 test("consume un paquete real del importador usando solo su conjunto activo", async () => {
   const bankUrl = new URL("../app/public/data/exams/", import.meta.url);
   const catalog = JSON.parse(await readFile(new URL("catalog.json", bankUrl), "utf8"));

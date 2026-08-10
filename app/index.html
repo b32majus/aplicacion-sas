@@ -3,61 +3,72 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SAS Quiz</title>
-    <link rel="stylesheet" href="./src/styles.css">
+    <meta name="description" content="Aplicación privada para practicar exámenes oficiales del SAS">
+    <title>Banco de exámenes · SAS</title>
   </head>
   <body>
     <main class="shell">
       <header class="brand">
-        <p class="eyebrow">Preparación SAS · ADM 2023</p>
-        <h1>SAS Quiz</h1>
+        <a class="brand-mark" href="#catalog" aria-label="Ir al Banco de exámenes">
+          <span class="eyebrow">Preparación privada</span>
+          <span class="brand-name">SAS</span>
+        </a>
+        <button id="logout-button" class="text-button" type="button" hidden>Cerrar sesión</button>
       </header>
 
-      <section id="start-view" class="panel start-view" aria-labelledby="start-title">
-        <div>
-          <p class="step">Práctica individual</p>
-          <h2 id="start-title">Elige cómo quieres empezar</h2>
-          <p class="lede">78 preguntas reales, corrección al instante y sin registros.</p>
-        </div>
-        <fieldset class="mode-picker">
-          <legend>Orden de las preguntas</legend>
-          <label><input type="radio" name="mode" value="sequential" checked> Secuencial</label>
-          <label><input type="radio" name="mode" value="random"> Aleatorio sin repetir</label>
-        </fieldset>
-        <button id="start-button" class="primary" type="button">Comenzar cuestionario</button>
-        <p id="load-error" class="error" role="alert" hidden></p>
+      <section id="loading-view" class="panel compact" aria-live="polite">
+        <p class="eyebrow">Acceso privado</p>
+        <h1>Comprobando tu sesión…</h1>
       </section>
 
-      <section id="quiz-view" class="panel" hidden aria-live="polite">
-        <div class="status-bar">
-          <span id="progress">Pregunta 1 de 78</span>
-          <span id="timer" aria-label="Tiempo transcurrido">00:00</span>
-          <span><b id="correct-count">0</b> aciertos · <b id="incorrect-count">0</b> errores</span>
+      <section id="login-view" class="login-layout" hidden aria-labelledby="login-title">
+        <div class="welcome-copy">
+          <p class="eyebrow">Banco oficial SAS</p>
+          <h1 id="login-title">Tu espacio de preparación.</h1>
+          <p>Accede con una de las cuentas autorizadas para consultar los exámenes oficiales publicados.</p>
         </div>
-        <div class="question-heading">
-          <p id="question-number" class="step"></p>
-          <span id="question-status" class="badge" hidden></span>
-        </div>
-        <h2 id="question-text"></h2>
-        <div id="options" class="options" role="group" aria-labelledby="question-text"></div>
-        <p id="feedback" class="feedback" aria-live="assertive"></p>
-        <button id="next-button" class="primary next" type="button" hidden>Siguiente</button>
+        <form id="login-form" class="panel login-form">
+          <div>
+            <p class="step">Acceso privado</p>
+            <h2>Iniciar sesión</h2>
+          </div>
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" autocomplete="username" required>
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button id="login-button" class="primary" type="submit">Entrar</button>
+          <p id="login-error" class="error" role="alert" hidden></p>
+        </form>
       </section>
 
-      <section id="summary-view" class="panel summary" hidden aria-labelledby="summary-title">
-        <p class="step">Intento completado</p>
-        <h2 id="summary-title">Buen trabajo</h2>
-        <p id="summary-time" class="lede"></p>
-        <div class="score-grid">
-          <div><strong id="summary-correct">0</strong><span>Aciertos</span></div>
-          <div><strong id="summary-incorrect">0</strong><span>Errores</span></div>
+      <section id="catalog-view" class="private-view" hidden aria-labelledby="catalog-title">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Banco de exámenes</p>
+            <h1 id="catalog-title">Exámenes oficiales</h1>
+          </div>
+          <p>Últimas versiones publicadas y verificadas.</p>
         </div>
-        <div class="actions">
-          <button id="retry-button" class="primary" type="button">Repetir falladas</button>
-          <button id="restart-button" class="secondary" type="button">Nuevo cuestionario</button>
-        </div>
+        <div id="catalog-status" class="panel compact" aria-live="polite">Cargando catálogo…</div>
+        <div id="exam-grid" class="exam-grid" hidden></div>
+      </section>
+
+      <section id="exam-view" class="private-view" hidden aria-labelledby="exam-title">
+        <button id="back-button" class="text-button back" type="button">← Volver a exámenes</button>
+        <article class="panel exam-entry">
+          <p class="eyebrow">Examen oficial seleccionado</p>
+          <h1 id="exam-title"></h1>
+          <dl class="exam-facts">
+            <div><dt>Preguntas activas</dt><dd id="exam-count"></dd></div>
+            <div><dt>Duración oficial</dt><dd id="exam-duration"></dd></div>
+          </dl>
+          <div class="next-step" role="note">
+            <strong>Examen preparado</strong>
+            <span>Los modos de práctica se incorporarán en los siguientes pasos.</span>
+          </div>
+        </article>
       </section>
     </main>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="/src/app.js"></script>
   </body>
 </html>

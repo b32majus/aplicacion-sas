@@ -62,10 +62,65 @@
             <div><dt>Preguntas activas</dt><dd id="exam-count"></dd></div>
             <div><dt>Duración oficial</dt><dd id="exam-duration"></dd></div>
           </dl>
-          <div class="next-step" role="note">
-            <strong>Examen preparado</strong>
-            <span>Los modos de práctica se incorporarán en los siguientes pasos.</span>
+          <div class="study-entry">
+            <p>Estado: <strong id="exam-study-status">Sin empezar</strong></p>
+            <button id="start-study-button" class="primary" type="button">Empezar estudio normal</button>
+            <p id="exam-error" class="error" role="alert" hidden></p>
           </div>
+        </article>
+      </section>
+
+      <section id="study-view" class="private-view" hidden aria-labelledby="study-exam-title">
+        <div class="study-toolbar">
+          <button id="exit-study-button" class="text-button" type="button">← Salir y guardar</button>
+          <button id="pause-button" class="secondary" type="button">Pausar</button>
+        </div>
+        <article id="study-panel" class="panel study-panel">
+          <div class="study-heading">
+            <div>
+              <p class="eyebrow">Estudio normal · <span id="study-progress"></span></p>
+              <h1 id="study-exam-title"></h1>
+            </div>
+            <p id="active-time" class="active-time"></p>
+          </div>
+          <p id="version-pin" class="version-pin"></p>
+          <div id="pause-message" class="pause-message" hidden>
+            <strong>Estudio en pausa</strong>
+            <span>El tiempo activo está detenido.</span>
+          </div>
+          <div id="question-content">
+            <p id="question-label" class="step"></p>
+            <h2 id="question-text"></h2>
+            <fieldset id="answer-options" class="answer-options"></fieldset>
+            <div id="correction" class="correction" role="status" hidden></div>
+            <p id="study-error" class="error" role="alert" hidden></p>
+            <div class="study-actions">
+              <button id="confirm-button" class="primary" type="button" disabled>Confirmar respuesta</button>
+              <button id="skip-button" class="secondary" type="button">Saltar</button>
+              <button id="next-pending-button" class="secondary" type="button" hidden>Siguiente pendiente</button>
+              <button id="complete-button" class="primary" type="button" hidden>Completar y ver resumen</button>
+            </div>
+          </div>
+        </article>
+        <nav class="question-navigation" aria-label="Navegación de preguntas">
+          <p>Pendiente · correcta · incorrecta</p>
+          <div id="question-numbers"></div>
+        </nav>
+      </section>
+
+      <section id="summary-view" class="private-view" hidden aria-labelledby="summary-title">
+        <article class="panel summary-panel">
+          <p class="eyebrow">Intento finalizado</p>
+          <h1 id="summary-title">Resumen</h1>
+          <dl class="summary-grid">
+            <div><dt>Correctas</dt><dd id="summary-correct"></dd></div>
+            <div><dt>Incorrectas</dt><dd id="summary-wrong"></dd></div>
+            <div><dt>Precisión</dt><dd id="summary-accuracy"></dd></div>
+            <div><dt>Tiempo activo</dt><dd id="summary-time"></dd></div>
+            <div><dt>Nuevas falladas pendientes</dt><dd id="summary-pending"></dd></div>
+            <div><dt>Nuevas dominadas</dt><dd id="summary-mastered"></dd></div>
+          </dl>
+          <button id="summary-catalog-button" class="primary" type="button">Volver a exámenes</button>
         </article>
       </section>
     </main>

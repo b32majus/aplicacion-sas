@@ -23,6 +23,8 @@ test("muestra solo las versiones publicables actuales producidas por T01", async
   ]);
   assert.equal(catalog.every(({ activeCount }) => activeCount === 150), true);
   assert.equal(catalog.every(({ durationMinutes }) => durationMinutes === 180), true);
+  assert.equal(catalog.every(({ versionPath }) => versionPath.includes("/versions/")), true);
+  assert.equal(catalog.every(({ questions }) => questions.length === 150), true);
 });
 
 test("descarta un paquete que no sea la versión publicable indicada", async () => {

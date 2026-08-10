@@ -8,6 +8,10 @@ const required = [
   "VITE_SUPABASE_PUBLISHABLE_KEY",
   "SAS_TEST_EMAIL",
   "SAS_TEST_PASSWORD",
+  "SAS_TEST_EMAIL_2",
+  "SAS_TEST_PASSWORD_2",
+  "SAS_TEST_EMAIL_3",
+  "SAS_TEST_PASSWORD_3",
 ];
 const missing = required.filter((name) => !process.env[name]);
 if (missing.length) {

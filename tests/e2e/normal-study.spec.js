@@ -87,9 +87,18 @@ async function choose(page, optionId) {
 }
 
 async function chooseCorrectAndConfirm(page) {
+  const summary = page.getByText("Intento finalizado");
+  const confirm = page.getByRole("button", { name: "Confirmar respuesta" });
+  if (!await confirm.isVisible()) {
+    await Promise.race([
+      summary.waitFor({ state: "visible" }),
+      confirm.waitFor({ state: "visible" }),
+    ]);
+  }
+  if (await summary.isVisible()) return;
   const question = await currentQuestion(page);
   await choose(page, question.correctOption);
-  await page.getByRole("button", { name: "Confirmar respuesta" }).click();
+  await confirm.click();
   await expect(page.locator("#correction")).toContainText("Correcta.");
 }
 
@@ -157,7 +166,7 @@ test("Seam 2 regresión B: la navegación numerada muestra la pregunta antes de 
 
   let finishSave;
   const saveFinished = new Promise((resolve) => { finishSave = resolve; });
-  await page.route("**/rest/v1/rpc/save_normal_attempt", async (route) => {
+  await page.route("**/rest/v1/rpc/sync_active_attempt", async (route) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     await route.continue();
     finishSave();
@@ -176,7 +185,7 @@ test("Seam 2 regresión C: confirmar corrige y bloquea localmente antes de persi
   await login(page);
   await openRealExam(page);
 
-  await page.route("**/rest/v1/rpc/confirm_normal_answer", async (route) => {
+  await page.route("**/rest/v1/rpc/sync_active_attempt", async (route) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     await route.continue();
   });
@@ -185,7 +194,7 @@ test("Seam 2 regresión C: confirmar corrige y bloquea localmente antes de persi
   const wrongOption = question.options.find(({ id }) => id !== question.correctOption).id;
   await choose(page, wrongOption);
   const confirmationFinished = page.waitForResponse((response) => (
-    response.url().endsWith("/rest/v1/rpc/confirm_normal_answer")
+    response.url().endsWith("/rest/v1/rpc/sync_active_attempt")
     && response.request().method() === "POST"
   ));
   await page.getByRole("button", { name: "Confirmar respuesta" }).click();
@@ -224,7 +233,7 @@ test("Seam 2 regresión D: una confirmación incierta se reintenta sin recargar 
   const confirmationPayloads = [];
   let firstRequestFinished;
   const firstRequestReachedServer = new Promise((resolve) => { firstRequestFinished = resolve; });
-  await page.route("**/rest/v1/rpc/confirm_normal_answer", async (route) => {
+  await page.route("**/rest/v1/rpc/sync_active_attempt", async (route) => {
     confirmationPayloads.push(route.request().postDataJSON());
     if (confirmationPayloads.length === 1) {
       const response = await route.fetch();
@@ -243,18 +252,18 @@ test("Seam 2 regresión D: una confirmación incierta se reintenta sin recargar 
     `Incorrecta. La respuesta oficial es ${question.correctOption}.`,
   );
   await expect(page.locator(`#answer-options input[value="${wrongOption}"]`)).toBeDisabled();
-  await expect(page.getByRole("button", { name: "Reintentar confirmación" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Reintentar sincronización" })).toBeVisible();
 
   const retryFinished = page.waitForResponse((response) => (
-    response.url().endsWith("/rest/v1/rpc/confirm_normal_answer")
+    response.url().endsWith("/rest/v1/rpc/sync_active_attempt")
     && response.request().method() === "POST"
   ));
-  await page.getByRole("button", { name: "Reintentar confirmación" }).click();
+  await page.getByRole("button", { name: "Reintentar sincronización" }).click();
   expect((await retryFinished).ok()).toBe(true);
   expect(confirmationPayloads).toHaveLength(2);
   expect(confirmationPayloads[1]).toEqual(confirmationPayloads[0]);
 
-  const [{ p_confirmation_id: confirmationId }] = confirmationPayloads;
+  const confirmationId = confirmationPayloads[0].p_pending_snapshot.study_confirmations[0].id;
   const answersResponse = await request.get(
     `${process.env.VITE_SUPABASE_URL}/rest/v1/attempt_answers?attempt_id=eq.${attemptId}&question_id=eq.${question.id}&select=id,selected_option,correct_option,is_correct`,
     { headers: apiHeaders(token) },

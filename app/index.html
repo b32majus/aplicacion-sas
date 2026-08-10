@@ -77,6 +77,7 @@
             <button id="start-study-button" class="primary" type="button">Empezar estudio normal</button>
             <button id="start-random-study-button" class="secondary" type="button">Empezar estudio aleatorio</button>
             <button id="start-failed-button" class="secondary" type="button">Empezar Solo falladas</button>
+            <button id="start-exam-button" class="secondary" type="button">Empezar Modo examen</button>
             <p id="exam-error" class="error" role="alert" hidden></p>
           </div>
         </article>
@@ -110,13 +111,15 @@
             <div class="study-actions">
               <button id="confirm-button" class="primary" type="button" disabled>Confirmar respuesta</button>
               <button id="skip-button" class="secondary" type="button">Saltar</button>
+              <button id="clear-exam-answer" class="secondary" type="button" hidden>Borrar respuesta</button>
+              <button id="submit-exam-button" class="primary" type="button" hidden>Entregar examen</button>
               <button id="next-pending-button" class="secondary" type="button" hidden>Siguiente pendiente</button>
               <button id="complete-button" class="primary" type="button" hidden>Completar y ver resumen</button>
             </div>
           </div>
         </article>
         <nav class="question-navigation" aria-label="Navegación de preguntas">
-          <p>Pendiente · correcta · incorrecta</p>
+          <p id="navigation-legend">Pendiente · correcta · incorrecta</p>
           <div id="question-numbers"></div>
         </nav>
       </section>
@@ -128,11 +131,14 @@
           <dl class="summary-grid">
             <div><dt>Correctas</dt><dd id="summary-correct"></dd></div>
             <div><dt>Incorrectas</dt><dd id="summary-wrong"></dd></div>
-            <div><dt>Precisión</dt><dd id="summary-accuracy"></dd></div>
-            <div><dt>Tiempo activo</dt><dd id="summary-time"></dd></div>
-            <div><dt id="summary-pending-label">Nuevas falladas pendientes</dt><dd id="summary-pending"></dd></div>
-            <div><dt id="summary-mastered-label">Nuevas dominadas</dt><dd id="summary-mastered"></dd></div>
+            <div id="summary-blank-wrap" hidden><dt>En blanco</dt><dd id="summary-blank"></dd></div>
+            <div id="summary-score-wrap" hidden><dt>Nota</dt><dd id="summary-score"></dd></div>
+            <div id="summary-accuracy-wrap"><dt>Precisión</dt><dd id="summary-accuracy"></dd></div>
+            <div><dt id="summary-time-label">Tiempo activo</dt><dd id="summary-time"></dd></div>
+            <div id="summary-pending-wrap"><dt id="summary-pending-label">Nuevas falladas pendientes</dt><dd id="summary-pending"></dd></div>
+            <div id="summary-mastered-wrap"><dt id="summary-mastered-label">Nuevas dominadas</dt><dd id="summary-mastered"></dd></div>
           </dl>
+          <p id="summary-record" class="record-callout" hidden>Nuevo récord personal</p>
           <div id="summary-pending-list-wrap" class="summary-pending-list" hidden>
             <h2>Continúan en Falladas pendientes</h2>
             <ul id="summary-pending-list"></ul>
@@ -148,6 +154,16 @@
         <div class="dialog-actions">
           <button id="cancel-strategy-change" class="secondary" type="button">Cancelar</button>
           <button id="confirm-strategy-change" class="primary" type="button">Cambiar estrategia</button>
+        </div>
+      </dialog>
+      <dialog id="exam-submit-dialog" class="strategy-warning" aria-labelledby="exam-submit-title">
+        <p class="eyebrow">Entrega anticipada</p>
+        <h2 id="exam-submit-title">¿Entregar el examen ahora?</h2>
+        <p id="exam-submit-counts"></p>
+        <p>Tras confirmar ya no podrás cambiar ninguna respuesta.</p>
+        <div class="dialog-actions">
+          <button id="cancel-exam-submit" class="secondary" type="button">Seguir con el examen</button>
+          <button id="confirm-exam-submit" class="primary" type="button">Confirmar entrega</button>
         </div>
       </dialog>
     </main>

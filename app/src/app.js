@@ -35,6 +35,7 @@ let timer;
 let routeSerial = 0;
 let savePromise = Promise.resolve();
 let pendingConfirmationPayload = null;
+let confirmationRetryAvailable = false;
 let pendingSavePayload = null;
 
 function showOnly(view) {
@@ -200,12 +201,14 @@ async function callConfirmation(payload) {
 
 async function retryPendingConfirmation(payload) {
   if (!payload) return;
+  confirmationRetryAvailable = false;
   try {
     study.applyConfirmation(await callConfirmation(payload));
     pendingConfirmationPayload = null;
     persistLocalState();
   } catch (error) {
     pendingConfirmationPayload = payload;
+    confirmationRetryAvailable = true;
     persistLocalState();
     showError(elements["study-error"], `La confirmación sigue pendiente de conexión. ${error.message}`);
   }
@@ -231,6 +234,7 @@ async function startStudy() {
     study = new NormalStudySession(pinned.exam, attempt, answers);
     pendingActiveSeconds = 0;
     pendingConfirmationPayload = null;
+    confirmationRetryAvailable = false;
     pendingSavePayload = null;
     const pendingConfirmation = restoreLocalState();
     window.location.hash = `study=${encodeURIComponent(selectedExam.id)}`;
@@ -257,17 +261,16 @@ function renderNavigation() {
     button.type = "button";
     button.textContent = String(index + 1);
     button.className = `question-number ${study.stateFor(question.id)}`;
-    button.disabled = Boolean(pendingConfirmationPayload);
     if (index === study.index) button.classList.add("current");
     button.setAttribute("aria-label", `Pregunta ${index + 1}: ${study.stateFor(question.id)}`);
     button.addEventListener("click", async () => {
       study.goTo(index);
+      renderStudy();
       try {
         await saveAttempt();
       } catch (error) {
         showError(elements["study-error"], `La posición se guardará al recuperar conexión. ${error.message}`);
       }
-      renderStudy();
     });
     return button;
   }));
@@ -298,8 +301,14 @@ function optionLabel(question, option, latest, corrected) {
 function renderStudy() {
   showOnly(elements["study-view"]);
   const question = study.currentQuestion;
-  const latest = study.latestAnswers.get(question.id);
-  const corrected = Boolean(latest) || study.justConfirmedId === question.id;
+  const pending = pendingConfirmationPayload?.p_question_id === question.id ? {
+    id: pendingConfirmationPayload.p_confirmation_id,
+    selected_option: pendingConfirmationPayload.p_selected_option,
+    correct_option: question.correctOption,
+    is_correct: pendingConfirmationPayload.p_selected_option === question.correctOption,
+  } : null;
+  const latest = study.latestAnswers.get(question.id) || pending;
+  const corrected = Boolean(latest);
   const paused = study.attempt.is_paused;
   elements["study-panel"].dataset.attemptId = study.attempt.id;
   elements["study-panel"].dataset.questionId = question.id;
@@ -327,8 +336,9 @@ function renderStudy() {
     delete elements["correction"].dataset.confirmationId;
   }
 
-  elements["confirm-button"].hidden = corrected;
-  elements["confirm-button"].disabled = !study.selectedOption || paused;
+  elements["confirm-button"].hidden = corrected && !confirmationRetryAvailable;
+  elements["confirm-button"].textContent = confirmationRetryAvailable ? "Reintentar confirmación" : "Confirmar respuesta";
+  elements["confirm-button"].disabled = paused || (!confirmationRetryAvailable && !study.selectedOption);
   elements["skip-button"].hidden = corrected;
   elements["skip-button"].disabled = paused || Boolean(pendingConfirmationPayload);
   elements["next-pending-button"].hidden = !corrected || study.isResolved;
@@ -341,6 +351,7 @@ async function confirmAnswer() {
   const question = study.currentQuestion;
   if (!study.selectedOption) return;
   clearError(elements["study-error"]);
+  confirmationRetryAvailable = false;
   elements["confirm-button"].disabled = true;
   const payload = pendingConfirmationPayload || {
     p_confirmation_id: crypto.randomUUID(),
@@ -351,13 +362,16 @@ async function confirmAnswer() {
   };
   pendingConfirmationPayload = payload;
   persistLocalState();
+  renderStudy();
   try {
     study.applyConfirmation(await callConfirmation(payload));
     pendingConfirmationPayload = null;
     persistLocalState();
     renderStudy();
+    if (study.isResolved) await completeStudy();
   } catch (error) {
     pendingConfirmationPayload = payload;
+    confirmationRetryAvailable = true;
     persistLocalState();
     showError(elements["study-error"], `No se pudo confirmar. Se reintentará con la misma respuesta. ${error.message}`);
     renderStudy();

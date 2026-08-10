@@ -109,6 +109,178 @@ async function openRealExam(page) {
   }
 }
 
+test("Seam 2 regresión A: la última respuesta completa el estudio y muestra el resumen", async ({ page, request }) => {
+  test.setTimeout(360_000);
+  const token = await apiSession(request, "_3");
+  await completeActiveAttempt(request, token);
+  await login(page, "_3");
+  await openRealExam(page);
+
+  const attemptId = await page.locator("#study-panel").getAttribute("data-attempt-id");
+  const attemptsResponse = await request.get(
+    `${process.env.VITE_SUPABASE_URL}/rest/v1/attempts?id=eq.${attemptId}&select=question_ids`,
+    { headers: apiHeaders(token) },
+  );
+  expect(attemptsResponse.ok()).toBe(true);
+  const [{ question_ids: questionIds }] = await attemptsResponse.json();
+  const finalPendingId = await page.locator("#study-panel").getAttribute("data-question-id");
+
+  for (const questionId of questionIds) {
+    if (questionId === finalPendingId) continue;
+    const question = questions.get(questionId);
+    const confirmation = await request.post(`${process.env.VITE_SUPABASE_URL}/rest/v1/rpc/confirm_normal_answer`, {
+      headers: apiHeaders(token),
+      data: {
+        p_confirmation_id: crypto.randomUUID(),
+        p_attempt_id: attemptId,
+        p_question_id: question.id,
+        p_selected_option: question.correctOption,
+        p_correct_option: question.correctOption,
+      },
+    });
+    expect(confirmation.ok()).toBe(true);
+  }
+
+  await page.reload();
+  await expect(page.locator("#study-panel")).toHaveAttribute("data-question-id", finalPendingId);
+  await choose(page, questions.get(finalPendingId).correctOption);
+  await page.getByRole("button", { name: "Confirmar respuesta" }).click();
+
+  await expect(page.getByText("Intento finalizado")).toBeVisible();
+});
+
+test("Seam 2 regresión B: la navegación numerada muestra la pregunta antes de guardar", async ({ page, request }) => {
+  const token = await apiSession(request, "_2");
+  await completeActiveAttempt(request, token);
+  await login(page, "_2");
+  await openRealExam(page);
+
+  let finishSave;
+  const saveFinished = new Promise((resolve) => { finishSave = resolve; });
+  await page.route("**/rest/v1/rpc/save_normal_attempt", async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    await route.continue();
+    finishSave();
+  });
+
+  const targetQuestionId = [...questions.keys()][1];
+  await page.getByRole("button", { name: "Pregunta 2: pending" }).click();
+
+  await expect(page.locator("#study-panel")).toHaveAttribute("data-question-id", targetQuestionId, { timeout: 500 });
+  await saveFinished;
+});
+
+test("Seam 2 regresión C: confirmar corrige y bloquea localmente antes de persistir", async ({ page, request }) => {
+  const token = await apiSession(request, "");
+  await completeActiveAttempt(request, token);
+  await login(page);
+  await openRealExam(page);
+
+  await page.route("**/rest/v1/rpc/confirm_normal_answer", async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    await route.continue();
+  });
+
+  const question = await currentQuestion(page);
+  const wrongOption = question.options.find(({ id }) => id !== question.correctOption).id;
+  await choose(page, wrongOption);
+  const confirmationFinished = page.waitForResponse((response) => (
+    response.url().endsWith("/rest/v1/rpc/confirm_normal_answer")
+    && response.request().method() === "POST"
+  ));
+  await page.getByRole("button", { name: "Confirmar respuesta" }).click();
+
+  await expect(page.locator("#correction")).toContainText(
+    `Incorrecta. La respuesta oficial es ${question.correctOption}.`,
+    { timeout: 500 },
+  );
+  await expect(page.locator(`#answer-options input[value="${wrongOption}"]`)).toBeDisabled({ timeout: 500 });
+  expect((await confirmationFinished).ok()).toBe(true);
+});
+
+test("Seam 2 regresión D: una confirmación incierta se reintenta sin recargar y sin duplicar efectos", async ({ page, request }) => {
+  const token = await apiSession(request, "");
+  await completeActiveAttempt(request, token);
+  await login(page);
+  await openRealExam(page);
+
+  const attemptId = await page.locator("#study-panel").getAttribute("data-attempt-id");
+  const question = await currentQuestion(page);
+  const wrongOption = question.options.find(({ id }) => id !== question.correctOption).id;
+  const progressResponse = await request.get(
+    `${process.env.VITE_SUPABASE_URL}/rest/v1/question_progress?exam_id=eq.${exam.id}&question_id=eq.${question.id}&select=correct_count,wrong_count,current_streak,mastered,pending_failure`,
+    { headers: apiHeaders(token) },
+  );
+  expect(progressResponse.ok()).toBe(true);
+  const [existingProgress] = await progressResponse.json();
+  const progressBefore = existingProgress || {
+    correct_count: 0,
+    wrong_count: 0,
+    current_streak: 0,
+    mastered: false,
+    pending_failure: false,
+  };
+
+  const confirmationPayloads = [];
+  let firstRequestFinished;
+  const firstRequestReachedServer = new Promise((resolve) => { firstRequestFinished = resolve; });
+  await page.route("**/rest/v1/rpc/confirm_normal_answer", async (route) => {
+    confirmationPayloads.push(route.request().postDataJSON());
+    if (confirmationPayloads.length === 1) {
+      const response = await route.fetch();
+      firstRequestFinished(response.status());
+      await route.abort("connectionreset");
+      return;
+    }
+    await route.continue();
+  });
+
+  await choose(page, wrongOption);
+  await page.getByRole("button", { name: "Confirmar respuesta" }).click();
+
+  expect(await firstRequestReachedServer).toBe(200);
+  await expect(page.locator("#correction")).toContainText(
+    `Incorrecta. La respuesta oficial es ${question.correctOption}.`,
+  );
+  await expect(page.locator(`#answer-options input[value="${wrongOption}"]`)).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Reintentar confirmación" })).toBeVisible();
+
+  const retryFinished = page.waitForResponse((response) => (
+    response.url().endsWith("/rest/v1/rpc/confirm_normal_answer")
+    && response.request().method() === "POST"
+  ));
+  await page.getByRole("button", { name: "Reintentar confirmación" }).click();
+  expect((await retryFinished).ok()).toBe(true);
+  expect(confirmationPayloads).toHaveLength(2);
+  expect(confirmationPayloads[1]).toEqual(confirmationPayloads[0]);
+
+  const [{ p_confirmation_id: confirmationId }] = confirmationPayloads;
+  const answersResponse = await request.get(
+    `${process.env.VITE_SUPABASE_URL}/rest/v1/attempt_answers?attempt_id=eq.${attemptId}&question_id=eq.${question.id}&select=id,selected_option,correct_option,is_correct`,
+    { headers: apiHeaders(token) },
+  );
+  expect(answersResponse.ok()).toBe(true);
+  expect(await answersResponse.json()).toEqual([{
+    id: confirmationId,
+    selected_option: wrongOption,
+    correct_option: question.correctOption,
+    is_correct: false,
+  }]);
+
+  const progressAfterResponse = await request.get(
+    `${process.env.VITE_SUPABASE_URL}/rest/v1/question_progress?exam_id=eq.${exam.id}&question_id=eq.${question.id}&select=correct_count,wrong_count,current_streak,mastered,pending_failure`,
+    { headers: apiHeaders(token) },
+  );
+  expect(progressAfterResponse.ok()).toBe(true);
+  expect(await progressAfterResponse.json()).toEqual([{
+    correct_count: progressBefore.correct_count,
+    wrong_count: progressBefore.wrong_count + 1,
+    current_streak: 0,
+    mastered: false,
+    pending_failure: true,
+  }]);
+});
+
 test("Seam 2: estudio normal real, persistencia, idempotencia, RLS y resumen", async ({ page, request }) => {
   test.setTimeout(360_000);
   const ownerToken = await apiSession(request, "_3");
@@ -223,7 +395,11 @@ test("Seam 2: estudio normal real, persistencia, idempotencia, RLS y resumen", a
   expect(forbiddenSave.ok()).toBe(false);
 
   for (let guard = 0; guard < 400; guard += 1) {
-    if (await page.getByRole("button", { name: "Completar y ver resumen" }).isVisible()) break;
+    if (await page.getByText("Intento finalizado").isVisible()) break;
+    if (await page.getByRole("button", { name: "Completar y ver resumen" }).isVisible()) {
+      await expect(page.getByText("Intento finalizado")).toBeVisible();
+      break;
+    }
     if (await page.locator("#correction").isVisible()) {
       await page.getByRole("button", { name: "Siguiente pendiente" }).click();
     } else {
@@ -231,11 +407,9 @@ test("Seam 2: estudio normal real, persistencia, idempotencia, RLS y resumen", a
     }
   }
 
-  await expect(page.getByRole("button", { name: "Completar y ver resumen" })).toBeVisible();
+  await expect(page.getByText("Intento finalizado")).toBeVisible();
   await expect(page.locator(".question-number.pending")).toHaveCount(0);
   await expect(page.locator(".question-number.incorrect")).not.toHaveCount(0);
-  await page.getByRole("button", { name: "Completar y ver resumen" }).click();
-  await expect(page.getByText("Intento finalizado")).toBeVisible();
   await expect(page.locator("#summary-correct")).not.toHaveText("0");
   await expect(page.locator("#summary-wrong")).not.toHaveText("0");
   await expect(page.locator("#summary-accuracy")).toContainText("%");

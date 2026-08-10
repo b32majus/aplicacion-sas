@@ -44,9 +44,11 @@ async function mockStudyPersistence(page, state = studyState()) {
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
     if (request.method() === "GET" && path.endsWith("/attempts")) return json(route, [state.attempt]);
-    if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, []);
+    if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, state.progress || []);
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
+    if (request.method() === "GET" && path.endsWith("/attempt_question_sources")) return json(route, state.sources || []);
     if (path.endsWith("/rpc/start_or_replace_principal_attempt")) return json(route, state.attempt);
+    if (path.endsWith("/rpc/start_or_resume_failed_attempt")) return json(route, state.attempt);
     if (path.endsWith("/rpc/sync_active_attempt")) {
       const payload = request.postDataJSON();
       if (payload.p_base_revision !== state.attempt.revision) {
@@ -93,6 +95,10 @@ function examState({ nowMs = Date.now(), deadlineMs = 60 * 60 * 1000 } = {}) {
     successfulSyncs: 0,
     finalizations: 0,
     syncedSnapshots: [],
+    blockNextSync: false,
+    syncStarted: false,
+    releaseSync: null,
+    rejectNonFinalizing: false,
     attempt: {
       id: "20000000-0000-4000-8000-000000000072",
       user_id: "10000000-0000-4000-8000-000000000071",
@@ -129,6 +135,14 @@ async function mockExamPersistence(page, state = examState()) {
     if (path.endsWith("/rpc/finish_expired_exam_attempt")) return json(route, null);
     if (path.endsWith("/rpc/sync_active_attempt")) {
       const payload = request.postDataJSON();
+      if (state.blockNextSync) {
+        state.blockNextSync = false;
+        state.syncStarted = true;
+        await new Promise((resolve) => { state.releaseSync = resolve; });
+      }
+      if (state.rejectNonFinalizing && !payload.p_pending_snapshot.finalize) {
+        return json(route, { message: "El deadline del Modo examen ya ha vencido." }, 409);
+      }
       if (state.attempt.status !== "active") {
         return json(route, { message: "El intento ya no está activo." }, 409);
       }
@@ -171,7 +185,9 @@ async function mockExamPersistence(page, state = examState()) {
           completed_at: state.attempt.completed_at,
         };
       }
-      return json(route, { attempt: state.attempt, answers: state.answers, summary });
+      const returnedAttempt = { ...state.attempt };
+      delete returnedAttempt.server_now;
+      return json(route, { attempt: returnedAttempt, answers: state.answers, summary });
     }
     return json(route, { message: `Unexpected test request: ${request.method()} ${path}` }, 500);
   });
@@ -268,7 +284,8 @@ test("Seam 2 regresión A: conserva 350 segundos activos como incrementos de má
     await page.evaluate(() => window.dispatchEvent(new PointerEvent("pointerdown")));
     await page.clock.runFor(50_000);
   }
-  await page.getByRole("button", { name: "Pausar" }).click();
+  await page.evaluate(() => document.querySelector("#pause-button").click());
+  await expect(page.getByText("Estudio en pausa")).toBeVisible();
   expect(await pendingSeconds()).toBe(initialSeconds + 350);
 
   await page.reload();
@@ -284,6 +301,41 @@ test("Seam 2 regresión A: conserva 350 segundos activos como incrementos de má
 
   await page.clock.fastForward("10:00");
   expect(remote.attempt.active_seconds).toBe(initialSeconds + 350);
+});
+
+test("Seam 2: una Sesión de falladas conserva su pregunta de origen al reabrir sin conexión", async ({ page }) => {
+  const remote = studyState();
+  const question = questions[0];
+  Object.assign(remote.attempt, {
+    kind: "failed",
+    principal: false,
+    strategy: "failed",
+    failed_scope_exam_id: exam.id,
+    question_ids: [question.id],
+  });
+  remote.progress = [{ exam_id: exam.id, question_id: question.id }];
+  remote.sources = [{
+    position: 0,
+    exam_id: exam.id,
+    exam_version_id: exam.version.id,
+    exam_version_path: entry.latestPath,
+    question_id: question.id,
+  }];
+  await mockStudyPersistence(page, remote);
+  await login(page);
+  await page.locator(`[data-exam-id="${exam.id}"]`).getByRole("button", { name: "Elegir examen" }).click();
+  await page.getByRole("button", { name: /Solo falladas|Sesión de falladas activa/ }).click();
+  await expect(page.locator("#study-panel")).toHaveAttribute("data-kind", "failed");
+
+  await setBackendOffline(page, remote, true);
+  await confirmCurrent(page);
+  await page.reload();
+
+  await expect(page.locator("#study-panel")).toHaveAttribute("data-kind", "failed");
+  await expect(page.locator("#study-panel")).toHaveAttribute("data-question-id", question.id);
+  await expect(page.locator("#study-source")).toContainText(exam.title);
+  await expect(page.locator("#correction")).toContainText("Correcta.");
+  await expect(page.locator("#sync-status")).toContainText("Sin conexión · Cambios pendientes");
 });
 
 test("Seam 2: corte breve de examen conserva el último cambio y el borrado antes de sincronizar", async ({ page }) => {
@@ -318,14 +370,16 @@ test("Seam 2: corte breve de examen conserva el último cambio y el borrado ante
 });
 
 test("Seam 2: expiración offline bloquea, sobrevive a recarga y finaliza una vez al reconectar", async ({ page }) => {
-  const now = new Date("2026-08-10T12:00:00Z");
-  await page.clock.install({ time: now });
-  const remote = await mockExamPersistence(page, examState({ nowMs: now.getTime(), deadlineMs: 5_000 }));
+  const serverNow = new Date("2026-08-10T12:00:00Z");
+  await page.clock.install({ time: new Date(serverNow.getTime() - 60_000) });
+  const remote = await mockExamPersistence(page, examState({ nowMs: serverNow.getTime(), deadlineMs: 5_000 }));
   await login(page);
   await openExam(page);
 
-  await setBackendOffline(page, remote, true);
   await page.locator(`#answer-options input[value="${questions[0].options[0].id}"]`).check();
+  await expect(page.locator("#sync-status")).toContainText("En línea · Sincronizado");
+  await setBackendOffline(page, remote, true);
+  await page.locator(`#answer-options input[value="${questions[0].options[1].id}"]`).check();
   await page.clock.runFor(5_100);
   await expect(page.locator("#answer-options input").first()).toBeDisabled();
   await expect(page.getByRole("button", { name: "Entregar examen" })).toBeDisabled();
@@ -343,8 +397,27 @@ test("Seam 2: expiración offline bloquea, sobrevive a recarga y finaliza una ve
   await setBackendOffline(page, remote, false);
   await expect(page.getByText("Intento finalizado")).toBeVisible();
   expect(remote.finalizations).toBe(1);
-  expect(remote.answers).toHaveLength(1);
+  expect(remote.answers).toHaveLength(2);
   expect(await page.evaluate(() => Object.keys(localStorage).filter((key) => key.startsWith("sas-active-attempt:")))).toEqual([]);
+});
+
+test("Seam 2: un autoguardado que cruza el deadline reintenta la finalización sin reconectar", async ({ page }) => {
+  const now = new Date("2026-08-10T14:00:00Z");
+  await page.clock.install({ time: now });
+  const remote = await mockExamPersistence(page, examState({ nowMs: now.getTime(), deadlineMs: 1_000 }));
+  await login(page);
+  await openExam(page);
+
+  remote.blockNextSync = true;
+  await page.locator(`#answer-options input[value="${questions[0].options[0].id}"]`).check();
+  await expect.poll(() => remote.syncStarted).toBe(true);
+  await page.clock.runFor(1_100);
+  remote.rejectNonFinalizing = true;
+  remote.releaseSync();
+
+  await expect(page.getByText("Intento finalizado")).toBeVisible();
+  expect(remote.finalizations).toBe(1);
+  expect(remote.syncedSnapshots.at(-1).finalize).toBe(true);
 });
 
 test("Seam 2: dos dispositivos rechazan la revisión obsoleta y muestran el estado canónico", async ({ page: deviceA, browser }, testInfo) => {
@@ -377,7 +450,11 @@ test("Seam 2: dos dispositivos rechazan la revisión obsoleta y muestran el esta
     expect(remote.attempt.revision).toBe(1);
     expect(remote.answers).toHaveLength(1);
     expect(remote.answers[0].selected_option).toBe(canonicalOption);
-    expect(await deviceA.evaluate(() => Object.keys(localStorage).filter((key) => key.startsWith("sas-active-attempt:")))).toEqual([]);
+    expect(await deviceA.evaluate(() => {
+      const key = Object.keys(localStorage).find((candidate) => candidate.startsWith("sas-active-attempt:"));
+      if (!key) return [];
+      return JSON.parse(localStorage.getItem(key)).pending.study_confirmations;
+    })).toEqual([]);
   } finally {
     await contextB.close();
   }

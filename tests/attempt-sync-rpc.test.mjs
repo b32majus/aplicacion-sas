@@ -189,10 +189,12 @@ test("Seam 2: una expiración offline conserva la última respuesta y finaliza u
       [examId, versionId, versionPath, questionIds],
     );
     await db.exec("alter table public.attempts disable trigger attempts_keep_pinned_identity");
+    await db.query("select set_config('app.active_attempt_sync', 'on', false)");
     await db.query(
       "update public.attempts set started_at = now() - interval '91 minutes', deadline_at = now() - interval '1 minute' where id = $1",
       [examAttempt.id],
     );
+    await db.query("select set_config('app.active_attempt_sync', 'off', false)");
     await db.exec("alter table public.attempts enable trigger attempts_keep_pinned_identity");
 
     await assert.rejects(

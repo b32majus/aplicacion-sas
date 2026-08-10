@@ -14,6 +14,14 @@ function isStaleError(error) {
   return /STALE_ATTEMPT_REVISION/.test(`${error?.message || error || ""}`);
 }
 
+function isInactiveError(error) {
+  return /intento ya no está activo/i.test(`${error?.message || error || ""}`);
+}
+
+function isDeadlineError(error) {
+  return /deadline.*vencido/i.test(`${error?.message || error || ""}`);
+}
+
 function pendingIsEmpty(pending) {
   return !pending.state_dirty
     && pending.active_increments.length === 0
@@ -22,8 +30,19 @@ function pendingIsEmpty(pending) {
     && !pending.finalize;
 }
 
-function canonicalSnapshot(attempt, answers) {
-  const snapshot = { attempt: clone(attempt), answers: clone(answers) };
+function canonicalSnapshot(attempt, answers, context = {}) {
+  const snapshot = {
+    attempt: clone(attempt),
+    answers: clone(answers),
+    questions: clone(context.questions || null),
+  };
+  if (
+    snapshot.attempt.kind === "exam"
+    && !Number.isFinite(snapshot.attempt.server_clock_offset_ms)
+    && Number.isFinite(context.attempt?.server_clock_offset_ms)
+  ) {
+    snapshot.attempt.server_clock_offset_ms = context.attempt.server_clock_offset_ms;
+  }
   if (attempt.kind !== "exam") return snapshot;
 
   const latest = new Map();
@@ -78,8 +97,8 @@ export class ActiveAttemptPersistence {
     return this.record?.pending.active_increments.reduce((total, item) => total + item.seconds, 0) || 0;
   }
 
-  begin(attempt, answers) {
-    this.remote = canonicalSnapshot(attempt, answers);
+  begin(attempt, answers, context = {}) {
+    this.remote = canonicalSnapshot(attempt, answers, context);
     if (!this.record) return this.view();
     if (this.record.attempt_id !== attempt.id) {
       throw new Error("Hay cambios pendientes de otro intento activo. Recupéralos antes de continuar.");
@@ -95,7 +114,7 @@ export class ActiveAttemptPersistence {
   restore({ examId, kind }) {
     if (!this.record) return null;
     const attempt = this.record.canonical.attempt;
-    if (attempt.exam_id !== examId || (kind && attempt.kind !== kind)) return null;
+    if ((examId && attempt.exam_id !== examId) || (kind && attempt.kind !== kind)) return null;
     this.online = false;
     this.remote = clone(this.record.canonical);
     this.#emit();
@@ -108,6 +127,7 @@ export class ActiveAttemptPersistence {
     return {
       attempt: clone(canonical.attempt),
       answers: clone(canonical.answers),
+      questions: clone(canonical.questions),
       pending: clone(this.record?.pending || null),
     };
   }
@@ -195,7 +215,10 @@ export class ActiveAttemptPersistence {
       });
       this.inFlightActiveIds.clear();
       if (error) {
-        if (isStaleError(error)) return this.#recoverCanonical();
+        if (isStaleError(error) || isInactiveError(error)) return this.#recoverCanonical();
+        if (isDeadlineError(error) && this.record.pending.finalize && !sent.pending.finalize) {
+          continue;
+        }
         if (isNetworkError(error) || !navigator.onLine) {
           this.online = false;
           if (!this.record.retry) {
@@ -210,7 +233,7 @@ export class ActiveAttemptPersistence {
       latest = Array.isArray(data) ? data[0] : data;
       this.online = true;
       this.conflict = false;
-      this.remote = canonicalSnapshot(latest.attempt, latest.answers);
+      this.remote = canonicalSnapshot(latest.attempt, latest.answers, this.remote);
       this.#removeSent(sent, latest);
       if (latest.attempt.status !== "active") {
         this.storage.removeItem(this.storageKey);
@@ -237,7 +260,7 @@ export class ActiveAttemptPersistence {
     if (!attempt) throw new Error("El intento remoto más reciente ya no está disponible.");
     this.storage.removeItem(this.storageKey);
     this.record = null;
-    this.remote = canonicalSnapshot(attempt, answers);
+    this.remote = canonicalSnapshot(attempt, answers, this.remote);
     this.online = true;
     this.conflict = true;
     this.#emit();
@@ -264,7 +287,7 @@ export class ActiveAttemptPersistence {
     if (current.serial === sent.serial) current.pending.state_dirty = false;
     if (sent.pending.finalize) current.pending.finalize = false;
     current.base_revision = result.attempt.revision;
-    current.canonical = canonicalSnapshot(result.attempt, result.answers);
+    current.canonical = canonicalSnapshot(result.attempt, result.answers, current.canonical);
     current.sync_id = crypto.randomUUID();
     if (pendingIsEmpty(current.pending)) {
       this.storage.removeItem(this.storageKey);

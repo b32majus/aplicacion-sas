@@ -349,6 +349,17 @@ async function syncPendingAttempt() {
   }
 }
 
+async function flushPendingBeforeAttemptChange(errorElement) {
+  if (!persistence?.hasPending) return true;
+  try {
+    await syncPendingAttempt();
+  } catch (error) {
+    showError(errorElement, `Sincroniza los Cambios pendientes antes de abrir otro intento. ${error.message}`);
+    return false;
+  }
+  return !persistence.hasPending;
+}
+
 async function fetchAttemptAnswers(attemptId) {
   const { data, error } = await supabase
     .from("attempt_answers")
@@ -361,6 +372,7 @@ async function fetchAttemptAnswers(attemptId) {
 
 async function startExam() {
   if (!selectedExam) return;
+  if (!await flushPendingBeforeAttemptChange(elements["exam-error"])) return;
   elements["start-exam-button"].disabled = true;
   clearError(elements["exam-error"]);
   try {
@@ -375,6 +387,7 @@ async function startExam() {
     if (error) throw error;
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
+    attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
     const pinned = attempt.exam_version_id === selectedExam.version && attempt.exam_version_path === selectedExam.versionPath
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
@@ -385,7 +398,7 @@ async function startExam() {
     study = new ExamSession(pinned.exam, view.attempt, view.answers);
     applyPendingView(view);
     activeExamAttempt = attempt;
-    examServerOffsetMs = Date.parse(view.attempt.server_now || attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
     const expired = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
@@ -401,7 +414,7 @@ async function startExam() {
       return;
     }
     study = new ExamSession(selectedExam.package, view.attempt, view.answers);
-    examServerOffsetMs = Date.parse(view.attempt.server_now || view.attempt.started_at) - Date.parse(view.attempt.started_at);
+    examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
     applyPendingView(view);
     activeExamAttempt = view.attempt;
     examSavePromise = Promise.resolve();
@@ -447,6 +460,7 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
     warnBeforeStrategyChange(strategy);
     return;
   }
+  if (!await flushPendingBeforeAttemptChange(elements["exam-error"])) return;
   elements["start-study-button"].disabled = true;
   elements["start-random-study-button"].disabled = true;
   clearError(elements["exam-error"]);
@@ -544,6 +558,7 @@ async function loadFailedSessionQuestions(attempt) {
 async function startFailedStudy(scopeExamId = null) {
   const errorElement = scopeExamId ? elements["exam-error"] : elements["all-failed-error"];
   clearError(errorElement);
+  if (!await flushPendingBeforeAttemptChange(errorElement)) return;
   elements["start-failed-button"].disabled = true;
   elements["all-failed-button"].disabled = true;
   try {
@@ -557,7 +572,7 @@ async function startFailedStudy(scopeExamId = null) {
     const attempt = normalizeRow(data);
     const questions = await loadFailedSessionQuestions(attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
-    const view = persistence.begin(attempt, answers);
+    const view = persistence.begin(attempt, answers, { questions });
     study = new NormalStudySession({
       id: attempt.exam_id,
       version: { id: attempt.exam_version_id },
@@ -574,7 +589,24 @@ async function startFailedStudy(scopeExamId = null) {
     renderStudy();
     if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    showError(errorElement, `No se pudo iniciar o recuperar la Sesión de falladas. ${error.message}`);
+    const view = persistence?.restore({ kind: "failed" });
+    const expectedScope = scopeExamId || null;
+    if (!view || (view.attempt.failed_scope_exam_id || null) !== expectedScope || !view.questions?.length) {
+      showError(errorElement, `No se pudo iniciar o recuperar la Sesión de falladas. ${error.message}`);
+      return;
+    }
+    study = new NormalStudySession({
+      id: view.attempt.exam_id,
+      version: { id: view.attempt.exam_version_id },
+      questions: view.questions,
+    }, view.attempt, view.answers);
+    activeFailedAttempt = view.attempt;
+    selectedExam = expectedScope ? catalog.find(({ id }) => id === expectedScope) : undefined;
+    confirmationRetryAvailable = true;
+    applyPendingView(view);
+    window.location.hash = `failed=${encodeURIComponent(expectedScope || "all")}`;
+    renderStudy();
+    showError(elements["study-error"], "Sin conexión. La Sesión de falladas mantiene Cambios pendientes en este dispositivo.");
   } finally {
     const count = eligibleFailureSources(scopeExamId).length;
     elements["start-failed-button"].disabled = !activeFailedAttempt && count === 0;
@@ -895,31 +927,52 @@ function showSummary(summary) {
 async function routePrivateView() {
   const serial = ++routeSerial;
   try {
-    await ensureCatalog();
     const pendingStudyId = window.location.hash.match(/^#study=([^&]+)$/)?.[1];
     const pendingExamId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
-    if (persistence?.hasPending && (pendingStudyId || pendingExamId)) {
-      const examId = decodeURIComponent(pendingStudyId || pendingExamId);
-      await selectExam(examId, { updateHash: false });
-      const kind = pendingExamId ? "exam" : "normal";
-      const view = persistence.restore({ examId, kind });
-      if (view) {
-        study = kind === "exam"
-          ? new ExamSession(selectedExam.package, view.attempt, view.answers)
-          : new NormalStudySession(selectedExam.package, view.attempt, view.answers);
+    const pendingFailedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
+    if (persistence?.hasPending && pendingFailedScope) {
+      const scope = decodeURIComponent(pendingFailedScope);
+      const expectedScope = scope === "all" ? null : scope;
+      const view = persistence.restore({ kind: "failed" });
+      if (view && (view.attempt.failed_scope_exam_id || null) === expectedScope && view.questions?.length) {
+        const source = view.questions.find(({ sourceExamId }) => sourceExamId === expectedScope);
+        selectedExam = expectedScope ? { id: expectedScope, title: source?.sourceExamTitle || expectedScope } : undefined;
+        study = new NormalStudySession({
+          id: view.attempt.exam_id,
+          version: { id: view.attempt.exam_version_id },
+          questions: view.questions,
+        }, view.attempt, view.answers);
+        activeFailedAttempt = view.attempt;
         applyPendingView(view);
-        if (kind === "exam") {
-          activeExamAttempt = view.attempt;
-          examServerOffsetMs = Date.parse(view.attempt.server_now || view.attempt.started_at)
-            - Date.parse(view.attempt.started_at);
-          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
-          if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
-        } else {
-          activeStrategies.set(examId, view.attempt.strategy);
-        }
         renderStudy();
         syncPendingAttempt().catch(() => {});
         return;
+      }
+    }
+    await ensureCatalog();
+    if (persistence?.hasPending && (pendingStudyId || pendingExamId || pendingFailedScope)) {
+      if (pendingStudyId || pendingExamId) {
+        const examId = decodeURIComponent(pendingStudyId || pendingExamId);
+        await selectExam(examId, { updateHash: false });
+        const kind = pendingExamId ? "exam" : "normal";
+        const view = persistence.restore({ examId, kind });
+        if (view) {
+          study = kind === "exam"
+            ? new ExamSession(selectedExam.package, view.attempt, view.answers)
+            : new NormalStudySession(selectedExam.package, view.attempt, view.answers);
+          applyPendingView(view);
+          if (kind === "exam") {
+            activeExamAttempt = view.attempt;
+            examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+            study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+            if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
+          } else {
+            activeStrategies.set(examId, view.attempt.strategy);
+          }
+          renderStudy();
+          syncPendingAttempt().catch(() => {});
+          return;
+        }
       }
     }
     try {

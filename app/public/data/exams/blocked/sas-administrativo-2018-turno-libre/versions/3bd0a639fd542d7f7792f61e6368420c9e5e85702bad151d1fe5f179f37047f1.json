@@ -1,0 +1,4494 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-administrativo-2018-turno-libre",
+  "title": "SAS Administrativo/a 2018 - Turno Libre",
+  "category": "Administrativo/a",
+  "access": "Turno Libre",
+  "variant": null,
+  "year": 2018,
+  "durationMinutes": 180,
+  "source": {
+    "pdf": "Examen_ADM_L_2018.pdf",
+    "sha256": "0b4cec02783560563bfd0473d1dd6fcad478ca24fe597fd9ba35da194bf1d225",
+    "answerKeyPage": 37
+  },
+  "version": {
+    "id": "3bd0a639fd542d7f7792f61e6368420c9e5e85702bad151d1fe5f179f37047f1",
+    "contentSha256": "5cd99aa812c5812e87f101928720c982bb5fbf8bdbff9075b5d940f8ee38119e"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2018-turno-libre-q001",
+      "sourceNumber": 1,
+      "text": "¿En qué artículo de la Constitución Española viene regulado que “Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social”?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 12"
+        },
+        {
+          "id": "B",
+          "text": "Artículo 15"
+        },
+        {
+          "id": "C",
+          "text": "Artículo 33"
+        },
+        {
+          "id": "D",
+          "text": "Artículo 14"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q002",
+      "sourceNumber": 2,
+      "text": "Según el artº 43 de la Constitución Española, los poderes públicos fomentarán:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las medidas necesarias para mantener y conservar la salud"
+        },
+        {
+          "id": "B",
+          "text": "La educación sanitaria, la educación física y el deporte"
+        },
+        {
+          "id": "C",
+          "text": "Planes dirigidos a la prevención de la enfermedad"
+        },
+        {
+          "id": "D",
+          "text": "Medidas destinadas al bienestar de los ciudadanos"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q003",
+      "sourceNumber": 3,
+      "text": "En el artículo 22, el Estatuto de Autonomía para Andalucía garantiza el derecho a la protección de la salud mediante:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un sistema sanitario público o privado"
+        },
+        {
+          "id": "B",
+          "text": "Un sistema sanitario gratuito"
+        },
+        {
+          "id": "C",
+          "text": "Un sistema de acceso único"
+        },
+        {
+          "id": "D",
+          "text": "Un sistema sanitario público de carácter universal"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q004",
+      "sourceNumber": 4,
+      "text": "En el Estatuto de Autonomía para Andalucía se recogen, entre otros, los derechos de los pacientes y usuarios en relación a la protección de la salud. Indicar cuál de los siguientes derechos no viene recogido en el citado Estatuto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acceder a todas las prestaciones del sistema"
+        },
+        {
+          "id": "B",
+          "text": "La garantía de un tiempo máximo para el acceso a los servicios y tratamientos"
+        },
+        {
+          "id": "C",
+          "text": "El consejo genético y la medicina preventiva"
+        },
+        {
+          "id": "D",
+          "text": "Recibir asistencia geriátrica especializada"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q005",
+      "sourceNumber": 5,
+      "text": "La Ley 2/1998 de Salud de Andalucía, establece que los ciudadanos con respecto a los servicios sanitarios públicos en Andalucía, tienen derecho:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la participación en los servicios y actividades sanitarias previstas en esta Ley"
+        },
+        {
+          "id": "B",
+          "text": "A negarse al tratamiento en todos los casos"
+        },
+        {
+          "id": "C",
+          "text": "A la confidencialidad de toda la información relacionada con su proceso mientras esté hospitalizado"
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q006",
+      "sourceNumber": 6,
+      "text": "En el artículo 48 de la Ley General de Sanidad, y en relación a la organización general del sistema sanitario público, se recoge que el Sistema Nacional de Salud es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El conjunto de los Servicios de Salud de la Administración del Estado y de los Servicios de Salud de las Comunidades Autónomas"
+        },
+        {
+          "id": "B",
+          "text": "El conjunto de los Servicios de Salud, tanto públicos como privados, existentes en el territorio nacional"
+        },
+        {
+          "id": "C",
+          "text": "El ente que aglutina todos los recursos en materia de salud existentes en territorio nacional y a disposición de los ciudadanos"
+        },
+        {
+          "id": "D",
+          "text": "El ente que, bajo la tutela del Consejo Interterritorial, aglutina los recursos sanitarios de la Administración del Estado y de las Comunidades Autónomas"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q007",
+      "sourceNumber": 7,
+      "text": "En el Plan Andaluz de Salud vienen recogidos 6 compromisos de presente y futuro. Entre los mismos no se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aumentar la esperanza de vida en buena salud"
+        },
+        {
+          "id": "B",
+          "text": "Generar y desarrollar los activos de salud en nuestra Comunidad y ponerlos a disposición de la sociedad andaluza"
+        },
+        {
+          "id": "C",
+          "text": "Reducir las desigualdades socio-económicas que inciden en la salud de los ciudadanos"
+        },
+        {
+          "id": "D",
+          "text": "Situar el Sistema Sanitario Público de Andalucía al servicio de la ciudadanía con el liderazgo de los y las profesionales"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q008",
+      "sourceNumber": 8,
+      "text": "Según el Decreto por el que se establece la estructura orgánica de la Consejería de Salud, el Servicio Andaluz de Salud estará adscrito al siguiente órgano directivo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Viceconsejería"
+        },
+        {
+          "id": "B",
+          "text": "La Secretaría General de Salud Pública y Consumo"
+        },
+        {
+          "id": "C",
+          "text": "La Secretaría General de Investigación, Desarrollo e Innovación en Salud"
+        },
+        {
+          "id": "D",
+          "text": "La Secretaría General de Salud y Ordenación Farmacéutica"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q009",
+      "sourceNumber": 9,
+      "text": "La Agencia Española de Protección de Datos es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La autoridad pública independiente encargada de velar por la privacidad y la protección de datos de los ciudadanos"
+        },
+        {
+          "id": "B",
+          "text": "La autoridad privada independiente encargada de velar por la privacidad y la protección de datos de los ciudadanos"
+        },
+        {
+          "id": "C",
+          "text": "La autoridad encargada por el Gobierno de España para velar por la seguridad de los datos privados de los ciudadanos"
+        },
+        {
+          "id": "D",
+          "text": "El ente creado por el Congreso de los Diputados con el encargo de velar por la privacidad y la protección de datos de los ciudadanos"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q010",
+      "sourceNumber": 10,
+      "text": "Según la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, y en relación al derecho de información en la recogida de datos, los interesados a los que se soliciten datos personales deberán previamente ser informados de modo expreso, preciso e inequívoco:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De las consecuencias de la obtención de los datos o de la negativa a suministrarlos"
+        },
+        {
+          "id": "B",
+          "text": "De la existencia de un fichero con datos personales y el destino físico final de la información"
+        },
+        {
+          "id": "C",
+          "text": "Del carácter obligatorio de su respuesta a las preguntas que se le formulen"
+        },
+        {
+          "id": "D",
+          "text": "De la posibilidad de arrepentimiento sobre la información facilitada"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q011",
+      "sourceNumber": 11,
+      "text": "La Unidad de Coordinación de Prevención, como órgano de gestión, que asume en el ámbito de los centros asistenciales las funciones clave para coordinar y unificar actuaciones en materia de prevención de riesgos laborales en el SAS de que Dirección General depende:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De la Dirección General de Asistencia Sanitaria"
+        },
+        {
+          "id": "B",
+          "text": "De la Dirección General de Profesionales"
+        },
+        {
+          "id": "C",
+          "text": "De la Dirección General de Gestión Económica y de Servicios"
+        },
+        {
+          "id": "D",
+          "text": "De la Dirección General de Prevención de Riesgos Laborales"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q012",
+      "sourceNumber": 12,
+      "text": "Según la Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales, se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 o más trabajadores"
+        },
+        {
+          "id": "B",
+          "text": "25 o más trabajadores"
+        },
+        {
+          "id": "C",
+          "text": "50 o más trabajadores"
+        },
+        {
+          "id": "D",
+          "text": "100 o más trabajadores"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q013",
+      "sourceNumber": 13,
+      "text": "En la estructura de las Unidades de Prevención de los Centros Asistenciales del Servicio Andaluz de Salud, según se recoge en el Anexo I la Orden que las creó, en las Unidades de Prevención Nivel 3 existirán Técnicos superiores de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dos especialidades: Seguridad - Higiene Industrial"
+        },
+        {
+          "id": "B",
+          "text": "Dos especialidades: Seguridad - Ergonomía"
+        },
+        {
+          "id": "C",
+          "text": "Dos especialidades: Higiene Industrial – Ergonomía"
+        },
+        {
+          "id": "D",
+          "text": "Tres especialidades: Seguridad – Higiene Industrial – Ergonomía y Psicosociología"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q014",
+      "sourceNumber": 14,
+      "text": "Según la Ley 12/2007, de 26 de noviembre, para la promoción de la igualdad de género en Andalucía, recoge entre sus principios generales:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La adopción de las medidas necesarias para la eliminación de la discriminación y especialmente, aquellas que incidan en la creciente feminización de la pobreza"
+        },
+        {
+          "id": "B",
+          "text": "La adopción de las medidas específicas necesarias destinadas a eliminar desigualdades sociales"
+        },
+        {
+          "id": "C",
+          "text": "La adopción de las medidas necesarias para la eliminación de la discriminación y especialmente, aquellas que incidan en las diferencias salariales entre mujeres y hombres"
+        },
+        {
+          "id": "D",
+          "text": "La igualdad de trato entre mujeres y hombres, que supone la ausencia de toda discriminación en los ámbitos económico, político y familiar"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q015",
+      "sourceNumber": 15,
+      "text": "Según la Ley 13/2007, de 26 de noviembre, de medidas de prevención y protección integral contra la violencia de género, la formación a profesionales de la salud se dirigirá prioritariamente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A los servicios de atención primaria y de atención especializada de urgencias"
+        },
+        {
+          "id": "B",
+          "text": "A los servicios de atención primaria y de atención especializada con mayor relevancia para la salud de las mujeres"
+        },
+        {
+          "id": "C",
+          "text": "A los servicios que detecten en primer lugar la violencia de género"
+        },
+        {
+          "id": "D",
+          "text": "A los servicios de atención primaria"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q016",
+      "sourceNumber": 16,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco, la clasificación del personal estatutario se realiza atendiendo a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La función desarrollada y al tipo de nombramiento"
+        },
+        {
+          "id": "B",
+          "text": "La función desarrollada y al nivel del título exigido para el ingreso"
+        },
+        {
+          "id": "C",
+          "text": "El tipo de nombramiento y al nivel del título exigido para el ingreso"
+        },
+        {
+          "id": "D",
+          "text": "La función desarrollada, al nivel del título exigido para el ingreso y al tipo de nombramiento"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q017",
+      "sourceNumber": 17,
+      "text": "Según el artículo 24 de la Ley 55/2003, de 16 de diciembre, del Estatuto Marco, la sanción disciplinaria de separación del servicio supone:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La pérdida de la condición de personal estatutario, en cualquier caso"
+        },
+        {
+          "id": "B",
+          "text": "La pérdida de la condición de personal estatutario en determinados supuestos"
+        },
+        {
+          "id": "C",
+          "text": "La pérdida de la condición de personal estatutario cuando adquiera carácter firme"
+        },
+        {
+          "id": "D",
+          "text": "La pena de inhabilitación por el tiempo máximo de 6 años"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q018",
+      "sourceNumber": 18,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco, la suspensión firme determinará la pérdida del puesto de trabajo cuando exceda de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 meses"
+        },
+        {
+          "id": "B",
+          "text": "6 meses"
+        },
+        {
+          "id": "C",
+          "text": "1 año"
+        },
+        {
+          "id": "D",
+          "text": "6 años"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q019",
+      "sourceNumber": 19,
+      "text": "Según la Ley 41/2002, los centros sanitarios tienen la obligación de conservar la documentación clínica en condiciones que garanticen su correcto mantenimiento y seguridad durante el tiempo adecuado a cada caso y, como mínimo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 años desde la fecha del alta de cada proceso asistencial"
+        },
+        {
+          "id": "B",
+          "text": "10 años desde la fecha del alta de cada proceso asistencial"
+        },
+        {
+          "id": "C",
+          "text": "2 años después de que exista constancia del fallecimiento del paciente"
+        },
+        {
+          "id": "D",
+          "text": "5 años desde la fecha del alta de cada proceso asistencial"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q020",
+      "sourceNumber": 20,
+      "text": "Según la Ley 41/2002, de 14 de noviembre, el paciente puede revocar libremente su consentimiento informado:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el plazo de 10 días desde que se produjo el consentimiento"
+        },
+        {
+          "id": "B",
+          "text": "En el plazo de 15 días desde que se produjo el consentimiento"
+        },
+        {
+          "id": "C",
+          "text": "En cualquier momento"
+        },
+        {
+          "id": "D",
+          "text": "Hasta 24 horas antes de que se produzca la actuación sanitaria"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q021",
+      "sourceNumber": 21,
+      "text": "Según el Decreto 1/2013, de 8 de enero, la autorización para la constitución y funcionamiento de biobancos con fines de investigación biomédica se concederá con carácter general por un periodo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De 5 años renovables"
+        },
+        {
+          "id": "B",
+          "text": "De 10 años renovables"
+        },
+        {
+          "id": "C",
+          "text": "De 20 años renovables"
+        },
+        {
+          "id": "D",
+          "text": "Indefinido"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q022",
+      "sourceNumber": 22,
+      "text": "En la Ley 16/2011, de Salud Pública de Andalucía, los derechos y obligaciones de los ciudadanos en relación con la salud pública vienen recogidos en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículos 9 al 18"
+        },
+        {
+          "id": "B",
+          "text": "Artículos 19 al 22"
+        },
+        {
+          "id": "C",
+          "text": "Artículos 23 al 30"
+        },
+        {
+          "id": "D",
+          "text": "Artículos 31 al 35"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q023",
+      "sourceNumber": 23,
+      "text": "Entre los objetivos enfocados al ciudadano que se plantean en el Plan de Calidad del Sistema Sanitario Público de Andalucía se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El derecho a la asistencia sanitaria gratuita"
+        },
+        {
+          "id": "B",
+          "text": "El derecho a la libre elección de médico especialista"
+        },
+        {
+          "id": "C",
+          "text": "A una respuesta personalizada que garantice la confidencialidad del proceso"
+        },
+        {
+          "id": "D",
+          "text": "A una respuesta única para una atención sanitaria integrada, integral y segura"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q024",
+      "sourceNumber": 24,
+      "text": "En relación a los profesionales, y entre las líneas de acción recogidas para el objetivo de reforzar el compromiso, la autonomía y participación del profesional en su desarrollo competencial y la gestión del conocimiento en el Plan de Calidad del Sistema Sanitario Público de Andalucía se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Garantizar la adquisición de conocimientos acordes con las tareas a desarrollar"
+        },
+        {
+          "id": "B",
+          "text": "Garantizar que la acreditación profesional sea un valor en el desarrollo profesional, acorde a las necesidades de ciudadanos y personas"
+        },
+        {
+          "id": "C",
+          "text": "Garantizar la adquisición de conocimientos acordes a las necesidades de los ciudadanos y personas"
+        },
+        {
+          "id": "D",
+          "text": "Desarrollar habilidades que le permitan una mejor atención a las necesidades de los ciudadanos y personas"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q025",
+      "sourceNumber": 25,
+      "text": "Según la Ley 5/2003, de 9 de octubre, el Registro de Voluntades Vitales Anticipadas de Andalucía se encuentra adscrito a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consejería de Salud"
+        },
+        {
+          "id": "B",
+          "text": "Servicio Andaluz de Salud"
+        },
+        {
+          "id": "C",
+          "text": "Gerencia del Servicio Andaluz de Salud"
+        },
+        {
+          "id": "D",
+          "text": "Delegación Provincial de la Consejería de Salud"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q026",
+      "sourceNumber": 26,
+      "text": "Cuál de los siguientes es requisito para pedir una segunda opinión médica:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que la enfermedad o el tratamiento propuesto para el que solicita una segunda opinión haya sido diagnosticado en cualquier centro dependiente del Sistema Sanitario Público de Andalucía"
+        },
+        {
+          "id": "B",
+          "text": "Que la enfermedad o el tratamiento propuesto para el que solicita una segunda opinión haya sido diagnosticado en cualquier centro sanitario andaluz"
+        },
+        {
+          "id": "C",
+          "text": "Que el paciente requiera tratamiento urgente o inmediato"
+        },
+        {
+          "id": "D",
+          "text": "Cualquiera de las circunstancias anteriores"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q027",
+      "sourceNumber": 27,
+      "text": "En relación a las disposiciones mínimas de seguridad y salud relativas al trabajo con equipos que incluyen pantallas de visualización (PVD) se recomienda situarla respeto a los ojos del usuario:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A una distancia inferior a 40 Cm"
+        },
+        {
+          "id": "B",
+          "text": "A una distancia superior a 40 Cm"
+        },
+        {
+          "id": "C",
+          "text": "A una distancia adecuada en función a las características del trabajador"
+        },
+        {
+          "id": "D",
+          "text": "A una distancia adecuada en función a las dimensiones de la pantalla"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q028",
+      "sourceNumber": 28,
+      "text": "En relación a las acciones preventivas para mejorar la seguridad en trabajos de oficina llevados a cabo con ordenadores podemos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ajustar la altura del teclado a las necesidades del usuario"
+        },
+        {
+          "id": "B",
+          "text": "Ajustar brillo y contraste y evitar brillos molestos"
+        },
+        {
+          "id": "C",
+          "text": "Utilizar programas informáticos que se adapten a la formación del trabajador"
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas anteriores son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q029",
+      "sourceNumber": 29,
+      "text": "Según el RDL 5/2015 (EBEP), los empleados públicos se clasifican en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Funcionarios de carrera, interinos, personal fijo, temporal y a tiempo parcial"
+        },
+        {
+          "id": "B",
+          "text": "Funcionarios, interinos, estatutarios y Laborales"
+        },
+        {
+          "id": "C",
+          "text": "Funcionarios de carrera, funcionarios interinos, personal laboral y personal eventual"
+        },
+        {
+          "id": "D",
+          "text": "Funcionarios de carrera, interinos y personal Estatutario"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q030",
+      "sourceNumber": 30,
+      "text": "Según el RDL 5/2015 (EBEP), no se recoge como derecho individual:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la libertad sindical"
+        },
+        {
+          "id": "B",
+          "text": "A las vacaciones, descansos, permisos y licencias"
+        },
+        {
+          "id": "C",
+          "text": "A la libre asociación profesional"
+        },
+        {
+          "id": "D",
+          "text": "A las prestaciones de la Seguridad Social correspondientes al régimen que les sea de aplicación"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q031",
+      "sourceNumber": 31,
+      "text": "Según el artículo 63 del RDL 5/2015 (EBEP), las causas de pérdida de la condición de funcionario de carrera son las siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Renuncia; Pérdida de la nacionalidad; Jubilación total; La sanción disciplinaria firme de separación del servicio; Pena principal o accesoria de inhabilitación absoluta o especial para cargo público"
+        },
+        {
+          "id": "B",
+          "text": "Renuncia; Pérdida de la nacionalidad; Jubilación total; La sanción disciplinaria de separación del servicio; Pena principal o accesoria de inhabilitación absoluta o especial para cargo público"
+        },
+        {
+          "id": "C",
+          "text": "Renuncia; Abandono del puesto de trabajo; Jubilación total; La sanción disciplinaria firme de separación del servicio; Pena principal o accesoria de inhabilitación absoluta o especial para cargo público"
+        },
+        {
+          "id": "D",
+          "text": "Renuncia; Pérdida de la nacionalidad; Jubilación total; La sanción disciplinaria firme de separación del servicio; Pena principal o accesoria de inhabilitación absoluta o especial para cargo público; Ingreso en prisión"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q032",
+      "sourceNumber": 32,
+      "text": "En qué artículo de la Constitución, está expresamente recogidos el principio de legalidad y el de jerarquía normativa:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Articulo 1.1"
+        },
+        {
+          "id": "B",
+          "text": "Articulo 9.3"
+        },
+        {
+          "id": "C",
+          "text": "Articulo 103.3"
+        },
+        {
+          "id": "D",
+          "text": "Articulo 106.1"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q033",
+      "sourceNumber": 33,
+      "text": "Las unidades administrativas a las que se atribuyen funciones que tengan efectos jurídicos frente a terceros o cuya actuación tenga carácter preceptivo, se denominan:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Servicios administrativos"
+        },
+        {
+          "id": "B",
+          "text": "Secciones administrativas"
+        },
+        {
+          "id": "C",
+          "text": "Negociados administrativos"
+        },
+        {
+          "id": "D",
+          "text": "Órganos administrativos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q034",
+      "sourceNumber": 34,
+      "text": "Según la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP), en su ámbito de aplicación, se entiende a los efectos de esta Ley por Administraciones Públicas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Administración General del Estado, las Administraciones de las Comunidades Autónomas, las entidades que integran la Administración Local y el sector público institucional"
+        },
+        {
+          "id": "B",
+          "text": "Los distintos Ministerios del Gobierno de España, las Administraciones de las Comunidades Autónomas y las Entidades que integran la Administración Local"
+        },
+        {
+          "id": "C",
+          "text": "La Administración General del Estado, las Administraciones de las Comunidades Autónomas y las Entidades que integran la Administración Local"
+        },
+        {
+          "id": "D",
+          "text": "La Administración General del Estado, las Administraciones de las Comunidades Autónomas, las Corporaciones Locales y las Agencias Administrativas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q035",
+      "sourceNumber": 35,
+      "text": "Según el art. 16 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (Ley 39/2015):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Concluido el trámite de registro, los documentos serán cursados en le plazo de 3 día hábiles a sus respectivos destinatarios y a las unidades administrativas correspondientes"
+        },
+        {
+          "id": "B",
+          "text": "Los Organismos públicos vinculados o dependientes de cada Administración deberán disponer de su propio registro electrónico plenamente interoperable e interconectado con el Registro Electrónico General de la administración de la que dependen"
+        },
+        {
+          "id": "C",
+          "text": "Los asientos se anotarán respetando el orden temporal de recepción o salida de los documentos, e indicarán la fecha del día en que se produzcan"
+        },
+        {
+          "id": "D",
+          "text": "El Registro Electrónico General será único para todas las Administraciones"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q036",
+      "sourceNumber": 36,
+      "text": "Según la Ley 39/2015 (LPACAP), y en relación a la obligación de resolver que tiene la Administración Pública, cuando las normas reguladoras de los procedimientos no fijen un plazo máximo, éste será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 meses"
+        },
+        {
+          "id": "B",
+          "text": "3 meses"
+        },
+        {
+          "id": "C",
+          "text": "1 mes"
+        },
+        {
+          "id": "D",
+          "text": "10 días"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q037",
+      "sourceNumber": 37,
+      "text": "Según la Ley 39/2015 (LPACAP), los actos que pongan fin a la vía administrativa podrán ser recurridos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mediante recurso de alzada"
+        },
+        {
+          "id": "B",
+          "text": "Mediante recurso de reposición"
+        },
+        {
+          "id": "C",
+          "text": "Potestativamente en reposición ante el mismo órgano que los hubiera dictado o ser impugnados directamente ante el orden jurisdiccional contencioso-administrativo"
+        },
+        {
+          "id": "D",
+          "text": "Recurso de alzada ante el órgano superior al que los hubiera dictado o ser impugnados directamente ante el orden jurisdiccional contencioso-administrativo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q038",
+      "sourceNumber": 38,
+      "text": "Según la Ley 39/2015 (LPACAP), y en relación a la motivación de los actos administrativos, recoge que serán motivados, con sucinta referencia de hechos y fundamentos de derecho:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todos los actos administrativos"
+        },
+        {
+          "id": "B",
+          "text": "Exclusivamente los que resuelvan procedimientos"
+        },
+        {
+          "id": "C",
+          "text": "Los que se separen del criterio seguido en actuaciones precedentes o del dictamen de órganos consultivos"
+        },
+        {
+          "id": "D",
+          "text": "Los que suspendan derechos de menores de edad"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q039",
+      "sourceNumber": 39,
+      "text": "En relación a la delegación de firma de los órganos de las Administraciones Públicas, la legislación vigente recoge:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No alterará la competencia del órgano delegante y para su validez será necesaria su publicación"
+        },
+        {
+          "id": "B",
+          "text": "Alterará la competencia, debiendo recoger el documento firmado las circunstancias que originan dicha delegación de firma"
+        },
+        {
+          "id": "C",
+          "text": "Alterará la competencia del órgano delegante, asumiendo a partir de ese momento el nuevo firmante todas las actuaciones pendientes del procedimiento"
+        },
+        {
+          "id": "D",
+          "text": "No alterará la competencia del órgano delegante y para su validez no será necesaria su publicación"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q040",
+      "sourceNumber": 40,
+      "text": "Contra las resoluciones adoptadas por órgano competente en materia de recusación de personal al servicio de las Administraciones Públicas para intervenir en un procedimiento:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cabrá recurso de reposición"
+        },
+        {
+          "id": "B",
+          "text": "Cabrá recurso de alzada"
+        },
+        {
+          "id": "C",
+          "text": "No cabrá recurso, sin perjuicio de la posibilidad de alegar la recusación al interponer el recurso que proceda contra el acto que ponga fin al procedimiento"
+        },
+        {
+          "id": "D",
+          "text": "Cabrá recurso de revisión"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q041",
+      "sourceNumber": 41,
+      "text": "Los procedimientos en materia de responsabilidad patrimonial:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sólo pueden tramitarse por el procedimiento administrativo común"
+        },
+        {
+          "id": "B",
+          "text": "Solo pueden tramitarse por el procedimiento administrativo simplificado"
+        },
+        {
+          "id": "C",
+          "text": "Se tramitan por un procedimiento administrativo especial"
+        },
+        {
+          "id": "D",
+          "text": "Pueden tramitarse por el procedimiento común y por el simplificado"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q042",
+      "sourceNumber": 42,
+      "text": "En el ámbito del Servicio Andaluz de Salud, a quien corresponde la resolución de los procedimientos de responsabilidad patrimonial:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Director General de Profesionales"
+        },
+        {
+          "id": "B",
+          "text": "Director General de Gestión Económica"
+        },
+        {
+          "id": "C",
+          "text": "Jefe Asesoría Jurídica"
+        },
+        {
+          "id": "D",
+          "text": "Dirección Gerencia"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q043",
+      "sourceNumber": 43,
+      "text": "En el Decreto 204/1995, de 29 de agosto, por el que se establecen medidas organizativas para los servicios administrativos de atención directa a los ciudadanos en el ámbito de actuación de la Administración de la Junta de Andalucía, se recogen los siguientes tipos de copias de documentos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las copias auténticas de documentos administrativos expedidos por el mismo órgano que emitió el documento original y las auténticas de documentos públicos, mediante cotejo con el original y en las que se estampará si procediera la correspondiente diligencia de compulsa"
+        },
+        {
+          "id": "B",
+          "text": "Las copias auténticas de documentos administrativos expedidos por el mismo órgano que emitió el documento original y las autenticadas de documentos públicos y privados, mediante cotejo con el original y en las que se estampará si procediera la correspondiente diligencia de compulsa"
+        },
+        {
+          "id": "C",
+          "text": "Las copias auténticas de documentos administrativos expedidos por el mismo órgano que emitió el documento original y las auténticas de documentos públicos y privados, mediante cotejo con el original y en las que se estampará si procediera el correspondiente sello en el que conste “Compulsa”"
+        },
+        {
+          "id": "D",
+          "text": "Las copias auténticas de documentos administrativos expedidos por el mismo órgano que emitió el documento original y las autenticadas de documentos públicos, mediante cotejo con el original y en las que se estampará si procediera el correspondiente sello en el que conste “Compulsa”"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q044",
+      "sourceNumber": 44,
+      "text": "Cada juego de hojas del Libro de Sugerencias y Reclamaciones de la Junta de Andalucía establecido por Decreto 262/1988, de 2 de agosto, estará integrado por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Original y cuatro copias"
+        },
+        {
+          "id": "B",
+          "text": "Original y tres copias"
+        },
+        {
+          "id": "C",
+          "text": "Original y dos copias"
+        },
+        {
+          "id": "D",
+          "text": "Original y una copias"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q045",
+      "sourceNumber": 45,
+      "text": "Según su Manual de estilo, los valores que representa el Servicio Andaluz de Salud derivan de su condición de servicio público y de su misión como proveedor de atención sanitaria. Entre los valores recogidos en el citado manual se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Equidad, justicia y accesibilidad"
+        },
+        {
+          "id": "B",
+          "text": "Accesibilidad, gratuidad y universalidad"
+        },
+        {
+          "id": "C",
+          "text": "Mejora continua de la calidad y atención integral"
+        },
+        {
+          "id": "D",
+          "text": "Eficacia, eficiencia y gratuidad"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q046",
+      "sourceNumber": 46,
+      "text": "El régimen funcional de las plantillas de los Centros Asistenciales del Servicio Andaluz de Salud está regulado en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Orden de 5 de abril de 1990 (BOJA nº 30, de 10 de abril)"
+        },
+        {
+          "id": "B",
+          "text": "Decreto 136/2001, de 12 de junio (BOJA nº 80, de 14 de julio)"
+        },
+        {
+          "id": "C",
+          "text": "Decreto 54/2002, de 19 de febrero (BOJA nº 28, de 7 de marzo)"
+        },
+        {
+          "id": "D",
+          "text": "Decreto 183/2008, de 14 de octubre (BOJA nº 211), de 29 de octubre"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q047",
+      "sourceNumber": 47,
+      "text": "Según la norma que regula el régimen funcional de las plantillas de los Centros Asistenciales del Servicio Andaluz de Salud, los puestos de trabajo recogidos en la estructura funcional se clasifican en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Puestos Directivos, Mandos Intermedios y Puestos Básicos"
+        },
+        {
+          "id": "B",
+          "text": "Personal Sanitario y Personal de Gestión y Servicios"
+        },
+        {
+          "id": "C",
+          "text": "Personal Facultativo, Personal de Enfermería y Personal de Gestión y Servicios"
+        },
+        {
+          "id": "D",
+          "text": "Puestos Directivos, Cargos Intermedios y Puestos Básicos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q048",
+      "sourceNumber": 48,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, el plazo de toma de posesión del nuevo destino de personas que obtengan plaza en un concurso de traslados en el SAS, teniendo en cuenta que la plaza de origen la estén desempeñando en otro Servicio de Salud será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 días hábiles a partir del día de cese"
+        },
+        {
+          "id": "B",
+          "text": "10 días hábiles a partir del día de cese"
+        },
+        {
+          "id": "C",
+          "text": "15 días hábiles a partir del día de cese"
+        },
+        {
+          "id": "D",
+          "text": "1 mes a partir del día de cese"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q049",
+      "sourceNumber": 49,
+      "text": "En el ámbito del Servicio Andaluz de Salud, la provisión de los cargos intermedios correspondientes a Jefaturas de Servicios, Jefaturas de Bloque de Enfermería, Coordinación y Dirección de Unidades Clínicas y Dirección de Centros de Salud, se realizará por el sistema:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De libre designación, previa convocatoria pública de carácter abierto y permanente"
+        },
+        {
+          "id": "B",
+          "text": "Concurso de méritos, previa convocatoria pública de carácter abierto y permanente"
+        },
+        {
+          "id": "C",
+          "text": "Promoción Interna"
+        },
+        {
+          "id": "D",
+          "text": "De libre designación"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q050",
+      "sourceNumber": 50,
+      "text": "En el ámbito del Servicio Andaluz de Salud, la provisión de puestos directivos se realizará por el sistema:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De libre designación, previa convocatoria pública de carácter abierto y permanente"
+        },
+        {
+          "id": "B",
+          "text": "Concurso de méritos, previa convocatoria pública de carácter abierto y permanente"
+        },
+        {
+          "id": "C",
+          "text": "Promoción Interna"
+        },
+        {
+          "id": "D",
+          "text": "De libre designación"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q051",
+      "sourceNumber": 51,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, los aspirantes inscritos que figuren en el listado único, deberán presentar los documentos acreditativos de requisitos y méritos alegados en el plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 días naturales desde el día siguiente a la publicación en la página web del SAS"
+        },
+        {
+          "id": "B",
+          "text": "1 mes desde el día siguiente a la publicación en la página web del SAS"
+        },
+        {
+          "id": "C",
+          "text": "10 días naturales desde el día siguiente a la publicación en la página web del SAS"
+        },
+        {
+          "id": "D",
+          "text": "10 días hábiles desde el día siguiente a la publicación en la página web del SAS"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q052",
+      "sourceNumber": 52,
+      "text": "Según las bases reguladoras de la convocatoria en vigor del proceso de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, entre las áreas específicas de la categoría de Enfermera se encuentran las de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Enfermera para área de Quirófano y Enfermera para área de Medicina Interna"
+        },
+        {
+          "id": "B",
+          "text": "Enfermera para área de Neonatología y Enfermera de Empresa"
+        },
+        {
+          "id": "C",
+          "text": "Enfermera para área de Salud Mental y Enfermera para área de Diálisis"
+        },
+        {
+          "id": "D",
+          "text": "Enfermera para área de Medicina Nuclear y Enfermera para área de Cuidados Paliativos"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q053",
+      "sourceNumber": 53,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, entre los requisitos para la concesión de un permiso sin sueldo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No se exige un tiempo mínimo de servicios prestados previamente"
+        },
+        {
+          "id": "B",
+          "text": "Se exige haber cumplido al menos tres meses de servicios efectivos"
+        },
+        {
+          "id": "C",
+          "text": "Se exige haber cumplido al menos seis meses de servicios efectivos"
+        },
+        {
+          "id": "D",
+          "text": "Se exige haber cumplido al menos un año de servicios efectivos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q054",
+      "sourceNumber": 54,
+      "text": "Según la Directiva 2003/88/CE del Parlamento Europeo y del Consejo, relativa a determinados aspectos de la ordenación del tiempo de trabajo, los Estados miembros adoptarán las medidas necesarias para que, en función de las necesidades de protección de la seguridad y de la salud de los trabajadores:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La duración media del trabajo no exceda de 37,5 horas por cada periodo de 7 días"
+        },
+        {
+          "id": "B",
+          "text": "La duración media del trabajo no exceda de 40 horas, incluidas las horas extraordinarias, por cada periodo de 7 días"
+        },
+        {
+          "id": "C",
+          "text": "La duración media del trabajo no exceda de 45 horas, incluidas las horas extraordinarias, por cada periodo de 7 días"
+        },
+        {
+          "id": "D",
+          "text": "La duración media del trabajo no exceda de 48 horas, incluidas las horas extraordinarias, por cada periodo de 7 días"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q055",
+      "sourceNumber": 55,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, las medidas cautelares pueden acordarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el cualquier momento de la tramitación del expediente"
+        },
+        {
+          "id": "B",
+          "text": "En el acto de incoación o bien durante la tramitación del expediente cuando concurran hechos nuevos o que no pudieron tenerse en cuenta en el momento de incoación"
+        },
+        {
+          "id": "C",
+          "text": "En el acto de incoación del expediente"
+        },
+        {
+          "id": "D",
+          "text": "Tras la primera toma de declaración del presunto autor de los hechos, mediante resolución motivada susceptible de recurso de alzada"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q056",
+      "sourceNumber": 56,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, salvo en los casos de incapacidad temporal, el comienzo de ejecución de las sanciones disciplinarias tendrá lugar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el plazo de tres meses a partir de la fecha en la que la resolución que la imponga haya ganado firmeza en vía administrativa"
+        },
+        {
+          "id": "B",
+          "text": "En el plazo de un mes a partir de la fecha en la que la resolución que la imponga haya ganado firmeza en vía administrativa"
+        },
+        {
+          "id": "C",
+          "text": "En el plazo de tres meses a partir de la fecha en la que la notificación de la resolución"
+        },
+        {
+          "id": "D",
+          "text": "En el plazo de un mes a partir de la fecha en la que la resolución que la imponga haya ganado firmeza en vía administrativa"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q057",
+      "sourceNumber": 57,
+      "text": "Las competencias y el procedimiento en materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía y del Sector Público Andaluz están regulas en la siguiente norma:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 524/2008, de 16 de diciembre"
+        },
+        {
+          "id": "B",
+          "text": "Decreto 53/1984, de 26 de diciembre"
+        },
+        {
+          "id": "C",
+          "text": "Ley 53/2008, de 14 de diciembre"
+        },
+        {
+          "id": "D",
+          "text": "Orden de 8 de abril de 2008, de la Consejería de Justicia y Administración Pública"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q058",
+      "sourceNumber": 58,
+      "text": "La instrucción de los procedimientos de compatibilidad del personal del Servicio Andaluz de Salud corresponderá a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Inspección General de Servicios de la Junta de Andalucía"
+        },
+        {
+          "id": "B",
+          "text": "La persona titular de la Gerencia del Servicio Andaluz de Salud"
+        },
+        {
+          "id": "C",
+          "text": "La Inspección General de Servicios de la Consejería de Salud"
+        },
+        {
+          "id": "D",
+          "text": "La persona titular de la Consejería Salud"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q059",
+      "sourceNumber": 59,
+      "text": "La norma que regula la nómina general de la Administración de la Junta de Andalucía y sus organismos, así como el procedimiento para su elaboración es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Orden de 12 de enero de 2012 (BOJA nº 11, de 17 de enero)"
+        },
+        {
+          "id": "B",
+          "text": "Orden de 26 de junio de 2018 (BOJA nº 122, de 7 de julio)"
+        },
+        {
+          "id": "C",
+          "text": "Orden de 13 de enero de 2012 (BOJA nº 12, de 18 de enero)"
+        },
+        {
+          "id": "D",
+          "text": "Orden de 12 de diciembre de 2005 (BOJA nº 244, de 16 de diciembre)"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q060",
+      "sourceNumber": 60,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, el concepto de Tarjeta Sanitaria ajustada por edad (TAE) se podrá abonar a profesionales adscritos a Dispositivos de Apoyo de los Distritos de Atención Primaria de las siguientes categorías:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Odontoestomatólogo, Fisioterapeuta, Matrona y Trabajador Social"
+        },
+        {
+          "id": "B",
+          "text": "Odontoestomatólogo, Matrona y Trabajador Social"
+        },
+        {
+          "id": "C",
+          "text": "Odontoestomatólogo, Trabajador Social y Técnicos Educación para la Salud"
+        },
+        {
+          "id": "D",
+          "text": "Odontoestomatólogo, Farmacéutico de Atención Primaria, Fisioterapeuta y Matrona"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q061",
+      "sourceNumber": 61,
+      "text": "El tipo de cotización al Régimen General de la Seguridad Social por Formación Profesional vigente es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 0,70 %, siendo el 0,50 % a cargo de la empresa y el 0,20 % a cargo del trabajador"
+        },
+        {
+          "id": "B",
+          "text": "El 0,90 %, siendo el 0,70 % a cargo de la empresa y el 0,20 % a cargo del trabajador"
+        },
+        {
+          "id": "C",
+          "text": "El 0,80 %, siendo el 0,70 % a cargo de la empresa y el 0,10 % a cargo del trabajador"
+        },
+        {
+          "id": "D",
+          "text": "El 0,70 %, siendo el 0,60 % a cargo de la empresa y el 0,10 % a cargo del trabajador"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q062",
+      "sourceNumber": 62,
+      "text": "La estructura del Sistema español de Seguridad Social viene integrada por los siguientes regímenes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El régimen general y los regímenes especiales"
+        },
+        {
+          "id": "B",
+          "text": "El régimen general, los regímenes especiales y el régimen de trabajadores autónomos"
+        },
+        {
+          "id": "C",
+          "text": "El régimen general, los regímenes especiales y el régimen agrario"
+        },
+        {
+          "id": "D",
+          "text": "El régimen general, los regímenes especiales y el régimen de trabajadores por cuenta propia o autónomos"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q063",
+      "sourceNumber": 63,
+      "text": "La afiliación a la Seguridad Social podrá practicarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A petición de las personas y entidades obligadas a dicho acto"
+        },
+        {
+          "id": "B",
+          "text": "A instancia de los interesados"
+        },
+        {
+          "id": "C",
+          "text": "De oficio por la Administración de la Seguridad Social"
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q064",
+      "sourceNumber": 64,
+      "text": "Las personas que estén afiliadas y en alta o situación asimilada al alta en el Régimen General de la Seguridad Social y estén en situación de incapacidad temporal por enfermedad común, tendrán derecho a la prestación económica de la Seguridad Social:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando tengan cotizados al menos 180 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "B",
+          "text": "Cuando tengan cotizados al menos 120 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "C",
+          "text": "Cuando tengan cotizados al menos 60 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "D",
+          "text": "En todos los casos, ya que no se exige periodo previo de cotización"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q065",
+      "sourceNumber": 65,
+      "text": "Las personas que estén afiliadas y en alta o situación asimilada al alta en el Régimen General de la Seguridad Social y estén en situación de incapacidad temporal por enfermedad profesional, tendrán derecho a la prestación económica de la Seguridad Social:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando tengan cotizados al menos 180 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "B",
+          "text": "Cuando tengan cotizados al menos 120 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "C",
+          "text": "Cuando tengan cotizados al menos 60 días en los 5 años inmediatamente anteriores al hecho causante"
+        },
+        {
+          "id": "D",
+          "text": "En todos los casos, ya que no se exige periodo previo de cotización"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q066",
+      "sourceNumber": 66,
+      "text": "Según la normativa vigente en materia de Seguridad Social, un trabajador que cumpla 65 años durante el año 2018, podrá jubilarse al cumplir dicha edad si tiene acreditada una cotización mínima de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 años"
+        },
+        {
+          "id": "B",
+          "text": "35 años"
+        },
+        {
+          "id": "C",
+          "text": "36 años y seis meses"
+        },
+        {
+          "id": "D",
+          "text": "38 años y seis meses"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q067",
+      "sourceNumber": 67,
+      "text": "En relación a los Órganos intervinientes en la Contabilidad Pública de la Junta de Andalucía, indique cuál de las siguientes afirmaciones es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las oficinas contables son unidades administrativas a las que se atribuyen las funciones derivadas de la ejecución o modificación del presupuesto, y en su caso, de las operaciones extrapresupuestarias"
+        },
+        {
+          "id": "B",
+          "text": "Las oficinas de gestión son las unidades administrativas con competencia en la ordenación y materialización de los pagos"
+        },
+        {
+          "id": "C",
+          "text": "A y B son correctas"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna respuesta es correcta"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q068",
+      "sourceNumber": 68,
+      "text": "De acuerdo con el art. 15 de la Ley General de Hacienda Pública de la Comunidad Autónoma de Andalucía, es competencia de las Agencias Administrativas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Autorizar los gastos que no sean de la competencia del Consejo de Gobierno y elevar a la aprobación de éste, por conducto de la persona titular de la Consejería, los que sean de su competencia"
+        },
+        {
+          "id": "B",
+          "text": "Administrar los créditos para gastos del Presupuesto y de sus modificaciones"
+        },
+        {
+          "id": "C",
+          "text": "Ordenar los pagos de la Tesorería General de la Junta de Andalucía"
+        },
+        {
+          "id": "D",
+          "text": "Velar por la ejecución del Presupuesto y por los derechos económicos de la Hacienda de la Junta de Andalucía, ejerciendo las acciones económico-administrativas y cualesquiera otras que la defensa de tales derechos exija"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q069",
+      "sourceNumber": 69,
+      "text": "En la contabilidad pública de la Junta de Andalucía, indique cuál de los siguientes documentos, NO es un documento contable de gestión de ingreso público:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Documento contable “I”"
+        },
+        {
+          "id": "B",
+          "text": "Documento contable “R”"
+        },
+        {
+          "id": "C",
+          "text": "Documento contable “RI”"
+        },
+        {
+          "id": "D",
+          "text": "Documento contable “IR”"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q070",
+      "sourceNumber": 70,
+      "text": "En relación a la Contabilidad Pública de la Junta de Andalucía, la formación y rendición de la Cuenta General de la Junta de Andalucía es función de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Secretaría General de Hacienda"
+        },
+        {
+          "id": "B",
+          "text": "Titular de la Consejería de Hacienda y Administración Pública"
+        },
+        {
+          "id": "C",
+          "text": "La Intervención General de la Junta de Andalucía"
+        },
+        {
+          "id": "D",
+          "text": "La Cámara de Cuentas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q071",
+      "sourceNumber": 71,
+      "text": "De acuerdo con lo establecido en la Ley 9/2017 de Contratos del Sector Público, indique cuál de las siguientes son actuaciones preparatorias de los contratos de obras del sector público:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la adjudicación de un contrato de obra, la previa elaboración, supervisión, aprobación y replanteo del correspondiente proyecto de obra"
+        },
+        {
+          "id": "B",
+          "text": "En la adjudicación de un contrato de concesión de obras, la previa elaboración, supervisión, aprobación y replanteo del correspondiente proyecto de obra en el supuesto de que las obras no sean definidas en todas sus características por la Administración concedente"
+        },
+        {
+          "id": "C",
+          "text": "La realización de un estudio de viabilidad exclusivamente en el contrato de concesión de obras"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q072",
+      "sourceNumber": 72,
+      "text": "La clasificación de los contratos del sector público:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Contratos de obras, concesión de obras, concesión de servicios, suministros y servicios que celebren las entidades pertenecientes al sector púbico"
+        },
+        {
+          "id": "B",
+          "text": "Contratos de suministros y servicios"
+        },
+        {
+          "id": "C",
+          "text": "Contratos del sector público"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q073",
+      "sourceNumber": 73,
+      "text": "De acuerdo con lo establecido en la Ley 9/2017 de Contratos del Sector Público, la demora en el cumplimiento de los plazos por parte del contratista, es causa de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Prohibición de contratar"
+        },
+        {
+          "id": "B",
+          "text": "Extinción del contrato"
+        },
+        {
+          "id": "C",
+          "text": "Ninguna respuesta es correcta"
+        },
+        {
+          "id": "D",
+          "text": "Resolución del contrato"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q074",
+      "sourceNumber": 74,
+      "text": "Según el Catálogo de Bienes y Servicios del Sistema de Gestión Logística (SIGLO), los “Carros de cura en acero inoxidable” estarán incluidos en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "SU.MO.MOGE.05.05"
+        },
+        {
+          "id": "B",
+          "text": "SU.MO.MOCL.05.05"
+        },
+        {
+          "id": "C",
+          "text": "SU.MOGE.05.05"
+        },
+        {
+          "id": "D",
+          "text": "SU.MOCL.05.05"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q075",
+      "sourceNumber": 75,
+      "text": "Según el Catálogo de Bienes y Servicios del Sistema de Gestión Logística (SIGLO), las “suturas manuales que se utilizan en intervenciones quirúrgicas,” estarán incluidos en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "SU.PC.SANI.01.22"
+        },
+        {
+          "id": "B",
+          "text": "SU.PC.SANI.01.03"
+        },
+        {
+          "id": "C",
+          "text": "SU.PC.SANI.01.12"
+        },
+        {
+          "id": "D",
+          "text": "SU.PC.SANI.01.02"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q076",
+      "sourceNumber": 76,
+      "text": "El Decreto 73/2012, de 20 de marzo, por el que se aprueba el Reglamento de Residuos de Andalucía, será de aplicación a todos los tipos de residuos que se produzcan o gestionen en el ámbito territorial de la Comunidad Autónoma Andaluza con las siguientes exclusiones:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los residuos radiactivos"
+        },
+        {
+          "id": "B",
+          "text": "Los explosivos desclasificados"
+        },
+        {
+          "id": "C",
+          "text": "Las emisiones a la atmósfera reguladas en la Ley 34/2007, de 15 de noviembre, de Calidad del Aire y Protección de la Atmósfera"
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q077",
+      "sourceNumber": 77,
+      "text": "Los residuos atendiendo a su naturaleza se clasifica:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Peligrosos y no peligrosos"
+        },
+        {
+          "id": "B",
+          "text": "Peligrosos, no peligroso e industriales"
+        },
+        {
+          "id": "C",
+          "text": "Domésticos, industriales y comerciales"
+        },
+        {
+          "id": "D",
+          "text": "Domésticos, comerciales y agrícolas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q078",
+      "sourceNumber": 78,
+      "text": "¿Que es un Mantenimiento Preventivo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el conjunto de tareas destinadas a corregir los defectos que se van presentando en los distintos equipos y que son comunicados al departamento de mantenimiento por los usuarios de los mismos"
+        },
+        {
+          "id": "B",
+          "text": "Es el mantenimiento que tiene por misión mantener un nivel de servicio determinado en los equipos, programando las intervenciones de sus puntos vulnerables en el momento más oportuno. Suele tener un carácter sistemático"
+        },
+        {
+          "id": "C",
+          "text": "Es el que persigue conocer e informar permanentemente del estado y operatividad de las instalaciones mediante el conocimiento de los valores de determinadas variables, representativas de tal estado y operatividad"
+        },
+        {
+          "id": "D",
+          "text": "Es el mantenimiento básico de un equipo realizado por los usuarios del mismo. Consiste en una serie de tareas elementales (tomas de datos, inspecciones visuales, limpieza, lubricación, reapriete de tornillos) para las que no es necesario una gran formación, sino tal solo un entrenamiento breve"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q079",
+      "sourceNumber": 79,
+      "text": "En relación al Registro de Implantes Quirúrgicos del Sistema Sanitario Público de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Existirá uno por cada provincia y será gestionado por cada uno de los centros hospitalarios del SAS donde se realicen intervenciones quirúrgicas"
+        },
+        {
+          "id": "B",
+          "text": "Será único en Andalucía y será gestionado de manera descentralizada en cada uno de los centros hospitalarios del SAS"
+        },
+        {
+          "id": "C",
+          "text": "Está adscrito a la Dirección General de Asistencia Sanitaria del SAS"
+        },
+        {
+          "id": "D",
+          "text": "Está adscrito a la Dirección General de Gestión Económica y Servicios del SAS"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q080",
+      "sourceNumber": 80,
+      "text": "¿A quién corresponde dar de alta a un nuevo producto dentro del Catálogo de bienes y servicios del Servicio Andaluz de Salud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la Central Logística de Compras y Servicios a propuesta de cada centro"
+        },
+        {
+          "id": "B",
+          "text": "A la Dirección Gerencia de cada Hospital"
+        },
+        {
+          "id": "C",
+          "text": "A la Dirección Gerencia del Servicio Andaluz de Salud"
+        },
+        {
+          "id": "D",
+          "text": "Al Director General de Gestión Económica"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q081",
+      "sourceNumber": 81,
+      "text": "Indique cuál de las siguientes afirmaciones es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Sistema Unificado de Recursos, SUR, es el sistema para gestión de los recursos patrimoniales del SAS"
+        },
+        {
+          "id": "B",
+          "text": "El Sistema Unificado de Recursos, SUR, es el sistema para la gestión, liquidación y recaudación de los tributos propios o cedidos de la Comunidad Autónoma de Andalucía"
+        },
+        {
+          "id": "C",
+          "text": "El alta de un nombramiento de personal estatutario en el SAS se realiza en el Sistema Gerhonte, subsistema nóminas"
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas B y C son correctas"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q082",
+      "sourceNumber": 82,
+      "text": "Indique cuál de las siguientes afirmaciones no es una función del Punto General de Entrada de Facturas Electrónicas de la Comunidad Autónoma de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Recepción de facturas electrónicas dirigidas a empresas ubicadas en la Comunidad Autónoma de Andalucía"
+        },
+        {
+          "id": "B",
+          "text": "Remisión de las facturas al Registro Contable de Facturas de la Administración de la Junta de Andalucía"
+        },
+        {
+          "id": "C",
+          "text": "Realización de apunte registral en el Registro telemático de la Junta de Andalucía de cada factura electrónica"
+        },
+        {
+          "id": "D",
+          "text": "Proporcionar información a las personas o entidades interesadas que formulen consultas sobre el estado de tramitación de las facturas electrónicas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q083",
+      "sourceNumber": 83,
+      "text": "Los componentes básicos de DIRAYA son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Base de datos de usuario (BDU), Modulo de acceso centralizado de operaciones (MACO), Modulo de estructura"
+        },
+        {
+          "id": "B",
+          "text": "La base de datos de usuario (BDU), Modulo de acceso centralizado de operaciones (MACO) y Receta XXI"
+        },
+        {
+          "id": "C",
+          "text": "Base de datos de usuario (BDU), Modulo de estructura, y Receta XXI"
+        },
+        {
+          "id": "D",
+          "text": "Base de datos de usuario (BDU), Modulo de acceso centralizado de operaciones (MACO), Modulo de estructura, y gestores de peticiones"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q084",
+      "sourceNumber": 84,
+      "text": "Se puede consultar un resumen de la historia clínica de manera telemática a través de la Oficina Virtual del sistema sanitario público de Andalucía (Inters@s), gracias a la extensión:",
+      "options": [
+        {
+          "id": "A",
+          "text": "ClicSalud+"
+        },
+        {
+          "id": "B",
+          "text": "ClicSAS+"
+        },
+        {
+          "id": "C",
+          "text": "Salud@"
+        },
+        {
+          "id": "D",
+          "text": "Salud@Clic+"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q085",
+      "sourceNumber": 85,
+      "text": "En cuanto a los factores que influyen en la gestión de las listas de espera de los Servicios de Salud, se considera un factor externo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decretos de Garantía de Respuesta"
+        },
+        {
+          "id": "B",
+          "text": "Aumento de la esperanza de vida y envejecimiento de la población"
+        },
+        {
+          "id": "C",
+          "text": "Infraestructuras y Recursos"
+        },
+        {
+          "id": "D",
+          "text": "Continuidad Asistencial"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q086",
+      "sourceNumber": 86,
+      "text": "Las intervenciones quirúrgicas que se precisen para la atención de los procedimientos quirúrgicos, desde la fecha de presentación del documento de inscripción en el Registro de Demanda Quirúrgica del SSPA, deberán realizarse en un plazo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Máximo de 180 naturales"
+        },
+        {
+          "id": "B",
+          "text": "Máximo de 180 hábiles"
+        },
+        {
+          "id": "C",
+          "text": "Máximo de 160 naturales"
+        },
+        {
+          "id": "D",
+          "text": "Máximo de 160 hábiles"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q087",
+      "sourceNumber": 87,
+      "text": "La Agencia de Calidad Sanitaria de Andalucía (ACSA) es una organización pública adscrita a la Consejería de Salud que se erige como entidad certificadora de la calidad de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Centros Hospitalarios del sector público y privado"
+        },
+        {
+          "id": "B",
+          "text": "De los profesionales"
+        },
+        {
+          "id": "C",
+          "text": "Páginas web de contenidos sanitario"
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q088",
+      "sourceNumber": 88,
+      "text": "El proceso de certificación de la Agencia de Calidad Sanitaria de Andalucía se desarrolla a lo largo de las siguientes fases:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inicio del proceso, Evaluación y Certificación"
+        },
+        {
+          "id": "B",
+          "text": "Inicio, Autoevaluación, Certificación y Seguimiento"
+        },
+        {
+          "id": "C",
+          "text": "Inicio, Evaluación, Certificación y Seguimiento"
+        },
+        {
+          "id": "D",
+          "text": "Inicio, Autoevaluación, Evaluación y Certificación"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q089",
+      "sourceNumber": 89,
+      "text": "Cuál de las siguientes no es una función de la Agencia de Evaluación de Tecnologías Sanitarias:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La identificación e informe de las tecnologías nuevas y establecidas que necesitan evaluación"
+        },
+        {
+          "id": "B",
+          "text": "El establecimiento, sobre bases científicas, del impacto médico, económico, ético y social, determinados por el uso de diferentes tecnologías"
+        },
+        {
+          "id": "C",
+          "text": "La producción, revisión, evaluación y sintetización de la información científica en cuanto a su impacto médico, económico, social y ético, tanto en tecnologías nuevas como ya existentes"
+        },
+        {
+          "id": "D",
+          "text": "El control y limitación de la evaluación socioeconómica de la tecnología médica en España"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q090",
+      "sourceNumber": 90,
+      "text": "La Agencia de Evaluación de la Tecnología Sanitaria esta integrada en la estructura de la Consejería de Salud de la Junta de Andalucía en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Investigación, Desarrollo e Innovación en salud"
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General de Investigación e Innovación del Conocimiento"
+        },
+        {
+          "id": "C",
+          "text": "La Dirección General de Salud Pública"
+        },
+        {
+          "id": "D",
+          "text": "La Secretaria General Técnica"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q091",
+      "sourceNumber": 91,
+      "text": "Los componentes físicos de un ordenador se agrupan bajo el concepto de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Software"
+        },
+        {
+          "id": "B",
+          "text": "Disco Duro"
+        },
+        {
+          "id": "C",
+          "text": "Hardware"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q092",
+      "sourceNumber": 92,
+      "text": "¿Cuál de los siguientes no es un periférico de entrada de un ordenador?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ratón"
+        },
+        {
+          "id": "B",
+          "text": "Teclado"
+        },
+        {
+          "id": "C",
+          "text": "Lector de códigos de barras"
+        },
+        {
+          "id": "D",
+          "text": "Videoproyector"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q093",
+      "sourceNumber": 93,
+      "text": "Cuál de las siguientes funcionalidades de un procesador de texto no es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diseño de página"
+        },
+        {
+          "id": "B",
+          "text": "Edición de texto"
+        },
+        {
+          "id": "C",
+          "text": "Revisión Ortográfica"
+        },
+        {
+          "id": "D",
+          "text": "Organización de datos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q094",
+      "sourceNumber": 94,
+      "text": "¿Cómo se llama el procesador de textos de la suite ofimática LibreOffice?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Word"
+        },
+        {
+          "id": "B",
+          "text": "Writer"
+        },
+        {
+          "id": "C",
+          "text": "Excel"
+        },
+        {
+          "id": "D",
+          "text": "Power Point"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q095",
+      "sourceNumber": 95,
+      "text": "En una base de datos, la columna o un conjunto de columnas de una tabla cuyos valores corresponden a los valores de la clave primaria de otra tabla se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clave sub-primaria"
+        },
+        {
+          "id": "B",
+          "text": "Clave foránea"
+        },
+        {
+          "id": "C",
+          "text": "Registro"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q096",
+      "sourceNumber": 96,
+      "text": "¿Cuál de los siguientes no es un protocolo relacionado con el correo electrónico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "POP3"
+        },
+        {
+          "id": "B",
+          "text": "SMTP"
+        },
+        {
+          "id": "C",
+          "text": "IMAP"
+        },
+        {
+          "id": "D",
+          "text": "SNMP"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q097",
+      "sourceNumber": 97,
+      "text": "¿Cuál de los siguientes es un navegador de internet?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft Edge"
+        },
+        {
+          "id": "B",
+          "text": "Mozilla Thunderbird"
+        },
+        {
+          "id": "C",
+          "text": "Google Chromecast"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q098",
+      "sourceNumber": 98,
+      "text": "¿Cuál de las siguientes afirmaciones es falsa respecto a la Ventanilla Electrónica (VEC)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La VEC es un sitio en Internet desde el que puedes realizar trámites relacionados con los Procesos Selectivos del SAS de forma electrónica"
+        },
+        {
+          "id": "B",
+          "text": "Mediante el uso de Certificado Digital o Cl@ve la VEC te permite firmar tus solicitudes y presentarlas realizando el registro telemático"
+        },
+        {
+          "id": "C",
+          "text": "Te permite realizar el pago telemático de las tasas asociadas a la inscripción a examen"
+        },
+        {
+          "id": "D",
+          "text": "Si se realizan trámites con certificado digital no es necesario tener instalado el componente AutoFirma,"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q099",
+      "sourceNumber": 99,
+      "text": "¿Cuál de las siguientes afirmaciones es falsa respecto al certificado digital?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un conjunto de datos que se incorpora a tu navegador y a partir del cual es posible identificarse en Internet y realizar gestiones desde cualquier lugar"
+        },
+        {
+          "id": "B",
+          "text": "Protege los datos que facilitas cada vez que realizas algún trámite on-line, preservando el secreto de tus comunicaciones"
+        },
+        {
+          "id": "C",
+          "text": "Está disponible tanto para personas físicas como para empresas o asociaciones"
+        },
+        {
+          "id": "D",
+          "text": "Puedes obtener tu Certificado en cualquier oficina del Ministerio de Hacienda y Administración Pública"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q100",
+      "sourceNumber": 100,
+      "text": "El registro telemático de Entrada y Salida unificado para toda la Junta de Andalucía se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Registr@"
+        },
+        {
+          "id": "B",
+          "text": "@ries"
+        },
+        {
+          "id": "C",
+          "text": "Compuls@"
+        },
+        {
+          "id": "D",
+          "text": "eCO"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q101",
+      "sourceNumber": 101,
+      "text": "La actividad del Servicio de Personal en un Hospital del Servicio Andaluz de Salud durante la época de Navidad se ve incrementada, son muchas las necesidades de contratación de las Direcciones y muchos los permisos y situaciones solicitadas por el personal. Igualmente hay que mecanizar todas las incidencias relativas a la nómina del mes de diciembre. Los profesionales que actualmente se encuentran trabajando en el Servicio de Personal son los siguientes: PEDRO: Personal Estatutario Fijo en la categoría de celador. Tiene concedida una Promoción Interna Temporal en la categoría de Administrativo desde el 1 de enero de 2012, fecha en la que se incorporó al Departamento de Personal. Esta ha sido la única promoción interna que ha tenido este profesional. ROSA: Personal Estatutario Temporal Eventual en la categoría de Auxiliar Administrativo. Nombramiento en vigor del 1 de noviembre de 2018 al 31 de enero de 2019. Con anterioridad tenía suscrito un nombramiento de la misma naturaleza y categoría por el periodo 1 de agosto de 2018 al 31 de octubre de 2018, estando adscrita al Servicio de Admisión y con un turno rotatorio. LIDIA: Personal Estatutario Temporal Interino en la categoría de Administrativo. Participó en el último proceso selectivo definitivo de dicha categoría convocado por el Servicio Andaluz de Salud sin éxito. Ha disfrutado de permiso sin sueldo por asuntos propios el mes de mayo de 2018 LUCIA: Personal Estatutario Fijo en la categoría de Administrativo. La antigüedad acreditada en el SAS es de 25 años cumplidos el pasado 15 de marzo de 2018 ELENA: Tiene recién adquirida la condición de Personal Estatuario Fijo en la categoría de Técnico Medio de Función Administrativo. La fecha de su nombramiento en propiedad es de 1 de diciembre de 2017. Desde mayo de 2007 hasta la toma de posesión, ha estado vinculada al Servicio Andaluz de Salud con nombramientos temporales durante 6 años y 2 meses en la categoría de Auxiliar Administrativo y 3 años y 4 meses en la categoría de Administrativo. El Servicio de Personal recibe varias propuestas de contratación de las Direcciones del Centro. En la primera de ellas, la Dirección Económica, remite una propuesta de contratación desde el día 1 de octubre de 2018 a 31 de enero de 2019 e indica como motivo de la propuesta: “Contratar un Administrativo por incremento de la actividad en el servicio, debido a la proximidad del final de año y la obligación de realizar el cierre contable”. ¿Qué tipo de nombramiento temporal habrá que formalizar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interino"
+        },
+        {
+          "id": "B",
+          "text": "Eventual"
+        },
+        {
+          "id": "C",
+          "text": "Sustituto"
+        },
+        {
+          "id": "D",
+          "text": "Interino Sustituto"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q102",
+      "sourceNumber": 102,
+      "text": "La contratación se realizará a través de bolsa única de empleo del SAS. Según la Resolución 20 de octubre de 2017 una de las siguientes afirmaciones no es correcta respecto al proceso de inscripción en bolsa:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los aspirantes deberán realizar su inscripción en el registro telemático de la Junta de Andalucía, a través de la aplicación “bolSAS empleo UNICA”"
+        },
+        {
+          "id": "B",
+          "text": "Los aspirantes podrán acreditarse a través de firma electrónica o de un código de usuario y clave de acceso"
+        },
+        {
+          "id": "C",
+          "text": "Una vez inscrito, deberá proceder al autobaremo de méritos y a la solicitud de categoría, destino y tipo de vinculación"
+        },
+        {
+          "id": "D",
+          "text": "Deberá inscribir todos los méritos académicos y profesionales que posea"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q103",
+      "sourceNumber": 103,
+      "text": "Los nombramientos eventuales se harán siempre:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mediante oferta de corta duración"
+        },
+        {
+          "id": "B",
+          "text": "Mediante oferta de corta duración si su duración es inferior a 4 meses"
+        },
+        {
+          "id": "C",
+          "text": "Sólo se harán por larga duración cuando se prevea que el nombramiento durará más de 12 meses"
+        },
+        {
+          "id": "D",
+          "text": "Los nombramientos eventuales se darán siempre por corta duración salvo cuando excepcionalmente se deban a una autorización, por la Dirección Gerencia de SAS, de nuevos servicios"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q104",
+      "sourceNumber": 104,
+      "text": "Los profesionales del servicio de Personal conocen el procedimiento de adjudicación de nombramientos por bolsa única, y saben que para adjudicar un nombramiento de corta duración:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se realizarán hasta tres comunicaciones, si es necesario por no contactar con la persona candidata en la primera y segunda comunicación, en horarios distintos, dentro del mismo día"
+        },
+        {
+          "id": "B",
+          "text": "Se realizarán hasta tres comunicaciones, si es necesario por no contactar con la persona candidata en la primera y segunda comunicación, en días consecutivos"
+        },
+        {
+          "id": "C",
+          "text": "Se realizarán hasta cuatro comunicaciones, si es necesario por no contactar con la persona candidata, en horarios distintos, dentro del mismo día"
+        },
+        {
+          "id": "D",
+          "text": "Se realizarán hasta tres comunicaciones, si es necesario por no contactar con la persona candidata en la primera y segunda comunicación, en horarios distintos, dentro del mismo día, salvo en caso de urgencia que sólo se realizará una comunicación a cada profesional"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q105",
+      "sourceNumber": 105,
+      "text": "La profesional que ha sido seleccionada para formalizar el nombramiento se llama Berta y es la primera vez que trabaja para el Servicio Andaluz de Salud. ¿Cuál será la duración del período de prueba?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Está exento de período de prueba"
+        },
+        {
+          "id": "B",
+          "text": "Dos meses"
+        },
+        {
+          "id": "C",
+          "text": "Tres meses"
+        },
+        {
+          "id": "D",
+          "text": "Un mes"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q106",
+      "sourceNumber": 106,
+      "text": "¿En qué régimen de la Seguridad Social habrá que incluir a Berta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Especial de Funcionarios Civiles del Estado"
+        },
+        {
+          "id": "B",
+          "text": "Especial"
+        },
+        {
+          "id": "C",
+          "text": "General"
+        },
+        {
+          "id": "D",
+          "text": "Especial Integrado"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q107",
+      "sourceNumber": 107,
+      "text": "¿En qué nómina/s puede percibir sus haberes Berta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la nómina ordinaria"
+        },
+        {
+          "id": "B",
+          "text": "En la nómina normal"
+        },
+        {
+          "id": "C",
+          "text": "En la nómina complementaria y en la nómina de paga extra"
+        },
+        {
+          "id": "D",
+          "text": "En la nómina ordinaria y en la nómina de paga extra"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q108",
+      "sourceNumber": 108,
+      "text": "El Director Económico adscribe a Berta a la Plataforma Logística de Contratación, una de las siguientes afirmaciones respecto a la plataforma no es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las Plataformas Logísticas Sanitarias se constituyen en el SAS al objeto, entre otros, de reducir los costes del proceso logístico, de disminuir la variabilidad en las adquisiciones y obtener economías de escala"
+        },
+        {
+          "id": "B",
+          "text": "Los procesos logísticos integrados en PLS son: compras, almacén y contratación administrativa"
+        },
+        {
+          "id": "C",
+          "text": "Una de las ventajas de PLS es la simplificación de los procedimientos y disminución de la burocracia"
+        },
+        {
+          "id": "D",
+          "text": "La PLS no se constituye como órgano administrativo con competencias en materia de contratación"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q109",
+      "sourceNumber": 109,
+      "text": "Berta, en la Plataforma Logística de Contratación debe trabajar con el Catálogo de Bienes y Servicios del SAS. ¿A qué grupo y subgrupo del código de catálogo de productos y servicio del SAS pertenece el instrumental quirúrgico desechable?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 25 material específico para Cirugía General"
+        },
+        {
+          "id": "B",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 11 material específico para quirófano"
+        },
+        {
+          "id": "C",
+          "text": "Al grupo 13 instrumental médico"
+        },
+        {
+          "id": "D",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 14 pequeño material desechable"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q110",
+      "sourceNumber": 110,
+      "text": "¿A qué clasificación económica del presupuesto de gasto se imputa este material?",
+      "options": [
+        {
+          "id": "A",
+          "text": "221.06"
+        },
+        {
+          "id": "B",
+          "text": "221.09"
+        },
+        {
+          "id": "C",
+          "text": "221.08"
+        },
+        {
+          "id": "D",
+          "text": "221.07"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q111",
+      "sourceNumber": 111,
+      "text": "Respecto al instrumental quirúrgico desechable, se autoriza la adquisición de dicho material por un valor estimado de 15.000€ sin IVA. Según la Ley de Contratos del Sector Público (LCSP), este contrato se podrá tramitar por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Contrato menor"
+        },
+        {
+          "id": "B",
+          "text": "Procedimiento abierto simplificado"
+        },
+        {
+          "id": "C",
+          "text": "Todas las respuestas son correctas"
+        },
+        {
+          "id": "D",
+          "text": "Procedimiento abierto"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q112",
+      "sourceNumber": 112,
+      "text": "Indique cuál es el órgano competente para suscribir este contrato de instrumental:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Centro Hospitalario de la provincia donde se ubica la Plataforma Logística Sanitaria provincial, con el límite del crédito que se le consigne"
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Económica del Centro hospitalario de la provincia a la que pertenece la UGC Cirugía General"
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Económica de Plataforma Logística Sanitaria (PLS) con el límite del crédito que se le consigne"
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Gerencia del Centro hospitalario de la provincia a la que pertenece la UGC de Cirugía General"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q113",
+      "sourceNumber": 113,
+      "text": "El siguiente expediente de contratación que le asignan a Berta tiene por objeto la dotación de un nuevo ecógrafo mediante arrendamiento. El valor estimado total del contrato es de 65.000€ sin IVA. Según la delimitación de tipos contractuales establecidos en la Ley de Contratos del Sector Público (LCSP), este contrato es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un contrato mixto"
+        },
+        {
+          "id": "B",
+          "text": "Un contrato de arrendamiento"
+        },
+        {
+          "id": "C",
+          "text": "Un contrato de servicios"
+        },
+        {
+          "id": "D",
+          "text": "Un contrato de suministro"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q114",
+      "sourceNumber": 114,
+      "text": "Según la Ley de contratos del sector público, la adjudicación de este contrato se podrá realizar mediante el siguiente procedimiento:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Adjudicación directa"
+        },
+        {
+          "id": "B",
+          "text": "El procedimiento abierto simplificado si entre los criterios de adjudicación previstos en el pliego no hay ninguno evaluable mediante juicio de valor o, de haberlos, su ponderación no supere el veinticinco por ciento del total"
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas B y D son correctas"
+        },
+        {
+          "id": "D",
+          "text": "El procedimiento abierto"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q115",
+      "sourceNumber": 115,
+      "text": "Indique cuál de las siguientes afirmaciones es correcta, respecto a la exigencia de la garantía provisional en este contrato:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No procederá la exigencia de garantía provisional, salvo cuando de forma excepcional el órgano de contratación, por motivos de interés público, lo considere necesario y lo justifique motivadamente en el expediente"
+        },
+        {
+          "id": "B",
+          "text": "No procede la exigencia de garantía provisional por el tipo de procedimiento"
+        },
+        {
+          "id": "C",
+          "text": "Procede la exigencia de la garantía provisional por el valor estimado de este contrato"
+        },
+        {
+          "id": "D",
+          "text": "No procede la exigencia de garantía provisional en ningún caso"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q116",
+      "sourceNumber": 116,
+      "text": "Conforme a lo establecido en el artº 29 de la Ley de contratos del sector público, y en el supuesto de que este expediente de contratación se tramite por procedimiento abierto, ¿cuál es el plazo de duración máximo de este contrato?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuatro años: dos años de duración más dos prórrogas de un año de duración cada una"
+        },
+        {
+          "id": "B",
+          "text": "Cuatro años: tres años de duración más una prórroga de un año de duración"
+        },
+        {
+          "id": "C",
+          "text": "Cinco años, incluidas las prórrogas"
+        },
+        {
+          "id": "D",
+          "text": "Dos años de duración, incluidas las prórrogas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q117",
+      "sourceNumber": 117,
+      "text": "¿A qué subconcepto de la clasificación económica del presupuestario se imputará este expediente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "221.08"
+        },
+        {
+          "id": "B",
+          "text": "203.00"
+        },
+        {
+          "id": "C",
+          "text": "603.00"
+        },
+        {
+          "id": "D",
+          "text": "221.09"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q118",
+      "sourceNumber": 118,
+      "text": "¿A qué tipo de contrato y categoría del catálogo de bienes y servicios del código SAS pertenece este contrato?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "AR"
+        },
+        {
+          "id": "B",
+          "text": "SU.AR"
+        },
+        {
+          "id": "C",
+          "text": "SU.EQ"
+        },
+        {
+          "id": "D",
+          "text": "SU.PC"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q119",
+      "sourceNumber": 119,
+      "text": "El siguiente expediente a tramitar es un expediente de obra, cuyo objeto es enmendar el deterioro de un centro de salud producido por el uso y el paso del tiempo. De acuerdo con la clasificación de las obras establecida en la ley 9/2017 de contratos del sector público, la obra es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Obra de rehabilitación"
+        },
+        {
+          "id": "B",
+          "text": "Obra de reparación"
+        },
+        {
+          "id": "C",
+          "text": "Obra de conservación"
+        },
+        {
+          "id": "D",
+          "text": "Obra de restauración"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q120",
+      "sourceNumber": 120,
+      "text": "Respecto a este expediente de contratación de obra, indique cuál de las siguientes no es una respuesta correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La adjudicación de un contrato de obras requerirá la previa elaboración, supervisión, aprobación y replanteo del correspondiente proyecto que definirá con precisión el objeto del contrato"
+        },
+        {
+          "id": "B",
+          "text": "Cuando la naturaleza de la obra lo permita, se podrá establecer el sistema de retribución a tanto alzado, sin existencia de precios unitarios"
+        },
+        {
+          "id": "C",
+          "text": "A los efectos del pago, la Administración expedirá mensualmente, en los primeros diez días siguientes al mes al que correspondan, certificaciones que comprendan la obra ejecutada conforme a proyecto durante dicho período de tiempo, salvo prevención en contrario en el pliego de cláusulas administrativas particulares"
+        },
+        {
+          "id": "D",
+          "text": "Dentro del plazo de dos meses contados a partir de la terminación de la obra, el órgano de contratación deberá aprobar la certificación final de las obras ejecutadas, que será abonada al contratista a cuenta de la liquidación del contrato en el plazo previsto en esta Ley"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q121",
+      "sourceNumber": 121,
+      "text": "En otra de las propuestas, la Dirección Médica solicita un Facultativo Especialista en Digestivo para atender las funciones de D. Luis P., quien se encuentra en situación de Incapacidad Temporal por enfermedad. El trabajador seleccionado se llama Diego D. ¿Qué tipo de nombramiento temporal tendrá que formalizar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Eventual"
+        },
+        {
+          "id": "B",
+          "text": "Sustituto"
+        },
+        {
+          "id": "C",
+          "text": "Interino Sustituto"
+        },
+        {
+          "id": "D",
+          "text": "Interino"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q122",
+      "sourceNumber": 122,
+      "text": "¿Diego comienza a trabajar el día 3 de diciembre de 2018, que parte proporcional de paga extraordinarias de diciembre de 2018 le correspondería?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27/183"
+        },
+        {
+          "id": "B",
+          "text": "28/183"
+        },
+        {
+          "id": "C",
+          "text": "28/180"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna,"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q123",
+      "sourceNumber": 123,
+      "text": "¿Diego trabaja en otro centro sanitario privado de la provincia, a qué parte del Complemento Específico podrá renunciar Diego D.?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dificultad y Responsabilidad (F.R.)"
+        },
+        {
+          "id": "B",
+          "text": "Peligrosidad o Penosidad (P.)"
+        },
+        {
+          "id": "C",
+          "text": "Dedicación, Incompatibilidad, Dificultad, Responsabilidad y Peligrosidad o Penosidad (D.I.F.R.P.)"
+        },
+        {
+          "id": "D",
+          "text": "Dedicación e Incompatibilidad (D.I.)"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q124",
+      "sourceNumber": 124,
+      "text": "El facultativo al que Diego sustituye ha sido propuesto para el reconocimiento de una incapacidad permanente, de acuerdo con la Ley General de la Seguridad Social, cualquiera que sea la causa que la determine, la incapacidad permanente se clasifica en los siguientes grados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Incapacidad permanente parcial, incapacidad permanente total, incapacidad permanente absoluta y gran invalidez"
+        },
+        {
+          "id": "B",
+          "text": "Incapacidad permanente parcial, incapacidad permanente total, y gran invalidez"
+        },
+        {
+          "id": "C",
+          "text": "Incapacidad permanente total, incapacidad permanente absoluta y gran invalidez"
+        },
+        {
+          "id": "D",
+          "text": "Incapacidad permanente total y gran invalidez"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q125",
+      "sourceNumber": 125,
+      "text": "¿En qué casos le supondría la pérdida de la condición de personal estatutario fijo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Si se le declara la incapacidad permanente total para su profesión habitual, la incapacidad permanente absoluta y la gran invalidad"
+        },
+        {
+          "id": "B",
+          "text": "Sólo si se le declara en incapacidad permanente absoluta y gran invalidez"
+        },
+        {
+          "id": "C",
+          "text": "Solo si se le declara en incapacidad permanente total para la profesión habitual"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es correcta"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q126",
+      "sourceNumber": 126,
+      "text": "El Servicio de Personal recibe estadillo de la Continuidad Asistencial correspondiente al mes de diciembre 2018 realizada por el personal facultativo especialista del servicio de Cardiología. ¿Qué retribuye el complemento de Continuidad Asistencial?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La prolongación de la jornada desde las 20 horas"
+        },
+        {
+          "id": "B",
+          "text": "La jornada ordinaria por encima de las 20 horas"
+        },
+        {
+          "id": "C",
+          "text": "La prolongación de jornada hasta las 20 horas"
+        },
+        {
+          "id": "D",
+          "text": "Las guardias médicas hasta las 20 horas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q127",
+      "sourceNumber": 127,
+      "text": "A la hora de mecanizar la Continuidad Asistencial del domingo día 23 de diciembre, el programa de Turnos y Absentismo lo impide. ¿Por qué?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Porque el complemento de Continuidad Asistencial sólo retribuye la actividad realizada los días laborables de lunes a viernes"
+        },
+        {
+          "id": "B",
+          "text": "Porque el complemento de Continuidad Asistencial sólo retribuye la actividad realizada de lunes a viernes"
+        },
+        {
+          "id": "C",
+          "text": "Porque el complemento de Continuidad Asistencial sólo retribuye la actividad realizada los días laborables de lunes a sábados"
+        },
+        {
+          "id": "D",
+          "text": "Solo podría mecanizarse continuidad asistencial si fuera festivo especial"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q128",
+      "sourceNumber": 128,
+      "text": "En los estadillos de Jornada Complementaria y Continuidad Asistencial se nos indica que varios facultativos han disfrutado vacaciones. Uno de ellos ha disfrutado por completo del mes de diciembre y realiza mensualmente tanto Jornada Complementaria como Continuidad Asistencial. ¿Qué tendrá derecho a percibir por ello?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Durante las vacaciones no se percibirá cantidad alguna en concepto de Jornada Complementaria y Continuidad Asistencial"
+        },
+        {
+          "id": "B",
+          "text": "Una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en los tres meses anteriores sólo por la Jornada Complementaria"
+        },
+        {
+          "id": "C",
+          "text": "Una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en los tres meses anteriores sólo por la Continuidad Asistencial"
+        },
+        {
+          "id": "D",
+          "text": "Una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en los tres meses anteriores por ambos conceptos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q129",
+      "sourceNumber": 129,
+      "text": "En caso de que el facultativo de la pregunta anterior sólo hubiera disfrutado de 10 días de vacaciones durante el mes de diciembre:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se tomará como base la misma media, pero dividida por diez"
+        },
+        {
+          "id": "B",
+          "text": "Durante las vacaciones no se percibirá cantidad alguna en concepto de Jornada Complementaria y Continuidad Asistencial"
+        },
+        {
+          "id": "C",
+          "text": "Se tomará como base la media ponderada"
+        },
+        {
+          "id": "D",
+          "text": "Se tomará como base la misma media, pero proporcional al periodo de tiempo a disfrutar"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q130",
+      "sourceNumber": 130,
+      "text": "Una Facultativo Especialista de Área del Servicio de Cardiología se encuentra disfrutando una Licencia por Maternidad. En los tres meses anteriores al inicio de dicha situación realizó jornada complementaria de presencia física. ¿Qué percibirá durante el periodo de tiempo que dure dicha situación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una prestación de la seguridad social correspondiente al 100% de la base reguladora del mes anterior al inicio de la licencia por maternidad, más una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en la modalidad de jornada complementaria en los tres meses anteriores al inicio de licencia por maternidad"
+        },
+        {
+          "id": "B",
+          "text": "Una prestación de la seguridad social correspondiente al 100% de la base reguladora del mes anterior al inicio de la licencia por maternidad, una aportación de la empresa que garantice el abono de la totalidad de las retribuciones fijas y periódicas, más una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en la modalidad de jornada complementaria en los tres meses anteriores al inicio de licencia por maternidad"
+        },
+        {
+          "id": "C",
+          "text": "Una prestación de la seguridad social correspondiente al 100% de la base reguladora del mes anterior al inicio de la licencia por maternidad, una aportación de la empresa que garantice el abono de la totalidad de las retribuciones básicas, más una cantidad equivalente a la media aritmética de las cantidades devengadas por los servicios efectivamente realizados en la modalidad de jornada complementaria en los tres meses anteriores al inicio de licencia por maternidad"
+        },
+        {
+          "id": "D",
+          "text": "La situación de licencia por maternidad supone una suspensión del nombramiento y sólo percibirá las prestaciones de la Seguridad Social"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q131",
+      "sourceNumber": 131,
+      "text": "Una vez concluido el periodo de dieciséis semanas de licencia por maternidad, ¿tendrá derecho a disfrutar de algún otro permiso o licencia asociado a la maternidad?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No, una vez agotado el permiso de maternidad deberá incorporarse a su puesto de trabajo"
+        },
+        {
+          "id": "B",
+          "text": "Si, una vez agotado el permiso por maternidad de dieciséis semanas o de las que correspondan en caso de parto múltiple o discapacidad del hijo, y a continuación del mismo, el personal tendrá derecho a un permiso retribuido de dos semanas adicionales que se disfrutarán de forma consecutiva"
+        },
+        {
+          "id": "C",
+          "text": "Si, una vez agotado el permiso por maternidad de dieciséis semanas o de las que correspondan en caso de parto múltiple o discapacidad del hijo, y a continuación del mismo, el personal tendrá derecho a un permiso retribuido de cuatro semanas adicionales que se disfrutarán de forma consecutiva"
+        },
+        {
+          "id": "D",
+          "text": "Si, una vez agotado el permiso por maternidad de dieciséis semanas o de las que correspondan en caso de parto múltiple o discapacidad del hijo, y a continuación del mismo, el personal tendrá derecho a un permiso retribuido de dos meses que se disfrutarán de forma consecutiva"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q132",
+      "sourceNumber": 132,
+      "text": "El pasado 15 de octubre de 2018 Pedro cumplió un trienio. ¿Cuándo se producirán los efectos económicos de este nuevo trienio?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 1 de noviembre de 2018"
+        },
+        {
+          "id": "B",
+          "text": "El 1 de enero de 2019"
+        },
+        {
+          "id": "C",
+          "text": "El 16 de noviembre de 2018"
+        },
+        {
+          "id": "D",
+          "text": "El día uno de enero del año siguiente a su vencimiento"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q133",
+      "sourceNumber": 133,
+      "text": "¿De qué grupo de clasificación será el nuevo trienio que ha cumplido Pedro?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1"
+        },
+        {
+          "id": "B",
+          "text": "C1"
+        },
+        {
+          "id": "C",
+          "text": "Depende de la titulación"
+        },
+        {
+          "id": "D",
+          "text": "E"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q134",
+      "sourceNumber": 134,
+      "text": "¿Pedro ha tenido un hijo el día 1 de octubre, que duración tiene el permiso por paternidad que podrá disfrutar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 semanas"
+        },
+        {
+          "id": "B",
+          "text": "4 semanas"
+        },
+        {
+          "id": "C",
+          "text": "20 semanas"
+        },
+        {
+          "id": "D",
+          "text": "15 semanas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q135",
+      "sourceNumber": 135,
+      "text": "¿Como puede disfrutar de este permiso?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cinco semanas seguidas a partir del nacimiento"
+        },
+        {
+          "id": "B",
+          "text": "En dos periodos: 4 semanas ininterrumpidas a partir del nacimiento del hijo y la quinta dentro de los nueve meses siguientes al parto"
+        },
+        {
+          "id": "C",
+          "text": "En dos periodos: 4 semana ininterrumpidas a partir del nacimiento del hijo y la quinta dentro de los doce meses siguientes al parto"
+        },
+        {
+          "id": "D",
+          "text": "Son correctas A y B"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q136",
+      "sourceNumber": 136,
+      "text": "Pedro ha tomado la decisión de solicitar una reducción de jornada para atender al cuidado directo de su hijo, ¿Cuál de las siguientes opciones puede solicitar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una reducción de 1/2 de jornada con una percepción del 50% de la totalidad de sus retribuciones básicas y complementarias"
+        },
+        {
+          "id": "B",
+          "text": "Una reducción de 1/2 de jornada con una percepción del 30% de la totalidad de sus retribuciones básicas y complementarias"
+        },
+        {
+          "id": "C",
+          "text": "Una reducción de 1/3 de jornada con una percepción del 80% de la totalidad de sus retribuciones básicas y complementarias"
+        },
+        {
+          "id": "D",
+          "text": "Una reducción de 1/3 de jornada con una percepción del 75% de la totalidad de sus retribuciones básicas y complementarias"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q137",
+      "sourceNumber": 137,
+      "text": "Con qué periodo de antelación al inicio deberá solicitar la reducción de jornada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un mes"
+        },
+        {
+          "id": "B",
+          "text": "15 días naturales"
+        },
+        {
+          "id": "C",
+          "text": "15 días hábiles"
+        },
+        {
+          "id": "D",
+          "text": "10 días naturales"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q138",
+      "sourceNumber": 138,
+      "text": "A Pedro le han ofrecido trabajar como contable en una empresa de automóviles por la tarde en horario de 16 a 19 horas, para poder desempeñar este segundo puesto de trabajo, ¿necesitará solicitar la compatibilidad?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Si"
+        },
+        {
+          "id": "B",
+          "text": "No, porque su horario de trabajo no interfiere con el de la actividad publica"
+        },
+        {
+          "id": "C",
+          "text": "No la compatibilidad sólo la tiene que pedir los profesionales sanitarios"
+        },
+        {
+          "id": "D",
+          "text": "No, la compatibilidad sólo tendría que pedirla si se tratara de otra actividad pública"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q139",
+      "sourceNumber": 139,
+      "text": "Según el artículo 5 del Decreto 524/2008, de 16 de diciembre la resolución de reconocimiento o denegación de la compatibilidad solicitada por Pedro corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Consejería de Justicia y Administración Pública"
+        },
+        {
+          "id": "B",
+          "text": "La Consejería de Salud"
+        },
+        {
+          "id": "C",
+          "text": "El Servicio Andaluz de Salud"
+        },
+        {
+          "id": "D",
+          "text": "La Consejería de Hacienda"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q140",
+      "sourceNumber": 140,
+      "text": "Las solicitudes de compatibilidad referidas a actividad privada, serán resueltas en un plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tres meses"
+        },
+        {
+          "id": "B",
+          "text": "Dos meses"
+        },
+        {
+          "id": "C",
+          "text": "Un mes"
+        },
+        {
+          "id": "D",
+          "text": "Seis meses"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q141",
+      "sourceNumber": 141,
+      "text": "El tío de Rosa cae gravemente enfermo y es ingresado en un Hospital. ¿Cuántos días tiene derecho a disfrutar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tres días hábiles cuando el suceso se produzca en la misma localidad de residencia del trabajador o cinco días hábiles si el hecho se produce en distinta localidad de la de residencia del trabajador"
+        },
+        {
+          "id": "B",
+          "text": "Dos días hábiles cuando el suceso se produzca en la misma localidad de residencia del trabajador o cuatro días hábiles si el hecho se produce en distinta localidad de la de residencia del trabajador. Disposición Adicional Décimo Novena de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres"
+        },
+        {
+          "id": "C",
+          "text": "Dos días hábiles si el hospital donde es ingresado se encuentra en la misma localidad de residencia del trabajador o cuatro días hábiles si el hospital se encuentra en distinta localidad de la de residencia del trabajador"
+        },
+        {
+          "id": "D",
+          "text": "No tiene derecho a ningún día de permiso"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q142",
+      "sourceNumber": 142,
+      "text": "Rosa está adscrita al turno diurno, para calcular su jornada se han tenido en cuenta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las jornadas de asuntos particulares adicionales por trienios"
+        },
+        {
+          "id": "B",
+          "text": "Las vacaciones"
+        },
+        {
+          "id": "C",
+          "text": "Los permisos por deber inexcusable"
+        },
+        {
+          "id": "D",
+          "text": "Las vacaciones adicionales"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q143",
+      "sourceNumber": 143,
+      "text": "En función de la antigüedad acreditada en el SAS, ¿cuántos días adicionales de vacaciones le corresponderían a Lucia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 días hábiles más"
+        },
+        {
+          "id": "B",
+          "text": "1 día hábil más"
+        },
+        {
+          "id": "C",
+          "text": "2,5 días hábiles más"
+        },
+        {
+          "id": "D",
+          "text": "3 días hábiles más"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q144",
+      "sourceNumber": 144,
+      "text": "Cuándo tomó posesión de la plaza de Técnico Medio de Función Administrativa, ¿cuántos trienios percibía Elena y de qué grupo de clasificación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 trienios del grupo C2 y 1 trienio del grupo C1"
+        },
+        {
+          "id": "B",
+          "text": "3 trienios del grupo A2"
+        },
+        {
+          "id": "C",
+          "text": "2 trienios del grupo C1 y 1 trienio del grupo C2"
+        },
+        {
+          "id": "D",
+          "text": "No percibía ningún trienio ya que era personal temporal"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q145",
+      "sourceNumber": 145,
+      "text": "Los servicios reconocidos a efectos de trienios serán:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los indistintamente prestados en cualquiera de las Administraciones Públicas, ya sea en régimen de vinculación administrativa o laboral, excepto aquellos que tuvieran el carácter de prestaciones personales obligatorias"
+        },
+        {
+          "id": "B",
+          "text": "Los períodos de tiempo en la situación administrativa de excedencia para el cuidado de familiares, excedencia por violencia de género y servicios especiales"
+        },
+        {
+          "id": "C",
+          "text": "Los períodos de prestación de servicios en las Administraciones Públicas de los estados miembros de la Unión Europea previos al ingreso o reingreso en los correspondientes Cuerpos, Escalas, Clases o Categorías de cualesquiera Administraciones Públicas, excepto aquellos que tuvieran el carácter de prestaciones obligatorias"
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q146",
+      "sourceNumber": 146,
+      "text": "En relación con la carrera profesional ¿Puede actualmente Lidia optar a ella?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Si, porque en los últimos cinco años no ha tenido opción de presentarse a ningún proceso selectivo convocado por el Servicio Andaluz de Salud"
+        },
+        {
+          "id": "B",
+          "text": "No, porque la categoría ha sido declarada a extinguir"
+        },
+        {
+          "id": "C",
+          "text": "No, porque no tiene la condición de personal estatutario fijo"
+        },
+        {
+          "id": "D",
+          "text": "Si, porque el proceso de acceso al modelo de Carrera Profesional tiene carácter abierto y permanente para el personal de gestión y servicios"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q147",
+      "sourceNumber": 147,
+      "text": "Respecto al nivel de acreditación de competencias profesionales necesario para acceder a los distintos niveles de carrera profesional no es correcto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nivel 2, acreditación de avanzado"
+        },
+        {
+          "id": "B",
+          "text": "Nivel 3, acreditación de experto"
+        },
+        {
+          "id": "C",
+          "text": "Nivel 4 acreditación de experto"
+        },
+        {
+          "id": "D",
+          "text": "Nivel 5, acreditación de excelente"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q148",
+      "sourceNumber": 148,
+      "text": "Lucia decidió presentarse a la convocatoria pública para cubrir el puesto de Jefe de Grupo Administrativo en el Distrito Sanitario situado en la misma localidad en que se encuentra el Hospital. ¿Dónde se debió publicar dicha convocatoria pública de acuerdo con el Decreto que regula la provisión de estos puestos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el BOJA y en los tablones de anuncios de todos los Centros Sanitarios del área de Salud"
+        },
+        {
+          "id": "B",
+          "text": "En el BOJA y en la página web del Servicio Andaluz de Salud"
+        },
+        {
+          "id": "C",
+          "text": "En el BOJA y en la página web del Servicio Andaluz de Salud, en los tablones de anuncios de todos los Centros Sanitarios del Área de Salud y se remitirá para su publicación al Servicio Andaluz de Empleo de la provincia"
+        },
+        {
+          "id": "D",
+          "text": "En el BOJA y en el tablón de anuncios del Distrito que convoca el puesto"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q149",
+      "sourceNumber": 149,
+      "text": "Lucia ha sido seleccionada para la cobertura del puesto de Jefe de Grupo Administrativo, por lo que se incorpora a la Unidad de Personal del mismo. ¿Por cuánto tiempo se le ha de expedir el correspondiente nombramiento?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuatro años"
+        },
+        {
+          "id": "B",
+          "text": "Dos años, renovables"
+        },
+        {
+          "id": "C",
+          "text": "Tres años"
+        },
+        {
+          "id": "D",
+          "text": "Un año, renovable por periodos de igual duración"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q150",
+      "sourceNumber": 150,
+      "text": "Lo primero que hace Lucía tras incorporarse a su puesto es repasar la Resolución de Retribuciones del SAS, con objeto de conocer más a fondo los conceptos retributivos específicos de atención primaria. En cuanto al Complemento de Productividad Factor Fijo por Dispersión Geográfica ¿Cuántas modalidades existen para retribuir a los Médicos de Familia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuatro: G1, G2, G3 y G4"
+        },
+        {
+          "id": "B",
+          "text": "Sólo existe una modalidad: DG"
+        },
+        {
+          "id": "C",
+          "text": "Dos: G1 y G2"
+        },
+        {
+          "id": "D",
+          "text": "No existe dicho complemento para los Médicos de Familia"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": null,
+      "status": "valid",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q151",
+      "sourceNumber": 151,
+      "text": "Según la Directiva 2003/88/CE del Parlamento Europeo y del Consejo, relativa a determinados aspectos de la ordenación del tiempo de trabajo, los Estados miembros adoptarán las medidas necesarias para todos los trabajadores disfruten de un periodo mínimo de descanso diario de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 horas consecutivas en el curso de cada periodo de 24 horas"
+        },
+        {
+          "id": "B",
+          "text": "11 horas consecutivas en el curso de cada periodo de 24 horas"
+        },
+        {
+          "id": "C",
+          "text": "10 horas consecutivas en el curso de cada periodo de 24 horas"
+        },
+        {
+          "id": "D",
+          "text": "12 horas"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": null,
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q152",
+      "sourceNumber": 152,
+      "text": "¿Qué se retribuye con el concepto Atención Continuada, modalidad “A” al personal facultativo y enfermeros de equipos básicos de atención primaria que prestan servicios en los Centros de Salud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Retribuye la realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente"
+        },
+        {
+          "id": "B",
+          "text": "Retribuye la realización de jornada en días festivos"
+        },
+        {
+          "id": "C",
+          "text": "Retribuye la participación en los turnos rotatorios de atención continuada a urgencias de presencia física"
+        },
+        {
+          "id": "D",
+          "text": "Retribuye la realización de actividades sanitarias relacionadas con la Comunidad durarte un periodo no superior a 6 horas mensuales"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2018-turno-libre-q153",
+      "sourceNumber": 153,
+      "text": "¿Quién tiene la competencia en la resolución de un expediente de reconocimiento de servicios previos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Director Económico Administrativo del Área Hospitalaria, por delegación del Director General de Profesionales del Servicio Andaluz de Salud"
+        },
+        {
+          "id": "B",
+          "text": "El Interventor del Centro"
+        },
+        {
+          "id": "C",
+          "text": "El Director General de Profesionales del Servicio Andaluz de Salud sin posibilidad de delegación"
+        },
+        {
+          "id": "D",
+          "text": "La persona titular de la Dirección Gerencia de los Distritos Sanitarios, de la Dirección Gerencia de las Áreas de Gestión Sanitaria y Hospitalarias y a las Direcciones de los Centros de Transfusión Sanguínea, por delegación del Director General de Profesionales del Servicio Andaluz de Salud, donde preste o haya prestado sus servicios el personal estatutario el día de su solicitud"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": null,
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 34
+    }
+  ],
+  "scorableSet": {
+    "state": "unresolved",
+    "questionNumbers": [],
+    "count": 0,
+    "annulledNumbers": [
+      6,
+      24,
+      56,
+      111
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [],
+    "reserveUsedLabels": {},
+    "annulledCount": 4,
+    "reserveTotal": 3,
+    "reserveUsedCount": 0,
+    "reserveUnusedCount": 3
+  },
+  "qa": {
+    "state": "bloqueado_para_revision",
+    "blockedReason": "tratamiento irreconciliable de anuladas/reservas: reservas insuficientes (4 anuladas, 3 reservas declaradas)",
+    "flags": [],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": false,
+      "reserveHandlingResolved": false,
+      "duplicatesResolved": true
+    }
+  }
+}

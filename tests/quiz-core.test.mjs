@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { QuizSession, shuffled } from "../app/src/quiz-core.js";
+import { readFile, readdir } from "node:fs/promises";
 
 const question = (id, correctOption = "A", status = "valid") => ({
   id,
@@ -63,4 +64,43 @@ test("finaliza y construye un nuevo conjunto solo con las falladas", () => {
   assert.deepEqual(session.failedQuestions(questions).map(({ id }) => id), ["q1"]);
   const retry = new QuizSession(session.failedQuestions(questions));
   assert.equal(retry.currentQuestion.id, "q1");
+});
+
+test("el DATA_URL configurado por la aplicación existe", async () => {
+  const appSource = await readFile(new URL("../app/src/app.js", import.meta.url), "utf8");
+  const configuredUrl = appSource.match(/const DATA_URL = ["'](.+?)["'];/)?.[1];
+  assert.ok(configuredUrl, "app.js debe declarar DATA_URL");
+  const appRoot = new URL("../app/", import.meta.url);
+  const dataFile = new URL(configuredUrl.replace(/^\.\//, ""), appRoot);
+  assert.ok((await readFile(dataFile)).length > 0, `${configuredUrl} debe existir`);
+});
+
+test("consume un paquete real del importador usando solo su conjunto activo", async () => {
+  const bankUrl = new URL("../app/public/data/exams/", import.meta.url);
+  const catalog = JSON.parse(await readFile(new URL("catalog.json", bankUrl), "utf8"));
+  const entry = catalog.exams.find(({ id }) => id === "sas-administrativo-2021-turno-libre");
+  assert.ok(entry, "el catálogo debe exponer el examen real generado de 2021");
+  const exam = JSON.parse(await readFile(new URL(entry.latestPath, bankUrl), "utf8"));
+  const session = new QuizSession(exam);
+  assert.equal(exam.source.pdf, "Examen_ADM_L_2021.pdf");
+  assert.equal(session.progress.total, exam.scorableSet.count);
+  assert.equal(session.questions.every(({ active }) => active), true);
+  assert.equal(session.questions.some(({ status }) => status === "annulled"), false);
+  assert.equal(session.questions.filter(({ status }) => status === "reserve").length, 3);
+});
+
+test("rechaza un paquete canónico bloqueado aunque conserve preguntas fuente", async () => {
+  const versionsUrl = new URL(
+    "../app/public/data/exams/blocked/sas-administrativo-2023-turno-libre/versions/",
+    import.meta.url,
+  );
+  const versionName = (await readdir(versionsUrl)).find((name) => name.endsWith(".json"));
+  assert.ok(versionName, "el corpus debe conservar el paquete bloqueado real de 2023");
+  const blocked = JSON.parse(await readFile(new URL(versionName, versionsUrl), "utf8"));
+  assert.equal(blocked.qa.state, "bloqueado_para_revision");
+  assert.equal(blocked.scorableSet.state, "unresolved");
+  assert.deepEqual(blocked.scorableSet.questionNumbers, []);
+  assert.equal(blocked.questions.length > 0, true);
+  assert.equal(blocked.questions.every(({ active }) => !active), true);
+  assert.throws(() => new QuizSession(blocked), /no tiene un conjunto puntuable consumible/);
 });

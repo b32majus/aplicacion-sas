@@ -2,6 +2,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/quiz-core.test.mjs"
+    "test": "node --test tests/quiz-core.test.mjs && .venv/bin/python -m unittest discover -s tests -p 'test_import_sas_bank.py'",
+    "test:import": ".venv/bin/python -m unittest discover -s tests -p 'test_import_sas_bank.py'",
+    "import:exam": ".venv/bin/python scripts/import_sas_exam.py",
+    "import:bank": ".venv/bin/python scripts/import_sas_bank.py"
   }
 }

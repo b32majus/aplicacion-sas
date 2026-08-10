@@ -314,6 +314,7 @@ async function startExam() {
       p_duration_minutes: selectedExam.durationMinutes,
     });
     if (error) throw error;
+    const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
     const pinned = attempt.exam_version_id === selectedExam.version && attempt.exam_version_path === selectedExam.versionPath
       ? { exam: selectedExam.package }
@@ -323,7 +324,7 @@ async function startExam() {
     const answers = await fetchAttemptAnswers(attempt.id);
     study = new ExamSession(pinned.exam, attempt, answers);
     activeExamAttempt = attempt;
-    examServerOffsetMs = Date.parse(attempt.server_now) - (clockRequestAt + Date.now()) / 2;
+    examServerOffsetMs = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
     const expired = Date.parse(attempt.deadline_at) <= Date.now() + examServerOffsetMs;
@@ -789,10 +790,6 @@ async function completeStudy() {
   }
 }
 
-function examAnswerKey() {
-  return Object.fromEntries(study.questions.map(({ id, correctOption }) => [id, correctOption]));
-}
-
 async function finalizeExam() {
   if (examFinalizing || study?.attempt.kind !== "exam" || study.attempt.status !== "active") return;
   examFinalizing = true;
@@ -808,7 +805,6 @@ async function finalizeExam() {
     }
     const { data, error } = await supabase.rpc("finish_exam_attempt", {
       p_attempt_id: study.attempt.id,
-      p_answer_key: examAnswerKey(),
     });
     if (error) throw error;
     study.attempt.status = "completed";
@@ -894,6 +890,20 @@ async function routePrivateView() {
     const examModeId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
     const failedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
     const examId = window.location.hash.match(/^#exam=([^&]+)$/)?.[1];
+    if (activeExamAttempt && !examModeId) {
+      const { data: expiredSummary, error: expiryError } = await supabase.rpc("finish_expired_exam_attempt", {
+        p_attempt_id: activeExamAttempt.id,
+      });
+      if (expiryError) throw expiryError;
+      if (expiredSummary) {
+        await refreshStatuses();
+        if (serial !== routeSerial) return;
+        window.location.hash = "catalog";
+        renderCatalog();
+        showOnly(elements["catalog-view"]);
+        return;
+      }
+    }
     if (examModeId) {
       await selectExam(decodeURIComponent(examModeId), { updateHash: false });
       await startExam();

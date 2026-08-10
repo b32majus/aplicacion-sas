@@ -81,6 +81,25 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
       state.attempt.current_position = payload.p_position;
       return json(route, answer);
     }
+    if (path.endsWith("/rpc/finish_expired_exam_attempt")) {
+      if (!state.attempt || state.attempt.status !== "active" || Date.parse(state.attempt.deadline_at) > Date.now()) {
+        return json(route, null);
+      }
+      state.finishCalls += 1;
+      state.attempt.status = "completed";
+      state.attempt.completed_at = new Date().toISOString();
+      state.attempt.score = 72.5;
+      return json(route, {
+        attempt_id: state.attempt.id,
+        correct: 112,
+        wrong: 30,
+        blank: 8,
+        score: 72.5,
+        elapsed_ms: 1_250_000,
+        new_personal_record: true,
+        completed_at: state.attempt.completed_at,
+      });
+    }
     if (path.endsWith("/rpc/finish_exam_attempt")) {
       state.finishCalls += 1;
       await new Promise((resolve) => setTimeout(resolve, finishDelay));
@@ -186,5 +205,21 @@ test("Seam 2: reabrir tras el deadline bloquea la edición y auto-finaliza", asy
   await expect(page.locator("#answer-options input").first()).toBeDisabled({ timeout: 500 });
   await expect(page.locator("#active-time")).toHaveText("Tiempo restante: 00:00:00");
   await expect(page.getByText("Intento finalizado")).toBeVisible({ timeout: 5000 });
+  expect(persistence.finishCalls).toBe(1);
+});
+
+test("Seam 2: reabrir la ficha tras el deadline cierra el intento sin exigir entrar de nuevo", async ({ page }) => {
+  const persistence = await mockExamPersistence(page);
+  await login(page);
+  await openExam(page);
+  await page.getByRole("button", { name: "← Salir del examen" }).click();
+  await expect(page.getByRole("heading", { name: exam.title })).toBeVisible();
+
+  persistence.attempt.deadline_at = new Date(Date.now() - 1000).toISOString();
+  await page.reload();
+
+  await expect(page.getByRole("heading", { name: "Exámenes oficiales" })).toBeVisible();
+  const card = page.locator(`[data-exam-id="${exam.id}"]`);
+  await expect(card.locator(".card-status")).toHaveText("Finalizado");
   expect(persistence.finishCalls).toBe(1);
 });

@@ -27,6 +27,21 @@ async function migratedDatabase() {
   for (const name of migrationNames) {
     await db.exec(await readFile(new URL(name, migrationsUrl), "utf8"));
   }
+  await db.query(
+    `insert into public.official_exam_versions(
+       exam_id, exam_version_id, exam_version_path, duration_minutes, question_ids, answer_key
+     ) values ($1, $2, $3, 90, $4, $5::jsonb)
+     on conflict (exam_id, exam_version_id) do update set
+       exam_version_path = excluded.exam_version_path,
+       duration_minutes = excluded.duration_minutes,
+       question_ids = excluded.question_ids,
+       answer_key = excluded.answer_key`,
+    [examId, versionId, versionPath, questionIds, JSON.stringify({
+      [questionIds[0]]: "B",
+      [questionIds[1]]: "B",
+      [questionIds[2]]: "C",
+    })],
+  );
   await db.query("insert into auth.users(id) values ($1)", [userId]);
   await db.query("select set_config('request.jwt.claim.sub', $1, false)", [userId]);
   return db;
@@ -56,17 +71,33 @@ async function saveExamAnswer(db, answerId, attemptId, questionId, selectedOptio
   return result;
 }
 
-async function finishExam(db, attemptId, answerKey = {
-  [questionIds[0]]: "B",
-  [questionIds[1]]: "B",
-  [questionIds[2]]: "C",
-}) {
+async function finishExam(db, attemptId) {
   const { rows: [{ finish_exam_attempt: result }] } = await db.query(
-    "select public.finish_exam_attempt($1, $2::jsonb)",
-    [attemptId, JSON.stringify(answerKey)],
+    "select public.finish_exam_attempt($1)",
+    [attemptId],
   );
   return result;
 }
+
+test("Seam 2: el servidor solo admite la identidad, orden y duración del paquete oficial", async () => {
+  const db = await migratedDatabase();
+  try {
+    await assert.rejects(
+      startExam(db, { questionIds: [...questionIds].reverse() }),
+      /versión oficial publicable/i,
+    );
+    await assert.rejects(
+      startExam(db, { durationMinutes: 1440 }),
+      /versión oficial publicable/i,
+    );
+    const { rows: [{ can_execute: canExecute }] } = await db.query(
+      "select has_function_privilege('authenticated', 'public.finish_exam_attempt_from_official_key(uuid,jsonb)', 'execute') as can_execute",
+    );
+    assert.equal(canExecute, false);
+  } finally {
+    await db.close();
+  }
+});
 
 test("Seam 2: iniciar Modo examen fija el orden oficial y un deadline de servidor sin crear otro activo", async () => {
   const db = await migratedDatabase();
@@ -309,12 +340,12 @@ test("Seam 2: un Modo examen activo bloquea respuestas de estudio sin abandonar 
 test("Seam 2: el servidor rechaza ediciones tardías y cierra el intento con el tiempo oficial", async () => {
   const db = await migratedDatabase();
   try {
-    const attempt = await startExam(db, { durationMinutes: 1 });
+    const attempt = await startExam(db);
     await db.exec("alter table public.attempts disable trigger attempts_keep_pinned_identity");
     await db.query(
       `update public.attempts
-       set started_at = now() - interval '2 minutes',
-           deadline_at = now() - interval '1 minute'
+       set started_at = now() - interval '91 minutes',
+            deadline_at = now() - interval '1 minute'
        where id = $1`,
       [attempt.id],
     );
@@ -333,14 +364,42 @@ test("Seam 2: el servidor rechaza ediciones tardías y cierra el intento con el 
     );
 
     const summary = await finishExam(db, attempt.id);
-    assert.equal(summary.elapsed_ms, 60_000);
+    assert.equal(summary.elapsed_ms, 90 * 60_000);
     assert.deepEqual(
       { correct: summary.correct, wrong: summary.wrong, blank: summary.blank },
       { correct: 0, wrong: 0, blank: 3 },
     );
-    const repeated = await startExam(db, { durationMinutes: 1 });
+    const repeated = await startExam(db);
     assert.notEqual(repeated.id, attempt.id);
     assert.equal(repeated.status, "active");
+  } finally {
+    await db.close();
+  }
+});
+
+test("Seam 2: la reapertura cierra en servidor solo un examen ya expirado", async () => {
+  const db = await migratedDatabase();
+  try {
+    const attempt = await startExam(db, { durationMinutes: 90 });
+    const { rows: [{ finish_expired_exam_attempt: beforeDeadline }] } = await db.query(
+      "select public.finish_expired_exam_attempt($1)",
+      [attempt.id],
+    );
+    assert.equal(beforeDeadline, null);
+
+    await db.exec("alter table public.attempts disable trigger attempts_keep_pinned_identity");
+    await db.query(
+      "update public.attempts set started_at = now() - interval '91 minutes', deadline_at = now() - interval '1 minute' where id = $1",
+      [attempt.id],
+    );
+    await db.exec("alter table public.attempts enable trigger attempts_keep_pinned_identity");
+    const { rows: [{ finish_expired_exam_attempt: summary }] } = await db.query(
+      "select public.finish_expired_exam_attempt($1)",
+      [attempt.id],
+    );
+    assert.equal(summary.blank, 3);
+    const repeated = await finishExam(db, attempt.id);
+    assert.deepEqual(repeated, summary);
   } finally {
     await db.close();
   }

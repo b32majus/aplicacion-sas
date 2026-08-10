@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project": "aplicacion-sas",
   "status": "READY",
   "audit_result": "READY",
@@ -15,23 +15,24 @@
     "parallelism": 1,
     "preferred_preset": "critical",
     "preferred_writer": "openai/gpt-5.6-sol",
+    "writer_reasoning": "high",
     "prefer_fast_service_tier": true,
     "fast_is_optimization_not_gate": true
   },
-  "model_policy_note": "Use the critical preset for every product-code WO. Prefer GPT-5.6 Sol with Fast/Priority service tier when the effective OpenCode runtime supports it per-session or via non-persistent runtime override. Do not mutate global OpenCode config just to obtain Fast. If Fast cannot be proven effective, continue with critical Sol at standard service tier. Keep KairOS reviewer policy unchanged.",
+  "model_policy_note": "Use the current qualified KairOS critical preset for every product-code WO: GPT-5.6 Sol HIGH writer, preserving the configured independent reviewer. Prefer Fast/Priority serving when the effective OpenCode runtime can enable it per-run or via non-persistent runtime override. Do not modify KairOS lifecycle/model-preset source or persistent global OpenCode config merely to obtain xhigh or Fast. If Fast cannot be proven effective, continue with critical Sol HIGH at standard service tier.",
   "linearization_reason": "Use one safe topological order overnight to avoid branch races and human supervision. T12 intentionally remains last although its blockers clear after T02.",
   "tickets": [
     {"order": 1, "ticket": "T01", "issue": 5, "blocked_by": [], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 2, "ticket": "T02", "issue": 6, "blocked_by": [5], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
-    {"order": 3, "ticket": "T03", "issue": 7, "blocked_by": [6], "recommended_preset": "critical", "writer_reasoning": "xhigh", "prefer_fast": true},
+    {"order": 3, "ticket": "T03", "issue": 7, "blocked_by": [6], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 4, "ticket": "T04", "issue": 8, "blocked_by": [7], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 5, "ticket": "T05", "issue": 9, "blocked_by": [7], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
-    {"order": 6, "ticket": "T06", "issue": 10, "blocked_by": [7], "recommended_preset": "critical", "writer_reasoning": "xhigh", "prefer_fast": true},
-    {"order": 7, "ticket": "T07", "issue": 11, "blocked_by": [7, 10], "recommended_preset": "critical", "writer_reasoning": "xhigh", "prefer_fast": true},
+    {"order": 6, "ticket": "T06", "issue": 10, "blocked_by": [7], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
+    {"order": 7, "ticket": "T07", "issue": 11, "blocked_by": [7, 10], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 8, "ticket": "T08", "issue": 12, "blocked_by": [5, 7, 10], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
-    {"order": 9, "ticket": "T09", "issue": 13, "blocked_by": [9, 10], "recommended_preset": "critical", "writer_reasoning": "xhigh", "prefer_fast": true},
+    {"order": 9, "ticket": "T09", "issue": 13, "blocked_by": [9, 10], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 10, "ticket": "T10", "issue": 14, "blocked_by": [5, 9, 10], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
     {"order": 11, "ticket": "T11", "issue": 15, "blocked_by": [11], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true},
-    {"order": 12, "ticket": "T12", "issue": 16, "blocked_by": [5, 6], "recommended_preset": "critical", "writer_reasoning": "xhigh", "prefer_fast": true}
+    {"order": 12, "ticket": "T12", "issue": 16, "blocked_by": [5, 6], "recommended_preset": "critical", "writer_reasoning": "high", "prefer_fast": true}
   ]
 }

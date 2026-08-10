@@ -37,10 +37,25 @@ Before T01:
 - do not start from a dirty/ambiguous worktree;
 - verify the 12 filenames listed in `INITIAL-PDF-FIXTURES.md` exist somewhere accessible to the T01 worktree/runtime;
 - verify the KairOS/OpenCode runtime can launch a fresh native writer session and read the project repo;
+- locate the **installed local copies** of Matt Pocock `tdd`, `implement` and `code-review`; read them before execution, but do not install/update skills during the train;
 - if repository `AGENTS.md` is absent, create/improve it using native OpenCode `/init` as the technical repository bootstrap before starting T01; `/init` must not invent product decisions or replace SPEC v2;
 - do not repurpose an unrelated hosted Supabase project. Local/isolated Supabase is acceptable for implementation/tests. If a live hosted project becomes genuinely mandatory to prove an acceptance criterion, STOP with `SUPABASE_PROJECT_REQUIRED` rather than borrowing another project.
 
 If any mandatory fixture, identity or safe execution prerequisite is missing, STOP with a concise report. Do not improvise around it.
+
+## Matt skills + KairOS review policy
+
+Matt skills are **methods**, while KairOS remains the BUILD_READY→PR execution/certification authority.
+
+- Planning skills are closed for this run: do not invoke `grill-with-docs`, `wayfinder`, `to-spec` or `to-tickets`.
+- Use `/tdd` where it improves signal. The testing seams are already approved by SPEC/tickets, so no new human confirmation is required:
+  - T01 → Seam 1, PDF oficial → paquete canónico + QA.
+  - T02–T11 → Seam 2, navegador/PWA → comportamiento visible + estado/Supabase.
+  - T12 → wrapper operativo de Seam 1, incluido gate PR/humano.
+- Current upstream `/implement` invokes `/code-review` at the end. KairOS already owns the single fresh tree-bound reviewer for the candidate and the KairOS workflow explicitly avoids duplicate reviewers. Therefore **do not invoke `/implement` as a top-level command if the installed local copy also launches an independent `/code-review`**.
+- In that case, implement the ticket directly inside the fresh KairOS writer using the same vertical/TDD discipline, and let the KairOS reviewer be the sole routine code reviewer.
+- If the installed `/implement` has been locally adapted so its final review delegates exclusively to KairOS and does not create another reviewer, it may be used.
+- If KairOS review is required but cannot execute, STOP with `REVIEW_RUNTIME_UNAVAILABLE`; do not silently substitute another review path.
 
 ## Why the supervisor should use dynamic ONCE checkpoints
 
@@ -96,13 +111,13 @@ For each queue item:
    Never rewrite or rebase an already certified checkpoint merely to absorb later work.
 
 4. **Launch a fresh OpenCode writer context**  
-   Use `/implement` semantics for that one ticket: implement its observable slice, use TDD at the approved seam where useful, run regular focused checks, then finish with proportional acceptance/truth + affected regression.
+   Implement exactly one tracer bullet. Use `/tdd` against the approved seam where useful, run regular focused checks, then finish with proportional acceptance/truth + affected regression. Do not invoke closed planning skills.
 
 5. **Respect brownfield policy**  
-   Reuse existing code only when it simplifies compliance with the current ticket/SPEC. Do not preserve legacy abstractions by cost sunk; do not rewrite useful infrastructure for aesthetics.
+   Reuse existing code only when it simplifies compliance with the current ticket/SPEC. Do not preserve legacy abstractions by sunk cost; do not rewrite useful infrastructure for aesthetics.
 
 6. **Review**  
-   Ordinary non-trivial code gets the fresh read-only review required by current KairOS policy. Reviewer sees the current acceptance, exact candidate and incremental diff, not the writer transcript or entire overnight history.
+   Ordinary non-trivial code gets the fresh read-only review required by current KairOS policy. Reviewer sees the current acceptance, exact candidate and incremental diff, not the writer transcript or entire overnight history. Do not add Matt `/code-review` as a second routine reviewer.
 
 7. **Checkpoint/publication**  
    Only after required deterministic checks and review PASS: create the exact checkpoint commit, non-force push the work branch and open/update a PR to `main`. Do not merge.
@@ -147,6 +162,7 @@ STOP the full train at the first real boundary:
 - missing one of the 12 mandatory PDF fixtures for T01;
 - mandatory acceptance/truth/affected test still failing after bounded repair;
 - reviewer returns a concrete material `BLOCKED` finding that cannot be repaired within the budget;
+- KairOS reviewer required but unavailable;
 - new product/architecture/human-authority decision is genuinely required;
 - wrong/ambiguous repository, worktree, branch or remote identity;
 - semantic integration conflict;
@@ -166,8 +182,11 @@ Do not skip a blocked ticket and continue to descendants that rely on it.
 - deploy/release/production activation;
 - create or reuse a hosted Supabase project without explicit Sil decision;
 - modify unrelated credentials/auth/SSH/MCP/plugins/global OpenCode config;
+- install/update skills;
 - publish real sensitive data;
 - broaden product scope;
+- reopen approved planning;
+- duplicate Matt + KairOS reviewers on the same candidate by routine;
 - use one growing writer conversation for all tickets;
 - parallelise product-code tickets during this unattended train.
 

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "project": "aplicacion-sas",
+  "status": "READY",
+  "audit_result": "READY",
+  "execution_policy": {
+    "mode": "unattended_linearized_dag",
+    "fresh_context_per_ticket": true,
+    "advance_on": "PASS",
+    "stop_on": "BLOCKED",
+    "auto_merge": false,
+    "direct_main_push": false,
+    "force_push": false,
+    "deploy": false,
+    "parallelism": 1
+  },
+  "linearization_reason": "Use one safe topological order overnight to avoid branch races and human supervision. T12 intentionally remains last although its blockers clear after T02.",
+  "tickets": [
+    {"order": 1, "ticket": "T01", "issue": 5, "blocked_by": [], "recommended_preset": "hybrid"},
+    {"order": 2, "ticket": "T02", "issue": 6, "blocked_by": [5], "recommended_preset": "critical"},
+    {"order": 3, "ticket": "T03", "issue": 7, "blocked_by": [6], "recommended_preset": "critical"},
+    {"order": 4, "ticket": "T04", "issue": 8, "blocked_by": [7], "recommended_preset": "hybrid"},
+    {"order": 5, "ticket": "T05", "issue": 9, "blocked_by": [7], "recommended_preset": "hybrid"},
+    {"order": 6, "ticket": "T06", "issue": 10, "blocked_by": [7], "recommended_preset": "critical"},
+    {"order": 7, "ticket": "T07", "issue": 11, "blocked_by": [7, 10], "recommended_preset": "critical"},
+    {"order": 8, "ticket": "T08", "issue": 12, "blocked_by": [5, 7, 10], "recommended_preset": "hybrid"},
+    {"order": 9, "ticket": "T09", "issue": 13, "blocked_by": [9, 10], "recommended_preset": "critical"},
+    {"order": 10, "ticket": "T10", "issue": 14, "blocked_by": [5, 9, 10], "recommended_preset": "hybrid"},
+    {"order": 11, "ticket": "T11", "issue": 15, "blocked_by": [11], "recommended_preset": "hybrid"},
+    {"order": 12, "ticket": "T12", "issue": 16, "blocked_by": [5, 6], "recommended_preset": "critical"}
+  ]
+}

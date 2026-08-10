@@ -22,6 +22,15 @@ Este directorio conserva los artefactos formales del workflow de definición y p
    - Versión histórica superseded por SPEC-to-spec-v2.
    - No usar como contrato actual.
 
+5. `aplicacion-sas-SPEC-v1.md`
+   - Especificación histórica previa a `to-spec`.
+   - Contiene decisiones superseded y se conserva solo para trazabilidad.
+
+## Auditoría externa de tickets
+
+- `AUDIT-TICKETS-PROMPT.md` contiene las instrucciones para el auditor independiente.
+- El auditor debe usar SPEC-to-spec-v2 + CONTEXT-final como fuentes primarias y GRILL-AUDIT-final como trazabilidad secundaria.
+
 ## Tickets actuales
 
 El resultado de `/to-tickets` vive en GitHub Issues:

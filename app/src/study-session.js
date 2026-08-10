@@ -31,6 +31,7 @@ export class NormalStudySession {
     if (
       !Array.isArray(attempt.question_ids)
       || attempt.question_ids.length === 0
+      || attempt.question_ids.length !== activeById.size
       || attempt.question_ids.some((id) => !activeById.has(id))
       || new Set(attempt.question_ids).size !== attempt.question_ids.length
     ) {

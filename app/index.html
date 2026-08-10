@@ -65,6 +65,7 @@
           <div class="study-entry">
             <p>Estado: <strong id="exam-study-status">Sin empezar</strong></p>
             <button id="start-study-button" class="primary" type="button">Empezar estudio normal</button>
+            <button id="start-random-study-button" class="secondary" type="button">Empezar estudio aleatorio</button>
             <p id="exam-error" class="error" role="alert" hidden></p>
           </div>
         </article>
@@ -78,7 +79,7 @@
         <article id="study-panel" class="panel study-panel">
           <div class="study-heading">
             <div>
-              <p class="eyebrow">Estudio normal · <span id="study-progress"></span></p>
+              <p class="eyebrow"><span id="study-strategy-label">Estudio normal</span> · <span id="study-progress"></span></p>
               <h1 id="study-exam-title"></h1>
             </div>
             <p id="active-time" class="active-time"></p>
@@ -123,6 +124,16 @@
           <button id="summary-catalog-button" class="primary" type="button">Volver a exámenes</button>
         </article>
       </section>
+
+      <dialog id="strategy-warning" class="strategy-warning" aria-labelledby="strategy-warning-title">
+        <p class="eyebrow">Cambio de estrategia</p>
+        <h2 id="strategy-warning-title">El recorrido actual quedará abandonado</h2>
+        <p id="strategy-warning-copy"></p>
+        <div class="dialog-actions">
+          <button id="cancel-strategy-change" class="secondary" type="button">Cancelar</button>
+          <button id="confirm-strategy-change" class="primary" type="button">Cambiar estrategia</button>
+        </div>
+      </dialog>
     </main>
     <script type="module" src="/src/app.js"></script>
   </body>

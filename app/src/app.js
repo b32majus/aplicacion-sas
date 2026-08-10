@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
+import { shuffled } from "./quiz-core.js";
 import { formatActiveTime, NormalStudySession } from "./study-session.js";
 import "./styles.css";
 
@@ -7,12 +8,13 @@ const ids = [
   "loading-view", "login-view", "catalog-view", "exam-view", "study-view", "summary-view",
   "login-form", "login-button", "login-error", "logout-button", "catalog-status", "exam-grid",
   "back-button", "exam-title", "exam-count", "exam-duration", "exam-study-status", "exam-error",
-  "start-study-button", "exit-study-button", "pause-button", "study-panel", "study-exam-title",
+  "start-study-button", "start-random-study-button", "exit-study-button", "pause-button", "study-panel", "study-exam-title",
   "study-progress", "active-time", "version-pin", "pause-message", "question-content",
   "question-label", "question-text", "answer-options", "correction", "study-error", "confirm-button",
   "skip-button", "next-pending-button", "complete-button", "question-numbers", "summary-title",
   "summary-correct", "summary-wrong", "summary-accuracy", "summary-time", "summary-pending",
-  "summary-mastered", "summary-catalog-button",
+  "summary-mastered", "summary-catalog-button", "study-strategy-label", "strategy-warning",
+  "strategy-warning-copy", "cancel-strategy-change", "confirm-strategy-change",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"]];
@@ -28,7 +30,7 @@ let catalogPromise;
 let selectedExam;
 let study;
 let statuses = new Map();
-let activeExamIds = new Set();
+let activeStrategies = new Map();
 let pendingActiveSeconds = 0;
 let lastActivityAt = Date.now();
 let timer;
@@ -37,6 +39,7 @@ let savePromise = Promise.resolve();
 let pendingConfirmationPayload = null;
 let confirmationRetryAvailable = false;
 let pendingSavePayload = null;
+let pendingStrategyChange = null;
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -64,16 +67,16 @@ function statusFor(examId) { return statuses.get(examId) || "Sin empezar"; }
 async function refreshStatuses() {
   const { data, error } = await supabase
     .from("attempts")
-    .select("exam_id,status,completed_at");
+    .select("exam_id,status,completed_at,strategy");
   if (error) throw error;
 
   statuses = new Map();
-  activeExamIds = new Set();
+  activeStrategies = new Map();
   for (const attempt of data) {
-    if (attempt.status === "active") activeExamIds.add(attempt.exam_id);
+    if (attempt.status === "active") activeStrategies.set(attempt.exam_id, attempt.strategy);
     if (attempt.status === "completed") statuses.set(attempt.exam_id, "Finalizado");
   }
-  for (const examId of activeExamIds) {
+  for (const examId of activeStrategies.keys()) {
     if (!statuses.has(examId)) statuses.set(examId, "En curso");
   }
 }
@@ -141,7 +144,13 @@ async function selectExam(id, { updateHash = true } = {}) {
   elements["exam-duration"].textContent = formatDuration(exam.durationMinutes);
   const state = statusFor(exam.id);
   elements["exam-study-status"].textContent = state;
-  elements["start-study-button"].textContent = activeExamIds.has(exam.id) ? "Continuar estudio normal" : "Empezar estudio normal";
+  const activeStrategy = activeStrategies.get(exam.id);
+  elements["start-study-button"].textContent = activeStrategy === "normal"
+    ? "Continuar estudio normal"
+    : activeStrategy ? "Cambiar a estudio normal" : "Empezar estudio normal";
+  elements["start-random-study-button"].textContent = activeStrategy === "random"
+    ? "Continuar estudio aleatorio"
+    : activeStrategy ? "Cambiar a estudio aleatorio" : "Empezar estudio aleatorio";
   if (updateHash) window.location.hash = `exam=${encodeURIComponent(exam.id)}`;
   showOnly(elements["exam-view"]);
 }
@@ -214,16 +223,35 @@ async function retryPendingConfirmation(payload) {
   }
 }
 
-async function startStudy() {
+function strategyName(strategy) { return strategy === "random" ? "aleatorio" : "normal"; }
+
+function warnBeforeStrategyChange(strategy) {
+  pendingStrategyChange = strategy;
+  const current = strategyName(activeStrategies.get(selectedExam.id));
+  const requested = strategyName(strategy);
+  elements["strategy-warning-copy"].textContent = `Cambiar de Orden ${current} a Orden ${requested} conservará el historial y las respuestas del recorrido actual, pero ya no podrás continuarlo.`;
+  elements["strategy-warning"].showModal();
+}
+
+async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "normal", { replace = false } = {}) {
   if (!selectedExam) return;
+  const activeStrategy = activeStrategies.get(selectedExam.id);
+  if (activeStrategy && activeStrategy !== strategy && !replace) {
+    warnBeforeStrategyChange(strategy);
+    return;
+  }
   elements["start-study-button"].disabled = true;
+  elements["start-random-study-button"].disabled = true;
   clearError(elements["exam-error"]);
   try {
-    const { data, error } = await supabase.rpc("start_or_resume_normal_attempt", {
+    const questionIds = selectedExam.questions.map(({ id }) => id);
+    const { data, error } = await supabase.rpc("start_or_replace_principal_attempt", {
       p_exam_id: selectedExam.id,
       p_exam_version_id: selectedExam.version,
       p_exam_version_path: selectedExam.versionPath,
-      p_question_ids: selectedExam.questions.map(({ id }) => id),
+      p_question_ids: strategy === "random" ? shuffled(questionIds) : questionIds,
+      p_strategy: strategy,
+      p_replace_active: replace,
     });
     if (error) throw error;
     const attempt = normalizeRow(data);
@@ -232,6 +260,7 @@ async function startStudy() {
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
     study = new NormalStudySession(pinned.exam, attempt, answers);
+    activeStrategies.set(selectedExam.id, attempt.strategy);
     pendingActiveSeconds = 0;
     pendingConfirmationPayload = null;
     confirmationRetryAvailable = false;
@@ -252,6 +281,7 @@ async function startStudy() {
     showError(elements["exam-error"], `No se pudo iniciar o recuperar el estudio. ${error.message}`);
   } finally {
     elements["start-study-button"].disabled = false;
+    elements["start-random-study-button"].disabled = false;
   }
 }
 
@@ -312,7 +342,9 @@ function renderStudy() {
   const paused = study.attempt.is_paused;
   elements["study-panel"].dataset.attemptId = study.attempt.id;
   elements["study-panel"].dataset.questionId = question.id;
+  elements["study-panel"].dataset.strategy = study.attempt.strategy;
   elements["study-exam-title"].textContent = selectedExam?.title || study.attempt.exam_id;
+  elements["study-strategy-label"].textContent = `Estudio ${strategyName(study.attempt.strategy)}`;
   elements["study-progress"].textContent = `${study.index + 1} de ${study.questions.length}`;
   elements["active-time"].textContent = `Tiempo activo: ${formatActiveTime(study.attempt.active_seconds + pendingActiveSeconds)}`;
   elements["version-pin"].textContent = `Versión fijada: ${study.attempt.exam_version_id}`;
@@ -452,7 +484,7 @@ async function completeStudy() {
 
 function showSummary(summary) {
   window.location.hash = `summary=${encodeURIComponent(study.attempt.id)}`;
-  elements["summary-title"].textContent = `Resumen · ${selectedExam?.title || "Estudio normal"}`;
+  elements["summary-title"].textContent = `Resumen · ${selectedExam?.title || `Estudio ${strategyName(study.attempt.strategy)}`}`;
   elements["summary-correct"].textContent = summary.correct;
   elements["summary-wrong"].textContent = summary.wrong;
   elements["summary-accuracy"].textContent = `${summary.accuracy} %`;
@@ -532,7 +564,18 @@ async function boot() {
   elements["login-form"].addEventListener("submit", submitLogin);
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);
-  elements["start-study-button"].addEventListener("click", startStudy);
+  elements["start-study-button"].addEventListener("click", () => startStudy("normal"));
+  elements["start-random-study-button"].addEventListener("click", () => startStudy("random"));
+  elements["cancel-strategy-change"].addEventListener("click", () => {
+    pendingStrategyChange = null;
+    elements["strategy-warning"].close();
+  });
+  elements["confirm-strategy-change"].addEventListener("click", () => {
+    const strategy = pendingStrategyChange;
+    pendingStrategyChange = null;
+    elements["strategy-warning"].close();
+    startStudy(strategy, { replace: true });
+  });
   elements["confirm-button"].addEventListener("click", confirmAnswer);
   elements["skip-button"].addEventListener("click", () => moveNext({ skip: true }));
   elements["next-pending-button"].addEventListener("click", () => moveNext());

@@ -277,9 +277,8 @@ test("Seam 2 regresión A: conserva 350 segundos activos como incrementos de má
     return JSON.parse(localStorage.getItem(key)).pending.active_increments
       .reduce((total, increment) => total + increment.seconds, 0);
   });
-  const initialSeconds = await pendingSeconds();
-
   await setBackendOffline(page, remote, true);
+  const initialSeconds = await pendingSeconds();
   for (let interval = 0; interval < 7; interval += 1) {
     await page.evaluate(() => window.dispatchEvent(new PointerEvent("pointerdown")));
     await page.clock.runFor(50_000);

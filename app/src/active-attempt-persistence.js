@@ -217,6 +217,11 @@ export class ActiveAttemptPersistence {
       if (error) {
         if (isStaleError(error) || isInactiveError(error)) return this.#recoverCanonical();
         if (isDeadlineError(error) && this.record.pending.finalize && !sent.pending.finalize) {
+          if (this.record.retry?.sync_id === sent.sync_id) {
+            this.record.retry = null;
+            this.record.sync_id = crypto.randomUUID();
+            this.#persist();
+          }
           continue;
         }
         if (isNetworkError(error) || !navigator.onLine) {

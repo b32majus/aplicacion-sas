@@ -92,3 +92,28 @@ This sacrifices parallel throughput overnight in exchange for minimal branch rac
 
 ### Revisit when
 - Sil is present and wants to exploit the true frontier in parallel.
+
+---
+
+## D-005 — Matt skills are implementation methods; KairOS owns the routine reviewer
+
+```text
+DATE: 2026-08-10
+STATUS: ACTIVE
+ADR: none
+```
+
+### Decision
+Use the locally installed Matt Pocock skills where they add implementation value, especially `/tdd` at the two already-approved seams. Do not routinely run Matt `/code-review` in addition to the KairOS fresh tree-bound reviewer. If the installed `/implement` automatically launches an independent `/code-review`, do not use it as the top-level overnight command; implement the ticket inside the fresh KairOS writer with the same vertical/TDD discipline instead.
+
+### Why
+Current upstream `/implement` ends with `/code-review`, while the KairOS workflow explicitly avoids duplicate reviewers and binds its reviewer to the exact candidate tree/evidence.
+
+### Consequences
+- Planning skills remain closed during implementation.
+- Seam confirmation required by `/tdd` is already satisfied by SPEC v2/tickets; agents do not ask Sil again.
+- KairOS reviewer unavailability is a STOP, not a reason to silently substitute another review path.
+- Skills are not installed or upgraded during the unattended train.
+
+### Revisit when
+- The installed `/implement` is intentionally adapted to delegate its final review exclusively to KairOS, or KairOS review policy changes.

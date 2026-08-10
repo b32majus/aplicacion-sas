@@ -1,5 +1,7 @@
 # Aplicación SAS
 
+> **Workflow vigente:** la documentación autoritativa actual está en [`docs/workflow/`](./docs/workflow/README.md). La SPEC vigente es `docs/workflow/aplicacion-sas-SPEC-to-spec-v2.md` y el glosario canónico es `docs/workflow/aplicacion-sas-CONTEXT-final.md`. Los issues #5–#16 son el plan `/to-tickets` pendiente de auditoría externa. La descripción histórica que sigue se conserva solo como contexto del prototipo brownfield y puede estar superseded.
+
 Herramienta web ligera para preparar exámenes de oposiciones del Servicio Andaluz de Salud (SAS), registrar el progreso de tres participantes y comparar su actividad y rendimiento acumulados.
 
 ## Alcance inicial

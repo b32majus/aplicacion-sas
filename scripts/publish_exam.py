@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import json
 import re
 import subprocess
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 from parse_sas_exam import (
     PUBLICABLE,
@@ -26,6 +27,11 @@ DEFAULT_INPUTS = ROOT / "exam-inputs"
 DEFAULT_BANK = ROOT / "app/public/data/exams"
 EXAM_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
+LEGACY_PUBLIC_FILES = {"sas-administrativo-2023-turno-libre.json"}
+SENSITIVE_PATH_WORDS = {
+    "apikey", "credential", "credentials", "password", "passwd",
+    "secret", "signature", "token",
+}
 
 
 class PublicationBlockedError(ValueError):
@@ -57,6 +63,7 @@ def validate_source_metadata(metadata: dict, exam: dict, path: Path) -> str:
         raise PublicationBlockedError("SHA-256 oficial no válido")
     reference = source.get("reference")
     parsed = urlsplit(reference) if isinstance(reference, str) else None
+    hostname = parsed.hostname.lower().rstrip(".") if parsed and parsed.hostname else ""
     if (
         parsed is None
         or parsed.scheme != "https"
@@ -69,6 +76,29 @@ def validate_source_metadata(metadata: dict, exam: dict, path: Path) -> str:
         raise PublicationBlockedError(
             "officialSource.reference debe ser HTTPS y no contener credenciales, query ni fragmento"
         )
+    try:
+        address = ipaddress.ip_address(hostname)
+    except ValueError:
+        labels = hostname.split(".")
+        if (
+            len(labels) < 2
+            or hostname == "localhost"
+            or hostname.endswith((".localhost", ".local", ".internal"))
+            or any(
+                not re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", label)
+                for label in labels
+            )
+        ):
+            raise PublicationBlockedError("officialSource.reference no identifica un host público")
+    else:
+        if not address.is_global:
+            raise PublicationBlockedError("officialSource.reference no identifica una IP pública")
+    for segment in unquote(parsed.path).lower().split("/"):
+        words = {word for word in re.split(r"[^a-z0-9]+", segment) if word}
+        if words & SENSITIVE_PATH_WORDS or "apikey" in segment.replace("-", "").replace("_", ""):
+            raise PublicationBlockedError(
+                "officialSource.reference contiene credenciales o secretos en la ruta"
+            )
     return reference
 
 
@@ -140,6 +170,8 @@ def verify_bank(bank: Path) -> None:
     catalog = load_json(catalog_path)
     _validate_catalog(catalog, catalog_path, bank)
     current_paths = {entry["latestPath"] for entry in catalog["exams"]}
+    allowed_files = {"catalog.json"}
+    allowed_files.update(name for name in LEGACY_PUBLIC_FILES if (bank / name).is_file())
     for package_path in sorted(bank.glob("*/versions/*.json")):
         package = load_json(package_path)
         try:
@@ -150,6 +182,10 @@ def verify_bank(bank: Path) -> None:
         if package_path != expected:
             raise PublicationBlockedError(f"ruta de versión no corresponde a su identidad: {package_path}")
         qa_path = package_path.with_suffix(".qa.md")
+        allowed_files.update({
+            package_path.relative_to(bank).as_posix(),
+            qa_path.relative_to(bank).as_posix(),
+        })
         expected_qa = qa_markdown(package, qa_from_exam(package))
         try:
             actual_qa = qa_path.read_text(encoding="utf-8")
@@ -161,8 +197,46 @@ def verify_bank(bank: Path) -> None:
         if relative in current_paths:
             alias = bank / f"{package['id']}.json"
             alias_qa = bank / f"{package['id']}.qa.md"
+            allowed_files.update({alias.name, alias_qa.name})
             if alias.read_bytes() != package_path.read_bytes() or alias_qa.read_text(encoding="utf-8") != expected_qa:
                 raise PublicationBlockedError(f"alias actual no corresponde a la versión catalogada: {package['id']}")
+
+    for package_path in sorted((bank / "blocked").glob("*/versions/*.json")):
+        package = load_json(package_path)
+        try:
+            validate_exam_package(package)
+        except CanonicalPackageError as error:
+            raise PublicationBlockedError(f"paquete bloqueado inválido {package_path}: {error}") from error
+        expected = (
+            bank / "blocked" / package["id"] / "versions" /
+            f"{package['version']['id']}.json"
+        )
+        if package_path != expected or package["qa"]["state"] == PUBLICABLE:
+            raise PublicationBlockedError(f"ruta/estado bloqueado no reconocido: {package_path}")
+        report = bank / "blocked" / f"{Path(package['source']['pdf']).stem}.qa.md"
+        try:
+            actual_report = report.read_text(encoding="utf-8")
+        except OSError as error:
+            raise PublicationBlockedError(f"QA bloqueado ausente: {report}") from error
+        if actual_report != qa_markdown(package, qa_from_exam(package)):
+            raise PublicationBlockedError(f"QA bloqueado no corresponde al paquete: {report}")
+        allowed_files.update({
+            package_path.relative_to(bank).as_posix(),
+            report.relative_to(bank).as_posix(),
+        })
+
+    actual_files = set()
+    for path in bank.rglob("*"):
+        if path.is_symlink():
+            raise PublicationBlockedError(f"enlace no permitido en banco público: {path}")
+        if path.is_file():
+            actual_files.add(path.relative_to(bank).as_posix())
+    unexpected = sorted(actual_files - allowed_files)
+    missing = sorted(allowed_files - actual_files)
+    if unexpected or missing:
+        raise PublicationBlockedError(
+            f"artefactos públicos no reconocidos: extras={unexpected}, ausentes={missing}"
+        )
 
 
 def verify_inputs(inputs: Path) -> None:
@@ -195,25 +269,64 @@ def verify_inputs(inputs: Path) -> None:
         validate_source_metadata(load_json(source_path), exam, source_path)
 
 
-def verify_immutable_changes(base: str, bank: Path) -> None:
+def verify_immutable_changes(base: str, bank: Path, repo: Path = ROOT, head: str = "HEAD") -> None:
+    try:
+        relative_bank = bank.resolve().relative_to(repo.resolve()).as_posix()
+    except ValueError as error:
+        raise PublicationBlockedError("el banco debe estar dentro del repositorio verificado") from error
     completed = subprocess.run(
-        ["git", "diff", "--name-status", base, "HEAD", "--", bank.as_posix()],
-        cwd=ROOT,
+        ["git", "diff", "--name-status", base, head, "--", relative_bank],
+        cwd=repo,
         text=True,
         capture_output=True,
         check=True,
     )
+    catalog = load_json(bank / "catalog.json")
+    current_aliases = {
+        f"{relative_bank}/{entry['id']}{suffix}"
+        for entry in catalog["exams"]
+        for suffix in (".json", ".qa.md")
+    }
+    current_versions = {
+        f"{relative_bank}/{path}"
+        for entry in catalog["exams"]
+        for path in (entry["latestPath"], str(Path(entry["latestPath"]).with_suffix(".qa.md")))
+    }
+    catalog_name = f"{relative_bank}/catalog.json"
     violations = []
     for line in completed.stdout.splitlines():
         fields = line.split("\t")
         status, paths = fields[0], fields[1:]
-        version_paths = [path for path in paths if "/versions/" in path]
-        if version_paths and status != "A":
+        if len(paths) != 1:
+            violations.append(line)
+            continue
+        changed_path = paths[0]
+        allowed = (
+            status == "M" and changed_path in {catalog_name, *current_aliases}
+        ) or (
+            status == "A" and changed_path in {catalog_name, *current_aliases, *current_versions}
+        )
+        if not allowed:
             violations.append(line)
     if violations:
         raise PublicationBlockedError(
-            "las versiones existentes son inmutables; cambios prohibidos: " + " | ".join(violations)
+            "el cambio no corresponde a salidas generadas e inmutables: " + " | ".join(violations)
         )
+
+
+def proposal_identity(exam_id: str, version: str) -> tuple[str, str]:
+    return (
+        f"automation/exam-{exam_id}-{version[:12]}",
+        f"data(exams): publish {exam_id} {version}",
+    )
+
+
+def proposal_already_recorded(records: list[dict], exam_id: str, version: str) -> bool:
+    branch, title = proposal_identity(exam_id, version)
+    return any(
+        record.get("headRefName") == branch or record.get("title") == title
+        for record in records
+    )
 
 
 def changed_exam_ids(inputs: Path, before: str | None, after: str | None, exam_id: str | None) -> list[str]:
@@ -271,6 +384,9 @@ def main() -> None:
     immutable_parser = subparsers.add_parser("verify-immutable")
     immutable_parser.add_argument("--base", required=True)
     immutable_parser.add_argument("--bank", type=Path, default=DEFAULT_BANK)
+    proposal_parser = subparsers.add_parser("proposal-recorded")
+    proposal_parser.add_argument("--exam-id", required=True)
+    proposal_parser.add_argument("--version", required=True)
     changed_parser = subparsers.add_parser("changed")
     changed_parser.add_argument("--inputs", type=Path, default=DEFAULT_INPUTS)
     changed_parser.add_argument("--before")
@@ -293,6 +409,13 @@ def main() -> None:
         elif args.command == "verify-immutable":
             verify_immutable_changes(args.base, args.bank)
             print("VALID: ninguna versión existente fue modificada o eliminada")
+        elif args.command == "proposal-recorded":
+            if not EXAM_ID_RE.fullmatch(args.exam_id) or not SHA256_RE.fullmatch(args.version):
+                raise PublicationBlockedError("identidad de propuesta no válida")
+            records = json.load(sys.stdin)
+            if not isinstance(records, list):
+                raise PublicationBlockedError("respuesta de PR no válida")
+            raise SystemExit(0 if proposal_already_recorded(records, args.exam_id, args.version) else 1)
         else:
             ids = changed_exam_ids(args.inputs, args.before, args.after, args.exam_id)
             write_github_output(args.github_output, {"exam_ids": json.dumps(ids)})

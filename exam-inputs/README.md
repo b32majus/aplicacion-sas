@@ -20,6 +20,6 @@ For `<exam-id>`, add both files in a normal reviewed change to `main`:
 ```
 
 Do not include PDFs, credentials, signed URLs, tokens, private URLs, or personal
-data. The reference must use HTTPS without credentials, query parameters, or a
-fragment. The sidecar remains review metadata and is not copied into the public
-bundle.
+data. The reference must use HTTPS without credentials, query parameters, a
+fragment, a private/internal host, or secret-bearing path segments. The sidecar
+remains review metadata and is not copied into the public bundle.

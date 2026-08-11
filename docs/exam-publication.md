@@ -18,10 +18,10 @@ accepts the canonical exam id, not an arbitrary path.
 
 | Stage | Guarantee |
 |---|---|
-| Input | Sidecar hash matches canonical `source.sha256`; reference is credential-free HTTPS. |
+| Input | Sidecar hash matches canonical `source.sha256`; reference is public, credential-free HTTPS without secret-bearing path segments. |
 | Validation | Calls T01 `validate_exam_package`; blocked or invalid input exits with `BLOCKED:` diagnostics before bank writes. |
 | Proposal | Calls T01 `write_outputs`, preserving old immutable versions and preparing QA, alias and catalog together. |
-| PR check | Revalidates input pairs, every public version, exact QA rendering, aliases and the complete catalog; existing versions cannot change or disappear. |
+| PR check | Revalidates input pairs, every recognized public artifact, exact QA rendering, aliases and the complete catalog; existing versions and legacy blocked artifacts cannot change or disappear. |
 | Approval | Validation alone does not publish. Only human merge changes `main`. |
 | Deploy | `pages.yml` builds and deploys merged `main`; proposal automation never deploys. |
 
@@ -34,7 +34,7 @@ incidents. The source sidecar is not copied into `app/public` or the bundle.
 - Fix an invalid or blocked canonical package outside the publication bank, then commit a new valid input.
 - A correction changes canonical content, therefore receives a new immutable version while old paths remain present.
 - An unchanged input produces no bank diff and no PR.
-- An existing open deterministic proposal is reused. If its branch exists after the PR was closed, delete that remote branch or choose the existing PR outcome before a controlled rerun; automation refuses to create a duplicate.
+- Any existing deterministic proposal, including a closed or merged PR whose branch was deleted, is treated as the recorded human decision and is never recreated automatically.
 - If GitHub Actions cannot open PRs, enable repository setting **Allow GitHub Actions to create and approve pull requests**. No PAT or Supabase secret is required.
 
 ## Safe Local Demonstration

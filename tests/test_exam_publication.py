@@ -7,7 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest import mock
+import subprocess
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -18,6 +18,8 @@ import publish_exam
 BANK = ROOT / "app/public/data/exams"
 EXAM_ID = "sas-administrativo-2021-turno-libre"
 SOURCE_FIXTURE = ROOT / "tests/fixtures/publication" / f"{EXAM_ID}.source.json"
+PUBLICATION_WORKFLOW = ROOT / ".github/workflows/exam-publication.yml"
+CHECK_WORKFLOW = ROOT / ".github/workflows/exam-publication-check.yml"
 
 
 def load_current() -> dict:
@@ -57,6 +59,27 @@ class TestExamPublication(unittest.TestCase):
             for path in directory.rglob("*")
             if path.is_file()
         }
+
+    def git(self, repo: Path, *args: str) -> str:
+        return subprocess.run(
+            ["git", *args], cwd=repo, text=True, capture_output=True, check=True
+        ).stdout.strip()
+
+    def committed_bank(self, name: str) -> tuple[Path, Path, str]:
+        repo = self.root / name
+        bank = repo / "app/public/data/exams"
+        bank.parent.mkdir(parents=True)
+        shutil.copytree(BANK, bank)
+        self.git(repo, "init", "-b", "main")
+        self.git(repo, "config", "user.name", "T12 Test")
+        self.git(repo, "config", "user.email", "t12@example.invalid")
+        self.git(repo, "add", ".")
+        self.git(repo, "commit", "-m", "baseline")
+        return repo, bank, self.git(repo, "rev-parse", "HEAD")
+
+    def commit_candidate(self, repo: Path) -> None:
+        self.git(repo, "add", "-A")
+        self.git(repo, "commit", "-m", "candidate")
 
     def test_correction_prepares_reviewable_proposal_without_touching_source_bank(self) -> None:
         source_before = self.snapshot(BANK)
@@ -134,6 +157,34 @@ class TestExamPublication(unittest.TestCase):
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "query"):
             publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
 
+    def test_source_reference_rejects_non_public_hosts_and_path_secrets(self) -> None:
+        exam = load_current()
+        metadata = json.loads(SOURCE_FIXTURE.read_text(encoding="utf-8"))
+        rejected = [
+            "https://localhost/examenes/2026",
+            "https://intranet/examenes/2026",
+            "https://exam.sas.internal/examenes/2026",
+            "https://exam.sas.local/examenes/2026",
+            "https://127.0.0.1/examenes/2026",
+            "https://10.2.3.4/examenes/2026",
+            "https://169.254.1.1/examenes/2026",
+            "https://192.0.2.1/examenes/2026",
+            "https://www.sspa.juntadeandalucia.es/token/abc",
+            "https://www.sspa.juntadeandalucia.es/examen/api-key-value",
+            "https://www.sspa.juntadeandalucia.es/signature/abc",
+        ]
+        for reference in rejected:
+            with self.subTest(reference=reference):
+                metadata["officialSource"]["reference"] = reference
+                with self.assertRaises(publish_exam.PublicationBlockedError):
+                    publish_exam.validate_source_metadata(metadata, exam, SOURCE_FIXTURE)
+
+        metadata["officialSource"]["reference"] = (
+            "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/"
+            "profesionales/ofertas-de-empleo/examenes-2026"
+        )
+        publish_exam.validate_source_metadata(metadata, exam, SOURCE_FIXTURE)
+
     def test_unchanged_input_is_idempotent_and_does_not_duplicate_version(self) -> None:
         exam = load_current()
         self.write_exam(exam)
@@ -148,6 +199,27 @@ class TestExamPublication(unittest.TestCase):
         qa_path.write_text("QA alterado\n", encoding="utf-8")
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "QA versionado"):
             publish_exam.verify_bank(self.bank)
+
+    def test_verify_bank_accepts_legacy_blocked_corpus_but_rejects_extra_artifacts(self) -> None:
+        publish_exam.verify_bank(self.bank)
+        extras = {
+            "orphan.json": "{}\n",
+            "service-role-token.txt": "not-a-real-secret\n",
+            "orphan/versions/" + "0" * 64 + ".json": "{}\n",
+            "blocked/unrecognized.qa.md": "orphan\n",
+        }
+        for index, (relative, content) in enumerate(extras.items()):
+            with self.subTest(relative=relative):
+                candidate = self.root / f"extra-{index}"
+                shutil.copytree(BANK, candidate)
+                target = candidate / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(content, encoding="utf-8")
+                with self.assertRaisesRegex(
+                    publish_exam.PublicationBlockedError,
+                    "no reconocidos|paquete inválido",
+                ):
+                    publish_exam.verify_bank(candidate)
 
     def test_fixture_pair_uses_existing_t01_canonical_package(self) -> None:
         exam = load_current()
@@ -167,15 +239,84 @@ class TestExamPublication(unittest.TestCase):
         shutil.copy2(SOURCE_FIXTURE, inputs / f"{EXAM_ID}.source.json")
         publish_exam.verify_inputs(inputs)
 
-    def test_immutable_check_rejects_changed_or_deleted_versions(self) -> None:
-        diff = (
-            "M\tapp/public/data/exams/exam/versions/old.json\n"
-            "D\tapp/public/data/exams/exam/versions/old.qa.md\n"
+    def test_real_git_comparison_accepts_only_generated_correction_outputs(self) -> None:
+        repo, bank, base = self.committed_bank("git-allowed")
+        corrected = load_current()
+        corrected["title"] += " - corrección git"
+        reversion(corrected)
+        exam_path = repo / f"{EXAM_ID}.json"
+        source_path = repo / f"{EXAM_ID}.source.json"
+        exam_path.write_text(json.dumps(corrected, ensure_ascii=False), encoding="utf-8")
+        source_path.write_bytes(SOURCE_FIXTURE.read_bytes())
+        publish_exam.prepare(exam_path, source_path, bank, repo / "summary.md")
+        exam_path.unlink()
+        source_path.unlink()
+        (repo / "summary.md").unlink()
+        self.commit_candidate(repo)
+
+        publish_exam.verify_bank(bank)
+        publish_exam.verify_immutable_changes(base, bank, repo=repo)
+
+    def test_real_git_comparison_rejects_non_generated_changes(self) -> None:
+        mutations = {
+            "modified-blocked-report": lambda bank: next((bank / "blocked").glob("*.qa.md")).write_text(
+                "alterado\n", encoding="utf-8"
+            ),
+            "deleted-legacy-alias": lambda bank: (bank / "sas-administrativo-2023-turno-libre.json").unlink(),
+            "modified-old-version": lambda bank: next(bank.glob("*/versions/*.json")).write_text(
+                "{}\n", encoding="utf-8"
+            ),
+            "secret-extra": lambda bank: (bank / "service-role-token.txt").write_text(
+                "not-a-real-secret\n", encoding="utf-8"
+            ),
+        }
+        for index, (name, mutate) in enumerate(mutations.items()):
+            with self.subTest(name=name):
+                repo, bank, base = self.committed_bank(f"git-rejected-{index}")
+                mutate(bank)
+                self.commit_candidate(repo)
+                with self.assertRaisesRegex(
+                    publish_exam.PublicationBlockedError, "no corresponde a salidas generadas"
+                ):
+                    publish_exam.verify_immutable_changes(base, bank, repo=repo)
+
+    def test_proposal_identity_blocks_closed_or_merged_duplicates(self) -> None:
+        exam = load_current()
+        branch, title = publish_exam.proposal_identity(EXAM_ID, exam["version"]["id"])
+        for record in (
+            {"headRefName": branch, "title": "renamed after close", "state": "CLOSED"},
+            {"headRefName": "deleted-branch", "title": title, "state": "MERGED"},
+        ):
+            with self.subTest(record=record):
+                self.assertTrue(
+                    publish_exam.proposal_already_recorded([record], EXAM_ID, exam["version"]["id"])
+                )
+        self.assertFalse(
+            publish_exam.proposal_already_recorded(
+                [{"headRefName": "other", "title": "other"}], EXAM_ID, exam["version"]["id"]
+            )
         )
-        completed = type("Completed", (), {"stdout": diff})()
-        with mock.patch.object(publish_exam.subprocess, "run", return_value=completed):
-            with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "inmutables"):
-                publish_exam.verify_immutable_changes("base", BANK)
+
+    def test_workflow_contract_uses_reviewed_main_and_least_permissions(self) -> None:
+        workflow = PUBLICATION_WORKFLOW.read_text(encoding="utf-8")
+        discover, propose = workflow.split("  propose:", maxsplit=1)
+        self.assertEqual(workflow.count("uses: actions/checkout@v6"), 2)
+        self.assertEqual(workflow.count("ref: main"), 2)
+        self.assertIn("uses: actions/setup-python@v6", discover)
+        self.assertIn("pip install -r requirements-parser.txt", discover)
+        self.assertLess(discover.index("pip install"), discover.index("publish_exam.py changed"))
+        self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertIn("contents: write\n      pull-requests: write", propose)
+        self.assertIn("gh pr list --state all", propose)
+        self.assertIn("proposal-recorded", propose)
+        self.assertIn("group: exam-publication-main", workflow)
+        for forbidden in ("pages: write", "id-token: write", "deploy-pages", "configure-pages"):
+            self.assertNotIn(forbidden, workflow)
+
+        check = CHECK_WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("permissions:\n  contents: read", check)
+        for forbidden in ("contents: write", "pull-requests: write", "pages: write", "deploy-pages"):
+            self.assertNotIn(forbidden, check)
 
 
 if __name__ == "__main__":

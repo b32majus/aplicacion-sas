@@ -43,6 +43,13 @@ npm test
 
 Requisitos del entorno Python: `pip install -r requirements-parser.txt` (PyMuPDF y jsonschema).
 
+### Publicación de nuevos paquetes canónicos
+
+El flujo operativo posterior a T01 empieza en JSON canónico, no en un parser PDF
+genérico. Consulta [`docs/exam-publication.md`](./docs/exam-publication.md) para
+preparar la entrada trazable, revisar la propuesta automática y aprobarla solo
+mediante merge humano. El workflow existente de Pages sigue siendo el único deploy.
+
 ## Prototipo brownfield (contexto histórico)
 
 - Frontend HTML/CSS/JS nativo en `app/` (Vite como herramienta de build, GitHub Pages como alojamiento).

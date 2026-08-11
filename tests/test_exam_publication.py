@@ -441,6 +441,7 @@ class TestExamPublication(unittest.TestCase):
         discover, propose = workflow.split("  propose:", maxsplit=1)
         self.assertEqual(workflow.count("uses: actions/checkout@v6"), 2)
         self.assertEqual(workflow.count("ref: main"), 2)
+        self.assertEqual(workflow.count("cache-dependency-path: requirements-parser.txt"), 2)
         self.assertIn("uses: actions/setup-python@v6", discover)
         self.assertIn("pip install -r requirements-parser.txt", discover)
         self.assertLess(discover.index("pip install"), discover.index("publish_exam.py changed"))
@@ -459,6 +460,7 @@ class TestExamPublication(unittest.TestCase):
 
         check = CHECK_WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("permissions:\n  contents: read", check)
+        self.assertIn("cache-dependency-path: requirements-parser.txt", check)
         for forbidden in ("contents: write", "pull-requests: write", "pages: write", "deploy-pages"):
             self.assertNotIn(forbidden, check)
 

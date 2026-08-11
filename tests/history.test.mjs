@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
 import { PGlite } from "@electric-sql/pglite";
 
-import { loadHistoryReplay } from "../app/src/history.js";
+import { historyDurationSeconds, loadHistoryReplay } from "../app/src/history.js";
 import { loadPublishedCatalog } from "../app/src/catalog.js";
 
 const migrationsUrl = new URL("../supabase/migrations/", import.meta.url);
@@ -50,11 +50,24 @@ test("Seam 2: Historial muestra solo intentos propios finalizados e incompletos 
          id, attempt_id, user_id, question_id, answer_sequence,
          selected_option, correct_option, is_correct
        ) values (
-         '30000000-0000-4000-8000-000000000080',
-         '20000000-0000-4000-8000-000000000080', $1,
-         'exam-a-q001', 1, 'B', 'B', true
+          '30000000-0000-4000-8000-000000000080',
+          '20000000-0000-4000-8000-000000000080', $1,
+          'exam-a-q001', 1, 'B', 'B', true
+       ), (
+          '30000000-0000-4000-8000-000000000081',
+          '20000000-0000-4000-8000-000000000082', $2,
+          'exam-other-q001', 1, 'A', 'B', false
        )`,
-      [userA],
+      [userA, userB],
+    );
+    await db.query(
+      `insert into public.attempt_question_sources(
+         attempt_id, user_id, position, exam_id, exam_version_id, exam_version_path, question_id
+       ) values (
+         '20000000-0000-4000-8000-000000000082', $1, 0, 'exam-other', 'version-x',
+         'exam-other/versions/version-x.json', 'exam-other-q001'
+       )`,
+      [userB],
     );
 
     await db.query("select set_config('request.jwt.claim.sub', $1, false)", [userA]);
@@ -71,9 +84,30 @@ test("Seam 2: Historial muestra solo intentos propios finalizados e incompletos 
       has_table_privilege('authenticated', 'public.personal_attempt_history', 'update') as can_update,
       has_table_privilege('authenticated', 'public.attempts', 'delete') as can_delete`);
     assert.deepEqual(privileges, { can_select: true, can_update: false, can_delete: false });
+    const { rows: hiddenAnswers } = await db.query(
+      "select id from public.attempt_answers where attempt_id = '20000000-0000-4000-8000-000000000082'",
+    );
+    const { rows: hiddenSources } = await db.query(
+      "select question_id from public.attempt_question_sources where attempt_id = '20000000-0000-4000-8000-000000000082'",
+    );
+    assert.deepEqual(hiddenAnswers, []);
+    assert.deepEqual(hiddenSources, []);
   } finally {
     await db.close();
   }
+});
+
+test("un examen activo deriva su tiempo de examen sin mezclar tiempo activo de estudio", () => {
+  const now = Date.parse("2026-08-11T10:02:00Z");
+  assert.equal(historyDurationSeconds({
+    kind: "exam",
+    exam_elapsed_ms: null,
+    started_at: "2026-08-11T10:00:00Z",
+    deadline_at: "2026-08-11T13:00:00Z",
+    ended_at: null,
+    active_seconds: 999,
+  }, now), 120);
+  assert.equal(historyDurationSeconds({ kind: "normal", active_seconds: 45 }, now), 45);
 });
 
 test("la identidad de question_progress y el hito Finalizado sobreviven a versiones e intentos posteriores", async () => {

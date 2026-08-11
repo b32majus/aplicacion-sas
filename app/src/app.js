@@ -5,6 +5,7 @@ import {
   HISTORY_KIND_LABELS,
   HISTORY_MODE_LABELS,
   HISTORY_STATUS_LABELS,
+  historyDurationSeconds,
   loadHistoryReplay,
   loadPersonalHistory,
 } from "./history.js";
@@ -110,10 +111,8 @@ function formatHistoryDate(value) {
 }
 
 function historyTime(attempt) {
-  if (attempt.kind === "exam") {
-    return attempt.exam_elapsed_ms == null ? null : formatActiveTime(attempt.exam_elapsed_ms / 1000);
-  }
-  return formatActiveTime(attempt.active_seconds);
+  const seconds = historyDurationSeconds(attempt);
+  return seconds == null ? null : formatActiveTime(seconds);
 }
 
 function historyMetrics(attempt) {
@@ -141,7 +140,7 @@ function renderHistory() {
     const title = document.createElement("h2");
     title.textContent = attempt.kind === "failed" && !attempt.failed_scope_exam_id
       ? "Todas mis falladas"
-      : `Examen oficial · ${attempt.failed_scope_exam_id || attempt.exam_id}`;
+      : `Banco oficial · ${attempt.failed_scope_exam_id || attempt.exam_id}`;
     const meta = document.createElement("p");
     meta.className = "history-meta";
     meta.textContent = `${HISTORY_KIND_LABELS[attempt.kind] || attempt.kind} · ${HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;

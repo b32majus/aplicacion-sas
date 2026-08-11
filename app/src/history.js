@@ -22,6 +22,16 @@ export const HISTORY_STATUS_LABELS = {
   active: "Incompleto · en curso",
 };
 
+export function historyDurationSeconds(attempt, now = Date.now()) {
+  if (attempt.kind !== "exam") return attempt.active_seconds;
+  if (attempt.exam_elapsed_ms != null) return attempt.exam_elapsed_ms / 1000;
+  const startedAt = Date.parse(attempt.started_at);
+  if (!Number.isFinite(startedAt)) return null;
+  const endedAt = attempt.ended_at ? Date.parse(attempt.ended_at) : now;
+  const deadlineAt = attempt.deadline_at ? Date.parse(attempt.deadline_at) : endedAt;
+  return Math.max(0, (Math.min(endedAt, deadlineAt) - startedAt) / 1000);
+}
+
 export async function loadPersonalHistory(client) {
   const { data, error } = await client
     .from("personal_attempt_history")

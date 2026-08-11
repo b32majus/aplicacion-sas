@@ -1,435 +1,198 @@
-# Sequential implementation run v2 — Aplicación SAS
+# Overnight sequential implementation run — Aplicación SAS
 
-**STATUS:** ACTIVE / post-T07  
+**STATUS:** READY  
 **OWNER:** Sil  
 **PLAN:** GitHub Issues #5–#16, externally audited `READY`  
-**CURRENT FRONTIER:** T07 PASS / PR #23 / FINAL_HEAD `5f88ba3642bf6473c18432adadb1c543a442044e`  
-**NEXT:** T08 / Issue #12  
 **MERGE AUTHORITY:** HUMAN ONLY  
-**MODE:** one ticket at a time, fresh cognitive context, stacked PRs
+**MODE:** unattended, one ticket at a time, fresh OpenCode context per ticket
 
 ## Objective
 
-Complete the remaining audited tickets with the minimum workflow that preserves correctness, traceability and safe publication.
+Use the approved ticket graph to make as much correct/verifiable progress as possible overnight without requiring Sil to supervise predictable transitions.
 
-The run has already shown that ceremony can itself create defects and delays. Therefore:
+This is deliberately **sequential** even where the audited DAG exposes a wider frontier. The overnight train values deterministic integration and easy morning review over parallel throughput.
 
-```text
-models reason
-skills provide methods
-KairOS protects execution/publication boundaries
-Git + tests provide reality
-Sil decides material product/merge questions
-```
+## Authority / read order
 
-## 1. Current verified stack
+Before doing anything:
 
-```text
-T01 → PR #17
-T02 → PR #18
-T03 → PR #19
-T04 → PR #20
-T05 → PR #21
-T06 → PR #22
-T07 → PR #23
-```
+1. repository `START_HERE.md`
+2. `PROJECT.md`
+3. `DECISIONS.md`
+4. `docs/workflow/README.md`
+5. `docs/workflow/aplicacion-sas-SPEC-to-spec-v2.md`
+6. `docs/workflow/aplicacion-sas-CONTEXT-final.md`
+7. `docs/workflow/AUDIT-TICKETS-RESULT.md`
+8. `docs/workflow/OVERNIGHT-QUEUE.json`
+9. current GitHub Issue body only
 
-Current parent for T08:
+Earlier specs/architectures and the brownfield prototype are evidence/history, not authority when they conflict with SPEC v2.
 
-```text
-ENTRY_HEAD: 5f88ba3642bf6473c18432adadb1c543a442044e
-PARENT_BRANCH: work/overnight-t07
-PARENT_PR: #23
-T08_BRANCH: work/overnight-t08
-T08_PR_BASE: work/overnight-t07
-```
+## Mandatory preflight
 
-Before continuing, verify these facts against Git/GitHub/runtime. Do not infer them from conversation history alone.
+Before T01:
 
-## 2. Authority / progressive read order
+- verify the current working directory is the real `b32majus/aplicacion-sas` checkout and the expected remote resolves to that repository;
+- fetch `origin/main` and record the exact starting SHA;
+- do not start from a dirty/ambiguous worktree;
+- verify the 12 filenames listed in `INITIAL-PDF-FIXTURES.md` exist somewhere accessible to the T01 worktree/runtime;
+- verify the KairOS/OpenCode runtime can launch a fresh native writer session and read the project repo;
+- locate the **installed local copies** of Matt Pocock `tdd`, `implement` and `code-review`; read them before execution, but do not install/update skills during the train;
+- if repository `AGENTS.md` is absent, create/improve it using native OpenCode `/init` as the technical repository bootstrap before starting T01; `/init` must not invent product decisions or replace SPEC v2;
+- do not repurpose an unrelated hosted Supabase project. Local/isolated Supabase is acceptable for implementation/tests. If a live hosted project becomes genuinely mandatory to prove an acceptance criterion, STOP with `SUPABASE_PROJECT_REQUIRED` rather than borrowing another project.
 
-Per ticket:
+If any mandatory fixture, identity or safe execution prerequisite is missing, STOP with a concise report. Do not improvise around it.
 
-1. exact current GitHub Issue body;
-2. repository `START_HERE.md`, `PROJECT.md`, `DECISIONS.md` as needed;
-3. SPEC v2 / CONTEXT only for compatible detail;
-4. relevant current code/runtime facts;
-5. this runbook and `OVERNIGHT-OPENCODE-PROMPT.md`.
+## Matt skills + KairOS review policy
 
-Do not preload old review transcripts or migration history unless a concrete ambiguity requires them.
+Matt skills are **methods**, while KairOS remains the BUILD_READY→PR execution/certification authority.
 
-The current Issue is the executable contract. A later explicit Issue amendment overrides older compatible planning prose.
+- Planning skills are closed for this run: do not invoke `grill-with-docs`, `wayfinder`, `to-spec` or `to-tickets`.
+- Use `/tdd` where it improves signal. The testing seams are already approved by SPEC/tickets, so no new human confirmation is required:
+  - T01 → Seam 1, PDF oficial → paquete canónico + QA.
+  - T02–T11 → Seam 2, navegador/PWA → comportamiento visible + estado/Supabase.
+  - T12 → wrapper operativo de Seam 1, incluido gate PR/humano.
+- Current upstream `/implement` invokes `/code-review` at the end. KairOS already owns the single fresh tree-bound reviewer for the candidate and the KairOS workflow explicitly avoids duplicate reviewers. Therefore **do not invoke `/implement` as a top-level command if the installed local copy also launches an independent `/code-review`**.
+- In that case, implement the ticket directly inside the fresh KairOS writer using the same vertical/TDD discipline, and let the KairOS reviewer be the sole routine code reviewer.
+- If the installed `/implement` has been locally adapted so its final review delegates exclusively to KairOS and does not create another reviewer, it may be used.
+- If KairOS review is required but cannot execute, STOP with `REVIEW_RUNTIME_UNAVAILABLE`; do not silently substitute another review path.
 
-## 3. No bootstrap/planning inside the train
+## Why the supervisor should use dynamic ONCE checkpoints
 
-Do not run `/init`, `grill-with-docs`, `wayfinder`, `to-spec` or `to-tickets` during T08–T12.
+The approved tickets are causally dependent. A later ticket must build on the exact successful head of its predecessors, and that future SHA does not exist before the previous ticket finishes.
 
-Those phases are already closed. If implementation reveals a genuinely new human/product decision, STOP rather than reopening planning autonomously.
+Therefore the persistent Herdr/OpenCode workshop should act only as a thin **supervisor** and materialize each next KairOS Work Order after the previous checkpoint is known. For each ticket, invoke the normal KairOS execute path in **ONCE** mode with a fresh native writer session; after PASS, use that exact published/checkpoint head as the next ticket base.
 
-## 4. Execution topology
+Do **not** implement T01–T12 inside one ever-growing cognitive OpenCode conversation. Persistent Herdr workspace/backend is fine; persistent ticket reasoning context is not.
 
-Persistent Herdr/workshop/backend is allowed. Cognitive context is disposable.
+A static `--mode sequential` list is appropriate only if all manifest bases can be established safely in advance. For this dependent train, dynamic ONCE chaining is the safer default.
 
-Each ticket gets:
-
-```text
-fresh writer context
-→ exact current ticket
-→ exact ENTRY_HEAD
-→ minimal required project context
-```
-
-Do not carry the full previous writer/reviewer conversation into the next ticket.
-
-Fresh context is also an allowed recovery mechanism **inside one ticket** when the active session stops reducing uncertainty.
-
-## 5. KairOS role for this train
-
-For the remainder of this train, KairOS is a **safety shell**, not the cognitive reviewer.
-
-Keep:
-
-- exact repo/base/worktree identity;
-- isolated work branch;
-- lease/process safety;
-- deterministic evidence/checkpoint facts;
-- no direct product push to `main`;
-- no force-push;
-- no merge;
-- controlled non-force publication.
-
-Do not require the immature `kairos-reviewer`/result-sink path to provide review intelligence.
-
-Harness/runtime failures are `HARNESS_RECOVERY`, not product defects and do not consume product repair authority.
-
-## 6. Matt-native implementation/review semantics
-
-Use Matt methods natively and deliberately:
-
-- TDD when there is a concrete observable behavior with an agreed seam;
-- implementation remains one vertical ticket;
-- standalone `code-review` runs from a fresh context;
-- one full review pass per ticket, not repeated review-until-clean.
-
-Because `code-review` reads `<fixed-point>...HEAD`, the supported order is:
+## Approved linear order
 
 ```text
-implementation + deterministic gates
-→ local checkpoint commit
-→ ONE fresh standalone Matt code-review against ENTRY_HEAD
-→ adjudication
-→ bounded repair/fixup if required
-→ focused closure
-→ push/PR
+T01 #5
+ ↓
+T02 #6
+ ↓
+T03 #7
+ ↓
+T04 #8
+ ↓
+T05 #9
+ ↓
+T06 #10
+ ↓
+T07 #11
+ ↓
+T08 #12
+ ↓
+T09 #13
+ ↓
+T10 #14
+ ↓
+T11 #15
+ ↓
+T12 #16
 ```
 
-The checkpoint commit is local until the ticket is accepted for publication.
+This is a valid topological order of the audited DAG. T12 could legally start after T02, but remains last overnight to avoid changing import/deploy automation while the application stack is still being built.
 
-## 7. Review adjudication contract
+## Per-ticket execution contract
 
-A reviewer finding is a hypothesis until adjudicated.
+For each queue item:
 
-Every finding becomes exactly one of:
+1. **Check prerequisite checkpoint**  
+   Every declared blocker must already be present in the current integration head as a verified successful checkpoint. GitHub Issue closure is not required overnight if code is stacked and unmerged; exact successful Git head/evidence is the authority.
+
+2. **Compile one bounded BUILD_READY WO**  
+   Use the exact current Issue body plus SPEC v2/CONTEXT only as needed. Do not add scope or reinterpret acceptance. Set `HUMAN_DECISIONS_OPEN: NONE` unless implementation uncovers a genuinely new human/product decision, in which case STOP.
+
+3. **Create a new branch/worktree from the prior successful FINAL_HEAD**  
+   Never rewrite or rebase an already certified checkpoint merely to absorb later work.
+
+4. **Launch a fresh OpenCode writer context**  
+   Implement exactly one tracer bullet. Use `/tdd` against the approved seam where useful, run regular focused checks, then finish with proportional acceptance/truth + affected regression. Do not invoke closed planning skills.
+
+5. **Respect brownfield policy**  
+   Reuse existing code only when it simplifies compliance with the current ticket/SPEC. Do not preserve legacy abstractions by sunk cost; do not rewrite useful infrastructure for aesthetics.
+
+6. **Review**  
+   Ordinary non-trivial code gets the fresh read-only review required by current KairOS policy. Reviewer sees the current acceptance, exact candidate and incremental diff, not the writer transcript or entire overnight history. Do not add Matt `/code-review` as a second routine reviewer.
+
+7. **Checkpoint/publication**  
+   Only after required deterministic checks and review PASS: create the exact checkpoint commit, non-force push the work branch and open/update a PR to `main`. Do not merge.
+
+8. **Advance**  
+   Record FINAL_HEAD, PR, tests/QA/review result and use FINAL_HEAD as the base for the next ticket. Then discard the prior cognitive session and launch a fresh one.
+
+## Integration-base rule
+
+Before starting each next ticket:
+
+- fetch `origin/main`;
+- record `PREVIOUS_SUCCESSFUL_FINAL_HEAD` and current `origin/main`;
+- if main advanced independently, preserve the prior checkpoint and create the smallest non-rewriting integration base containing both when Git can do so unambiguously;
+- if integration requires a semantic choice or produces an ambiguous conflict, STOP. No silent semantic resolution, rebase or force-push.
+
+## Verification policy
+
+Follow the ticket's declared Seam 1 / Seam 2 contract and KairOS minimum-sufficient verification:
 
 ```text
-VERIFIED_CURRENT_DEFECT
-ROUTE_TO_FUTURE_TICKET
-NOTE
-NEEDS_EVIDENCE
+inner loop → cheapest focused evidence
+stable candidate → ticket acceptance/truth + affected regression
+broaden → only when blast radius/risk/failure signal justifies it
 ```
 
-Deduplicate the same defect reported independently by Standards and Spec.
+Do not replace high-level seam tests with a proliferation of private-helper unit tests. Do not claim PASS for a criterion that could not actually be demonstrated.
 
-### Current defect
-Must materially violate current acceptance/spec, create a regression, expose security/data risk or create concrete inconsistency.
+## Model preset guidance
 
-### Future-ticket route
-Valid issue, wrong owner ticket. Record and continue current ticket.
+`OVERNIGHT-QUEUE.json` contains a recommended preset per ticket:
 
-### Note
-Smell/refactor/style/test preference/future hardening. Does not block by default.
+- `hybrid` for bounded ordinary implementation where throughput matters;
+- `critical` for auth/RLS, shared persistence, deadlines, sync/conflict, aggregate security and publication automation.
 
-### Needs evidence
-Plausible from source, not yet observable. Reproduce first.
+These are execution recommendations, not product decisions. If the effective runtime proves a listed preset unavailable, use the smallest already-qualified equivalent or STOP rather than changing provider/model architecture during the train.
 
-A raw `MATERIAL` label is never sufficient by itself to consume a repair.
+## Hard STOP conditions
 
-## 8. Reproduction before mutation
+STOP the full train at the first real boundary:
 
-For timing, races, retries, network and concurrency:
-
-```text
-claim
-→ focused controlled reproduction
-→ observed behavior
-→ adjudication
-→ repair only if verified
-```
-
-Do not repair solely because code contains `await`, a timeout, multiple RPCs or a reviewer-proposed implementation.
-
-Lessons already proven in this train:
-
-- exactly-once domain effect does not imply exactly-one RPC;
-- finalization can require exactly-once when the ticket says so;
-- test elapsed-time deltas, not fragile absolute display values;
-- known offline is not an uncertain server outcome;
-- uncertain response retries reuse the exact logical envelope;
-- definitive semantic rejection is not an uncertain response;
-- do not increase timeout to hide a stuck state.
-
-## 9. Bounded repair and closure
-
-After adjudication, collect all `VERIFIED_CURRENT_DEFECT` findings into **one bounded repair set** when they belong to the same ticket/seam.
-
-Then:
-
-```text
-focused RED
-→ smallest causal fix
-→ focused GREEN
-→ affected regression
-→ final deterministic gates
-→ fresh focused closure
-```
-
-Do not run another full Matt review after the repair.
-
-Closure checks only:
-
-- accepted findings;
-- repair delta;
-- regressions caused by that delta.
-
-If closure finds a repair-caused regression, use a `DELTA_REGRESSION_REPAIR` followed by focused closure.
-
-If the same property repeatedly fails to converge, use fresh diagnosis rather than expanding scope.
-
-## 10. Fresh diagnosis escape hatch
-
-Trigger a fresh read-only diagnostic context when the current session shows churn such as:
-
-- repeated timeout changes;
-- temporary logging cycles without narrowing the failure;
-- several speculative subsystem edits;
-- same failure returning through different patches;
-- context becoming dominated by old hypotheses.
-
-Preserve the worktree. Ask the fresh diagnosis to return:
-
-```text
-FIRST_FAILING_BOUNDARY
-ROOT_CAUSE
-EVIDENCE
-SMALLEST_FIX_SURFACE
-PRODUCT_DEFECT | TEST_DEFECT | HARNESS_DEFECT
-```
-
-Do not mutate until the first failed predicate/await/boundary is identified.
-
-## 11. Verification policy
-
-For T08–T11 the primary contract is Seam 2: browser/PWA ↔ visible behavior + Supabase/persisted state.
-
-T12 wraps Seam 1 from **canonical JSON onward**; it does not require a generic future PDF parser.
-
-Default rhythm:
-
-```text
-baseline before mutation
-→ focused inner-loop checks
-→ affected regression
-→ final gates
-```
-
-For the current app stack, a normal final Seam 2 gate is:
-
-```text
-npm test
-npm run build
-npm run test:e2e
-```
-
-Do not rerun full E2E after every micro-edit.
-
-If a full-suite-only failure appears, reproduce focused before modifying product.
-
-Avoid tests coupled to private helpers, exact internal RPC counts, incidental DOM structure or implementation-specific snapshot internals unless that detail is itself the contract.
-
-## 12. Hosted Supabase authority
-
-Authorized project:
-
-```text
-ogdguadpvplktkgawscm
-```
-
-Current known migration ledger after T07:
-
-```text
-20260810213000
-```
-
-Rules:
-
-- hosted is the effective route for this project;
-- verify-before-mutate;
-- no local Docker requirement;
-- never recreate valid auth/users/config by reflex;
-- applied migrations are immutable;
-- SQL/RPC change = new forward migration;
-- verify remote ledger before push;
-- browser publishable config is allowed;
-- privileged credentials remain ignored/unversioned.
-
-## 13. Process/port/runtime noise
-
-Port collisions, stale Vite processes, dead leases, sandbox-denied process inspection and result-sink issues are supervisor/harness responsibilities.
-
-Do not edit product code merely to route around one occupied port or control-plane limitation.
-
-The supervisor may clean/reconcile only the exact harness process/state it can safely attribute; never `git clean` or delete foreign product work.
-
-## 14. Size and ticket cohesion
-
-Raw line/file count is not a blocking criterion.
-
-A large candidate is acceptable when it is one causally coherent vertical and its migration/UI/persistence/tests are all required for one observable outcome.
-
-Split only at an independent, preservable causal checkpoint. Do not split by frontend/backend/tests/file count.
-
-A size exception never authorizes work from another ticket.
-
-## 15. Remaining queue
-
-```text
-T08 #12 — Historial inmutable + exact version replay
-T09 #13 — Dashboard/ranking without private-data leakage
-T10 #14 — Examen artificial 75 preguntas
-T11 #15 — PWA install/update/cache shell
-T12 #16 — canonical JSON → QA → PR/human merge gate → catalog/deploy
-```
-
-Use the exact audited dependencies in the Issues. Continue sequentially for this train.
-
-## 16. Per-ticket execution contract
-
-For each remaining ticket:
-
-1. verify prior FINAL_HEAD and parent PR;
-2. fetch/read exact Issue;
-3. create new branch/worktree from prior FINAL_HEAD;
-4. run baseline before product mutation;
-5. launch fresh writer;
-6. implement only current vertical;
-7. use focused/TDD checks;
-8. run final deterministic gates;
-9. create local checkpoint commit;
-10. run ONE fresh standalone Matt review against ENTRY_HEAD;
-11. reconcile + deduplicate + adjudicate findings;
-12. reproduce `NEEDS_EVIDENCE` before mutation;
-13. bounded repair if required;
-14. focused closure only;
-15. freeze exact final tree;
-16. non-force push;
-17. create stacked PR whose base is the previous work branch;
-18. record evidence and start next ticket in a fresh context.
-
-## 17. Stacked PR contract
-
-Do not point child PRs directly to `main` while the train is stacked.
-
-For each ticket record:
-
-```text
-ENTRY_HEAD
-FINAL_HEAD
-HEAD_BRANCH
-PARENT_BRANCH
-PARENT_PR
-PR
-```
-
-After the train, human merge sequence is:
-
-```text
-merge parent to main
-→ verify main contains parent FINAL_HEAD
-→ retarget immediate child to main
-→ verify child-only diff/checks
-→ merge child
-→ repeat
-```
-
-No force-push or history rewrite to make the stack prettier.
-
-## 18. Model policy for this run only
-
-For the remainder of this current train:
-
-```text
-GPT-5.6 Sol Fast
-reasoning HIGH
-```
-
-This is a temporary run override, not future KairOS policy.
-
-Fast is an optimization, not a gate. Do not mutate global OpenCode/KairOS configuration merely to obtain it.
-
-## 19. Control-plane mutation boundary
-
-Do not modify prompt/runbook/model policy on product `main` while a product candidate is active.
-
-Record new lessons externally and consolidate only at a safe ticket frontier such as PASS+PR before the next writer starts.
-
-## 20. CI expectation
-
-The repository currently may report no configured PR checks. Until T12, that absence is not a product blocker when required local/hosted gates are green.
-
-Do not expand T08–T11 to create CI infrastructure merely because GitHub shows no checks.
-
-## 21. Hard STOP conditions
-
-STOP the train only for a material boundary:
-
-- unrecoverable/ambiguous Git identity;
-- genuine human/product decision;
-- current acceptance still failing after focused diagnosis/repair and not converging;
+- missing one of the 12 mandatory PDF fixtures for T01;
+- mandatory acceptance/truth/affected test still failing after bounded repair;
+- reviewer returns a concrete material `BLOCKED` finding that cannot be repaired within the budget;
+- KairOS reviewer required but unavailable;
+- new product/architecture/human-authority decision is genuinely required;
+- wrong/ambiguous repository, worktree, branch or remote identity;
 - semantic integration conflict;
-- security/sensitive-data exposure;
-- required external state unavailable or unauthorized;
-- unsafe/unknown publication outcome;
-- action would require merge, force-push, product direct-main push, deploy or credential/global-config mutation.
+- unsafe/unknown remote publication outcome;
+- secret or real sensitive data exposure;
+- an acceptance criterion requires an unavailable external operational input and cannot honestly be proven in the isolated test environment;
+- fresh per-ticket execution identity cannot be established safely;
+- any requested action would require auto-merge, direct `main` push, force-push, deploy/production activation, credential mutation or unrelated global configuration changes.
 
-Do **not** STOP solely for:
+Do not skip a blocked ticket and continue to descendants that rely on it.
 
-- reviewer NOTE;
-- future-ticket finding;
-- unadjudicated MATERIAL label;
-- KairOS reviewer runtime unavailable;
-- occupied E2E port;
-- no configured CI;
-- raw diff size.
+## Explicitly forbidden overnight
 
-Never skip a genuinely blocked ticket and continue to dependent descendants.
-
-## 22. Explicitly forbidden
-
-- merge or auto-merge;
-- writer direct push to `main`;
-- force-push/rebase published stack history;
+- merge or auto-merge any PR;
+- push directly to `main`;
+- force-push/rebase published checkpoint history;
 - deploy/release/production activation;
-- install/update skills during the train;
-- mutate auth/SSH/MCP/plugins/global OpenCode config;
-- re-open closed planning by preference;
-- absorb future-ticket work because review mentioned it;
-- build generic offline-first/Realtime/synchronization machinery without ticket authority;
-- full-review loops until clean;
-- one growing writer conversation for multiple tickets.
+- create or reuse a hosted Supabase project without explicit Sil decision;
+- modify unrelated credentials/auth/SSH/MCP/plugins/global OpenCode config;
+- install/update skills;
+- publish real sensitive data;
+- broaden product scope;
+- reopen approved planning;
+- duplicate Matt + KairOS reviewers on the same candidate by routine;
+- use one growing writer conversation for all tickets;
+- parallelise product-code tickets during this unattended train.
 
-## 23. Closure report
+## Morning report
 
-For each attempted ticket record:
+On COMPLETE or STOP, leave a concise report containing, for each attempted ticket:
 
 ```text
 TICKET / ISSUE
@@ -437,30 +200,25 @@ STATUS: PASS | BLOCKED | NOT_STARTED
 ENTRY_HEAD
 FINAL_HEAD
 BRANCH
-PARENT_BRANCH / PARENT_PR
 PR
-BASELINE
-FOCUSED TESTS
-NPM_TEST
-BUILD
-E2E
-MIGRATION_LEDGER if applicable
-FULL_REVIEW: once | not justified
-FINDINGS: verified / routed / notes / needs_evidence
-REPAIRS / FOCUSED_CLOSURE
-HARNESS_RECOVERIES
-STOP_REASON
+FOCUSED/SEAM TESTS
+AFFECTED REGRESSION
+REVIEW
+REPAIR_COUNT
+NOTES / BLOCKER
 ```
 
-Global invariants:
+Then summarize:
 
 ```text
+LAST_SUCCESSFUL_TICKET
+LAST_SUCCESSFUL_FINAL_HEAD
+STOP_REASON (if any)
+HUMAN_DECISIONS_OPEN
+PRS_OPEN
 MERGES: 0
-DIRECT_MAIN_PRODUCT_PUSHES: 0
+DIRECT_MAIN_PUSHES: 0
 FORCE_PUSHES: 0
 DEPLOYS: 0
+NEXT_SAFE_ACTION
 ```
-
-## Done
-
-The remaining train is successful when T08–T12 each reach a verified stacked PR or the train stops at the first genuinely material boundary, without making Sil supervise predictable machinery and without converting reviewer/harness noise into product scope.

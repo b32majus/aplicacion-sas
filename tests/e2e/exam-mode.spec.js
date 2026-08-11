@@ -57,11 +57,54 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
           deadline_at: new Date(startedAt.getTime() + deadlineMs).toISOString(),
           server_now: startedAt.toISOString(),
           score: null,
+          revision: 0,
         };
       } else {
         state.attempt.server_now = new Date().toISOString();
       }
       return json(route, state.attempt);
+    }
+    if (path.endsWith("/rpc/sync_active_attempt")) {
+      const payload = request.postDataJSON();
+      if (payload.p_base_revision !== state.attempt.revision) {
+        return json(route, {
+          message: `STALE_ATTEMPT_REVISION: la revisión remota vigente es ${state.attempt.revision}.`,
+        }, 409);
+      }
+      for (const pending of payload.p_pending_snapshot.exam_answers) {
+        const sequence = state.answers.filter(({ question_id: id }) => id === pending.question_id).length + 1;
+        state.answers.push({
+          id: pending.id,
+          attempt_id: state.attempt.id,
+          question_id: pending.question_id,
+          answer_sequence: sequence,
+          selected_option: pending.selected_option,
+          correct_option: null,
+          is_correct: null,
+          confirmed_at: new Date().toISOString(),
+        });
+      }
+      state.attempt.current_position = payload.p_pending_snapshot.position;
+      let summary = null;
+      if (payload.p_pending_snapshot.finalize) {
+        state.finishCalls += 1;
+        await new Promise((resolve) => setTimeout(resolve, finishDelay));
+        state.attempt.status = "completed";
+        state.attempt.completed_at = new Date().toISOString();
+        state.attempt.score = 72.5;
+        summary = {
+          attempt_id: state.attempt.id,
+          correct: 112,
+          wrong: 30,
+          blank: 8,
+          score: 72.5,
+          elapsed_ms: 1_250_000,
+          new_personal_record: true,
+          completed_at: state.attempt.completed_at,
+        };
+      }
+      state.attempt.revision += 1;
+      return json(route, { attempt: state.attempt, answers: state.answers, summary });
     }
     if (path.endsWith("/rpc/save_exam_answer")) {
       const payload = request.postDataJSON();
@@ -204,7 +247,10 @@ test("Seam 2: reabrir tras el deadline bloquea la edición y auto-finaliza", asy
 
   await expect(page.locator("#answer-options input").first()).toBeDisabled({ timeout: 500 });
   await expect(page.locator("#active-time")).toHaveText("Tiempo restante: 00:00:00");
-  await expect(page.getByText("Intento finalizado")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByText("Intento finalizado")).toBeVisible({ timeout: 10_000 });
+  await page.waitForTimeout(1500);
+  await expect(page.getByText("Intento finalizado")).toBeVisible();
+  await expect(page.locator("#study-view")).toBeHidden();
   expect(persistence.finishCalls).toBe(1);
 });
 

@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
 import { shuffled } from "./quiz-core.js";
 import { ExamSession, formatActiveTime, NormalStudySession } from "./study-session.js";
@@ -21,6 +22,7 @@ const ids = [
   "submit-exam-button", "exam-submit-dialog", "exam-submit-counts", "cancel-exam-submit", "confirm-exam-submit",
   "summary-blank-wrap", "summary-blank", "summary-score-wrap", "summary-score", "summary-record",
   "summary-accuracy-wrap", "summary-time-label", "summary-pending-wrap", "summary-mastered-wrap",
+  "sync-status", "sync-recovery",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"]];
@@ -46,13 +48,13 @@ let lastActivityAt = Date.now();
 let timer;
 let routeSerial = 0;
 let savePromise = Promise.resolve();
-let pendingConfirmationPayload = null;
 let confirmationRetryAvailable = false;
-let pendingSavePayload = null;
 let pendingStrategyChange = null;
 let examServerOffsetMs = 0;
 let examSavePromise = Promise.resolve();
 let examFinalizing = false;
+let persistence;
+let persistenceUserId;
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -251,43 +253,111 @@ async function selectExam(id, { updateHash = true } = {}) {
 }
 
 function normalizeRow(data) { return Array.isArray(data) ? data[0] : data; }
-function studyStorageKey() {
-  if (!study) return null;
-  return `${study.attempt.kind === "failed" ? "failed-study" : "normal-study"}:${study.attempt.id}`;
+
+function currentPersistenceState() {
+  return { position: study.index, isPaused: Boolean(study.attempt.is_paused) };
 }
 
-function restoreLocalState() {
+function renderSyncStatus({ online, pending, conflict }) {
+  elements["sync-status"].hidden = false;
+  elements["sync-status"].className = `sync-status${online ? "" : " offline"}${pending ? " pending" : ""}`;
+  elements["sync-status"].textContent = online
+    ? pending ? "Cambios pendientes" : "En línea · Sincronizado"
+    : pending ? "Sin conexión · Cambios pendientes" : "Sin conexión";
+  if (!conflict) return;
+  elements["sync-recovery"].textContent = "Otro dispositivo guardó un avance más reciente. Se ha recargado el estado de Supabase sin mezclar ni sobrescribir cambios. La edición simultánea del mismo intento no está soportada.";
+  elements["sync-recovery"].hidden = false;
+}
+
+function ensurePersistence(session) {
+  const userId = session?.user?.id;
+  if (!userId || (persistence && persistenceUserId === userId)) return;
+  persistence?.destroy();
+  persistenceUserId = userId;
+  persistence = new ActiveAttemptPersistence({
+    client: supabase,
+    storage: localStorage,
+    userId,
+    onStatus: renderSyncStatus,
+    onReconnect: () => syncPendingAttempt().catch(() => {}),
+  });
+}
+
+function applyPendingView(view) {
+  const pending = view.pending;
+  pendingActiveSeconds = persistence?.pendingActiveSeconds || 0;
+  if (!pending) return;
+  if (study.attempt.kind === "exam") {
+    for (const answer of pending.exam_answers) {
+      study.selections.set(answer.question_id, answer.selected_option);
+    }
+  } else {
+    for (const confirmation of pending.study_confirmations) {
+      study.applyConfirmation({
+        id: confirmation.id,
+        question_id: confirmation.question_id,
+        answer_sequence: 1,
+        selected_option: confirmation.selected_option,
+        correct_option: confirmation.correct_option,
+        is_correct: confirmation.selected_option === confirmation.correct_option,
+        confirmed_at: new Date(0).toISOString(),
+      });
+    }
+    study.attempt.is_paused = pending.is_paused;
+  }
+  if (Number.isInteger(pending.position) && pending.position >= 0 && pending.position < study.questions.length) {
+    study.goTo(pending.position);
+  }
+  if (study.attempt.kind === "exam" && pending.finalize) study.locked = true;
+}
+
+async function applyPersistenceResult(result) {
+  if (!result || !study || result.attempt.id !== study.attempt.id) return;
+  const questions = study.questions;
+  const attempt = result.attempt;
+  const pinned = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
+  study = attempt.kind === "exam"
+    ? new ExamSession(pinned, attempt, result.answers)
+    : new NormalStudySession(pinned, attempt, result.answers);
+  pendingActiveSeconds = persistence?.pendingActiveSeconds || 0;
+  if (result.conflict) {
+    elements["sync-recovery"].textContent = "Otro dispositivo guardó un avance más reciente. Se ha recargado el estado de Supabase sin mezclar ni sobrescribir cambios. La edición simultánea del mismo intento no está soportada.";
+    elements["sync-recovery"].hidden = false;
+  }
+  if (result.summary) {
+    if (attempt.kind === "exam") showExamSummary(result.summary);
+    else showSummary(result.summary);
+    return;
+  }
+  renderStudy();
+}
+
+async function syncPendingAttempt() {
+  if (!persistence?.hasPending) return null;
   try {
-    const saved = JSON.parse(localStorage.getItem(studyStorageKey()) || "null");
-    if (!saved) return null;
-    for (const [questionId, optionId] of Object.entries(saved.provisional || {})) {
-      const question = study.questions.find(({ id }) => id === questionId);
-      if (question?.options.some(({ id }) => id === optionId)) study.provisional.set(questionId, optionId);
+    const result = await persistence.sync();
+    confirmationRetryAvailable = false;
+    await applyPersistenceResult(result);
+    return result;
+  } catch (error) {
+    confirmationRetryAvailable = true;
+    if (study) {
+      showError(elements["study-error"], `Cambios pendientes de sincronizar. ${error.message}`);
+      renderStudy();
     }
-    pendingActiveSeconds = Math.max(0, Math.min(Number(saved.activeSeconds) || 0, 300));
-    pendingSavePayload = saved.pendingSave || null;
-    if (Number.isInteger(saved.position) && saved.position >= 0 && saved.position < study.questions.length) {
-      study.goTo(saved.position);
-    }
-    if (typeof saved.isPaused === "boolean") study.attempt.is_paused = saved.isPaused;
-    pendingConfirmationPayload = saved.pendingConfirmation || null;
-    return pendingConfirmationPayload;
-  } catch {
-    localStorage.removeItem(studyStorageKey());
-    return null;
+    throw error;
   }
 }
 
-function persistLocalState() {
-  if (!study) return;
-  localStorage.setItem(studyStorageKey(), JSON.stringify({
-    provisional: Object.fromEntries(study.provisional),
-    activeSeconds: pendingActiveSeconds,
-    position: study.index,
-    isPaused: study.attempt.is_paused,
-    pendingConfirmation: pendingConfirmationPayload,
-    pendingSave: pendingSavePayload,
-  }));
+async function flushPendingBeforeAttemptChange(errorElement) {
+  if (!persistence?.hasPending) return true;
+  try {
+    await syncPendingAttempt();
+  } catch (error) {
+    showError(errorElement, `Sincroniza los Cambios pendientes antes de abrir otro intento. ${error.message}`);
+    return false;
+  }
+  return !persistence.hasPending;
 }
 
 async function fetchAttemptAnswers(attemptId) {
@@ -302,6 +372,7 @@ async function fetchAttemptAnswers(attemptId) {
 
 async function startExam() {
   if (!selectedExam) return;
+  if (!await flushPendingBeforeAttemptChange(elements["exam-error"])) return;
   elements["start-exam-button"].disabled = true;
   clearError(elements["exam-error"]);
   try {
@@ -316,68 +387,57 @@ async function startExam() {
     if (error) throw error;
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
+    attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
     const pinned = attempt.exam_version_id === selectedExam.version && attempt.exam_version_path === selectedExam.versionPath
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const catalogExam = catalog.find(({ id }) => id === attempt.exam_id);
     if (catalogExam) selectedExam = catalogExam;
     const answers = await fetchAttemptAnswers(attempt.id);
-    study = new ExamSession(pinned.exam, attempt, answers);
+    const view = persistence.begin(attempt, answers);
+    study = new ExamSession(pinned.exam, view.attempt, view.answers);
+    applyPendingView(view);
     activeExamAttempt = attempt;
-    examServerOffsetMs = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
-    const expired = Date.parse(attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    const expired = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
     study.locked = expired;
-    window.location.hash = `exam-mode=${encodeURIComponent(attempt.exam_id)}`;
+    window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
     renderStudy();
-    if (expired) finalizeExam();
+    if (expired) persistence.queueFinalization(currentPersistenceState());
+    if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    showError(elements["exam-error"], `No se pudo iniciar o recuperar el Modo examen. ${error.message}`);
+    const view = persistence?.restore({ examId: selectedExam.id, kind: "exam" });
+    if (!view) {
+      showError(elements["exam-error"], `No se pudo iniciar o recuperar el Modo examen. ${error.message}`);
+      return;
+    }
+    study = new ExamSession(selectedExam.package, view.attempt, view.answers);
+    examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+    applyPendingView(view);
+    activeExamAttempt = view.attempt;
+    examSavePromise = Promise.resolve();
+    examFinalizing = false;
+    study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
+    if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
+    renderStudy();
+    showError(elements["study-error"], "Sin conexión. El intento se ha recuperado en este dispositivo y mantiene cambios pendientes.");
   } finally {
     elements["start-exam-button"].disabled = false;
   }
 }
 
 function saveExamSelection(questionId, selectedOption, position) {
-  const payload = {
-    p_answer_id: crypto.randomUUID(),
-    p_attempt_id: study.attempt.id,
-    p_question_id: questionId,
-    p_selected_option: selectedOption,
-    p_position: position,
-  };
-  const save = async () => {
-    const { data, error } = await supabase.rpc("save_exam_answer", payload);
-    if (error) throw error;
-    study?.recordSaved(normalizeRow(data));
-  };
+  persistence.queueExamAnswer({
+    id: crypto.randomUUID(), questionId, selectedOption,
+  }, { position, isPaused: false });
+  const save = () => syncPendingAttempt();
   examSavePromise = examSavePromise.then(save, save);
   examSavePromise.catch((error) => {
-    showError(elements["study-error"], `No se pudo autoguardar la respuesta. ${error.message}`);
+    showError(elements["study-error"], `La respuesta queda en Cambios pendientes. ${error.message}`);
   });
-}
-
-async function callConfirmation(payload) {
-  const rpc = study.attempt.kind === "failed" ? "confirm_failed_answer" : "confirm_normal_answer";
-  const { data, error } = await supabase.rpc(rpc, payload);
-  if (error) throw error;
-  return normalizeRow(data);
-}
-
-async function retryPendingConfirmation(payload) {
-  if (!payload) return;
-  confirmationRetryAvailable = false;
-  try {
-    study.applyConfirmation(await callConfirmation(payload));
-    pendingConfirmationPayload = null;
-    persistLocalState();
-  } catch (error) {
-    pendingConfirmationPayload = payload;
-    confirmationRetryAvailable = true;
-    persistLocalState();
-    showError(elements["study-error"], `La confirmación sigue pendiente de conexión. ${error.message}`);
-  }
 }
 
 function strategyName(strategy) {
@@ -400,6 +460,7 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
     warnBeforeStrategyChange(strategy);
     return;
   }
+  if (!await flushPendingBeforeAttemptChange(elements["exam-error"])) return;
   elements["start-study-button"].disabled = true;
   elements["start-random-study-button"].disabled = true;
   clearError(elements["exam-error"]);
@@ -419,26 +480,28 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
-    study = new NormalStudySession(pinned.exam, attempt, answers);
+    const view = persistence.begin(attempt, answers);
+    study = new NormalStudySession(pinned.exam, view.attempt, view.answers);
     activeStrategies.set(selectedExam.id, attempt.strategy);
     pendingActiveSeconds = 0;
-    pendingConfirmationPayload = null;
     confirmationRetryAvailable = false;
-    pendingSavePayload = null;
-    const pendingConfirmation = restoreLocalState();
+    applyPendingView(view);
     window.location.hash = `study=${encodeURIComponent(selectedExam.id)}`;
     renderStudy();
-    if (pendingSavePayload) {
-      try {
-        await saveAttempt();
-      } catch (error) {
-        showError(elements["study-error"], `El guardado de tiempo sigue pendiente de conexión. ${error.message}`);
-      }
-    }
-    await retryPendingConfirmation(pendingConfirmation);
-    renderStudy();
+    if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    showError(elements["exam-error"], `No se pudo iniciar o recuperar el estudio. ${error.message}`);
+    const view = persistence?.restore({ examId: selectedExam.id, kind: "normal" });
+    if (!view) {
+      showError(elements["exam-error"], `No se pudo iniciar o recuperar el estudio. ${error.message}`);
+      return;
+    }
+    study = new NormalStudySession(selectedExam.package, view.attempt, view.answers);
+    activeStrategies.set(selectedExam.id, view.attempt.strategy);
+    confirmationRetryAvailable = true;
+    applyPendingView(view);
+    window.location.hash = `study=${encodeURIComponent(selectedExam.id)}`;
+    renderStudy();
+    showError(elements["study-error"], "Sin conexión. El intento se ha recuperado en este dispositivo y mantiene Cambios pendientes.");
   } finally {
     elements["start-study-button"].disabled = false;
     elements["start-random-study-button"].disabled = false;
@@ -495,6 +558,7 @@ async function loadFailedSessionQuestions(attempt) {
 async function startFailedStudy(scopeExamId = null) {
   const errorElement = scopeExamId ? elements["exam-error"] : elements["all-failed-error"];
   clearError(errorElement);
+  if (!await flushPendingBeforeAttemptChange(errorElement)) return;
   elements["start-failed-button"].disabled = true;
   elements["all-failed-button"].disabled = true;
   try {
@@ -508,33 +572,41 @@ async function startFailedStudy(scopeExamId = null) {
     const attempt = normalizeRow(data);
     const questions = await loadFailedSessionQuestions(attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
+    const view = persistence.begin(attempt, answers, { questions });
     study = new NormalStudySession({
       id: attempt.exam_id,
       version: { id: attempt.exam_version_id },
       questions,
-    }, attempt, answers);
+    }, view.attempt, view.answers);
     activeFailedAttempt = attempt;
     selectedExam = attempt.failed_scope_exam_id
       ? catalog.find(({ id }) => id === attempt.failed_scope_exam_id)
       : undefined;
     pendingActiveSeconds = 0;
-    pendingConfirmationPayload = null;
     confirmationRetryAvailable = false;
-    pendingSavePayload = null;
-    const pendingConfirmation = restoreLocalState();
+    applyPendingView(view);
     window.location.hash = `failed=${encodeURIComponent(attempt.failed_scope_exam_id || "all")}`;
     renderStudy();
-    if (pendingSavePayload) {
-      try {
-        await saveAttempt();
-      } catch (saveError) {
-        showError(elements["study-error"], `El guardado de tiempo sigue pendiente de conexión. ${saveError.message}`);
-      }
-    }
-    await retryPendingConfirmation(pendingConfirmation);
-    renderStudy();
+    if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    showError(errorElement, `No se pudo iniciar o recuperar la Sesión de falladas. ${error.message}`);
+    const view = persistence?.restore({ kind: "failed" });
+    const expectedScope = scopeExamId || null;
+    if (!view || (view.attempt.failed_scope_exam_id || null) !== expectedScope || !view.questions?.length) {
+      showError(errorElement, `No se pudo iniciar o recuperar la Sesión de falladas. ${error.message}`);
+      return;
+    }
+    study = new NormalStudySession({
+      id: view.attempt.exam_id,
+      version: { id: view.attempt.exam_version_id },
+      questions: view.questions,
+    }, view.attempt, view.answers);
+    activeFailedAttempt = view.attempt;
+    selectedExam = expectedScope ? catalog.find(({ id }) => id === expectedScope) : undefined;
+    confirmationRetryAvailable = true;
+    applyPendingView(view);
+    window.location.hash = `failed=${encodeURIComponent(expectedScope || "all")}`;
+    renderStudy();
+    showError(elements["study-error"], "Sin conexión. La Sesión de falladas mantiene Cambios pendientes en este dispositivo.");
   } finally {
     const count = eligibleFailureSources(scopeExamId).length;
     elements["start-failed-button"].disabled = !activeFailedAttempt && count === 0;
@@ -556,9 +628,13 @@ function renderNavigation() {
     button.addEventListener("click", async () => {
       study.goTo(index);
       renderStudy();
-      if (study.attempt.kind === "exam") return;
       try {
-        await saveAttempt();
+        if (study.attempt.kind === "exam") {
+          persistence.queueState(currentPersistenceState());
+          await syncPendingAttempt();
+        } else {
+          await saveAttempt();
+        }
       } catch (error) {
         showError(elements["study-error"], `La posición se guardará al recuperar conexión. ${error.message}`);
       }
@@ -580,7 +656,7 @@ function optionLabel(question, option, latest, corrected) {
     && Date.parse(activeExamAttempt.deadline_at) > Date.now();
   input.disabled = study.attempt.kind === "exam"
     ? study.locked
-    : blockedByExam || corrected || study.attempt.is_paused || pendingConfirmationPayload?.p_question_id === question.id;
+    : blockedByExam || corrected || study.attempt.is_paused;
   input.addEventListener("change", () => {
     study.select(option.id);
     if (study.attempt.kind === "exam") {
@@ -590,7 +666,6 @@ function optionLabel(question, option, latest, corrected) {
       saveExamSelection(questionId, option.id, position);
       return;
     }
-    persistLocalState();
     renderStudy();
   });
   const text = document.createElement("span");
@@ -605,13 +680,7 @@ function renderStudy() {
   showOnly(elements["study-view"]);
   const question = study.currentQuestion;
   const examMode = study.attempt.kind === "exam";
-  const pending = !examMode && pendingConfirmationPayload?.p_question_id === question.id ? {
-    id: pendingConfirmationPayload.p_confirmation_id,
-    selected_option: pendingConfirmationPayload.p_selected_option,
-    correct_option: question.correctOption,
-    is_correct: pendingConfirmationPayload.p_selected_option === question.correctOption,
-  } : null;
-  const latest = examMode ? null : study.latestAnswers.get(question.id) || pending;
+  const latest = examMode ? null : study.latestAnswers.get(question.id);
   const corrected = !examMode && Boolean(latest);
   const paused = !examMode && study.attempt.is_paused;
   elements["study-panel"].dataset.attemptId = study.attempt.id;
@@ -661,12 +730,13 @@ function renderStudy() {
     delete elements["correction"].dataset.confirmationId;
   }
 
-  elements["confirm-button"].hidden = examMode || (corrected && !confirmationRetryAvailable);
-  elements["confirm-button"].textContent = confirmationRetryAvailable ? "Reintentar confirmación" : "Confirmar respuesta";
+  const retryVisible = corrected && confirmationRetryAvailable && persistence?.hasPending;
+  elements["confirm-button"].hidden = examMode || (corrected && !retryVisible);
+  elements["confirm-button"].textContent = retryVisible ? "Reintentar sincronización" : "Confirmar respuesta";
   const blockedByExam = !examMode && activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
-  elements["confirm-button"].disabled = paused || Boolean(blockedByExam) || (!confirmationRetryAvailable && !study.selectedOption);
+  elements["confirm-button"].disabled = paused || Boolean(blockedByExam) || (!retryVisible && !study.selectedOption);
   elements["skip-button"].hidden = examMode || corrected;
-  elements["skip-button"].disabled = paused || Boolean(pendingConfirmationPayload);
+  elements["skip-button"].disabled = paused;
   elements["next-pending-button"].hidden = examMode || !corrected || study.isResolved;
   elements["complete-button"].hidden = examMode || !corrected || !study.isResolved;
   elements["complete-button"].disabled = paused;
@@ -679,62 +749,48 @@ function renderStudy() {
 
 async function confirmAnswer() {
   const question = study.currentQuestion;
+  if (study.latestAnswers.has(question.id) && persistence?.hasPending) {
+    await syncPendingAttempt().catch(() => {});
+    return;
+  }
   if (!study.selectedOption) return;
   clearError(elements["study-error"]);
   confirmationRetryAvailable = false;
   elements["confirm-button"].disabled = true;
-  const payload = pendingConfirmationPayload || {
+  const payload = {
     p_confirmation_id: crypto.randomUUID(),
     p_attempt_id: study.attempt.id,
     p_question_id: question.id,
     p_selected_option: study.selectedOption,
     p_correct_option: question.correctOption,
   };
-  pendingConfirmationPayload = payload;
-  persistLocalState();
+  study.applyConfirmation({
+    id: payload.p_confirmation_id,
+    question_id: payload.p_question_id,
+    answer_sequence: 1,
+    selected_option: payload.p_selected_option,
+    correct_option: payload.p_correct_option,
+    is_correct: payload.p_selected_option === payload.p_correct_option,
+    confirmed_at: new Date().toISOString(),
+  });
+  persistence.queueStudyConfirmation(payload, currentPersistenceState());
+  if (study.isResolved) persistence.queueFinalization(currentPersistenceState());
   renderStudy();
   try {
-    study.applyConfirmation(await callConfirmation(payload));
-    pendingConfirmationPayload = null;
-    persistLocalState();
-    renderStudy();
-    if (study.isResolved) await completeStudy();
+    await syncPendingAttempt();
   } catch (error) {
-    pendingConfirmationPayload = payload;
     confirmationRetryAvailable = true;
-    persistLocalState();
-    showError(elements["study-error"], `No se pudo confirmar. Se reintentará con la misma respuesta. ${error.message}`);
+    showError(elements["study-error"], `Respuesta confirmada localmente. Queda en Cambios pendientes. ${error.message}`);
     renderStudy();
   }
 }
 
 async function saveAttemptNow() {
   if (!study || study.attempt.status !== "active") return;
-  while (true) {
-    if (!pendingSavePayload) {
-      pendingSavePayload = {
-        p_save_id: crypto.randomUUID(),
-        p_attempt_id: study.attempt.id,
-        p_position: study.index,
-        p_active_seconds: Math.min(pendingActiveSeconds, 300),
-        p_is_paused: study.attempt.is_paused,
-      };
-      persistLocalState();
-    }
-    const payload = pendingSavePayload;
-    const { data, error } = await supabase.rpc("save_normal_attempt", payload);
-    if (error) {
-      persistLocalState();
-      throw error;
-    }
-    const desiredPaused = study.attempt.is_paused;
-    pendingActiveSeconds = Math.max(0, pendingActiveSeconds - payload.p_active_seconds);
-    pendingSavePayload = null;
-    study.attempt = normalizeRow(data);
-    study.attempt.is_paused = desiredPaused;
-    persistLocalState();
-    if (study.index === payload.p_position && desiredPaused === payload.p_is_paused && pendingActiveSeconds === 0) return;
-  }
+  persistence.queueState(currentPersistenceState());
+  const result = await persistence.sync();
+  await applyPersistenceResult(result);
+  return result;
 }
 
 function saveAttempt() {
@@ -762,6 +818,7 @@ async function exitStudy() {
   } else {
     try { await saveAttempt(); } catch { /* Local state retains the unsaved delta and position. */ }
   }
+  study = undefined;
   await refreshStatuses();
   if (exitingAttempt.kind === "failed" && !exitingAttempt.failed_scope_exam_id) {
     await showCatalog();
@@ -769,23 +826,18 @@ async function exitStudy() {
   }
   renderCatalog();
   await selectExam(exitingAttempt.failed_scope_exam_id || exitingAttempt.exam_id);
-  study = undefined;
 }
 
 async function completeStudy() {
   if (!study.isResolved) return;
   elements["complete-button"].disabled = true;
   try {
-    await saveAttempt();
-    const rpc = study.attempt.kind === "failed" ? "complete_failed_attempt" : "complete_normal_attempt";
-    const { data, error } = await supabase.rpc(rpc, { p_attempt_id: study.attempt.id });
-    if (error) throw error;
-    study.attempt.status = "completed";
-    localStorage.removeItem(studyStorageKey());
+    persistence.queueFinalization(currentPersistenceState());
+    const result = await persistence.sync();
+    await applyPersistenceResult(result);
     await refreshStatuses();
-    showSummary(data);
   } catch (error) {
-    showError(elements["study-error"], `No se pudo completar el intento. ${error.message}`);
+    showError(elements["study-error"], `La finalización queda en Cambios pendientes. ${error.message}`);
     elements["complete-button"].disabled = false;
   }
 }
@@ -797,25 +849,16 @@ async function finalizeExam() {
   elements["exam-submit-dialog"].close();
   renderStudy();
   try {
-    const expired = Date.parse(study.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
-    try {
-      await examSavePromise;
-    } catch (saveError) {
-      if (!expired) throw saveError;
-    }
-    const { data, error } = await supabase.rpc("finish_exam_attempt", {
-      p_attempt_id: study.attempt.id,
-    });
-    if (error) throw error;
-    study.attempt.status = "completed";
+    persistence.queueFinalization(currentPersistenceState());
+    const result = await persistence.sync();
+    await applyPersistenceResult(result);
     activeExamAttempt = undefined;
     await refreshStatuses();
-    showExamSummary(normalizeRow(data));
   } catch (error) {
     examFinalizing = false;
     const expired = Date.parse(study.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
     study.locked = expired;
-    showError(elements["study-error"], `No se pudo finalizar el Modo examen. ${error.message}`);
+    showError(elements["study-error"], `La finalización queda en Cambios pendientes. ${error.message}`);
     renderStudy();
   }
 }
@@ -884,7 +927,59 @@ function showSummary(summary) {
 async function routePrivateView() {
   const serial = ++routeSerial;
   try {
-    await Promise.all([ensureCatalog(), refreshStatuses()]);
+    const pendingStudyId = window.location.hash.match(/^#study=([^&]+)$/)?.[1];
+    const pendingExamId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
+    const pendingFailedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
+    if (persistence?.hasPending && pendingFailedScope) {
+      const scope = decodeURIComponent(pendingFailedScope);
+      const expectedScope = scope === "all" ? null : scope;
+      const view = persistence.restore({ kind: "failed" });
+      if (view && (view.attempt.failed_scope_exam_id || null) === expectedScope && view.questions?.length) {
+        const source = view.questions.find(({ sourceExamId }) => sourceExamId === expectedScope);
+        selectedExam = expectedScope ? { id: expectedScope, title: source?.sourceExamTitle || expectedScope } : undefined;
+        study = new NormalStudySession({
+          id: view.attempt.exam_id,
+          version: { id: view.attempt.exam_version_id },
+          questions: view.questions,
+        }, view.attempt, view.answers);
+        activeFailedAttempt = view.attempt;
+        applyPendingView(view);
+        renderStudy();
+        syncPendingAttempt().catch(() => {});
+        return;
+      }
+    }
+    await ensureCatalog();
+    if (persistence?.hasPending && (pendingStudyId || pendingExamId || pendingFailedScope)) {
+      if (pendingStudyId || pendingExamId) {
+        const examId = decodeURIComponent(pendingStudyId || pendingExamId);
+        await selectExam(examId, { updateHash: false });
+        const kind = pendingExamId ? "exam" : "normal";
+        const view = persistence.restore({ examId, kind });
+        if (view) {
+          study = kind === "exam"
+            ? new ExamSession(selectedExam.package, view.attempt, view.answers)
+            : new NormalStudySession(selectedExam.package, view.attempt, view.answers);
+          applyPendingView(view);
+          if (kind === "exam") {
+            activeExamAttempt = view.attempt;
+            examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+            study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+            if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
+          } else {
+            activeStrategies.set(examId, view.attempt.strategy);
+          }
+          renderStudy();
+          syncPendingAttempt().catch(() => {});
+          return;
+        }
+      }
+    }
+    try {
+      await refreshStatuses();
+    } catch (error) {
+      if (!persistence?.hasPending) throw error;
+    }
     if (serial !== routeSerial) return;
     const studyId = window.location.hash.match(/^#study=([^&]+)$/)?.[1];
     const examModeId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
@@ -927,12 +1022,14 @@ async function routePrivateView() {
 
 function renderAuthSession(session) {
   elements["logout-button"].hidden = !session;
+  elements["sync-status"].hidden = !session;
   elements["login-error"].hidden = true;
   if (!session) {
     study = undefined;
     showOnly(elements["login-view"]);
     return;
   }
+  ensurePersistence(session);
   routePrivateView();
 }
 
@@ -950,6 +1047,7 @@ function recordActivity() { lastActivityAt = Date.now(); }
 
 function tickActiveTime() {
   if (study?.attempt.kind === "exam") {
+    if (study.attempt.status !== "active") return;
     const remaining = Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs);
     elements["active-time"].textContent = `Tiempo restante: ${formatCountdown(remaining)}`;
     if (remaining <= 0 && !study.locked) {
@@ -966,7 +1064,15 @@ function tickActiveTime() {
     && Date.now() - lastActivityAt <= RECENT_ACTIVITY_MS
   ) {
     pendingActiveSeconds += 1;
-    persistLocalState();
+    try {
+      persistence.queueActiveSecond(currentPersistenceState());
+    } catch (error) {
+      showError(elements["study-error"], error.message);
+      study.attempt.is_paused = true;
+      renderStudy();
+      return;
+    }
+    pendingActiveSeconds = persistence.pendingActiveSeconds;
     elements["active-time"].textContent = `Tiempo activo: ${formatActiveTime(study.attempt.active_seconds + pendingActiveSeconds)}`;
     if (pendingActiveSeconds >= 15) saveAttempt().catch(() => {});
   }
@@ -1030,7 +1136,6 @@ async function boot() {
   });
   window.addEventListener("pagehide", () => {
     window.clearInterval(timer);
-    persistLocalState();
     subscription.unsubscribe();
   }, { once: true });
 

@@ -3,6 +3,7 @@ import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { materializeArtificialSources } from "./artificial-exam.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
+import { isActiveExam, isExamExpired, serverAdjustedNow } from "./exam-clock.js";
 import {
   HISTORY_KIND_LABELS,
   HISTORY_MODE_LABELS,
@@ -545,11 +546,11 @@ function renderCatalog() {
   elements["all-failed-button"].textContent = activeFailedAttempt
     ? "Continuar Sesión de falladas activa"
     : "Empezar Todas mis falladas";
-  if (activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now()) {
+  if (isActiveExam(activeExamAttempt, examServerOffsetMs)) {
     elements["all-failed-button"].disabled = true;
   }
   const artificialAvailable = catalog.reduce((total, exam) => total + exam.questions.length, 0) >= 75;
-  const examIsActive = activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["artificial-study-button"].disabled = !artificialAvailable || Boolean(examIsActive);
   elements["artificial-exam-button"].disabled = !artificialAvailable;
   elements["artificial-exam-button"].textContent = activeExamAttempt?.origin === "artificial"
@@ -617,7 +618,7 @@ async function selectExam(id, { updateHash = true } = {}) {
   elements["start-failed-button"].textContent = activeFailedAttempt
     ? "Continuar Sesión de falladas activa"
     : "Empezar Solo falladas";
-  const examIsActive = activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["start-study-button"].disabled = Boolean(examIsActive);
   elements["start-random-study-button"].disabled = Boolean(examIsActive);
   if (examIsActive) elements["start-failed-button"].disabled = true;
@@ -779,7 +780,7 @@ async function startExam() {
     examServerOffsetMs = view.attempt.server_clock_offset_ms;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
-    const expired = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    const expired = isExamExpired(view.attempt, examServerOffsetMs);
     study.locked = expired;
     window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
     renderStudy();
@@ -797,7 +798,7 @@ async function startExam() {
     activeExamAttempt = view.attempt;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
-    study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    study.locked = isExamExpired(view.attempt, examServerOffsetMs);
     window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
     if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
     renderStudy();
@@ -967,7 +968,7 @@ async function startArtificial(mode) {
     if (attempt.kind === "exam") {
       activeExamAttempt = attempt;
       examServerOffsetMs = view.attempt.server_clock_offset_ms;
-      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
       if (study.locked) persistence.queueFinalization(currentPersistenceState());
     } else {
       pendingActiveSeconds = 0;
@@ -995,7 +996,7 @@ async function startArtificial(mode) {
     if (kind === "exam") {
       activeExamAttempt = view.attempt;
       examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
     }
     window.location.hash = `artificial-${mode}`;
     renderStudy();
@@ -1103,8 +1104,7 @@ function optionLabel(question, option, latest, corrected) {
   input.value = option.id;
   input.checked = corrected ? latest?.selected_option === option.id : study.selectedOption === option.id;
   const blockedByExam = study.attempt.kind !== "exam"
-    && activeExamAttempt
-    && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+    && isActiveExam(activeExamAttempt, examServerOffsetMs);
   input.disabled = study.attempt.kind === "exam"
     ? study.locked
     : blockedByExam || corrected || study.attempt.is_paused;
@@ -1154,7 +1154,7 @@ function renderStudy() {
     : `Estudio ${strategyName(study.attempt.strategy)}`;
   elements["study-progress"].textContent = `${study.index + 1} de ${study.questions.length}`;
   elements["active-time"].textContent = examMode
-    ? `Tiempo restante: ${formatCountdown(Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs))}`
+    ? `Tiempo restante: ${formatCountdown(Date.parse(study.attempt.deadline_at) - serverAdjustedNow(examServerOffsetMs))}`
     : `Tiempo activo: ${formatActiveTime(study.attempt.active_seconds + pendingActiveSeconds)}`;
   const versionId = question.sourceVersionId || study.attempt.exam_version_id;
   const versionPath = question.sourceVersionPath || study.attempt.exam_version_path;
@@ -1191,7 +1191,7 @@ function renderStudy() {
   const retryVisible = corrected && confirmationRetryAvailable && persistence?.hasPending;
   elements["confirm-button"].hidden = examMode || (corrected && !retryVisible);
   elements["confirm-button"].textContent = retryVisible ? "Reintentar sincronización" : "Confirmar respuesta";
-  const blockedByExam = !examMode && activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const blockedByExam = !examMode && isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["confirm-button"].disabled = paused || Boolean(blockedByExam) || (!retryVisible && !study.selectedOption);
   elements["skip-button"].hidden = examMode || corrected;
   elements["skip-button"].disabled = paused;
@@ -1318,7 +1318,7 @@ async function finalizeExam() {
     await refreshStatuses();
   } catch (error) {
     examFinalizing = false;
-    const expired = Date.parse(study.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    const expired = isExamExpired(study.attempt, examServerOffsetMs);
     study.locked = expired;
     showError(elements["study-error"], `La finalización queda en Cambios pendientes. ${error.message}`);
     renderStudy();
@@ -1445,7 +1445,7 @@ async function routePrivateView() {
         if (kind === "exam") {
           activeExamAttempt = view.attempt;
           examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+          study.locked = isExamExpired(view.attempt, examServerOffsetMs);
         }
         renderStudy();
         syncPendingAttempt().catch(() => {});
@@ -1478,7 +1478,7 @@ async function routePrivateView() {
         if (kind === "exam") {
           activeExamAttempt = view.attempt;
           examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+          study.locked = isExamExpired(view.attempt, examServerOffsetMs);
           if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
         } else {
           activeStrategies.set(examId, view.attempt.strategy);
@@ -1503,7 +1503,7 @@ async function routePrivateView() {
           if (kind === "exam") {
             activeExamAttempt = view.attempt;
             examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-            study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+            study.locked = isExamExpired(view.attempt, examServerOffsetMs);
             if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
           } else {
             activeStrategies.set(examId, view.attempt.strategy);
@@ -1591,7 +1591,7 @@ function recordActivity() { lastActivityAt = Date.now(); }
 function tickActiveTime() {
   if (study?.attempt.kind === "exam") {
     if (study.attempt.status !== "active") return;
-    const remaining = Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs);
+    const remaining = Date.parse(study.attempt.deadline_at) - serverAdjustedNow(examServerOffsetMs);
     elements["active-time"].textContent = `Tiempo restante: ${formatCountdown(remaining)}`;
     if (remaining <= 0 && !study.locked) {
       study.locked = true;

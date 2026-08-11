@@ -63,7 +63,7 @@ test("un tercer registro oficial atraviesa inicio, scoring, artificial y dashboa
         "select public.start_or_resume_exam_attempt($1, $2, $3, $4, 120)",
         [examId, versionId, `${examId}/versions/wrong.json`, questionIds],
       ),
-      /versión oficial publicable/i,
+      /versión oficial actualmente publicada/i,
     );
     const { rows: [{ start_or_resume_exam_attempt: attempt }] } = await db.query(
       "select public.start_or_resume_exam_attempt($1, $2, $3, $4, 120)",

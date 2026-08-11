@@ -53,9 +53,9 @@ async function seedDashboard(db) {
       `insert into public.attempts(
          id, user_id, exam_id, exam_version_id, exam_version_path, question_ids,
          kind, principal, strategy, status, duration_minutes, started_at, deadline_at,
-         completed_at, score, correct_answers, wrong_answers, blank_answers, exam_elapsed_ms
+         created_at, completed_at, score, correct_answers, wrong_answers, blank_answers, exam_elapsed_ms
        ) values ($1, $2, $3, $4, $5, $6, 'exam', false, 'exam', 'completed', 90,
-         $7::timestamptz - interval '90 minutes', $7, $7, $8, 1, 1, 0, $9)`,
+         $7::timestamptz - interval '90 minutes', $7, $7, $7, $8, 1, 1, 0, $9)`,
       [id, userId, examId, versionId, versionPath, questions, completedAt, attemptScore, elapsed],
     );
   }

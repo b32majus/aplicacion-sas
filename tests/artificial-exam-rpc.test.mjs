@@ -147,7 +147,7 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
       `select (public.start_or_replace_principal_attempt(
         $1, $2, $3, $4, 'normal', false
       )).*`,
-      [packages[0].examId, packages[0].versionId, packages[0].versionPath, [canonicalIds[2]]],
+      [packages[0].examId, packages[0].versionId, packages[0].versionPath, packages[0].questionIds],
     );
     const { rows: [failed] } = await db.query(
       "select (public.start_or_resume_failed_attempt($1, $2::jsonb)).*",
@@ -173,6 +173,13 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
     );
     await assert.rejects(
       db.query(
+        "select public.save_normal_attempt($1, $2, 1, 7, false)",
+        ["21000000-0000-4000-8000-000000000003", principal.id],
+      ),
+      /actividad de estudio.*Modo examen activo/i,
+    );
+    await assert.rejects(
+      db.query(
         "select public.confirm_failed_answer($1, $2, $3, 'B', 'B')",
         ["21000000-0000-4000-8000-000000000002", failed.id, canonicalIds[40]],
       ),
@@ -195,6 +202,10 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
       [timed.id],
     );
     assert.deepEqual(repeated, examSummary);
+    await db.query(
+      "select public.save_normal_attempt($1, $2, 1, 7, false)",
+      ["21000000-0000-4000-8000-000000000004", principal.id],
+    );
 
     const { rows: progress } = await db.query(
       `select exam_id, question_id, correct_count, wrong_count, current_streak, mastered, pending_failure

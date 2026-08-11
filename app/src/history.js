@@ -53,7 +53,7 @@ async function loadAnswers(client, attemptId) {
 
 export async function loadHistoryReplay(client, fetchImpl, bankBaseUrl, attempt) {
   const answers = await loadAnswers(client, attempt.id);
-  if (attempt.kind !== "failed") {
+  if (attempt.kind !== "failed" && attempt.origin !== "artificial") {
     const pinned = await loadPinnedExam(fetchImpl, bankBaseUrl, attempt);
     const questions = attempt.question_ids.map((questionId) => {
       const question = pinned.exam.questions.find(({ id }) => id === questionId);
@@ -70,7 +70,7 @@ export async function loadHistoryReplay(client, fetchImpl, bankBaseUrl, attempt)
     .order("position", { ascending: true });
   if (error) throw error;
   if (sources.length !== attempt.question_ids.length) {
-    throw new Error("La cola histórica de la Sesión de falladas no es válida.");
+    throw new Error("La composición histórica del intento no es válida.");
   }
 
   const packages = new Map();
@@ -87,14 +87,18 @@ export async function loadHistoryReplay(client, fetchImpl, bankBaseUrl, attempt)
     if (!question) throw new Error("Una pregunta histórica ya no existe en su versión fijada.");
     return {
       ...question,
+      sourceExamId: source.exam_id,
       sourceExamTitle: pinned.exam.title,
       sourceVersionId: source.exam_version_id,
+      sourceVersionPath: source.exam_version_path,
     };
   });
   return {
     attempt,
     answers,
     questions,
-    title: attempt.failed_scope_exam_id ? packages.values().next().value.exam.title : "Todas mis falladas",
+    title: attempt.origin === "artificial"
+      ? "Examen artificial"
+      : attempt.failed_scope_exam_id ? packages.values().next().value.exam.title : "Todas mis falladas",
   };
 }

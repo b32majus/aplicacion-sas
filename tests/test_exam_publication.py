@@ -495,8 +495,15 @@ class TestExamPublication(unittest.TestCase):
         workflow = CI_WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("pull_request:", workflow)
         self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertIn("uses: actions/setup-python@v6", workflow)
+        self.assertIn('python-version: "3.12"', workflow)
+        self.assertIn("cache-dependency-path: requirements-parser.txt", workflow)
+        self.assertIn("run: python -m venv .venv", workflow)
+        self.assertIn("run: .venv/bin/pip install -r requirements-parser.txt", workflow)
         for command in ("npm ci", "npm test", "npm run build"):
             self.assertIn(f"run: {command}", workflow)
+        self.assertLess(workflow.index("python -m venv"), workflow.index("run: npm test"))
+        self.assertLess(workflow.index("pip install"), workflow.index("run: npm test"))
         for forbidden in (
             "contents: write", "pull-requests: write", "pages: write",
             "id-token: write", "service_role", "SUPABASE_DB", "playwright test",

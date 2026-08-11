@@ -15,6 +15,13 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-parser.txt
+      - run: python -m venv .venv
+      - run: .venv/bin/pip install -r requirements-parser.txt
       - run: npm ci
       - run: npm test
       - run: npm run build

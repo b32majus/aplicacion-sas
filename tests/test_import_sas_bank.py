@@ -51,6 +51,16 @@ EXPECTED_FIXTURES = [
     "Examen_ADM_L_APL_2015.pdf",
 ]
 
+
+def require_real_pdf_fixtures(fixtures_dir: Path) -> None:
+    missing = [name for name in EXPECTED_FIXTURES if not (fixtures_dir / name).is_file()]
+    if missing:
+        raise unittest.SkipTest(
+            "12 PDF oficiales no disponibles; se omite solo TestRealPdfs: "
+            + ", ".join(missing)
+        )
+
+
 def canonical_json(exam: dict) -> str:
     return json.dumps(exam, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
 
@@ -365,14 +375,29 @@ class TestSyntheticBlocking(unittest.TestCase):
         self.assertTrue(any("question_duplicated_in_source_text_layer" in f["flag"] for f in flags))
 
 
+class TestRealFixtureAvailability(unittest.TestCase):
+    def test_missing_corpus_skips_with_an_explicit_reason(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="missing-real-pdfs-") as directory:
+            with self.assertRaisesRegex(unittest.SkipTest, "12 PDF oficiales"):
+                require_real_pdf_fixtures(Path(directory))
+            with mock.patch.object(sys.modules[__name__], "FIXTURES_DIR", Path(directory)):
+                with self.assertRaisesRegex(unittest.SkipTest, "solo TestRealPdfs"):
+                    TestRealPdfs.setUpClass()
+
+    def test_complete_corpus_remains_enabled(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="complete-real-pdfs-") as directory:
+            fixtures = Path(directory)
+            for name in EXPECTED_FIXTURES:
+                (fixtures / name).touch()
+            require_real_pdf_fixtures(fixtures)
+
+
 class TestRealPdfs(unittest.TestCase):
     """Los 12 PDF oficiales: clasificación determinista, schema e invariantes."""
 
     @classmethod
     def setUpClass(cls) -> None:
-        missing = [name for name in EXPECTED_FIXTURES if not (FIXTURES_DIR / name).exists()]
-        if missing:
-            raise AssertionError(f"fixtures oficiales obligatorios ausentes: {missing}")
+        require_real_pdf_fixtures(FIXTURES_DIR)
         cls.results = {}
         for name in EXPECTED_FIXTURES:
             cls.results[name] = importer.build_exam(FIXTURES_DIR / name)

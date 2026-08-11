@@ -54,6 +54,18 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .card-status { margin: 0 0 24px; color: #0b7056; font-weight: 850; }
 .card-failures { margin: -16px 0 24px; color: #536963; font-weight: 750; }
 .exam-card .secondary { align-self: flex-start; }
+.history-list { display: grid; gap: 14px; }
+.history-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 24px; border: 1px solid #c6d6cf; border-radius: 16px; background: rgba(255, 255, 255, .92); }
+.history-entry h2, .history-entry p { margin: 0; }
+.history-entry h2 { margin: 5px 0 8px; }
+.history-meta { color: #536963; font-weight: 700; }
+.history-metrics { color: #315e52; }
+.history-detail h1 { font-size: clamp(2rem, 6vw, 4rem); }
+.history-questions { display: grid; gap: 18px; margin-top: 34px; }
+.history-question { padding: 22px; border: 1px solid #d2ddd9; border-radius: 14px; background: #fbfcfa; }
+.history-question h2 { margin-bottom: 18px; font-size: 1.25rem; }
+.history-question .answer-option { cursor: default; }
+.history-answer-state { margin: 14px 0 0; color: #536963; font-weight: 750; }
 .back { margin-bottom: 22px; }
 .exam-entry { max-width: 820px; }
 .exam-entry h1 { font-size: clamp(2rem, 6vw, 4rem); }
@@ -117,6 +129,8 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
   .login-layout { grid-template-columns: 1fr; }
   .page-heading { display: block; }
   .all-failed-entry { align-items: stretch; flex-direction: column; }
+  .history-entry { grid-template-columns: 1fr; }
+  .history-entry .secondary { justify-self: start; }
   .study-heading { display: block; }
   .active-time { margin-bottom: 10px; }
   .summary-grid { grid-template-columns: repeat(2, minmax(130px, 1fr)); }

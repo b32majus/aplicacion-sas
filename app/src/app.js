@@ -1,6 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
+import {
+  HISTORY_KIND_LABELS,
+  HISTORY_MODE_LABELS,
+  HISTORY_STATUS_LABELS,
+  historyDurationSeconds,
+  loadHistoryReplay,
+  loadPersonalHistory,
+} from "./history.js";
 import { shuffled } from "./quiz-core.js";
 import { ExamSession, formatActiveTime, NormalStudySession } from "./study-session.js";
 import "./styles.css";
@@ -22,10 +30,16 @@ const ids = [
   "submit-exam-button", "exam-submit-dialog", "exam-submit-counts", "cancel-exam-submit", "confirm-exam-submit",
   "summary-blank-wrap", "summary-blank", "summary-score-wrap", "summary-score", "summary-record",
   "summary-accuracy-wrap", "summary-time-label", "summary-pending-wrap", "summary-mastered-wrap",
-  "sync-status", "sync-recovery",
+  "sync-status", "sync-recovery", "history-button", "history-view", "history-catalog-button",
+  "history-status", "history-list", "history-detail-view", "history-detail-back",
+  "history-detail-title", "history-detail-meta", "history-detail-metrics", "history-detail-version",
+  "history-questions", "history-detail-error",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
-const privateViews = [elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"]];
+const privateViews = [
+  elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"],
+  elements["history-view"], elements["history-detail-view"],
+];
 const allViews = [elements["loading-view"], elements["login-view"], ...privateViews];
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
@@ -55,6 +69,7 @@ let examSavePromise = Promise.resolve();
 let examFinalizing = false;
 let persistence;
 let persistenceUserId;
+let history = [];
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -89,6 +104,175 @@ function statusFor(examId) { return statuses.get(examId) || "Sin empezar"; }
 
 function formatScore(score) {
   return Number(score).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function formatHistoryDate(value) {
+  return new Intl.DateTimeFormat("es-ES", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
+}
+
+function historyTime(attempt) {
+  const seconds = historyDurationSeconds(attempt);
+  return seconds == null ? null : formatActiveTime(seconds);
+}
+
+function historyMetrics(attempt) {
+  const metrics = [`${attempt.answered_questions} respondidas`];
+  const resultsAvailable = attempt.kind !== "exam" || attempt.status === "completed";
+  if (resultsAvailable) {
+    metrics.push(`${attempt.correct_answers} correctas`, `${attempt.wrong_answers} incorrectas`);
+  }
+  if (resultsAvailable && attempt.blank_answers != null) metrics.push(`${attempt.blank_answers} en blanco`);
+  if (attempt.score != null) metrics.push(`${formatScore(attempt.score)} / 100`);
+  const time = historyTime(attempt);
+  if (time) metrics.push(`${attempt.kind === "exam" ? "Tiempo de examen" : "Tiempo activo"}: ${time}`);
+  return metrics;
+}
+
+function renderHistory() {
+  elements["history-list"].replaceChildren(...history.map((attempt) => {
+    const entry = document.createElement("article");
+    entry.className = "history-entry";
+    entry.dataset.attemptId = attempt.id;
+    const copy = document.createElement("div");
+    const date = document.createElement("p");
+    date.className = "eyebrow";
+    date.textContent = formatHistoryDate(attempt.created_at);
+    const title = document.createElement("h2");
+    title.textContent = attempt.kind === "failed" && !attempt.failed_scope_exam_id
+      ? "Todas mis falladas"
+      : `Banco oficial · ${attempt.failed_scope_exam_id || attempt.exam_id}`;
+    const meta = document.createElement("p");
+    meta.className = "history-meta";
+    meta.textContent = `${HISTORY_KIND_LABELS[attempt.kind] || attempt.kind} · ${HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
+    const metrics = document.createElement("p");
+    metrics.className = "history-metrics";
+    metrics.textContent = historyMetrics(attempt).join(" · ");
+    copy.append(date, title, meta, metrics);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary";
+    button.textContent = "Abrir en solo lectura";
+    button.addEventListener("click", () => showHistoryDetail(attempt.id));
+    entry.append(copy, button);
+    return entry;
+  }));
+  elements["history-status"].hidden = history.length > 0;
+  elements["history-status"].textContent = history.length ? "" : "Todavía no hay intentos persistidos.";
+  elements["history-list"].hidden = history.length === 0;
+}
+
+async function showHistory() {
+  study = undefined;
+  window.location.hash = "history";
+  showOnly(elements["history-view"]);
+  elements["history-status"].hidden = false;
+  elements["history-status"].textContent = "Cargando Historial…";
+  elements["history-list"].hidden = true;
+  try {
+    history = await loadPersonalHistory(supabase);
+    renderHistory();
+  } catch (error) {
+    showError(elements["history-status"], `No se pudo cargar el Historial personal. ${error.message}`);
+  }
+}
+
+function metricNode(label, value) {
+  const wrapper = document.createElement("div");
+  const term = document.createElement("dt");
+  term.textContent = label;
+  const detail = document.createElement("dd");
+  detail.textContent = value;
+  wrapper.append(term, detail);
+  return wrapper;
+}
+
+function renderHistoryQuestions(replay) {
+  const latestAnswers = new Map();
+  replay.answers.forEach((answer) => latestAnswers.set(answer.question_id, answer));
+  return replay.questions.map((question, index) => {
+    const answer = latestAnswers.get(question.id);
+    const card = document.createElement("article");
+    card.className = "history-question";
+    const source = document.createElement("p");
+    source.className = "step";
+    source.textContent = question.sourceExamTitle
+      ? `${question.sourceExamTitle} · ${question.displayLabel || `Pregunta ${question.sourceNumber}`}`
+      : question.displayLabel || `Pregunta ${question.sourceNumber || index + 1}`;
+    const title = document.createElement("h2");
+    title.textContent = question.text;
+    const options = document.createElement("div");
+    options.className = "answer-options";
+    options.replaceChildren(...question.options.map((option) => {
+      const label = document.createElement("label");
+      label.className = "answer-option";
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.disabled = true;
+      input.checked = answer?.selected_option === option.id;
+      const text = document.createElement("span");
+      text.textContent = `${option.id}. ${option.text}`;
+      if (answer?.correct_option && option.id === answer.correct_option) label.classList.add("correct-option");
+      if (answer?.is_correct === false && option.id === answer.selected_option) label.classList.add("wrong-option");
+      label.append(input, text);
+      return label;
+    }));
+    const state = document.createElement("p");
+    state.className = "history-answer-state";
+    state.textContent = !answer || answer.selected_option == null
+      ? "Sin respuesta persistida"
+      : answer.correct_option == null
+      ? `Respuesta guardada: ${answer.selected_option}. Corrección no disponible mientras el intento sigue activo.`
+      : answer.is_correct
+      ? `Correcta · Respuesta oficial: ${answer.correct_option}`
+      : `Incorrecta · Respuesta oficial: ${answer.correct_option}`;
+    card.append(source, title, options, state);
+    return card;
+  });
+}
+
+async function showHistoryDetail(attemptId) {
+  let attempt = history.find(({ id }) => id === attemptId);
+  if (!attempt) {
+    history = await loadPersonalHistory(supabase);
+    attempt = history.find(({ id }) => id === attemptId);
+  }
+  if (!attempt) return showHistory();
+  window.location.hash = `history=${encodeURIComponent(attempt.id)}`;
+  showOnly(elements["history-detail-view"]);
+  clearError(elements["history-detail-error"]);
+  elements["history-detail-title"].textContent = attempt.exam_id;
+  elements["history-detail-meta"].textContent = "Cargando la versión exacta del intento…";
+  elements["history-detail-metrics"].replaceChildren();
+  elements["history-questions"].replaceChildren();
+  try {
+    const replay = await loadHistoryReplay(supabase, fetch, bankBaseUrl, attempt);
+    elements["history-detail-title"].textContent = replay.title;
+    elements["history-detail-meta"].textContent = `${formatHistoryDate(attempt.created_at)} · ${HISTORY_KIND_LABELS[attempt.kind] || attempt.kind} · ${HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
+    const metricValues = [metricNode("Respondidas", attempt.answered_questions)];
+    const resultsAvailable = attempt.kind !== "exam" || attempt.status === "completed";
+    if (resultsAvailable) {
+      metricValues.push(
+        metricNode("Correctas", attempt.correct_answers),
+        metricNode("Incorrectas", attempt.wrong_answers),
+      );
+    }
+    if (resultsAvailable && attempt.blank_answers != null) metricValues.push(metricNode("En blanco", attempt.blank_answers));
+    if (attempt.score != null) metricValues.push(metricNode("Nota", `${formatScore(attempt.score)} / 100`));
+    const time = historyTime(attempt);
+    if (time) metricValues.push(metricNode(attempt.kind === "exam" ? "Tiempo de examen" : "Tiempo activo", time));
+    elements["history-detail-metrics"].replaceChildren(...metricValues);
+    elements["history-detail-version"].textContent = attempt.kind === "failed" && !attempt.failed_scope_exam_id
+      ? "Versiones históricas fijadas por pregunta"
+      : `Versión histórica fijada: ${attempt.exam_version_id}`;
+    if (attempt.kind === "failed" && !attempt.failed_scope_exam_id) {
+      delete elements["history-detail-version"].dataset.versionPath;
+    } else {
+      elements["history-detail-version"].dataset.versionPath = attempt.exam_version_path;
+    }
+    elements["history-questions"].replaceChildren(...renderHistoryQuestions(replay));
+  } catch (error) {
+    showError(elements["history-detail-error"], `No se pudo abrir la revisión histórica. ${error.message}`);
+  }
 }
 
 function eligibleFailureSources(scopeExamId = null) {
@@ -930,6 +1114,16 @@ async function routePrivateView() {
     const pendingStudyId = window.location.hash.match(/^#study=([^&]+)$/)?.[1];
     const pendingExamId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
     const pendingFailedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
+    const requestedHistoryId = window.location.hash.match(/^#history=([^&]+)$/)?.[1];
+    if (requestedHistoryId) {
+      history = await loadPersonalHistory(supabase);
+      await showHistoryDetail(decodeURIComponent(requestedHistoryId));
+      return;
+    }
+    if (window.location.hash === "#history") {
+      await showHistory();
+      return;
+    }
     if (persistence?.hasPending && pendingFailedScope) {
       const scope = decodeURIComponent(pendingFailedScope);
       const expectedScope = scope === "all" ? null : scope;
@@ -1022,6 +1216,7 @@ async function routePrivateView() {
 
 function renderAuthSession(session) {
   elements["logout-button"].hidden = !session;
+  elements["history-button"].hidden = !session;
   elements["sync-status"].hidden = !session;
   elements["login-error"].hidden = true;
   if (!session) {
@@ -1090,6 +1285,9 @@ async function boot() {
   elements["login-form"].addEventListener("submit", submitLogin);
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);
+  elements["history-button"].addEventListener("click", showHistory);
+  elements["history-catalog-button"].addEventListener("click", showCatalog);
+  elements["history-detail-back"].addEventListener("click", showHistory);
   elements["start-study-button"].addEventListener("click", () => startStudy("normal"));
   elements["start-random-study-button"].addEventListener("click", () => startStudy("random"));
   elements["start-exam-button"].addEventListener("click", startExam);

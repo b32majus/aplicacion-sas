@@ -14,6 +14,7 @@
           <span class="brand-name">SAS</span>
         </a>
         <p id="sync-status" class="sync-status" role="status" hidden></p>
+        <button id="history-button" class="text-button" type="button" hidden>Historial</button>
         <button id="logout-button" class="text-button" type="button" hidden>Cerrar sesión</button>
       </header>
 
@@ -61,6 +62,32 @@
           <p id="all-failed-error" class="error" role="alert" hidden></p>
         </article>
         <div id="exam-grid" class="exam-grid" hidden></div>
+      </section>
+
+      <section id="history-view" class="private-view" hidden aria-labelledby="history-title">
+        <button id="history-catalog-button" class="text-button back" type="button">← Volver a exámenes</button>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Actividad personal inmutable</p>
+            <h1 id="history-title">Historial</h1>
+          </div>
+          <p>Intentos finalizados, abandonados y en curso. Abrirlos nunca reanuda ni modifica su estado.</p>
+        </div>
+        <div id="history-status" class="panel compact" aria-live="polite">Cargando Historial…</div>
+        <div id="history-list" class="history-list" hidden></div>
+      </section>
+
+      <section id="history-detail-view" class="private-view" hidden aria-labelledby="history-detail-title">
+        <button id="history-detail-back" class="text-button back" type="button">← Volver al Historial</button>
+        <article class="panel history-detail">
+          <p class="eyebrow">Revisión histórica · Solo lectura</p>
+          <h1 id="history-detail-title"></h1>
+          <p id="history-detail-meta" class="history-meta"></p>
+          <dl id="history-detail-metrics" class="summary-grid"></dl>
+          <p id="history-detail-version" class="version-pin"></p>
+          <div id="history-questions" class="history-questions"></div>
+          <p id="history-detail-error" class="error" role="alert" hidden></p>
+        </article>
       </section>
 
       <section id="exam-view" class="private-view" hidden aria-labelledby="exam-title">

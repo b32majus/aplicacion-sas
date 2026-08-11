@@ -40,10 +40,15 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .page-heading { display: flex; align-items: end; justify-content: space-between; gap: 36px; margin-bottom: 34px; }
 .page-heading h1 { margin-bottom: 0; }
 .exam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.all-failed-entry { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.all-failed-entry h2, .all-failed-entry p { margin-bottom: 0; }
+.all-failed-entry .primary { flex: none; margin: 0; }
+.all-failed-entry .error { flex-basis: 100%; }
 .exam-card { display: flex; flex-direction: column; min-height: 260px; padding: 30px; border: 1px solid #c6d6cf; border-radius: 20px; background: rgba(255, 255, 255, .92); box-shadow: 0 14px 34px rgba(24, 51, 46, .06); }
 .exam-card h2 { margin: 0 0 20px; }
 .card-facts { margin: auto 0 10px; color: #536963; font-weight: 700; }
 .card-status { margin: 0 0 24px; color: #0b7056; font-weight: 850; }
+.card-failures { margin: -16px 0 24px; color: #536963; font-weight: 750; }
 .exam-card .secondary { align-self: flex-start; }
 .back { margin-bottom: 22px; }
 .exam-entry { max-width: 820px; }
@@ -67,6 +72,7 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .study-heading h1 { margin-bottom: 8px; font-size: clamp(1.45rem, 4vw, 2.4rem); }
 .active-time { flex: none; margin: 0; color: #3d7768; font-weight: 800; }
 .version-pin { margin: 0 0 28px; color: #697b75; font-family: ui-monospace, monospace; font-size: .75rem; overflow-wrap: anywhere; }
+.study-source { margin: -18px 0 28px; color: #3d7768; font-weight: 800; }
 #question-text { max-width: 850px; margin-bottom: 24px; font-size: clamp(1.25rem, 3vw, 1.8rem); }
 .answer-options { display: grid; gap: 12px; margin: 0; padding: 0; border: 0; }
 .answer-option { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 12px; padding: 15px 16px; border: 1px solid #bdcec7; border-radius: 12px; background: white; font-weight: 650; line-height: 1.5; cursor: pointer; }
@@ -94,12 +100,16 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .summary-grid div { padding: 20px; border-radius: 14px; background: #edf5f1; }
 .summary-grid dt { color: #536963; font-size: .86rem; font-weight: 700; }
 .summary-grid dd { margin: 8px 0 0; color: #0b7056; font-size: 1.55rem; font-weight: 850; }
+.summary-pending-list { margin: 0 0 28px; padding: 20px; border-radius: 14px; background: #fff3e8; }
+.summary-pending-list h2 { margin: 0 0 12px; font-size: 1.2rem; }
+.summary-pending-list ul { display: grid; gap: 8px; margin: 0; padding-left: 20px; }
 
 @media (max-width: 720px) {
   .shell { padding-top: 22px; }
   .brand { margin-bottom: 42px; }
   .login-layout { grid-template-columns: 1fr; }
   .page-heading { display: block; }
+  .all-failed-entry { align-items: stretch; flex-direction: column; }
   .study-heading { display: block; }
   .active-time { margin-bottom: 10px; }
   .summary-grid { grid-template-columns: repeat(2, minmax(130px, 1fr)); }

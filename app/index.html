@@ -50,6 +50,15 @@
           <p>Últimas versiones publicadas y verificadas.</p>
         </div>
         <div id="catalog-status" class="panel compact" aria-live="polite">Cargando catálogo…</div>
+        <article class="panel compact all-failed-entry">
+          <div>
+            <p class="eyebrow">Recuperación entre exámenes</p>
+            <h2>Todas mis falladas</h2>
+            <p><strong id="all-failed-count">0</strong> Falladas pendientes</p>
+          </div>
+          <button id="all-failed-button" class="primary" type="button">Empezar Todas mis falladas</button>
+          <p id="all-failed-error" class="error" role="alert" hidden></p>
+        </article>
         <div id="exam-grid" class="exam-grid" hidden></div>
       </section>
 
@@ -61,11 +70,13 @@
           <dl class="exam-facts">
             <div><dt>Preguntas activas</dt><dd id="exam-count"></dd></div>
             <div><dt>Duración oficial</dt><dd id="exam-duration"></dd></div>
+            <div><dt>Falladas pendientes</dt><dd id="exam-failed-count"></dd></div>
           </dl>
           <div class="study-entry">
             <p>Estado: <strong id="exam-study-status">Sin empezar</strong></p>
             <button id="start-study-button" class="primary" type="button">Empezar estudio normal</button>
             <button id="start-random-study-button" class="secondary" type="button">Empezar estudio aleatorio</button>
+            <button id="start-failed-button" class="secondary" type="button">Empezar Solo falladas</button>
             <p id="exam-error" class="error" role="alert" hidden></p>
           </div>
         </article>
@@ -85,6 +96,7 @@
             <p id="active-time" class="active-time"></p>
           </div>
           <p id="version-pin" class="version-pin"></p>
+          <p id="study-source" class="study-source" hidden></p>
           <div id="pause-message" class="pause-message" hidden>
             <strong>Estudio en pausa</strong>
             <span>El tiempo activo está detenido.</span>
@@ -118,9 +130,13 @@
             <div><dt>Incorrectas</dt><dd id="summary-wrong"></dd></div>
             <div><dt>Precisión</dt><dd id="summary-accuracy"></dd></div>
             <div><dt>Tiempo activo</dt><dd id="summary-time"></dd></div>
-            <div><dt>Nuevas falladas pendientes</dt><dd id="summary-pending"></dd></div>
-            <div><dt>Nuevas dominadas</dt><dd id="summary-mastered"></dd></div>
+            <div><dt id="summary-pending-label">Nuevas falladas pendientes</dt><dd id="summary-pending"></dd></div>
+            <div><dt id="summary-mastered-label">Nuevas dominadas</dt><dd id="summary-mastered"></dd></div>
           </dl>
+          <div id="summary-pending-list-wrap" class="summary-pending-list" hidden>
+            <h2>Continúan en Falladas pendientes</h2>
+            <ul id="summary-pending-list"></ul>
+          </div>
           <button id="summary-catalog-button" class="primary" type="button">Volver a exámenes</button>
         </article>
       </section>

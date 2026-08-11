@@ -23,12 +23,12 @@ begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
   if p_confirmation_id is null then raise exception 'La identidad de confirmación es obligatoria.'; end if;
 
-  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
   select * into v_attempt
   from public.attempts
   where id = p_attempt_id and user_id = v_user_id
   for update;
   if not found then raise exception 'No existe un Recorrido principal propio.'; end if;
+  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
 
   select * into v_existing from public.attempt_answers where id = p_confirmation_id;
   if found then
@@ -125,12 +125,12 @@ begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
   if p_confirmation_id is null then raise exception 'La identidad de confirmación es obligatoria.'; end if;
 
-  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
   select * into v_attempt
   from public.attempts
   where id = p_attempt_id and user_id = v_user_id
   for update;
   if not found then raise exception 'No existe una Sesión de falladas propia.'; end if;
+  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
 
   select * into v_existing from public.attempt_answers where id = p_confirmation_id;
   if found then
@@ -220,12 +220,12 @@ begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
   if p_answer_id is null then raise exception 'La identidad del guardado es obligatoria.'; end if;
 
-  perform pg_advisory_xact_lock(hashtextextended(p_answer_id::text, 0));
   select * into v_attempt
   from public.attempts
   where id = p_attempt_id and user_id = v_user_id
   for update;
   if not found then raise exception 'No existe un Modo examen propio.'; end if;
+  perform pg_advisory_xact_lock(hashtextextended(p_answer_id::text, 0));
 
   select * into v_existing from public.attempt_answers where id = p_answer_id;
   if found then
@@ -299,12 +299,12 @@ begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
   if p_confirmation_id is null then raise exception 'La identidad de confirmación es obligatoria.'; end if;
 
-  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
   select * into v_attempt
   from public.attempts
   where id = p_attempt_id and user_id = v_user_id
   for update;
   if not found then raise exception 'No existe un Examen artificial de estudio propio.'; end if;
+  perform pg_advisory_xact_lock(hashtextextended(p_confirmation_id::text, 0));
 
   select * into v_existing from public.attempt_answers where id = p_confirmation_id;
   if found then

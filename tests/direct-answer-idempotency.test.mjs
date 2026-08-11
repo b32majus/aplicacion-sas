@@ -6,6 +6,34 @@ import { PGlite } from "@electric-sql/pglite";
 const migrationsUrl = new URL("../supabase/migrations/", import.meta.url);
 const userId = "10000000-0000-4000-8000-000000000021";
 
+test("direct answer RPCs use the same attempt-row-before-UUID lock order as sync", async () => {
+  const directSql = await readFile(
+    new URL("../supabase/migrations/20260811104000_serialize_direct_answer_replay.sql", import.meta.url),
+    "utf8",
+  );
+  for (const functionName of [
+    "apply_principal_answer",
+    "confirm_failed_answer",
+    "save_exam_answer",
+    "confirm_artificial_study_answer",
+  ]) {
+    const start = directSql.indexOf(`create or replace function public.${functionName}(`);
+    const end = directSql.indexOf("\n$$;", start);
+    const body = directSql.slice(start, end);
+    assert.ok(start >= 0 && end > start, `${functionName} must exist`);
+    assert.ok(body.indexOf("for update;") < body.indexOf("pg_advisory_xact_lock"),
+      `${functionName} must lock the attempt row before the answer UUID`);
+  }
+
+  const syncSql = await readFile(
+    new URL("../supabase/migrations/20260810212000_active_attempt_sync.sql", import.meta.url),
+    "utf8",
+  );
+  assert.ok(syncSql.indexOf("for update;") < syncSql.indexOf("perform public.confirm_normal_answer("));
+  assert.ok(syncSql.indexOf("for update;") < syncSql.indexOf("perform public.confirm_failed_answer("));
+  assert.ok(syncSql.indexOf("for update;") < syncSql.indexOf("perform public.save_exam_answer("));
+});
+
 async function migratedDatabase() {
   const db = new PGlite();
   await db.exec(`

@@ -3,7 +3,13 @@ import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { materializeArtificialSources } from "./artificial-exam.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
-import { isActiveExam, isExamExpired, serverAdjustedNow } from "./exam-clock.js";
+import {
+  fetchServerClockOffset,
+  isActiveExam,
+  isExamExpired,
+  serverAdjustedNow,
+  serverClockOffset,
+} from "./exam-clock.js";
 import {
   HISTORY_KIND_LABELS,
   HISTORY_MODE_LABELS,
@@ -72,7 +78,7 @@ let routeSerial = 0;
 let savePromise = Promise.resolve();
 let confirmationRetryAvailable = false;
 let pendingStrategyChange = null;
-let examServerOffsetMs = 0;
+let examServerOffsetMs = Number.NaN;
 let examSavePromise = Promise.resolve();
 let examFinalizing = false;
 let persistence;
@@ -464,6 +470,9 @@ function eligibleFailureSources(scopeExamId = null) {
 }
 
 async function refreshStatuses() {
+  examServerOffsetMs = Number.NaN;
+  examServerOffsetMs = await fetchServerClockOffset(supabase);
+
   const { data, error } = await supabase
     .from("attempts")
     .select("id,exam_id,exam_version_id,exam_version_path,question_ids,status,completed_at,strategy,kind,failed_scope_exam_id,current_position,duration_minutes,started_at,deadline_at,score");
@@ -764,7 +773,7 @@ async function startExam() {
     if (error) throw error;
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
-    attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+    attempt.server_clock_offset_ms = serverClockOffset(attempt.server_now, clockRequestAt, clockResponseAt);
     const pinned = attempt.exam_version_id === selectedExam.version && attempt.exam_version_path === selectedExam.versionPath
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
@@ -793,7 +802,7 @@ async function startExam() {
       return;
     }
     study = new ExamSession(selectedExam.package, view.attempt, view.answers);
-    examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
     applyPendingView(view);
     activeExamAttempt = view.attempt;
     examSavePromise = Promise.resolve();
@@ -954,7 +963,7 @@ async function startArtificial(mode) {
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
     if (attempt.kind === "exam") {
-      attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+      attempt.server_clock_offset_ms = serverClockOffset(attempt.server_now, clockRequestAt, clockResponseAt);
     }
     const questions = await loadCompositeQuestions(attempt);
     const composedExam = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
@@ -995,7 +1004,7 @@ async function startArtificial(mode) {
     applyPendingView(view);
     if (kind === "exam") {
       activeExamAttempt = view.attempt;
-      examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+      examServerOffsetMs = view.attempt.server_clock_offset_ms;
       study.locked = isExamExpired(view.attempt, examServerOffsetMs);
     }
     window.location.hash = `artificial-${mode}`;
@@ -1444,7 +1453,7 @@ async function routePrivateView() {
         applyPendingView(view);
         if (kind === "exam") {
           activeExamAttempt = view.attempt;
-          examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms;
           study.locked = isExamExpired(view.attempt, examServerOffsetMs);
         }
         renderStudy();
@@ -1477,7 +1486,7 @@ async function routePrivateView() {
         applyPendingView(view);
         if (kind === "exam") {
           activeExamAttempt = view.attempt;
-          examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms;
           study.locked = isExamExpired(view.attempt, examServerOffsetMs);
           if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
         } else {
@@ -1502,7 +1511,7 @@ async function routePrivateView() {
           applyPendingView(view);
           if (kind === "exam") {
             activeExamAttempt = view.attempt;
-            examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+            examServerOffsetMs = view.attempt.server_clock_offset_ms;
             study.locked = isExamExpired(view.attempt, examServerOffsetMs);
             if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
           } else {

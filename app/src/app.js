@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
+import { materializeArtificialSources } from "./artificial-exam.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
 import {
@@ -37,6 +38,7 @@ const ids = [
   "history-status", "history-list", "history-detail-view", "history-detail-back",
   "history-detail-title", "history-detail-meta", "history-detail-metrics", "history-detail-version",
   "history-questions", "history-detail-error",
+  "artificial-study-button", "artificial-exam-button", "artificial-error",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [
@@ -132,6 +134,14 @@ function historyMetrics(attempt) {
   return metrics;
 }
 
+function historyKindLabel(attempt) {
+  return HISTORY_KIND_LABELS[attempt.origin === "artificial" ? "artificial" : attempt.kind] || attempt.kind;
+}
+
+function historyModeLabel(attempt) {
+  return HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy;
+}
+
 function renderHistory() {
   elements["history-list"].replaceChildren(...history.map((attempt) => {
     const entry = document.createElement("article");
@@ -142,12 +152,14 @@ function renderHistory() {
     date.className = "eyebrow";
     date.textContent = formatHistoryDate(attempt.created_at);
     const title = document.createElement("h2");
-    title.textContent = attempt.kind === "failed" && !attempt.failed_scope_exam_id
+    title.textContent = attempt.origin === "artificial"
+      ? "Examen artificial"
+      : attempt.kind === "failed" && !attempt.failed_scope_exam_id
       ? "Todas mis falladas"
       : `Banco oficial · ${attempt.failed_scope_exam_id || attempt.exam_id}`;
     const meta = document.createElement("p");
     meta.className = "history-meta";
-    meta.textContent = `${HISTORY_KIND_LABELS[attempt.kind] || attempt.kind} · ${HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
+    meta.textContent = `${historyKindLabel(attempt)} · ${historyModeLabel(attempt)} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
     const metrics = document.createElement("p");
     metrics.className = "history-metrics";
     metrics.textContent = historyMetrics(attempt).join(" · ");
@@ -408,7 +420,7 @@ async function showHistoryDetail(attemptId) {
   try {
     const replay = await loadHistoryReplay(supabase, fetch, bankBaseUrl, attempt);
     elements["history-detail-title"].textContent = replay.title;
-    elements["history-detail-meta"].textContent = `${formatHistoryDate(attempt.created_at)} · ${HISTORY_KIND_LABELS[attempt.kind] || attempt.kind} · ${HISTORY_MODE_LABELS[attempt.strategy] || attempt.strategy} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
+    elements["history-detail-meta"].textContent = `${formatHistoryDate(attempt.created_at)} · ${historyKindLabel(attempt)} · ${historyModeLabel(attempt)} · ${HISTORY_STATUS_LABELS[attempt.status] || attempt.status}`;
     const metricValues = [metricNode("Respondidas", attempt.answered_questions)];
     const resultsAvailable = attempt.kind !== "exam" || attempt.status === "completed";
     if (resultsAvailable) {
@@ -422,10 +434,10 @@ async function showHistoryDetail(attemptId) {
     const time = historyTime(attempt);
     if (time) metricValues.push(metricNode(attempt.kind === "exam" ? "Tiempo de examen" : "Tiempo activo", time));
     elements["history-detail-metrics"].replaceChildren(...metricValues);
-    elements["history-detail-version"].textContent = attempt.kind === "failed" && !attempt.failed_scope_exam_id
+    elements["history-detail-version"].textContent = (attempt.kind === "failed" && !attempt.failed_scope_exam_id) || attempt.origin === "artificial"
       ? "Versiones históricas fijadas por pregunta"
       : `Versión histórica fijada: ${attempt.exam_version_id}`;
-    if (attempt.kind === "failed" && !attempt.failed_scope_exam_id) {
+    if ((attempt.kind === "failed" && !attempt.failed_scope_exam_id) || attempt.origin === "artificial") {
       delete elements["history-detail-version"].dataset.versionPath;
     } else {
       elements["history-detail-version"].dataset.versionPath = attempt.exam_version_path;
@@ -467,6 +479,7 @@ async function refreshStatuses() {
   activeFailedAttempt = undefined;
   activeExamAttempt = undefined;
   for (const attempt of data) {
+    attempt.origin ||= attempt.exam_id === "__artificial__" ? "artificial" : "official";
     if (attempt.kind === "failed") {
       if (attempt.status === "active") activeFailedAttempt = attempt;
       continue;
@@ -532,6 +545,18 @@ function renderCatalog() {
     : "Empezar Todas mis falladas";
   if (activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now()) {
     elements["all-failed-button"].disabled = true;
+  }
+  const artificialAvailable = catalog.reduce((total, exam) => total + exam.questions.length, 0) >= 75;
+  const examIsActive = activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  elements["artificial-study-button"].disabled = !artificialAvailable || Boolean(examIsActive);
+  elements["artificial-exam-button"].disabled = !artificialAvailable;
+  elements["artificial-exam-button"].textContent = activeExamAttempt?.origin === "artificial"
+    ? "Continuar Modo examen artificial"
+    : "Generar en Modo examen";
+  if (!artificialAvailable) {
+    showError(elements["artificial-error"], "El Banco publicado no contiene al menos 75 Preguntas activas distintas.");
+  } else {
+    clearError(elements["artificial-error"]);
   }
   elements["exam-grid"].hidden = false;
 }
@@ -853,15 +878,15 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
   }
 }
 
-async function loadFailedSessionQuestions(attempt) {
+async function loadCompositeQuestions(attempt) {
   const { data: sources, error } = await supabase
     .from("attempt_question_sources")
-    .select("position,exam_id,exam_version_id,exam_version_path,question_id")
+    .select("position,exam_id,exam_version_id,exam_version_path,question_id,source_question_id")
     .eq("attempt_id", attempt.id)
     .order("position", { ascending: true });
   if (error) throw error;
   if (!sources?.length || sources.length !== attempt.question_ids.length) {
-    throw new Error("La cola persistida de la Sesión de falladas no es válida.");
+    throw new Error("La composición persistida del intento no es válida.");
   }
 
   const pinnedExams = new Map();
@@ -888,16 +913,87 @@ async function loadFailedSessionQuestions(attempt) {
   return sources.map((source) => {
     const key = `${source.exam_id}\u0000${source.exam_version_id}\u0000${source.exam_version_path}`;
     const pinned = pinnedExams.get(key);
-    const question = pinned.exam.questions.find(({ id }) => id === source.question_id);
+    const question = pinned.exam.questions.find(({ id }) => id === source.source_question_id);
     if (!question) throw new Error("Una pregunta de la cola ya no existe en su versión fijada.");
     return {
       ...question,
+      id: source.question_id,
       sourceExamId: source.exam_id,
       sourceExamTitle: pinned.title,
+      sourceQuestionId: source.source_question_id,
       sourceVersionId: source.exam_version_id,
       sourceVersionPath: source.exam_version_path,
     };
   });
+}
+
+async function startArtificial(mode) {
+  clearError(elements["artificial-error"]);
+  if (!await flushPendingBeforeAttemptChange(elements["artificial-error"])) return;
+  elements["artificial-study-button"].disabled = true;
+  elements["artificial-exam-button"].disabled = true;
+  try {
+    const sources = materializeArtificialSources(catalog);
+    const clockRequestAt = Date.now();
+    const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt", {
+      p_mode: mode,
+      p_sources: sources,
+    });
+    if (error) throw error;
+    const clockResponseAt = Date.now();
+    const attempt = normalizeRow(data);
+    if (attempt.kind === "exam") {
+      attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+    }
+    const questions = await loadCompositeQuestions(attempt);
+    const composedExam = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
+    const answers = await fetchAttemptAnswers(attempt.id);
+    const view = persistence.begin(attempt, answers, { questions });
+    study = attempt.kind === "exam"
+      ? new ExamSession(composedExam, view.attempt, view.answers)
+      : new NormalStudySession(composedExam, view.attempt, view.answers);
+    selectedExam = undefined;
+    applyPendingView(view);
+    if (attempt.kind === "exam") {
+      activeExamAttempt = attempt;
+      examServerOffsetMs = view.attempt.server_clock_offset_ms;
+      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+      if (study.locked) persistence.queueFinalization(currentPersistenceState());
+    } else {
+      pendingActiveSeconds = 0;
+    }
+    window.location.hash = `artificial-${mode}`;
+    renderStudy();
+    if (persistence.hasPending) syncPendingAttempt().catch(() => {});
+  } catch (error) {
+    const kind = mode === "exam" ? "exam" : "normal";
+    const view = persistence?.restore({ kind });
+    if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) {
+      showError(elements["artificial-error"], `No se pudo generar el Examen artificial. ${error.message}`);
+      return;
+    }
+    const composedExam = {
+      id: view.attempt.exam_id,
+      version: { id: view.attempt.exam_version_id },
+      questions: view.questions,
+    };
+    study = kind === "exam"
+      ? new ExamSession(composedExam, view.attempt, view.answers)
+      : new NormalStudySession(composedExam, view.attempt, view.answers);
+    selectedExam = undefined;
+    applyPendingView(view);
+    if (kind === "exam") {
+      activeExamAttempt = view.attempt;
+      examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    }
+    window.location.hash = `artificial-${mode}`;
+    renderStudy();
+    showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
+  } finally {
+    elements["artificial-study-button"].disabled = false;
+    elements["artificial-exam-button"].disabled = false;
+  }
 }
 
 async function startFailedStudy(scopeExamId = null) {
@@ -915,7 +1011,7 @@ async function startFailedStudy(scopeExamId = null) {
     });
     if (error) throw error;
     const attempt = normalizeRow(data);
-    const questions = await loadFailedSessionQuestions(attempt);
+    const questions = await loadCompositeQuestions(attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
     const view = persistence.begin(attempt, answers, { questions });
     study = new NormalStudySession({
@@ -1032,12 +1128,17 @@ function renderStudy() {
   elements["study-panel"].dataset.questionId = question.id;
   elements["study-panel"].dataset.strategy = study.attempt.strategy;
   elements["study-panel"].dataset.kind = study.attempt.kind;
+  elements["study-panel"].dataset.origin = study.attempt.origin || "official";
   elements["study-panel"].dataset.sourceExamId = question.sourceExamId || study.attempt.exam_id;
-  elements["study-exam-title"].textContent = study.attempt.kind === "failed"
+  elements["study-exam-title"].textContent = study.attempt.origin === "artificial"
+    ? "Examen artificial"
+    : study.attempt.kind === "failed"
     ? selectedExam?.title || "Todas mis falladas"
     : selectedExam?.title || study.attempt.exam_id;
   elements["study-strategy-label"].textContent = examMode
-    ? "Modo examen"
+    ? study.attempt.origin === "artificial" ? "Examen artificial · Modo examen" : "Modo examen"
+    : study.attempt.origin === "artificial"
+    ? "Examen artificial · Modo estudio"
     : study.attempt.kind === "failed"
     ? "Solo falladas"
     : `Estudio ${strategyName(study.attempt.strategy)}`;
@@ -1049,8 +1150,9 @@ function renderStudy() {
   const versionPath = question.sourceVersionPath || study.attempt.exam_version_path;
   elements["version-pin"].textContent = `Versión fijada: ${versionId}`;
   elements["version-pin"].dataset.versionPath = versionPath;
-  elements["study-source"].hidden = study.attempt.kind !== "failed";
-  elements["study-source"].textContent = study.attempt.kind === "failed"
+  const showsSource = study.attempt.kind === "failed" || study.attempt.origin === "artificial";
+  elements["study-source"].hidden = !showsSource;
+  elements["study-source"].textContent = showsSource
     ? `Examen de origen: ${question.sourceExamTitle}`
     : "";
   elements["question-label"].textContent = question.displayLabel || `Pregunta ${question.sourceNumber}`;
@@ -1165,6 +1267,10 @@ async function exitStudy() {
   }
   study = undefined;
   await refreshStatuses();
+  if (exitingAttempt.origin === "artificial") {
+    await showCatalog();
+    return;
+  }
   if (exitingAttempt.kind === "failed" && !exitingAttempt.failed_scope_exam_id) {
     await showCatalog();
     return;
@@ -1210,7 +1316,7 @@ async function finalizeExam() {
 
 function showExamSummary(summary) {
   window.location.hash = `summary=${encodeURIComponent(study.attempt.id)}`;
-  elements["summary-title"].textContent = `Resumen · ${selectedExam?.title || study.attempt.exam_id}`;
+  elements["summary-title"].textContent = `Resumen · ${study.attempt.origin === "artificial" ? "Examen artificial" : selectedExam?.title || study.attempt.exam_id}`;
   elements["summary-correct"].textContent = summary.correct;
   elements["summary-wrong"].textContent = summary.wrong;
   elements["summary-blank"].textContent = summary.blank;
@@ -1233,7 +1339,9 @@ function showExamSummary(summary) {
 function showSummary(summary) {
   window.location.hash = `summary=${encodeURIComponent(study.attempt.id)}`;
   const failed = study.attempt.kind === "failed";
-  elements["summary-title"].textContent = failed
+  elements["summary-title"].textContent = study.attempt.origin === "artificial"
+    ? "Resumen · Examen artificial"
+    : failed
     ? `Resumen · ${selectedExam?.title || "Todas mis falladas"}`
     : `Resumen · ${selectedExam?.title || `Estudio ${strategyName(study.attempt.strategy)}`}`;
   elements["summary-blank-wrap"].hidden = true;
@@ -1276,6 +1384,7 @@ async function routePrivateView() {
     const pendingExamId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
     const pendingFailedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
     const requestedHistoryId = window.location.hash.match(/^#history=([^&]+)$/)?.[1];
+    const artificialMode = window.location.hash.match(/^#artificial-(study|exam)$/)?.[1];
     if (window.location.hash === "#dashboard") {
       await showDashboard();
       return;
@@ -1303,6 +1412,30 @@ async function routePrivateView() {
         }, view.attempt, view.answers);
         activeFailedAttempt = view.attempt;
         applyPendingView(view);
+        renderStudy();
+        syncPendingAttempt().catch(() => {});
+        return;
+      }
+    }
+    if (persistence?.hasPending && artificialMode) {
+      const kind = artificialMode === "exam" ? "exam" : "normal";
+      const view = persistence.restore({ kind });
+      if (view?.attempt.origin === "artificial" && view.questions?.length) {
+        const composedExam = {
+          id: view.attempt.exam_id,
+          version: { id: view.attempt.exam_version_id },
+          questions: view.questions,
+        };
+        study = kind === "exam"
+          ? new ExamSession(composedExam, view.attempt, view.answers)
+          : new NormalStudySession(composedExam, view.attempt, view.answers);
+        selectedExam = undefined;
+        applyPendingView(view);
+        if (kind === "exam") {
+          activeExamAttempt = view.attempt;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+        }
         renderStudy();
         syncPendingAttempt().catch(() => {});
         return;
@@ -1358,7 +1491,9 @@ async function routePrivateView() {
         return;
       }
     }
-    if (examModeId) {
+    if (artificialMode) {
+      await startArtificial(artificialMode);
+    } else if (examModeId) {
       await selectExam(decodeURIComponent(examModeId), { updateHash: false });
       await startExam();
     } else if (failedScope) {
@@ -1461,6 +1596,8 @@ async function boot() {
   elements["start-exam-button"].addEventListener("click", startExam);
   elements["start-failed-button"].addEventListener("click", () => startFailedStudy(selectedExam?.id));
   elements["all-failed-button"].addEventListener("click", () => startFailedStudy(null));
+  elements["artificial-study-button"].addEventListener("click", () => startArtificial("study"));
+  elements["artificial-exam-button"].addEventListener("click", () => startArtificial("exam"));
   elements["cancel-strategy-change"].addEventListener("click", () => {
     pendingStrategyChange = null;
     elements["strategy-warning"].close();

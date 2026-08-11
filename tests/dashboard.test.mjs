@@ -71,11 +71,11 @@ async function seedDashboard(db) {
     `insert into public.attempts(
        id, user_id, exam_id, exam_version_id, exam_version_path, question_ids,
        kind, principal, strategy, status, duration_minutes, started_at, deadline_at,
-       completed_at, score, correct_answers, wrong_answers, blank_answers, exam_elapsed_ms
-     ) values ('20000000-0000-4000-8000-000000000096', $1, 'artificial-exam',
-       'artificial-version', 'artificial-exam/versions/artificial-version.json', $2,
-       'exam', false, 'exam', 'completed', 120, now() - interval '120 minutes', now(),
-       now(), 100, 2, 0, 0, 1000)`,
+       completed_at, score, correct_answers, wrong_answers, blank_answers, exam_elapsed_ms, origin
+      ) values ('20000000-0000-4000-8000-000000000096', $1, 'artificial-exam',
+        'artificial-version', 'artificial-exam/versions/artificial-version.json', $2,
+        'exam', false, 'artificial_exam', 'completed', 120, now() - interval '120 minutes', now(),
+        now(), 100, 2, 0, 0, 1000, 'artificial')`,
     [users[2], questions],
   );
   await db.query(

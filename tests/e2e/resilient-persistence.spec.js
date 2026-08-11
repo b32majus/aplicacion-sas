@@ -319,6 +319,7 @@ test("Seam 2: una Sesión de falladas conserva su pregunta de origen al reabrir 
     exam_version_id: exam.version.id,
     exam_version_path: entry.latestPath,
     question_id: question.id,
+    source_question_id: question.id,
   }];
   await mockStudyPersistence(page, remote);
   await login(page);

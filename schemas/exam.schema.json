@@ -1,13 +1,28 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/schemas/sas-exam.schema.json",
-  "title": "SAS exam",
+  "title": "SAS canonical exam package",
+  "description": "Paquete canónico de un examen oficial SAS producido por el importador real (Seam 1). Excluye IA explicativa, taxonomía temática, RAG y tiempos por pregunta. La identidad de pregunta es examen+número fuente y no depende de la versión JSON. La versión combina la traza SHA-256 de la fuente y el hash del contenido canónico final para coexistir de forma inmutable.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "id", "title", "source", "questions"],
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "category",
+    "access",
+    "variant",
+    "year",
+    "durationMinutes",
+    "source",
+    "version",
+    "questions",
+    "scorableSet",
+    "qa"
+  ],
   "properties": {
     "schemaVersion": {
-      "const": "1.1"
+      "const": "2.0"
     },
     "id": {
       "type": "string",
@@ -18,6 +33,13 @@
       "minLength": 1
     },
     "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "access": {
+      "type": ["string", "null"]
+    },
+    "variant": {
       "type": ["string", "null"]
     },
     "year": {
@@ -25,33 +47,336 @@
       "minimum": 2000,
       "maximum": 2100
     },
+    "durationMinutes": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["questionPdf", "sha256"],
+      "required": ["pdf", "sha256", "answerKeyPage"],
       "properties": {
-        "questionPdf": {
+        "pdf": {
           "type": "string",
           "minLength": 1
-        },
-        "answersPdf": {
-          "type": ["string", "null"]
         },
         "sha256": {
           "type": "string",
           "pattern": "^[a-f0-9]{64}$"
+        },
+        "answerKeyPage": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        }
+      }
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "contentSha256"],
+      "description": "La versión inmutable combina el hash de la fuente y el hash del contenido canónico final: la misma importación es estable y una corrección de contenido puede coexistir con la anterior.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 de la combinación source.sha256:contentSha256; identidad de versión inmutable."
+        },
+        "contentSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 del paquete canónico final serializado, incluido QA y excluido el objeto version."
         }
       }
     },
     "questions": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 0,
       "items": {
         "$ref": "#/$defs/question"
       }
+    },
+    "scorableSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "questionNumbers",
+        "count",
+        "annulledNumbers",
+        "reserveNumbers",
+        "reserveUsedNumbers",
+        "reserveUsedLabels",
+        "annulledCount",
+        "reserveTotal",
+        "reserveUsedCount",
+        "reserveUnusedCount"
+      ],
+      "properties": {
+        "state": {
+          "enum": ["resolved", "unresolved"],
+          "description": "resolved solo identifica un conjunto puntuable definitivo publicable; unresolved obliga a un conjunto vacío y no consumible."
+        },
+        "questionNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "annulledNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "reserveNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "reserveUsedNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "reserveUsedLabels": {
+          "type": "object",
+          "patternProperties": {
+            "^R[1-9][0-9]*$": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "annulledCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reserveTotal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reserveUsedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reserveUnusedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reserveUseEvidence": {
+          "description": "Cadena auditable de hechos oficiales que determina qué reservas son puntuables; null cuando no se usa ninguna.",
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/reserveUseEvidence" }
+          ]
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "blockedReason", "flags", "checks"],
+      "properties": {
+        "state": {
+          "enum": ["publicable", "bloqueado_para_revision"]
+        },
+        "blockedReason": {
+          "type": ["string", "null"]
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["question", "flag", "sourcePage"],
+            "properties": {
+              "question": {
+                "type": ["integer", "null"],
+                "minimum": 1
+              },
+              "option": {
+                "type": ["string", "null"],
+                "pattern": "^[A-D]$"
+              },
+              "flag": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sourcePage": {
+                "type": ["integer", "null"],
+                "minimum": 1
+              }
+            }
+          }
+        },
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metadataComplete",
+            "optionsPerQuestionValid",
+            "answerCoverageValid",
+            "countsReconciled",
+            "annulledHandlingResolved",
+            "reserveHandlingResolved",
+            "duplicatesResolved"
+          ],
+          "properties": {
+            "metadataComplete": {
+              "type": "boolean"
+            },
+            "optionsPerQuestionValid": {
+              "type": "boolean"
+            },
+            "answerCoverageValid": {
+              "type": "boolean"
+            },
+            "countsReconciled": {
+              "type": "boolean"
+            },
+            "annulledHandlingResolved": {
+              "type": "boolean"
+            },
+            "reserveHandlingResolved": {
+              "type": "boolean"
+            },
+            "duplicatesResolved": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "state": { "const": "publicable" } } },
+          "then": { "properties": { "blockedReason": { "const": null } } },
+          "else": { "properties": { "blockedReason": { "type": "string", "minLength": 1 } } }
+        }
+      ]
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "qa": {
+            "properties": { "state": { "const": "publicable" } },
+            "required": ["state"]
+          }
+        },
+        "required": ["qa"]
+      },
+      "then": {
+        "properties": {
+          "access": { "type": "string", "minLength": 1 },
+          "year": { "type": "integer", "minimum": 2000, "maximum": 2100 },
+          "durationMinutes": { "type": "integer", "minimum": 1 },
+          "source": {
+            "properties": { "answerKeyPage": { "type": "integer", "minimum": 1 } }
+          },
+          "questions": {
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/publicableQuestion" }
+          },
+          "scorableSet": {
+            "properties": { "state": { "const": "resolved" } }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "questions": { "items": { "$ref": "#/$defs/blockedQuestion" } },
+          "scorableSet": {
+            "properties": {
+              "state": { "const": "unresolved" },
+              "questionNumbers": { "maxItems": 0 },
+              "count": { "const": 0 },
+              "reserveUsedNumbers": { "maxItems": 0 },
+              "reserveUsedLabels": { "maxProperties": 0 },
+              "reserveUsedCount": { "const": 0 }
+            }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
+    "reserveSubstitutionEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reserveNumber", "annulledNumber", "sourcePage", "sourceText"],
+      "properties": {
+        "reserveNumber": { "type": "integer", "minimum": 1 },
+        "annulledNumber": { "type": "integer", "minimum": 1 },
+        "sourcePage": { "type": "integer", "minimum": 1 },
+        "sourceText": { "type": "string", "minLength": 1 }
+      }
+    },
+    "reserveUseEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "sourcePages",
+        "reserveDeclarationPage",
+        "reserveInstructionPage",
+        "definitiveAnswerKeyPage",
+        "sourceDeclaredReserveNumbers",
+        "sourceDeclaredReserveSetText",
+        "sourceUseInstructionText",
+        "definitiveKeyAnnulledNumbers",
+        "substitutions",
+        "rationale"
+      ],
+      "properties": {
+        "basis": {
+          "enum": ["all_declared_reserves_required", "explicit_source_substitutions"]
+        },
+        "sourcePages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "reserveDeclarationPage": { "type": "integer", "minimum": 1 },
+        "reserveInstructionPage": { "type": "integer", "minimum": 1 },
+        "definitiveAnswerKeyPage": { "type": "integer", "minimum": 1 },
+        "sourceDeclaredReserveNumbers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "sourceDeclaredReserveSetText": { "type": "string", "minLength": 1 },
+        "sourceUseInstructionText": { "type": "string", "minLength": 1 },
+        "definitiveKeyAnnulledNumbers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "substitutions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reserveSubstitutionEvidence" }
+        },
+        "rationale": { "type": "string", "minLength": 1 }
+      }
+    },
     "option": {
       "type": "object",
       "additionalProperties": false,
@@ -59,68 +384,11 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^[A-Z]$"
+          "enum": ["A", "B", "C", "D", "E", "F"]
         },
         "text": {
           "type": "string",
           "minLength": 1
-        }
-      }
-    },
-    "learning": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "topicId",
-        "topicLabel",
-        "subtopic",
-        "explanation",
-        "optionFeedback",
-        "confidence",
-        "status",
-        "model",
-        "promptVersion",
-        "reviewedAt"
-      ],
-      "properties": {
-        "topicId": {
-          "type": ["string", "null"]
-        },
-        "topicLabel": {
-          "type": ["string", "null"]
-        },
-        "subtopic": {
-          "type": ["string", "null"]
-        },
-        "explanation": {
-          "type": ["string", "null"]
-        },
-        "optionFeedback": {
-          "type": "object",
-          "patternProperties": {
-            "^[A-Z]$": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        },
-        "confidence": {
-          "type": ["number", "null"],
-          "minimum": 0,
-          "maximum": 1
-        },
-        "status": {
-          "enum": ["ai_generated", "reviewed", "flagged", "source_grounded", "not_generated"]
-        },
-        "model": {
-          "type": ["string", "null"]
-        },
-        "promptVersion": {
-          "type": ["string", "null"]
-        },
-        "reviewedAt": {
-          "type": ["string", "null"],
-          "format": "date-time"
         }
       }
     },
@@ -129,53 +397,136 @@
       "additionalProperties": false,
       "required": [
         "id",
-        "number",
+        "sourceNumber",
         "text",
         "options",
+        "sourceAnswer",
         "correctOption",
         "status",
-        "topic",
+        "active",
+        "displayLabel",
         "sourcePage"
       ],
       "properties": {
         "id": {
           "type": "string",
+          "description": "Identidad estable de pregunta: examen de origen + número fuente. Independiente de la versión JSON.",
           "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*-q[0-9]{3,4}$"
         },
-        "number": {
+        "sourceNumber": {
           "type": "integer",
+          "description": "Numeración original de la pregunta en el PDF oficial.",
           "minimum": 1
         },
         "text": {
           "type": "string",
-          "minLength": 1
+          "minLength": 0
         },
         "options": {
           "type": "array",
-          "minItems": 2,
+          "minItems": 0,
           "maxItems": 6,
-          "items": {
-            "$ref": "#/$defs/option"
-          }
+          "items": { "$ref": "#/$defs/option" }
+        },
+        "sourceAnswer": {
+          "enum": ["A", "B", "C", "D", "E", "F", "ANULADA", null],
+          "description": "Valor literal extraído de la plantilla oficial; no implica que la pregunta sea puntuable."
         },
         "correctOption": {
-          "type": ["string", "null"],
-          "pattern": "^[A-Z]$"
+          "enum": ["A", "B", "C", "D", null]
         },
         "status": {
-          "enum": ["valid", "annulled", "reserve", "needs_review"]
+          "enum": ["valid", "annulled", "reserve", "unresolved"]
         },
-        "topic": {
-          "type": ["string", "null"]
+        "active": {
+          "type": "boolean",
+          "description": "false para anuladas y reservas no utilizadas; true para ordinarias puntuables y reservas utilizadas."
+        },
+        "displayLabel": {
+          "type": ["string", "null"],
+          "description": "R1/R2/R3... para reservas utilizadas; null en el resto."
         },
         "sourcePage": {
           "type": ["integer", "null"],
           "minimum": 1
-        },
-        "learning": {
-          "$ref": "#/$defs/learning"
         }
       }
+    },
+    "blockedQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/question" },
+        {
+          "properties": {
+            "active": { "const": false },
+            "correctOption": { "const": null },
+            "displayLabel": { "const": null }
+          }
+        }
+      ]
+    },
+    "publicableQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/question" },
+        {
+          "properties": {
+            "text": { "minLength": 1 },
+            "options": {
+              "minItems": 4,
+              "maxItems": 4,
+              "prefixItems": [
+                { "properties": { "id": { "const": "A" } } },
+                { "properties": { "id": { "const": "B" } } },
+                { "properties": { "id": { "const": "C" } } },
+                { "properties": { "id": { "const": "D" } } }
+              ],
+              "items": false
+            },
+            "status": { "enum": ["valid", "annulled", "reserve"] }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "valid" } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "active": { "const": true },
+              "sourceAnswer": { "enum": ["A", "B", "C", "D"] },
+              "correctOption": { "enum": ["A", "B", "C", "D"] },
+              "displayLabel": { "const": null }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "annulled" } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "active": { "const": false },
+              "sourceAnswer": { "const": "ANULADA" },
+              "correctOption": { "const": null },
+              "displayLabel": { "const": null }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "reserve" }, "active": { "const": true } }, "required": ["status", "active"] },
+          "then": {
+            "properties": {
+              "sourceAnswer": { "enum": ["A", "B", "C", "D"] },
+              "correctOption": { "enum": ["A", "B", "C", "D"] },
+              "displayLabel": { "type": "string", "pattern": "^R[1-9][0-9]*$" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "reserve" }, "active": { "const": false } }, "required": ["status", "active"] },
+          "then": {
+            "properties": {
+              "sourceAnswer": { "enum": ["A", "B", "C", "D"] },
+              "correctOption": { "enum": ["A", "B", "C", "D"] },
+              "displayLabel": { "const": null }
+            }
+          }
+        }
+      ]
     }
   }
 }

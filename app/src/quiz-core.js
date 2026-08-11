@@ -10,9 +10,27 @@ export function shuffled(items, random = Math.random) {
 }
 
 export class QuizSession {
-  constructor(questions, { mode = "sequential", random = Math.random } = {}) {
+  constructor(source, { mode = "sequential", random = Math.random } = {}) {
+    if (!Array.isArray(source) && source?.qa?.state !== "publicable") {
+      throw new Error("El paquete de examen no tiene un conjunto puntuable consumible.");
+    }
+    const questions = Array.isArray(source) ? source : source?.questions?.filter(({ active }) => active);
     if (!Array.isArray(questions) || questions.length === 0) {
       throw new Error("El intento necesita al menos una pregunta.");
+    }
+    if (!Array.isArray(source)) {
+      const scorableNumbers = source?.scorableSet?.questionNumbers;
+      const activeNumbers = questions.map(({ sourceNumber }) => sourceNumber);
+      if (
+        source?.qa?.state !== "publicable"
+        || source?.scorableSet?.state !== "resolved"
+        || !Array.isArray(scorableNumbers)
+        || source?.scorableSet?.count !== scorableNumbers.length
+        || activeNumbers.length !== scorableNumbers.length
+        || activeNumbers.some((number, index) => number !== scorableNumbers[index])
+      ) {
+        throw new Error("El paquete de examen no tiene un conjunto puntuable consumible.");
+      }
     }
     if (!new Set(["sequential", "random"]).has(mode)) {
       throw new Error(`Modo desconocido: ${mode}`);

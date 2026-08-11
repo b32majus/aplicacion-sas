@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "exams": [
+    {
+      "id": "sas-administrativo-2018-promocion-interna",
+      "title": "SAS Administrativo/a 2018 - Promoción Interna",
+      "year": 2018,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "21c3f7a52114a53dfbdd7ffee2450749e06559a35ce7d4e50afe88ed7bb989ff",
+      "latestPath": "sas-administrativo-2018-promocion-interna/versions/21c3f7a52114a53dfbdd7ffee2450749e06559a35ce7d4e50afe88ed7bb989ff.json"
+    },
+    {
+      "id": "sas-administrativo-2021-turno-libre",
+      "title": "SAS Administrativo/a 2021 - Turno Libre",
+      "year": 2021,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "b6b246be9e718d6f5c512ffa433d886401b5ce62997f046d938dc8f2a97e7e92",
+      "latestPath": "sas-administrativo-2021-turno-libre/versions/b6b246be9e718d6f5c512ffa433d886401b5ce62997f046d938dc8f2a97e7e92.json"
+    }
+  ]
+}

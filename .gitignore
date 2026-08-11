@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+dist/
+.cache/
+.kairos-fixtures/
+test-results/
+playwright-report/
+.env.local
+.env.*.local
+__pycache__/
+sas-synth-*/
+supabase/.temp/

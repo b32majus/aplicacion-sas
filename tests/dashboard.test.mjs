@@ -62,9 +62,9 @@ async function seedDashboard(db) {
   await db.query(
     `insert into public.attempts(
        id, user_id, exam_id, exam_version_id, exam_version_path, question_ids,
-       status, completed_at, active_seconds
+       status, created_at, completed_at, active_seconds
      ) values ('20000000-0000-4000-8000-000000000095', $1, $2, $3, $4, $5,
-       'completed', now(), 125)`,
+       'completed', '2026-08-11T13:00:00Z', '2026-08-11T13:05:00Z', 125)`,
     [users[0], examId, versionId, versionPath, questions],
   );
   await db.query(
@@ -114,8 +114,20 @@ test("Seam 2: Dashboard deriva métricas propias y compara exactamente tres alia
       dominated_count: 1,
       study_active_seconds: 125,
     });
-    assert.equal(dashboard.personal.official_exams[0].attempt_count, 2);
-    assert.equal(dashboard.personal.official_exams[0].best_time_ms, 50_000);
+    const { latest_attempt_at: latestAttemptAt, ...examMetrics } = dashboard.personal.official_exams[0];
+    assert.equal(Date.parse(latestAttemptAt), Date.parse("2026-08-11T13:00:00Z"));
+    assert.deepEqual(examMetrics, {
+      exam_id: examId,
+      attempt_count: 3,
+      best_score: 90,
+      average_score: 90,
+      best_time_ms: 50_000,
+      accuracy: 80,
+      pending_failures: 0,
+      dominated_count: 1,
+      latest_attempt_status: "completed",
+      latest_attempt_score: null,
+    });
     assert.deepEqual(dashboard.personal.questions.find(({ question_id: id }) => id === questions[0]), {
       exam_id: examId, question_id: questions[0], attempts: 4,
       correct: 3, wrong: 1, accuracy: 75, mastery: "mastered",
@@ -143,6 +155,9 @@ test("Seam 2: ranking usa el tiempo del mismo mejor intento y no inventa partici
       { exam_id: examId, alias: "Participante 2", score: 90, exam_elapsed_ms: 60_000, rank: 2 },
       { exam_id: examId, alias: "Participante 3", score: 80, exam_elapsed_ms: 40_000, rank: 3 },
     ]);
+    assert.equal(dashboard.personal.official_exams[0].attempt_count, 3);
+    assert.equal(dashboard.personal.official_exams[0].best_score, 90);
+    assert.equal(dashboard.personal.official_exams[0].average_score, 90);
     assert.equal(dashboard.shared.official_exam_rankings.some(({ exam_id: id }) => id === "artificial-exam"), false);
     await db.query("delete from public.attempts where user_id = $1 and kind = 'exam'", [users[2]]);
     const { rows: [{ get_dashboard: withoutAttempt }] } = await db.query("select public.get_dashboard()");

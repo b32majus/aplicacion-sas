@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Aplicación privada para practicar exámenes oficiales del SAS">
+    <meta name="theme-color" content="#0b5c48">
+    <link rel="icon" href="/aplicacion-sas/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/aplicacion-sas/icons/apple-touch-icon-180x180.png">
     <title>Banco de exámenes · SAS</title>
   </head>
   <body>
@@ -18,6 +21,11 @@
         <button id="history-button" class="text-button" type="button" hidden>Historial</button>
         <button id="logout-button" class="text-button" type="button" hidden>Cerrar sesión</button>
       </header>
+
+      <aside id="pwa-status" class="pwa-status" role="status" hidden>
+        <p id="pwa-status-message"></p>
+        <button id="pwa-update-button" class="secondary" type="button" hidden>Actualizar ahora</button>
+      </aside>
 
       <section id="loading-view" class="panel compact" aria-live="polite">
         <p class="eyebrow">Acceso privado</p>
@@ -204,8 +212,11 @@
           </div>
         </article>
         <nav class="question-navigation" aria-label="Navegación de preguntas">
-          <p id="navigation-legend">Pendiente · correcta · incorrecta</p>
-          <div id="question-numbers"></div>
+          <details id="question-navigation-details">
+            <summary id="question-navigation-summary">Navegador de preguntas</summary>
+            <p id="navigation-legend">Pendiente · correcta · incorrecta</p>
+            <div id="question-numbers"></div>
+          </details>
         </nav>
       </section>
 

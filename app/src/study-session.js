@@ -99,3 +99,65 @@ export class NormalStudySession {
     return null;
   }
 }
+
+export class ExamSession {
+  constructor(exam, attempt, answers = []) {
+    if (attempt.kind !== "exam" || exam.id !== attempt.exam_id || exam.version?.id !== attempt.exam_version_id) {
+      throw new Error("El intento de examen no coincide con su versión fijada.");
+    }
+
+    const activeQuestions = (exam.questions || []).filter(({ active }) => active);
+    const activeById = new Map(activeQuestions.map((question) => [question.id, question]));
+    if (
+      !Array.isArray(attempt.question_ids)
+      || attempt.question_ids.length !== activeQuestions.length
+      || attempt.question_ids.some((id) => !activeById.has(id))
+      || new Set(attempt.question_ids).size !== attempt.question_ids.length
+    ) {
+      throw new Error("El intento no conserva el Conjunto puntuable definitivo.");
+    }
+
+    this.attempt = { ...attempt };
+    this.questions = attempt.question_ids.map((id) => activeById.get(id));
+    this.index = Math.min(Math.max(attempt.current_position || 0, 0), this.questions.length - 1);
+    this.answers = [...answers];
+    this.selections = new Map();
+    for (const [questionId, answer] of latestByQuestion(answers)) {
+      if (answer.correct_option === null) this.selections.set(questionId, answer.selected_option);
+    }
+    this.locked = false;
+  }
+
+  get currentQuestion() { return this.questions[this.index]; }
+  get selectedOption() { return this.selections.get(this.currentQuestion.id) || null; }
+  get answeredCount() {
+    return this.questions.filter(({ id }) => Boolean(this.selections.get(id))).length;
+  }
+
+  stateFor(questionId) { return this.selections.get(questionId) ? "answered" : "pending"; }
+
+  select(optionId) {
+    if (this.locked) throw new Error("El Modo examen ya está bloqueado.");
+    if (!this.currentQuestion.options.some(({ id }) => id === optionId)) {
+      throw new Error("La opción elegida no existe.");
+    }
+    this.selections.set(this.currentQuestion.id, optionId);
+  }
+
+  clear() {
+    if (this.locked) throw new Error("El Modo examen ya está bloqueado.");
+    this.selections.set(this.currentQuestion.id, null);
+  }
+
+  recordSaved(answer) {
+    if (!this.answers.some(({ id }) => id === answer.id)) this.answers.push(answer);
+  }
+
+  goTo(index) {
+    if (!Number.isInteger(index) || index < 0 || index >= this.questions.length) {
+      throw new Error("La posición de examen no es válida.");
+    }
+    this.index = index;
+    return this.currentQuestion;
+  }
+}

@@ -159,6 +159,7 @@ test("Seam 2 regresión A: la última respuesta completa el estudio y muestra el
 });
 
 test("Seam 2 regresión B: la navegación numerada muestra la pregunta antes de guardar", async ({ page, request }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   const token = await apiSession(request, "_2");
   await completeActiveAttempt(request, token);
   await login(page, "_2");
@@ -173,6 +174,8 @@ test("Seam 2 regresión B: la navegación numerada muestra la pregunta antes de 
   });
 
   const targetQuestionId = [...questions.keys()][1];
+  await expect(page.locator("#question-navigation-details")).not.toHaveAttribute("open", "");
+  await page.getByText(/Navegador de preguntas/).click();
   await page.getByRole("button", { name: "Pregunta 2: pending" }).click();
 
   await expect(page.locator("#study-panel")).toHaveAttribute("data-question-id", targetQuestionId, { timeout: 500 });

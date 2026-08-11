@@ -13,6 +13,7 @@ import {
 } from "./history.js";
 import { shuffled } from "./quiz-core.js";
 import { ExamSession, formatActiveTime, NormalStudySession } from "./study-session.js";
+import "./pwa.js";
 import "./styles.css";
 
 const ids = [
@@ -39,6 +40,7 @@ const ids = [
   "history-detail-title", "history-detail-meta", "history-detail-metrics", "history-detail-version",
   "history-questions", "history-detail-error",
   "artificial-study-button", "artificial-exam-button", "artificial-error",
+  "question-navigation-details", "question-navigation-summary",
 ];
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [
@@ -1164,6 +1166,7 @@ function renderStudy() {
   elements["pause-button"].textContent = paused ? "Reanudar" : "Pausar";
   elements["exit-study-button"].textContent = examMode ? "← Salir del examen" : "← Salir y guardar";
   elements["navigation-legend"].textContent = examMode ? "Pendiente · contestada" : "Pendiente · correcta · incorrecta";
+  elements["question-navigation-summary"].textContent = `Navegador de preguntas · ${study.index + 1} de ${study.questions.length}`;
 
   elements["correction"].hidden = !corrected;
   if (corrected) {
@@ -1583,6 +1586,7 @@ async function boot() {
   }
 
   supabase = createClient(supabaseUrl, publishableKey);
+  elements["question-navigation-details"].open = window.matchMedia("(min-width: 721px)").matches;
   elements["login-form"].addEventListener("submit", submitLogin);
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);

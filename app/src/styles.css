@@ -41,6 +41,9 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .sync-status.pending { border-color: #d2a94e; color: #684f14; background: #fff4d3; }
 .sync-status.offline { border-color: #c98c86; color: #872f29; background: #fff0ee; }
 .sync-recovery { margin-bottom: 24px; padding: 16px; border-radius: 12px; color: #684f14; background: #fff4d3; font-weight: 700; line-height: 1.5; }
+.pwa-status { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: -40px 0 32px; padding: 14px 18px; border: 1px solid #d2a94e; border-radius: 14px; color: #604b18; background: #fff4d3; }
+.pwa-status p { margin: 0; }
+.pwa-status .secondary { flex: none; }
 .page-heading { display: flex; align-items: end; justify-content: space-between; gap: 36px; margin-bottom: 34px; }
 .page-heading h1 { margin-bottom: 0; }
 .exam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -123,6 +126,8 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .pause-message { display: grid; gap: 5px; margin-bottom: 22px; padding: 18px; border-radius: 12px; color: #604b18; background: #fff3cc; }
 .question-content.paused { opacity: .52; pointer-events: none; }
 .question-navigation { margin-top: 20px; padding: 22px; border: 1px solid #c6d6cf; border-radius: 18px; background: rgba(255, 255, 255, .78); }
+.question-navigation summary { color: #18483c; font-weight: 850; cursor: pointer; }
+.question-navigation details[open] summary { margin-bottom: 12px; }
 .question-navigation p { margin: 0 0 14px; color: #64756f; font-size: .85rem; font-weight: 750; }
 #question-numbers { display: grid; grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); gap: 7px; }
 .question-number { min-height: 40px; border: 1px solid #adbbb6; border-radius: 8px; color: #445b54; background: white; font-weight: 800; }
@@ -144,6 +149,7 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 @media (max-width: 720px) {
   .shell { padding-top: 22px; }
   .brand { margin-bottom: 42px; }
+  .pwa-status { align-items: stretch; flex-direction: column; margin-top: -24px; }
   .sync-status { order: 3; flex-basis: 100%; margin-left: 0; text-align: center; }
   .login-layout { grid-template-columns: 1fr; }
   .page-heading { display: block; }

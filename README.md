@@ -4,6 +4,10 @@
 
 Herramienta web ligera para preparar exámenes de oposiciones del Servicio Andaluz de Salud (SAS): banco de exámenes oficiales, estudio, simulación cronometrada, recuperación de falladas, historial y comparación agregada entre tres participantes.
 
+La ruta de acceso soportada es `https://b32majus.github.io/aplicacion-sas/` en el
+navegador, seguida del login. La instalación nativa como PWA es opcional y no es
+un requisito de producto ni una puerta de aceptación.
+
 ## Banco de exámenes (Seam 1 — importador real)
 
 Los 12 PDF oficiales iniciales (`Examen_ADM_*.pdf`) entran en el **importador real** y producen un **paquete canónico** por examen (JSON), un **informe QA** y un estado explícito `publicable` o `bloqueado_para_revision`.
@@ -45,8 +49,8 @@ Requisitos del entorno Python: `pip install -r requirements-parser.txt` (PyMuPDF
 
 ### Publicación de nuevos paquetes canónicos
 
-El flujo operativo posterior a T01 empieza en JSON canónico, no en un parser PDF
-genérico. Consulta [`docs/exam-publication.md`](./docs/exam-publication.md) para
+El flujo operativo posterior a T01 empieza en JSON canónico preparado manualmente
+o con asistencia, no en un parser PDF genérico obligatorio. Consulta [`docs/exam-publication.md`](./docs/exam-publication.md) para
 preparar la entrada trazable, revisar la propuesta automática y aprobarla solo
 mediante merge humano. El workflow existente de Pages sigue siendo el único deploy.
 

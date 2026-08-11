@@ -58,6 +58,7 @@ class TestExamPublication(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix="exam-publication-")
         self.root = Path(self.temp.name)
         self.bank = self.root / "bank"
+        self.registry = self.root / "registry"
         shutil.copytree(BANK, self.bank)
         self.exam_path = self.root / f"{EXAM_ID}.json"
         self.metadata_path = self.root / f"{EXAM_ID}.source.json"
@@ -110,7 +111,7 @@ class TestExamPublication(unittest.TestCase):
         self.write_exam(corrected)
 
         values = publish_exam.prepare(
-            self.exam_path, self.metadata_path, self.bank, self.summary
+            self.exam_path, self.metadata_path, self.bank, self.summary, self.registry
         )
 
         self.assertEqual(values["version"], corrected["version"]["id"])
@@ -142,7 +143,7 @@ class TestExamPublication(unittest.TestCase):
         self.write_exam(exam)
         before = self.snapshot(self.bank)
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "contenido canónico|recuentos"):
-            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
+            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
         self.assertEqual(self.snapshot(self.bank), before)
         self.assertFalse(self.summary.exists())
 
@@ -156,7 +157,7 @@ class TestExamPublication(unittest.TestCase):
         self.metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
         before = self.snapshot(self.bank)
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "bloqueado_para_revision"):
-            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
+            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
         self.assertEqual(self.snapshot(self.bank), before)
 
     def test_source_hash_mismatch_and_secret_bearing_url_are_rejected(self) -> None:
@@ -166,13 +167,13 @@ class TestExamPublication(unittest.TestCase):
         metadata["officialSource"]["sha256"] = "0" * 64
         self.metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "no coincide"):
-            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
+            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
 
         metadata["officialSource"]["sha256"] = exam["source"]["sha256"]
         metadata["officialSource"]["reference"] = "https://official.example/exam?token=secret"
         self.metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "query"):
-            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
+            publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
 
     def test_source_reference_rejects_non_public_hosts_and_path_secrets(self) -> None:
         exam = load_current()
@@ -206,7 +207,7 @@ class TestExamPublication(unittest.TestCase):
         exam = load_current()
         self.write_exam(exam)
         before = self.snapshot(self.bank)
-        publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary)
+        publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
         self.assertEqual(self.snapshot(self.bank), before)
         versions = list((self.bank / EXAM_ID / "versions").glob(f"{exam['version']['id']}.json"))
         self.assertEqual(len(versions), 1)
@@ -265,7 +266,13 @@ class TestExamPublication(unittest.TestCase):
         source_path = repo / f"{EXAM_ID}.source.json"
         exam_path.write_text(json.dumps(corrected, ensure_ascii=False), encoding="utf-8")
         source_path.write_bytes(SOURCE_FIXTURE.read_bytes())
-        publish_exam.prepare(exam_path, source_path, bank, repo / "summary.md")
+        publish_exam.prepare(
+            exam_path,
+            source_path,
+            bank,
+            repo / "summary.md",
+            repo / "supabase/official-exam-registrations",
+        )
         exam_path.unlink()
         source_path.unlink()
         (repo / "summary.md").unlink()
@@ -455,6 +462,7 @@ class TestExamPublication(unittest.TestCase):
         self.assertNotIn("--limit", propose)
         self.assertNotIn("|\n            python scripts/publish_exam.py proposal", propose)
         self.assertIn("group: exam-publication-main", workflow)
+        self.assertIn("supabase/official-exam-registrations", workflow)
         for forbidden in ("pages: write", "id-token: write", "deploy-pages", "configure-pages"):
             self.assertNotIn(forbidden, workflow)
 
@@ -463,6 +471,43 @@ class TestExamPublication(unittest.TestCase):
         self.assertIn("cache-dependency-path: requirements-parser.txt", check)
         for forbidden in ("contents: write", "pull-requests: write", "pages: write", "deploy-pages"):
             self.assertNotIn(forbidden, check)
+
+    def test_third_exam_prepares_static_and_registry_artifacts_idempotently(self) -> None:
+        third_id = "sas-administrativo-2026-turno-libre"
+        exam = load_current()
+        exam["id"] = third_id
+        exam["title"] = "SAS Administrativo/a 2026 - Turno Libre"
+        exam["year"] = 2026
+        exam["source"]["pdf"] = "Examen_ADM_L_2026_manual.json"
+        for question in exam["questions"]:
+            question["id"] = question["id"].replace(EXAM_ID, third_id)
+        reversion(exam)
+        exam_path = self.root / f"{third_id}.json"
+        source_path = self.root / f"{third_id}.source.json"
+        exam_path.write_text(json.dumps(exam, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        metadata = json.loads(SOURCE_FIXTURE.read_text(encoding="utf-8"))
+        metadata["examId"] = third_id
+        source_path.write_text(json.dumps(metadata), encoding="utf-8")
+
+        values = publish_exam.prepare(
+            exam_path, source_path, self.bank, self.summary, self.registry
+        )
+        version_path = self.bank / third_id / "versions" / f"{exam['version']['id']}.json"
+        registration = self.registry / third_id / f"{exam['version']['id']}.sql"
+        self.assertTrue(version_path.is_file())
+        self.assertTrue(registration.is_file())
+        catalog = json.loads((self.bank / "catalog.json").read_text(encoding="utf-8"))
+        entry = next(item for item in catalog["exams"] if item["id"] == third_id)
+        self.assertEqual(entry["latestPath"], version_path.relative_to(self.bank).as_posix())
+        sql = registration.read_text(encoding="utf-8")
+        self.assertIn(third_id, sql)
+        self.assertIn(exam["version"]["id"], sql)
+        self.assertIn("answer_key", sql)
+        self.assertEqual(values["registration"], registration.as_posix())
+
+        before = self.snapshot(self.root)
+        publish_exam.prepare(exam_path, source_path, self.bank, self.summary, self.registry)
+        self.assertEqual(self.snapshot(self.root), before)
 
 
 if __name__ == "__main__":

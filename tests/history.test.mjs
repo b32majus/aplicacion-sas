@@ -32,6 +32,15 @@ async function migratedDatabase() {
 test("Seam 2: Historial muestra solo intentos propios finalizados e incompletos con sus métricas", async () => {
   const db = await migratedDatabase();
   try {
+    await db.exec(`
+      insert into public.official_exam_versions(
+        exam_id, exam_version_id, exam_version_path, duration_minutes, question_ids, answer_key
+      ) values
+        ('exam-a', 'version-a', 'exam-a/versions/version-a.json', 90,
+         array['exam-a-q001'], '{"exam-a-q001":"B"}'::jsonb),
+        ('exam-other', 'version-x', 'exam-other/versions/version-x.json', 90,
+         array['exam-other-q001'], '{"exam-other-q001":"B"}'::jsonb)
+    `);
     await db.query(
       `insert into public.attempts(
          id, user_id, exam_id, exam_version_id, exam_version_path, question_ids,
@@ -194,7 +203,11 @@ test("Seam 2: tras cambiar el catálogo a B, Historial reproduce A sin escribir 
     },
   };
 
-  const current = await loadPublishedCatalog(fetchImpl, "/bank/");
+  const current = await loadPublishedCatalog(fetchImpl, "/bank/", [{
+    exam_id: "exam-a",
+    exam_version_id: "version-b",
+    exam_version_path: "exam-a/versions/version-b.json",
+  }]);
   const replay = await loadHistoryReplay(client, fetchImpl, "/bank/", {
     id: "attempt-a",
     exam_id: "exam-a",

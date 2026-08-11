@@ -31,12 +31,19 @@ async function fetchJson(fetchImpl, url, label) {
   return response.json();
 }
 
-export async function loadPublishedCatalog(fetchImpl, bankBaseUrl) {
+export async function loadPublishedCatalog(fetchImpl, bankBaseUrl, authorizedVersions) {
+  if (!Array.isArray(authorizedVersions)) {
+    throw new Error("El registro oficial publicado no está disponible.");
+  }
+  const authorized = new Set(authorizedVersions.map((entry) => (
+    `${entry.exam_id}\0${entry.exam_version_id}\0${entry.exam_version_path}`
+  )));
   const catalog = await fetchJson(fetchImpl, `${bankBaseUrl}catalog.json`, "el catálogo");
   if (!Array.isArray(catalog.exams)) throw new Error("El catálogo publicado no es válido.");
 
   const entries = await Promise.all(catalog.exams.map(async (entry) => {
     if (!isSafeLatestPath(entry.latestPath)) return null;
+    if (!authorized.has(`${entry.id}\0${entry.latestVersion}\0${entry.latestPath}`)) return null;
     const exam = await fetchJson(fetchImpl, `${bankBaseUrl}${entry.latestPath}`, entry.title || "el examen");
     let activeQuestions;
     try {

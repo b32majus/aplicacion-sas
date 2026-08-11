@@ -565,7 +565,11 @@ function renderCatalog() {
 
 async function ensureCatalog() {
   if (!catalogPromise) {
-    catalogPromise = loadPublishedCatalog(fetch, bankBaseUrl)
+    catalogPromise = supabase.rpc("get_published_official_exam_versions")
+      .then(({ data, error }) => {
+        if (error) throw error;
+        return loadPublishedCatalog(fetch, bankBaseUrl, data);
+      })
       .then((loaded) => { catalog = loaded; return loaded; })
       .catch((error) => {
         catalogPromise = undefined;
@@ -766,7 +770,9 @@ async function startExam() {
     const catalogExam = catalog.find(({ id }) => id === attempt.exam_id);
     if (catalogExam) selectedExam = catalogExam;
     const answers = await fetchAttemptAnswers(attempt.id);
-    const view = persistence.begin(attempt, answers);
+    const view = persistence.begin(attempt, answers, {
+      questions: pinned.exam.questions.filter(({ active }) => active),
+    });
     study = new ExamSession(pinned.exam, view.attempt, view.answers);
     applyPendingView(view);
     activeExamAttempt = attempt;
@@ -852,7 +858,9 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
-    const view = persistence.begin(attempt, answers);
+    const view = persistence.begin(attempt, answers, {
+      questions: pinned.exam.questions.filter(({ active }) => active),
+    });
     study = new NormalStudySession(pinned.exam, view.attempt, view.answers);
     activeStrategies.set(selectedExam.id, attempt.strategy);
     pendingActiveSeconds = 0;
@@ -1438,6 +1446,42 @@ async function routePrivateView() {
           activeExamAttempt = view.attempt;
           examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
           study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+        }
+        renderStudy();
+        syncPendingAttempt().catch(() => {});
+        return;
+      }
+    }
+    if (persistence?.hasPending && (pendingStudyId || pendingExamId)) {
+      const examId = decodeURIComponent(pendingStudyId || pendingExamId);
+      const kind = pendingExamId ? "exam" : "normal";
+      const view = persistence.restore({ examId, kind });
+      if (view?.questions?.length) {
+        const pinnedExam = {
+          id: view.attempt.exam_id,
+          title: view.attempt.exam_id,
+          version: { id: view.attempt.exam_version_id },
+          questions: view.questions,
+        };
+        selectedExam = {
+          id: pinnedExam.id,
+          title: pinnedExam.title,
+          version: view.attempt.exam_version_id,
+          versionPath: view.attempt.exam_version_path,
+          questions: view.questions,
+          package: pinnedExam,
+        };
+        study = kind === "exam"
+          ? new ExamSession(pinnedExam, view.attempt, view.answers)
+          : new NormalStudySession(pinnedExam, view.attempt, view.answers);
+        applyPendingView(view);
+        if (kind === "exam") {
+          activeExamAttempt = view.attempt;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+          if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
+        } else {
+          activeStrategies.set(examId, view.attempt.strategy);
         }
         renderStudy();
         syncPendingAttempt().catch(() => {});

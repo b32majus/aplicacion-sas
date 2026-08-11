@@ -20,6 +20,9 @@ async function mockArtificialPersistence(page) {
   await page.route("**/rest/v1/**", async (route) => {
     const request = route.request();
     const path = new URL(request.url()).pathname;
+    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalogFile.exams.map((item) => ({
+      exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+    })));
     if (request.method() === "GET" && path.endsWith("/attempts")) {
       return json(route, state.attempt ? [state.attempt] : []);
     }

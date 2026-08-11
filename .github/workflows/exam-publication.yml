@@ -84,7 +84,7 @@ jobs:
       - name: Stop when this version is already current
         id: changes
         run: |
-          if git diff --quiet -- app/public/data/exams; then
+          if git diff --quiet -- app/public/data/exams supabase/official-exam-registrations; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -125,7 +125,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
-          git add app/public/data/exams
+          git add app/public/data/exams supabase/official-exam-registrations
           git commit -m "data(exams): propose $EXAM_ID $VERSION"
           git push origin "$branch"
           gh pr create \

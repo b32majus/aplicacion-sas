@@ -25,6 +25,7 @@ from parse_sas_exam import (
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUTS = ROOT / "exam-inputs"
 DEFAULT_BANK = ROOT / "app/public/data/exams"
+DEFAULT_REGISTRY = ROOT / "supabase/official-exam-registrations"
 EXAM_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
 LEGACY_PUBLIC_FILES = {"sas-administrativo-2023-turno-libre.json"}
@@ -140,13 +141,85 @@ def reviewer_summary(exam: dict, reference: str) -> str:
         "## Gate humano",
         "",
         "- [ ] Revisar paquete canónico y QA versionado.",
+        "- [ ] Revisar el registro SQL de la misma versión y aplicarlo con credenciales administrativas tras el merge.",
         "- [ ] Confirmar trazabilidad, recuentos, duración e incidencias.",
         "- [ ] Aprobar mediante merge; cerrar sin merge para rechazar.",
     ]
     return "\n".join(lines) + "\n"
 
 
-def prepare(exam_path: Path, metadata_path: Path, bank: Path, summary_path: Path) -> dict:
+def sql_literal(value: str) -> str:
+    return "'" + value.replace("'", "''") + "'"
+
+
+def registration_sql(exam: dict) -> str:
+    question_ids = [question["id"] for question in exam["questions"] if question["active"]]
+    answer_key = {
+        question["id"]: question["correctOption"]
+        for question in exam["questions"] if question["active"]
+    }
+    exam_id = sql_literal(exam["id"])
+    version_id = sql_literal(exam["version"]["id"])
+    version_path = sql_literal(
+        f"{exam['id']}/versions/{exam['version']['id']}.json"
+    )
+    questions = "array[" + ", ".join(sql_literal(value) for value in question_ids) + "]"
+    key = sql_literal(json.dumps(answer_key, ensure_ascii=False, separators=(",", ":")))
+    return f"""do $official_exam_registration$
+begin
+  update public.official_exam_versions
+  set is_published = false
+  where exam_id = {exam_id}
+    and is_published
+    and (exam_version_id, exam_version_path) is distinct from ({version_id}, {version_path});
+
+  insert into public.official_exam_versions(
+    exam_id, exam_version_id, exam_version_path, duration_minutes,
+    question_ids, answer_key, is_published
+  ) values (
+    {exam_id}, {version_id}, {version_path}, {exam['durationMinutes']},
+    {questions}, {key}::jsonb, true
+  ) on conflict (exam_id, exam_version_id) do nothing;
+
+  if not exists (
+    select 1 from public.official_exam_versions
+    where exam_id = {exam_id}
+      and exam_version_id = {version_id}
+      and exam_version_path = {version_path}
+      and duration_minutes = {exam['durationMinutes']}
+      and question_ids = {questions}
+      and answer_key = {key}::jsonb
+  ) then
+    raise exception 'Conflicto con un registro oficial inmutable existente.';
+  end if;
+
+  update public.official_exam_versions
+  set is_published = true
+  where exam_id = {exam_id} and exam_version_id = {version_id};
+end
+$official_exam_registration$;
+"""
+
+
+def write_registration(exam: dict, registry: Path) -> Path:
+    path = registry / exam["id"] / f"{exam['version']['id']}.sql"
+    content = registration_sql(exam)
+    if path.exists():
+        if path.read_text(encoding="utf-8") != content:
+            raise PublicationBlockedError(f"registro oficial inmutable en conflicto: {path}")
+        return path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+    return path
+
+
+def prepare(
+    exam_path: Path,
+    metadata_path: Path,
+    bank: Path,
+    summary_path: Path,
+    registry: Path = DEFAULT_REGISTRY,
+) -> dict:
     exam = load_json(exam_path)
     try:
         validate_exam_package(exam)
@@ -160,9 +233,14 @@ def prepare(exam_path: Path, metadata_path: Path, bank: Path, summary_path: Path
     qa = qa_from_exam(exam)
     result = ImportResult(exam=exam, qa=qa, state=PUBLICABLE, blocked_reason=None)
     write_outputs(result, bank)
+    registration_path = write_registration(exam, registry)
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(reviewer_summary(exam, reference), encoding="utf-8")
-    return {"exam_id": exam["id"], "version": exam["version"]["id"]}
+    return {
+        "exam_id": exam["id"],
+        "version": exam["version"]["id"],
+        "registration": registration_path.as_posix(),
+    }
 
 
 def verify_bank(bank: Path) -> None:
@@ -466,6 +544,7 @@ def main() -> None:
     prepare_parser.add_argument("--exam", type=Path, required=True)
     prepare_parser.add_argument("--metadata", type=Path, required=True)
     prepare_parser.add_argument("--bank", type=Path, default=DEFAULT_BANK)
+    prepare_parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
     prepare_parser.add_argument("--summary", type=Path, required=True)
     prepare_parser.add_argument("--github-output", type=Path)
     verify_parser = subparsers.add_parser("verify-bank")
@@ -489,7 +568,7 @@ def main() -> None:
 
     try:
         if args.command == "prepare":
-            values = prepare(args.exam, args.metadata, args.bank, args.summary)
+            values = prepare(args.exam, args.metadata, args.bank, args.summary, args.registry)
             write_github_output(args.github_output, values)
             print(f"READY: {values['exam_id']} {values['version']}")
         elif args.command == "verify-bank":

@@ -196,24 +196,50 @@ class TestSyntheticBlocking(unittest.TestCase):
         self.assertEqual(reserve["status"], "reserve")
         self.assertFalse(reserve["active"])  # sin evidencia de uso: inactiva
 
-    def test_generic_instruction_to_answer_reserves_does_not_justify_substitution(self) -> None:
+    def test_one_annulled_activates_only_first_reserve_by_business_rule(self) -> None:
         questions = [
             (1, "¿Pregunta anulada?", four_options()),
             (2, "¿Pregunta válida?", four_options()),
             (151, "¿Primera reserva?", four_options()),
             (152, "¿Segunda reserva?", four_options()),
+            (153, "¿Tercera reserva?", four_options()),
         ]
         pdf = make_synthetic(
             questions,
-            {1: "ANULADA", 2: "B", 151: "C", 152: "D"},
+            {1: "ANULADA", 2: "B", 151: "C", 152: "D", 153: "A"},
             cover_extra=(
                 "Las preguntas de reserva deben ser contestadas en la zona destinada "
                 "a Reserva de la Hoja de Respuestas."
             ),
         )
         result = importer.build_exam(pdf)
-        self.assertEqual(result.state, importer.BLOCKED)
-        self.assertIn("evidencia explícita y específica", result.blocked_reason)
+        self.assertEqual(result.state, importer.PUBLICABLE, result.blocked_reason)
+        by_number = {q["sourceNumber"]: q for q in result.exam["questions"]}
+        self.assertTrue(by_number[151]["active"])
+        self.assertFalse(by_number[152]["active"])
+        self.assertFalse(by_number[153]["active"])
+        self.assertEqual(result.exam["scorableSet"]["reserveUsedNumbers"], [151])
+
+    def test_two_annulled_activate_first_two_of_three_reserves(self) -> None:
+        questions = [
+            (1, "¿Primera anulada?", four_options()),
+            (2, "¿Segunda anulada?", four_options()),
+            (3, "¿Pregunta válida?", four_options()),
+            (151, "¿Primera reserva?", four_options()),
+            (152, "¿Segunda reserva?", four_options()),
+            (153, "¿Tercera reserva?", four_options()),
+        ]
+        pdf = make_synthetic(
+            questions,
+            {1: "ANULADA", 2: "ANULADA", 3: "A", 151: "B", 152: "C", 153: "D"},
+        )
+        result = importer.build_exam(pdf)
+        self.assertEqual(result.state, importer.PUBLICABLE, result.blocked_reason)
+        by_number = {q["sourceNumber"]: q for q in result.exam["questions"]}
+        self.assertTrue(by_number[151]["active"])
+        self.assertTrue(by_number[152]["active"])
+        self.assertFalse(by_number[153]["active"])
+        self.assertEqual(result.exam["scorableSet"]["reserveUsedNumbers"], [151, 152])
 
     def test_explicit_exam_specific_substitution_activates_exact_reserve(self) -> None:
         questions = [
@@ -259,23 +285,36 @@ class TestSyntheticBlocking(unittest.TestCase):
             "all_declared_reserves_required",
         )
 
-    def test_more_annulments_than_declared_reserves_blocks(self) -> None:
+    def test_more_annulments_than_reserves_is_valid_with_short_effective_set(self) -> None:
         questions = [
             (1, "¿Primera anulada?", four_options()),
             (2, "¿Segunda anulada?", four_options()),
-            (151, "¿Única reserva?", four_options()),
+            (3, "¿Tercera anulada?", four_options()),
+            (4, "¿Cuarta anulada?", four_options()),
+            (151, "¿Primera reserva?", four_options()),
+            (152, "¿Segunda reserva?", four_options()),
+            (153, "¿Tercera reserva?", four_options()),
         ]
         pdf = make_synthetic(
             questions,
-            {1: "ANULADA", 2: "ANULADA", 151: "C"},
+            {
+                1: "ANULADA", 2: "ANULADA", 3: "ANULADA", 4: "ANULADA",
+                151: "A", 152: "B", 153: "C",
+            },
             cover_extra=(
                 "Las preguntas de reserva deben ser contestadas en la zona destinada "
                 "a Reserva de la Hoja de Respuestas."
             ),
         )
         result = importer.build_exam(pdf)
-        self.assertEqual(result.state, importer.BLOCKED)
-        self.assertIn("reservas insuficientes", result.blocked_reason)
+        self.assertEqual(result.state, importer.PUBLICABLE, result.blocked_reason)
+        self.assertEqual(result.exam["nominalQuestionCount"], 4)
+        self.assertEqual(result.exam["scorableSet"]["count"], 3)
+        self.assertEqual(result.exam["scorableSet"]["reserveUsedNumbers"], [151, 152, 153])
+        self.assertEqual(
+            result.exam["scorableSet"]["orderedReserveResolution"]["unreplacedAnnulledNumbers"],
+            [4],
+        )
 
     def test_missing_answer_blocks(self) -> None:
         questions = [
@@ -430,21 +469,15 @@ class TestRealPdfs(unittest.TestCase):
             self.assertEqual(again.state, result.state, name)
             self.assertEqual(canonical_json(again.exam), canonical_json(result.exam), name)
         self.assertEqual(len(self.packages), 12)
-        self.assertEqual(set(self.exams), {
-            "Examen_ADM_PI_2018.pdf",
-            "Examen_ADM_L_2021.pdf",
-        })
-        self.assertEqual(self.results["Examen_ADM_L_2018.pdf"].state, importer.BLOCKED)
-        self.assertIn(
-            "reservas insuficientes",
-            self.results["Examen_ADM_L_2018.pdf"].blocked_reason,
-        )
+        self.assertEqual(set(self.exams), set(EXPECTED_FIXTURES))
         for name, exam in self.exams.items():
-            self.assertEqual(exam["scorableSet"]["reserveUsedNumbers"], [151, 152, 153], name)
-            self.assertEqual(exam["scorableSet"]["count"], 150, name)
-        for name, result in self.results.items():
-            if name not in self.exams and name != "Examen_ADM_L_2018.pdf":
-                self.assertIn("evidencia explícita y específica", result.blocked_reason, name)
+            scorable = exam["scorableSet"]
+            expected_used = scorable["reserveNumbers"][:scorable["annulledCount"]]
+            expected_count = exam["nominalQuestionCount"] - max(
+                0, scorable["annulledCount"] - scorable["reserveTotal"]
+            )
+            self.assertEqual(scorable["reserveUsedNumbers"], expected_used, name)
+            self.assertEqual(scorable["count"], expected_count, name)
 
     def test_real_seam2_package_validates_through_public_validator(self) -> None:
         exam = load_real_seam2_package()
@@ -460,12 +493,12 @@ class TestRealPdfs(unittest.TestCase):
         with self.assertRaises(importer.CanonicalPackageError):
             importer.validate_exam_package(wrong_option_id)
 
-        blocked = self.results["Examen_ADM_L_2023.pdf"].exam
-        importer.validate_exam_package(blocked, FIXTURES_DIR / blocked["source"]["pdf"])
-        active_blocked = json.loads(canonical_json(blocked))
-        active_blocked["questions"][0]["active"] = True
+        published_2023 = self.results["Examen_ADM_L_2023.pdf"].exam
+        importer.validate_exam_package(published_2023, FIXTURES_DIR / published_2023["source"]["pdf"])
+        active_blocked = json.loads(canonical_json(published_2023))
+        next(q for q in active_blocked["questions"] if q["status"] == "annulled")["active"] = True
         with self.assertRaisesRegex(
-            importer.CanonicalPackageError, "schema canónico inválido|bloqueada activa"
+            importer.CanonicalPackageError, "schema canónico inválido|anulada activa"
         ):
             importer.validate_exam_package(active_blocked)
 
@@ -475,8 +508,8 @@ class TestRealPdfs(unittest.TestCase):
             "sas-administrativo-2021-turno-libre": [13, 14, 69],
         }
         catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-        self.assertEqual({entry["id"] for entry in catalog["exams"]}, set(expected_annulled))
-        for entry in catalog["exams"]:
+        self.assertTrue(set(expected_annulled).issubset({entry["id"] for entry in catalog["exams"]}))
+        for entry in (item for item in catalog["exams"] if item["id"] in expected_annulled):
             with self.subTest(exam=entry["id"]):
                 exam = json.loads((BANK_DIR / entry["latestPath"]).read_text(encoding="utf-8"))
                 evidence = exam["scorableSet"]["reserveUseEvidence"]
@@ -623,7 +656,7 @@ class TestRealPdfs(unittest.TestCase):
     def test_version_traces_source_and_covers_final_canonical_content(self) -> None:
         fixtures = {
             REAL_SEAM2_EXAM_ID: load_real_seam2_package(),
-            "blocked-2023": self.results["Examen_ADM_L_2023.pdf"].exam,
+            "published-2023": self.results["Examen_ADM_L_2023.pdf"].exam,
         }
         for name, exam in fixtures.items():
             content_hash = importer.canonical_content_sha256(exam)
@@ -634,7 +667,7 @@ class TestRealPdfs(unittest.TestCase):
             self.assertEqual(exam["version"]["id"], expected_version, name)
     def test_2023_q35_anomaly_reported_unchanged(self) -> None:
         result = self.results["Examen_ADM_L_2023.pdf"]
-        self.assertEqual(result.state, importer.BLOCKED)
+        self.assertEqual(result.state, importer.PUBLICABLE)
         flags = result.qa["flags"]
         self.assertTrue(
             any(
@@ -835,7 +868,6 @@ class TestRealPdfs(unittest.TestCase):
             legacy_target.write_bytes(
                 (BANK_DIR / "sas-administrativo-2023-turno-libre.json").read_bytes()
             )
-            legacy_before = legacy_target.read_bytes()
             completed = subprocess.run(
                 [sys.executable, str(ROOT / "scripts" / "import_sas_bank.py"),
                  str(FIXTURES_DIR), str(outdir)],
@@ -845,23 +877,21 @@ class TestRealPdfs(unittest.TestCase):
                 check=False,
             )
             self.assertEqual(completed.returncode, 0, completed.stderr)
-            self.assertIn("2/12 publicable", completed.stdout)
-            self.assertIn("10/12 bloqueado con causa", completed.stdout)
+            self.assertIn("12/12 publicable", completed.stdout)
+            self.assertIn("0/12 bloqueado con causa", completed.stdout)
             self.assertIn("0/12 error/no clasificado", completed.stdout)
-            self.assertEqual(legacy_target.read_bytes(), legacy_before)
+            published_2023 = json.loads(legacy_target.read_text(encoding="utf-8"))
+            self.assertEqual(published_2023["qa"]["state"], importer.PUBLICABLE)
             reports = list((outdir / "blocked").glob("*.qa.md"))
-            self.assertEqual(len(reports), 10)
+            self.assertEqual(len(reports), 0)
             blocked_packages = list((outdir / "blocked").glob("*/versions/*.json"))
-            self.assertEqual(len(blocked_packages), 10)
+            self.assertEqual(len(blocked_packages), 0)
             for package_path in blocked_packages:
                 package = json.loads(package_path.read_text(encoding="utf-8"))
                 self.assertEqual(package["qa"]["state"], importer.BLOCKED)
                 importer.validate_exam_package(package)
             catalog = json.loads((outdir / "catalog.json").read_text(encoding="utf-8"))
-            self.assertEqual({entry["id"] for entry in catalog["exams"]}, {
-                "sas-administrativo-2018-promocion-interna",
-                "sas-administrativo-2021-turno-libre",
-            })
+            self.assertEqual(len(catalog["exams"]), 12)
 
     def test_bank_command_fails_on_unexpected_processing_error(self) -> None:
         with tempfile.TemporaryDirectory(prefix="sas-bank-input-") as inputs, \

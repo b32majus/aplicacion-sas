@@ -1,0 +1,4675 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-administrativo-2021-promocion-interna",
+  "title": "SAS Administrativo/a 2021 - Promoción Interna",
+  "category": "Administrativo/a",
+  "access": "Promoción Interna",
+  "variant": null,
+  "year": 2021,
+  "durationMinutes": 180,
+  "source": {
+    "pdf": "Examen_ADM_PI_2021.pdf",
+    "sha256": "3f5fa327e6d56ef003ebbbfef5abacc6db61f672502df928d0bb7dc3b8cb3cbf",
+    "answerKeyPage": 35
+  },
+  "version": {
+    "id": "2a18087ed56306f684d759cc1cab3692ff3c956cf694c11535883f6d4b44f584",
+    "contentSha256": "af769d597bcf4e402aef5e80bf346581c735b1f2c59ecaac744dd895757f4a50"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q001",
+      "sourceNumber": 1,
+      "text": "En el ámbito de la Comunidad Autónoma de Andalucía, producida una solicitud de autorización de biobanco, ¿cuánto tiempo tiene el órgano competente para resolver expresamente dicha solicitud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 meses"
+        },
+        {
+          "id": "B",
+          "text": "6 meses"
+        },
+        {
+          "id": "C",
+          "text": "1 mes"
+        },
+        {
+          "id": "D",
+          "text": "15 días hábiles."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q002",
+      "sourceNumber": 2,
+      "text": "Entre las acciones relacionadas con los profesionales y su entorno de trabajo recogidas en el Plan de Calidad del Sistema Sanitario Público de Andalucía (en adelante SSPA), no se contempla:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Formar e informar a los profesionales en prevención de riesgos laborales."
+        },
+        {
+          "id": "B",
+          "text": "Favorecer las medidas de conciliación de la vida personal y laboral."
+        },
+        {
+          "id": "C",
+          "text": "Facilitar medidas de promoción de la salud en el lugar de trabajo."
+        },
+        {
+          "id": "D",
+          "text": "Potenciar y desarrollar medidas de apoyo al profesional."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q003",
+      "sourceNumber": 3,
+      "text": "Una condición para solicitar una segunda opinión médica es, según se recoge en la propia Web del Servicio Andaluz de Salud (en adelante SAS):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Requerir tratamiento urgente."
+        },
+        {
+          "id": "B",
+          "text": "La enfermedad para la que se solicita ha sido diagnosticada en un centro sanitario del territorio nacional."
+        },
+        {
+          "id": "C",
+          "text": "No haber efectuado anteriormente otra solicitud para el mismo proceso asistencial."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q004",
+      "sourceNumber": 4,
+      "text": "La Ley 2/2010, de derechos y garantías de la dignidad en el proceso de la muerte, determina que para obtener el asesoramiento en los casos de decisiones clínicas que planteen conflictos éticos, todos los centros sanitarios o instituciones del SSPA dispondrán o, en su caso, estarán vinculados a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un Comité ético de investigación clínica."
+        },
+        {
+          "id": "B",
+          "text": "Un Comité de ética en la investigación biomédica."
+        },
+        {
+          "id": "C",
+          "text": "Una Subcomisión de ética clínica."
+        },
+        {
+          "id": "D",
+          "text": "Un Comité de ética asistencial."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q005",
+      "sourceNumber": 5,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del SAS, en el tiempo máximo que se puede conceder de reducción de jornada por razones de enfermedad muy grave de familiar de primer grado de consanguinidad o afinidad es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 días."
+        },
+        {
+          "id": "B",
+          "text": "1 mes."
+        },
+        {
+          "id": "C",
+          "text": "6 meses."
+        },
+        {
+          "id": "D",
+          "text": "El tiempo que perdure la causa que origina la concesión, con un máximo de 1 año."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q006",
+      "sourceNumber": 6,
+      "text": "Según el Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público (EBEP), el personal estatutario de los Servicios de Salud:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se regirá por la legislación específica dictada por el Estado y por las CCAA."
+        },
+        {
+          "id": "B",
+          "text": "Se regirá por la legislación específica dictada por el Estado."
+        },
+        {
+          "id": "C",
+          "text": "Se regirá por la legislación específica dictada por las CCAA."
+        },
+        {
+          "id": "D",
+          "text": "Se regirá por la normativa específica dictada por las Consejerías competentes en materia de salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q007",
+      "sourceNumber": 7,
+      "text": "Según el Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público (EBEP), los empleados públicos deberán actuar, entre otros, con arreglo a los siguientes principios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sólo son los Delegados de Personal."
+        },
+        {
+          "id": "B",
+          "text": "Sólo son las Juntas de Personal."
+        },
+        {
+          "id": "C",
+          "text": "Sólo son los Delegados de Personal y las Juntas de Personal."
+        },
+        {
+          "id": "D",
+          "text": "Son los Delegados de Personal, las Juntas de Personal y los Liberados Sindicales."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q008",
+      "sourceNumber": 8,
+      "text": "Tendrán consideración de Administraciones Públicas",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Consejo de Ministros."
+        },
+        {
+          "id": "B",
+          "text": "El Consejo de Gobierno de la Comunidad Autónoma."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A) y B) son correctas."
+        },
+        {
+          "id": "D",
+          "text": "Los organismos públicos y entidades de derecho público vinculados o dependientes de las Administraciones Públicas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q009",
+      "sourceNumber": 9,
+      "text": "De conformidad con la Ley del Procedimiento Administrativo Común de las Administraciones Públicas (en adelante Ley 39/2015), el efecto que tendrá el silencio en los procedimientos relativos al ejercicio del derecho de petición a que se refiere el artículo 29 de la Constitución Española será:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Estimatorio."
+        },
+        {
+          "id": "B",
+          "text": "Estimatorio en caso de que el interesado alegue interés legítimo"
+        },
+        {
+          "id": "C",
+          "text": "En estos procedimientos siempre tiene que haber resolución expresa."
+        },
+        {
+          "id": "D",
+          "text": "Desestimatorio."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q010",
+      "sourceNumber": 10,
+      "text": "De conformidad con la Ley 39/2015, cuando los plazos se señalen por horas, se entienden que son hábiles:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todas las horas del día que formen parte de un día hábil."
+        },
+        {
+          "id": "B",
+          "text": "Desde las 9,00 hasta las 20,00 de cada día hábil."
+        },
+        {
+          "id": "C",
+          "text": "Los plazos se computan por días, no por horas."
+        },
+        {
+          "id": "D",
+          "text": "Todas las horas del día."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q011",
+      "sourceNumber": 11,
+      "text": "De conformidad con lo dispuesto en la Ley 40/2015 de régimen jurídico del Sector Público, los motivos de abstención de las autoridades y el personal al servicio de las Administraciones vienen reguladas en el artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "32."
+        },
+        {
+          "id": "B",
+          "text": "23."
+        },
+        {
+          "id": "C",
+          "text": "41."
+        },
+        {
+          "id": "D",
+          "text": "30."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q012",
+      "sourceNumber": 12,
+      "text": "El procedimientos por responsabilidad patrimonial ¿podrá iniciarse de oficio por las Administraciones Públicas?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En ningún caso."
+        },
+        {
+          "id": "B",
+          "text": "Podrá iniciarse sólo a petición del órgano competente."
+        },
+        {
+          "id": "C",
+          "text": "Podrá iniciarse de oficio siempre que no haya prescrito el derecho a la reclamación del interesado."
+        },
+        {
+          "id": "D",
+          "text": "Sólo en el caso de que terceros lo insten."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q013",
+      "sourceNumber": 13,
+      "text": "En el Plan Andaluz de Urgencias y Emergencias Sanitarias (PAUE) del SAS el apartado que recoge las actuaciones específicas a realizar durante los periodos en los que aumenta la demanda de atención urgente es el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Plan de invierno."
+        },
+        {
+          "id": "B",
+          "text": "Plan de verano."
+        },
+        {
+          "id": "C",
+          "text": "Plan de alta frecuentación."
+        },
+        {
+          "id": "D",
+          "text": "Plan de choque."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q014",
+      "sourceNumber": 14,
+      "text": "No es una cuestión que se recoja en el Libro de Estilo del SAS:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las relacionadas con la intimidad del paciente."
+        },
+        {
+          "id": "B",
+          "text": "Las relacionadas con la confidencialidad."
+        },
+        {
+          "id": "C",
+          "text": "La identificación del personal e instituciones."
+        },
+        {
+          "id": "D",
+          "text": "Las relacionadas con los tratamientos a prescribir."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q015",
+      "sourceNumber": 15,
+      "text": "Según el Manual de estilo del SAS, cualquier conducta de complacencia ante una petición no razonable no sólo puede ser interpretada por profesionales que han actuado correctamente como una descalificación, sino que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Daña la imagen del profesional que la realiza, del centro sanitario y del SAS."
+        },
+        {
+          "id": "B",
+          "text": "Causa problemas al Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "Es una descalificación para el profesional que ha actuado correctamente."
+        },
+        {
+          "id": "D",
+          "text": "Han de buscar la aceptación del usuario y del profesional."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q016",
+      "sourceNumber": 16,
+      "text": "Según el Plan de Ordenación de Recursos Humanos del SAS entre los objetivos específicos a conseguir en materia de recursos humanos, no se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Disponer de la cantidad de recursos humanos necesarios para cumplir con los fines que la Ley le confiere al SAS."
+        },
+        {
+          "id": "B",
+          "text": "Poseer una plantilla orientada a obtener unos resultados eficientes en función a la consecución de objetivos."
+        },
+        {
+          "id": "C",
+          "text": "Poseer una plantilla con una elevada capacidad de adaptación al cambio."
+        },
+        {
+          "id": "D",
+          "text": "Poseer una plantilla cualificada y con capacidad para buscar información científica en bases de datos y en internet."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q017",
+      "sourceNumber": 17,
+      "text": "La norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del SAS es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Orden de 5 de abril de 1990."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 136/2001, de 12 de junio, con las modificaciones introducidas por el Decreto 176/2006, de 10 de octubre."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 54/2002, de 19 de febrero."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 183/2008, de 14 de octubre."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q018",
+      "sourceNumber": 18,
+      "text": "Según el Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el SAS, y dentro de las líneas básicas del baremo de méritos, el máximo de puntuación que se puede alcanzar en el apartado Formación por el personal de la categoría de Enfermera es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 puntos."
+        },
+        {
+          "id": "B",
+          "text": "45 puntos."
+        },
+        {
+          "id": "C",
+          "text": "55 puntos."
+        },
+        {
+          "id": "D",
+          "text": "70 puntos."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q019",
+      "sourceNumber": 19,
+      "text": "En materia disciplinaria en el SAS, la incorrección con los superiores, compañeros, subordinados o usuarios está recogida como falta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Muy grave."
+        },
+        {
+          "id": "B",
+          "text": "Grave."
+        },
+        {
+          "id": "C",
+          "text": "Leve."
+        },
+        {
+          "id": "D",
+          "text": "No se considera falta."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q020",
+      "sourceNumber": 20,
+      "text": "Según el Decreto Legislativo 1/2010 (Texto Refundido de la Ley General de la Hacienda Pública de la Junta de Andalucía), las cuentas de la Junta de Andalucía se rendirán:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Parlamento de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "Al Presidente de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Al Gobierno de España."
+        },
+        {
+          "id": "D",
+          "text": "Al Tribunal de Cuentas y a la Cámara de Cuentas de Andalucía."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q021",
+      "sourceNumber": 21,
+      "text": "El Biobanco del Sistema Sanitario Público de Andalucía, en su área de tejidos, sustancias y muestras biológicas para investigación, está estructurado en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nodos."
+        },
+        {
+          "id": "B",
+          "text": "Centros intermodales."
+        },
+        {
+          "id": "C",
+          "text": "Centros sanitarios."
+        },
+        {
+          "id": "D",
+          "text": "Centros hospitalarios."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q022",
+      "sourceNumber": 22,
+      "text": "En materia de Salud Pública, la detección y coordinación de respuesta ante alertas y emergencias sanitarias, que impliquen una amenaza para la salud de la población en Andalucía, corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consejería con competencias en materia de salud."
+        },
+        {
+          "id": "B",
+          "text": "Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "UGC de Salud Pública de Hospitales y Distritos."
+        },
+        {
+          "id": "D",
+          "text": "Servicios de Medicina Preventiva y Salud Pública de la provincia."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q023",
+      "sourceNumber": 23,
+      "text": "Uno de los objetivos enfocado a los profesionales dentro del Plan de Calidad del Sistema Sanitario Público de Andalucía (en adelante SSPA), consiste en redefinir las competencias profesionales para potenciar la complementariedad y flexibilidad de los diferentes roles profesionales, y tiene entre sus líneas de acción:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Desarrollar el marco competencial de las profesiones sanitarias que ejercen su función en el SSPA."
+        },
+        {
+          "id": "B",
+          "text": "Desarrollar el marco competencial de todas las profesiones que ejercen su función en el SSPA."
+        },
+        {
+          "id": "C",
+          "text": "Reforzar las competencias de los profesionales sanitarios."
+        },
+        {
+          "id": "D",
+          "text": "Adaptar el modelo competencial que se aplicará en los Hospitales y Distritos Sanitarios del SAS."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q024",
+      "sourceNumber": 24,
+      "text": "El Plan de Calidad del SSPA se concibe como un instrumento que integra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La ciudadanía, los profesionales y la organización sanitaria."
+        },
+        {
+          "id": "B",
+          "text": "La atención primaria, la atención hospitalaria y la salud mental."
+        },
+        {
+          "id": "C",
+          "text": "Los ciudadanos y los recursos sanitarios."
+        },
+        {
+          "id": "D",
+          "text": "Todos los recursos que el SSPA pone a disposición de los ciudadanos con objeto de resolver sus problemas de salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q025",
+      "sourceNumber": 25,
+      "text": "Según el Decreto 60/1999 de libre elección de médico general y pediatra, los Directores de los Distritos de Atención Primaria:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Podrán asignar nuevos usuarios a un determinado facultativo siempre que la demanda asistencial lo exija."
+        },
+        {
+          "id": "B",
+          "text": "A petición de un determinado facultativo podrán autorizar aumentos de cupo."
+        },
+        {
+          "id": "C",
+          "text": "Podrán no asignar nuevos usuarios a un determinado facultativo, mediante resolución motivada."
+        },
+        {
+          "id": "D",
+          "text": "Podrán delegar en el facultativo de atención primaria la asignación del número de usuarios de su cupo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q026",
+      "sourceNumber": 26,
+      "text": "Según el Decreto que regula la libre elección de Médico Especialista y de Hospital en el SSPA, establece que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la elección de Médico Especialista será posible la elección simultánea de varios facultativos u hospitales para el mismo proceso patológico."
+        },
+        {
+          "id": "B",
+          "text": "La elección de Médico Especialista y Hospital público la realizará el usuario individualmente, a través del médico de atención primaria."
+        },
+        {
+          "id": "C",
+          "text": "La elección de Médico Especialista se mantendrá durante todo el proceso patológico de que se trate, por un periodo mínimo de seis meses"
+        },
+        {
+          "id": "D",
+          "text": "La elección de Médico Especialista y Hospital la realizará el usuario directamente dentro de la zona básica de salud de su domicilio."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q027",
+      "sourceNumber": 27,
+      "text": "Según la norma que regula la eutanasia, y en relación con los requisitos de la solicitud de prestación de ayuda a morir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El documento deberá firmarse en presencia de un profesional sanitario, que lo rubricará."
+        },
+        {
+          "id": "B",
+          "text": "El documento deberá ser firmado por el médico responsable del paciente."
+        },
+        {
+          "id": "C",
+          "text": "El documento deberá ser presentado a la Dirección del Centro Sanitario donde se encuentre ingresado el solicitante."
+        },
+        {
+          "id": "D",
+          "text": "El documento podrá ser revocado en cualquier momento por un familiar directo hasta segundo grado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q028",
+      "sourceNumber": 28,
+      "text": "El Real Decreto 488/1997, regula las disposiciones mínimas de seguridad y salud relativas al trabajo con equipos que incluyen pantallas de visualización (PVD), indicando que la elaboración y mantenimiento de una guía técnica para la evaluación y prevención de riesgos relativos a la utilización de equipos que incluyan PVD corresponde:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la Consejería con competencia en Trabajo de cada Comunidad Autónoma."
+        },
+        {
+          "id": "B",
+          "text": "Al Ministerio de Trabajo (En la actualidad Ministerio de Trabajo y Economía Social)."
+        },
+        {
+          "id": "C",
+          "text": "Al Comité de Seguridad y Salud de cada empresa."
+        },
+        {
+          "id": "D",
+          "text": "Al Instituto Nacional de Seguridad e Higiene en el Trabajo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q029",
+      "sourceNumber": 29,
+      "text": "Según el Real Decreto 486/1997, por el que se establecen las disposiciones mínimas de seguridad y salud en los lugares de trabajo, las temperaturas de los locales donde se realicen trabajos sedentarios propios de oficinas o similares, estará comprendida entre:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De 14 a 25 ºC."
+        },
+        {
+          "id": "B",
+          "text": "De 18 a 25 ºC."
+        },
+        {
+          "id": "C",
+          "text": "De 14 a 27 ºC."
+        },
+        {
+          "id": "D",
+          "text": "De 17 a 27 ºC."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q030",
+      "sourceNumber": 30,
+      "text": "Según el artículo 8 del Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público (EBEP), entre los recogidos en la clasificación de empleados públicos se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Funcionarios de carrera, interinos y sustitutos."
+        },
+        {
+          "id": "B",
+          "text": "Personal laboral, fijos o sustitutos."
+        },
+        {
+          "id": "C",
+          "text": "Funcionarios interinos y personal eventual."
+        },
+        {
+          "id": "D",
+          "text": "Funcionarios de carrera, sustitutos y eventuales."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q031",
+      "sourceNumber": 31,
+      "text": "Según el artículo 52 del Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público (EBEP), los empleados públicos deberán actuar, entre otros, con arreglo a los siguientes principios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Integridad, responsabilidad, exclusividad, dedicación al servicio público."
+        },
+        {
+          "id": "B",
+          "text": "Respeto a la igualdad entre mujeres y hombres, honradez, eficacia y autonomía."
+        },
+        {
+          "id": "C",
+          "text": "Objetividad, neutralidad, confidencialidad, promoción del entorno cultural y medioambiental"
+        },
+        {
+          "id": "D",
+          "text": "Transparencia, austeridad, parcialidad y ejemplaridad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q032",
+      "sourceNumber": 32,
+      "text": "Entre los derechos individuales de los empleados públicos que se establecen en el Estatuto Básico del Empleado Público (EBEP) no se recoge:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La libertad sindical."
+        },
+        {
+          "id": "B",
+          "text": "La estabilidad laboral."
+        },
+        {
+          "id": "C",
+          "text": "La libertad de expresión, dentro de los límites del ordenamiento jurídico"
+        },
+        {
+          "id": "D",
+          "text": "La jubilación, según los términos y condiciones establecidas en las normas aplicables."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q033",
+      "sourceNumber": 33,
+      "text": "Entre los principios generales que deberán respetar en su actuación y relaciones las Administraciones Públicas, se encuentra el de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Responsabilidad por la gestión, tanto pública como privada."
+        },
+        {
+          "id": "B",
+          "text": "Coordinación entre los órganos jerárquicamente dependientes."
+        },
+        {
+          "id": "C",
+          "text": "Eficiencia en la asignación y utilización de los recursos económicos."
+        },
+        {
+          "id": "D",
+          "text": "Eficacia en el cumplimiento de los objetivos fijados."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q034",
+      "sourceNumber": 34,
+      "text": "Según la Ley de Régimen Jurídico del Sector Público (en adelante Ley 40/2015), las competencias que se ejerzan por delegación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No podrán delegarse nunca."
+        },
+        {
+          "id": "B",
+          "text": "Podrán delegarse en todos los casos."
+        },
+        {
+          "id": "C",
+          "text": "No podrán delegarse salvo autorización expresa del órgano superior al delegante."
+        },
+        {
+          "id": "D",
+          "text": "No podrán delegarse salvo autorización expresa de una Ley."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q035",
+      "sourceNumber": 35,
+      "text": "Según la Ley 40/2015, las autoridades y el personal al servicio de las Administraciones Públicas se abstendrán de intervenir en un procedimiento cuando tengan vínculo de parentesco con cualquiera de los interesados en el procedimiento:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dentro del 4º grado de consanguinidad o segundo de afinidad"
+        },
+        {
+          "id": "B",
+          "text": "Dentro del 3º grado de consanguinidad o segundo de afinidad"
+        },
+        {
+          "id": "C",
+          "text": "Dentro del 2º grado de consanguinidad o primero de afinidad"
+        },
+        {
+          "id": "D",
+          "text": "Dentro del 1º grado de consanguinidad o afinidad"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q036",
+      "sourceNumber": 36,
+      "text": "De conformidad con la Ley del Procedimiento Administrativo Común de las Administraciones Públicas (en adelante Ley 39/2015), es interesado en un procedimiento administrativo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las personas físicas o jurídicas que ostenten capacidad de obrar."
+        },
+        {
+          "id": "B",
+          "text": "Cualquier ciudadano independientemente de su capacidad de obrar."
+        },
+        {
+          "id": "C",
+          "text": "Quien presente una solicitud en un registro de una Administración Pública."
+        },
+        {
+          "id": "D",
+          "text": "Quienes lo promuevan como titulares de derechos o intereses legítimos individuales o colectivos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q037",
+      "sourceNumber": 37,
+      "text": "Según la Ley 39/2015, cuando en una solicitud, escrito o comunicación figuren varios interesados, las actuaciones a que den lugar se efectuarán primeramente con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El que figure en último lugar."
+        },
+        {
+          "id": "B",
+          "text": "El que acredite mayor solvencia o conocimiento administrativo."
+        },
+        {
+          "id": "C",
+          "text": "El interesado que expresamente hayan señalado, y en su defecto, con el que figure en primer término."
+        },
+        {
+          "id": "D",
+          "text": "Cualquiera de los que figuren en la solicitud, escrito o comunicación."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q038",
+      "sourceNumber": 38,
+      "text": "Según la Ley 39/2015, las Administraciones Públicas no requerirán a los interesados el uso obligatorio de firma para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Formular petición de acciones."
+        },
+        {
+          "id": "B",
+          "text": "Renunciar a derechos."
+        },
+        {
+          "id": "C",
+          "text": "Presentar declaraciones responsables o comunicaciones."
+        },
+        {
+          "id": "D",
+          "text": "Interponer recursos."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q039",
+      "sourceNumber": 39,
+      "text": "Según la Ley 39/2015, cuando la norma reguladora de un procedimiento no fije el plazo máximo de notificación de la resolución expresa, éste será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De un mes."
+        },
+        {
+          "id": "B",
+          "text": "De tres meses."
+        },
+        {
+          "id": "C",
+          "text": "De seis meses."
+        },
+        {
+          "id": "D",
+          "text": "De un año."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q040",
+      "sourceNumber": 40,
+      "text": "Según la Ley 39/2015, en relación con el cómputo de plazos, cuando un día fuese hábil en el municipio o Comunidad Autónoma en que residiese el interesado, e inhábil en la sede del órgano administrativo, o a la inversa, se considerará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inhábil sólo para los interesados que residan en el municipio o Comunidad Autónoma en el que hubiese un día inhábil."
+        },
+        {
+          "id": "B",
+          "text": "Inhábil sólo para los interesados que residan en la localidad del organismo administrativo en el que hubiese un día inhábil."
+        },
+        {
+          "id": "C",
+          "text": "Inhábil en todo caso."
+        },
+        {
+          "id": "D",
+          "text": "Hábil para todos los interesados, independientemente del lugar de residencia."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q041",
+      "sourceNumber": 41,
+      "text": "Según la Ley 39/2015, transcurrido el plazo de tres meses desde la interposición del recurso extraordinario de revisión sin haberse dictado y notificado la resolución, se entenderá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Estimado."
+        },
+        {
+          "id": "B",
+          "text": "Desestimado, quedando expedita la vía jurisdiccional penal."
+        },
+        {
+          "id": "C",
+          "text": "Desestimado, quedando expedita la vía jurisdiccional contencioso-administrativa."
+        },
+        {
+          "id": "D",
+          "text": "Desestimado, pudiendo el interesado recurrir en amparo al Tribunal Supremo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q042",
+      "sourceNumber": 42,
+      "text": "Según la Ley 40/2015, entre los principios de la potestad sancionadora de las Administraciones Públicas se encuentran los de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Legalidad, tipicidad, responsabilidad, justicia y proporcionalidad"
+        },
+        {
+          "id": "B",
+          "text": "Legalidad, irretroactividad, tipicidad, responsabilidad y proporcionalidad"
+        },
+        {
+          "id": "C",
+          "text": "Legalidad, irretroactividad, responsabilidad y publicidad"
+        },
+        {
+          "id": "D",
+          "text": "Legalidad, tipicidad, responsabilidad, proporcionalidad y publicidad"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q043",
+      "sourceNumber": 43,
+      "text": "Según la Ley 40/2015, para ser indemnizado por las Administraciones Públicas, el daño alegado por un particular deberá ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Efectivo y culposo."
+        },
+        {
+          "id": "B",
+          "text": "Efectivo, evaluable económicamente e individualizado."
+        },
+        {
+          "id": "C",
+          "text": "Efectivo, referido a una persona concreta y ratificado por un Juzgado."
+        },
+        {
+          "id": "D",
+          "text": "Efectivo y reparable."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q044",
+      "sourceNumber": 44,
+      "text": "Según la Ley 39/2015, iniciado un procedimiento en materia de responsabilidad patrimonial sin que haya recaído ni notificado resolución expresa, en un plazo de seis meses, se entenderá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que es contrario a la indemnización del particular."
+        },
+        {
+          "id": "B",
+          "text": "Que es favorable"
+        },
+        {
+          "id": "C",
+          "text": "Que se prorroga por tres meses"
+        },
+        {
+          "id": "D",
+          "text": "Caducidad de las actuaciones"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q045",
+      "sourceNumber": 45,
+      "text": "En cuanto al uso no sexista del lenguaje administrativo, ¿cuál de estos enunciados es incorrecto?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es compatible el uso de las normas gramaticales y estilísticas con el uso no sexista de la lengua."
+        },
+        {
+          "id": "B",
+          "text": "El uso innecesario o abusivo del masculino genérico es un obstáculo a la igualdad real entre hombres y mujeres."
+        },
+        {
+          "id": "C",
+          "text": "Los cargos ocupados por mujeres deben recogerse en femenino."
+        },
+        {
+          "id": "D",
+          "text": "Como norma general, se utilizará el uso de dobletes mediante barras en los documentos administrativos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q046",
+      "sourceNumber": 46,
+      "text": "De acuerdo con la información obtenida por la página Web del SAS ¿se puede obtener copia de toda la información que contiene la historia clínica?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sí, en cualquier caso."
+        },
+        {
+          "id": "B",
+          "text": "Sólo los informes médicos."
+        },
+        {
+          "id": "C",
+          "text": "Sólo los informes médicos y del personal de enfermería."
+        },
+        {
+          "id": "D",
+          "text": "Sí, excepto la información de terceras personas y los comentarios subjetivos de los profesionales que puedan ser registrados por un interés terapéutico."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q047",
+      "sourceNumber": 47,
+      "text": "Según establece el Decreto 622/2019, de administración electrónica, simplificación de procedimientos y racionalización organizativa de la Junta de Andalucía, los formularios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Incluirán una cláusula que garantice el cumplimiento de los requisitos establecidos en materia de confidencialidad."
+        },
+        {
+          "id": "B",
+          "text": "Indicarán los informes que sea obligatorio aportar por parte del usuario."
+        },
+        {
+          "id": "C",
+          "text": "De procedimientos administrativos advertirán que las personas interesadas recibirán notificaciones por medios electrónicos."
+        },
+        {
+          "id": "D",
+          "text": "Deberán estar inscritos en el Registro de Modelos de la Junta de Andalucía. sancionadoras."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q048",
+      "sourceNumber": 48,
+      "text": "La norma por la que se establece el Libro de Sugerencias y Reclamaciones, en relación con el funcionamiento de los Servicios de la Junta de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 262/1988."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 183/2003."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 1/2013."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 105/2019."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q049",
+      "sourceNumber": 49,
+      "text": "Según el Libro de Estilo del SAS, ¿cuál de las siguientes expresiones no se recoge con relación a las quejas y reclamaciones?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una queja es la expresión que un usuario hace de su malestar por una actuación del SAS."
+        },
+        {
+          "id": "B",
+          "text": "El profesional al que un usuario expone una queja guiará al mismo en la forma de hacer llegar la misma a los responsables."
+        },
+        {
+          "id": "C",
+          "text": "Toda queja, justificada o no a criterio del profesional ante quien se expresa, debe ser tratada como una fuente importante de información sobre el funcionamiento de los servicios sanitarios."
+        },
+        {
+          "id": "D",
+          "text": "Justificarse no es responder a una queja."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q050",
+      "sourceNumber": 50,
+      "text": "Según el Libro de Estilo del SAS, ¿cuál de las siguientes expresiones no se recoge en relación con el mantenimiento de la confidencialidad?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El término “información personal de usuarios” hace referencia tanto a los registros clínicos como a información personal administrativa."
+        },
+        {
+          "id": "B",
+          "text": "Los profesionales del SAS necesitan utilizar en su trabajo información personal de los usuarios."
+        },
+        {
+          "id": "C",
+          "text": "Los medios de comunicación pueden interesarse por el estado de salud de los usuarios, debiendo recabarse el consentimiento del paciente por parte de la Dirección del Centro."
+        },
+        {
+          "id": "D",
+          "text": "Debe extremarse el cuidado en la circulación de historias clínicas u otra documentación clínica a fin de que no resulte accesible a personas ajenas al proceso asistencial."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q051",
+      "sourceNumber": 51,
+      "text": "De acuerdo con lo establecido en el Plan de Ordenación de Recursos Humanos del SAS en vigor, los profesionales de determinadas categorías podrán solicitar voluntariamente prolongar su permanencia en servicio activo hasta cumplir, como máximo, los 70 años. Entre dichas categorías se encuentra la de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Médico de Familia en Centros de Transfusión Tejidos y Células."
+        },
+        {
+          "id": "B",
+          "text": "Técnico Superior en Prevención de Riesgos Laborales."
+        },
+        {
+          "id": "C",
+          "text": "Técnico de Salud de Atención Primaria."
+        },
+        {
+          "id": "D",
+          "text": "Fisioterapeuta."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q052",
+      "sourceNumber": 52,
+      "text": "Según la Orden de 5 de abril de 1990 que establece el régimen funcional de las plantillas de los Centros Asistenciales del SAS, el conjunto de puestos de trabajo autorizados y presupuestados en cada Área Hospitalaria o Distrito de Atención Primaria con la correspondiente dotación de efectivos de cada puesto constituirá su:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Plantilla presupuestaria."
+        },
+        {
+          "id": "B",
+          "text": "Plantilla orgánica."
+        },
+        {
+          "id": "C",
+          "text": "Plantilla funcional."
+        },
+        {
+          "id": "D",
+          "text": "Relación de puestos de trabajo (RPT)."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q053",
+      "sourceNumber": 53,
+      "text": "De acuerdo con la norma que regula los sistemas de selección del personal estatutario y de provisión de plazas básicas en los centros sanitarios del SAS los participantes en un concurso de traslados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No podrán desistir de su participación en el mismo una vez finalizado el plazo de presentación de solicitudes."
+        },
+        {
+          "id": "B",
+          "text": "Podrán desistir de su participación en el concurso hasta la finalización del plazo de alegaciones a la resolución provisional del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Podrán desistir de su participación en el concurso hasta la publicación de la resolución definitiva."
+        },
+        {
+          "id": "D",
+          "text": "Podrán desistir de su participación en el concurso en cualquier momento previo a la finalización del plazo de incorporación a los destinos adjudicados."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q054",
+      "sourceNumber": 54,
+      "text": "La competencia para efectuar la convocatoria de selección del personal estatutario para la cobertura de plazas básicas vacantes en centros dependientes del SAS es de la persona titular de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Consejería competente en materia de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General competente en materia de personal del SAS."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General de Función Pública de la Junta de Andalucía."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q055",
+      "sourceNumber": 55,
+      "text": "De acuerdo con la norma que regula el sistema de provisión de puestos directivos y cargos intermedios de los centros sanitarios del SAS, podrá seleccionarse por el sistema de libre designación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Jefe/a Grupo de Gestión y Servicios."
+        },
+        {
+          "id": "B",
+          "text": "Jefe/a de Bloque de Enfermería."
+        },
+        {
+          "id": "C",
+          "text": "Director/a de Unidad de Gestión Clínica."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna respuesta es correcta."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q056",
+      "sourceNumber": 56,
+      "text": "Según el Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, y dentro de las líneas básicas del baremo de méritos, el máximo de puntuación que se puede alcanzar en el apartado Formación Académica por el personal de la categoría de Administrativo es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 puntos."
+        },
+        {
+          "id": "B",
+          "text": "25 puntos."
+        },
+        {
+          "id": "C",
+          "text": "10 puntos."
+        },
+        {
+          "id": "D",
+          "text": "8 puntos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q057",
+      "sourceNumber": 57,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, la concesión de un permiso sin sueldo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un derecho absoluto del trabajador y se concederá por periodos de 7 días naturales."
+        },
+        {
+          "id": "B",
+          "text": "Está condicionada a las necesidades del servicio o Unidad."
+        },
+        {
+          "id": "C",
+          "text": "Está condicionada tanto a la motivación alegada en la solicitud como por la incidencia que su autorización pueda representar en el Servicio o Unidad."
+        },
+        {
+          "id": "D",
+          "text": "Está condicionada tanto a la motivación alegada en la solicitud como por las necesidades asistenciales del Servicio o Unidad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q058",
+      "sourceNumber": 58,
+      "text": "La Directiva Comunitaria relativa a determinados aspectos de la ordenación del tiempo de trabajo es la:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Directiva 2000/09/CE del Parlamento Europeo y del Consejo, de 5 de marzo de 2000."
+        },
+        {
+          "id": "B",
+          "text": "Directiva 2002/75/CE del Parlamento Europeo y del Consejo, de 6 de junio de 2002."
+        },
+        {
+          "id": "C",
+          "text": "Directiva 2003/88/CE del Parlamento Europeo y del Consejo, de 4 de noviembre de 2003."
+        },
+        {
+          "id": "D",
+          "text": "Directiva 2016/63/CE del Parlamento Europeo y del Consejo, de 6 de mayo de 2016."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q059",
+      "sourceNumber": 59,
+      "text": "Según la norma que regula las condiciones de trabajo del personal e instituciones sanitarias del SAS, la jornada máxima anual para el turno nocturno es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.645 horas."
+        },
+        {
+          "id": "B",
+          "text": "1.510 horas."
+        },
+        {
+          "id": "C",
+          "text": "1.483 horas."
+        },
+        {
+          "id": "D",
+          "text": "1.450 horas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q060",
+      "sourceNumber": 60,
+      "text": "Según la norma que regula las condiciones de trabajo del personal e instituciones sanitarias del SAS, la jornada máxima anual para el turno rotatorio es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.645 horas."
+        },
+        {
+          "id": "B",
+          "text": "1.510 horas."
+        },
+        {
+          "id": "C",
+          "text": "1.483 horas."
+        },
+        {
+          "id": "D",
+          "text": "1.450 horas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q061",
+      "sourceNumber": 61,
+      "text": "En materia disciplinaria en el SAS, el acoso sexual tendrá la consideración:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Falta leve cuando no exista denuncia por la persona que es objeto del mismo."
+        },
+        {
+          "id": "B",
+          "text": "Falta grave cuando suponga agresión o chantaje."
+        },
+        {
+          "id": "C",
+          "text": "Falta muy grave cuando el sujeto activo del acoso cree con su conducta un entorno laboral intimidatorio, hostil o humillante para la persona que es objeto del mismo."
+        },
+        {
+          "id": "D",
+          "text": "Falta grave cuando el sujeto activo del acoso cree con su conducta un entorno laboral intimidatorio, hostil o humillante para la persona que es objeto del mismo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q062",
+      "sourceNumber": 62,
+      "text": "La medida cautelar de suspensión de funciones durante la tramitación de un expediente disciplinario por falta grave o muy grave en el SAS, no podrá exceder, salvo paralización del procedimiento imputable al interesado, de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 meses."
+        },
+        {
+          "id": "B",
+          "text": "3 meses."
+        },
+        {
+          "id": "C",
+          "text": "12 meses."
+        },
+        {
+          "id": "D",
+          "text": "1 año."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q063",
+      "sourceNumber": 63,
+      "text": "La norma en la que están reguladas las competencias y el procedimiento en materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía y del Sector Público Andaluz es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 53/1981, de 26 de diciembre."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 524/2008, de 16 de diciembre."
+        },
+        {
+          "id": "C",
+          "text": "Real Decreto 598/1985, de 28 de abril."
+        },
+        {
+          "id": "D",
+          "text": "Ley 55/2003, de 16 de diciembre."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q064",
+      "sourceNumber": 64,
+      "text": "En materia de incompatibilidades para el personal que presta servicios en centros dependientes de la Junta de Andalucía, ¿cuál de las siguientes actividades no precisa autorización?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La participación en Tribunales calificadores de pruebas selectivas para ingreso en las Administraciones Públicas."
+        },
+        {
+          "id": "B",
+          "text": "Dirección de seminarios o dictado de cursos o conferencias en Centros oficiales destinados a la formación de funcionarios con carácter permanente."
+        },
+        {
+          "id": "C",
+          "text": "Función docente como Profesor universitario asociado en régimen de dedicación no superior a 30 horas semanales y con duración determinada."
+        },
+        {
+          "id": "D",
+          "text": "Miembros de las Corporaciones Locales salvo que desempeñen cargos retribuidos y de dedicación exclusiva."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q065",
+      "sourceNumber": 65,
+      "text": "Según las resoluciones de retribuciones vigentes en el SAS, cuando un Médico de Familia de Atención Primaria realice desplazamientos en el mismo núcleo poblacional donde se encuentre el centro de Salud y durante su jornada laboral establecida, percibirá el complemento de productividad factor fijo por Dispersión Geográfica que corresponde al módulo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "G.1."
+        },
+        {
+          "id": "B",
+          "text": "G.2."
+        },
+        {
+          "id": "C",
+          "text": "G.3."
+        },
+        {
+          "id": "D",
+          "text": "G.4."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q066",
+      "sourceNumber": 66,
+      "text": "Según las resoluciones de retribuciones vigentes en el SAS, tendrán la consideración de “festivos especiales” a efectos de pago los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los días 1 y 6 de enero, 28 de febrero, 24 de diciembre y los dos días que sean fiestas locales en el municipio donde se encuentre el Centro."
+        },
+        {
+          "id": "B",
+          "text": "Los días 1 y 6 de enero, 28 de febrero, 25 de diciembre y el jueves y viernes santo."
+        },
+        {
+          "id": "C",
+          "text": "Los días 1 y 6 de enero, 28 de febrero, 25 de diciembre y los dos días que sean fiestas locales en el municipio donde se encuentre el Centro."
+        },
+        {
+          "id": "D",
+          "text": "Los días 1 y 6 de enero, 24 de diciembre, viernes santo y los dos días que sean fiestas locales en el municipio donde se encuentre el Centro."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q067",
+      "sourceNumber": 67,
+      "text": "El grupo de cotización en el Régimen General de la Seguridad Social de un Oficial Administrativo es el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3."
+        },
+        {
+          "id": "B",
+          "text": "5."
+        },
+        {
+          "id": "C",
+          "text": "7."
+        },
+        {
+          "id": "D",
+          "text": "8."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q068",
+      "sourceNumber": 68,
+      "text": "El tipo de cotización vigente en el Régimen General de la Seguridad Social por contingencias comunes es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 32,60 %, siendo el 27,90 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "B",
+          "text": "El 32,30 %, siendo el 27,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "C",
+          "text": "El 32,60 %, siendo el 28,00 % a cargo de la empresa y el 4,60 % a cargo del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "El 28,30 %, siendo el 23,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q069",
+      "sourceNumber": 69,
+      "text": "Según la legislación vigente en materia de Seguridad Social, para tener derecho a prestación por incapacidad temporal por contingencias comunes se requiere:",
+      "options": [
+        {
+          "id": "A",
+          "text": "180 días de cotización dentro de los 10 años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "B",
+          "text": "Solamente estar afiliado a la Seguridad Social y en alta en el momento del hecho causante."
+        },
+        {
+          "id": "C",
+          "text": "180 días de cotización dentro de los 5 años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "D",
+          "text": "180 días de cotización si el contrato es a tiempo parcial."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q070",
+      "sourceNumber": 70,
+      "text": "Según la legislación vigente en materia de Seguridad Social, la prestación por riesgo durante el embarazo se extingue por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reincorporación de la mujer trabajadora a su puesto de trabajo anterior o a otro compatible con su estado."
+        },
+        {
+          "id": "B",
+          "text": "Extinción del contrato de trabajo en virtud de las causas legalmente establecidas."
+        },
+        {
+          "id": "C",
+          "text": "Interrupción del embarazo."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q071",
+      "sourceNumber": 71,
+      "text": "Según el Decreto Legislativo 1/2010, de 2 de marzo, la Hacienda de la Junta de Andalucía está constituida por el conjunto de derechos y de obligaciones de contenido económico cuya titularidad corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la Consejería de Economía y Hacienda de la Junta de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "Al Parlamento de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "A la Administración de la Junta de Andalucía, a sus agencias administrativas y de régimen especial y a sus instituciones."
+        },
+        {
+          "id": "D",
+          "text": "A todos los organismos que componen la Junta de Andalucía."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q072",
+      "sourceNumber": 72,
+      "text": "Dentro de los principios presupuestarios recogidos en el artículo 9 de la Ley General de la Hacienda Pública de la Junta de Andalucía, no se encuentra el de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Presupuesto anual."
+        },
+        {
+          "id": "B",
+          "text": "Unidad de caja."
+        },
+        {
+          "id": "C",
+          "text": "Coordinación, transparencia y eficacia en la gestión."
+        },
+        {
+          "id": "D",
+          "text": "Contabilidad analítica."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q073",
+      "sourceNumber": 73,
+      "text": "Según se recoge en la Orden que regula la contabilidad pública de la Junta de Andalucía, los documentos contables se tramitarán por el Sistema que corresponde en dos fases sucesivas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La fase de propuesta y la fase de documento contable."
+        },
+        {
+          "id": "B",
+          "text": "La fase de justificación y la fase de intervención."
+        },
+        {
+          "id": "C",
+          "text": "La fase de autorización y la fase de ordenación."
+        },
+        {
+          "id": "D",
+          "text": "La fase anual y la fase plurianual."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q074",
+      "sourceNumber": 74,
+      "text": "El documento contable “D” se expedirá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Después de la adquisición del compromiso del gasto, una vez conocido su importe exacto."
+        },
+        {
+          "id": "B",
+          "text": "En el momento anterior a la adquisición del compromiso del gasto, una vez conocido su importe exacto."
+        },
+        {
+          "id": "C",
+          "text": "En el momento anterior a la adquisición del compromiso del gasto, sin conocer su importe exacto."
+        },
+        {
+          "id": "D",
+          "text": "Después de la adquisición del compromiso del gasto, en el momento que conozcamos su importe."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q075",
+      "sourceNumber": 75,
+      "text": "Según la Ley de Contratos del Sector Público, los contratos regulados en la misma serán inválidos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando concurra en ellos alguna de las causas que los invalidan de conformidad con las disposiciones del derecho mercantil."
+        },
+        {
+          "id": "B",
+          "text": "Cuando lo sea alguno de sus actos recogidos como tal en el derecho laboral."
+        },
+        {
+          "id": "C",
+          "text": "Cuando la Administración pruebe con posterioridad a la firma que el precio del contrato es abusivo para el erario público."
+        },
+        {
+          "id": "D",
+          "text": "En aquellos casos que la invalidez derive de la ilegalidad de su clausulado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q076",
+      "sourceNumber": 76,
+      "text": "Según la Ley de Contratos del Sector Público, no es causa de resolución de los contratos regulados en la misma;",
+      "options": [
+        {
+          "id": "A",
+          "text": "La muerte o incapacidad sobrevenida del contratista individual."
+        },
+        {
+          "id": "B",
+          "text": "El mutuo acuerdo entre la Administración y el contratista."
+        },
+        {
+          "id": "C",
+          "text": "La renuncia del contratista por pérdidas económicas durante la ejecución del contrato."
+        },
+        {
+          "id": "D",
+          "text": "La demora en el cumplimiento de los plazos por parte del contratista."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q077",
+      "sourceNumber": 77,
+      "text": "Según la Ley de Contratos del Sector Público, se consideran contratos menores:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los contratos de obras de valor estimado interior a 50.000 euros o los contratos de suministro o de servicios inferior a 15.000 euros."
+        },
+        {
+          "id": "B",
+          "text": "Los contratos de obras de valor estimado interior a 40.000 euros o los contratos de suministro o de servicios inferior a 15.000 euros."
+        },
+        {
+          "id": "C",
+          "text": "Los contratos de obras de valor estimado interior a 50.000 euros o los contratos de suministro o de servicios inferior a 25.000 euros."
+        },
+        {
+          "id": "D",
+          "text": "Los contratos de obras de valor estimado interior a 40.000 euros o los contratos de suministro o de servicios inferior a 25.000 euros."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q078",
+      "sourceNumber": 78,
+      "text": "Según la Ley de Contratos del Sector Público, en relación con el contenido mínimo de los contratos, se recoge que los mismos deberán incluir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La acreditación de la capacidad de los firmantes para suscribir el contrato."
+        },
+        {
+          "id": "B",
+          "text": "Las condiciones de pago."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A) y B) son correctas."
+        },
+        {
+          "id": "D",
+          "text": "La extensión del deber de confidencialidad por parte del contratista durante los 5 años siguientes a la vigencia del contrato."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q079",
+      "sourceNumber": 79,
+      "text": "Según la norma por la que se establece la organización administrativa para la gestión de la contratación en el ámbito de la Junta de Andalucía, la función de determinar las empresas o profesionales licitadores que hayan de quedar excluidos por no superar el umbral mínimo de puntuación exigido para continuar en el proceso selectivo es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las Mesas de contratación."
+        },
+        {
+          "id": "B",
+          "text": "La Comisión Consultiva de Contratación Pública."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección General de Gestión Económica del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Gerencia del SAS."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q080",
+      "sourceNumber": 80,
+      "text": "En la gestión de almacenes a la cantidad exacta de inventario que se precisa para cumplir con la demanda habitual sin que se produzca una rotura de stocks se le denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stock máximo."
+        },
+        {
+          "id": "B",
+          "text": "Stock mínimo."
+        },
+        {
+          "id": "C",
+          "text": "Stock medio."
+        },
+        {
+          "id": "D",
+          "text": "Stock óptimo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q081",
+      "sourceNumber": 81,
+      "text": "En la valoración de stock de un almacén el método por el que aquello que primero ha entrado en nuestro almacén debe ser aquello a lo que primero se le dé salida se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "FIFO."
+        },
+        {
+          "id": "B",
+          "text": "LIDO."
+        },
+        {
+          "id": "C",
+          "text": "LIFO."
+        },
+        {
+          "id": "D",
+          "text": "PMP."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q082",
+      "sourceNumber": 82,
+      "text": "A efectos de lo dispuesto en el Reglamento de Residuos de Andalucía, entre los residuos peligrosos de origen sanitario, no se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los residuos infecciosos."
+        },
+        {
+          "id": "B",
+          "text": "Los residuos punzantes y cortantes que hayan estado en contacto con fluidos corporales, con independencia de su origen."
+        },
+        {
+          "id": "C",
+          "text": "La sangre y hemoderivados en forma líquida o en recipientes en cantidades inferiores a 100 ml."
+        },
+        {
+          "id": "D",
+          "text": "Las vacunas con agentes vivos o atenuados, incluidas las vacunas caducadas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q083",
+      "sourceNumber": 83,
+      "text": "Indique a qué tipo de mantenimiento se ajusta mejor la siguiente definición: “Es el mantenimiento que se realiza como consecuencia de una avería de un equipo”",
+      "options": [
+        {
+          "id": "A",
+          "text": "Correctivo."
+        },
+        {
+          "id": "B",
+          "text": "Circunstancial."
+        },
+        {
+          "id": "C",
+          "text": "Preventivo."
+        },
+        {
+          "id": "D",
+          "text": "Predictivo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q084",
+      "sourceNumber": 84,
+      "text": "Según la gestión logística en el Servicio Andaluz de Salud, el conjunto de productos cuya utilización es muy escasa o exclusiva de un Centro de consumo se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mercancía en depósito."
+        },
+        {
+          "id": "B",
+          "text": "Mercancía en tránsito."
+        },
+        {
+          "id": "C",
+          "text": "Mercancía almacenable."
+        },
+        {
+          "id": "D",
+          "text": "Mercancía en almacén."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q085",
+      "sourceNumber": 85,
+      "text": "El Registro de Implantes Quirúrgicos",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es único en Andalucía y su gestión descentralizada."
+        },
+        {
+          "id": "B",
+          "text": "Habrá un registro en cada una de las ocho provincias de Andalucía"
+        },
+        {
+          "id": "C",
+          "text": "Se gestiona desde cada una de las Áreas Sanitarias de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "No es accesible a los centros concertados con la Consejería de Salud"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q086",
+      "sourceNumber": 86,
+      "text": "Según el manual del sistema Integral de Gestión Logística del SAS (SIGLO), el Banco de Bienes y Servicios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el módulo de SIGLO dentro del cual están registradas todas las ofertas que realizan los proveedores."
+        },
+        {
+          "id": "B",
+          "text": "Es el módulo de SIGLO donde los proveedores gestionan las ofertas incluidas en el Catálogo de Bienes y Servicios."
+        },
+        {
+          "id": "C",
+          "text": "Es el módulo de SIGLO en el que se mantienen todos los artículos incluidos en el Catálogo de Bienes y Servicios del SAS."
+        },
+        {
+          "id": "D",
+          "text": "Es el módulo de SIGLO en el que se mantienen todos los artículos incluidos en el Banco de Bienes y Servicios del SAS."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q087",
+      "sourceNumber": 87,
+      "text": "El PUEF (Punto General de Entrada de Facturas Electrónicas) de la Comunidad Autónoma de Andalucía, así como de las administraciones y organismos adheridos. Este sistema permite a los proveedores:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remisión de facturas en formato electrónico."
+        },
+        {
+          "id": "B",
+          "text": "Consulta de las facturas presentadas."
+        },
+        {
+          "id": "C",
+          "text": "Solicitar la anulación de una factura ya enviada."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q088",
+      "sourceNumber": 88,
+      "text": "¿Cuál de estas afirmaciones no es correcta respecto a DIRAYA?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diraya es el sistema que se utiliza en el SAS como soporte de la historia clínica electrónica."
+        },
+        {
+          "id": "B",
+          "text": "Integra toda la información de salud de cada una de las personas atendidas en los centros sanitarios."
+        },
+        {
+          "id": "C",
+          "text": "Toda la información de salud estará disponible en el lugar y momento en que sea necesario para atender al usuario."
+        },
+        {
+          "id": "D",
+          "text": "No tiene utilidad para la gestión del Sistema Sanitario Público de Andalucía."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q089",
+      "sourceNumber": 89,
+      "text": "Según la normativa vigente, ¿cuánto tiempo mínimo debe conservarse la documentación clínica desde la fecha de alta de cada proceso asistencial?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 año."
+        },
+        {
+          "id": "B",
+          "text": "5 años."
+        },
+        {
+          "id": "C",
+          "text": "10 años."
+        },
+        {
+          "id": "D",
+          "text": "20 años."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q090",
+      "sourceNumber": 90,
+      "text": "De acuerdo con el modelo de calidad del Sistema Sanitario Público de Andalucía, la validez temporal de la acreditación de sus centros y unidades sanitarias será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tres años a contar desde la fecha de reconocimiento por la Administración Sanitaria Pública Andaluza."
+        },
+        {
+          "id": "B",
+          "text": "Cinco años a contar desde la fecha de reconocimiento por la Administración Sanitaria Pública Andaluza."
+        },
+        {
+          "id": "C",
+          "text": "Cinco años a contar desde la fecha en que finaliza la fase de entrega de documentación ante la Agencia de Calidad Sanitaria de Andalucía por parte del servicio o unidad."
+        },
+        {
+          "id": "D",
+          "text": "Una vez reconocido un nivel de acreditación éste no pierde su validez."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q091",
+      "sourceNumber": 91,
+      "text": "De acuerdo con el modelo de acreditación de profesionales vigente del Sistema Sanitario Público de Andalucía, los niveles de certificación podrán ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Avanzado, experto y excelente."
+        },
+        {
+          "id": "B",
+          "text": "Avanzado, óptimo y excelente."
+        },
+        {
+          "id": "C",
+          "text": "Niveles 1 al 5."
+        },
+        {
+          "id": "D",
+          "text": "Avanzado, experto, óptimo y excelente."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q092",
+      "sourceNumber": 92,
+      "text": "La entidad que evalúa las tecnologías sanitarias cuya finalidad puede ser diagnóstica, de tratamiento, prevención o incluso fórmulas de organización sanitaria en el ámbito del Sistema Sanitario Público de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "ACSA."
+        },
+        {
+          "id": "B",
+          "text": "AETSA."
+        },
+        {
+          "id": "C",
+          "text": "IAVANTE."
+        },
+        {
+          "id": "D",
+          "text": "TIC."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q093",
+      "sourceNumber": 93,
+      "text": "Dentro de los periféricos de entrada con los que el ordenador se comunica con el exterior no se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Teclado."
+        },
+        {
+          "id": "B",
+          "text": "Ratón."
+        },
+        {
+          "id": "C",
+          "text": "Impresora."
+        },
+        {
+          "id": "D",
+          "text": "Escáner."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q094",
+      "sourceNumber": 94,
+      "text": "En un ordenador, el componente destinado al almacenamiento de la información para su conservación a largo plazo y que permite que la información no se pierda cuando se apaga es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Procesador."
+        },
+        {
+          "id": "B",
+          "text": "Placa base."
+        },
+        {
+          "id": "C",
+          "text": "Disco duro."
+        },
+        {
+          "id": "D",
+          "text": "Memoria RAM."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q095",
+      "sourceNumber": 95,
+      "text": "¿Como se llama al conjunto de programas que permiten gestionar los recursos hardware del ordenador?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sistema ofimático."
+        },
+        {
+          "id": "B",
+          "text": "Software base."
+        },
+        {
+          "id": "C",
+          "text": "Herramientas de productividad."
+        },
+        {
+          "id": "D",
+          "text": "Sistema operativo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q096",
+      "sourceNumber": 96,
+      "text": "Una de las características principales de la aplicación corporativa de la Junta de Andalucía denominada @ries es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Comunicación entre el registro por el que sale un documento de un organismo y el registro central del mismo."
+        },
+        {
+          "id": "B",
+          "text": "Interconexión informática entre los registros Entrada/Salida de todos los organismos de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Transmisión de asientos registrales entre servicios de distintas administraciones y empresas privadas."
+        },
+        {
+          "id": "D",
+          "text": "Posibilidad de realización de trámites administrativos desde el hogar del ciudadano con clave usuario y contraseña."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q097",
+      "sourceNumber": 97,
+      "text": "Entre las funciones u operaciones que se pueden realizar en Excel no se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "AHORA."
+        },
+        {
+          "id": "B",
+          "text": "BUSCAR."
+        },
+        {
+          "id": "C",
+          "text": "CONCATENAR."
+        },
+        {
+          "id": "D",
+          "text": "AGORA."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q098",
+      "sourceNumber": 98,
+      "text": "¿Qué significa el término QWERTY?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es la distribución de teclado más común."
+        },
+        {
+          "id": "B",
+          "text": "Es una aplicación informática."
+        },
+        {
+          "id": "C",
+          "text": "Es un periférico de salida."
+        },
+        {
+          "id": "D",
+          "text": "Es un sistema operativo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q099",
+      "sourceNumber": 99,
+      "text": "¿Cuál es la aplicación de la Junta de Andalucía esencialmente gráfica?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gestion@."
+        },
+        {
+          "id": "B",
+          "text": "Model@."
+        },
+        {
+          "id": "C",
+          "text": "Pint@."
+        },
+        {
+          "id": "D",
+          "text": "Notific@."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q100",
+      "sourceNumber": 100,
+      "text": "En la pantalla principal de la Ventanilla Electrónica de la persona candidata (VEC), ¿Cuál de las siguientes acciones no sale disponible?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fase de Concurso."
+        },
+        {
+          "id": "B",
+          "text": "Últimas noticias."
+        },
+        {
+          "id": "C",
+          "text": "Formularios DGP."
+        },
+        {
+          "id": "D",
+          "text": "Reconocimiento Trienios."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q101",
+      "sourceNumber": 101,
+      "text": "CASO PRACTICO 1: En un Centro Hospitalario Universitario del SAS, situado en una capital de provincia, se precisan determinados fármacos biológicos para asegurar la continuidad del tratamiento externo a los pacientes que lo requieren. Para su dotación, en la Central Provincial de Compras (antigua Plataforma Logística Sanitaria), y según la Ley de Contratos del Sector Público, se precisa tramitar el correspondiente expediente de contratación administrativa, por importe anual de 200.000€ (IVA incluido), por una duración de 1 año, sin posibilidad de prórroga. ¿A qué subconcepto presupuestario de gasto se imputa dicho expediente?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "221.18"
+        },
+        {
+          "id": "B",
+          "text": "220.06"
+        },
+        {
+          "id": "C",
+          "text": "221.06"
+        },
+        {
+          "id": "D",
+          "text": "221.16"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q102",
+      "sourceNumber": 102,
+      "text": "Dicho subconcepto presupuestario de gasto, es vinculante a nivel de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sección, servicio y capítulo presupuestario."
+        },
+        {
+          "id": "B",
+          "text": "Sección, servicio y artículo presupuestario 22."
+        },
+        {
+          "id": "C",
+          "text": "Sección, servicio, programa y artículo presupuestario 22."
+        },
+        {
+          "id": "D",
+          "text": "Sección, servicio y subconcepto presupuestario."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q103",
+      "sourceNumber": 103,
+      "text": "Según la Ley de Contratos del Sector Público indique el tipo de procedimiento que se debe tramitar para dicha contratación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Procedimiento abierto."
+        },
+        {
+          "id": "B",
+          "text": "Procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "C",
+          "text": "El procedimiento abierto simplificado."
+        },
+        {
+          "id": "D",
+          "text": "El procedimiento restringido."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q104",
+      "sourceNumber": 104,
+      "text": "Para poder participar en este expediente de contratación, indique cuál de las siguientes respuestas es la correcta respecto al código de identificación del producto (CIP):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es imprescindible que los proveedores dispongan del CIP con anterioridad a la fecha de finalización del plazo de presentación de ofertas."
+        },
+        {
+          "id": "B",
+          "text": "No es necesario disponer del CIP, porque los productos farmacéuticos están exceptuados del procedimiento de inscripción para la obtención de dicho código."
+        },
+        {
+          "id": "C",
+          "text": "Es imprescindible que los proveedores dispongan del CIP, con anterioridad a la fecha de firma del contrato."
+        },
+        {
+          "id": "D",
+          "text": "Es necesario disponer del CIP, si el órgano de Contratación declara la obligatoriedad de su uso en el Pliego de Cláusulas Administrativas de esta contratación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q105",
+      "sourceNumber": 105,
+      "text": "En el supuesto de que dichos fármacos no tuviesen asignado un Código SAS, ¿quién puede solicitar el alta o inclusión de dicho código a la Unidad de Catálogo de Bienes y Servicios del Servicio Andaluz de Salud?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cualquier proveedor que quiera introducir su producto en un centro sanitario."
+        },
+        {
+          "id": "B",
+          "text": "El responsable del Servicio de Farmacia del Centro hospitalario que solicita estos fármacos."
+        },
+        {
+          "id": "C",
+          "text": "La Central Provincial de Compras correspondiente al centro hospitalario."
+        },
+        {
+          "id": "D",
+          "text": "No es necesario que los fármacos estén dados de alta en el Catálogo de Bienes y Servicios SAS por tener asignado el Código Nacional de Medicamentos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q106",
+      "sourceNumber": 106,
+      "text": "En el supuesto de que hubiese disponibilidad presupuestaria para iniciar este expediente de contratación de fármacos, y estando este gasto sujeto a fiscalización, indique el documento contable que corresponde tramitar en esta fase de inicio del expediente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No es necesario ningún documento contable en esta fase."
+        },
+        {
+          "id": "B",
+          "text": "AD."
+        },
+        {
+          "id": "C",
+          "text": "RC."
+        },
+        {
+          "id": "D",
+          "text": "A."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q107",
+      "sourceNumber": 107,
+      "text": "Se va a construir un nuevo Centro de Salud en la provincia. De acuerdo con lo establecido en la Ley de Contratos del Sector Público, indique cuáles de las siguientes respuestas incluye actuaciones preparatorias del expediente de contratación de construcción del edificio que debe tramitar la Central Provincial de Compras (CPC):",
+      "options": [
+        {
+          "id": "A",
+          "text": "La audiencia al redactor del proyecto en materia de Seguridad y Salud."
+        },
+        {
+          "id": "B",
+          "text": "La elaboración, supervisión y aprobación del correspondiente proyecto de obras."
+        },
+        {
+          "id": "C",
+          "text": "La comprobación del replanteo."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q108",
+      "sourceNumber": 108,
+      "text": "Previamente, la Central Provincial de Compras (CPC) va a iniciar el expediente de contratación “de redacción del anteproyecto, proyecto básico y de ejecución, estudio de coordinación en materia de seguridad y salud y dirección de ejecución de obra”. Presupuesto base de licitación IVA incluido: 700.375€. Indique el tipo de contrato a realizar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Obra."
+        },
+        {
+          "id": "B",
+          "text": "Mixto."
+        },
+        {
+          "id": "C",
+          "text": "Servicios."
+        },
+        {
+          "id": "D",
+          "text": "No se requiere tramitar este expediente previo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q109",
+      "sourceNumber": 109,
+      "text": "Según la Ley de Contratos del Sector Público, el objeto de la contratación del expediente recogido en la pregunta anterior se adjudicará como regla general:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Por lotes, salvo que se justifique adecuadamente lo contrario."
+        },
+        {
+          "id": "B",
+          "text": "Por lotes o por su totalidad, a decisión del órgano de contratación."
+        },
+        {
+          "id": "C",
+          "text": "Por la totalidad del objeto."
+        },
+        {
+          "id": "D",
+          "text": "Por la totalidad del objeto, salvo que motivadamente se justifique lo contrario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q110",
+      "sourceNumber": 110,
+      "text": "Respecto al contenido del expediente de contratación anterior, según la Ley de Contratos del Sector Público, indique cuál de las siguientes respuestas no es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El expediente debe contener la motivación de la necesidad del contrato."
+        },
+        {
+          "id": "B",
+          "text": "El expediente debe contener informe justificativo de la insuficiencia de medios."
+        },
+        {
+          "id": "C",
+          "text": "El expediente debe contener justificación de la clasificación que se exija a los participantes."
+        },
+        {
+          "id": "D",
+          "text": "El expediente contendrá la aprobación por el Órgano de Contratación del proyecto de obra."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q111",
+      "sourceNumber": 111,
+      "text": "Indique a qué subconcepto presupuestario se debe imputar el gasto de este expediente de contratación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "212.00."
+        },
+        {
+          "id": "B",
+          "text": "602.00."
+        },
+        {
+          "id": "C",
+          "text": "612.00."
+        },
+        {
+          "id": "D",
+          "text": "662.00."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q112",
+      "sourceNumber": 112,
+      "text": "Conforme a lo dispuesto en la Ley de Contratos del Sector Público, la licitación del presente contrato tendrá carácter exclusivamente electrónico. A estos efectos, las personas licitadoras deben estar registradas en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En “SiREC” Portal de Licitación Electrónica."
+        },
+        {
+          "id": "B",
+          "text": "En el “Perfil del Contratante”."
+        },
+        {
+          "id": "C",
+          "text": "En el ”Centro de Empresas”."
+        },
+        {
+          "id": "D",
+          "text": "En el “Registro de Proveedores”."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q113",
+      "sourceNumber": 113,
+      "text": "Si un contratista va a establecer relaciones comerciales con el Servicio Andaluz de Salud, debe registrarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la Revista de Compras."
+        },
+        {
+          "id": "B",
+          "text": "En el Registro PUEF."
+        },
+        {
+          "id": "C",
+          "text": "En el ”Centro de Empresas” disponible en la página web del SAS."
+        },
+        {
+          "id": "D",
+          "text": "En el “Banco de Bienes y Servicios”."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q114",
+      "sourceNumber": 114,
+      "text": "Según el manual de proveedores de SIGLO disponible en la página web del SAS, ¿Qué es el factor de equivalencia en el Banco de Bienes y Productos?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un dato obligatorio para rellenar por el proveedor respecto al producto que está dando de alta en el Banco de Bienes y Productos."
+        },
+        {
+          "id": "B",
+          "text": "Es el número por el que hay que multiplicar o dividir el precio unitario o la unidad de consumo para determinar el importe o la cantidad del producto que consumimos o compramos."
+        },
+        {
+          "id": "C",
+          "text": "Es una medida que en el Banco de Productos se utiliza para comparar las diferentes informaciones logísticas de un mismo producto de una empresa."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A) y B) son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q115",
+      "sourceNumber": 115,
+      "text": "¿Cuál de las siguientes respuestas no constituye un módulo de SIGLO?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "CoanHyD."
+        },
+        {
+          "id": "B",
+          "text": "Sistema de Acreditación Logística o SAL."
+        },
+        {
+          "id": "C",
+          "text": "Catálogo y Banco de Bienes y Servicios."
+        },
+        {
+          "id": "D",
+          "text": "Contratación."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q116",
+      "sourceNumber": 116,
+      "text": "¿En qué grupo del Catálogo de Bienes y Servicios del SAS se encuentran definidos los implantes quirúrgicos?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "SU.PC.SANI.01"
+        },
+        {
+          "id": "B",
+          "text": "SU.PC.SANI.04"
+        },
+        {
+          "id": "C",
+          "text": "SU.PC.SANI.07"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas es correcta"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q117",
+      "sourceNumber": 117,
+      "text": "En este Hospital Universitario del SAS, se ha organizado un curso básico de informática para el personal de las distintas categorías. Entre las cuestiones vistas en sesiones de la herramienta Word ¿Cuál es la combinación de teclas para conseguir copiar un texto previamente seleccionado?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + x"
+        },
+        {
+          "id": "B",
+          "text": "Mayús + x"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + c"
+        },
+        {
+          "id": "D",
+          "text": "Mayús + c"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q118",
+      "sourceNumber": 118,
+      "text": "Si desea imprimir un documento Word, ¿cuál de los siguientes métodos abreviados (tecla o combinación de teclas) debería utilizar?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + i"
+        },
+        {
+          "id": "B",
+          "text": "Alt + i"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + p"
+        },
+        {
+          "id": "D",
+          "text": "F7"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q119",
+      "sourceNumber": 119,
+      "text": "En Word, la combinación predeterminada de teclas Ctrl + e permite:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pegar el texto seleccionado."
+        },
+        {
+          "id": "B",
+          "text": "Revisar el texto seleccionado."
+        },
+        {
+          "id": "C",
+          "text": "Situar el cursor al final del documento."
+        },
+        {
+          "id": "D",
+          "text": "Seleccionar todo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q120",
+      "sourceNumber": 120,
+      "text": "En Word, la combinación de teclas predeterminada para deshacer la última acción que se haya realizado es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + z"
+        },
+        {
+          "id": "B",
+          "text": "Ctrl + y"
+        },
+        {
+          "id": "C",
+          "text": "Alt + k"
+        },
+        {
+          "id": "D",
+          "text": "Alt + Barra espaciadora"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q121",
+      "sourceNumber": 121,
+      "text": "Entre las cuestiones vistas en sesiones de la herramienta Excel ¿Qué es lo primero que tenemos que escribir en una celda cuando queramos poner una función para realizar una operación?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La celda donde queramos que vaya el resultado de la operación."
+        },
+        {
+          "id": "B",
+          "text": "El signo ="
+        },
+        {
+          "id": "C",
+          "text": "La función que queramos realizar."
+        },
+        {
+          "id": "D",
+          "text": "Una celda de donde sacamos el dato de la función a realizar."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q122",
+      "sourceNumber": 122,
+      "text": "¿Cuál es la expresión correcta para ver en una celda de la hoja 1 el contenido de la celda C2 de la hoja3:",
+      "options": [
+        {
+          "id": "A",
+          "text": "=Hoja3!C2"
+        },
+        {
+          "id": "B",
+          "text": "=Hoja3$C2"
+        },
+        {
+          "id": "C",
+          "text": "Hoja3!C2"
+        },
+        {
+          "id": "D",
+          "text": "Hoja3:C2"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q123",
+      "sourceNumber": 123,
+      "text": "Indique cuál de las siguientes no se encuentra entre las categorías de funciones de Excel:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Texto."
+        },
+        {
+          "id": "B",
+          "text": "Lógica."
+        },
+        {
+          "id": "C",
+          "text": "Ingeniería."
+        },
+        {
+          "id": "D",
+          "text": "Convergente."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q124",
+      "sourceNumber": 124,
+      "text": "¿Cuál de los siguientes no figuran entre los gráficos que contiene el programa Excel?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Columnas."
+        },
+        {
+          "id": "B",
+          "text": "Cascada."
+        },
+        {
+          "id": "C",
+          "text": "Delineante."
+        },
+        {
+          "id": "D",
+          "text": "Barras."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q125",
+      "sourceNumber": 125,
+      "text": "En relación a las tablas dinámicas de Excel están diseñadas para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consultar grandes cantidades de datos de muchas formas sencillas."
+        },
+        {
+          "id": "B",
+          "text": "Obtener subtotales y sumas de datos numéricos, resumir datos por categorías y subcategorías y creas cálculos y fórmulas personalizadas."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A) y B) son correctas."
+        },
+        {
+          "id": "D",
+          "text": "Realizar operaciones de algoritmos científicos y matemáticos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q126",
+      "sourceNumber": 126,
+      "text": "En este Hospital Universitario del SAS presta servicios Juan XX, que se incorporó con nombramiento interino como Auxiliar Administrativo el 30/11/1994, habiendo prestado servicios de forma ininterrumpida en distintas categorías y situaciones hasta la actualidad. Con fecha 01/07/2000, tras obtener plaza definitiva como Administrativo, se incorpora a la misma, solicitando reconocimiento de servicios previos en la Administración Pública del tiempo trabajado como Auxiliar Administrativo. Tras el reconocimiento, realizado el 30/08/2000, ¿cuántos trienios y de qué grupo tuvo incluidos en la nómina del mes de septiembre de 2.000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 del grupo C."
+        },
+        {
+          "id": "B",
+          "text": "1 del grupo D."
+        },
+        {
+          "id": "C",
+          "text": "1 del grupo C y 1 del grupo D"
+        },
+        {
+          "id": "D",
+          "text": "2 del grupo D."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q127",
+      "sourceNumber": 127,
+      "text": "Con fecha 30/09/2010 causa baja como Administrativo accediendo, mediante Promoción Interna Temporal, a ocupar el 01/10/2010 un puesto vacante en el mismo Hospital de Técnico Medio de Función Administrativa, siendo destinado al Área de Personal. ¿Qué nivel de complemento de destino tenía acreditado en la nómina de septiembre de 2.010 como Administrativo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15."
+        },
+        {
+          "id": "B",
+          "text": "17."
+        },
+        {
+          "id": "C",
+          "text": "19."
+        },
+        {
+          "id": "D",
+          "text": "21."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q128",
+      "sourceNumber": 128,
+      "text": "¿Qué nivel de complemento de destino le correspondía como Técnico Medio de Función Administrativa en octubre de 2.010?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15."
+        },
+        {
+          "id": "B",
+          "text": "17."
+        },
+        {
+          "id": "C",
+          "text": "19."
+        },
+        {
+          "id": "D",
+          "text": "21."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q129",
+      "sourceNumber": 129,
+      "text": "Mientras se encuentre en situación de Promoción interna Temporal recibirá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La totalidad de las retribuciones correspondientes al puesto en que está promocionado temporalmente."
+        },
+        {
+          "id": "B",
+          "text": "La totalidad de las retribuciones correspondientes a su puesto de origen, más el complemento específico del puesto que ocupa."
+        },
+        {
+          "id": "C",
+          "text": "La totalidad de las retribuciones del puesto al que está promocionado temporalmente, menos los trienios, que serán los de su puesto de origen."
+        },
+        {
+          "id": "D",
+          "text": "Las retribuciones del puesto al que está promocionado temporalmente menos el complemento específico, que será el de su puesto de origen."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q130",
+      "sourceNumber": 130,
+      "text": "Con fecha 01/02/2019, tras obtener plaza definitiva como Técnico Medio de Función Administrativa en el mismo Hospital, se incorpora a la misma. ¿Cuántos trienios y de qué grupo (Según clasificación del Estatuto Básico del Empleado Público) tenía acreditados en la nómina de enero 2019, último mes en Promoción Interna Temporal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 Trienios: 7 del C1 y 1 del C2."
+        },
+        {
+          "id": "B",
+          "text": "8 Trienios: 3 del A2, 4 del C1 y 1 del C2."
+        },
+        {
+          "id": "C",
+          "text": "8 Trienios del C1."
+        },
+        {
+          "id": "D",
+          "text": "8 Trienios: 3 del A2 y 5 del C1."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q131",
+      "sourceNumber": 131,
+      "text": "Juan XX está revisando la nómina de un trabajador estatutario fijo del Hospital que tiene este mes una base de cotización de 2.000 euros. ¿Cuánto corresponde deducirle a este trabajador de cuota obrera por el concepto cotización al régimen general de la seguridad social en la nómina?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96,00 euros."
+        },
+        {
+          "id": "B",
+          "text": "94,00 euros."
+        },
+        {
+          "id": "C",
+          "text": "98,00 euros."
+        },
+        {
+          "id": "D",
+          "text": "100,00 euros."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q132",
+      "sourceNumber": 132,
+      "text": "¿Y cuánto habría que descontarle en la nómina por la cotización por Formación Profesional?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2,00 euros."
+        },
+        {
+          "id": "B",
+          "text": "10,00 euros."
+        },
+        {
+          "id": "C",
+          "text": "20.00 euros."
+        },
+        {
+          "id": "D",
+          "text": "Nada, ya que el personal estatutario fijo no cotiza por Formación Profesional."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q133",
+      "sourceNumber": 133,
+      "text": "Los descuentos habituales que un Administrativo estatutario temporal del SAS tiene en su nómina de paga extra son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "IRPF, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "B",
+          "text": "IRPF, Desempleo, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "C",
+          "text": "IRPF, Desempleo y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "D",
+          "text": "Exclusivamente IRPF."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q134",
+      "sourceNumber": 134,
+      "text": "La pareja de hecho de Juan XX es Enfermera estatutaria fija en un hospital del SAS de la misma provincia. Participa en el concurso de traslados y obtiene como destino definitivo nuestro Hospital. Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, las personas que obtengan plaza en un concurso de traslados y no se encuentren disfrutando ningún permiso o licencia reglamentaria, deberá cesar en la plaza que desempeñe:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El día hábil siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "B",
+          "text": "El día siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "C",
+          "text": "Dentro de los 3 días hábiles siguientes a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "D",
+          "text": "Dentro de los 30 días naturales siguientes a aquel en que se publique la resolución definitiva del concurso."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q135",
+      "sourceNumber": 135,
+      "text": "Una vez cesada en el otro hospital de la provincia, la toma de posesión en nuestro hospital de la pareja de Juan XX deberá producirse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al día siguiente al del cese en la plaza de origen."
+        },
+        {
+          "id": "B",
+          "text": "Dentro de los 3 días hábiles siguientes al del cese en la plaza de origen."
+        },
+        {
+          "id": "C",
+          "text": "Dentro de los 10 días hábiles siguientes al del cese en la plaza de origen."
+        },
+        {
+          "id": "D",
+          "text": "En el plazo de 1 mes desde el cese en la plaza de origen."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q136",
+      "sourceNumber": 136,
+      "text": "A la hora de ejecutar este Concurso de Traslados del SAS, ¿cuál sería el primer desplazado en el Hospital, aplicando la normativa en vigor, entre los que ocupan plaza en la misma categoría de forma provisional?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El personal en situación de reingreso provisional al servicio activo."
+        },
+        {
+          "id": "B",
+          "text": "El personal interino."
+        },
+        {
+          "id": "C",
+          "text": "El personal estatutario en promoción interna temporal."
+        },
+        {
+          "id": "D",
+          "text": "Las comisiones de servicio de personal estatutario y/ o destinos provisionales de personal funcionario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q137",
+      "sourceNumber": 137,
+      "text": "Se va a convocar próximamente un puesto de Enfermero/a Supervisor/a en la Unidad de Medicina Interna de nuestro Hospital. Este puesto, según la normativa vigente en el SAS, está considerado:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cargo intermedio."
+        },
+        {
+          "id": "B",
+          "text": "Directivo."
+        },
+        {
+          "id": "C",
+          "text": "Puesto base."
+        },
+        {
+          "id": "D",
+          "text": "Cargo asistencial por encargo complementario de funciones."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q138",
+      "sourceNumber": 138,
+      "text": "Según la normativa que regula la provisión de este puesto, la convocatoria será efectuada por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección de Personal del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q139",
+      "sourceNumber": 139,
+      "text": "Según la normativa que regula la provisión de este puesto, la convocatoria será publicada en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La página web del SAS y la del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "B",
+          "text": "La página web del Hospital al que el puesto será adscrito y el BOJA."
+        },
+        {
+          "id": "C",
+          "text": "El BOJA y el BOE."
+        },
+        {
+          "id": "D",
+          "text": "La página web del SAS y el BOJA."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q140",
+      "sourceNumber": 140,
+      "text": "El plazo máximo de resolución de la convocatoria a partir del día siguiente a su publicación será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 meses."
+        },
+        {
+          "id": "B",
+          "text": "3 meses."
+        },
+        {
+          "id": "C",
+          "text": "2 meses."
+        },
+        {
+          "id": "D",
+          "text": "1 mes."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q141",
+      "sourceNumber": 141,
+      "text": "La resolución definitiva de la convocatoria la dictará y publicará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección de Personal del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q142",
+      "sourceNumber": 142,
+      "text": "Contra la resolución definitiva podrá interponerse recurso administrativo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De reposición."
+        },
+        {
+          "id": "B",
+          "text": "De alzada."
+        },
+        {
+          "id": "C",
+          "text": "De revisión."
+        },
+        {
+          "id": "D",
+          "text": "Contencioso."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q143",
+      "sourceNumber": 143,
+      "text": "El recurso que proceda de los recogidos en la pregunta anterior, se podrá presentar ante:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "D",
+          "text": "El/La Consejero/a de la Consejería de Salud y Familias"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q144",
+      "sourceNumber": 144,
+      "text": "Juan XX quiere planificarse sus descansos. Teniendo en cuenta que a 31/12/2021 tiene acreditados 27 años y 1 mes de servicios prestados, ¿Cuántos días adicionales de libre disposición puede disfrutar durante el año 2022?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6."
+        },
+        {
+          "id": "B",
+          "text": "5."
+        },
+        {
+          "id": "C",
+          "text": "4."
+        },
+        {
+          "id": "D",
+          "text": "3."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q145",
+      "sourceNumber": 145,
+      "text": "Revisando el Manual de Vacaciones, Permisos y Licencias del SAS, y en relación con el carácter neutro a efectos de cómputo de la jornada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los días de libre disposición ya han sido tenidos en cuenta para el cálculo de la jornada anual."
+        },
+        {
+          "id": "B",
+          "text": "Los periodos de incapacidad temporal, los días de huelga y los permisos y licencias retribuidas computaran como días trabajados o descansados según figure en el cuadrante de turnos de cada trabajador."
+        },
+        {
+          "id": "C",
+          "text": "Los permisos no retribuidos computarán de forma proporcional."
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q146",
+      "sourceNumber": 146,
+      "text": "Se ha producido el fallecimiento del tío de Juan XX (Hermano de su padre) ¿Cuántos días de permiso por fallecimiento le corresponden a este profesional del SAS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 días hábiles si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 5 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "B",
+          "text": "2 días hábiles si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 4 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "C",
+          "text": "1 día hábil si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 2 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "D",
+          "text": "Ninguno."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q147",
+      "sourceNumber": 147,
+      "text": "Juan XX tiene un hijo que nació el 31/03/2021 y tiene intención de pedir una excedencia para atender al cuidado del mismo. En este tipo de excedencia debe tener en cuenta que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El periodo de excedencia será único por cada sujeto causante."
+        },
+        {
+          "id": "B",
+          "text": "El tiempo de permanencia en esta situación de excedencia es computable a efectos de trienios, carrera y derechos en el régimen de Seguridad Social que le sea de aplicación."
+        },
+        {
+          "id": "C",
+          "text": "El puesto de trabajo desempeñado en el Área de Personal se reservará hasta que finalice la excedencia."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A) y B) son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q148",
+      "sourceNumber": 148,
+      "text": "En el caso de que solicitase la excedencia recogida en la pregunta anterior con efectos 01/04/2022, la duración máxima en este caso no podrá ser superior a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 años."
+        },
+        {
+          "id": "B",
+          "text": "2 años."
+        },
+        {
+          "id": "C",
+          "text": "1 año."
+        },
+        {
+          "id": "D",
+          "text": "Hasta que el hijo cumpla 12 años."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q149",
+      "sourceNumber": 149,
+      "text": "La competencia para firmar la resolución que autorice a Juan XX esta excedencia es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del Hospital al que el puesto está adscrito."
+        },
+        {
+          "id": "D",
+          "text": "El/La Consejero/a de la Consejería de Salud y Familias"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q150",
+      "sourceNumber": 150,
+      "text": "En el caso de que disfrutase de esa excedencia desde el 01/04/2022 y a la finalización del periodo máximo de la excedencia no solicita el reingreso al servicio activo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se le declarará de oficio en la situación de excedencia voluntaria."
+        },
+        {
+          "id": "B",
+          "text": "Se elevará a la Dirección Gerencia del SAS propuesta de pérdida de la condición de personal estatutario fijo."
+        },
+        {
+          "id": "C",
+          "text": "Se le declarará en suspensión de funciones."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas es correcta."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q151",
+      "sourceNumber": 151,
+      "text": "En el caso de que el pliego de cláusulas exija la constitución de una garantía provisional hasta la adjudicación provisional del contrato, ésta no podrá superar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 5 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "B",
+          "text": "El 3 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "C",
+          "text": "El 2 % del presupuesto base de licitación del contrato."
+        },
+        {
+          "id": "D",
+          "text": "El 1 % del presupuesto base de licitación del contrato."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q152",
+      "sourceNumber": 152,
+      "text": "Según la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, la Administración podrá conceder una ampliación de los plazos establecidos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que no exceda de la mitad de los mismos."
+        },
+        {
+          "id": "B",
+          "text": "Que no exceda de un tercio de los mismos."
+        },
+        {
+          "id": "C",
+          "text": "Por el mismo plazo establecido."
+        },
+        {
+          "id": "D",
+          "text": "No es posible la ampliación de plazos."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R2",
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-q153",
+      "sourceNumber": 153,
+      "text": "Según se recoge en el Estatuto Básico del Empleado Público, en relación con la renuncia voluntaria a la condición de funcionario:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Habrá de ser manifestada por escrito y será aceptada expresamente por la Administración en todo caso."
+        },
+        {
+          "id": "B",
+          "text": "Inhabilita para ingresar de nuevo en la Administración Pública en el mismo cuerpo o escala."
+        },
+        {
+          "id": "C",
+          "text": "No podrá ser aceptada cuando el funcionario esté sujeto a expediente disciplinario."
+        },
+        {
+          "id": "D",
+          "text": "Sólo podrá ser aceptada en el caso de que no existan antecedentes disciplinarios en el plazo de 12 meses anteriores a la solicitud del funcionario."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 32
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152
+    ],
+    "count": 150,
+    "annulledNumbers": [
+      7,
+      69
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151,
+      152
+    ],
+    "reserveUsedLabels": {
+      "R1": 151,
+      "R2": 152
+    },
+    "annulledCount": 2,
+    "reserveTotal": 3,
+    "reserveUsedCount": 2,
+    "reserveUnusedCount": 1,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 7,
+          "reserveNumber": 151
+        },
+        {
+          "annulledNumber": 69,
+          "reserveNumber": 152
+        }
+      ],
+      "unreplacedAnnulledNumbers": [],
+      "unusedReserveNumbers": [
+        153
+      ]
+    }
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [
+      {
+        "question": 47,
+        "option": "D",
+        "flag": "option_D_suspicious_trailing_fragment:sancionadoras.",
+        "sourcePage": 10
+      }
+    ],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  },
+  "nominalQuestionCount": 150
+}

@@ -1,0 +1,2419 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-administrativo-2025-turno-libre",
+  "title": "SAS Administrativo/a 2025 - Turno Libre",
+  "category": "Administrativo/a",
+  "access": "Turno Libre",
+  "variant": null,
+  "year": 2025,
+  "durationMinutes": 120,
+  "source": {
+    "pdf": "Examen_ADM_L_2025.pdf",
+    "sha256": "6cdc5ce2a94a4174b54c8fad0545b94cb6288daf7151335088a6a5cfb9b3f5c5",
+    "answerKeyPage": 18
+  },
+  "version": {
+    "id": "19bdbd901db59637e7dfa5642de53009223866bf1d8f686e7706b8773d3dd335",
+    "contentSha256": "a90576ef7802081153d429df35222dbcbf293a4a0ae6d86fb1b78631ab519a2e"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2025-turno-libre-q001",
+      "sourceNumber": 1,
+      "text": "Según lo establecido en la Constitución Española de 1978, los poderes del estado emanan de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las Cortes Generales."
+        },
+        {
+          "id": "B",
+          "text": "El pueblo español."
+        },
+        {
+          "id": "C",
+          "text": "El Rey."
+        },
+        {
+          "id": "D",
+          "text": "El Congreso de los Diputados."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q002",
+      "sourceNumber": 2,
+      "text": "Según el Estatuto de Autonomía para Andalucía, la inspección y control de centros, servicios y establecimientos sanitarios es una competencia:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Exclusiva de la Comunidad Autónoma."
+        },
+        {
+          "id": "B",
+          "text": "Exclusiva del Estado."
+        },
+        {
+          "id": "C",
+          "text": "Compartida entre el Estado y la Comunidad Autónoma."
+        },
+        {
+          "id": "D",
+          "text": "Ejecutiva."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q003",
+      "sourceNumber": 3,
+      "text": "Según la Ley General de Sanidad, indique qué característica fundamental del Sistema Nacional de Salud está relacionada con la financiación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se realizará exclusivamente mediante impuestos directos a los ciudadanos."
+        },
+        {
+          "id": "B",
+          "text": "La financiación dependerá de la inversión privada en el sector salud."
+        },
+        {
+          "id": "C",
+          "text": "Provendrá únicamente de las comunidades autónomas."
+        },
+        {
+          "id": "D",
+          "text": "Se realizará mediante recursos de las Administraciones Públicas, cotizaciones y tasas por la prestación de determinados servicios."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q004",
+      "sourceNumber": 4,
+      "text": "¿Cuál de las siguientes opciones es correcta en relación al Contrato Programa del Servicio Andaluz de Salud y sus centros en 2025?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Resulta de un compromiso conjunto entre la Dirección Gerencia del SAS y los centros sanitarios."
+        },
+        {
+          "id": "B",
+          "text": "Debe ser aprobado por los grupos sindicales y de participación ciudadana, antes de su puesta en funcionamiento."
+        },
+        {
+          "id": "C",
+          "text": "Entre sus objetivos principales está la integración de los colectivos de riesgo."
+        },
+        {
+          "id": "D",
+          "text": "Su objetivo prioritario es reducir el gasto sanitario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q005",
+      "sourceNumber": 5,
+      "text": "¿En qué Decreto se establece la actual estructura orgánica de la Consejería de Salud y Consumo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 105/2019."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 198/2024."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 208/2020."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 156/2022."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q006",
+      "sourceNumber": 6,
+      "text": "La estructura organizativa responsable de la atención especializada a la salud mental de la población, que incorpora los dispositivos asistenciales de salud mental del área hospitalaria, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Comunidad terapéutica de salud mental."
+        },
+        {
+          "id": "B",
+          "text": "Hospital de día de salud mental."
+        },
+        {
+          "id": "C",
+          "text": "Unidad de salud mental comunitaria"
+        },
+        {
+          "id": "D",
+          "text": "Unidad de gestión clínica de salud mental."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q007",
+      "sourceNumber": 7,
+      "text": "Indique cuál de las siguientes opciones describe correctamente un derecho establecido en la Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía",
+      "options": [
+        {
+          "id": "A",
+          "text": "Derecho a la confidencialidad total de la información solicitada."
+        },
+        {
+          "id": "B",
+          "text": "Derecho al olvido de información pública."
+        },
+        {
+          "id": "C",
+          "text": "Derecho a solicitar información medioambiental únicamente."
+        },
+        {
+          "id": "D",
+          "text": "Derecho de acceso a la información pública."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q008",
+      "sourceNumber": 8,
+      "text": "Según la Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales, el derecho a la limitación del tratamiento viene regulado en el artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12."
+        },
+        {
+          "id": "B",
+          "text": "13."
+        },
+        {
+          "id": "C",
+          "text": "16."
+        },
+        {
+          "id": "D",
+          "text": "18."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q009",
+      "sourceNumber": 9,
+      "text": "Según la Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales, una empresa que tenga entre 2.001 y 3.000 trabajadores contará con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 Delegados de Prevención."
+        },
+        {
+          "id": "B",
+          "text": "6 Delegados de Prevención."
+        },
+        {
+          "id": "C",
+          "text": "5 Delegados de Prevención."
+        },
+        {
+          "id": "D",
+          "text": "4 Delegados de Prevención."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q010",
+      "sourceNumber": 10,
+      "text": "¿Cuál de los siguientes objetivos estratégicos es correcto en relación con el Plan de Igualdad de la Administración General de la Junta de Andalucía?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aumentar el porcentaje de mujeres que solicitan medidas de conciliación."
+        },
+        {
+          "id": "B",
+          "text": "Aumentar el porcentaje de hombres que solicitan medidas de conciliación."
+        },
+        {
+          "id": "C",
+          "text": "Disminuir el porcentaje de mujeres que solicitan medidas de conciliación."
+        },
+        {
+          "id": "D",
+          "text": "Disminuir el porcentaje de hombres que solicitan medidas de conciliación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q011",
+      "sourceNumber": 11,
+      "text": "Según la Ley 12/2007, de 26 de noviembre, para la promoción de la igualdad de género en Andalucía, el objeto de esta es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Evitar cualquier discriminación por razón de género."
+        },
+        {
+          "id": "B",
+          "text": "Conseguir una sociedad más igualitaria en Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Seguir avanzando hacia una sociedad más democrática, más justa y más solidaria."
+        },
+        {
+          "id": "D",
+          "text": "Conseguir compatibilidad entre la vida personal y laboral."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q012",
+      "sourceNumber": 12,
+      "text": "Según la Ley 55/2003 del Estatuto Marco del personal estatutario de los servicios de salud (en adelante Estatuto Marco), las sanciones impuestas por faltas graves prescribirán:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A los 2 años."
+        },
+        {
+          "id": "B",
+          "text": "A los 3 años."
+        },
+        {
+          "id": "C",
+          "text": "A los 4 años."
+        },
+        {
+          "id": "D",
+          "text": "No prescriben nunca."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q013",
+      "sourceNumber": 13,
+      "text": "Según el Estatuto Marco, la renuncia a la condición de personal estatutario deberá ser solicitada por el interesado con una antelación mínima a la fecha en que se desee hacer efectiva de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 mes."
+        },
+        {
+          "id": "B",
+          "text": "20 días."
+        },
+        {
+          "id": "C",
+          "text": "15 días."
+        },
+        {
+          "id": "D",
+          "text": "No está regulado."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q014",
+      "sourceNumber": 14,
+      "text": "Tal y como se recoge en la página web del Servicio Andaluz de Salud, deben disponer de tarjeta sanitaria:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todos los andaluces, independientemente de su edad."
+        },
+        {
+          "id": "B",
+          "text": "Todos los andaluces, independientemente de su domicilio."
+        },
+        {
+          "id": "C",
+          "text": "Las personas con cobertura sanitaria pública que residen en Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "Los mayores de 14 años que residen en Andalucía."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q015",
+      "sourceNumber": 15,
+      "text": "El documento maestro en el que el Servicio Andaluz de Salud define las líneas generales, propósitos y objetivos para proteger la información de los usuarios y profesionales se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Política de seguridad TIC."
+        },
+        {
+          "id": "B",
+          "text": "Código de conducta TIC."
+        },
+        {
+          "id": "C",
+          "text": "E-AyudaDIGITAL TIC."
+        },
+        {
+          "id": "D",
+          "text": "Guía del buen uso TIC."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q016",
+      "sourceNumber": 16,
+      "text": "¿En cuántas fases se desarrolla el proceso de certificación ACSA (Agencia de Calidad Sanitaria de Andalucía)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tres fases: avanzada, óptima y excelente."
+        },
+        {
+          "id": "B",
+          "text": "Tres fases: básica, intermedia y avanzada."
+        },
+        {
+          "id": "C",
+          "text": "Cuatro fases: inicio del proceso, autoevaluación, evaluación y certificación."
+        },
+        {
+          "id": "D",
+          "text": "Cuatro fases: solicitud, acreditación, propuesta de mejora y certificación."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q017",
+      "sourceNumber": 17,
+      "text": "El Decreto que regula la libre elección de médico general y pediatra en la Comunidad Autónoma de Andalucía, establece que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es libre la elección de médico general y pediatra en el territorio de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "La elección de facultativo se ejercerá individualmente entre los médicos generales y pediatras del Área de Salud."
+        },
+        {
+          "id": "C",
+          "text": "La elección de facultativo se ejercerá individualmente entre los médicos generales y pediatras de su Zona Básica de Salud."
+        },
+        {
+          "id": "D",
+          "text": "La elección de facultativo se ejercerá individualmente entre los médicos generales y pediatras existentes en el Distrito de Atención Primaria."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q018",
+      "sourceNumber": 18,
+      "text": "Según la norma que regula la eutanasia, y en relación con los requisitos de la solicitud de prestación de ayuda a morir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El documento deberá firmarse en presencia de un profesional sanitario, que lo rubricará."
+        },
+        {
+          "id": "B",
+          "text": "El documento deberá ser firmado por el médico responsable del paciente."
+        },
+        {
+          "id": "C",
+          "text": "El documento deberá ser presentado a la Dirección del Centro Sanitario donde se encuentre ingresado el solicitante."
+        },
+        {
+          "id": "D",
+          "text": "El documento podrá ser revocado en cualquier momento por un familiar directo hasta segundo grado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q019",
+      "sourceNumber": 19,
+      "text": "El Decreto que regula las disposiciones mínimas de seguridad y salud relativas al trabajo con equipos que incluyen pantallas de visualización (PVD) es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 75/1998, de 6 de abril."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 322/1997, de 6 de marzo."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 92/1999, de 18 de marzo."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 488/1997, de 14 de abril."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q020",
+      "sourceNumber": 20,
+      "text": "Según se indica en el Real Decreto 486/1997, de 14 de abril, por el que se establecen las disposiciones mínimas de seguridad y salud en los lugares de trabajo, la temperatura de los locales donde se realicen trabajos sedentarios propios de oficinas o similares estará comprendida:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Entre 15 y 25 ºC."
+        },
+        {
+          "id": "B",
+          "text": "Entre 16 y 26 ºC."
+        },
+        {
+          "id": "C",
+          "text": "Entre 17 y 27 ºC."
+        },
+        {
+          "id": "D",
+          "text": "Entre 18 y 28 ºC."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q021",
+      "sourceNumber": 21,
+      "text": "El Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público, recoge, entre otras, las siguientes clases de empleados públicos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Funcionarios interinos."
+        },
+        {
+          "id": "B",
+          "text": "Personal laboral, ya sea fijo, por tiempo indefinido o temporal."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A) y B) son correctas."
+        },
+        {
+          "id": "D",
+          "text": "Personal sustituto."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q022",
+      "sourceNumber": 22,
+      "text": "El Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el Estatuto Básico del Empleado Público, recoge los derechos individuales de los empleados públicos en el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 6."
+        },
+        {
+          "id": "B",
+          "text": "Artículo 14."
+        },
+        {
+          "id": "C",
+          "text": "Artículo 15."
+        },
+        {
+          "id": "D",
+          "text": "Artículo 16."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q023",
+      "sourceNumber": 23,
+      "text": "La Administración Pública sirve con objetividad los intereses generales y actúa de acuerdo, entre otros, con los principios de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Eficacia y jerarquía."
+        },
+        {
+          "id": "B",
+          "text": "Centralización y concentración."
+        },
+        {
+          "id": "C",
+          "text": "Superioridad."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A) y B) son correctas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q024",
+      "sourceNumber": 24,
+      "text": "Según la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas (en adelante Ley 39/2015), son interesados en un procedimiento administrativo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Quienes lo promuevan como titulares de obligaciones e intereses individuales o colectivos."
+        },
+        {
+          "id": "B",
+          "text": "Los que, sin haber iniciado el procedimiento, tengan derechos que pueden resultar afectados por la decisión que en el mismo se adopte."
+        },
+        {
+          "id": "C",
+          "text": "Los que, sin haber iniciado procedimiento, tengan intereses."
+        },
+        {
+          "id": "D",
+          "text": "Cualquier ciudadano, independientemente de su capacidad de obrar."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q025",
+      "sourceNumber": 25,
+      "text": "Según el artículo 32.1 de la Ley 39/2015, la Administración, salvo precepto en contrario, podrá conceder de oficio o a petición de los interesados, una ampliación de los plazos establecidos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que no exceda de la mitad de los mismos."
+        },
+        {
+          "id": "B",
+          "text": "Que no exceda de un tercio de los mismos."
+        },
+        {
+          "id": "C",
+          "text": "Por el mismo plazo establecido."
+        },
+        {
+          "id": "D",
+          "text": "No es posible la ampliación de plazos."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q026",
+      "sourceNumber": 26,
+      "text": "Según la Ley 39/2015, los interesados podrán solicitar la tramitación simplificada del procedimiento. ¿Qué plazo tiene la Administración para desestimar dicha solicitud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 días desde la presentación."
+        },
+        {
+          "id": "B",
+          "text": "3 días naturales desde la presentación."
+        },
+        {
+          "id": "C",
+          "text": "10 días hábiles desde la presentación."
+        },
+        {
+          "id": "D",
+          "text": "5 días desde su presentación."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q027",
+      "sourceNumber": 27,
+      "text": "Según la Ley 39/2015, transcurrido el plazo de tres meses desde la interposición del recurso extraordinario de revisión sin haberse dictado y notificado la resolución, se entenderá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Desestimado, quedando expedita la vía jurisdiccional contencioso-administrativa."
+        },
+        {
+          "id": "B",
+          "text": "Desestimado, quedando expedita la vía jurisdiccional penal."
+        },
+        {
+          "id": "C",
+          "text": "Desestimado, pudiendo el interesado recurrir en amparo al Tribunal Supremo."
+        },
+        {
+          "id": "D",
+          "text": "Estimado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q028",
+      "sourceNumber": 28,
+      "text": "En la Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (en adelante Ley 40/2015), se recoge entre los principios generales:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El principio de proporcionalidad."
+        },
+        {
+          "id": "B",
+          "text": "Economía, suficiencia y adecuación estricta de los medios a los fines institucionales."
+        },
+        {
+          "id": "C",
+          "text": "El principio de contradicción e igualdad de los interesados en el procedimiento."
+        },
+        {
+          "id": "D",
+          "text": "El principio de necesidad y eficacia."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q029",
+      "sourceNumber": 29,
+      "text": "Según la Ley 40/2015, en relación a los órganos colegiados, para la válida constitución de los mismos a efectos de celebración de sesiones, deliberaciones y toma de acuerdos se requerirá la asistencia de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La mitad, al menos de sus miembros."
+        },
+        {
+          "id": "B",
+          "text": "Presidente y Secretario o en su caso, de quienes les suplan, y la de la mitad más uno de sus miembros."
+        },
+        {
+          "id": "C",
+          "text": "Presidente y Secretario o en su caso, de quienes les suplan, y la de la mitad, al menos de sus miembros."
+        },
+        {
+          "id": "D",
+          "text": "Presidente y Secretario o en su caso, de quienes les suplan, y la de dos tercios de sus miembros."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q030",
+      "sourceNumber": 30,
+      "text": "¿Cuál de las siguientes respuestas es un requisito para tener derecho a indemnización por responsabilidad patrimonial de las Administraciones Públicas?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La reclamación debe interponerse dentro del plazo de tres meses desde que se produjo el hecho que motiva la indemnización o desde que se manifestó su efecto lesivo."
+        },
+        {
+          "id": "B",
+          "text": "La reclamación debe interponerse dentro del plazo de seis meses desde que se produjo el hecho que motiva la indemnización o desde que se manifestó su efecto lesivo."
+        },
+        {
+          "id": "C",
+          "text": "La reclamación debe interponerse dentro del plazo de un año desde que se produjo el hecho que motiva la indemnización o desde que se manifestó su efecto lesivo."
+        },
+        {
+          "id": "D",
+          "text": "La reclamación debe interponerse dentro del plazo de dos años desde que se produjo el hecho que motiva la indemnización o desde que se manifestó su efecto lesivo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q031",
+      "sourceNumber": 31,
+      "text": "La indemnización por responsabilidad patrimonial de las Administraciones Públicas se calculará con arreglo a los criterios de valoración establecidos en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La legislación de expropiación forzosa, a valor de mercado."
+        },
+        {
+          "id": "B",
+          "text": "La legislación fiscal, en función de las tablas publicadas por el Ministerio de Economía y Hacienda."
+        },
+        {
+          "id": "C",
+          "text": "La legislación mercantil."
+        },
+        {
+          "id": "D",
+          "text": "La legislación fiscal, de expropiación forzosa y demás normas aplicables, ponderándose, en su caso, las valoraciones predominantes en el mercado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q032",
+      "sourceNumber": 32,
+      "text": "El artículo 2 de la Orden de 24 de noviembre de 1992, conjunta de la Consejería de Gobernación y Asuntos Sociales sobre la eliminación del lenguaje sexista en textos y documentos administrativos, establece las normas de redacción para documentos cerrados, concretando:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que se haga explicito el sexo del sujeto implicado."
+        },
+        {
+          "id": "B",
+          "text": "Que se utilice la forma genérica para denominar a las mujeres."
+        },
+        {
+          "id": "C",
+          "text": "Que se utilice la denominación explícita de la forma femenina y la masculina conjuntamente."
+        },
+        {
+          "id": "D",
+          "text": "Que se aplique el uso sistemático de la forma masculina delante de la femenina."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q033",
+      "sourceNumber": 33,
+      "text": "Las copias de documentos en el ámbito de actuación de la Administración de la Junta de Andalucía, comprenderá los siguientes supuestos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las copias auténticas de documentos administrativos expedidos por el mismo órgano que emitió el documento original."
+        },
+        {
+          "id": "B",
+          "text": "Las copias autenticadas de documentos privados y públicos, mediante cotejo con el original y en las que se estampará, si procediera, la correspondiente diligencia de compulsa."
+        },
+        {
+          "id": "C",
+          "text": "Las copias autenticadas de documentos privados y públicos, y en las que se estampará por parte del interesado en el procedimiento \"Es copia del original\"."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A) y B) son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q034",
+      "sourceNumber": 34,
+      "text": "El control de las denuncias formuladas en el Libro de Sugerencias y Reclamaciones de la Junta de Andalucía se lleva a cabo por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Consumo."
+        },
+        {
+          "id": "B",
+          "text": "La persona titular de la Consejería de Gobernación."
+        },
+        {
+          "id": "C",
+          "text": "La Inspección General de Servicios."
+        },
+        {
+          "id": "D",
+          "text": "La Cámara de Cuentas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q035",
+      "sourceNumber": 35,
+      "text": "Según el Decreto 622/2019, ¿qué Consejería es responsable de la gestión del Registro Electrónico Único de la Junta de Andalucía?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Consejería competente en materia de archivos y registros."
+        },
+        {
+          "id": "B",
+          "text": "La Consejería competente en materia digital."
+        },
+        {
+          "id": "C",
+          "text": "La Consejería competente en materia fiscal."
+        },
+        {
+          "id": "D",
+          "text": "La Consejería competente en materia de Administración Pública."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q036",
+      "sourceNumber": 36,
+      "text": "Según el Manual de estilo del Servicio Andaluz de Salud, la identificación del personal mediante el uso de la tarjeta identificativa de manera visible es obligatoria en los siguientes casos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para el personal sanitario, durante sus actuaciones con el usuario."
+        },
+        {
+          "id": "B",
+          "text": "Para el personal sanitario durante su permanencia en el centro."
+        },
+        {
+          "id": "C",
+          "text": "Para todo el personal durante sus actuaciones con el usuario."
+        },
+        {
+          "id": "D",
+          "text": "Para todo el personal durante el tiempo de permanencia en el centro."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q037",
+      "sourceNumber": 37,
+      "text": "Según la Orden de 5 de abril de 1990, por la que se establece el régimen funcional de las plantillas de los Centros Asistenciales del Servicio Andaluz de Salud, los puestos de trabajo recogidos en la estructura funcional se clasifican en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Personal fijo, temporal y sustituto."
+        },
+        {
+          "id": "B",
+          "text": "Puestos directivos, cargos intermedios y puestos básicos."
+        },
+        {
+          "id": "C",
+          "text": "Personal fijo, interino y sustituto."
+        },
+        {
+          "id": "D",
+          "text": "Personal fijo, interino y sustituto o eventual."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q038",
+      "sourceNumber": 38,
+      "text": "Según la norma que regula los sistemas de selección del personal estatutario y de provisión de plazas básicas vacantes en los centros sanitarios del Servicio Andaluz de Salud, entre una Oferta de Empleo Público y la siguiente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Deberán transcurrir mínimo 3 años."
+        },
+        {
+          "id": "B",
+          "text": "Deberán transcurrir mínimo 2 años."
+        },
+        {
+          "id": "C",
+          "text": "No deberán transcurrir más de 3 años."
+        },
+        {
+          "id": "D",
+          "text": "No deberán transcurrir más de 2 años."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q039",
+      "sourceNumber": 39,
+      "text": "Según la normativa que regula la provisión de cargos intermedios en el Servicio Andaluz de Salud, la convocatoria de estos puestos será efectuada por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección de Personal del Hospital al que el puesto será adscrito."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q040",
+      "sourceNumber": 40,
+      "text": "Entre los principios y criterios generales que regirán la selección de personal estatutario temporal, nos encontramos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Simultaneidad del proceso en todos los Centros del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "Coordinación de los sistemas de selección de personal estatutario temporal en el ámbito del Sistema Nacional de Salud."
+        },
+        {
+          "id": "C",
+          "text": "Participación de todas las Organizaciones Sindicales."
+        },
+        {
+          "id": "D",
+          "text": "El proceso de selección se soporta en un aplicativo informático único para cada una de las áreas de salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q041",
+      "sourceNumber": 41,
+      "text": "Según el Manual de Vacaciones, Permisos y Licencias del personal de Centros e Instituciones Sanitarias del Servicio Andaluz de Salud, el permiso por matrimonio habrá de solicitarse con una antelación de, al menos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 días."
+        },
+        {
+          "id": "B",
+          "text": "15 días."
+        },
+        {
+          "id": "C",
+          "text": "20 días."
+        },
+        {
+          "id": "D",
+          "text": "1 mes."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q042",
+      "sourceNumber": 42,
+      "text": "Según el Manual de Vacaciones, Permisos y Licencias del personal de Centros e Instituciones Sanitarias del Servicio Andaluz de Salud, en el caso de reducción de jornada por guarda legal, se establece entre sus características que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El disfrute de esta reducción tiene que coincidir necesariamente con la jornada ordinaria."
+        },
+        {
+          "id": "B",
+          "text": "Su concesión atenderá a las circunstancias organizativas, funcionales y/o asistenciales, que en cada caso se determinen."
+        },
+        {
+          "id": "C",
+          "text": "Esta reducción de jornada es compatible con el desarrollo de cualquier otra actividad económica, remunerada o no, durante el horario objeto de la reducción."
+        },
+        {
+          "id": "D",
+          "text": "Su concesión no está sujeta a ninguna circunstancia organizativa, funcional o asistencial."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q043",
+      "sourceNumber": 43,
+      "text": "La incoación de expedientes disciplinarios por la presunta comisión de faltas muy graves del personal adscrito a un hospital del Servicio Andaluz de Salud está delegada en la persona titular de la:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dirección Gerencia del Hospital."
+        },
+        {
+          "id": "B",
+          "text": "Subdirección Gerencia del Hospital."
+        },
+        {
+          "id": "C",
+          "text": "Dirección de Personal de Hospital."
+        },
+        {
+          "id": "D",
+          "text": "Dirección General de Personal del SAS."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q044",
+      "sourceNumber": 44,
+      "text": "En materia de incompatibilidades del personal en el Servicio Andaluz de Salud, la instrucción de los procedimientos corresponderá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la persona titular de la Inspección General de Servicios de la Junta de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "A la persona titular de la Dirección General de Personal del SAS."
+        },
+        {
+          "id": "C",
+          "text": "A la persona titular de la Dirección Gerencia de los Distritos, Áreas Hospitalarias o Centros Regionales de Transfusiones Sanguíneas."
+        },
+        {
+          "id": "D",
+          "text": "A la persona titular de la Consejería de Salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q045",
+      "sourceNumber": 45,
+      "text": "Las competencias y el procedimiento en materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía y del Sector Público Andaluz están reguladas en la siguiente norma:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 53/1984, de 26 de diciembre."
+        },
+        {
+          "id": "B",
+          "text": "Orden de 8 de abril de 2008, de la Consejería de Justicia y Administración Pública."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 538/1984, de 26 de diciembre."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 524/2008, de 16 de diciembre."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q046",
+      "sourceNumber": 46,
+      "text": "En el Servicio Andaluz de Salud, el concepto retributivo \"dispersión geográfica\" es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un complemento de productividad por rendimiento profesional."
+        },
+        {
+          "id": "B",
+          "text": "Un complemento de productividad factor fijo."
+        },
+        {
+          "id": "C",
+          "text": "Un complemento de productividad factor variable."
+        },
+        {
+          "id": "D",
+          "text": "Un complemento de atención continuada."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q047",
+      "sourceNumber": 47,
+      "text": "El tipo de retención del Impuesto sobre la Renta de las Personas Físicas, cuando se trate de contratos o relaciones de duración inferior al año, no podrá ser inferior:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al 0,8 por ciento."
+        },
+        {
+          "id": "B",
+          "text": "Al 2 por ciento."
+        },
+        {
+          "id": "C",
+          "text": "Al 10 por ciento."
+        },
+        {
+          "id": "D",
+          "text": "Al 15 por ciento."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q048",
+      "sourceNumber": 48,
+      "text": "La obligación de cotizar a la Seguridad Social nace:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Desde la comunicación del empleador al órgano competente de la Seguridad Social, siempre que se realice en los tres días siguientes al inicio de la actividad correspondiente."
+        },
+        {
+          "id": "B",
+          "text": "Desde el cuarto día de inicio del inicio de la actividad correspondiente."
+        },
+        {
+          "id": "C",
+          "text": "Desde el momento de la iniciación de la actividad correspondiente."
+        },
+        {
+          "id": "D",
+          "text": "Desde el día siguiente a la iniciación de la actividad correspondiente."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q049",
+      "sourceNumber": 49,
+      "text": "La base reguladora diaria en la incapacidad temporal en los casos de enfermedad común o accidente no laboral será:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La que resulte de dividir la suma de las bases de cotización a tiempo parcial acreditadas desde la última alta laboral con un máximo de tres meses inmediatamente anteriores al del hecho causante, entre el número de días naturales en dicho período."
+        },
+        {
+          "id": "B",
+          "text": "La base mínima de cotización del Régimen General."
+        },
+        {
+          "id": "C",
+          "text": "El cociente de dividir la base de cotización por contingencias profesionales del trabajador del mes anterior a la fecha de la baja, por el número de días a que corresponde dicha cotización."
+        },
+        {
+          "id": "D",
+          "text": "El cociente de dividir la base de cotización por contingencias comunes del trabajador del mes anterior a la fecha de baja, por el número de días a que corresponde dicha cotización."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q050",
+      "sourceNumber": 50,
+      "text": "Los grados en que se clasifica la incapacidad permanente que da lugar a la correspondiente prestación económica del régimen general de la seguridad social son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Parcial y total."
+        },
+        {
+          "id": "B",
+          "text": "Total y absoluta."
+        },
+        {
+          "id": "C",
+          "text": "Parcial, total y absoluta."
+        },
+        {
+          "id": "D",
+          "text": "Parcial, total, absoluta y gran invalidez."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q051",
+      "sourceNumber": 51,
+      "text": "Según la normativa vigente en materia de Seguridad Social, un trabajador que cumpla 65 años durante el año 2025, podrá jubilarse de forma ordinaria al cumplir dicha edad si tiene acreditada una cotización mínima de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 años."
+        },
+        {
+          "id": "B",
+          "text": "35 años."
+        },
+        {
+          "id": "C",
+          "text": "38 años y 3 meses."
+        },
+        {
+          "id": "D",
+          "text": "38 años y 6 meses."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q052",
+      "sourceNumber": 52,
+      "text": "El estado de ingresos del Presupuesto de la Junta de Andalucía será elaborado por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Consejería competente en materia de Hacienda."
+        },
+        {
+          "id": "B",
+          "text": "El Consejo de Gobierno."
+        },
+        {
+          "id": "C",
+          "text": "Las Consejerías y los distintos órganos, instituciones, agencias administrativas, de régimen especial públicas empresariales y consorcios adscritos."
+        },
+        {
+          "id": "D",
+          "text": "El Parlamento de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q053",
+      "sourceNumber": 53,
+      "text": "Si un centro del Servicio Andaluz de Salud ha de abonar dietas por desplazamiento a alguno de sus trabajadores, tendría que imputar el gasto al artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 (Arrendamientos y cánones)."
+        },
+        {
+          "id": "B",
+          "text": "21 (Reparaciones, mantenimiento y conservación)."
+        },
+        {
+          "id": "C",
+          "text": "22 (Material, suministros y otros)."
+        },
+        {
+          "id": "D",
+          "text": "23 (Indemnizaciones por razón del servicio)."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q054",
+      "sourceNumber": 54,
+      "text": "En relación a la contabilidad presupuestaria de la Junta de Andalucía, todos los actos y hechos económicos que deban ser registrados en la contabilidad de la ejecución o modificación del presupuesto de gastos e ingresos o en la contabilidad extrapresupuestaria, deberán estar soportados en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un documento contable."
+        },
+        {
+          "id": "B",
+          "text": "Un soporte informático adecuado para el control."
+        },
+        {
+          "id": "C",
+          "text": "Un documento acreditativo del gasto o ingreso."
+        },
+        {
+          "id": "D",
+          "text": "El cumplimiento de la normativa vigente y el control financiero de la Cámara de Cuentas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q055",
+      "sourceNumber": 55,
+      "text": "Indique cuál de los siguientes contratos están excluidos de la Ley de Contratos del Sector Público:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los celebrados por las entidades gestoras de la Seguridad Social."
+        },
+        {
+          "id": "B",
+          "text": "Los suscritos por las agencias administrativas estatales."
+        },
+        {
+          "id": "C",
+          "text": "Los relativos a servicios de arbitraje y conciliación."
+        },
+        {
+          "id": "D",
+          "text": "Los relativos a adquisición de material por parte del Ministerio de Defensa, en aras a la seguridad nacional."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q056",
+      "sourceNumber": 56,
+      "text": "Atendiendo a la Ley de Contratos del Sector Público, y en relación a los contratos de servicios, se indica:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los contratos de servicios podrán implicar el ejercicio de la autoridad inherente a los poderes públicos."
+        },
+        {
+          "id": "B",
+          "text": "Son contratos de servicios aquellos en que el adjudicatario se obligue a ejecutar el servicio de forma sucesiva y por precio unitario."
+        },
+        {
+          "id": "C",
+          "text": "Los contratos de servicios podrán tener por objeto la adquisición de energía primaria o energía transformada."
+        },
+        {
+          "id": "D",
+          "text": "Son contratos de servicios aquellos que tienen por objeto la adquisición, el arrendamiento financiero, o el arrendamiento, con o sin opción de compra, de productos o bienes muebles."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q057",
+      "sourceNumber": 57,
+      "text": "Según la delegación de competencias vigente, la aprobación de modelos de Pliego de Cláusulas que deban regir en la contratación administrativa del Servicio Andaluz de Salud está delegada en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Gestión Económica y Servicios del SAS."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Gerencia de los centros donde estén ubicadas las Centrales Provinciales de Compras."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Económica-Administrativa y/o de Servicios Generales de los centros donde están ubicadas las Centrales Provinciales de Compras."
+        },
+        {
+          "id": "D",
+          "text": "La Secretaría General Técnica de la Consejería de Salud y Consumo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q058",
+      "sourceNumber": 58,
+      "text": "Según la gestión logística en el Servicio Andaluz de Salud, el conjunto de productos cuya utilización es muy escasa o exclusiva de un Centro de consumo se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mercancía en depósito."
+        },
+        {
+          "id": "B",
+          "text": "Mercancía en tránsito."
+        },
+        {
+          "id": "C",
+          "text": "Mercancía almacenable."
+        },
+        {
+          "id": "D",
+          "text": "Mercancía en almacén."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q059",
+      "sourceNumber": 59,
+      "text": "La aplicación del Servicio Andaluz de Salud que recoge tanto información de costes, como de número de profesionales o de actividad sanitaria realizada, además de información diagnóstica o explicativa del coste, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "GIRO."
+        },
+        {
+          "id": "B",
+          "text": "SIGLO."
+        },
+        {
+          "id": "C",
+          "text": "SUR."
+        },
+        {
+          "id": "D",
+          "text": "COAN."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q060",
+      "sourceNumber": 60,
+      "text": "Entre los residuos que se generan en un Hospital se encuentran pañales, yesos, vendajes, gasas, guantes y otros desechables quirúrgicos, bolsas de sangre vacías y restos de medicamentos no peligrosos. Indique en qué grupo se clasifican tales residuos según lo establecido en el Reglamento de Residuos de Andalucía.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Grupo I: Residuos domésticos."
+        },
+        {
+          "id": "B",
+          "text": "Grupo II: Residuos sanitarios asimilables a domésticos."
+        },
+        {
+          "id": "C",
+          "text": "Grupo III: Residuos peligrosos de origen sanitario."
+        },
+        {
+          "id": "D",
+          "text": "Grupo IV: Residuos radioactivos y otros residuos regulados por normativas específicas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q061",
+      "sourceNumber": 61,
+      "text": "El chequeo continuo de máquinas y equipos con el propósito de detectar y evaluar cualquier pequeña variación en su funcionamiento antes de que se produzca un fallo, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mantenimiento correctivo."
+        },
+        {
+          "id": "B",
+          "text": "Mantenimiento preventivo."
+        },
+        {
+          "id": "C",
+          "text": "Mantenimiento predictivo."
+        },
+        {
+          "id": "D",
+          "text": "Mantenimiento de reparación."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q062",
+      "sourceNumber": 62,
+      "text": "El registro de implantes quirúrgicos del Sistema Sanitario Público de Andalucía se regula en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Orden de la Consejería de Salud, de 11 mayo 2009."
+        },
+        {
+          "id": "B",
+          "text": "Orden de la Consejería de Salud y Familias, de 12 abril 2012."
+        },
+        {
+          "id": "C",
+          "text": "Orden de la Consejería de Salud y Consumo, de 15 septiembre 2015."
+        },
+        {
+          "id": "D",
+          "text": "Orden de la Consejería de Salud y Consumo, de 18 marzo de 2022."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q063",
+      "sourceNumber": 63,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, los artículos del catálogo de bienes y servicios de dicha agencia vienen clasificados en su índice a nivel de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Grupo, Subgrupo y Familia."
+        },
+        {
+          "id": "B",
+          "text": "Grupo, Subgrupo, Familia y Subfamilia."
+        },
+        {
+          "id": "C",
+          "text": "Grupo, Familia y Clase Material."
+        },
+        {
+          "id": "D",
+          "text": "Grupo y Familia."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q064",
+      "sourceNumber": 64,
+      "text": "Según la normativa vigente, la utilización del Sistema de Gestión Integral de Recursos Organizativos (GIRO), será obligatoria para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las empresas que suministran al Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Consejería de Salud de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "La Administración de la Junta de Andalucía y sus entidades instrumentales."
+        },
+        {
+          "id": "D",
+          "text": "El Servicio Andaluz de Salud exclusivamente."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q065",
+      "sourceNumber": 65,
+      "text": "El módulo que permite a los profesionales gestionar los pedidos de material necesario en los centros de consumo, permite atender las necesidades específicas de los centros en cuanto a todo lo relacionado con el almacenaje, así como realizar toda la gestión relacionada con la facturación en los centros del Servicio Andaluz de Salud, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "JUPITER."
+        },
+        {
+          "id": "B",
+          "text": "SIGLO."
+        },
+        {
+          "id": "C",
+          "text": "GIRO."
+        },
+        {
+          "id": "D",
+          "text": "COAN SSPA."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q066",
+      "sourceNumber": 66,
+      "text": "¿Qué bloque de DIRAYA tiene como función dotar a cada ciudadano de un Número Único de Historia de Salud de Andalucía (NUHSA), al que se vincula toda su información sanitaria?",
+      "options": [
+        {
+          "id": "A",
+          "text": "MACO."
+        },
+        {
+          "id": "B",
+          "text": "GERHONTE."
+        },
+        {
+          "id": "C",
+          "text": "Base de Datos de Usuario (BDU)."
+        },
+        {
+          "id": "D",
+          "text": "SIGLO."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q067",
+      "sourceNumber": 67,
+      "text": "Según la normativa vigente en el ámbito del Servicio Andaluz de Salud, en relación a la gestión de la lista de espera para intervención quirúrgica, la fecha de inscripción en el Registro de Demanda Quirúrgica será:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La del día de prescripción de la intervención por el facultativo correspondiente, siempre que la solicitud se presente en los 3 días siguientes."
+        },
+        {
+          "id": "B",
+          "text": "La del día siguiente hábil a la presentación de la solicitud por el paciente o persona autorizada para ello."
+        },
+        {
+          "id": "C",
+          "text": "La del día de presentación, por el paciente o persona autorizada para ello, de la solicitud de inscripción en el mismo."
+        },
+        {
+          "id": "D",
+          "text": "La del día de prescripción de la intervención por el facultativo correspondiente, siempre que la solicitud se presente en los 7 días siguientes."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q068",
+      "sourceNumber": 68,
+      "text": "La entidad que evalúa las tecnologías sanitarias cuya finalidad puede ser diagnóstica, de tratamiento, prevención o incluso fórmulas de organización sanitaria, en el ámbito del Sistema Sanitario Público de Andalucía, es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "ACSA."
+        },
+        {
+          "id": "B",
+          "text": "AETSA."
+        },
+        {
+          "id": "C",
+          "text": "IAVANTE."
+        },
+        {
+          "id": "D",
+          "text": "TIC."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q069",
+      "sourceNumber": 69,
+      "text": "¿Cómo se llama el programa dañino que restringe el acceso a determinadas partes o archivos del sistema operativo infectado, y pide un rescate a cambio de quitar esta restricción?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Botnet o red de bots."
+        },
+        {
+          "id": "B",
+          "text": "Backdoors."
+        },
+        {
+          "id": "C",
+          "text": "Spyware."
+        },
+        {
+          "id": "D",
+          "text": "Ransomware."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q070",
+      "sourceNumber": 70,
+      "text": "Un documento en Writer puede verse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En vista Normal."
+        },
+        {
+          "id": "B",
+          "text": "En vista Web."
+        },
+        {
+          "id": "C",
+          "text": "En vista de Pantalla completa."
+        },
+        {
+          "id": "D",
+          "text": "Las tres respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q071",
+      "sourceNumber": 71,
+      "text": "El componente presentaciones de LibreOffice se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Draw."
+        },
+        {
+          "id": "B",
+          "text": "Impress."
+        },
+        {
+          "id": "C",
+          "text": "Base."
+        },
+        {
+          "id": "D",
+          "text": "Math."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q072",
+      "sourceNumber": 72,
+      "text": "Un navegador web o explorador de internet es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un software, aplicación o programa que permite el acceso a la Web, interpretando la información de distintos tipos de archivos y sitios web para que estos puedan ser vistos."
+        },
+        {
+          "id": "B",
+          "text": "Una red informática que utiliza la tecnología del protocolo de Internet para compartir información, sistemas operativos o servicios de computación dentro de una organización."
+        },
+        {
+          "id": "C",
+          "text": "Un protocolo de comunicación de datos digitales clasificado funcionalmente en la capa de red según el modelo internacional OSI."
+        },
+        {
+          "id": "D",
+          "text": "Un conjunto descentralizado de redes de comunicaciones interconectadas, que utilizan la familia de protocolos TCP/IP."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q073",
+      "sourceNumber": 73,
+      "text": "Indique cuál de los siguientes es un sistema de gestión de aprendizaje, gratuito y de código abierto, escrito en PHP:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Moodle."
+        },
+        {
+          "id": "B",
+          "text": "Edmodo."
+        },
+        {
+          "id": "C",
+          "text": "Blog."
+        },
+        {
+          "id": "D",
+          "text": "Mozilla Firefox."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q074",
+      "sourceNumber": 74,
+      "text": "¿Desde qué sección de la Carpeta Ciudadana de la Junta de Andalucía se pueden consultar o solicitar citas para alguno de los organismos relacionados en dicha sección?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diraya."
+        },
+        {
+          "id": "B",
+          "text": "Mis datos."
+        },
+        {
+          "id": "C",
+          "text": "Cit@ción."
+        },
+        {
+          "id": "D",
+          "text": "Mi agenda."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q075",
+      "sourceNumber": 75,
+      "text": "¿Cómo se denomina la plataforma que establece un Registro de Entrada y Salida unificado para toda la Junta de Andalucía?",
+      "options": [
+        {
+          "id": "A",
+          "text": "@firma."
+        },
+        {
+          "id": "B",
+          "text": "Dir@ya."
+        },
+        {
+          "id": "C",
+          "text": "@ries."
+        },
+        {
+          "id": "D",
+          "text": "Not@rio."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q151",
+      "sourceNumber": 151,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, una vez notificada la Resolución de concesión del Reingreso Provisional, si la toma de posesión no se efectúa en plazo, sin mediar causa justificada, la persona interesada seguirá en su situación y no podrá solicitar un nuevo reingreso provisional hasta transcurrido:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Seis meses desde la finalización de este plazo posesorio."
+        },
+        {
+          "id": "B",
+          "text": "A la finalización del periodo de duración de un nuevo proceso de solicitud de reingreso provisional."
+        },
+        {
+          "id": "C",
+          "text": "Dos años desde la finalización de este plazo posesorio."
+        },
+        {
+          "id": "D",
+          "text": "Un año desde la finalización de este plazo posesorio."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q152",
+      "sourceNumber": 152,
+      "text": "En la contabilidad presupuestaria de gastos en la Junta de Andalucía, la partida presupuestaria ofrecerá la siguiente información agrupada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clasificación orgánica, Clasificación económica y funcional, Fondo y Proyecto presupuestario."
+        },
+        {
+          "id": "B",
+          "text": "Clasificación orgánica, Clasificación económica y funcional, Fondo, Proyecto presupuestario y Ejercicio económico."
+        },
+        {
+          "id": "C",
+          "text": "Clasificación orgánica, Fondo y Proyecto presupuestario."
+        },
+        {
+          "id": "D",
+          "text": "Clasificación económica y funcional, Fondo y Proyecto presupuestario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre-q153",
+      "sourceNumber": 153,
+      "text": "Según establece el Decreto 622/2019, de administración electrónica, simplificación de procedimientos y racionalización organizativa de la Junta de Andalucía, los formularios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Incluirán una cláusula que garantice el cumplimiento de los requisitos establecidos en materia de confidencialidad."
+        },
+        {
+          "id": "B",
+          "text": "Indicarán los informes que sea obligatorio aportar por parte del usuario."
+        },
+        {
+          "id": "C",
+          "text": "Deberán estar inscritos en el Registro de Modelos de la Junta de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "De procedimientos administrativos advertirán que las personas interesadas recibirán notificaciones por medios electrónicos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 17
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      151
+    ],
+    "count": 75,
+    "annulledNumbers": [
+      32
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151
+    ],
+    "reserveUsedLabels": {
+      "R1": 151
+    },
+    "annulledCount": 1,
+    "reserveTotal": 3,
+    "reserveUsedCount": 1,
+    "reserveUnusedCount": 2,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 32,
+          "reserveNumber": 151
+        }
+      ],
+      "unreplacedAnnulledNumbers": [],
+      "unusedReserveNumbers": [
+        152,
+        153
+      ]
+    }
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [
+      {
+        "question": null,
+        "option": null,
+        "flag": "answer_key_footer_year:2024_differs_from_questionnaire_year:2025",
+        "sourcePage": 18
+      }
+    ],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  },
+  "nominalQuestionCount": 75
+}

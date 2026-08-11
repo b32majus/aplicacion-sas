@@ -1,0 +1,4662 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-administrativo-2015-promocion-interna",
+  "title": "SAS Administrativo/a 2015 - Promoción Interna",
+  "category": "Administrativo/a",
+  "access": "Promoción Interna",
+  "variant": null,
+  "year": 2015,
+  "durationMinutes": 180,
+  "source": {
+    "pdf": "Examen_ADM_PI_2015.pdf",
+    "sha256": "5c6a78f8ea3ac3ed2ed530bc8500aa9d6364a86713b32285d457f89ec641eed9",
+    "answerKeyPage": 41
+  },
+  "version": {
+    "id": "c1f666560c097e4830c119736cd03d90a64adda69501dcafb2f7afb8ab18d76e",
+    "contentSha256": "184576890264ccb763c9fc62cdb6239f9fd312292f6dccca76a30ab7ffe9aa5d"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q001",
+      "sourceNumber": 1,
+      "text": "El órgano de gobierno colegiado al que les corresponden las funciones de dirección, control y supervisión general del Biobanco del Sistema Sanitario Público de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Consejería de Salud."
+        },
+        {
+          "id": "B",
+          "text": "El Consejo General."
+        },
+        {
+          "id": "C",
+          "text": "El Consejo Rector."
+        },
+        {
+          "id": "D",
+          "text": "El Comité Científico."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q002",
+      "sourceNumber": 2,
+      "text": "Según el Decreto 77/2008, de 4 de marzo, de ordenación administrativa y funcional de los servicios de Salud Mental en el ámbito del Servicio Andaluz de Salud, la Unidad de Salud Mental Comunitaria:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el dispositivo básico de atención especializada a la salud mental."
+        },
+        {
+          "id": "B",
+          "text": "Es el dispositivo asistencial de salud mental que tiene por objeto la recuperación de las habilidades sociales y la reinserción social y laboral, en régimen ambulatorio, de pacientes con trastorno mental grave."
+        },
+        {
+          "id": "C",
+          "text": "Es un dispositivo asistencial de salud mental dirigido al tratamiento intenso de pacientes que requieren una atención sanitaria especializada de salud mental, de forma permanente, completa y prolongada."
+        },
+        {
+          "id": "D",
+          "text": "Es un dispositivo asistencial de salud mental, de hospitalización parcial."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q003",
+      "sourceNumber": 3,
+      "text": "Las intervenciones en materia de salud pública que garantizan los derechos de la ciudadanía vienen regulados, dentro de la Ley 16/2011, de 23 de diciembre, de Salud Pública de Andalucía, en el:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Título V."
+        },
+        {
+          "id": "B",
+          "text": "Título IV."
+        },
+        {
+          "id": "C",
+          "text": "Título III."
+        },
+        {
+          "id": "D",
+          "text": "Título II."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q004",
+      "sourceNumber": 4,
+      "text": "Entre los objetivos enfocados al ciudadano que se plantean en el Plan de Calidad del Sistema Sanitario Público de Andalucía 2010-2014 se encuentra:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Derecho a la asistencia sanitaria gratuita."
+        },
+        {
+          "id": "B",
+          "text": "Una respuesta única para una atención sanitaria integrada, integral y segura."
+        },
+        {
+          "id": "C",
+          "text": "Derecho a la libre elección de médico especialista."
+        },
+        {
+          "id": "D",
+          "text": "Una respuesta personalizada que garantice la confidencialidad del proceso."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q005",
+      "sourceNumber": 5,
+      "text": "La Ley que regula en el ámbito de la Comunidad Autónoma de Andalucía los derechos y garantías de la dignidad de la persona en el proceso de muerte es la:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 3/2001, de 5 de mayo."
+        },
+        {
+          "id": "B",
+          "text": "Ley 3/2007, de 5 de abril."
+        },
+        {
+          "id": "C",
+          "text": "Ley 6/2007, de 8 de mayo."
+        },
+        {
+          "id": "D",
+          "text": "Ley 2/2010, de 8 de abril."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q006",
+      "sourceNumber": 6,
+      "text": "Según la Ley 5/2003, de 9 de octubre, se crea el Registro de Voluntades Vitales Anticipadas de Andalucía para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La custodia, conservación y accesibilidad de las declaraciones de voluntad vital anticipada emitidas en el territorio de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "La custodia y conservación de las declaraciones de voluntad vital anticipada emitidas en el territorio de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "La custodia y accesibilidad de las declaraciones de voluntad vital anticipada emitidas en el territorio de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "La custodia, conservación, garantía testamentaria y accesibilidad de las declaraciones de voluntad vital anticipada emitidas en el territorio de la Comunidad Autónoma de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q007",
+      "sourceNumber": 7,
+      "text": "La norma que regula la libre elección de Médico Especialista y de Hospital en el Sistema Sanitario Público de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 5/2001, de 8 de abril."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 5/2001, de 8 de abril."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 128/1997, de 6 de mayo."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 22/1993, de 8 de abril."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q008",
+      "sourceNumber": 8,
+      "text": "En un puesto de trabajo administrativo, ¿cómo se debe colocar una PVD con respecto a las condiciones de iluminación del espacio de trabajo?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las ventanas deben quedar detrás de la pantalla para evitar el deslumbramiento del trabajador."
+        },
+        {
+          "id": "B",
+          "text": "No debe importar la ubicación ya que las pantallas actuales eliminan los reflejos."
+        },
+        {
+          "id": "C",
+          "text": "Las pantallas se ubicarán de tal forma que las fuentes de luz no provoquen deslumbramientos directos ni reflejos."
+        },
+        {
+          "id": "D",
+          "text": "La iluminación general debe garantizar unos niveles adecuados de luz en función a las características del puesto de trabajo y del tipo de ordenador utilizado."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q009",
+      "sourceNumber": 9,
+      "text": "Según se recoge en el art. 2.4 de la Ley 7/2007, de 12 de abril, del Estatuto Básico del Empleado Público (EBEP), cada vez que este Estatuto haga mención al personal funcionario de carrera se entenderá comprendido:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El personal estatutario de los Servicios de Salud."
+        },
+        {
+          "id": "B",
+          "text": "El personal de las Corporaciones Locales."
+        },
+        {
+          "id": "C",
+          "text": "El personal de las Agencias Administrativas."
+        },
+        {
+          "id": "D",
+          "text": "El personal de las Diputaciones Provinciales."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q010",
+      "sourceNumber": 10,
+      "text": "Según la Ley 7/2007 (EBEP) la evaluación del desempeño de los empleados públicos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el procedimiento mediante el cual se mide y valora la conducta profesional y el rendimiento o el logro de resultados."
+        },
+        {
+          "id": "B",
+          "text": "Es la herramienta que utiliza la Administración Pública para abonar la productividad variable."
+        },
+        {
+          "id": "C",
+          "text": "Es el procedimiento mediante el cual evalúa el rendimiento o el logro de resultados."
+        },
+        {
+          "id": "D",
+          "text": "Es el procedimiento mediante el cual se mide y valora la conducta profesional y el logro de resultados de las distintas unidades o servicios."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q011",
+      "sourceNumber": 11,
+      "text": "Según la Ley 7/2007 (EBEP) y en relación al derecho de reunión, las reuniones en el centro de trabajo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se autorizarán fuera de las horas de trabajo, salvo acuerdo entre el la Dirección del Centro u Organismo y quienes estén legitimados para convocarlas."
+        },
+        {
+          "id": "B",
+          "text": "Se autorizarán fuera de las horas de trabajo, salvo acuerdo entre el órgano competente en materia de personal y los representantes de las organizaciones sindicales."
+        },
+        {
+          "id": "C",
+          "text": "Se autorizarán en horas de trabajo, salvo acuerdo entre el órgano competente en materia de personal y los representantes de las organizaciones sindicales."
+        },
+        {
+          "id": "D",
+          "text": "Se autorizarán fuera de las horas de trabajo, salvo acuerdo entre el órgano competente en materia de personal y quienes estén legitimados para convocarlas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q012",
+      "sourceNumber": 12,
+      "text": "Según la Ley 30/1992, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común (LRJAP-PAC), en sus relaciones con los ciudadanos las Administraciones públicas actúan de conformidad con los principios de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Eficiencia y participación."
+        },
+        {
+          "id": "B",
+          "text": "Eficacia y eficiencia."
+        },
+        {
+          "id": "C",
+          "text": "Transparencia y participación."
+        },
+        {
+          "id": "D",
+          "text": "Eficiencia y transparencia."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q013",
+      "sourceNumber": 13,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), la encomienda de gestión, la delegación de firma y la suplencia:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No suponen, en ningún caso, la renuncia a la competencia del órgano que la tiene asignada."
+        },
+        {
+          "id": "B",
+          "text": "Suponen una alteración de la titularidad de la competencia."
+        },
+        {
+          "id": "C",
+          "text": "Suponen una alteración temporal de la titularidad de la competencia."
+        },
+        {
+          "id": "D",
+          "text": "No suponen alteración de la titularidad de la competencia.."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q014",
+      "sourceNumber": 14,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), las delegaciones de competencias y su revocación deberán publicarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el Boletín Oficial del Estado ó en el de la Comunidad Autónoma, según la Administración a la que pertenezca el órgano delegante."
+        },
+        {
+          "id": "B",
+          "text": "En el Boletín Oficial del Estado, en el de la Comunidad Autónoma o en el de la Provincia, según la Administración a la que pertenezca el órgano delegante y el ámbito territorial de competencia de éste."
+        },
+        {
+          "id": "C",
+          "text": "En el Boletín Oficial del Estado, en el de la Comunidad Autónoma o en el de la Provincia, según la Administración a la que pertenezca el órgano delegante."
+        },
+        {
+          "id": "D",
+          "text": "En el Boletín Oficial del Estado, en el de la Comunidad Autónoma y en el de la Provincia.."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q015",
+      "sourceNumber": 15,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), y en relación a la delegación de firma, se recoge que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No alterará la competencia del órgano delegante y para su validez será necesaria su publicación."
+        },
+        {
+          "id": "B",
+          "text": "En el pié de firma se recogerá literalmente “Por delegación de”, indicando a continuación el nombre y apellidos del delegante."
+        },
+        {
+          "id": "C",
+          "text": "No cabrá delegación de firma en las resoluciones de carácter sancionador."
+        },
+        {
+          "id": "D",
+          "text": "No cabrá delegación de firma en las resoluciones de carácter sancionador, salvo autorización expresa del máximo órgano de la Administración correspondiente.."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q016",
+      "sourceNumber": 16,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), se consideran interesados en el procedimiento:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los titulares de derechos o intereses legítimos individuales o colectivos, independientemente de que puedan resultar afectados por la decisión que en el mismo se adopte."
+        },
+        {
+          "id": "B",
+          "text": "Quienes lo promuevan como titulares de derechos o intereses legítimos individuales o colectivos."
+        },
+        {
+          "id": "C",
+          "text": "Aquellos cuyos intereses resulten afectados por la resolución, independientemente de que se hayan personado en el procedimiento."
+        },
+        {
+          "id": "D",
+          "text": "Exclusivamente los que tengan intereses legítimos individuales o colectivos y puedan verse afectados por la resolución.."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q017",
+      "sourceNumber": 17,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), y en relación a la motivación de los actos administrativos, recoge que serán motivados, con sucinta referencia de hechos y fundamentos de derecho:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todos los actos administrativos."
+        },
+        {
+          "id": "B",
+          "text": "Exclusivamente los que resuelvan procedimientos."
+        },
+        {
+          "id": "C",
+          "text": "Los que se separen del criterio seguido en actuaciones precedentes o del dictamen de órganos consultivos."
+        },
+        {
+          "id": "D",
+          "text": "Los que suspendan derechos de menores de edad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q018",
+      "sourceNumber": 18,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), las solicitudes que se formulen para iniciar un procedimiento, deberán contener estos datos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Órgano, centro o unidad administrativa en la que se presenta."
+        },
+        {
+          "id": "B",
+          "text": "Órgano, centro o unidad administrativa que debe resolver."
+        },
+        {
+          "id": "C",
+          "text": "Órgano, centro o unidad administrativa a la que se dirige."
+        },
+        {
+          "id": "D",
+          "text": "La persona o cargo al que se presenta la solicitud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q019",
+      "sourceNumber": 19,
+      "text": "La Ley 30/1992 (LRJAP-PAC), en relación a la celeridad, recoge que al solicitar los trámites que deban ser cumplidos por otros órganos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Deberá consignarse en la comunicación cursada que el plazo legal establecido al efecto es de 10 días a partir de la notificación."
+        },
+        {
+          "id": "B",
+          "text": "Deberá consignarse en la comunicación cursada que el plazo legal establecido al efecto es de 10 días laborables a partir de la notificación."
+        },
+        {
+          "id": "C",
+          "text": "Deberá consignarse en la comunicación cursada que el plazo legal establecido al efecto es de 20 días a partir de la notificación."
+        },
+        {
+          "id": "D",
+          "text": "Deberá consignarse en la comunicación cursada el plazo legal establecido al efecto."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q020",
+      "sourceNumber": 20,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), las cuestiones incidentales que se susciten en el procedimiento, incluso las que se refieran a la nulidad de actuaciones:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No suspenderán la tramitación del mismo, salvo la recusación."
+        },
+        {
+          "id": "B",
+          "text": "Suspenderán la tramitación del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Suspenderán la tramitación del mismo siempre que no se hayan sido originadas por el interesado."
+        },
+        {
+          "id": "D",
+          "text": "No suspenderán la tramitación del mismo en ningún caso."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q021",
+      "sourceNumber": 21,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), en procedimientos iniciados a solicitud del interesado el silencio administrativo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tendrá efecto desestimatorio en los procedimientos de impugnación de actos y disposiciones."
+        },
+        {
+          "id": "B",
+          "text": "Tendrá efecto estimatorio en todos los casos, dada la obligación de la Administración de responder en plazo."
+        },
+        {
+          "id": "C",
+          "text": "Tendrá efecto desestimatorio en procedimientos de petición."
+        },
+        {
+          "id": "D",
+          "text": "Tendrá efecto estimatorio en todos los procedimientos de petición."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q022",
+      "sourceNumber": 22,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), contra las resoluciones y los actos de trámite, si estos últimos deciden directa o indirectamente el fondo del asunto, determinan la imposibilidad de continuar el procedimiento, producen indefensión o perjuicio irreparable a derechos e intereses legítimos, podrán los interesados interponer:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Recurso de alzada"
+        },
+        {
+          "id": "B",
+          "text": "Recurso potestativo de reposición."
+        },
+        {
+          "id": "C",
+          "text": "Recursos de alzada, potestativo de reposición ó el extraordinario de revisión, de acuerdo con lo previsto en el artículo 62 de esta Ley."
+        },
+        {
+          "id": "D",
+          "text": "Recursos de alzada y potestativo de reposición, que cabrá fundar en cualquiera de los motivos de nulidad o anulabilidad previstos en los artículos 62 y 63 de esta Ley."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q023",
+      "sourceNumber": 23,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), se podrá interponer recurso extraordinario de revisión contra los actos formes en vía administrativa que al dictarlos se hubiera incurrido en error de hecho, que resulte de los propios documentos incorporados al expediente. En este caso el plazo máximo para interponer el recurso es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 meses a contar desde la notificación de la resolución impugnada."
+        },
+        {
+          "id": "B",
+          "text": "4 años a contar desde la notificación de la resolución impugnada."
+        },
+        {
+          "id": "C",
+          "text": "5 años a contar desde la notificación de la resolución impugnada."
+        },
+        {
+          "id": "D",
+          "text": "6 años a contar desde la notificación de la resolución impugnada."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q024",
+      "sourceNumber": 24,
+      "text": "Según el Real Decreto 429/1993, por el que se aprueba el Reglamento de los procedimientos de las Administraciones Públicas en materia de responsabilidad patrimonial, el derecho a reclamar en el procedimiento general prescribe:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La exigencia de responsabilidad patrimonial a las Administraciones Públicas no prescribe nunca."
+        },
+        {
+          "id": "B",
+          "text": "A los 4 años de producido el hecho o el acto que motive la indemnización o de manifestarse su efecto lesivo."
+        },
+        {
+          "id": "C",
+          "text": "A los 2 años de producido el hecho o el acto que motive la indemnización o de manifestarse su efecto lesivo."
+        },
+        {
+          "id": "D",
+          "text": "Al año de producido el hecho o el acto que motive la indemnización o de manifestarse su efecto lesivo."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q025",
+      "sourceNumber": 25,
+      "text": "Según el Real Decreto 429/1993, por el que se aprueba el Reglamento de los procedimientos de las Administraciones Públicas en materia de responsabilidad patrimonial, el acuerdo indemnizatorio en un procedimiento general podrá producirse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En cualquier momento del procedimiento anterior al trámite de audiencia."
+        },
+        {
+          "id": "B",
+          "text": "En cualquier momento del procedimiento anterior al dictamen del Consejo de Estado o en su caso del órgano consultivo de la Comunidad Autónoma."
+        },
+        {
+          "id": "C",
+          "text": "En cualquier momento del procedimiento."
+        },
+        {
+          "id": "D",
+          "text": "En cualquier momento del procedimiento anterior a la terminación."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q026",
+      "sourceNumber": 26,
+      "text": "Según la Orden de 24 de noviembre de 1992, conjunta de la Consejería de Gobernación y de la Consejería de Asuntos Sociales, sobre la eliminación del lenguaje sexista en los textos y documentos administrativos, en cualquier cuestión relativa a las ofertas de empleo, convocatorias de acceso a la Función Pública así como a la publicidad que de ellas se realice:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se redactarán de tal forma que hombres y mujeres se encuentren bien reflejados."
+        },
+        {
+          "id": "B",
+          "text": "Se redactarán de tal forma que hombres y mujeres se encuentren representados."
+        },
+        {
+          "id": "C",
+          "text": "Se redactarán de tal forma que hombres y mujeres se encuentren reflejados sin ambigüedad."
+        },
+        {
+          "id": "D",
+          "text": "Se redactarán de tal forma que hombres y mujeres se encuentren reflejados de forma inequívoca."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q027",
+      "sourceNumber": 27,
+      "text": "Según el Decreto 204/1995, de 29 de agosto, por el que se establecen medidas organizativas para los servicios administrativos de atención directa a los ciudadanos en el ámbito de actuación de la Administración Junta de Andalucía, la competencia para la expedición de copias auténticas de documentos administrativos de la Junta de Andalucía corresponderá a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los órganos administrativos que hubieran emitido el documento original."
+        },
+        {
+          "id": "B",
+          "text": "Los órganos administrativos de cualquier organismo público adscrito a la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Los órganos administrativos de cualquier organismo adscrito a la Junta de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "A los Secretarios Generales de cualquier organismo adscrito a la Junta de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q028",
+      "sourceNumber": 28,
+      "text": "Según el Decreto 262/1998, de 2 de agosto, por el que se establece el Libro de Sugerencias y Reclamaciones, en relación con el funcionamiento de los Servicios de la Junta de Andalucía, establece que recibidas las denuncias en la dependencia afectada, ésta informará al órgano directivo del que dependa en el plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 días y previas las aclaraciones que estime pertinente recabar del interesado."
+        },
+        {
+          "id": "B",
+          "text": "15 días y previas las aclaraciones que estime pertinente recabar del interesado."
+        },
+        {
+          "id": "C",
+          "text": "10 días y previas las aclaraciones que estime pertinente recabar del interesado."
+        },
+        {
+          "id": "D",
+          "text": "7 días y previas las aclaraciones que estime pertinente recabar del interesado."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q029",
+      "sourceNumber": 29,
+      "text": "Cada Libro de Sugerencias y Reclamaciones de la Junta de Andalucía establecido por Decreto 262/1988, de 2 de agosto, estará integrado por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "100 juegos de hojas encuadernadas y numeradas del 001 al 100."
+        },
+        {
+          "id": "B",
+          "text": "75 juegos de hojas encuadernadas y numeradas del 01 al 75."
+        },
+        {
+          "id": "C",
+          "text": "50 juegos de hojas encuadernadas y numeradas del 01 al 50."
+        },
+        {
+          "id": "D",
+          "text": "25 juegos de hojas encuadernadas y numeradas del 01 al 25."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q030",
+      "sourceNumber": 30,
+      "text": "Cada juego de hojas del Libro de Sugerencias y Reclamaciones de la Junta de Andalucía establecido por Decreto 262/1988, de 2 de agosto, estará integrado por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Original y copia."
+        },
+        {
+          "id": "B",
+          "text": "Original y dos copias."
+        },
+        {
+          "id": "C",
+          "text": "Original y tres copias."
+        },
+        {
+          "id": "D",
+          "text": "Original y cuatro copias."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q031",
+      "sourceNumber": 31,
+      "text": "En la actualidad, entre los servicios del Servicio Andaluz de Salud a los que los ciudadanos pueden acceder a través de medios electrónicos (Internet), se encuentran los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Solicitud de tarjeta sanitaria, libre elección de médico, libre elección de centro sanitario de atención primaria y de hospital, elección de enfermera y centro de atención primaria por desplazamiento para tiempo superior a un mes e indefinido."
+        },
+        {
+          "id": "B",
+          "text": "Solicitud de tarjeta sanitaria, libre elección de médico y especialista, libre elección de centro sanitario de atención primaria y hospital, elección de médico y centro de atención primaria por desplazamiento por tiempo superior a un mes e inferior a un año."
+        },
+        {
+          "id": "C",
+          "text": "Solicitud de tarjeta sanitaria, libre elección de médico, libre elección de centro sanitario de atención primaria, elección de médico y centro de atención primaria por desplazamiento por tiempo superior a un mes e indefinido."
+        },
+        {
+          "id": "D",
+          "text": "Solicitud de tarjeta sanitaria, libre elección de médico, libre elección de centro sanitario de atención primaria, elección de médico y centro de atención primaria por desplazamiento por tiempo superior a un mes e inferior a un año."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q032",
+      "sourceNumber": 32,
+      "text": "Los valores del Servicio Andaluz de Salud como organismo público recogidos en su Manual de estilo son los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Igualdad en el trato, Universalidad, Accesibilidad, Mejora continúa de la calidad, Atención integral, Atención personalizada, Continuidad de la atención, Integración, Eficacia, Eficiencia."
+        },
+        {
+          "id": "B",
+          "text": "Igualdad de trato, Equidad, Universalidad, Accesibilidad, Mejora continua de la calidad, Atención integral, Atención personalizada, Continuidad de la atención, Eficacia, Eficiencia."
+        },
+        {
+          "id": "C",
+          "text": "Igualdad en el trato, Universalidad, Accesibilidad, Mejora continua de la calidad, Atención integral, Atención inmediata, Atención personalizada, Continuidad de la atención, Eficacia, Eficiencia."
+        },
+        {
+          "id": "D",
+          "text": "Equidad, Universalidad, Accesibilidad, Mejora continua de la calidad, Atención integral, Atención personalizada, Continuidad de la atención, Eficacia, Eficiencia."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q033",
+      "sourceNumber": 33,
+      "text": "Según el Manual de estilo del SAS, la identificación del personal, mediante el uso de la tarjeta identificativa de manera visible, es obligatoria en los siguientes casos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para el personal sanitario, durante sus actuaciones con el usuario."
+        },
+        {
+          "id": "B",
+          "text": "Para el personal sanitario durante su permanencia en el centro."
+        },
+        {
+          "id": "C",
+          "text": "Para todo el personal durante sus actuaciones con el usuario."
+        },
+        {
+          "id": "D",
+          "text": "Para todo el personal durante el tiempo de permanencia en el centro."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q034",
+      "sourceNumber": 34,
+      "text": "Según el Plan de Ordenación de Recursos Humanos del Servicio Andaluz de Salud vigente en la actualidad, un/a Facultativo/a Especialista de Área perteneciente al personal estatutario, tiene la posibilidad, como norma general, de prolongación voluntaria de la permanencia en el servicio activo hasta los",
+      "options": [
+        {
+          "id": "A",
+          "text": "65 años."
+        },
+        {
+          "id": "B",
+          "text": "71 años."
+        },
+        {
+          "id": "C",
+          "text": "67 años."
+        },
+        {
+          "id": "D",
+          "text": "70 años."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q035",
+      "sourceNumber": 35,
+      "text": "La norma de la Comunidad Autónoma de Andalucía en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 136/2001."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 176/2001."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 204/1995."
+        },
+        {
+          "id": "D",
+          "text": "Orden 204/1995."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q036",
+      "sourceNumber": 36,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, la provisión de plazas vacantes se realizará por los sistemas de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Promoción interna, reingreso al servicio activo, comisión de servicios, concurso de traslado y a través de los sistemas de selección de oposición, concurso y concurso- oposición."
+        },
+        {
+          "id": "B",
+          "text": "Promoción interna, reingreso al servicio activo, concurso de traslado y a través de los sistemas de selección de oposición, concurso y concurso-oposición."
+        },
+        {
+          "id": "C",
+          "text": "Promoción interna, comisión de servicio, concurso de traslado y a través de los sistemas de selección de oposición, concurso y concurso-oposición."
+        },
+        {
+          "id": "D",
+          "text": "Comisión de servicio, reingreso al servicio activo, concurso de traslado y a través de los sistemas de selección de oposición, concurso y concurso-oposición."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q037",
+      "sourceNumber": 37,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, las personas participantes en un concurso de traslados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No podrán desistir de su participación en el concurso una vez finalizado el plazo de presentación de solicitudes."
+        },
+        {
+          "id": "B",
+          "text": "Podrán desistir de su participación en el concurso hasta la publicación de la resolución provisional del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Podrán desistir de su participación en el concurso hasta la finalización del plazo de alegaciones a la resolución provisional del mismo."
+        },
+        {
+          "id": "D",
+          "text": "Podrán desistir de su participación en el concurso en cualquier momento anterior a la publicación de la resolución definitiva del mismo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q038",
+      "sourceNumber": 38,
+      "text": "En el ámbito del Servicio Andaluz de Salud, en caso de ser autorizada una Comisión de Servicio entre centros dependientes de esta agencia, el órgano al que corresponde emitir la resolución favorable de la misma es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Director Gerente de Área de Gestión, Director Gerente de Hospital, Director Gerente de Distrito Sanitario o Director Gerente de Centro Regional de Transfusiones Sanguíneas del centro en el que se concede la comisión."
+        },
+        {
+          "id": "B",
+          "text": "Dirección General de Profesionales."
+        },
+        {
+          "id": "C",
+          "text": "Dirección General de Asistencia Sanitaria y Resultados en Salud."
+        },
+        {
+          "id": "D",
+          "text": "Dirección Gerencia del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q039",
+      "sourceNumber": 39,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, los órganos de gestión recogidos en el mismo son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mesa Sectorial de Sanidad y Dirección General de Profesionales."
+        },
+        {
+          "id": "B",
+          "text": "Unidad Central de Gestión y Unidad de Gestión de Centro."
+        },
+        {
+          "id": "C",
+          "text": "Unidad Central de Gestión y Mesa Sectorial de Sanidad."
+        },
+        {
+          "id": "D",
+          "text": "Mesa Sectorial de Sanidad."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q040",
+      "sourceNumber": 40,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, el plazo de inscripción de solicitudes y autobaremo es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Del 1 al 31 de Octubre de cada año."
+        },
+        {
+          "id": "B",
+          "text": "Abierto y permanente."
+        },
+        {
+          "id": "C",
+          "text": "10 días hábiles desde la convocatoria."
+        },
+        {
+          "id": "D",
+          "text": "1 mes desde la publicación de la convocatoria."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q041",
+      "sourceNumber": 41,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, las comisiones de Valoración de cada categoría y/o especialidad estará compuesta por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 miembros."
+        },
+        {
+          "id": "B",
+          "text": "3 miembros."
+        },
+        {
+          "id": "C",
+          "text": "4 miembros."
+        },
+        {
+          "id": "D",
+          "text": "5 miembros."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q042",
+      "sourceNumber": 42,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, en el caso de reducción de jornada por guarda legal, se establece entre sus características que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El disfrute de esta reducción no tiene que coincidir necesariamente con la jornada complementaria."
+        },
+        {
+          "id": "B",
+          "text": "Su concesión atenderá a las circunstancias organizativas, funcionales, asistenciales, que en cada caso se determinen."
+        },
+        {
+          "id": "C",
+          "text": "Esta reducción es compatible con el desarrollo de cualquier otra actividad económica, remunerada o no, durante el horario objeto de la reducción."
+        },
+        {
+          "id": "D",
+          "text": "Esta reducción es compatible con el desarrollo de cualquier otra actividad económica, remunerada o no, durante el horario distinto al objeto de la reducción."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q043",
+      "sourceNumber": 43,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, en relación al permiso por adopción o acogimiento, en el caso de adopción internacional, si es necesario el desplazamiento previo de los padres al país de origen del adoptado, los profesionales tendrán derecho a un permiso de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hasta dos meses de duración, percibiendo durante este periodo exclusivamente las retribuciones básicas."
+        },
+        {
+          "id": "B",
+          "text": "Hasta un mes de duración, percibiendo durante este periodo las retribuciones básicas y complementarias."
+        },
+        {
+          "id": "C",
+          "text": "Hasta un mes de duración, percibiendo durante este periodo exclusivamente las retribuciones básicas."
+        },
+        {
+          "id": "D",
+          "text": "Hasta quince días de duración, percibiendo durante este periodo las retribuciones básicas y complementarias."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q044",
+      "sourceNumber": 44,
+      "text": "La competencia del ejercicio de la potestad disciplinaria en el Servicio Andaluz de Salud la tiene:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del centro en el que se produzcan los hechos."
+        },
+        {
+          "id": "B",
+          "text": "La Subdirección de Personal del centro en el que se produzcan los hechos."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección General de Profesionales del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Gerencia del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q045",
+      "sourceNumber": 45,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, el nombramiento de instructor/a y, en su caso, Secretario/a, en expediente disciplinario por presuntas faltas graves y muy graves, se realizará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una vez solicitada por parte de la Dirección Gerencia del centro a la Unidad de Personal la información relativa a vinculación administrativa del presunto autor de los hechos."
+        },
+        {
+          "id": "B",
+          "text": "En el acto en el que el presunto autor de los hechos realice la primera declaración."
+        },
+        {
+          "id": "C",
+          "text": "En la comunicación de cita al presunto autor de los hechos para que realice la primera declaración."
+        },
+        {
+          "id": "D",
+          "text": "En el acuerdo de iniciación de expediente La Dirección General de Profesionales del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q046",
+      "sourceNumber": 46,
+      "text": "La autorización, reconocimiento o denegación de la compatibilidad genérica o de la específica, para desempeñar un segundo puesto o actividad pública o privada, del personal estatutario del Servicio Andaluz de Salud, corresponderá a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La persona titular de la Dirección General de Profesionales del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La persona titular de la Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "La persona titular de la Consejería de Justicia y Administración Pública (En la actualidad Consejería de Hacienda y Administración Pública)."
+        },
+        {
+          "id": "D",
+          "text": "La persona titular de la Dirección Gerencia del Hospital, Área Sanitaria o Centro Regional de Transfusiones sanguíneas donde preste servicios el profesional que solicita la compatibilidad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q047",
+      "sourceNumber": 47,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, los siguientes conceptos tienen la consideración de retribuciones básicas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sueldo, Trienios y Pagas Extraordinarias."
+        },
+        {
+          "id": "B",
+          "text": "Sueldo, Trienios y Complemento de Destino."
+        },
+        {
+          "id": "C",
+          "text": "Sueldo, Complemento de Destino y Pagas Extraordinarias."
+        },
+        {
+          "id": "D",
+          "text": "Sueldo, Trienios, Complemento de Destino y Complemento Específico."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q048",
+      "sourceNumber": 48,
+      "text": "Durante el tiempo que se permanezca en la situación de Promoción Interna Temporal en centros del Servicio Andaluz de Salud, los profesionales percibirán las retribuciones correspondientes a las funciones desempeñadas, con excepción de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los haberes básicos que se seguirán percibiendo con cargo a la categoría de origen."
+        },
+        {
+          "id": "B",
+          "text": "Los haberes complementarios que se seguirán percibiendo con cargo a la categoría de origen."
+        },
+        {
+          "id": "C",
+          "text": "Los trienios que se seguirán percibiendo con cargo a la categoría de origen."
+        },
+        {
+          "id": "D",
+          "text": "El complemento de rendimiento personal, que se seguirá percibiendo con cargo a la categoría de origen."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q049",
+      "sourceNumber": 49,
+      "text": "Para determinar la base de cotización por contingencias comunes en el Régimen General de Seguridad Social de la nómina mensual de un trabajador, se computará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La remuneración devengada en el mes a que se refiere la cotización, añadiendo la parte proporcional de las gratificaciones extraordinarias o que no tengan carácter periódico y se satisfagan dentro del ejercicio económico."
+        },
+        {
+          "id": "B",
+          "text": "La remuneración devengada en el mes a que se refiere la cotización, añadiendo la parte proporcional de aquellos otros conceptos retributivos que tengan una periodicidad distinta a la mensual y que tengan carácter periódico, siempre que se satisfagan dentro del ejercicio económico."
+        },
+        {
+          "id": "C",
+          "text": "La remuneración devengada en el mes a que se refiere la cotización, añadiendo la parte proporcional de las gratificaciones extraordinarias establecidas y de aquellos otros conceptos retributivos que tengan una periodicidad en su devengo superior a la mensual o que no tengan carácter periódico y se satisfagan dentro del ejercicio económico."
+        },
+        {
+          "id": "D",
+          "text": "La remuneración devengada en el mes a que se refiere la cotización."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q050",
+      "sourceNumber": 50,
+      "text": "En el Sistema Español de Seguridad Social, entre los regímenes especiales se encuentran los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Trabajadores por cuenta propia o autónomos, Trabajadores del mar y Funcionarios públicos, civiles y militares."
+        },
+        {
+          "id": "B",
+          "text": "Trabajadores por cuenta propia o autónomos, Empleados de hogar y Funcionarios públicos, civiles y militares."
+        },
+        {
+          "id": "C",
+          "text": "Trabajadores por cuenta propia o autónomos, Empleados de hogar y Estudiantes."
+        },
+        {
+          "id": "D",
+          "text": "Trabajadores por cuenta propia o autónomos y Empleados de hogar."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q051",
+      "sourceNumber": 51,
+      "text": "En el Sistema Español de Seguridad Social, y según la normativa vigente, la afiliación podrá practicarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A petición de los trabajadores y entidades obligadas a dicho acto."
+        },
+        {
+          "id": "B",
+          "text": "A petición de las personas y entidades obligadas a dicho acto, a instancia de los interesados o de oficio por la Administración de la Seguridad Social."
+        },
+        {
+          "id": "C",
+          "text": "A petición de las entidades obligadas a dicho acto o de oficio por la Administración de la Seguridad Social."
+        },
+        {
+          "id": "D",
+          "text": "A petición del empresario o de oficio por la Tesorería General de la Seguridad Social de la provincia correspondiente."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q052",
+      "sourceNumber": 52,
+      "text": "Según la normativa vigente, las bases de cotización a la Seguridad Social tendrán como tope mínimo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las cuantías del salario mínimo interprofesional vigente en cada momento."
+        },
+        {
+          "id": "B",
+          "text": "Las cuantías del salario mínimo interprofesional vigente en cada momento, incrementadas en un sexto, salvo disposición expresa en contrario."
+        },
+        {
+          "id": "C",
+          "text": "Las cuantías del salario mínimo interprofesional vigente en cada momento, incrementadas en un tercio."
+        },
+        {
+          "id": "D",
+          "text": "Las cuantías del salario mínimo interprofesional vigente en cada momento, incrementadas en la parte proporcional de las pagas extraordinarias."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q053",
+      "sourceNumber": 53,
+      "text": "Según la normativa vigente en materia de Seguridad Social, la prestación económica en situación de incapacidad temporal consistirá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En un subsidio equivalente a un tanto por ciento sobre la base reguladora."
+        },
+        {
+          "id": "B",
+          "text": "En un subsidio equivalente a las retribuciones fijas recogidas en la nómina del trabajador en situación de incapacidad temporal."
+        },
+        {
+          "id": "C",
+          "text": "En un subsidio equivalente a las retribuciones fijas recogidas en la nómina del trabajador en situación de incapacidad temporal el mes anterior a la baja."
+        },
+        {
+          "id": "D",
+          "text": "En un subsidio equivalente a un tanto por ciento sobre la base reguladora media de los seis meses anteriores a la fecha de inicio de la situación de incapacidad temporal."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q054",
+      "sourceNumber": 54,
+      "text": "Según la normativa vigente en materia de Seguridad Social, en el caso de jubilación anticipada por voluntad del interesado, se exigirá como requisito acreditar un periodo mínimo de cotización efectiva de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 años."
+        },
+        {
+          "id": "B",
+          "text": "25 años."
+        },
+        {
+          "id": "C",
+          "text": "35 años."
+        },
+        {
+          "id": "D",
+          "text": "38 años y seis meses."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q055",
+      "sourceNumber": 55,
+      "text": "La Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía consta de la siguiente estructura:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Régimen de la Hacienda Pública de la Junta de Andalucía, Presupuesto y Control financiero y permanente."
+        },
+        {
+          "id": "B",
+          "text": "Control interno y de la contabilidad pública, Responsabilidad Patrimonial de la Junta de Andalucía y Control financiero y permanente."
+        },
+        {
+          "id": "C",
+          "text": "Régimen de la Hacienda Pública de la Junta de Andalucía, Responsabilidad Patrimonial de la Junta de Andalucía y Subvenciones Privadas."
+        },
+        {
+          "id": "D",
+          "text": "Control interno y de la contabilidad pública, Responsabilidades y Subvenciones."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q056",
+      "sourceNumber": 56,
+      "text": "Entre los contenidos de los títulos recogidos en la Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 Título Preliminar, relativo a las disposiciones generales y 4 Títulos."
+        },
+        {
+          "id": "B",
+          "text": "1 Título Preliminar y 4 Títulos."
+        },
+        {
+          "id": "C",
+          "text": "1 Título Preliminar y 6 Títulos."
+        },
+        {
+          "id": "D",
+          "text": "1 Título Preliminar, relativo a las disposiciones generales y 7 Títulos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q057",
+      "sourceNumber": 57,
+      "text": "Entre las competencias que la Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía recoge para las Agencias Administrativas, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La administración, gestión y recaudación de los derechos económicos de la propia agencia administrativa."
+        },
+        {
+          "id": "B",
+          "text": "Elaborar el anteproyecto de presupuestos, ingresos y gastos, de la propia agencia."
+        },
+        {
+          "id": "C",
+          "text": "Autorizar todos los gastos relativos a la materia que gestione la agencia administrativa."
+        },
+        {
+          "id": "D",
+          "text": "Disponer o comprometer los pagos relativos a la materia que gestione la agencia administrativa."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q058",
+      "sourceNumber": 58,
+      "text": "En relación a la contabilidad presupuestaria de la Junta de Andalucía, todos los actos y hechos económicos que deban ser registrados en la contabilidad de la ejecución o modificación del presupuesto de gastos e ingresos o en la contabilidad extrapresupuestaria, deberán estar soportados en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un documento contable."
+        },
+        {
+          "id": "B",
+          "text": "Un soporte informático adecuado para el control."
+        },
+        {
+          "id": "C",
+          "text": "Un documento acreditativo del gasto o ingreso."
+        },
+        {
+          "id": "D",
+          "text": "El cumplimiento de la normativa vigente y el control financiero de la Cámara de Cuentas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q059",
+      "sourceNumber": 59,
+      "text": "En la contabilidad presupuestaria de gastos, la partida presupuestaria ofrecerá la siguiente información agrupada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clasificación orgánica, Fondo y Proyecto presupuestario."
+        },
+        {
+          "id": "B",
+          "text": "Clasificación económica y funcional, Fondo y Proyecto presupuestario."
+        },
+        {
+          "id": "C",
+          "text": "Clasificación orgánica, Clasificación económica y funcional, Fondo y Proyecto presupuestario."
+        },
+        {
+          "id": "D",
+          "text": "Clasificación orgánica, Clasificación económica u funcional, Fondo, Proyecto presupuestario y Ejercicio económico."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q060",
+      "sourceNumber": 60,
+      "text": "Según la normativa vigente, una de las funciones propias de la Cámara de Cuentas de Andalucía es la de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fiscalizar la actividad económica del sector público de Andalucía, velando por la legalidad de cuantos actos den lugar al reconocimiento de derechos y obligaciones de contenido económico."
+        },
+        {
+          "id": "B",
+          "text": "Fiscalizar la actividad económico-financiera del sector público de Andalucía, velando por la legalidad y eficiencia de cuantos actos den lugar al reconocimiento de derechos y obligaciones de contenido económico."
+        },
+        {
+          "id": "C",
+          "text": "Fiscalizar la actividad económica del sector público de Andalucía, velando por la legalidad y eficacia de cuantos actos den lugar al reconocimiento de derechos y obligaciones de contenido económico."
+        },
+        {
+          "id": "D",
+          "text": "Fiscalizar la actividad económico-financiera del sector público de Andalucía, velando por la legalidad y eficiencia de la actividad llevada a cabo por todos los organismos dependientes de la Junta de Andalucía."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q061",
+      "sourceNumber": 61,
+      "text": "Es objeto de la Ley de Contratos del Sector Público regular la contratación de dicho sector, así como:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La regulación del régimen jurídico aplicable a los contratos administrativos."
+        },
+        {
+          "id": "B",
+          "text": "La regulación del régimen jurídico aplicable a los efectos, cumplimiento y extinción de los contratos administrativos, en atención a los fines institucionales de carácter público que a través de los mismos se tratan de realizar."
+        },
+        {
+          "id": "C",
+          "text": "La regulación del régimen jurídico y económico aplicable a los efectos, cumplimiento y extinción de los contratos administrativos, en atención a los fines institucionales de carácter público que a través de los mismos se tratan de realizar."
+        },
+        {
+          "id": "D",
+          "text": "La regulación del régimen jurídico aplicable, en atención a los fines de interés público a los que se dedican las instituciones que los realizan."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q062",
+      "sourceNumber": 62,
+      "text": "Los contratos regulados en la Ley de Contratos del Sector Público son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De obra o servicio, concesión de obra pública, gestión de servicios públicos, suministro, servicios y de colaboración entre el sector público y privado."
+        },
+        {
+          "id": "B",
+          "text": "De obra o servicio, concesión de obra pública, gestión de servicios públicos, suministro y de colaboración entre el sector público y privado."
+        },
+        {
+          "id": "C",
+          "text": "De obras, concesión administrativa, gestión de servicios públicos, suministro, servicios y de colaboración entre el sector público y privado."
+        },
+        {
+          "id": "D",
+          "text": "De obras, concesión de obra pública, gestión de servicios públicos, suministro, servicios y de colaboración entre el sector público y privado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q063",
+      "sourceNumber": 63,
+      "text": "Según la Ley de Contratos del Sector Público, entre las menciones que deben incluirse en los contratos que celebren los entes, organismos y entidades del sector público, se encuentran las siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La identificación de las partes, acreditación de la capacidad para suscribir el contrato, definición del objeto, condiciones de pago e interés de demora."
+        },
+        {
+          "id": "B",
+          "text": "La identificación de las partes, acreditación de la personalidad jurídica de los contratantes, definición del objeto y referencia a la legislación aplicable."
+        },
+        {
+          "id": "C",
+          "text": "La identificación de las partes, enumeración de documentos que integran el contrato, el precio cierto o el modo de determinarlo, la duración o fechas estimadas de comienzo y finalización, las condiciones de pago y el interés de demora."
+        },
+        {
+          "id": "D",
+          "text": "La identificación de las partes, definición del objeto, referencia a la legislación aplicable y los supuestos en los que procede la resolución."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q064",
+      "sourceNumber": 64,
+      "text": "Indique cual de los siguientes contratos está excluido de la Ley de Contratos del Sector Público:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los celebrados por las entidades gestoras de la Seguridad Social."
+        },
+        {
+          "id": "B",
+          "text": "Los suscritos por las agencias administrativas estatales."
+        },
+        {
+          "id": "C",
+          "text": "Los relativos a servicios de arbitraje y conciliación."
+        },
+        {
+          "id": "D",
+          "text": "Los relativos a adquisición de material por parte del Ministerio de Defensa, en aras a la seguridad nacional."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q065",
+      "sourceNumber": 65,
+      "text": "Según la Ley de Contratos del Sector Público, como actuación previa del contrato de obras hay que realizar un Proyecto de obras, que deberá contener, además de la documentación prevista en las normas legales y reglamentarias, lo siguiente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memoria, planos de conjunto y detalle, pliegos de prescripciones técnicas, presupuesto, programa de desarrollo de los trabajos, referencias en las que se fundamentará el replanteo de la obra y estudio de seguridad y salud."
+        },
+        {
+          "id": "B",
+          "text": "Memoria, planos de conjunto y detalle, pliegos de prescripciones técnicas, presupuesto, referencias en las que se fundamentará el replanteo de la obra, estudio de seguridad y salud."
+        },
+        {
+          "id": "C",
+          "text": "Memoria, planos de conjunto y detalle, pliegos de prescripciones técnicas, presupuesto y plazos de pago de la obra, estudio de seguridad y salud."
+        },
+        {
+          "id": "D",
+          "text": "Memoria, planos de conjunto y detalle, pliegos de prescripciones técnicas, presupuesto y plazos de pago de la obra, programa de desarrollo de los trabajos y referencias en las que se fundamentará el replanteo de la obra."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q066",
+      "sourceNumber": 66,
+      "text": "Según la Ley de Contratos del Sector Público, los pliegos de cláusulas administrativas particulares de los contratos de concesión de obras públicas deberán hacer referencia, al menos, a los siguientes aspectos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Definición del objeto del contrato, requisitos de capacidad de los licitadores y el contenido de las proposiciones."
+        },
+        {
+          "id": "B",
+          "text": "Definición del objeto del contrato, requisitos de capacidad de los licitadores y contenido de las proposiciones."
+        },
+        {
+          "id": "C",
+          "text": "Definición del objeto del contrato, requisitos de capacidad y solvencia financiera, económica y técnica que sean exigibles a los licitadores y el contenido de las proposiciones."
+        },
+        {
+          "id": "D",
+          "text": "Definición del objeto del contrato, requisitos de capacidad y solvencia jurídico- financiera de los licitadores y el contenido de las proposiciones económicas y fechas de inicio, fin y entrega de las obras."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q067",
+      "sourceNumber": 67,
+      "text": "Según la Ley de Contratos del Sector Público, los contratos de servicios son aquellos cuyo objeto son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Prestaciones de hacer consistentes en el desarrollo de una actividad o dirigidas a la obtención de un resultado distinto de una obra o suministro."
+        },
+        {
+          "id": "B",
+          "text": "Prestaciones de hacer consistentes en el desarrollo de cualquier actividad."
+        },
+        {
+          "id": "C",
+          "text": "Prestaciones de hacer consistentes en el desarrollo de una actividad dirigida a la obtención de una obra o suministro."
+        },
+        {
+          "id": "D",
+          "text": "Regularizar jurídicamente la relación entre administraciones públicas y empresas o particulares."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q068",
+      "sourceNumber": 68,
+      "text": "En el ámbito del Servicio Andaluz de Salud, en relación a la contratación administrativa, la competencia de supervisión general de los expedientes de concesión de obra pública, así como la autorización previa y expresa del inicio de tales expedientes, y de su licitación, corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General de Gestión Económica y Servicios del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del centro donde se vaya a realizar la concesión de obra pública."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Económico-Administrativa donde se vaya a realizar la concesión de obra pública."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q069",
+      "sourceNumber": 69,
+      "text": "A efectos de lo dispuesto en el Reglamento de Residuos de Andalucía, los residuos sanitarios se clasifican en estos grupos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Domésticos - Peligrosos de origen sanitario - Radioactivos y otros residuos regulados por normativas específicas."
+        },
+        {
+          "id": "B",
+          "text": "Domésticos - Asimilables a domésticos - Peligrosos de origen sanitario - Radioactivos y otros residuos regulados por normativas específicas - Peligrosos de origen no sanitario."
+        },
+        {
+          "id": "C",
+          "text": "Peligrosos de origen sanitario - Radioactivos y otros residuos regulados por normativas específicas – Peligrosos de origen no sanitario."
+        },
+        {
+          "id": "D",
+          "text": "No peligrosos de origen sanitario – Peligrosos de origen sanitario- Radioactivos y otros residuos regulados por normativas específicas – Peligrosos de origen no sanitario."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q070",
+      "sourceNumber": 70,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, los artículos del catálogo de bienes y servicios de dicha agencia vienen clasificados en su índice a nivel de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Grupo, Subgrupo y Familia y Subfamilia."
+        },
+        {
+          "id": "B",
+          "text": "Grupo, Familia y Clase Material."
+        },
+        {
+          "id": "C",
+          "text": "Grupo, Subgrupo y Familia."
+        },
+        {
+          "id": "D",
+          "text": "Grupo y Familia."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q071",
+      "sourceNumber": 71,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, el CIP es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Código de identificación de producto (numérico) que identifica de manera unívoca al producto: a la referencia de fabricante y denominación comercial con el código de artículo del catálogo del Servicio Andaluz de Salud al que ha quedado adscrito."
+        },
+        {
+          "id": "B",
+          "text": "Código de identificación de producto que identifica de manera inequívoca al producto: a la referencia de fabricante y denominación comercial con el grupo del catálogo del Servicio Andaluz de Salud con el que se corresponde."
+        },
+        {
+          "id": "C",
+          "text": "Código de identificación de producto (numérico) que identifica de manera unívoca al producto: a la referencia de fabricante y denominación comercial con el grupo o familia del catálogo del Servicio Andaluz de Salud al que ha quedado adscrito."
+        },
+        {
+          "id": "D",
+          "text": "Código de identificación de producto (numérico) que identifica de manera inequívoca al producto: a la referencia de fabricante y denominación comercial con el grupo o familia de artículo del catálogo del Servicio Andaluz de Salud con el que se corresponde."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q072",
+      "sourceNumber": 72,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, ¿qué productos se deben inscribir en el Registro de Implantes Quirúrgicos (RIQ)?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todos aquellos productos que perteneciendo al grupo 04 (Prótesis Quirúrgicas), dispongan del CIP y este sea de uso obligatorio."
+        },
+        {
+          "id": "B",
+          "text": "Todos aquellos productos que perteneciendo al grupo 04 (Prótesis Quirúrgicas), dispongan del CIP y este sea de uso obligatorio, a excepción de las familias 04.12.70 (Mallas Quirúrgicas), 04.18.80 (Implantes de Cirugía Retino-Vítrea) y 04.20.30 (Tubos de Ventilación Transtimpánico)."
+        },
+        {
+          "id": "C",
+          "text": "Todos aquellos productos que perteneciendo al grupo 04 (Prótesis Quirúrgicas), dispongan del CIP y este sea de uso obligatorio, a excepción de las familias 04.12.10 (Prótesis mamaria), 04.18.80 (Implantes de Cirugía Retino-Vítrea) y 04.20.30 (Tubos de Ventilación Transtimpánico)."
+        },
+        {
+          "id": "D",
+          "text": "Todos aquellos productos que perteneciendo al grupo 04 (Prótesis Quirúrgicas), dispongan del CIP y este sea de uso obligatorio, a excepción de las familias 04.12.70 (Mallas Quirúrgicas), 04.18.10 (Lentes intraoculares de cámara posterior plegable) y 04.20.30 (Tubos de Ventilación Transtimpánico)."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q073",
+      "sourceNumber": 73,
+      "text": "El sistema integral de gestión de personal en el Servicio Andaluz de Salud se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "GERONTE"
+        },
+        {
+          "id": "B",
+          "text": "GERONTHE"
+        },
+        {
+          "id": "C",
+          "text": "DIRAYA"
+        },
+        {
+          "id": "D",
+          "text": "GERHONTE"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q074",
+      "sourceNumber": 74,
+      "text": "El sistema de información denominado SIGLO aborda, entre otras cuestiones, todas las relaciones de las empresas proveedoras con el Servicio Andaluz de Salud en cuanto a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Catálogo, Banco, Contratación y logística."
+        },
+        {
+          "id": "B",
+          "text": "Catálogo, Contratación y logística."
+        },
+        {
+          "id": "C",
+          "text": "Catálogo, Pagos, Contratación y logística."
+        },
+        {
+          "id": "D",
+          "text": "Catálogo, Implantación, Contratación y logística."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q075",
+      "sourceNumber": 75,
+      "text": "Según la normativa vigente, la utilización del Sistema de Gestión Integral de Recursos Organizativos (GIRO), será obligatoria para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las Empresas que suministran al Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Consejería de Salud de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "La Administración de la Junta de Andalucía y sus entidades instrumentales."
+        },
+        {
+          "id": "D",
+          "text": "El Servicio Andaluz de Salud exclusivamente"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q076",
+      "sourceNumber": 76,
+      "text": "Según la normativa vigente, Sistema de Gestión Integral de Recursos Organizativos (GIRO), soporta la tramitación de los procedimientos electrónicos relativos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A los a los expedientes de los ámbitos presupuestario, patrimonial, económico- financiero, de control y contabilidad."
+        },
+        {
+          "id": "B",
+          "text": "A los expedientes de los ámbitos financiero y de contabilidad analítica."
+        },
+        {
+          "id": "C",
+          "text": "A la organización y Registro de Voluntades Vitales Anticipadas."
+        },
+        {
+          "id": "D",
+          "text": "Al registro de documentos relacionados con el personal externo del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q077",
+      "sourceNumber": 77,
+      "text": "El Sistema Unificado de Recursos (SUR) se encarga de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La gestión de todas las aplicaciones y recursos informáticos utilizados por la Administración de la Junta de Andalucía y sus entidades instrumentales."
+        },
+        {
+          "id": "B",
+          "text": "La gestión, liquidación y recaudación de los tributos propios o cedidos de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "La gestión, liquidación y recaudación de los tributos cedidos a la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "La gestión, liquidación y recaudación de los tributos propios de la Comunidad Autónoma de Andalucía."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q078",
+      "sourceNumber": 78,
+      "text": "DIRAYA es el sistema que se utiliza en el Sistema Sanitario Público de Andalucía como soporte de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La gestión de personal."
+        },
+        {
+          "id": "B",
+          "text": "La historia clínica electrónica."
+        },
+        {
+          "id": "C",
+          "text": "La base de datos de usuarios."
+        },
+        {
+          "id": "D",
+          "text": "La gestión de las listas de espera."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q079",
+      "sourceNumber": 79,
+      "text": "En cada centro se archivarán las historias clínicas de sus pacientes de manera que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Siempre exista una copia en soporte papel."
+        },
+        {
+          "id": "B",
+          "text": "Sea accesible a todo el personal que las solicite."
+        },
+        {
+          "id": "C",
+          "text": "Queden garantizadas su seguridad, su correcta conservación y la recuperación de la información."
+        },
+        {
+          "id": "D",
+          "text": "Se garantice el anonimato de las personas relacionadas con las mismas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q080",
+      "sourceNumber": 80,
+      "text": "La cumplimentación de la historia clínica, en los aspectos relacionados con la asistencia directa al paciente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Será siempre a solicitud de la persona interesada."
+        },
+        {
+          "id": "B",
+          "text": "Se llevará a cabo siempre por escrito."
+        },
+        {
+          "id": "C",
+          "text": "Deberá ir firmada por la Jefatura del Servicio."
+        },
+        {
+          "id": "D",
+          "text": "Será responsabilidad de las y los profesionales que intervengan en ella."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q081",
+      "sourceNumber": 81,
+      "text": "Según la normativa vigente, la gestión y administración de la Base de Datos de Usuarios (BDU) del Sistema Sanitario Público de Andalucía corresponde:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Ministerio de Empleo y Seguridad Social."
+        },
+        {
+          "id": "B",
+          "text": "La Consejería de Salud de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Al Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Al Servicio de Admisión de los Hospitales adscritos al Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q082",
+      "sourceNumber": 82,
+      "text": "Según la normativa vigente, en relación a la gestión de la lista de espera para intervención quirúrgica, la fecha de inscripción en el Registro de Demanda Quirúrgica será:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La del día de presentación de la solicitud por el paciente o persona autorizada para ello."
+        },
+        {
+          "id": "B",
+          "text": "La del día siguiente hábil de la solicitud por el paciente o persona autorizada para ello."
+        },
+        {
+          "id": "C",
+          "text": "La del día de prescripción de la intervención por el facultativo correspondiente, siempre que la solicitud se presente en los 7 días siguientes."
+        },
+        {
+          "id": "D",
+          "text": "La del día de prescripción de la intervención por el facultativo correspondiente, siempre que la solicitud se presente en los 3 días siguientes."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q083",
+      "sourceNumber": 83,
+      "text": "La oficina virtual del Sistema Sanitario Público de Andalucía se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diraya."
+        },
+        {
+          "id": "B",
+          "text": "MTI-Citas."
+        },
+        {
+          "id": "C",
+          "text": "Receta XXI."
+        },
+        {
+          "id": "D",
+          "text": "Inters@s."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q084",
+      "sourceNumber": 84,
+      "text": "La Agencia de Calidad Sanitaria de Andalucía (ACSA) tiene como uno de sus objetivos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Implantar nuevas tecnologías en el ámbito sanitario."
+        },
+        {
+          "id": "B",
+          "text": "Propulsar un modelo sostenible de compras de equipamientos y material sanitarios, estableciendo unos niveles mínimos en la relación calidad-precio."
+        },
+        {
+          "id": "C",
+          "text": "Promover actuaciones que permitan la generación de conocimiento sobre calidad y la difusión e intercambio del mismo dentro del Sistema Sanitario."
+        },
+        {
+          "id": "D",
+          "text": "Favorecer un acceso de calidad a las nuevas tecnologías de la información a los profesionales del Sistema Sanitario."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q085",
+      "sourceNumber": 85,
+      "text": "En el último Plan de Calidad del Sistema Sanitario Público de Andalucía existen varias referencias a la acreditación. En concreto, dentro del objetivo 1 (Espacio Compartido), el objetivo de su línea de acción 1.8 es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consolidar la acreditación de las Unidades de Gestión Clínica, como elemento de cohesión entre profesionales y ciudadanos."
+        },
+        {
+          "id": "B",
+          "text": "Consolidar la acreditación de las Unidades de Gestión Clínica, como elemento de mejora continua y consolidación del modelo."
+        },
+        {
+          "id": "C",
+          "text": "Garantizar que la acreditación profesional sea un valor en el desarrollo profesional, acorde a las necesidades de ciudadanos y el sistema."
+        },
+        {
+          "id": "D",
+          "text": "Promover la acreditación como acceso del profesional a la práctica clínica avanzada y la excelencia en el desarrollo profesional."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q086",
+      "sourceNumber": 86,
+      "text": "La Agencia de Evaluación de Tecnologías Sanitarias de Andalucía (AETSA) tiene como una de sus líneas de actividad:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fomentar la información y gestionar las relaciones con la ciudadanía."
+        },
+        {
+          "id": "B",
+          "text": "La organización de los procesos informáticos."
+        },
+        {
+          "id": "C",
+          "text": "Gestionar los servicios de atención a las personas usuarias."
+        },
+        {
+          "id": "D",
+          "text": "El suministro de software a los centros dependientes del Sistema Sanitario Público de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q087",
+      "sourceNumber": 87,
+      "text": "La integración y gestión de todos los servicios de tecnologías de la información (TIC) y Comunicaciones del Servicio Andaluz de Salud está a cargo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "AETSA."
+        },
+        {
+          "id": "B",
+          "text": "Salud Responde."
+        },
+        {
+          "id": "C",
+          "text": "CGES."
+        },
+        {
+          "id": "D",
+          "text": "ACSA."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q088",
+      "sourceNumber": 88,
+      "text": "En informática, Unix es un:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Software."
+        },
+        {
+          "id": "B",
+          "text": "Hardware."
+        },
+        {
+          "id": "C",
+          "text": "Firewall."
+        },
+        {
+          "id": "D",
+          "text": "Sistema operativo."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q089",
+      "sourceNumber": 89,
+      "text": "El monitor y el teclado de un ordenador son parte del:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Software."
+        },
+        {
+          "id": "B",
+          "text": "Hardware."
+        },
+        {
+          "id": "C",
+          "text": "Firewall."
+        },
+        {
+          "id": "D",
+          "text": "Sistema operativo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q090",
+      "sourceNumber": 90,
+      "text": "En informática, un firewall es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una parte de un sistema o una red que está diseñada para bloquear el acceso no autorizado, permitiendo al mismo tiempo comunicaciones autorizadas."
+        },
+        {
+          "id": "B",
+          "text": "Una parte del Hardware del ordenador."
+        },
+        {
+          "id": "C",
+          "text": "Una parte de un sistema o una red que está diseñada para bloquear el acceso a un ordenador encendido transcurridos 3 minutos desde que se utilizó por última vez."
+        },
+        {
+          "id": "D",
+          "text": "Una parte de un sistema o una red que está diseñada para agilizar las comunicaciones a través de internet."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q091",
+      "sourceNumber": 91,
+      "text": "Un procesador de texto es un tipo de aplicación informática que se usa para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La creación, edición, modificación y procesamiento de documentos de texto con formato Word, a diferencia de los editores de texto, que manejan solo texto simple."
+        },
+        {
+          "id": "B",
+          "text": "La creación, edición, modificación y procesamiento de documentos de texto con formato, a diferencia de los editores de texto, que manejan solo texto simple."
+        },
+        {
+          "id": "C",
+          "text": "La creación, edición, modificación y procesamiento de documentos de texto con formato letra, a diferencia de los editores de texto, que manejan solo texto simple."
+        },
+        {
+          "id": "D",
+          "text": "La creación, edición, modificación, procesamiento e impresión de documentos de texto con formato compuesto, a diferencia de los editores de texto, que manejan solo texto simple."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q092",
+      "sourceNumber": 92,
+      "text": "La plantilla de un procesador de texto se utiliza para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Crear documentos siguiendo estilos que mejoran la presentación del mismo o lo diseñan en función de las necesidades que pretende ese tipo de documento."
+        },
+        {
+          "id": "B",
+          "text": "Crear documentos que mejoran la presentación del mismo o en función de las necesidades que pretende ese tipo de documento."
+        },
+        {
+          "id": "C",
+          "text": "Crear documentos siguiendo estilos predefinidos que mejoran la presentación del mismo o lo pre-diseñan en función de las necesidades que pretende ese tipo de documento."
+        },
+        {
+          "id": "D",
+          "text": "Crear documentos siguiendo estilos predefinidos exclusivamente por el procesador que utilicemos y que mejoran la presentación del mismo en función de las necesidades que pretende ese tipo de documento."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q093",
+      "sourceNumber": 93,
+      "text": "En informática una base de datos se compone de una o más tablas que guardan un conjunto de datos, y:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cada tabla tiene una o más columnas y celdas. Las columnas guardan una parte de la información sobre cada elemento que queramos guardar en la tabla, cada celda de la tabla conforma un registro."
+        },
+        {
+          "id": "B",
+          "text": "Cada tabla tiene una o más columnas y filas. Las columnas guardan una parte de la información sobre cada elemento que queramos guardar en la tabla, cada fila de la tabla conforma un registro."
+        },
+        {
+          "id": "C",
+          "text": "Cada tabla tiene una o más columnas y filas. Las columnas guardan una parte de la información sobre cada componente que queramos guardar en la tabla para explotar con posterioridad, cada fila de la tabla conforma un registro secuencial."
+        },
+        {
+          "id": "D",
+          "text": "Cada tabla tiene una o más columnas y filas. Las columnas guardan una parte de la información sobre cada elemento que queramos guardar en la tabla, cada fila de la tabla conforma un registro secuencial."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q094",
+      "sourceNumber": 94,
+      "text": "En informática una hoja de cálculo es un tipo de documento que permite:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Manipular datos exclusivamente numéricos dispuestos en forma de tablas compuestas por celdas, las cuales se suelen organizar en una matriz bidimensional de filas y columnas."
+        },
+        {
+          "id": "B",
+          "text": "Manipular datos numéricos y alfanuméricos dispuestos en forma de tablas compuestas por celdas, las cuales se suelen organizar en una matriz bidimensional de filas y registros."
+        },
+        {
+          "id": "C",
+          "text": "Manipular datos numéricos y alfanuméricos dispuestos en forma de tablas compuestas por celdas, las cuales se suelen organizar en una matriz bidimensional de registros y columnas."
+        },
+        {
+          "id": "D",
+          "text": "Manipular datos numéricos y alfanuméricos dispuestos en forma de tablas compuestas por celdas, las cuales se suelen organizar en una matriz bidimensional de filas y columnas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q095",
+      "sourceNumber": 95,
+      "text": "En informática Moodle es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una aplicación web de tipo ambiente educativo virtual, un sistema de gestión de cursos, de distribución libre, que ayuda a los educadores a crear comunidades de aprendizaje en línea."
+        },
+        {
+          "id": "B",
+          "text": "Una aplicación web que se utiliza para comunicaciones entre miembros de organizaciones educativas."
+        },
+        {
+          "id": "C",
+          "text": "Una aplicación web de tipo ambiente educativo que se utiliza en la gestión de cursos por parte de organizaciones público-privadas."
+        },
+        {
+          "id": "D",
+          "text": "Una aplicación web de que sirve para publicación en línea de historias publicadas con una periodicidad muy alta."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q096",
+      "sourceNumber": 96,
+      "text": "En informática una Intranet es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una herramienta web 2.0 que permite a los usuarios interactuar y colaborar entre sí."
+        },
+        {
+          "id": "B",
+          "text": "Una herramienta informática que utiliza la tecnología web 2.0 del Protocolo de Internet que permite a los usuarios compartir información, sistemas operativos o servicios de computación."
+        },
+        {
+          "id": "C",
+          "text": "Una red informática que utiliza la tecnología del Protocolo de Internet que permite a los usuarios de distintas organizaciones compartir información, sistemas operativos o servicios de computación dentro de una organización."
+        },
+        {
+          "id": "D",
+          "text": "Una red informática que utiliza la tecnología del Protocolo de Internet para compartir información, sistemas operativos o servicios de computación dentro de una organización."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q097",
+      "sourceNumber": 97,
+      "text": "Entre los bloques funcionales básicos del sistema de información de la gestión de archivos de la Junta de Andalucía @rchiva se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gestión de ingresos de documentación y Gestión de Acceso."
+        },
+        {
+          "id": "B",
+          "text": "Gestión de usuarios del sistema y Explotación de bases relacionales."
+        },
+        {
+          "id": "C",
+          "text": "Gestión de acceso y Gestión de Resultados."
+        },
+        {
+          "id": "D",
+          "text": "Gestión de las estructuras básicas de los archivos y Gestión de redes."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q098",
+      "sourceNumber": 98,
+      "text": "La aplicación que tiene como finalidad la gestión de comunicaciones electrónicas entre organismos y otras unidades organizativas de la Administración de la Junta de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Port@firmas."
+        },
+        {
+          "id": "B",
+          "text": "eCO."
+        },
+        {
+          "id": "C",
+          "text": "@ries."
+        },
+        {
+          "id": "D",
+          "text": "@firma."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q099",
+      "sourceNumber": 99,
+      "text": "Una de las características principales de la aplicación corporativa de la Junta de Andalucía denominada @ries es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Posibilidad de interconexión entre los registros de todas las empresas."
+        },
+        {
+          "id": "B",
+          "text": "Comunicación entre el registro por el que entra un documento en un organismo y el registro central del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Transmisión de asientos registrales entre servicios de distintas administraciones y empresas públicas."
+        },
+        {
+          "id": "D",
+          "text": "Posibilidad de realización de trámites administrativos desde el hogar del ciudadano (con los mecanismos de seguridad y certificación adecuados)."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q100",
+      "sourceNumber": 100,
+      "text": "La firma electrónica de un documento generada a través de la aplicación Port@firmas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Permite la acreditación del destinatario del documento."
+        },
+        {
+          "id": "B",
+          "text": "Permite la firma múltiple de un documento por varios firmantes sin orden específico."
+        },
+        {
+          "id": "C",
+          "text": "Incluye un código alfanumérico que comienza con las letras JA y continúa con un número secuencial."
+        },
+        {
+          "id": "D",
+          "text": "Incluye un código alfanumérico aleatorio que contiene las letras JA."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q101",
+      "sourceNumber": 101,
+      "text": "Rosa trabaja en la Subdirección de Personal de un Hospital del Servicio Andaluz de Salud (SAS), prestando servicios en el área de atención al profesional. Su actividad principal es la de elaborar documentos con herramientas informáticas para el área de comunicación de dicha Unidad, aunque colabora en el resto de tareas administrativas del área. En el día de hoy tiene que preparar un comunicado sobre el Plan de Vacaciones. ¿Qué herramienta informática es la más apropiada para realizar dicho comunicado?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Word"
+        },
+        {
+          "id": "B",
+          "text": "Access"
+        },
+        {
+          "id": "C",
+          "text": "Excel"
+        },
+        {
+          "id": "D",
+          "text": "Softonic"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q102",
+      "sourceNumber": 102,
+      "text": "Si desea que en todas las páginas del documento aparezca en la parte superior derecha la frase “Información del Plan Vacacional”, ¿Cuál es la forma habitual de conseguirlo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Insertando una referencia cruzada."
+        },
+        {
+          "id": "B",
+          "text": "Insertando un encabezado de página."
+        },
+        {
+          "id": "C",
+          "text": "Insertando un salto de sección continuo."
+        },
+        {
+          "id": "D",
+          "text": "Insertando un hipervínculo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q103",
+      "sourceNumber": 103,
+      "text": "La alineación de un párrafo puede ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Izquierda, centrada y derecha."
+        },
+        {
+          "id": "B",
+          "text": "Izquierda, justificada y derecha."
+        },
+        {
+          "id": "C",
+          "text": "Izquierda, centrada, justificada y derecha."
+        },
+        {
+          "id": "D",
+          "text": "Izquierda, justificada, libre y derecha."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q104",
+      "sourceNumber": 104,
+      "text": "En caso de que tenga una base de datos con los campos apellidos y nombre, categoría y servicio de todos los profesionales del hospital, podría obtener en Word una comunicación individualizada mediante la opción:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Combinación de correspondencia."
+        },
+        {
+          "id": "B",
+          "text": "Combinación de datos."
+        },
+        {
+          "id": "C",
+          "text": "Combinación de campos comunes."
+        },
+        {
+          "id": "D",
+          "text": "Combinación natural."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q105",
+      "sourceNumber": 105,
+      "text": "Tiene que revisar una hoja de cálculo de Excel. ¿Cómo se estructuran las hojas de cálculo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En libros y hojas."
+        },
+        {
+          "id": "B",
+          "text": "En documentos y páginas."
+        },
+        {
+          "id": "C",
+          "text": "En ficheros y hojas."
+        },
+        {
+          "id": "D",
+          "text": "En marcadores y Secciones."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q106",
+      "sourceNumber": 106,
+      "text": "¿Para qué sirve la tecla “suprimir” del teclado?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Borra el documento que tengamos en la pantalla."
+        },
+        {
+          "id": "B",
+          "text": "Elimina los caracteres situados a la derecha del cursor."
+        },
+        {
+          "id": "C",
+          "text": "Elimina los caracteres situados a la izquierda del cursor."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es correcta."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q107",
+      "sourceNumber": 107,
+      "text": "Cual es el parámetro que identifica de forma lógica un ordenador en una red informática de tipo TCP/IP?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dirección IP/MAC."
+        },
+        {
+          "id": "B",
+          "text": "Máscara de red."
+        },
+        {
+          "id": "C",
+          "text": "Puerta de enlace IP."
+        },
+        {
+          "id": "D",
+          "text": "Dirección IP."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q108",
+      "sourceNumber": 108,
+      "text": "Rosa utiliza el sistema operativo Windows. En dicho sistema las carpetas de archivo se representan con un icono de un clasificador de color:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azul."
+        },
+        {
+          "id": "B",
+          "text": "Verde."
+        },
+        {
+          "id": "C",
+          "text": "Amarillo."
+        },
+        {
+          "id": "D",
+          "text": "Marrón."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q109",
+      "sourceNumber": 109,
+      "text": "Rosa utiliza en su ordenador un teclado QWRTY. ¿Dónde se encuentra la letra K en dicho teclado?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Entre la U y la O."
+        },
+        {
+          "id": "B",
+          "text": "Entre la G y la J."
+        },
+        {
+          "id": "C",
+          "text": "Entre la I y la P."
+        },
+        {
+          "id": "D",
+          "text": "Entre la J y la L."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q110",
+      "sourceNumber": 110,
+      "text": "¿Qué combinación de letras del teclado puede utilizar para copiar un texto seleccionado?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl y C."
+        },
+        {
+          "id": "B",
+          "text": "Ctrl y Alt."
+        },
+        {
+          "id": "C",
+          "text": "Ctrl y V."
+        },
+        {
+          "id": "D",
+          "text": "Ctrl y P."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q111",
+      "sourceNumber": 111,
+      "text": "¿Y qué combinación de letras del teclado puede utilizar para pegar a continuación el texto anterior en otro lugar?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl y C."
+        },
+        {
+          "id": "B",
+          "text": "Ctrl y Alt."
+        },
+        {
+          "id": "C",
+          "text": "Ctrl y V."
+        },
+        {
+          "id": "D",
+          "text": "Ctrl y P."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q112",
+      "sourceNumber": 112,
+      "text": "Rosa ha hecho una nota de circulación interior en la que aparece como remitente la Subdirección de Personal y como destinatarios todos los cargos intermedios, informándose de las instrucciones del Plan Vacacional. Para remitir dicha nota de circulación interior para firma electrónica por parte de la Subdirección puede utilizar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "eCO."
+        },
+        {
+          "id": "B",
+          "text": "Port@firma."
+        },
+        {
+          "id": "C",
+          "text": "@firma."
+        },
+        {
+          "id": "D",
+          "text": "Notific@."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q113",
+      "sourceNumber": 113,
+      "text": "Rosa recibe el encargo de su Jefa de Servicio de que valore la posibilidad de implantar un Blogs para uso de la Unidad de Atención al Profesional. ¿Qué es un Blog?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una aplicación web de tipo ambiente educativo virtual, un sistema de gestión de cursos, de distribución libre, que ayuda a los educadores a crear comunidades de aprendizaje en línea."
+        },
+        {
+          "id": "B",
+          "text": "Una aplicación web que incluye contenidos de interés general actualizados por los lectores del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Un sitio web que incluye, a modo de diario personal de su autor o autores, contenidos de su interés, actualizados con frecuencia y a menudo comentados por los lectores."
+        },
+        {
+          "id": "D",
+          "text": "Una aplicación web de que sirve para recopilar textos sobre contenidos de interés para los usuarios."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q114",
+      "sourceNumber": 114,
+      "text": "Un profesional del Hospital, que previamente ha solicitado en su ordenador personal un certificado digital, acude la Unidad donde trabaja Rosa, dado que dicha Unidad es una de las Oficinas de Registro con competencia habilitada en dicha materia. ¿Cuál es la acción correcta que hay que hacer?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remitir al solicitante a la Delegación Provincial de la Consejería de Hacienda."
+        },
+        {
+          "id": "B",
+          "text": "Comprobar la identidad del solicitante y registrará la solicitud en la aplicación informática destinada al efecto."
+        },
+        {
+          "id": "C",
+          "text": "Registrar la solicitud en @ries."
+        },
+        {
+          "id": "D",
+          "text": "Registrar la solicitud en @firma-digital."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q115",
+      "sourceNumber": 115,
+      "text": "Un profesional del Hospital ha sufrido un accidente de tráfico cuando se dirigía a su domicilio tras finalizar su jornada de trabajo. Al día siguiente se presenta en la Unidad de Atención al Profesional a solicitar información sobre las actuaciones que tiene que seguir. Allí se le informa que deberá comunicar por escrito el suceso ocurrido cumplimentando el documento denominado:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Comunicación de Accidente de Tráfico."
+        },
+        {
+          "id": "B",
+          "text": "Comunicación de Baja por Accidente In-itinere."
+        },
+        {
+          "id": "C",
+          "text": "Comunicación de Accidentes para trabajadores del SSPA."
+        },
+        {
+          "id": "D",
+          "text": "Comunicación de Accidentes de Trabajo e Incidente."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q116",
+      "sourceNumber": 116,
+      "text": "En los casos de accidentes in itínere, según el procedimiento establecido en el Servicio Andaluz de Salud, el trabajador deberá aportar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El parte de asistencia médica."
+        },
+        {
+          "id": "B",
+          "text": "El parte de atestado efectuado por agentes de la autoridad."
+        },
+        {
+          "id": "C",
+          "text": "El documento 04-02 y la documentación que proceda según el caso."
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q117",
+      "sourceNumber": 117,
+      "text": "En caso de que proceda, la certificación del accidente de trabajo de un profesional del SAS, será competencia:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Del Médico de Familia que tenga asignado el trabajador."
+        },
+        {
+          "id": "B",
+          "text": "De la Dirección Gerencia del centro."
+        },
+        {
+          "id": "C",
+          "text": "Del mando intermedio del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "Del Técnico de Prevención de Riesgos Laborales del centro."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q118",
+      "sourceNumber": 118,
+      "text": "Otro profesional ha sido agredido por un usuario. Según el procedimiento establecido en el SAS, el agredido deberá comunicarlo cumplimentando:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Registro Informatizado de Agresiones (RIA)."
+        },
+        {
+          "id": "B",
+          "text": "El modelo de Comunicación de Accidentes de Trabajo e Incidentes."
+        },
+        {
+          "id": "C",
+          "text": "La Hoja de Registro de Agresiones (Anexo II)."
+        },
+        {
+          "id": "D",
+          "text": "El modelo de registro de Agresiones e Incidentes (Anexo I)."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q119",
+      "sourceNumber": 119,
+      "text": "La comunicación de una agresión en el modelo normalizado por parte del profesional agredido, será remitida:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al Cargo Intermedio para su valoración y posterior ofrecimiento de apoyo psicológico y jurídico."
+        },
+        {
+          "id": "B",
+          "text": "A la UPRL para su valoración y posterior ofrecimiento de apoyo psicológico y jurídico."
+        },
+        {
+          "id": "C",
+          "text": "A la Unidad de Atención al Profesional para la gestión de la Incapacidad Temporal."
+        },
+        {
+          "id": "D",
+          "text": "A la Dirección del Centro y a la UPRL"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q120",
+      "sourceNumber": 120,
+      "text": "En caso de que se vaya a denunciar la agresión a profesionales del SAS ante el órgano competente, la misma podrá interponerla:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sólo el profesional agredido."
+        },
+        {
+          "id": "B",
+          "text": "El profesional agredido y el responsable del Centro."
+        },
+        {
+          "id": "C",
+          "text": "Sólo el responsable del Centro."
+        },
+        {
+          "id": "D",
+          "text": "Cualquier profesional que haya sido testigo de la agresión."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q121",
+      "sourceNumber": 121,
+      "text": "En la Unidad de Atención al Profesional se ha creado un servicio de respuestas mediante sms o email a consultas de los profesionales. Rosa es una de las encargadas de responder a estas consultas, entre las que se encuentran las siguientes: ¿Con cuando tiempo de antelación hay que solicitar una reducción de jornada por guarda legal en el SAS según el manual de vacaciones, permisos y licencias en vigor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tres meses."
+        },
+        {
+          "id": "B",
+          "text": "Dos meses."
+        },
+        {
+          "id": "C",
+          "text": "Un mes."
+        },
+        {
+          "id": "D",
+          "text": "Quince días."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q122",
+      "sourceNumber": 122,
+      "text": "¿Qué porcentaje se puede reducir en este tipo de reducción de jornada?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Máximo un 80 %."
+        },
+        {
+          "id": "B",
+          "text": "Entre un tercio y la mitad."
+        },
+        {
+          "id": "C",
+          "text": "Máximo un 50 %."
+        },
+        {
+          "id": "D",
+          "text": "Un tercio o la mitad."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q123",
+      "sourceNumber": 123,
+      "text": "¿Cuántos días de permiso por accidente o enfermedad grave de familiar corresponden a un profesional del SAS en caso de que el causante sea un tío suyo y el suceso se produzca en la misma localidad de residencia de la persona trabajadora?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dos días."
+        },
+        {
+          "id": "B",
+          "text": "Tres días."
+        },
+        {
+          "id": "C",
+          "text": "Cuatro días."
+        },
+        {
+          "id": "D",
+          "text": "No tiene derecho a disfrutar ningún día."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q124",
+      "sourceNumber": 124,
+      "text": "¿Cuántos días de permiso por traslado de domicilio a otra localidad corresponden a un profesional del SAS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 días, que deberán disfrutarse en el plazo de 7 días desde que efectivamente se produce el traslado del domicilio."
+        },
+        {
+          "id": "B",
+          "text": "3 días, que deberán disfrutarse necesariamente cuando efectivamente se produce el traslado de domicilio."
+        },
+        {
+          "id": "C",
+          "text": "2 días, que deberán disfrutarse en el plazo de 7 días desde que efectivamente se produce el traslado del domicilio."
+        },
+        {
+          "id": "D",
+          "text": "2 días, que deberán disfrutarse necesariamente cuando efectivamente se produce el traslado de domicilio."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q125",
+      "sourceNumber": 125,
+      "text": "¿Un técnico de Técnico de Función Administrativa (Grupo A1) del SAS estatutario fijo tiene derecho a que se le conceda la compatibilidad para ejercer una actividad privada por cuenta ajena de vendedor de automóviles en un concesionario?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sí."
+        },
+        {
+          "id": "B",
+          "text": "Sí, en caso de que sea compatible en horario y el tiempo de prestación de servicios en la otra empresa no supere el 50 % de la jornada como personal estatutario fijo."
+        },
+        {
+          "id": "C",
+          "text": "No, ya que el puesto de Técnico de Función Administrativa del SAS tiene asignada la retribución por el concepto complemento específico por dedicación exclusiva, y ello presupone la incompatibilidad para ejercer cualquier otra actividad, pública o privada, fuera del SAS."
+        },
+        {
+          "id": "D",
+          "text": "Depende de las necesidades del servicio."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q126",
+      "sourceNumber": 126,
+      "text": "Un ciudadano, licenciado en medicina y cirugía, remite una consulta por email en la que pregunta sobre la puntuación máxima en cada uno de los apartados del baremo vigente en la Bolsa Única del SAS para el personal licenciado. ¿Cuál de las siguientes respuestas es la correcta?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Experiencia profesional 55, formación 55 y otros méritos 20."
+        },
+        {
+          "id": "B",
+          "text": "Experiencia profesional 55, formación 45 y otros méritos 20."
+        },
+        {
+          "id": "C",
+          "text": "Experiencia profesional 55, formación 45 y otros méritos 10."
+        },
+        {
+          "id": "D",
+          "text": "Experiencia profesional 55, formación 55 y otros méritos 10."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q127",
+      "sourceNumber": 127,
+      "text": "¿Cuál debería ser la respuesta a la pregunta sobre plazo en el que los aspirantes inscritos que se indiquen en el listado único deberán presentar los documentación correspondientes?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 mes a partir de la publicación en la página web del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "20 días naturales siguientes a la publicación en la página web del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "15 días hábiles siguientes a la publicación en la página web del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "10 días naturales siguientes a la publicación en la página web del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q128",
+      "sourceNumber": 128,
+      "text": "Un profesional que ha interpuesto un recurso de reposición ante la Dirección Gerencia del Hospital pregunta en la Unidad de Atención al Profesional cuál es el plazo máximo para resolver el mismo según la normativa vigente. La respuesta correcta de Rosa debe ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un mes, el si acto fuera expreso y de 3 meses si no lo fuera."
+        },
+        {
+          "id": "B",
+          "text": "Un mes."
+        },
+        {
+          "id": "C",
+          "text": "Tres meses."
+        },
+        {
+          "id": "D",
+          "text": "Seis meses."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q129",
+      "sourceNumber": 129,
+      "text": "Rosa tiene que preparar una actividad formativa sobre retribuciones y nominas para cargos intermedios del Hospital, y se dispone a analizar la normativa vigente para obtener los datos. En relación a las cuotas de la Seguridad Social, ¿Qué tipo de cotización al Régimen General de la Seguridad Social por contingencias comunes es el vigente?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 28,30 %, siendo el 23,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "B",
+          "text": "El 32,60 %, siendo el 27,90 % a cargo de la empresa y el 4,70 % a cargo del trabajador"
+        },
+        {
+          "id": "C",
+          "text": "El 32,30 %, siendo el 27,60 % a cargo de la empresa y el 4,70 % a cargo del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "El 32,60 %, siendo el 28,00 % a cargo de la empresa y el 4,60 % a cargo del trabajador."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q130",
+      "sourceNumber": 130,
+      "text": "¿Y el tipo vigente de cotización al Régimen General de la Seguridad Social por Formación Profesional?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 0,70 %, siendo el 0,50 % a cargo de la empresa y el 0,20 % a cargo del trabajador."
+        },
+        {
+          "id": "B",
+          "text": "El 0,90 %, siendo el 0,70 % a cargo de la empresa y el 0,20 % a cargo del trabajador."
+        },
+        {
+          "id": "C",
+          "text": "El 0,80 %, siendo el 0,70 % a cargo de la empresa y el 0,10 % a cargo del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "El 0,70 %, siendo el 0,60 % a cargo de la empresa y el 0,10 % a cargo del trabajador."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q131",
+      "sourceNumber": 131,
+      "text": "Según la normativa de retribuciones vigente en el SAS, el concepto de Complemento Atención Continuada, modalidad “A” que se abona a determinadas categorías profesionales en hospitales, retribuye:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "B",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "C",
+          "text": "La realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, los días laborables de lunes a sábado."
+        },
+        {
+          "id": "D",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, los días laborables de lunes a sábado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q132",
+      "sourceNumber": 132,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, y en relación Complemento Atención Continuada, modalidad “Continuidad Asistencial”, durante el disfrute de las vacaciones anuales reglamentarias:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los seis meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "B",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los tres meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "C",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en el mes anterior al inicio de su disfrute."
+        },
+        {
+          "id": "D",
+          "text": "No corresponde la percepción de este concepto ni prorrateo alguno por el mismo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q133",
+      "sourceNumber": 133,
+      "text": "Rosa recibe una consulta telefónica de un profesional que ha participado en un Concurso de Traslados convocado por el SAS y cuya resolución definitiva está a punto de producirse. El profesional consulta sobre cuándo debe cesar en su actual destino, teniendo en cuenta que no se encuentra disfrutando ningún permiso o licencias reglamentaria. ¿Cuál debe ser la respuesta de Rosa según la normativa en vigor?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El día hábil siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "B",
+          "text": "El día siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "C",
+          "text": "Dentro de los 3 días hábiles siguientes a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "D",
+          "text": "Dentro de los 3 días naturales siguientes a aquel en que se publique la resolución definitiva del concurso."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q134",
+      "sourceNumber": 134,
+      "text": "¿Cuál debe ser la respuesta ante la consulta sobre el plazo de toma de posesión teniendo en cuenta la plaza de origen y que está desempeñando este profesional corresponde a otro Servicio de Salud?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 días hábiles a partir del día de cese."
+        },
+        {
+          "id": "B",
+          "text": "10 días hábiles a partir del día de cese."
+        },
+        {
+          "id": "C",
+          "text": "15 días hábiles a partir del día de cese."
+        },
+        {
+          "id": "D",
+          "text": "1 mes a partir del día de cese."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q135",
+      "sourceNumber": 135,
+      "text": "Rosa participa en un concurso de movilidad interna convocado en su Hospital y es adscrita a la Plataforma Logística Sanitaria (PLS) de la provincia, pasando a trabajar en sus distintas áreas: Compras y Logística, Contabilidad y en Contratación Administrativa en las que le han sido asignadas funciones específicas de dichas áreas. Rosa recibe la visita de un proveedor que quiere ofertar unos nuevos apósitos que aún no se comercializan en el SAS. Indique cuál es la actuación a realizar para que el proveedor pueda comercializar los apósitos en el SAS:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rosa registrará la oferta en SIGLO."
+        },
+        {
+          "id": "B",
+          "text": "El proveedor debe inscribir el producto en la Revista de compras."
+        },
+        {
+          "id": "C",
+          "text": "El proveedor debe inscribir el producto en el Catálogo de Bienes del SAS."
+        },
+        {
+          "id": "D",
+          "text": "El proveedor debe inscribir el producto en el Banco de Bienes y Servicios del SAS."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q136",
+      "sourceNumber": 136,
+      "text": "La inscripción del nuevo producto a comercializar en el registro indicado en la pregunta anterior, conlleva:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La asignación de un código de identificación del producto, previa evaluación del mismo para certificar su aptitud"
+        },
+        {
+          "id": "B",
+          "text": "La asignación de un código de identificación del producto automático de modo electrónico, y supone el pase del producto a estado certificado"
+        },
+        {
+          "id": "C",
+          "text": "La asignación de un código de identificación del producto y un código GC."
+        },
+        {
+          "id": "D",
+          "text": "La asignación de un código de Catálogo de Bienes y Servicios y un código GC."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q137",
+      "sourceNumber": 137,
+      "text": "Indique cuál de las siguientes afirmaciones no es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un código SAS puede tener asociados varios códigos genéricos de centro."
+        },
+        {
+          "id": "B",
+          "text": "El código CIP es el código que identifica la referencia de fabricante y denominación comercial con el código de artículo del catálogo del Servicio Andaluz de Salud al que ha quedado adscrito."
+        },
+        {
+          "id": "C",
+          "text": "No se pueden realizar cambios de códigos SAS en los productos sujetos a Acuerdo Marco."
+        },
+        {
+          "id": "D",
+          "text": "El código CIP es obligatorio para todos los artículos del Catálogo de Bienes y Servicios."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q138",
+      "sourceNumber": 138,
+      "text": "El hospital está interesado en adquirir este nuevo apósito que ya se encuentra registrado para poder ser comercializado en el SAS. ¿Qué código se utiliza para realizar un pedido de dicho artículo al proveedor?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Código CIP."
+        },
+        {
+          "id": "B",
+          "text": "Código SAS."
+        },
+        {
+          "id": "C",
+          "text": "Código GC."
+        },
+        {
+          "id": "D",
+          "text": "Código EAN."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q139",
+      "sourceNumber": 139,
+      "text": "En el supuesto de que no existiera el código SAS p el código GC asociado a este apósito ¿cómo se consigue incluir un nuevo código en el Catálogo de Bienes y Servicios del SAS?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El proveedor solicita su inclusión en el Catálogo."
+        },
+        {
+          "id": "B",
+          "text": "Las respuestas A y C son correctas."
+        },
+        {
+          "id": "C",
+          "text": "La Plataforma Logística Sanitaria (PLS) solicita su inclusión en el Catálogo, y así declara la intención de utilizar el producto."
+        },
+        {
+          "id": "D",
+          "text": "Las inclusiones de nuevos códigos en el Catálogo se realizan a propuesta de una Plataforma Logística Sanitaria, que así declara la intención de un proveedor de comercializar un producto que no existe en el Catálogo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q140",
+      "sourceNumber": 140,
+      "text": "Rosa consulta las existencias de apósitos en el almacén central de PLS y obtiene la siguiente información: Cantidad: 2.000 unidades de apósitos e importe existencias: 4.000 euros. Indique cuál es el método de valoración de stocks en almacenes que utiliza SIGLO.",
+      "options": [
+        {
+          "id": "A",
+          "text": "FIFO."
+        },
+        {
+          "id": "B",
+          "text": "Precio medio."
+        },
+        {
+          "id": "C",
+          "text": "LIFO."
+        },
+        {
+          "id": "D",
+          "text": "NIFO."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q141",
+      "sourceNumber": 141,
+      "text": "En dicho almacén han entrado directamente del proveedor 2.000 unidades más de apósitos a un precio unitario de 2,20 euros. Indique cuál es el precio unitario al que estarán valoradas las salidas de dicho almacén.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2,10"
+        },
+        {
+          "id": "B",
+          "text": "2,20"
+        },
+        {
+          "id": "C",
+          "text": "2,00"
+        },
+        {
+          "id": "D",
+          "text": "2,05"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q142",
+      "sourceNumber": 142,
+      "text": "¿A qué grupo y subgrupo del código SAS pertenecen los apósitos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 01 material genérico de curas"
+        },
+        {
+          "id": "B",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 00 material genérico de curas"
+        },
+        {
+          "id": "C",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 11 material específico para quirófano."
+        },
+        {
+          "id": "D",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 14 material específico para cirugía."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q143",
+      "sourceNumber": 143,
+      "text": "Rosa pasa al área de contratación administrativa y colabora en el expediente que se está tramitando cuyo objeto es la contratación de la seguridad en el Dispositivo de Cuidados Críticos y Urgencias (DCCU) de un Distrito Sanitario de la provincia. El valor estimado del contrato es de 50.000 euros y la duración del mismo es de un año. Indique el tipo de procedimiento por el que no se puede tramitar este expediente en función de su importe:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Por procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "B",
+          "text": "Por contrato menor y por procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "C",
+          "text": "Por procedimiento abierto."
+        },
+        {
+          "id": "D",
+          "text": "Contrato menor."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q144",
+      "sourceNumber": 144,
+      "text": "Indique cuál es el órgano competente para suscribir este contrato de seguridad:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Gestión Económica y Servicios del SAS."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Gerencia del Distrito Sanitario al que pertenece el Dispositivo de Urgencias con el límite del crédito que se le consigne."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección Gerencia del Centro Hospitalario de la provincia donde se ubica la Plataforma Logística Sanitaria, con el límite del crédito que se le consigne."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Económica de la PLS con el límite del crédito que se le consigne."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q145",
+      "sourceNumber": 145,
+      "text": "En el supuesto de que este expediente, por su importe, se tramitase por procedimiento negociado con publicidad, indique en qué boletín oficial es obligatorio dar publicidad a la convocatoria de este expediente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el BOJA."
+        },
+        {
+          "id": "B",
+          "text": "En el BOJA y en el DOUE."
+        },
+        {
+          "id": "C",
+          "text": "En los procedimientos negociados no es obligatoria la publicación en un boletín oficial."
+        },
+        {
+          "id": "D",
+          "text": "En el BOE y en el BOJA."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q146",
+      "sourceNumber": 146,
+      "text": "En el inicio de este expediente de contratación, ¿qué documento contable deberá expedirse?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se expedirá documento contable A en el momento de la aprobación del gasto, de importe 50.000 euros."
+        },
+        {
+          "id": "B",
+          "text": "Se expedirá de documento contable AD en el momento anterior a la adquisición del compromiso del gasto, por el importe exacto de dicho compromiso."
+        },
+        {
+          "id": "C",
+          "text": "Se expedirá documento contable A en el momento anterior a la adquisición del compromiso del gasto, de importe 50.000 euros."
+        },
+        {
+          "id": "D",
+          "text": "Se expedirá documento contable AD en el momento de la aprobación del gasto, de importe 50.000 euros."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q147",
+      "sourceNumber": 147,
+      "text": "¿A qué clasificación económica del presupuesto de gasto se imputa este expediente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "227.00"
+        },
+        {
+          "id": "B",
+          "text": "227.02"
+        },
+        {
+          "id": "C",
+          "text": "227.01"
+        },
+        {
+          "id": "D",
+          "text": "227.09"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q148",
+      "sourceNumber": 148,
+      "text": "¿Qué documento contable deberá expedirse en la fase de ordenación del pago?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se expedirá documento contable OP en el momento de ejecución del pago de las obligaciones reconocidas."
+        },
+        {
+          "id": "B",
+          "text": "Se expedirá documento contable OP en el momento de la realización del pago de las obligaciones reconocidas."
+        },
+        {
+          "id": "C",
+          "text": "No se expedirá ningún nuevo documento contable, porque la ordenación de pagos va implícito en la fase de reconocimiento de obligaciones."
+        },
+        {
+          "id": "D",
+          "text": "Se expedirá documento contable O en el momento de la realización del pago de las obligaciones reconocidas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q149",
+      "sourceNumber": 149,
+      "text": "Este expediente de seguridad se adjudicó por un importe total de 48.000 euros. Tras el primer mes de prestación del servicio de seguridad, y dada la conformidad al mismo, procede la facturación de dicho servicio por el proveedor. Indique la respuesta correcta en relación a dicha factura mensual.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Debe presentar obligatoriamente la factura electrónica porque el importe de la misma es superior a 3.000 euros."
+        },
+        {
+          "id": "B",
+          "text": "La presentación de la factura electrónica es optativa porque el importe de la misma es inferior a 5.000 euros."
+        },
+        {
+          "id": "C",
+          "text": "La presentación de la factura electrónica es optativa porque el importe de la misma es inferior a 5.000 euros, salvo que anteriormente el proveedor hubiese presentado ya una factura electrónica, en cuyo caso, es obligatorio."
+        },
+        {
+          "id": "D",
+          "text": "Debe presentar obligatoriamente la factura electrónica porque el importe de la misma es superior a 5.000 euros."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q150",
+      "sourceNumber": 150,
+      "text": "En el caso de que el proveedor presente factura electrónica, indique cuál afirmación no es correcta.",
+      "options": [
+        {
+          "id": "A",
+          "text": "La factura electrónica se presentará en el Punto General de Entrada de Facturas Electrónicas de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "La factura electrónica se presentará en el Punto General de Entrada de Facturas Electrónicas de la Comunidad Autónoma de Andalucía y en el Registro contable de facturas de la PLS de la provincia."
+        },
+        {
+          "id": "C",
+          "text": "El Punto General de Entrada de Facturas Electrónicas remitirá la factura al Registro Contable de Facturas de la Administración de la Junta de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "El Punto General de Entrada proporcionará información sobre el estado de tramitación de la factura a las personas o entidades que hayan presentado facturas electrónicas y que formulen consulta."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q151",
+      "sourceNumber": 151,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, una vez notificada la Resolución de concesión del Reingreso Provisional, si la toma de posesión no se efectúa en plazo, sin mediar causa justificada, la persona interesada seguirá en su situación y no podrá solicitar un nuevo reingreso provisional hasta transcurrido:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Seis meses desde la finalización de este plazo posesorio."
+        },
+        {
+          "id": "B",
+          "text": "A la finalización del periodo de duración de un nuevo proceso de solicitud de reingreso provisional."
+        },
+        {
+          "id": "C",
+          "text": "Un año desde la finalización de este plazo posesorio."
+        },
+        {
+          "id": "D",
+          "text": "Dos años desde la finalización de este plazo posesorio."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q152",
+      "sourceNumber": 152,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, las medidas cautelares pueden acordarse:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el cualquier momento de la tramitación del expediente."
+        },
+        {
+          "id": "B",
+          "text": "En el acto de incoación o bien durante la tramitación del expediente cuando concurran hechos nuevos o que no pudieron tenerse en cuenta en el momento de incoación."
+        },
+        {
+          "id": "C",
+          "text": "En el acto de incoación del expediente."
+        },
+        {
+          "id": "D",
+          "text": "Tras la primera toma de declaración del presunto autor de los hechos, mediante resolución motivada susceptible de recurso de alzada."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-promocion-interna-q153",
+      "sourceNumber": 153,
+      "text": "Según la Ley 5/2003, de 9 de octubre, el Registro de Voluntades Vitales Anticipadas de Andalucía se encuentra adscrito a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consejería de Salud."
+        },
+        {
+          "id": "B",
+          "text": "Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Delegación Provincial de la Consejería de Salud."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 36
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151
+    ],
+    "count": 150,
+    "annulledNumbers": [
+      88
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151
+    ],
+    "reserveUsedLabels": {
+      "R1": 151
+    },
+    "annulledCount": 1,
+    "reserveTotal": 3,
+    "reserveUsedCount": 1,
+    "reserveUnusedCount": 2,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 88,
+          "reserveNumber": 151
+        }
+      ],
+      "unreplacedAnnulledNumbers": [],
+      "unusedReserveNumbers": [
+        152,
+        153
+      ]
+    }
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  },
+  "nominalQuestionCount": 150
+}

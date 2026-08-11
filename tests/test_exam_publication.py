@@ -17,8 +17,10 @@ import parse_sas_exam as importer
 import publish_exam
 
 BANK = ROOT / "app/public/data/exams"
+REGISTRY = ROOT / "supabase/official-exam-registrations"
 EXAM_ID = "sas-administrativo-2021-turno-libre"
 SOURCE_FIXTURE = ROOT / "tests/fixtures/publication" / f"{EXAM_ID}.source.json"
+REPAIR_INPUT = ROOT / "exam-inputs/sas-administrativo-2015-promocion-interna.json"
 PUBLICATION_WORKFLOW = ROOT / ".github/workflows/exam-publication.yml"
 CHECK_WORKFLOW = ROOT / ".github/workflows/exam-publication-check.yml"
 CI_WORKFLOW = ROOT / ".github/workflows/ci.yml"
@@ -52,6 +54,34 @@ def reversion(exam: dict) -> None:
     exam["version"]["id"] = hashlib.sha256(
         f"{exam['source']['sha256']}:{content_hash}".encode("ascii")
     ).hexdigest()
+
+
+def load_repairable_blocked() -> dict:
+    exam = json.loads(REPAIR_INPUT.read_text(encoding="utf-8"))
+    exam.pop("nominalQuestionCount", None)
+    for question in exam["questions"]:
+        question.update(active=False, correctOption=None, displayLabel=None)
+    previous = exam["scorableSet"]
+    exam["scorableSet"] = {
+        "state": "unresolved",
+        "questionNumbers": [],
+        "count": 0,
+        "annulledNumbers": previous["annulledNumbers"],
+        "reserveNumbers": previous["reserveNumbers"],
+        "reserveUsedNumbers": [],
+        "reserveUsedLabels": {},
+        "annulledCount": previous["annulledCount"],
+        "reserveTotal": previous["reserveTotal"],
+        "reserveUsedCount": 0,
+        "reserveUnusedCount": previous["reserveTotal"],
+    }
+    exam["qa"]["state"] = importer.BLOCKED
+    exam["qa"]["blockedReason"] = "tratamiento ambiguo de anuladas/reservas"
+    exam["qa"]["checks"]["annulledHandlingResolved"] = False
+    exam["qa"]["checks"]["reserveHandlingResolved"] = False
+    reversion(exam)
+    importer.validate_exam_package(exam)
+    return exam
 
 
 class TestExamPublication(unittest.TestCase):
@@ -105,6 +135,7 @@ class TestExamPublication(unittest.TestCase):
         bank = root / "bank"
         registry = root / "registry"
         shutil.copytree(BANK, bank)
+        shutil.copytree(REGISTRY, registry)
         exam = load_current()
         exam["title"] += f" - {name}"
         reversion(exam)
@@ -165,8 +196,7 @@ class TestExamPublication(unittest.TestCase):
         self.assertFalse(self.summary.exists())
 
     def test_blocked_canonical_state_cannot_update_catalog(self) -> None:
-        blocked_path = next((BANK / "blocked").glob("*/versions/*.json"))
-        blocked = json.loads(blocked_path.read_text(encoding="utf-8"))
+        blocked = load_repairable_blocked()
         self.write_exam(blocked)
         metadata = json.loads(SOURCE_FIXTURE.read_text(encoding="utf-8"))
         metadata["examId"] = blocked["id"]
@@ -176,6 +206,20 @@ class TestExamPublication(unittest.TestCase):
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "bloqueado_para_revision"):
             publish_exam.prepare(self.exam_path, self.metadata_path, self.bank, self.summary, self.registry)
         self.assertEqual(self.snapshot(self.bank), before)
+
+    def test_only_old_reserve_blockers_can_be_repaired(self) -> None:
+        blocked = load_repairable_blocked()
+        repaired = publish_exam.repair_ordered_reserve_package(blocked)
+        importer.validate_exam_package(repaired)
+        self.assertEqual(repaired["qa"]["state"], importer.PUBLICABLE)
+        self.assertEqual(
+            repaired["scorableSet"]["reserveUsedNumbers"],
+            repaired["scorableSet"]["reserveNumbers"][:repaired["scorableSet"]["annulledCount"]],
+        )
+
+        blocked["qa"]["blockedReason"] = "pregunta activa sin respuesta oficial"
+        with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "bloqueo distinto"):
+            publish_exam.repair_ordered_reserve_package(blocked)
 
     def test_source_hash_mismatch_and_secret_bearing_url_are_rejected(self) -> None:
         exam = load_current()
@@ -235,7 +279,7 @@ class TestExamPublication(unittest.TestCase):
         with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "QA versionado"):
             publish_exam.verify_bank(self.bank)
 
-    def test_verify_bank_accepts_legacy_blocked_corpus_but_rejects_extra_artifacts(self) -> None:
+    def test_verify_bank_accepts_published_corpus_but_rejects_extra_artifacts(self) -> None:
         publish_exam.verify_bank(self.bank)
         extras = {
             "orphan.json": "{}\n",
@@ -300,9 +344,6 @@ class TestExamPublication(unittest.TestCase):
 
     def test_real_git_comparison_rejects_non_generated_changes(self) -> None:
         mutations = {
-            "modified-blocked-report": lambda bank: next((bank / "blocked").glob("*.qa.md")).write_text(
-                "alterado\n", encoding="utf-8"
-            ),
             "deleted-legacy-alias": lambda bank: (bank / "sas-administrativo-2023-turno-libre.json").unlink(),
             "modified-old-version": lambda bank: next(bank.glob("*/versions/*.json")).write_text(
                 "{}\n", encoding="utf-8"
@@ -614,6 +655,7 @@ class TestExamPublication(unittest.TestCase):
         registry = repo / "supabase/official-exam-registrations"
         bank.parent.mkdir(parents=True)
         shutil.copytree(BANK, bank)
+        shutil.copytree(REGISTRY, registry)
         exam = load_current()
         exam["title"] += " - registry history"
         reversion(exam)

@@ -1,0 +1,4662 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-administrativo-2015-turno-libre-aplazada",
+  "title": "SAS Administrativo/a 2015 - Turno Libre - Prueba Aplazada",
+  "category": "Administrativo/a",
+  "access": "Turno Libre",
+  "variant": "Prueba Aplazada",
+  "year": 2015,
+  "durationMinutes": 180,
+  "source": {
+    "pdf": "Examen_ADM_L_APL_2015.pdf",
+    "sha256": "ece322ad8067a1410b8431c7b649a9ca8a4695c604cd7c791d1d2e7a3474aa4b",
+    "answerKeyPage": 41
+  },
+  "version": {
+    "id": "c1112457c3e093c2f56d91660c4284a61a0a623d6d0e9ab324898514b55547c5",
+    "contentSha256": "bd598edbd1389215c0d372bbc78bab3419d44fda4b67f0cd9ea2b5b2b07d0244"
+  },
+  "questions": [
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q001",
+      "sourceNumber": 1,
+      "text": "¿En qué artículo de la Constitución Española viene regulado el derecho a la protección de la salud?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 14"
+        },
+        {
+          "id": "B",
+          "text": "Artículo 41"
+        },
+        {
+          "id": "C",
+          "text": "Artículo 42"
+        },
+        {
+          "id": "D",
+          "text": "Artículo 43"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q002",
+      "sourceNumber": 2,
+      "text": "¿En qué artículo del Estatuto de Autonomía para Andalucía se recogen las competencias de esta Comunidad en salud, sanidad y farmacia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Artículo 22"
+        },
+        {
+          "id": "B",
+          "text": "Artículo 54"
+        },
+        {
+          "id": "C",
+          "text": "Artículo 55"
+        },
+        {
+          "id": "D",
+          "text": "Artículo 56"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q003",
+      "sourceNumber": 3,
+      "text": "La Ley 14/1986 de 25 de Abril, General de Sanidad, en su artículo tres, establece que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La política de salud estará orientada a la fomentar la igualdad de todos los ciudadanos que residan legalmente en España."
+        },
+        {
+          "id": "B",
+          "text": "La política de salud estará orientada a la superación de los desequilibrios territoriales y sociales."
+        },
+        {
+          "id": "C",
+          "text": "La política de salud estará orientada a la superación de los desequilibrios territoriales y sociales de todos los ciudadanos que residan legalmente en España."
+        },
+        {
+          "id": "D",
+          "text": "La política de salud estará orientada a la superación de los desequilibrios territoriales y sociales de todos los ciudadanos que residan en España."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q004",
+      "sourceNumber": 4,
+      "text": "La Ley 14/1986 de 25 de Abril, General de Sanidad, en su artículo seis, recoge las actuaciones a las que estarán orientadas las Administraciones Públicas Sanitarias. Entre las mismas se encuentra la de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Promover las acciones necesarias para la rehabilitación funcional y reinserción social del ciudadano."
+        },
+        {
+          "id": "B",
+          "text": "Promover las acciones necesarias para la rehabilitación funcional y reinserción social del usuario."
+        },
+        {
+          "id": "C",
+          "text": "Promover las acciones necesarias para la rehabilitación funcional y reinserción laboral del paciente."
+        },
+        {
+          "id": "D",
+          "text": "Promover las acciones necesarias para la rehabilitación funcional y reinserción social del paciente."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q005",
+      "sourceNumber": 5,
+      "text": "El artículo 8 de la Ley 2/1998 de 15 de Junio, de Salud de Andalucía, establece entre los deberes de los ciudadanos respecto de los servicios sanitarios en Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cumplir las normas y procedimientos de uso y acceso a los derechos que se les otorgan a través de la presente Ley."
+        },
+        {
+          "id": "B",
+          "text": "Cuidar las instalaciones y utensilios que se pongan a su disposición."
+        },
+        {
+          "id": "C",
+          "text": "Mantener el debido respeto a las normas reglamentarias así como al personal del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Cumplir las normas en el uso racional de los medicamentos que se le prescriban."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q006",
+      "sourceNumber": 6,
+      "text": "Dentro de los compromisos que se recogen en el IV Plan Andaluz de Salud, se encuentra el de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Proteger y promover la salud de las personas ante los efectos del cambio climático, la globalización y los riesgos emergentes de origen ambiental y alimentario."
+        },
+        {
+          "id": "B",
+          "text": "Reducir las desigualdades sociales de los ciudadanos."
+        },
+        {
+          "id": "C",
+          "text": "Fomentar la gestión compartida con los ciudadanos para mejorar la salud."
+        },
+        {
+          "id": "D",
+          "text": "Aumentar la esperanza de vida de los ciudadanos de la Comunidad, prestando en todo momento la atención sanitaria necesaria."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q007",
+      "sourceNumber": 7,
+      "text": "Dentro de las competencias de la Consejería de Salud recogidas en el artículo 1 del Decreto 208/2015, por el que se establece la estructura orgánica de la Consejería de Salud y del Servicio Andaluz de Salud, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La ejecución de las directrices y los criterios generales para proteger la salud."
+        },
+        {
+          "id": "B",
+          "text": "Las políticas de consumo de la Junta de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Todas las políticas de la Junta de Andalucía en materia de salud y consumo."
+        },
+        {
+          "id": "D",
+          "text": "Todas aquellas políticas de la Junta de Andalucía que en materia de salud y consumo, tengan carácter general."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q008",
+      "sourceNumber": 8,
+      "text": "Entre las funciones que según el Decreto 208/2015 corresponden a la Viceconsejería de Salud, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La definición y coordinación de las políticas activas de la Consejería de Salud."
+        },
+        {
+          "id": "B",
+          "text": "El seguimiento y control de los parámetros de eficiencia integral del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "La Coordinación específica y el control de los sistemas informáticos de la Consejería de Salud y del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "La orientación, tutela y control técnico de la Escuela Andaluza de Salud Pública."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q009",
+      "sourceNumber": 9,
+      "text": "Según el Decreto de estructura, organización y funcionamiento de los servicios de atención primaria de salud en el ámbito del Servicio Andaluz de Salud, la función de definir las prioridades en materia de formación de los profesionales de las diferentes unidades asistenciales corresponde a la:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dirección de Gestión Económica y de Desarrollo Profesional."
+        },
+        {
+          "id": "B",
+          "text": "Dirección de Cuidados de Enfermería."
+        },
+        {
+          "id": "C",
+          "text": "Dirección de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Dirección Gerencia."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q010",
+      "sourceNumber": 10,
+      "text": "Según el Decreto que regula la ordenación de la asistencia sanitaria especializada y de órganos de Dirección de los Hospitales en Andalucía, la Junta Facultativa, órgano colegiado de participación, estará presidida por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Médica"
+        },
+        {
+          "id": "C",
+          "text": "La Dirección de Enfermería."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Económico/Administrativa."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q011",
+      "sourceNumber": 11,
+      "text": "En relación a la protección de datos de carácter personal, según la Ley Orgánica 15/1999, de 13 de diciembre, los interesados pueden presentar reclamación ante la Agencia de Protección de Datos ante actuaciones contrarias a lo dispuesto en dicha Ley. En este caso, el plazo máximo en que debe dictarse resolución expresa de tutela de derechos será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 mes."
+        },
+        {
+          "id": "B",
+          "text": "2 meses."
+        },
+        {
+          "id": "C",
+          "text": "3 meses."
+        },
+        {
+          "id": "D",
+          "text": "6 meses."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q012",
+      "sourceNumber": 12,
+      "text": "Según la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, la Agencia de Protección de Datos es un:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ente de derecho público, con personalidad jurídica propia y plena capacidad pública y privada."
+        },
+        {
+          "id": "B",
+          "text": "Ente de derecho privado, con personalidad jurídica propia y plena capacidad pública y privada."
+        },
+        {
+          "id": "C",
+          "text": "Ente de derecho público, sin personalidad jurídica propia y plena capacidad pública y privada."
+        },
+        {
+          "id": "D",
+          "text": "Ente de derecho público, con personalidad jurídica propia, que actúa con dependencia de las Administraciones Públicas en el ejercicio de sus funciones."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q013",
+      "sourceNumber": 13,
+      "text": "Según la Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales, una empresa que tenga entre 1.001 y 2.000 trabajadores, contará con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 Delegados de Prevención."
+        },
+        {
+          "id": "B",
+          "text": "4 Delegados de Prevención."
+        },
+        {
+          "id": "C",
+          "text": "5 Delegados de Prevención."
+        },
+        {
+          "id": "D",
+          "text": "6 Delegados de Prevención."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q014",
+      "sourceNumber": 14,
+      "text": "Según la Ley 12/2007, de 26 de noviembre, para la promoción de la igualdad de género en Andalucía, recoge entre sus principios generales:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La adopción de las medidas específicas necesarias destinadas a eliminar desigualdades sociales."
+        },
+        {
+          "id": "B",
+          "text": "La adopción de las medidas necesarias para la eliminación de la discriminación y especialmente, aquellas que incidan en las diferencias salariales entre mujeres y hombres."
+        },
+        {
+          "id": "C",
+          "text": "La adopción de las medidas necesarias para la eliminación de la discriminación y especialmente, aquellas que incidan en la creciente feminización de la pobreza."
+        },
+        {
+          "id": "D",
+          "text": "La igualdad de trato entre mujeres y hombres, que supone la ausencia de toda discriminación en los ámbitos económico, político y familiar."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q015",
+      "sourceNumber": 15,
+      "text": "Según la Ley 13/2007, de 26 de noviembre, de medidas de prevención y protección integral contra la violencia de género, en relación a su ámbito de aplicación, tienen garantizados los derechos que esta Ley reconoce:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todas las mujeres que se encuentren en el territorio de España."
+        },
+        {
+          "id": "B",
+          "text": "Todas las mujeres que se encuentren legalmente en el territorio andaluz."
+        },
+        {
+          "id": "C",
+          "text": "Todas las mujeres que se encuentren legalmente en el territorio de España."
+        },
+        {
+          "id": "D",
+          "text": "Todas las mujeres que se encuentren en el territorio de andaluz."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q016",
+      "sourceNumber": 16,
+      "text": "Según el Decreto 524/2008, de 16 de diciembre, por el que se regulan las competencias y el procedimiento en materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía y del Sector Público Andaluz, la competencia para autorizar, reconocer o denegar la compatibilidad del personal cuyo primer puesto de trabajo dependa de las Universidades Públicas de Andalucía, corresponde a la persona titular:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De la Consejería de Educación."
+        },
+        {
+          "id": "B",
+          "text": "De la Consejería de Justicia e Interior."
+        },
+        {
+          "id": "C",
+          "text": "Del Rectorado de la Universidad de Sevilla."
+        },
+        {
+          "id": "D",
+          "text": "Del Rectorado de la Universidad de la que dependa el solicitante."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q017",
+      "sourceNumber": 17,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco del personal estatutario de los servicios de salud, se acordará el cese del personal estatutario sustituto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando se reincorpore la persona a la que sustituya, así como cuando ésta pierda su derecho a la reincorporación a la misma plaza o función."
+        },
+        {
+          "id": "B",
+          "text": "Cuando se reincorpore la persona a la que sustituya."
+        },
+        {
+          "id": "C",
+          "text": "Cuando finalice la causa motivó la ausencia del titular."
+        },
+        {
+          "id": "D",
+          "text": "En cualquier momento, según las disponibilidades presupuestarias del centro."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q018",
+      "sourceNumber": 18,
+      "text": "Según la Ley 55/2003, de 16 de diciembre, del Estatuto Marco, la suspensión firme por sanción disciplinaria no podrá exceder de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 año."
+        },
+        {
+          "id": "B",
+          "text": "2 años."
+        },
+        {
+          "id": "C",
+          "text": "3 años."
+        },
+        {
+          "id": "D",
+          "text": "6 años."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q019",
+      "sourceNumber": 19,
+      "text": "Según la Ley 41/2002, de 14 de noviembre, ¿Durante cuánto tiempo mínimo tienen los centros sanitarios la obligación de conservar la documentación clínica?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cinco años contados desde la fecha del alta de cada proceso asistencial."
+        },
+        {
+          "id": "B",
+          "text": "Diez años contados desde la fecha del alta de cada proceso asistencial."
+        },
+        {
+          "id": "C",
+          "text": "Diez años contados desde la fecha de inicio del proceso asistencial."
+        },
+        {
+          "id": "D",
+          "text": "Siempre."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q020",
+      "sourceNumber": 20,
+      "text": "Según la Ley 41/2002, de 14 de noviembre, y en relación al alta del paciente, en caso de que el mismo no la acepte la dirección del centro, previa comprobación del informe clínico correspondiente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Oirá al paciente y, si persiste en su negativa, procederá a emitir el alta."
+        },
+        {
+          "id": "B",
+          "text": "Oirá al paciente y, si persiste en su negativa, lo pondrá en conocimiento del juez para que confirme o revoque la decisión."
+        },
+        {
+          "id": "C",
+          "text": "Procederá a emitir el alta, informando al juez de guardia de tal circunstancia."
+        },
+        {
+          "id": "D",
+          "text": "Procederá a ofrecer al paciente una segunda opinión de personal sanitario adscrito a al centro."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q021",
+      "sourceNumber": 21,
+      "text": "Según el Decreto 1/2013, de 8 de enero, el Biobanco del Sistema Sanitario Público de Andalucía depende:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De la Dirección Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "De las Direcciones Gerencia de los Hospitales del SSPA."
+        },
+        {
+          "id": "C",
+          "text": "De la Consejería competente en materia de salud."
+        },
+        {
+          "id": "D",
+          "text": "Del Ministerio de Sanidad, Servicios Sociales e Igualdad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q022",
+      "sourceNumber": 22,
+      "text": "Según el Decreto 77/2008, de 4 de marzo, de ordenación administrativa y funcional de los servicios de Salud Mental en el ámbito del Servicio Andaluz de Salud, la función de gestionar, de forma eficaz y eficiente, el material clínico de la unidad de gestión clínica y su mantenimiento, así como los productos sanitarios necesarios para la provisión de los cuidados más adecuados a la población, corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección de la Unidad de Gestión Clínica de Salud Mental."
+        },
+        {
+          "id": "B",
+          "text": "La Coordinación de los dispositivos asistenciales que integran la Unidad de Gestión Clínica de Salud Mental."
+        },
+        {
+          "id": "C",
+          "text": "La Coordinación de cuidados de enfermería de la Unidad de Gestión Clínica de Salud Mental."
+        },
+        {
+          "id": "D",
+          "text": "Todos los profesionales de la Unidad de Gestión Clínica de Salud Mental."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q023",
+      "sourceNumber": 23,
+      "text": "Las líneas de acción que dan contenido al Plan de Calidad del Sistema Sanitario Público de Andalucía 2010-2014 están enfocadas en torno a varios escenarios:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los profesionales, los ciudadanos y la Consejería de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La ciudadanía, los profesionales y un espacio compartido."
+        },
+        {
+          "id": "C",
+          "text": "Los ciudadanos, los profesionales y la Agencia de Calidad Sanitaria de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "Los profesionales, el SAS y la ACSA."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q024",
+      "sourceNumber": 24,
+      "text": "Según la Ley 2/2010, de 8 de abril, entre los derechos de las personas ante el proceso de muerte se recogen los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la atención integral, a realizar la declaración de voluntad vital anticipada, a la toma de decisiones y al consentimiento informado."
+        },
+        {
+          "id": "B",
+          "text": "A la atención integral y personalizada, a realizar la declaración de voluntad vital anticipada, a la toma de decisiones y al consentimiento informado."
+        },
+        {
+          "id": "C",
+          "text": "A la atención integral, a la información asistencial, a realizar la declaración de voluntad vital anticipada, a la toma de decisiones y al consentimiento informado."
+        },
+        {
+          "id": "D",
+          "text": "A la información asistencial, a realizar la declaración de voluntad vital anticipada, a la toma de decisiones y al consentimiento informado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q025",
+      "sourceNumber": 25,
+      "text": "La Ley que regula en el ámbito de la Comunidad Autónoma de Andalucía la declaración de voluntad vital anticipada es la:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 5/2003, de 9 de octubre."
+        },
+        {
+          "id": "B",
+          "text": "Ley 3/2005, de 5 de mayo."
+        },
+        {
+          "id": "C",
+          "text": "Ley 4/2006, de 10 de octubre."
+        },
+        {
+          "id": "D",
+          "text": "Ley 4/2010, de 8 de abril."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q026",
+      "sourceNumber": 26,
+      "text": "El Decreto que regula las disposiciones mínimas de seguridad y salud relativas al trabajo con equipos que incluyen pantallas de visualización (PVD) es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreto 488/1997, de 14 de abril."
+        },
+        {
+          "id": "B",
+          "text": "Decreto 322/1997, de 6 de marzo."
+        },
+        {
+          "id": "C",
+          "text": "Decreto 75/1998, de 6 de abril."
+        },
+        {
+          "id": "D",
+          "text": "Decreto 92/1999, de 18 de marzo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q027",
+      "sourceNumber": 27,
+      "text": "La Ley del Estatuto Básico del Empleado Público (EBEP) tiene por objeto, entre otros:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Establecer las bases por las que se han de regir todos trabajadores de la Administración."
+        },
+        {
+          "id": "B",
+          "text": "Determinar las normas aplicables al personal laboral de las empresas públicas."
+        },
+        {
+          "id": "C",
+          "text": "Establecer las bases del régimen público de los funcionarios públicos incluidos en su ámbito de aplicación."
+        },
+        {
+          "id": "D",
+          "text": "Determinar las normas aplicables al personal laboral al servicio de las Administraciones Públicas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q028",
+      "sourceNumber": 28,
+      "text": "Entre los derechos individuales de los empleados públicos que se establecen en la Ley del Estatuto Básico del Empleado Público (EBEP), no se recoge:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La libertad sindical."
+        },
+        {
+          "id": "B",
+          "text": "La estabilidad laboral."
+        },
+        {
+          "id": "C",
+          "text": "La libertad de expresión, dentro de los límites del ordenamiento jurídico"
+        },
+        {
+          "id": "D",
+          "text": "La jubilación, según los términos y condiciones establecidas en las normas aplicables."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q029",
+      "sourceNumber": 29,
+      "text": "Según la Ley 30/1992, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común (LRJAP-PAC), las Entidades de Derecho Público con personalidad jurídica propia, vinculadas o dependientes de cualquiera de las Administraciones Públicas, estarán sujetas a esta Ley:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En todas las potestades que ejerzan."
+        },
+        {
+          "id": "B",
+          "text": "Exclusivamente en sus relaciones con los ciudadanos."
+        },
+        {
+          "id": "C",
+          "text": "Cuando ejerzan potestades administrativas."
+        },
+        {
+          "id": "D",
+          "text": "Exclusivamente cuando ejerzan potestades administrativas de gestión de derechos con los ciudadanos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q030",
+      "sourceNumber": 30,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), no podrán crearse nuevos órganos que supongan duplicación de otros ya existentes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Si al mismo tiempo no se suprime o restringe debidamente la competencia de éstos."
+        },
+        {
+          "id": "B",
+          "text": "Si al mismo tiempo no se suprimen los ya existentes."
+        },
+        {
+          "id": "C",
+          "text": "Si al mismo tiempo no se modifica el ámbito competencial de los ya existentes."
+        },
+        {
+          "id": "D",
+          "text": "Sin la autorización expresa del órgano ya existente."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q031",
+      "sourceNumber": 31,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), toda notificación deberá ser cursada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dentro del plazo de 5 días a partir de la fecha en que el acto haya sido dictado."
+        },
+        {
+          "id": "B",
+          "text": "Dentro del plazo de 10 días a partir de la fecha en que el acto haya sido dictado."
+        },
+        {
+          "id": "C",
+          "text": "Dentro del plazo de 20 días a partir de la fecha en que el acto haya sido dictado."
+        },
+        {
+          "id": "D",
+          "text": "Dentro del plazo de 30 días a partir de la fecha en que el acto haya sido dictado."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q032",
+      "sourceNumber": 32,
+      "text": "Según la Ley 30/92 (LRJAP-PAC), son actos nulos de pleno derecho:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La desviación de poder."
+        },
+        {
+          "id": "B",
+          "text": "La realización de actuaciones administrativas fuera de plazo."
+        },
+        {
+          "id": "C",
+          "text": "Los dictados por órgano manifiestamente incompetente por razón de la materia o del territorio."
+        },
+        {
+          "id": "D",
+          "text": "Los actos de las administraciones que incurran en infracción del ordenamiento jurídico."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q033",
+      "sourceNumber": 33,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), los procedimientos se iniciarán de oficio por acuerdo del órgano competente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Por propia iniciativa o como consecuencia de orden superior, a petición razonada de otros órganos o por denuncia."
+        },
+        {
+          "id": "B",
+          "text": "Por propia iniciativa, como consecuencia de orden superior o por denuncia de terceros."
+        },
+        {
+          "id": "C",
+          "text": "Por propia iniciativa, como consecuencia de orden superior o por denuncia de terceros interesados en el procedimiento."
+        },
+        {
+          "id": "D",
+          "text": "Como consecuencia de orden superior, a petición de otros órganos de las Administración Pública o por denuncia de terceros."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q034",
+      "sourceNumber": 34,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), en relación al trámite de audiencia, los interesados podrán alegar y presentar los documentos que estimen pertinentes en un plazo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Máximo de diez días."
+        },
+        {
+          "id": "B",
+          "text": "No inferior de diez días ni superior a quince."
+        },
+        {
+          "id": "C",
+          "text": "Máximo de quince días."
+        },
+        {
+          "id": "D",
+          "text": "No inferior de diez días ni superior a veinte."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q035",
+      "sourceNumber": 35,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), en relación a la obligación de resolver, el plazo máximo en el que debe notificarse la resolución expresa:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Será el fijado por la norma reguladora del correspondiente procedimiento."
+        },
+        {
+          "id": "B",
+          "text": "Será de 1 mes en todos los casos."
+        },
+        {
+          "id": "C",
+          "text": "Será de 3 meses en todos los casos."
+        },
+        {
+          "id": "D",
+          "text": "Será de 6 meses en todos los casos."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q036",
+      "sourceNumber": 36,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), contra las disposiciones administrativas de carácter general:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No cabrá recurso en vía administrativa."
+        },
+        {
+          "id": "B",
+          "text": "Se podrá presentar recurso de alzada."
+        },
+        {
+          "id": "C",
+          "text": "Se podrá presentar recurso de reposición."
+        },
+        {
+          "id": "D",
+          "text": "Se podrá presentar recurso de alzada o de reposición, a elección del interesado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q037",
+      "sourceNumber": 37,
+      "text": "Según la Ley 30/1992 (LRJAP-PAC), ponen fin a la vía administrativa:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las resoluciones de los recursos de reposición."
+        },
+        {
+          "id": "B",
+          "text": "Las resoluciones de los recursos de alzada, reposición y el extraordinario de revisión."
+        },
+        {
+          "id": "C",
+          "text": "Las resoluciones de los recursos de alzada y reposición."
+        },
+        {
+          "id": "D",
+          "text": "Las resoluciones de órganos administrativos que carezcan de superior jerárquico, salvo que una Ley establezca lo contrario."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q038",
+      "sourceNumber": 38,
+      "text": "Según el Real Decreto 429/1993, por el que se aprueba el Reglamento de los procedimientos de las Administraciones Públicas en materia de responsabilidad patrimonial, el procedimiento general se iniciará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De oficio."
+        },
+        {
+          "id": "B",
+          "text": "De oficio o por reclamación de los interesados."
+        },
+        {
+          "id": "C",
+          "text": "Por orden del superior jerárquico, petición razonada de otros órganos o por denuncia."
+        },
+        {
+          "id": "D",
+          "text": "De oficio, por orden superior o petición razonada de otros órganos, así como por reclamación de los interesados."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q039",
+      "sourceNumber": 39,
+      "text": "Según el Real Decreto 429/1993, por el que se aprueba el Reglamento de los procedimientos de las Administraciones Públicas en materia de responsabilidad patrimonial, la práctica de pruebas que hubieran sido declaradas pertinentes en un procedimiento general se practicarán en el plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 meses."
+        },
+        {
+          "id": "B",
+          "text": "3 meses."
+        },
+        {
+          "id": "C",
+          "text": "30 días."
+        },
+        {
+          "id": "D",
+          "text": "10 días."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q040",
+      "sourceNumber": 40,
+      "text": "Según la Orden de 24 de noviembre de 1992, conjunta de la Consejería de Gobernación y de la Consejería de Asuntos Sociales, sobre la eliminación del lenguaje sexista en los textos y documentos administrativos, se observarán las siguientes normas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tanto en documentos abiertos como cerrados se usará el masculino genérico sólo en los casos en que el documento tenga como destino un grupo de personas o un colectivo."
+        },
+        {
+          "id": "B",
+          "text": "Tanto en documentos cerrados como abiertos, la mención de puestos y cargos se formulará en femenino y masculino conjuntamente."
+        },
+        {
+          "id": "C",
+          "text": "En documentos abiertos la mención de puestos y cargos se formulará en masculino genérico."
+        },
+        {
+          "id": "D",
+          "text": "En documentos cerrados, la mención de puestos y cargos ocupados por mujeres y la condición, carácter o calidad en la que intervienen, se hará utilizando el género femenino."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q041",
+      "sourceNumber": 41,
+      "text": "El Decreto 204/1995, de 29 de agosto, por el que se establecen medidas organizativas para los servicios administrativos de atención directa a los ciudadanos en el ámbito de actuación de la Administración Junta de Andalucía, establece en relación al desglose de los documentos originales que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se autorizará la entrega a los interesados que los hubieran aportado y que así lo requieran, dejando constancia en el expediente mediante la expedición de copia autenticada del documento que se retira."
+        },
+        {
+          "id": "B",
+          "text": "No se autorizará la entrega a los interesados que los hubieran aportado y que así lo soliciten, salvo que el mismo aporte copia auténtica del documento original."
+        },
+        {
+          "id": "C",
+          "text": "Se autorizará la entrega a los interesados que los hubieran aportado y que así lo soliciten, siempre y cuando se compruebe por el órgano competente que se trata de un documento imprescindible en el expediente administrativo."
+        },
+        {
+          "id": "D",
+          "text": "No autorizará la entrega a los interesados que los hubieran aportado en ningún caso."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q042",
+      "sourceNumber": 42,
+      "text": "Según el Decreto 262/1998, de 2 de agosto, por el que se establece el Libro de Sugerencias y Reclamaciones, en relación con el funcionamiento de los Servicios de la Junta de Andalucía, las denuncias presentadas de acuerdo con este Decreto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tendrán la calificación de recursos administrativos."
+        },
+        {
+          "id": "B",
+          "text": "No tendrán en ningún caso la calificación de recursos administrativos, paralizando los plazos establecidos en la normativa vigente para interponerlos."
+        },
+        {
+          "id": "C",
+          "text": "No tendrán en ningún caso la calificación de recursos administrativos, ni paralizarán los plazos establecidos en la normativa vigente para interponerlos."
+        },
+        {
+          "id": "D",
+          "text": "Tendrán la calificación de recursos administrativos, pudiendo interponerse recurso contencioso-administrativo en caso de no recibir el interesado respuesta adecuada a sus pretensiones en el plazo establecido."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q043",
+      "sourceNumber": 43,
+      "text": "En razón a lo específico de la actividad, el bloque “1.- Identificación del interesado” de las hojas de los Libros de Sugerencias y Reclamaciones que existan a disposición de los usuarios en todos los centros Sanitarios integrados en el Servicio Andaluz de Salud se completa con los siguientes apartados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Edad, enfermo, familiar y otros."
+        },
+        {
+          "id": "B",
+          "text": "Edad, enfermo, grado de familiaridad y otros."
+        },
+        {
+          "id": "C",
+          "text": "Edad, localidad de nacimiento, patología y otros."
+        },
+        {
+          "id": "D",
+          "text": "Enfermo, familiar y otros."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q044",
+      "sourceNumber": 44,
+      "text": "Según el Manual de estilo del SAS, los profesionales tienen la responsabilidad de ofrecer la información necesaria y adecuada a las necesidades de los usuarios/as, entendiéndose por información necesaria:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La que solicita el usuario, en relación con temas que le afecten."
+        },
+        {
+          "id": "B",
+          "text": "La relativa al tratamiento y las pruebas diagnósticas, tanto si informar es imprescindible porque el usuario tiene que tomar parte activa como si el tratamiento o la prueba se lleva a cabo sin su intervención."
+        },
+        {
+          "id": "C",
+          "text": "La que permite que el usuario sea atendido en cualquier otro punto de la red asistencial que él haya elegido. Cuando se facilite documentación como informes clínicos o resultados de pruebas diagnósticas (por ejemplo, los resultados de un TAC), en la historia de los pacientes quedará constancia de la información que se ha retirado y a quién se ha entregado."
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q045",
+      "sourceNumber": 45,
+      "text": "Según el Manual de estilo del SAS, cualquier conducta de complacencia ante una petición no razonable no sólo puede ser interpretada por profesionales que han actuado correctamente como una descalificación, sino que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Daña la imagen del profesional que la realiza, del centro sanitario y del SAS."
+        },
+        {
+          "id": "B",
+          "text": "Causa problemas al Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "Es una descalificación para el profesional que ha actuado correctamente."
+        },
+        {
+          "id": "D",
+          "text": "Han de buscar la aceptación del usuario y del profesional."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q046",
+      "sourceNumber": 46,
+      "text": "En el Plan de Ordenación de los Recursos Humanos del Servicio Andaluz de Salud vigente, se recogen los siguientes apartados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Definición, objetivos, estudios de población, análisis de la plantilla efectiva, selección y provisión de puestos de trabajo, movilidad geográfica, comisiones de servicio, promoción de profesionales, reclasificación profesional, jubilación y personal emérito."
+        },
+        {
+          "id": "B",
+          "text": "Definición, objetivos, estudios de población, análisis de la plantilla efectiva, selección y provisión de puestos de trabajo, movilidad geográfica, promoción de profesionales, reclasificación profesional, jubilación y personal emérito."
+        },
+        {
+          "id": "C",
+          "text": "Definición, objetivos, estudios de población, análisis de la plantilla efectiva, selección y provisión de puestos de trabajo, movilidad geográfica, comisiones de servicio, carrera y promoción de profesionales, reclasificación profesional, jubilación y personal emérito."
+        },
+        {
+          "id": "D",
+          "text": "Definición, objetivos, estudios de población, análisis de la plantilla efectiva, selección y provisión de puestos de trabajo, movilidad geográfica, comisiones de servicio, carrera y promoción de profesionales, reclasificación profesional y, jubilación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q047",
+      "sourceNumber": 47,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las convocatorias de procesos selectivos correspondientes a una Oferta de Empleo Público precisarán la realización de previo concurso de traslado."
+        },
+        {
+          "id": "B",
+          "text": "Las convocatorias de procesos selectivos correspondientes a una Oferta de Empleo Público precisarán la realización de previo concurso de traslado en el caso de que este no se haya convocado en los últimos 2 años."
+        },
+        {
+          "id": "C",
+          "text": "Las convocatorias de procesos selectivos correspondientes a una Oferta de Empleo Público no precisarán la realización de previo concurso de traslado en el caso de que este no se haya convocado en los últimos 3 años."
+        },
+        {
+          "id": "D",
+          "text": "Las convocatorias de procesos selectivos correspondientes a una Oferta de Empleo Público no precisarán la realización de previo concurso de traslado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q048",
+      "sourceNumber": 48,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, las convocatorias de concurso de traslado deberán contener, al menos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El número y destinos de las plazas ofertadas y el plazo de presentación de solicitudes, que no podrá ser inferior a quinde días hábiles contados desde el día siguiente al de la publicación de la convocatoria."
+        },
+        {
+          "id": "B",
+          "text": "El número y características de las plazas ofertadas, el baremo de méritos aplicable y el plazo de presentación de solicitudes, que no podrá ser inferior a quinde días hábiles contados desde el día siguiente al de la publicación de la convocatoria."
+        },
+        {
+          "id": "C",
+          "text": "El número y características de las plazas ofertadas, con indicación de los destinos y el plazo de presentación de solicitudes, que no podrá ser inferior a quinde días hábiles contados desde el día siguiente al de la publicación de la convocatoria."
+        },
+        {
+          "id": "D",
+          "text": "El número y características de las plazas ofertadas, el baremo de méritos aplicable y el plazo de presentación de solicitudes, que no podrá ser inferior a veinte días hábiles contados desde el día siguiente al de la publicación de la convocatoria."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q049",
+      "sourceNumber": 49,
+      "text": "Según la norma en la que se regulan los sistemas de selección de personal estatutario y la provisión de plazas básicas en los Centros Sanitarios del Servicio Andaluz de Salud, las personas que obtengan plaza en un concurso de traslados y no se encuentren disfrutando ningún permiso o licencia reglamentaria, deberá cesar en la plaza que desempeñe:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El día hábil siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "B",
+          "text": "El día siguiente a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "C",
+          "text": "Dentro de los 3 días hábiles siguientes a aquel en que se publique la resolución definitiva del concurso."
+        },
+        {
+          "id": "D",
+          "text": "Dentro de los 3 días naturales siguientes a aquel en que se publique la resolución definitiva del concurso."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q050",
+      "sourceNumber": 50,
+      "text": "Según Pacto de Mesa Sectorial de Sanidad vigente sobre sistema de selección de personal estatutario temporal para puestos básicos en el Servicio Andaluz de Salud, entre las funciones de la Comisión Central de Control y Seguimiento se encuentra la de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conocer y elaborar un informe preceptivo, con carácter previo a la resolución de las reclamaciones que se presenten en materia de selección de personal estatutario temporal."
+        },
+        {
+          "id": "B",
+          "text": "Elaborar un informe preceptivo, con carácter previo a la resolución de las reclamaciones que se presenten en materia de selección de personal estatutario temporal."
+        },
+        {
+          "id": "C",
+          "text": "Conocer, participar y elaborar un informe preceptivo, con carácter previo a la resolución de las reclamaciones que se presenten en materia de selección de personal estatutario temporal"
+        },
+        {
+          "id": "D",
+          "text": "Conocer, participar y elaborar un informe preceptivo y vinculante, con carácter previo a la resolución de las reclamaciones que se presenten en materia de selección de personal estatutario temporal."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q051",
+      "sourceNumber": 51,
+      "text": "Según la convocatoria vigente en el Servicio Andaluz de Salud del proceso de selección de personal temporal del Cuerpo Superior Facultativo de Instituciones Sanitarias de la Junta de Andalucía, especialidades Farmacia y Veterinaria, cuando existan indicios de falseamiento en la documentación aportada por un candidato justificativa de los requisitos y méritos alegados:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Administración actuará de conformidad con el Código Penal, quedando provisionalmente excluido del proceso de selección."
+        },
+        {
+          "id": "B",
+          "text": "La Administración actuará de conformidad con la Ley de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común, quedando provisionalmente excluido del proceso de selección."
+        },
+        {
+          "id": "C",
+          "text": "La Administración actuará de conformidad con el Código Penal, quedando definitivamente excluido del proceso de selección."
+        },
+        {
+          "id": "D",
+          "text": "La Administración actuará de conformidad con el Código Civil, quedando provisionalmente excluido del proceso de selección."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q052",
+      "sourceNumber": 52,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, en una solicitud de reducción de jornada, los efectos del silencio serán estimatorios ante la falta de resolución expresa en el plazo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 meses."
+        },
+        {
+          "id": "B",
+          "text": "2 meses."
+        },
+        {
+          "id": "C",
+          "text": "1 mes."
+        },
+        {
+          "id": "D",
+          "text": "15 días."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q053",
+      "sourceNumber": 53,
+      "text": "Según el Manual de Vacaciones, permisos y licencias del Personal de centros e instituciones sanitarias del Servicio Andaluz de Salud, en el tiempo máximo que se puede conceder de reducción de jornada por razones de enfermedad muy grave de familiar de primer grado de consanguinidad o afinidad es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 días."
+        },
+        {
+          "id": "B",
+          "text": "1 mes."
+        },
+        {
+          "id": "C",
+          "text": "6 meses."
+        },
+        {
+          "id": "D",
+          "text": "El tiempo que perdure la causa que origina la concesión, con un máximo de 2 años."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q054",
+      "sourceNumber": 54,
+      "text": "Según la Directiva 2003/88/CE del Parlamento Europeo y del Consejo, relativa a determinados aspectos de la ordenación del tiempo de trabajo, para la aplicación de la duración máxima del tiempo de trabajo semanal, los Estados miembros, incluyendo el límite a la excepción que contempla el artº 19 de la citada directiva, podrán establecer un periodo de referencia que no exceda de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 mes."
+        },
+        {
+          "id": "B",
+          "text": "2 meses."
+        },
+        {
+          "id": "C",
+          "text": "3 meses."
+        },
+        {
+          "id": "D",
+          "text": "6 meses."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q055",
+      "sourceNumber": 55,
+      "text": "En materia disciplinaria, cuando en un proceso de movilidad el presunto autor de una falta obtenga destino en una Institución del Servicio Andaluz de Salud distinta a aquella en la que cometió la falta, la competencia respecto de todas las actuaciones que resten en el momento de la incorporación al nuevo destino será ejercida por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Profesionales del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Gerencia de la Institución (Área, Hospital, Distrito o Centro Regional de Transfusión Sanguínea) donde se incorpore el presunto autor."
+        },
+        {
+          "id": "C",
+          "text": "El cargo directivo que tenga la competencia en materia de personal del centro en el que se incorpore el presunto autor."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General de Profesionales del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q056",
+      "sourceNumber": 56,
+      "text": "En materia disciplinaria en el Servicio Andaluz de Salud, tienen delegado el ejercicio de parte de esta competencia:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección General de Profesionales del Servicio Andaluz de Salud y los Gerentes de las Áreas Sanitarias, Hospitales y Directores de Distritos de Atención Primaria y Centros Regionales y de Área de Transfusión Sanguínea."
+        },
+        {
+          "id": "B",
+          "text": "La Subdirección de Personal del centro en el que se produzcan los hechos."
+        },
+        {
+          "id": "C",
+          "text": "Los Gerentes de las Áreas Sanitarias, los Directores Gerentes de Hospitales, los Directores de Distritos de Atención Primaria, y los Directores de Centros de Transfusión Sanguínea."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General de Profesionales del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q057",
+      "sourceNumber": 57,
+      "text": "En materia de incompatibilidades del personal al servicio de la Administración de la Junta de Andalucía, el ejercicio de una segunda actividad pública requerirá, autorización o reconocimiento de compatibilidad por el órgano competente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una vez iniciada la actividad pública."
+        },
+        {
+          "id": "B",
+          "text": "Con carácter definitivo en la fecha de toma de posesión."
+        },
+        {
+          "id": "C",
+          "text": "Con carácter previo a su inicio."
+        },
+        {
+          "id": "D",
+          "text": "En ningún caso una segunda actividad pública necesita compatibilidad."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q058",
+      "sourceNumber": 58,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, el concepto de Tarjeta Sanitaria ajustada por edad (TAE) se podrá abonar a profesionales adscritos a Equipos Básicos de Atención Primaria de las siguientes categorías:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Médico de Familia, Pediatra y ATS/DUE."
+        },
+        {
+          "id": "B",
+          "text": "Médico de Familia, Pediatra, Odontoestomatólogo y ATS/DUE."
+        },
+        {
+          "id": "C",
+          "text": "Médico de Familia, Pediatra, ATS/DUE y Trabajador Social."
+        },
+        {
+          "id": "D",
+          "text": "Médico de Familia, Pediatra, ATS/DUE y Fisioterapeuta."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q059",
+      "sourceNumber": 59,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, y en relación Complemento Atención Continuada, modalidad “Continuidad Asistencial”, durante el disfrute de las vacaciones anuales reglamentarias:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los seis meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "B",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en los tres meses anteriores al inicio de su disfrute."
+        },
+        {
+          "id": "C",
+          "text": "Se percibirá la media de las jornadas de prolongación efectivamente realizadas en el mes anterior al inicio de su disfrute."
+        },
+        {
+          "id": "D",
+          "text": "No corresponde la percepción de este concepto ni prorrateo alguno por el mismo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q060",
+      "sourceNumber": 60,
+      "text": "En el Sistema Español de Seguridad Social, la afiliación a la Seguridad Social es obligatoria para las personas incluidas en su ámbito de aplicación y:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Única para cada periodo de trabajo por cuenta ajena."
+        },
+        {
+          "id": "B",
+          "text": "Única para toda su vida, siempre que no cambie de régimen."
+        },
+        {
+          "id": "C",
+          "text": "Única por cada provincia donde se presten servicios como trabajador por cuenta propia o ajena."
+        },
+        {
+          "id": "D",
+          "text": "Única para toda su vida y para todo el sistema."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q061",
+      "sourceNumber": 61,
+      "text": "Según la normativa vigente en materia de Seguridad Social, la obligación de cotizar nacerá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el momento en que se tramite el correspondiente parte de alta en la Tesorería General de la Seguridad Social."
+        },
+        {
+          "id": "B",
+          "text": "En el momento de la firma del correspondiente contrato de trabajo."
+        },
+        {
+          "id": "C",
+          "text": "En el momento en que se tramite el correspondiente parte de alta en el Instituto Nacional de la Seguridad Social."
+        },
+        {
+          "id": "D",
+          "text": "En el momento de iniciación de la actividad correspondiente"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q062",
+      "sourceNumber": 62,
+      "text": "Según la normativa vigente en materia de Seguridad Social, serán beneficiarios del subsidio por incapacidad temporal por enfermedad común, las personas incluidas en el Régimen General que cumplan los requisitos establecidos en la norma y además acrediten los siguientes periodos mínimos de cotización:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Trescientos sesenta y cinco días dentro de los cinco años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "B",
+          "text": "Trescientos sesenta y cinco días en cualquier momento anterior al hecho causante."
+        },
+        {
+          "id": "C",
+          "text": "Ciento ochenta días dentro de los cinco años inmediatamente anteriores al hecho causante."
+        },
+        {
+          "id": "D",
+          "text": "Ciento ochenta días en cualquier momento anterior al hecho causante"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q063",
+      "sourceNumber": 63,
+      "text": "Según la normativa vigente en materia de Seguridad Social, la duración de la prestación por desempleo estará en función de los periodos de ocupación cotizada en los seis años anteriores a la situación legal de desempleo o al momento en que cesó la obligación de cotizar. ¿Cuántos días de prestación corresponderían tras un periodo de cotización desde 720 a 899 días?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300 días."
+        },
+        {
+          "id": "B",
+          "text": "240 días."
+        },
+        {
+          "id": "C",
+          "text": "180 días."
+        },
+        {
+          "id": "D",
+          "text": "120 días."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q064",
+      "sourceNumber": 64,
+      "text": "Según la Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía, y dentro de los principios rectores de la actividad económico-financiera, la Hacienda de la Junta de Andalucía cumplirá sus obligaciones económicas con respeto absoluto a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los principios de legalidad y eficacia."
+        },
+        {
+          "id": "B",
+          "text": "Los principios de legalidad y eficiencia."
+        },
+        {
+          "id": "C",
+          "text": "Los principios de legalidad, eficacia y eficiencia."
+        },
+        {
+          "id": "D",
+          "text": "Los principios de legalidad, eficacia, eficiencia y transparencia."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q065",
+      "sourceNumber": 65,
+      "text": "Entre las competencias que la Ley General de la Hacienda Pública de la Comunidad Autónoma de Andalucía recoge para las Agencias Administrativas, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Disponer o comprometer los pagos relativos a la materia que gestione la agencia administrativa."
+        },
+        {
+          "id": "B",
+          "text": "Elaborar el anteproyecto de presupuestos, ingresos y gastos, de la propia agencia."
+        },
+        {
+          "id": "C",
+          "text": "Autorizar todos los gastos relativos a la materia que gestione la agencia administrativa."
+        },
+        {
+          "id": "D",
+          "text": "Ordenar los pagos correspondientes."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q066",
+      "sourceNumber": 66,
+      "text": "Según la Orden que regula la contabilidad pública de la Junta de Andalucía, entre los documentos contables de apertura y modificación de los créditos de los créditos del presupuesto de gastos que se corresponden con las distintas figuras modificativas reguladas en el Texto Refundido de la Ley General de la Hacienda Pública de la Junta de Andalucía, se encuentran los siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "“Z0”: Créditos iniciales; “Z2”: Créditos extraordinarios y “Z6”: Anualidades futuras."
+        },
+        {
+          "id": "B",
+          "text": "“Z0”: Créditos iniciales; “Z3”: Créditos extraordinarios y “Z6”: Anualidades futuras."
+        },
+        {
+          "id": "C",
+          "text": "“Z0”: Créditos iniciales; “Z5”: Ampliaciones de crédito y “Z8”: Transferencias de crédito."
+        },
+        {
+          "id": "D",
+          "text": "“Z0”: Créditos iniciales; “Z5”: Ampliaciones de crédito y “Z9”: Generaciones de crédito,"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q067",
+      "sourceNumber": 67,
+      "text": "En la contabilidad presupuestaria de gastos, el documento contable “A” se expedirá:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando se instruya un expediente de gasto, en el que, en el momento de la aprobación del mismo, no se conozca el importe exacto del compromiso a adquirir por la Administración y el citado gasto no se encuentre excluido de fiscalización."
+        },
+        {
+          "id": "B",
+          "text": "Cuando se instruya un expediente de gasto, en el que, en el momento de la aprobación del mismo, no se conozca el importe exacto del compromiso a adquirir por la Administración, independientemente de que dicho gasto esté sujeto a fiscalización."
+        },
+        {
+          "id": "C",
+          "text": "Cuando se instruya un expediente de gasto, por el importe del compromiso adquirido por la Administración."
+        },
+        {
+          "id": "D",
+          "text": "Cuando se instruya un expediente de gasto, por el importe del compromiso adquirido mediante el correspondiente contrato."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q068",
+      "sourceNumber": 68,
+      "text": "Según la normativa vigente, corresponde a la Cámara de Cuentas de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La fiscalización externa y el control económico y financiero de los fondos públicos de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "La fiscalización interna de la gestión económica, financiera y contable de los fondos públicos de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "La fiscalización externa de la gestión económica, financiera y contable de los fondos públicos de la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "La fiscalización externa de la gestión económica y financiera de los pagos realizados con fondos públicos de la Comunidad Autónoma de Andalucía."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q069",
+      "sourceNumber": 69,
+      "text": "Según la Ley de Contratos del Sector Público los contratos de suministro tienen por objeto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La adquisición o el arrendamiento, con o sin opción de compra, de productos."
+        },
+        {
+          "id": "B",
+          "text": "La adquisición, el arrendamiento financiero, o el arrendamiento, con o sin opción de compra, de productos y bienes muebles."
+        },
+        {
+          "id": "C",
+          "text": "La adquisición, el arrendamiento financiero, o el arrendamiento, con o sin opción de compra, de productos y servicios."
+        },
+        {
+          "id": "D",
+          "text": "La adquisición, el arrendamiento financiero, o el arrendamiento, con o sin opción de compra, de productos y bienes inmuebles."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q070",
+      "sourceNumber": 70,
+      "text": "Según la Ley de Contratos del Sector Público, los contratos se perfeccionan con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Su inscripción en el registro de contratos del sector público."
+        },
+        {
+          "id": "B",
+          "text": "Su firma por el representante del órgano contratante."
+        },
+        {
+          "id": "C",
+          "text": "Su fiscalización por parte de la Intervención correspondiente."
+        },
+        {
+          "id": "D",
+          "text": "Su formalización."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q071",
+      "sourceNumber": 71,
+      "text": "Según la Ley de Contratos del Sector Público, los órganos de contratación podrán designar un responsable del contrato al que corresponderá supervisar su ejecución y:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dictar las instrucciones necesarias con el fin de garantizar la correcta realización de la prestación pactada."
+        },
+        {
+          "id": "B",
+          "text": "Adoptar las decisiones y dictar las instrucciones necesarias con el fin de asegurar la correcta realización de la prestación pactada, dentro del ámbito de facultades que aquellos le atribuyan."
+        },
+        {
+          "id": "C",
+          "text": "Adoptar las decisiones y dictar las instrucciones que correspondan, dentro del ámbito de facultades que aquellos le atribuyan."
+        },
+        {
+          "id": "D",
+          "text": "Adoptar las decisiones y dictar las instrucciones que correspondan en virtud de su competencia."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q072",
+      "sourceNumber": 72,
+      "text": "Según la normativa en vigor en el ámbito del Servicio Andaluz de Salud, los órganos de la Comisión Consultiva de Contratación Pública son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Pleno, la Comisión Permanente, la Presidencia y la Secretaría General."
+        },
+        {
+          "id": "B",
+          "text": "El Pleno y la Comisión Permanente."
+        },
+        {
+          "id": "C",
+          "text": "El Presidente y la Comisión Permanente."
+        },
+        {
+          "id": "D",
+          "text": "El Pleno, la Comisión Permanente y la Presidencia."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q073",
+      "sourceNumber": 73,
+      "text": "Según la normativa en vigor en el Servicio Andaluz de Salud, la Dirección General de Gestión Económica y Servicios tiene delegada la competencia en materia de contratación administrativa, en aquellos contratos en el ámbito de los Servicios Centrales (actualmente Servicios de Apoyo), cuya cuantía sea inferior a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 millones de euros."
+        },
+        {
+          "id": "B",
+          "text": "25 millones de euros."
+        },
+        {
+          "id": "C",
+          "text": "12 millones de euros."
+        },
+        {
+          "id": "D",
+          "text": "6 millones de euros."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q074",
+      "sourceNumber": 74,
+      "text": "Según la normativa en vigor, la competencia para la aprobación de modelos de Pliegos de Cláusulas que deban regir en la contratación Administrativa del Servicio Andaluz de Salud, está delegada en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección General de Gestión Económica y Servicios del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "La Secretaría General del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección Gerencia de los centros contratantes."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q075",
+      "sourceNumber": 75,
+      "text": "A efectos de lo dispuesto en el Reglamento de Residuos de Andalucía, entre los residuos peligrosos de origen sanitario, no se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los residuos infecciosos."
+        },
+        {
+          "id": "B",
+          "text": "Los residuos punzantes y cortantes que hayan estado en contacto con fluidos corporales, con independencia de su origen."
+        },
+        {
+          "id": "C",
+          "text": "La sangre y hemoderivados en forma líquida o en recipientes en cantidades superiores a 50 ml."
+        },
+        {
+          "id": "D",
+          "text": "Los residuos de origen químico procedentes de la actividad asistencial o de investigación que no pertenezcan a los grupos IV y V."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q076",
+      "sourceNumber": 76,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, la clasificación SU.MO.MOCL.28.02 del catálogo de bienes y servicios de dicha agencia, corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Camilla exploración adulto."
+        },
+        {
+          "id": "B",
+          "text": "Camilla rehabilitación."
+        },
+        {
+          "id": "C",
+          "text": "Camilla porta cadáveres."
+        },
+        {
+          "id": "D",
+          "text": "Camilla exploración pediátrica."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q077",
+      "sourceNumber": 77,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, la clasificación SU.MO.MOCL.04.01 del catálogo de bienes y servicios de dicha agencia, corresponde a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Carros camilla de altura fija."
+        },
+        {
+          "id": "B",
+          "text": "Carros camilla de altura regulable."
+        },
+        {
+          "id": "C",
+          "text": "Carros camilla de altura regulable y recubierto de ABS."
+        },
+        {
+          "id": "D",
+          "text": "Repuestos y Accesorios comunes a todos los carros."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q078",
+      "sourceNumber": 78,
+      "text": "Según la información disponible en la página web del Servicio Andaluz de Salud, ¿cuándo es obligatorio el uso del CIP para vender un producto?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A partir de que así lo establezca una Resolución del Director Gerente del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "B",
+          "text": "A partir de que así lo establezca una Resolución de la Dirección General de Gestión Económica y Servicios del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "C",
+          "text": "A partir de que así lo establezca una Resolución de la Dirección Gerencia de cualquier centro asistencial del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "A partir de que así lo establezca una Resolución de cualquier Dirección Provincial de una Plataforma Logística."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q079",
+      "sourceNumber": 79,
+      "text": "Según información disponible en la página web del Servicio Andaluz de Salud, para poder establecer vías de comunicación eficientes y normalizadas, entre esta agencia y sus proveedores y poder dar flujos de información que se van a generar con la implantación de SIGLO, en distintos procesos (Catálogo, Banco, Contratación y Logística), es necesario:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que las empresas proveedoras del SAS se registren en el Centro de Organizaciones."
+        },
+        {
+          "id": "B",
+          "text": "Que las empresas proveedoras del SAS se registren en Contratación Pública."
+        },
+        {
+          "id": "C",
+          "text": "Que las empresas proveedoras del SAS se registren en el Centro de Empresas."
+        },
+        {
+          "id": "D",
+          "text": "Que las empresas proveedoras del SAS comuniquen por escrito tal circunstancia a la Dirección Gerencia del SAS."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q080",
+      "sourceNumber": 80,
+      "text": "Según la normativa vigente, el Sistema de Gestión Integral de Recursos Organizativos (GIRO) soporta la tramitación de los procedimientos electrónicos relativos a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los expedientes de los ámbitos presupuestario, económico-financiero y de control y contabilidad."
+        },
+        {
+          "id": "B",
+          "text": "Los expedientes de los ámbitos presupuestario, patrimonial y económico-financiero."
+        },
+        {
+          "id": "C",
+          "text": "Los expedientes de los ámbitos patrimonial, económico-financiero, de control y contabilidad analítica de costes por centro de responsabilidad"
+        },
+        {
+          "id": "D",
+          "text": "Los expedientes de los ámbitos presupuestario, patrimonial, económico-financiero y de control y contabilidad."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q081",
+      "sourceNumber": 81,
+      "text": "El Sistema Unificado de Recursos (SUR) es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una aplicación informática destinada al tratamiento integral de la información relativa a todos los tributos e ingresos que forman el presupuesto de la Comunidad Autónoma de Andalucía, sea cual sea su naturaleza o procedencia."
+        },
+        {
+          "id": "B",
+          "text": "Una aplicación informática destinada a la gestión de los recursos informáticos utilizados por la Administración de la Junta de Andalucía, sus organismos autónomos y agencias administrativas."
+        },
+        {
+          "id": "C",
+          "text": "Una aplicación informática destinada al tratamiento integral de la información relativa, en exclusividad, a todos los tributos cedidos a la Comunidad Autónoma de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "Una aplicación informática destinada al tratamiento integral de los cobros y pagos que se producen on line y que tienen como destinatarios los organismos autónomos y las agencias administrativas dependientes de la Junta de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q082",
+      "sourceNumber": 82,
+      "text": "Uno de los componentes básicos de DIRAYA es la Base de Datos de Usuarios (BDU) cuya función principal es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Facilitar la clave de acceso de los profesionales a la aplicación."
+        },
+        {
+          "id": "B",
+          "text": "Permitir a los sanitarios gestionar la información clínica del paciente."
+        },
+        {
+          "id": "C",
+          "text": "Dotar a cada ciudadano de un número único de Historia de Salud de Andalucía (NUHSA)."
+        },
+        {
+          "id": "D",
+          "text": "Dotar a cada usuario con derecho a asistencia sanitaria en Andalucía de un número de Historia de Salud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q083",
+      "sourceNumber": 83,
+      "text": "En relación al contenido de la Historia Clínica, la Ley 41/2002 recoge que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La historia clínica tendrá como fin principal facilitar la asistencia sanitaria, dejando constancia de todos aquellos datos que, bajo criterio médico, permitan el conocimiento veraz y actualizado del estado de salud."
+        },
+        {
+          "id": "B",
+          "text": "La historia clínica tendrá como fin principal la recogida de datos que permitan la toma de decisiones por parte de los facultativos responsables de la asistencia."
+        },
+        {
+          "id": "C",
+          "text": "La historia clínica tendrá como fin principal la recogida de datos sanitarios que garantice el anonimato de las personas relacionadas con las mismas."
+        },
+        {
+          "id": "D",
+          "text": "La historia clínica tendrá como fin principal la recogida de los datos sanitarios que permitan la toma de decisiones por parte de los profesionales sanitarios responsables de la asistencia."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q084",
+      "sourceNumber": 84,
+      "text": "Según la normativa vigente, a efectos de gestión y administración de los servicios del Sistema Sanitario Público de Andalucía, la información contenida en la Base de Datos de Usuarios (BDU):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acreditará la situación de los usuarios en relación con la asistencia sanitaria en el Sistema Nacional de Salud."
+        },
+        {
+          "id": "B",
+          "text": "Acreditará la situación de los ciudadanos en relación con la asistencia sanitaria en el Sistema Sanitario Público de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "Acreditará la situación de los usuarios en relación con la asistencia sanitaria en el Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Acreditará la situación de los ciudadanos en relación con la asistencia sanitaria en el Sistema Nacional de Salud."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q085",
+      "sourceNumber": 85,
+      "text": "La Orden por la que se establecen normas para la aplicación de la garantía de plazo de respuesta quirúrgica y el funcionamiento del registro de demanda quirúrgica del Sistema Sanitario Público de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Orden de 25 de septiembre de 2005."
+        },
+        {
+          "id": "B",
+          "text": "Orden de 14 de octubre de 2006"
+        },
+        {
+          "id": "C",
+          "text": "Orden de 25 de septiembre de 2002."
+        },
+        {
+          "id": "D",
+          "text": "Orden de 14 de octubre de 2001."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q086",
+      "sourceNumber": 86,
+      "text": "InterSAS ofrece información general sobre diferentes trámites y se indica a los usuarios cómo realizarlos en línea. ¿Cuál es estas gestiones requiere que el usuario se identifique con certificado digital?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cita para consulta de enfermería en su centro de atención primaria."
+        },
+        {
+          "id": "B",
+          "text": "Desplazamiento temporal a otro municipio."
+        },
+        {
+          "id": "C",
+          "text": "Cita para vacunación antigripal."
+        },
+        {
+          "id": "D",
+          "text": "Solicitud tarjeta sanitaria."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q087",
+      "sourceNumber": 87,
+      "text": "La actividad principal de la Agencia de Calidad Sanitaria de Andalucía (ACSA) es la certificación de los servicios que las organizaciones prestan a la salud y al bienestar social de la población. En este sentido su actividad certificadora se dirige a distintos ámbitos entre los que no se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Organizaciones de Servicios Sociales."
+        },
+        {
+          "id": "B",
+          "text": "Páginas web de contenidos sanitarios."
+        },
+        {
+          "id": "C",
+          "text": "Formación Continuada dirigida a profesionales sanitarios."
+        },
+        {
+          "id": "D",
+          "text": "Oficinas de Farmacia."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q088",
+      "sourceNumber": 88,
+      "text": "Las fases del proceso de certificación de servicios sanitarios del Sistema Sanitario Público de Andalucía que realiza la Agencia de Calidad Sanitaria de Andalucía (ACSA) son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Preparación - Evaluación - Seguimiento."
+        },
+        {
+          "id": "B",
+          "text": "Preparación - Enfoque Interno - Enfoque Externo – Seguimiento."
+        },
+        {
+          "id": "C",
+          "text": "Preparación - Evaluación - Certificación - Seguimiento."
+        },
+        {
+          "id": "D",
+          "text": "Preparación - Evaluación - Certificación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q089",
+      "sourceNumber": 89,
+      "text": "En el último Plan de Calidad del Sistema Sanitario Público de Andalucía existen varias referencias a la acreditación. En concreto en el capítulo dedicado a los profesionales, dentro del objetivo 1, el objetivo de su línea de acción 1.5 es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Desarrollar y promover la adquisición de las competencias necesarias de los profesionales sanitarios, instaurando un modelo de acreditación de las mismas."
+        },
+        {
+          "id": "B",
+          "text": "Desplegar todas las potencialidades de la gestión por competencias en el marco del modelo de gestión clínica, instaurando un modelo de acreditación de las mismas."
+        },
+        {
+          "id": "C",
+          "text": "Garantizar que la acreditación profesional sea un valor en el desarrollo profesional, acorde a las necesidades de ciudadanos y el sistema."
+        },
+        {
+          "id": "D",
+          "text": "Promover la acreditación como acceso del profesional a la práctica clínica avanzada y la excelencia en el desarrollo profesional."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q090",
+      "sourceNumber": 90,
+      "text": "La Agencia de Evaluación de Tecnologías Sanitarias de Andalucía (AETSA) tiene como una de sus líneas de actividad:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Impulsar la evaluación e información de medicamentos, en colaboración con el resto de organismos del Sistema Sanitario."
+        },
+        {
+          "id": "B",
+          "text": "La organización de los procesos informáticos."
+        },
+        {
+          "id": "C",
+          "text": "La acreditación de Unidades de Gestión Clínica."
+        },
+        {
+          "id": "D",
+          "text": "El suministro de tecnologías sanitarias a los centros dependientes del Sistema Sanitario Público de Andalucía."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q091",
+      "sourceNumber": 91,
+      "text": "La integración y gestión de todos los servicios de tecnologías de la información (TIC) y Comunicaciones del Servicio Andaluz de Salud está a cargo de CGES. A través de la intranet corporativa del Servicio Andaluz de Salud los profesionales encontrarán los siguientes apartados que facilitan las diferentes gestiones relacionadas con el servicio:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona personal - Zona Pública - Aplicaciones Corporativas – Formularios y Documentación."
+        },
+        {
+          "id": "B",
+          "text": "Zona personal - Zona Técnica – Aplicaciones Corporativas – Formularios y Documentación."
+        },
+        {
+          "id": "C",
+          "text": "Zona personal - Zona Técnica – Aplicaciones Corporativas – Formularios y Documentación – Noticias."
+        },
+        {
+          "id": "D",
+          "text": "Zona personal - Zona Pública – Zona de Responsables - Aplicaciones Corporativas – Formularios y Documentación."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q092",
+      "sourceNumber": 92,
+      "text": "En informática, ¿cuál de los siguientes no es un tipo de firewall o cortafuegos?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nivel de aplicación de pasarela."
+        },
+        {
+          "id": "B",
+          "text": "Cortafuegos de presión."
+        },
+        {
+          "id": "C",
+          "text": "Cortafuegos de capa de red o de filtrado de paquetes."
+        },
+        {
+          "id": "D",
+          "text": "Cortafuegos de capa de aplicación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q093",
+      "sourceNumber": 93,
+      "text": "En informática, Unix es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una hoja de cálculo."
+        },
+        {
+          "id": "B",
+          "text": "Un sistema operativo estático."
+        },
+        {
+          "id": "C",
+          "text": "Un sistema operativo portable, multitarea y de uso exclusivo en red."
+        },
+        {
+          "id": "D",
+          "text": "Un sistema operativo portable, multitarea y multiusuario."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q094",
+      "sourceNumber": 94,
+      "text": "En informática las bases de datos pueden clasificarse de varias maneras, de acuerdo al contexto que se esté manejando, la utilidad de las mismas o las necesidades que satisfagan. Atendiendo a la variabilidad de las bases de datos, estas se clasifican en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Estáticas o dinámicas."
+        },
+        {
+          "id": "B",
+          "text": "Bibliográficas o de texto completo."
+        },
+        {
+          "id": "C",
+          "text": "Bibliográficas o directorios."
+        },
+        {
+          "id": "D",
+          "text": "Directorios o de texto completo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q095",
+      "sourceNumber": 95,
+      "text": "En informática, y a través de las consultas, se puede acceder a los datos en las bases de datos. Indique cual de las siguientes afirmaciones es más correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Con las consultas se pueden borrar datos en una base de datos."
+        },
+        {
+          "id": "B",
+          "text": "Con las consultas no se pueden modificar, borrar y agregar datos en una base de datos, pudiendo también utilizarse como origen de registro para formularios."
+        },
+        {
+          "id": "C",
+          "text": "Con las consultas se puede modificar, borrar, mostrar y agregar datos en una base de datos, pudiendo también utilizarse como origen de registro para formularios."
+        },
+        {
+          "id": "D",
+          "text": "Con las consultas se puede mostrar datos en una base de datos, pudiendo también utilizarse como origen de registro para formularios."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q096",
+      "sourceNumber": 96,
+      "text": "Indique cuál de los siguientes gráficos no se puede realizar con una hoja de cálculo de los programas habituales:",
+      "options": [
+        {
+          "id": "A",
+          "text": "De columnas."
+        },
+        {
+          "id": "B",
+          "text": "Circulares."
+        },
+        {
+          "id": "C",
+          "text": "De barras."
+        },
+        {
+          "id": "D",
+          "text": "De estrella."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q097",
+      "sourceNumber": 97,
+      "text": "Cual de los siguientes módulos no es uno de los principales de Moodle:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tareas."
+        },
+        {
+          "id": "B",
+          "text": "Declaración."
+        },
+        {
+          "id": "C",
+          "text": "Consulta."
+        },
+        {
+          "id": "D",
+          "text": "Wiki."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q098",
+      "sourceNumber": 98,
+      "text": "En relación a los soportes de la administración electrónica y sus utilidades, el certificado digital permite realizar gestiones:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Únicamente a personas físicas."
+        },
+        {
+          "id": "B",
+          "text": "A administraciones Públicas exclusivamente."
+        },
+        {
+          "id": "C",
+          "text": "Tanto a personas físicas como a empresas o asociaciones."
+        },
+        {
+          "id": "D",
+          "text": "Imposibles de llevar a cabo por cualquier otro medio."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q099",
+      "sourceNumber": 99,
+      "text": "Dentro de la plataforma para la administración electrónica en Andalucía, indique cual de las siguientes afirmaciones no es correcta en relación a la aplicación informática compuls@:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sirve para la expedición de copias autenticadas electrónicamente de documentos originales en soporte papel."
+        },
+        {
+          "id": "B",
+          "text": "La copia obtenida se realizará produciendo un fichero en un formato Word que permita mostrar en la pantalla del ordenador la imagen obtenida y exacta del documento original a cotejar."
+        },
+        {
+          "id": "C",
+          "text": "Se realizará una diligencia de autenticación electrónica (firma) por parte del funcionario que autentica la copia."
+        },
+        {
+          "id": "D",
+          "text": "En la diligencia electrónica se muestra la identificación del firmante de la copia autenticada, así como el dentro directivo u órgano al que está adscrito y del puesto de trabajo que ostenta dentro del mismo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q100",
+      "sourceNumber": 100,
+      "text": "Una de las características principales de la aplicación corporativa de la Junta de Andalucía denominada @ries es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interconexión informática entre los registros Entrada/Salida de todos los organismos de la Junta de Andalucía."
+        },
+        {
+          "id": "B",
+          "text": "Comunicación entre el registro por el que sale un documento de un organismo y el registro central del mismo."
+        },
+        {
+          "id": "C",
+          "text": "Transmisión de asientos registrales entre servicios de distintas administraciones y empresas privadas."
+        },
+        {
+          "id": "D",
+          "text": "Posibilidad de realización de trámites administrativos desde el hogar del ciudadano con clave usuario y contraseña."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q101",
+      "sourceNumber": 101,
+      "text": "Rosa trabaja como Administrativa en el servicio de hostelería de un hospital del Servicio Andaluz de Salud y tiene que preparar un informe en el que se detalle para cada UGC el número de dietas servidas en el mes anterior y que incluya una gráfica resumen en la que se represente el número de dietas de cada día. Como Carmen utiliza el paquete ofimático Microsoft Office ¿qué herramientas de dicho paquete son las más apropiadas para realizar el informe?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Word y Excel."
+        },
+        {
+          "id": "B",
+          "text": "Outlook y Power Point."
+        },
+        {
+          "id": "C",
+          "text": "Internet Explorer y Excel."
+        },
+        {
+          "id": "D",
+          "text": "Word y Firefox."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q102",
+      "sourceNumber": 102,
+      "text": "Algunas de las partes del informe requieren ser destacadas en NEGRITA. Como esta acción tiene que hacerla con frecuencia, ha decidido utilizar también los atajos de teclado, ¿cuál es la combinación de teclas para poner un texto en negrita en Microsoft Word?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Alt + P"
+        },
+        {
+          "id": "B",
+          "text": "Alt + B"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + P"
+        },
+        {
+          "id": "D",
+          "text": "Ctrl + B"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q103",
+      "sourceNumber": 103,
+      "text": "Carmen ha decido formatear el informe de manera que la primera línea de cada párrafo aparezca escrita con un pequeño desplazamiento hacia la derecha respecto a las líneas restantes. ¿Cómo se llama este desplazamiento?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Justificación."
+        },
+        {
+          "id": "B",
+          "text": "Viñeta."
+        },
+        {
+          "id": "C",
+          "text": "Sangría."
+        },
+        {
+          "id": "D",
+          "text": "Columna."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q104",
+      "sourceNumber": 104,
+      "text": "¿Qué elementos tiene, entre otros, una hoja de cálculo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Filas, registros y celdas."
+        },
+        {
+          "id": "B",
+          "text": "Filas, columnas y celdas."
+        },
+        {
+          "id": "C",
+          "text": "Libros y registros."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q105",
+      "sourceNumber": 105,
+      "text": "¿Qué formatos se le puede dar a una celda en Microsoft Excel?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Número."
+        },
+        {
+          "id": "B",
+          "text": "Fecha."
+        },
+        {
+          "id": "C",
+          "text": "Porcentaje."
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q106",
+      "sourceNumber": 106,
+      "text": "Si queremos añadir un enlace a una página web en un documento que estamos realizando con Microsoft Word ¿En qué menú se puede encontrar la opción para añadir este enlace?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Insertar  Hipervínculo..."
+        },
+        {
+          "id": "B",
+          "text": "Herramientas  Hipervínculo…"
+        },
+        {
+          "id": "C",
+          "text": "Formato  Convertir texto en hipervínculo…"
+        },
+        {
+          "id": "D",
+          "text": "Edición  Añadir Hipervínculo…"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q107",
+      "sourceNumber": 107,
+      "text": "¿Qué dispositivo podemos utilizar para digitalizar un documento existente en papel?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Modem."
+        },
+        {
+          "id": "B",
+          "text": "Escáner."
+        },
+        {
+          "id": "C",
+          "text": "Impresora."
+        },
+        {
+          "id": "D",
+          "text": "Fusor."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q108",
+      "sourceNumber": 108,
+      "text": "¿En qué menú de Microsoft Excel se encuentra la opción para ordenar un conjunto de datos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ordenar  Datos…"
+        },
+        {
+          "id": "B",
+          "text": "Datos  Ordenar…"
+        },
+        {
+          "id": "C",
+          "text": "Herramientas  Ordenar datos…"
+        },
+        {
+          "id": "D",
+          "text": "Tabla  Ordenar…"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q109",
+      "sourceNumber": 109,
+      "text": "¿Cuál de los siguientes no es un periférico de entrada?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Monitor."
+        },
+        {
+          "id": "B",
+          "text": "Ratón."
+        },
+        {
+          "id": "C",
+          "text": "Escáner."
+        },
+        {
+          "id": "D",
+          "text": "Teclado."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q110",
+      "sourceNumber": 110,
+      "text": "¿Cuál de las siguientes unidades informáticas es la de mayor capacidad?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Megabyte."
+        },
+        {
+          "id": "B",
+          "text": "Terabyte."
+        },
+        {
+          "id": "C",
+          "text": "Yottabyte."
+        },
+        {
+          "id": "D",
+          "text": "Gigabyte."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q111",
+      "sourceNumber": 111,
+      "text": "Rosa ha puesto el informe que ha realizado para que lo firme digitalmente el Director de Gestión. La firma digital en la Junta de Andalucía se hace utilizando la aplicación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Firm@"
+        },
+        {
+          "id": "B",
+          "text": "@Clave"
+        },
+        {
+          "id": "C",
+          "text": "Firm@nte"
+        },
+        {
+          "id": "D",
+          "text": "Port@firmas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q112",
+      "sourceNumber": 112,
+      "text": "¿Cómo se llama el registro telemático de la Junta de Andalucía?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "eCO"
+        },
+        {
+          "id": "B",
+          "text": "@ries"
+        },
+        {
+          "id": "C",
+          "text": "Notific@"
+        },
+        {
+          "id": "D",
+          "text": "Ventanilla Electrónica"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q113",
+      "sourceNumber": 113,
+      "text": "Rosa ha sido adscrita a la Plataforma Logística Sanitaria (PLS) de la provincia y trabaja en sus distintas áreas: Compras y Logística, Contabilidad y en Contratación Administrativa en las que le han sido asignadas funciones específicas de dichas áreas. Respecto a la PLS a la que ha sido adscrita, indique cuál de las siguientes afirmaciones no es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las Plataformas logísticas Sanitarias se constituyen en el SAS al objeto, entre otros, de reducir los costes del proceso logístico, de disminuir la variabilidad en las adquisiciones y obtener economías de escala."
+        },
+        {
+          "id": "B",
+          "text": "Los procesos logísticos integrados en PLS son: compras, almacén y contratación administrativa."
+        },
+        {
+          "id": "C",
+          "text": "Una de las ventajas de la PLS es la simplificación de los procedimientos y disminución de burocracia."
+        },
+        {
+          "id": "D",
+          "text": "La PLS no se constituye como órgano administrativo con competencias en materia de contratación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q114",
+      "sourceNumber": 114,
+      "text": "La Unidad de Gestión Clínica (UGC) Microbiología del hospital XXX de esa provincia tiene interés en introducir un nuevo reactivo que ha salido al mercado y que aún no se comercializa en el SAS, y no está asociado a ningún código SAS. ¿Qué actuaciones habría que realizar para que el proveedor pueda comercializar este nuevo reactivo en el SAS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El proveedor debe inscribir el producto en el Banco de bienes y servicios del SAS."
+        },
+        {
+          "id": "B",
+          "text": "El proveedor debe inscribir el producto en la Revista de compras."
+        },
+        {
+          "id": "C",
+          "text": "El hospital inscribirá el producto en el Catálogo de Bienes del SAS."
+        },
+        {
+          "id": "D",
+          "text": "El hospital debe solicitar que se asocie el reactivo a un código Genérico de Centro."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q115",
+      "sourceNumber": 115,
+      "text": "Rosa dispone solamente de los siguientes datos de la nueva oferta de reactivo: proveedor y referencia del fabricante. Con esta información, ¿en qué aplicación corporativa puede consultar si este nuevo reactivo está inscrito en el registrado indicado en la pregunta anterior?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En SIGLO, opción Ofertas Priorizadas."
+        },
+        {
+          "id": "B",
+          "text": "En Catálogo de Bienes y Servicios del SAS, opción Gestión Ofertas Técnicas."
+        },
+        {
+          "id": "C",
+          "text": "En Catálogo de Bienes y Servicios del SAS, opción Consulta de Artículo."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q116",
+      "sourceNumber": 116,
+      "text": "En el supuesto de que no existiese el código SAS asociado a este reactivo, ¿cómo se consigue incluir un nuevo código SAS en el catálogo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las inclusiones de nuevos códigos se realizan a propuesta de la Central Logística del SAS."
+        },
+        {
+          "id": "B",
+          "text": "Las inclusiones de nuevos códigos se realizan a propuesta del proveedor, que así declara la intención de comercializar un producto que no existe en el Catálogo."
+        },
+        {
+          "id": "C",
+          "text": "Las inclusiones de nuevos códigos se realizan a propuesta de una PLS, que así declara la intención de utilizar un producto que no existe en el Catálogo."
+        },
+        {
+          "id": "D",
+          "text": "Las inclusiones de nuevos códigos se realizan a propuesta de una PLS, que así declara la intención de un proveedor de comercializar un producto que no existe en el Catálogo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q117",
+      "sourceNumber": 117,
+      "text": "¿A qué grupo y subgrupo del código SAS pertenecen los reactivos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 24 material específico para laboratorio."
+        },
+        {
+          "id": "B",
+          "text": "Al grupo 01 material sanitario fungible, subgrupo 25 material específico para laboratorio."
+        },
+        {
+          "id": "C",
+          "text": "Al grupo 11 laboratorio clínico."
+        },
+        {
+          "id": "D",
+          "text": "Al grupo 12 determinaciones analíticas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q118",
+      "sourceNumber": 118,
+      "text": "¿En cuántos niveles se estructura el Código SAS?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En 6 niveles: categoría, subcategoría, grupo, subgrupo, familia y artículo."
+        },
+        {
+          "id": "B",
+          "text": "En 5 niveles: categoría, subcategoría, grupo, subgrupo, familia."
+        },
+        {
+          "id": "C",
+          "text": "En 7 niveles: contrato, categoría, subcategoría, grupo, subgrupo, familia y artículo."
+        },
+        {
+          "id": "D",
+          "text": "En 4 niveles: categoría, subcategoría, grupo y subgrupo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q119",
+      "sourceNumber": 119,
+      "text": "La autorización de consumo del nuevo reactivo en la UGC conlleva:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La inclusión de su código GC en el Catálogo SAS."
+        },
+        {
+          "id": "B",
+          "text": "La inclusión de su código GC en el catálogo del centro de consumo de Microbiología del hospital XXX."
+        },
+        {
+          "id": "C",
+          "text": "La inclusión del código SAS en el catálogo del órgano gestor."
+        },
+        {
+          "id": "D",
+          "text": "La inclusión de la referencia del fabricante en el catálogo del hospital XXX."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q120",
+      "sourceNumber": 120,
+      "text": "¿A qué clasificación económica del presupuesto de gasto se imputan los reactivos?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "221.10"
+        },
+        {
+          "id": "B",
+          "text": "221.12"
+        },
+        {
+          "id": "C",
+          "text": "221.08"
+        },
+        {
+          "id": "D",
+          "text": "221.11"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q121",
+      "sourceNumber": 121,
+      "text": "Rosa pasa al área de contratación administrativa de PLS y colabora en el expediente que se está tramitando cuyo objeto es la contratación de medicamentos para los centros de la provincia, al amparo del artº 9.3.a del Texto Refundido de la Ley de Contratos del Sector Público (TRLCSP), todos exclusivos de un proveedor. El valor estimado del contrato es de 150.000€ y la duración del mismo es de un año. Indique el tipo de procedimiento por el que se tramitará este expediente",
+      "options": [
+        {
+          "id": "A",
+          "text": "Por procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "B",
+          "text": "Por procedimiento abierto."
+        },
+        {
+          "id": "C",
+          "text": "Por procedimiento restringido."
+        },
+        {
+          "id": "D",
+          "text": "Por procedimiento negociado con publicidad."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q122",
+      "sourceNumber": 122,
+      "text": "¿Procede constituir garantía definitiva en este expediente?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Procede la constitución de la garantía definitiva, por importe igual al 5% del importe de adjudicación excluido el IVA."
+        },
+        {
+          "id": "B",
+          "text": "Procede la constitución de la garantía definitiva, por importe igual al 5% del presupuesto base de licitación, excluido el IVA."
+        },
+        {
+          "id": "C",
+          "text": "Procede la constitución de la garantía definitiva por importe igual al 2% del valor estimado del contrato excluido el IVA."
+        },
+        {
+          "id": "D",
+          "text": "En este expediente, por el tipo de expediente de contratación, no procede la constitución de la garantía definitiva."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q123",
+      "sourceNumber": 123,
+      "text": "Indique cuál es el órgano competente para suscribir este contrato de medicamentos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del Hospital YYY al que pertenece la UGC Microbiología."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Gerencia del Centro Hospitalario de la provincia donde se ubica la PLS, con el límite del crédito que se le consigne."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección General de Gestión Económica y Servicios del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección de PLS con el límite del crédito que se le consigne."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q124",
+      "sourceNumber": 124,
+      "text": "Indique en qué boletín oficial es obligatorio dar publicidad a la convocatoria de este expediente de medicamentos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el BOJA."
+        },
+        {
+          "id": "B",
+          "text": "En el BOJA y en el DOUE."
+        },
+        {
+          "id": "C",
+          "text": "No es obligatoria la publicación en un boletín oficial"
+        },
+        {
+          "id": "D",
+          "text": "En el BOJA y en el Perfil del contratante."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q125",
+      "sourceNumber": 125,
+      "text": "¿A qué clasificación económica del presupuesto de gasto se imputa este expediente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "221.08"
+        },
+        {
+          "id": "B",
+          "text": "221.07"
+        },
+        {
+          "id": "C",
+          "text": "221.06"
+        },
+        {
+          "id": "D",
+          "text": "221.05"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q126",
+      "sourceNumber": 126,
+      "text": "La fase contable de ordenación del pago:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se corresponde con la realización de los pagos."
+        },
+        {
+          "id": "B",
+          "text": "Se corresponde con la disposición de ejecución de los pagos de las obligaciones reconocidas."
+        },
+        {
+          "id": "C",
+          "text": "La ordenación de los pagos implica la edición de documento contable “P”."
+        },
+        {
+          "id": "D",
+          "text": "La respuesta B y C son correctas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q127",
+      "sourceNumber": 127,
+      "text": "El siguiente expediente de contratación que le asignan a D. XXX tiene por objeto la elaboración del proyecto de obra para la construcción de un nuevo Consultorio local en un terreno cedido por el Ayuntamiento de la localidad. El valor estimado de este contrato de redacción del proyecto, es de 60.000€ sin IVA. Este contrato es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un contrato de servicios."
+        },
+        {
+          "id": "B",
+          "text": "Un contrato de obra."
+        },
+        {
+          "id": "C",
+          "text": "Un contrato de suministro."
+        },
+        {
+          "id": "D",
+          "text": "Un contrato de asistencia técnica."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q128",
+      "sourceNumber": 128,
+      "text": "Según la normativa vigente, cuál de los siguientes tipos de procedimientos no se podría utilizar en la adjudicación de este expediente de contratación:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "B",
+          "text": "El contrato menor y el procedimiento negociado sin publicidad."
+        },
+        {
+          "id": "C",
+          "text": "El procedimiento abierto."
+        },
+        {
+          "id": "D",
+          "text": "Contrato menor."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q129",
+      "sourceNumber": 129,
+      "text": "Según el Texto Refundido de la Ley de Contratos del Sector Público (TRLCSP), a los efectos de elaboración del proyecto, la obra que se pretende acometer de construcción del Centro de Salud, debe clasificarse como:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Obra de reforma o gran reparación."
+        },
+        {
+          "id": "B",
+          "text": "Obra de restauración."
+        },
+        {
+          "id": "C",
+          "text": "Obra de ampliación."
+        },
+        {
+          "id": "D",
+          "text": "Obra de primer establecimiento."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q130",
+      "sourceNumber": 130,
+      "text": "En la Unidad de Atención al Profesional del Servicio de Personal del mismo Hospital trabaja Carmen, hermana de Rosa. En el día de hoy está atendiendo a un profesional que ha sido objeto de una sanción disciplinaria. ¿Cuál de las siguientes faltas habría podido cometer para que tenga la consideración de grave?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La grave desconsideración con los superiores, compañeros, subordinados o usuarios."
+        },
+        {
+          "id": "B",
+          "text": "La grave agresión a cualquier persona con la que se relacionen en el ejercicio de sus funciones."
+        },
+        {
+          "id": "C",
+          "text": "El encubrimiento, consentimiento o cooperación con cualquier acto a la comisión de faltas graves."
+        },
+        {
+          "id": "D",
+          "text": "El exceso arbitrario en el uso de autoridad que cause perjuicio grave al personal subordinado o al servicio."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q131",
+      "sourceNumber": 131,
+      "text": "En este caso la sanción impuesta ha sido de suspensión de funciones. Dicha sanción, según el Estatuto Marco del personal estatutario de los Servicios de Salud, puede ser impuesta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Por la comisión de faltas graves o leves."
+        },
+        {
+          "id": "B",
+          "text": "Por la comisión de faltas muy graves, graves o leves."
+        },
+        {
+          "id": "C",
+          "text": "Solo por la comisión de faltas graves."
+        },
+        {
+          "id": "D",
+          "text": "Por la comisión de faltas muy graves o graves."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q132",
+      "sourceNumber": 132,
+      "text": "La profesional pregunta a Carmen: ¿Cuál sería, según la normativa vigente en el SAS, el recurso que podría presentar contra la resolución recaída en el expediente disciplinario? La respuesta correcta sería:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No procede interponer recurso alguno."
+        },
+        {
+          "id": "B",
+          "text": "Podrá interponerse recurso ordinario ante el Director Gerente del centro sanitario que la dictó."
+        },
+        {
+          "id": "C",
+          "text": "Podrá interponer recurso de alzada ante el Director Gerente del Servicio Andaluz de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Solo cabe interponer recurso extraordinario de revisión ante el Director Gerente del Servicio Andaluz de Salud."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q133",
+      "sourceNumber": 133,
+      "text": "El interesado está pensando argumentar en su recurso prescripción de la falta. ¿Cuándo comenzará el plazo de prescripción de las faltas disciplinarias?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Desde la fecha en que la falta se hubiese cometido."
+        },
+        {
+          "id": "B",
+          "text": "Desde la fecha en que se notifique el acuerdo de incoación de expediente disciplinario al profesional."
+        },
+        {
+          "id": "C",
+          "text": "Desde la fecha en que la Dirección Gerencia del centro sanitario tenga conocimiento de los hechos."
+        },
+        {
+          "id": "D",
+          "text": "Desde la fecha en que se dicte el acuerdo de inicio del expediente disciplinario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q134",
+      "sourceNumber": 134,
+      "text": "A partir de la firmeza de esta sanción por falta grave, ¿Cuándo prescribirá?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A los 4 años."
+        },
+        {
+          "id": "B",
+          "text": "Al año."
+        },
+        {
+          "id": "C",
+          "text": "A los 6 meses."
+        },
+        {
+          "id": "D",
+          "text": "A los 2 años."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q135",
+      "sourceNumber": 135,
+      "text": "Esta sanción disciplinaria por falta grave será anotada en el expediente personal de este profesional. ¿Cuándo debe ser cancelada de oficio dicha anotación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A los 4 años del cumplimiento de la sanción."
+        },
+        {
+          "id": "B",
+          "text": "A los 3 años del cumplimiento de la sanción."
+        },
+        {
+          "id": "C",
+          "text": "A los 2 años del cumplimiento de la sanción."
+        },
+        {
+          "id": "D",
+          "text": "A los 6 meses del cumplimiento de la sanción."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q136",
+      "sourceNumber": 136,
+      "text": "Carmen atiende en la Unidad de Atención al Profesional un servicio de respuestas mediante sms o email a consultas de los profesionales. Entre las consultas que hay hoy disponibles se encuentran las siguientes: ¿Con cuando tiempo mínimo de antelación al previsto para su comienzo hay que solicitar en condiciones normales un permiso sin sueldo en el SAS según el manual de vacaciones, permisos y licencias en vigor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 días."
+        },
+        {
+          "id": "B",
+          "text": "15 días."
+        },
+        {
+          "id": "C",
+          "text": "20 días."
+        },
+        {
+          "id": "D",
+          "text": "1 mes."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q137",
+      "sourceNumber": 137,
+      "text": "¿Cuánto es el mínimo en días naturales que se pueden conceder a un profesional del SAS de permiso sin sueldo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un día."
+        },
+        {
+          "id": "B",
+          "text": "Siete días."
+        },
+        {
+          "id": "C",
+          "text": "Diez días."
+        },
+        {
+          "id": "D",
+          "text": "Los que el profesional solicite, con un máximo de 3 meses por año natural."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q138",
+      "sourceNumber": 138,
+      "text": "Se ha producido el fallecimiento del tío de un profesional del SAS (Hermano de su padre) ¿Cuántos días de permiso por fallecimiento le corresponden a este profesional del SAS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 días hábiles si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 5 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "B",
+          "text": "2 días hábiles si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 4 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "C",
+          "text": "1 día hábil si el hecho se produce en la misma localidad de residencia de la persona trabajadora y 2 días hábiles si se produce en distinta localidad."
+        },
+        {
+          "id": "D",
+          "text": "Ninguno."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 34
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q139",
+      "sourceNumber": 139,
+      "text": "Un profesional quiere participar con una ONG en programas de cooperación internacional al desarrollo o de ayuda humanitaria urgente. ¿Quién es el órgano competente en el SAS para resolver su solicitud de licencia para estos fines?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia del SAS."
+        },
+        {
+          "id": "B",
+          "text": "La Dirección Gerencia del centro donde preste servicios el profesional."
+        },
+        {
+          "id": "C",
+          "text": "La Dirección General de Asistencia Sanitaria y Resultados en Salud del SAS."
+        },
+        {
+          "id": "D",
+          "text": "La Dirección General competente en materia de personal en el SAS."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q140",
+      "sourceNumber": 140,
+      "text": "¿Cual es la duración máxima en el SAS de la licencia recogida en la anterior pregunta, en función de los programas en los que se autorice la colaboración?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 días."
+        },
+        {
+          "id": "B",
+          "text": "1 mes."
+        },
+        {
+          "id": "C",
+          "text": "6 meses."
+        },
+        {
+          "id": "D",
+          "text": "3 meses."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q141",
+      "sourceNumber": 141,
+      "text": "Un ciudadano, con titulación de grado en enfermería, remite una consulta por email en la que pregunta sobre la puntuación máxima en cada uno de los apartados del baremo vigente en la Bolsa Única del SAS para los candidatos en la categoría de Enfermera. ¿Cuál de las siguientes respuestas es la correcta?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Experiencia profesional 55, formación 45 y otros méritos 20."
+        },
+        {
+          "id": "B",
+          "text": "Experiencia profesional 55, formación 55 y otros méritos 10."
+        },
+        {
+          "id": "C",
+          "text": "Experiencia profesional 55, formación 35 y otros méritos 10."
+        },
+        {
+          "id": "D",
+          "text": "Experiencia profesional 55, formación 55 y otros méritos 20."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q142",
+      "sourceNumber": 142,
+      "text": "Según el Pacto de Bolsa única vigente en el SAS, ¿Cuál es el cupo que se reserva en vinculaciones de larga duración para su oferta a promoción interna temporal entre personal estatutario fijo?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 %"
+        },
+        {
+          "id": "B",
+          "text": "10 %"
+        },
+        {
+          "id": "C",
+          "text": "50 %"
+        },
+        {
+          "id": "D",
+          "text": "33 %"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q143",
+      "sourceNumber": 143,
+      "text": "Carmen tiene que preparar una actividad formativa sobre retribuciones y nominas para cargos intermedios del Hospital, y se dispone a analizar la normativa vigente para obtener los datos. En relación a las cuotas de la Seguridad Social, ¿Cuál era la base de cotización máxima mensual en el Régimen General de la Seguridad Social por contingencias comunes en el año 2015?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.642,00 euros."
+        },
+        {
+          "id": "B",
+          "text": "3.606,00 euros."
+        },
+        {
+          "id": "C",
+          "text": "3.410,00 euros."
+        },
+        {
+          "id": "D",
+          "text": "El equivalente a 3,5 veces el salario mínimo interprofesional."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 35
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q144",
+      "sourceNumber": 144,
+      "text": "¿Y el tipo vigente de cotización de la Seguridad Social al Fondo de Garantía Salarial en el año 2015?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El 0,20 %, siendo a cargo exclusivo de la empresa."
+        },
+        {
+          "id": "B",
+          "text": "El 0,50 %, siendo el 0,40 % a cargo de la empresa y el 0,10 % a cargo del trabajador."
+        },
+        {
+          "id": "C",
+          "text": "El 0,70 %, siendo el 0,60 % a cargo de la empresa y el 0,10 % a cargo del trabajador."
+        },
+        {
+          "id": "D",
+          "text": "El 0,80 %, siendo el 0,70 % a cargo de la empresa y el 0,10 % a cargo del trabajador."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q145",
+      "sourceNumber": 145,
+      "text": "Según la normativa de retribuciones vigente en el SAS, el concepto de Complemento Atención Continuada, modalidad “B” que se abona a determinadas categorías profesionales en hospitales, retribuye:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La realización de la jornada ordinaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "B",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, cualquier día de la semana."
+        },
+        {
+          "id": "C",
+          "text": "La realización de la jornada ordinaria en domingos y festivos."
+        },
+        {
+          "id": "D",
+          "text": "La realización de la jornada complementaria en turnos de noche desde las 22 horas hasta las 8 horas del día siguiente, en domingos y festivos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q146",
+      "sourceNumber": 146,
+      "text": "Según la normativa de retribuciones vigente en el Servicio Andaluz de Salud, el concepto retributivo Continuidad Asistencial del personal facultativo de área y médicos de familia en plaza diferenciada de los servicios de cuidados críticos y urgencias, retribuye:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La prolongación de la jornada ordinaria hasta las 22 horas, cualquier día de la semana, para garantizar la continuidad de la asistencia."
+        },
+        {
+          "id": "B",
+          "text": "La prolongación de la jornada hasta las 22 horas, en días laborables de lunes a viernes, para garantizar la continuidad de la asistencia al margen de la jornada ordinaria."
+        },
+        {
+          "id": "C",
+          "text": "La prolongación de la jornada hasta las 20 horas, en días laborables de lunes a viernes, para garantizar la continuidad de la asistencia al margen de la jornada ordinaria."
+        },
+        {
+          "id": "D",
+          "text": "La realización de jornada complementaria o guardias, cualquier día de la semana, para garantizar la continuidad de la asistencia al margen de la jornada ordinaria."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q147",
+      "sourceNumber": 147,
+      "text": "Los descuentos habituales que un Administrativo estatutario fijo del SAS tiene en su nómina normal mensual son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "IRPF, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "B",
+          "text": "IRPF, Desempleo, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "C",
+          "text": "IRPF, Desempleo y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "D",
+          "text": "IRPF, Desempleo, Formación Profesional, Fondo de Garantía Salarial y Cotización al Régimen General de la S. Social."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 36
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q148",
+      "sourceNumber": 148,
+      "text": "Los descuentos habituales que un Administrativo estatutario fijo del SAS tiene en su nómina de paga extra son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "IRPF, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "B",
+          "text": "IRPF, Desempleo, Formación Profesional y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "C",
+          "text": "IRPF, Desempleo y Cotización al Régimen General de la S. Social."
+        },
+        {
+          "id": "D",
+          "text": "Exclusivamente IRPF."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 37
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q149",
+      "sourceNumber": 149,
+      "text": "Antes de finalizar la jornada de trabajo, Carmen recibe una llamada de un Administrativo con nombramiento interino que tiene unas dudas. Pregunta en primer lugar: ¿Ante la próxima resolución del concurso-oposición del SAS, cuál es el orden de desplazamiento en el Hospital, aplicando la normativa en vigor, entre los que ocupan plaza en la misma categoría de forma provisional? La respuesta correcta es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El personal interino."
+        },
+        {
+          "id": "B",
+          "text": "El personal estatutario en promoción interna temporal."
+        },
+        {
+          "id": "C",
+          "text": "El personal en situación de reingreso provisional al servicio activo."
+        },
+        {
+          "id": "D",
+          "text": "Las comisiones de servicio de personal estatutario y/ o destinos provisionales de personal funcionario."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 37
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q150",
+      "sourceNumber": 150,
+      "text": "¿Y si se resolviese con anterioridad el concurso de traslados en el SAS, cuál es el orden de desplazamiento en el Hospital, aplicando la normativa en vigor, entre los que ocupan plaza en la misma categoría de forma provisional? La respuesta correcta es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El personal en situación de reingreso provisional al servicio activo."
+        },
+        {
+          "id": "B",
+          "text": "El personal interino."
+        },
+        {
+          "id": "C",
+          "text": "El personal estatutario en promoción interna temporal."
+        },
+        {
+          "id": "D",
+          "text": "Las comisiones de servicio de personal estatutario y/ o destinos provisionales de personal funcionario."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 37
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q151",
+      "sourceNumber": 151,
+      "text": "Según el Estatuto de Autonomía para Andalucía, las Leyes de Andalucía serán promulgadas. En nombre del Rey, por el Presidente de la Junta, el cual ordenará la publicación de las mismas en el Boletín de la Junta de Andalucía:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al día siguiente de su aprobación."
+        },
+        {
+          "id": "B",
+          "text": "En el plazo de 15 días desde su aprobación."
+        },
+        {
+          "id": "C",
+          "text": "En el plazo de 20 días desde su aprobación."
+        },
+        {
+          "id": "D",
+          "text": "En el plazo de 1 mes desde su aprobación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 38
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q152",
+      "sourceNumber": 152,
+      "text": "Según la Ley 13/2007, de 26 de noviembre, de prevención y protección integral contra la violencia de género, las referencias a la formación de los profesionales de la salud, vienen reguladas en el artículo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 38
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada-q153",
+      "sourceNumber": 153,
+      "text": "Según la Ley 31/1995, de 9 de noviembre, de Prevención de Riesgos Laborales, se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten al menos con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "500 trabajadores."
+        },
+        {
+          "id": "B",
+          "text": "250 trabajadores."
+        },
+        {
+          "id": "C",
+          "text": "50 trabajadores."
+        },
+        {
+          "id": "D",
+          "text": "20 trabajadores."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 38
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151
+    ],
+    "count": 150,
+    "annulledNumbers": [
+      55
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151
+    ],
+    "reserveUsedLabels": {
+      "R1": 151
+    },
+    "annulledCount": 1,
+    "reserveTotal": 3,
+    "reserveUsedCount": 1,
+    "reserveUnusedCount": 2,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 55,
+          "reserveNumber": 151
+        }
+      ],
+      "unreplacedAnnulledNumbers": [],
+      "unusedReserveNumbers": [
+        152,
+        153
+      ]
+    }
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  },
+  "nominalQuestionCount": 150
+}

@@ -774,62 +774,37 @@ def build_canonical_package(
                 f"{question['correctOption']} sin opción correspondiente"
             )
 
-    # --- anuladas y reservas: resolución verificable ------------------------------
+    # --- anuladas y reservas: resolución determinista ------------------------------
     annulled_numbers = [q["sourceNumber"] for q in questions if q["status"] == "annulled"]
-    if len(annulled_numbers) > len(reserve_numbers):
-        raise ImportBlockedError(
-            "tratamiento irreconciliable de anuladas/reservas: reservas insuficientes "
-            f"({len(annulled_numbers)} anuladas, {len(reserve_numbers)} reservas declaradas)"
-        )
     reserve_used_numbers: list[int]
     reserve_use_evidence: dict[str, Any] | None = None
+    ordered_reserve_resolution: dict[str, Any] | None = None
     if annulled_numbers:
-        if not reserve_substitutions:
-            with fitz.open(pdf_path) as evidence_doc:
-                reserve_use_evidence = _reserve_use_evidence(
-                    evidence_doc,
-                    reserve_numbers,
-                    annulled_numbers,
-                    answer_page_index,
-                    reserve_substitutions,
-                )
-            if reserve_use_evidence is None:
-                raise ImportBlockedError(
-                    "tratamiento ambiguo de anuladas/reservas: la fuente no contiene "
-                    "evidencia explícita y específica de qué reserva sustituye cada anulada"
-                )
-            reserve_used_numbers = reserve_numbers
-        else:
-            mapped_reserves = [reserve for reserve, _ in reserve_substitutions]
-            mapped_annulled = [annulled for _, annulled in reserve_substitutions]
-            if len(set(mapped_reserves)) != len(mapped_reserves) or len(set(mapped_annulled)) != len(mapped_annulled):
-                raise ImportBlockedError(
-                    "tratamiento ambiguo de anuladas/reservas: evidencia de sustitución duplicada"
-                )
-            if set(mapped_reserves) - reserve_set:
-                raise ImportBlockedError(
-                    "tratamiento ambiguo de anuladas/reservas: la evidencia menciona reservas "
-                    f"no declaradas {sorted(set(mapped_reserves) - reserve_set)}"
-                )
-            if set(mapped_annulled) != set(annulled_numbers):
-                raise ImportBlockedError(
-                    "tratamiento ambiguo de anuladas/reservas: la evidencia explícita no cubre "
-                    f"exactamente las anuladas {annulled_numbers}"
-                )
-            reserve_used_numbers = sorted(mapped_reserves)
-            with fitz.open(pdf_path) as evidence_doc:
-                reserve_use_evidence = _reserve_use_evidence(
-                    evidence_doc,
-                    reserve_numbers,
-                    annulled_numbers,
-                    answer_page_index,
-                    reserve_substitutions,
-                )
-            if reserve_use_evidence is None:
-                raise ImportBlockedError(
-                    "tratamiento ambiguo de anuladas/reservas: no se pudo materializar "
-                    "la evidencia explícita de sustitución de la fuente"
-                )
+        reserve_used_numbers = reserve_numbers[:len(annulled_numbers)]
+        with fitz.open(pdf_path) as evidence_doc:
+            reserve_use_evidence = _reserve_use_evidence(
+                evidence_doc,
+                reserve_numbers,
+                annulled_numbers,
+                answer_page_index,
+                reserve_substitutions,
+            )
+        # La fuente puede documentar sustituciones, pero la regla aprobada es
+        # siempre posicional. Solo se conserva la evidencia legacy cuando todas
+        # las reservas declaradas son necesariamente activas y coincide con ella.
+        if reserve_use_evidence and reserve_use_evidence["basis"] != "all_declared_reserves_required":
+            reserve_use_evidence = None
+        if reserve_use_evidence is None:
+            substitutions = [
+                {"annulledNumber": annulled, "reserveNumber": reserve}
+                for annulled, reserve in zip(annulled_numbers, reserve_used_numbers)
+            ]
+            ordered_reserve_resolution = {
+                "basis": "ordered_business_rule",
+                "substitutions": substitutions,
+                "unreplacedAnnulledNumbers": annulled_numbers[len(reserve_used_numbers):],
+                "unusedReserveNumbers": reserve_numbers[len(reserve_used_numbers):],
+            }
     elif reserve_substitutions:
         raise ImportBlockedError(
             "tratamiento ambiguo de anuladas/reservas: la fuente declara sustituciones "
@@ -859,6 +834,7 @@ def build_canonical_package(
         "variant": variant,
         "year": year,
         "durationMinutes": duration_minutes,
+        "nominalQuestionCount": len(ordinary_range),
         "source": {
             "pdf": pdf_path.name,
             "sha256": sha256,
@@ -882,6 +858,7 @@ def build_canonical_package(
             "reserveUsedCount": len(reserve_used_numbers),
             "reserveUnusedCount": len(reserve_numbers) - len(reserve_used_numbers),
             "reserveUseEvidence": reserve_use_evidence,
+            "orderedReserveResolution": ordered_reserve_resolution,
         },
         "qa": {
             "state": PUBLICABLE,
@@ -1152,53 +1129,70 @@ def validate_exam_package(exam: dict[str, Any], source_pdf: Path | None = None) 
     reserve_used = [question["sourceNumber"] for question in reserve_questions if question["active"]]
     reserve_labels = {f"R{index}": number for index, number in enumerate(reserve_used, start=1)}
     reserve_evidence = scorable.get("reserveUseEvidence")
+    ordered_resolution = scorable.get("orderedReserveResolution")
 
     if reserve_used:
-        if not isinstance(reserve_evidence, dict):
+        if not isinstance(reserve_evidence, dict) and not isinstance(ordered_resolution, dict):
             raise CanonicalPackageError(
-                "reservas utilizadas sin cadena de evidencia oficial materializada"
+                "reservas utilizadas sin resolución materializada"
             )
-        required_pages = {
+        if isinstance(reserve_evidence, dict):
+            required_pages = {
             reserve_evidence["reserveDeclarationPage"],
             reserve_evidence["reserveInstructionPage"],
             reserve_evidence["definitiveAnswerKeyPage"],
-        }
-        if (
+            }
+            if (
             reserve_evidence["sourceDeclaredReserveNumbers"] != reserve_numbers
             or reserve_evidence["definitiveKeyAnnulledNumbers"] != annulled_numbers
             or reserve_evidence["definitiveAnswerKeyPage"] != exam["source"]["answerKeyPage"]
             or not required_pages.issubset(set(reserve_evidence["sourcePages"]))
-        ):
-            raise CanonicalPackageError(
+            ):
+                raise CanonicalPackageError(
                 "evidencia oficial de reservas contradictoria con fuente o conjunto puntuable"
-            )
-        substitutions = reserve_evidence["substitutions"]
-        if reserve_evidence["basis"] == "all_declared_reserves_required":
-            if (
+                )
+            substitutions = reserve_evidence["substitutions"]
+            if reserve_evidence["basis"] == "all_declared_reserves_required":
+                if (
                 substitutions
                 or reserve_used != reserve_numbers
                 or len(reserve_numbers) != len(annulled_numbers)
                 or not reserve_numbers
-            ):
-                raise CanonicalPackageError(
+                ):
+                    raise CanonicalPackageError(
                     "evidencia de uso total no demuestra que todas las reservas sean necesarias"
-                )
-        else:
-            mapped_reserves = [item["reserveNumber"] for item in substitutions]
-            mapped_annulled = [item["annulledNumber"] for item in substitutions]
-            mapping_pages = {item["sourcePage"] for item in substitutions}
-            if (
+                    )
+            else:
+                mapped_reserves = [item["reserveNumber"] for item in substitutions]
+                mapped_annulled = [item["annulledNumber"] for item in substitutions]
+                mapping_pages = {item["sourcePage"] for item in substitutions}
+                if (
                 sorted(mapped_reserves) != reserve_used
                 or sorted(mapped_annulled) != annulled_numbers
                 or len(mapped_reserves) != len(set(mapped_reserves))
                 or len(mapped_annulled) != len(set(mapped_annulled))
                 or not mapping_pages.issubset(set(reserve_evidence["sourcePages"]))
-            ):
-                raise CanonicalPackageError(
+                ):
+                    raise CanonicalPackageError(
                     "evidencia explícita de sustitución contradictoria"
-                )
-    elif reserve_evidence is not None:
-        raise CanonicalPackageError("evidencia de uso de reservas sin reservas utilizadas")
+                    )
+        else:
+            expected_pairs = list(zip(annulled_numbers, reserve_numbers))
+            expected_used_pairs = expected_pairs[:min(len(annulled_numbers), len(reserve_numbers))]
+            actual_pairs = [
+                (item["annulledNumber"], item["reserveNumber"])
+                for item in ordered_resolution["substitutions"]
+            ]
+            if (
+                ordered_resolution["basis"] != "ordered_business_rule"
+                or actual_pairs != expected_used_pairs
+                or ordered_resolution["unreplacedAnnulledNumbers"] != annulled_numbers[len(reserve_used):]
+                or ordered_resolution["unusedReserveNumbers"] != reserve_numbers[len(reserve_used):]
+                or reserve_used != reserve_numbers[:len(annulled_numbers)]
+            ):
+                raise CanonicalPackageError("resolución ordenada de anuladas/reservas contradictoria")
+    elif reserve_evidence is not None or ordered_resolution is not None:
+        raise CanonicalPackageError("resolución de reservas sin reservas utilizadas")
 
     expected = {
         "state": "resolved",
@@ -1215,14 +1209,14 @@ def validate_exam_package(exam: dict[str, Any], source_pdf: Path | None = None) 
     }
     if "reserveUseEvidence" in scorable:
         expected["reserveUseEvidence"] = reserve_evidence
+    if "orderedReserveResolution" in scorable:
+        expected["orderedReserveResolution"] = ordered_resolution
     if is_publicable:
         if scorable != expected:
             raise CanonicalPackageError("conjunto puntuable o recuentos contradictorios")
-        if len(reserve_used) != len(annulled_numbers):
-            raise CanonicalPackageError(
-                "tratamiento de anuladas/reservas ambiguo: el número de reservas usadas "
-                "no coincide con el de anuladas"
-            )
+        nominal_count = exam.get("nominalQuestionCount", len(active_numbers))
+        if nominal_count < len(active_numbers):
+            raise CanonicalPackageError("recuento nominal menor que el conjunto puntuable")
 
         labels_by_number = {number: label for label, number in reserve_labels.items()}
         for question in reserve_questions:
@@ -1377,6 +1371,7 @@ def qa_from_exam(exam: dict[str, Any]) -> dict[str, Any]:
         "access": exam["access"],
         "variant": exam["variant"],
         "durationMinutes": exam["durationMinutes"],
+        "nominalQuestionCount": exam.get("nominalQuestionCount"),
         "answerKeyPage": exam["source"]["answerKeyPage"],
         "questionCount": len(exam["questions"]),
         "statusCounts": dict(Counter(q["status"] for q in exam["questions"])),
@@ -1387,6 +1382,7 @@ def qa_from_exam(exam: dict[str, Any]) -> dict[str, Any]:
         "reserveNumbers": exam["scorableSet"]["reserveNumbers"],
         "reserveUsedNumbers": exam["scorableSet"]["reserveUsedNumbers"],
         "reserveUseEvidence": exam["scorableSet"].get("reserveUseEvidence"),
+        "orderedReserveResolution": exam["scorableSet"].get("orderedReserveResolution"),
         "checks": exam["qa"]["checks"],
         "flags": exam["qa"]["flags"],
     }
@@ -1459,6 +1455,17 @@ def qa_markdown(exam: dict[str, Any] | None, qa: dict[str, Any]) -> str:
             ),
             f"- Base de resolución: `{evidence['basis']}`",
             f"- Razonamiento: {evidence['rationale']}",
+        ]
+    ordered_resolution = qa.get("orderedReserveResolution")
+    if ordered_resolution:
+        lines += [
+            "",
+            "## Resolución ordenada de anuladas y reservas",
+            "",
+            "- Base de resolución: `ordered_business_rule`",
+            f"- Sustituciones: {ordered_resolution['substitutions']}",
+            f"- Anuladas sin sustitución: {ordered_resolution['unreplacedAnnulledNumbers']}",
+            f"- Reservas no utilizadas: {ordered_resolution['unusedReserveNumbers']}",
         ]
     lines += [
         "",

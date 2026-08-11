@@ -2,6 +2,39 @@
   "schemaVersion": "1.0",
   "exams": [
     {
+      "id": "sas-administrativo-2015-promocion-interna",
+      "title": "SAS Administrativo/a 2015 - Promoción Interna",
+      "year": 2015,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "c1f666560c097e4830c119736cd03d90a64adda69501dcafb2f7afb8ab18d76e",
+      "latestPath": "sas-administrativo-2015-promocion-interna/versions/c1f666560c097e4830c119736cd03d90a64adda69501dcafb2f7afb8ab18d76e.json"
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre",
+      "title": "SAS Administrativo/a 2015 - Turno Libre",
+      "year": 2015,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "7f428c610ed0d83e15ccb34ffc4892cbdf7361c29980a6c1650366cb439196f6",
+      "latestPath": "sas-administrativo-2015-turno-libre/versions/7f428c610ed0d83e15ccb34ffc4892cbdf7361c29980a6c1650366cb439196f6.json"
+    },
+    {
+      "id": "sas-administrativo-2015-turno-libre-aplazada",
+      "title": "SAS Administrativo/a 2015 - Turno Libre - Prueba Aplazada",
+      "year": 2015,
+      "access": "Turno Libre",
+      "variant": "Prueba Aplazada",
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "c1112457c3e093c2f56d91660c4284a61a0a623d6d0e9ab324898514b55547c5",
+      "latestPath": "sas-administrativo-2015-turno-libre-aplazada/versions/c1112457c3e093c2f56d91660c4284a61a0a623d6d0e9ab324898514b55547c5.json"
+    },
+    {
       "id": "sas-administrativo-2018-promocion-interna",
       "title": "SAS Administrativo/a 2018 - Promoción Interna",
       "year": 2018,
@@ -13,6 +46,39 @@
       "latestPath": "sas-administrativo-2018-promocion-interna/versions/21c3f7a52114a53dfbdd7ffee2450749e06559a35ce7d4e50afe88ed7bb989ff.json"
     },
     {
+      "id": "sas-administrativo-2018-turno-libre",
+      "title": "SAS Administrativo/a 2018 - Turno Libre",
+      "year": 2018,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 149,
+      "latestVersion": "95e57b089dfc10b3ec5d3381ad9a2f41b70942ec6753ddb5672732c997bd3442",
+      "latestPath": "sas-administrativo-2018-turno-libre/versions/95e57b089dfc10b3ec5d3381ad9a2f41b70942ec6753ddb5672732c997bd3442.json"
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna",
+      "title": "SAS Administrativo/a 2021 - Promoción Interna",
+      "year": 2021,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "2a18087ed56306f684d759cc1cab3692ff3c956cf694c11535883f6d4b44f584",
+      "latestPath": "sas-administrativo-2021-promocion-interna/versions/2a18087ed56306f684d759cc1cab3692ff3c956cf694c11535883f6d4b44f584.json"
+    },
+    {
+      "id": "sas-administrativo-2021-promocion-interna-aplazada",
+      "title": "SAS Administrativo/a 2021 - Promoción Interna - Prueba Aplazada",
+      "year": 2021,
+      "access": "Promoción Interna",
+      "variant": "Prueba Aplazada",
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "b2cfd801171e5febc0717e02e1657d6260a35b294bc5ee27f79cb934d1d0b1e7",
+      "latestPath": "sas-administrativo-2021-promocion-interna-aplazada/versions/b2cfd801171e5febc0717e02e1657d6260a35b294bc5ee27f79cb934d1d0b1e7.json"
+    },
+    {
       "id": "sas-administrativo-2021-turno-libre",
       "title": "SAS Administrativo/a 2021 - Turno Libre",
       "year": 2021,
@@ -22,6 +88,50 @@
       "questionCount": 150,
       "latestVersion": "b6b246be9e718d6f5c512ffa433d886401b5ce62997f046d938dc8f2a97e7e92",
       "latestPath": "sas-administrativo-2021-turno-libre/versions/b6b246be9e718d6f5c512ffa433d886401b5ce62997f046d938dc8f2a97e7e92.json"
+    },
+    {
+      "id": "sas-administrativo-2021-turno-libre-aplazada",
+      "title": "SAS Administrativo/a 2021 - Turno Libre - Prueba Aplazada",
+      "year": 2021,
+      "access": "Turno Libre",
+      "variant": "Prueba Aplazada",
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "86e5a9cd94c0bd1b168a6ca587fbeb63816ac1695f8309646db2f4e3986efa4b",
+      "latestPath": "sas-administrativo-2021-turno-libre-aplazada/versions/86e5a9cd94c0bd1b168a6ca587fbeb63816ac1695f8309646db2f4e3986efa4b.json"
+    },
+    {
+      "id": "sas-administrativo-2023-turno-libre",
+      "title": "SAS Administrativo/a 2023 - Turno Libre",
+      "year": 2023,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "5c579c993b6f8878a30e21715574cf10b342cfa464ad813814005c3ac10741af",
+      "latestPath": "sas-administrativo-2023-turno-libre/versions/5c579c993b6f8878a30e21715574cf10b342cfa464ad813814005c3ac10741af.json"
+    },
+    {
+      "id": "sas-administrativo-2025-promocion-interna",
+      "title": "SAS Administrativo/a 2025 - Promoción Interna",
+      "year": 2025,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "3b081859559ee74fecbebca976b5e553dbaa46805a1d6572c69cbd3330bd67e8",
+      "latestPath": "sas-administrativo-2025-promocion-interna/versions/3b081859559ee74fecbebca976b5e553dbaa46805a1d6572c69cbd3330bd67e8.json"
+    },
+    {
+      "id": "sas-administrativo-2025-turno-libre",
+      "title": "SAS Administrativo/a 2025 - Turno Libre",
+      "year": 2025,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "19bdbd901db59637e7dfa5642de53009223866bf1d8f686e7706b8773d3dd335",
+      "latestPath": "sas-administrativo-2025-turno-libre/versions/19bdbd901db59637e7dfa5642de53009223866bf1d8f686e7706b8773d3dd335.json"
     }
   ]
 }

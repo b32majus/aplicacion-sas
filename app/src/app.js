@@ -1047,6 +1047,7 @@ function recordActivity() { lastActivityAt = Date.now(); }
 
 function tickActiveTime() {
   if (study?.attempt.kind === "exam") {
+    if (study.attempt.status !== "active") return;
     const remaining = Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs);
     elements["active-time"].textContent = `Tiempo restante: ${formatCountdown(remaining)}`;
     if (remaining <= 0 && !study.locked) {

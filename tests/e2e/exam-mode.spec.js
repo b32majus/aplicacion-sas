@@ -248,6 +248,9 @@ test("Seam 2: reabrir tras el deadline bloquea la edición y auto-finaliza", asy
   await expect(page.locator("#answer-options input").first()).toBeDisabled({ timeout: 500 });
   await expect(page.locator("#active-time")).toHaveText("Tiempo restante: 00:00:00");
   await expect(page.getByText("Intento finalizado")).toBeVisible({ timeout: 10_000 });
+  await page.waitForTimeout(1500);
+  await expect(page.getByText("Intento finalizado")).toBeVisible();
+  await expect(page.locator("#study-view")).toBeHidden();
   expect(persistence.finishCalls).toBe(1);
 });
 

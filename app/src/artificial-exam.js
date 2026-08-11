@@ -7,7 +7,7 @@ export function materializeArtificialSources(catalog, random = Math.random) {
     exam_id: exam.id,
     exam_version_id: exam.version,
     exam_version_path: exam.versionPath,
-    question_id: question.id,
+    source_question_id: question.id,
   })));
 
   if (pool.length < ARTIFICIAL_QUESTION_COUNT) {

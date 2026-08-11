@@ -49,7 +49,7 @@ function sourceRows(packages) {
     exam_id: source.examId,
     exam_version_id: source.versionId,
     exam_version_path: source.versionPath,
-    question_id: questionId,
+    source_question_id: questionId,
   })));
 }
 
@@ -77,7 +77,7 @@ test("Seam 2: bloquea pools parciales y referencias anuladas, de reserva no usad
     const invalid = sourceRows([published]);
     invalid[0] = sourceRows([unpublished])[0];
     await assert.rejects(startArtificial(db, "study", invalid), /Preguntas activas.*actualmente publicad/i);
-    invalid[0] = { ...invalid[1], question_id: "published-reserva-no-usada" };
+    invalid[0] = { ...invalid[1], source_question_id: "published-reserva-no-usada" };
     await assert.rejects(startArtificial(db, "study", invalid), /Preguntas activas.*actualmente publicad/i);
 
     const { rows: [{ count }] } = await db.query(
@@ -94,9 +94,11 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
   const db = await migratedDatabase();
   try {
     const packages = [packageData("exam-a", 40), packageData("exam-b", 40)];
+    packages[1].questionIds[0] = packages[0].questionIds[0];
+    packages[1].answerKey = Object.fromEntries(packages[1].questionIds.map((id) => [id, "B"]));
     for (const source of packages) await registerPackage(db, source);
     const sources = sourceRows(packages).slice(0, 75);
-    const questionIds = sources.map(({ question_id: questionId }) => questionId);
+    const canonicalIds = sources.map(({ source_question_id: questionId }) => questionId);
 
     const study = await startArtificial(db, "study", sources);
     assert.equal(study.kind, "normal");
@@ -104,19 +106,29 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
     assert.equal(study.strategy, "artificial_study");
     assert.equal(study.duration_minutes, null);
     assert.equal(study.question_ids.length, 75);
+    assert.deepEqual(
+      study.question_ids,
+      Array.from({ length: 75 }, (_, index) => `artificial-q${String(index + 1).padStart(3, "0")}`),
+    );
 
     const { rows: materialized } = await db.query(
-      `select position, exam_id, exam_version_id, exam_version_path, question_id
+      `select position, exam_id, exam_version_id, exam_version_path, question_id, source_question_id
        from public.attempt_question_sources where attempt_id = $1 order by position`,
       [study.id],
     );
-    assert.deepEqual(materialized, sources.map((source, position) => ({ position, ...source })));
+    assert.equal(new Set(materialized.map(({ question_id: id }) => id)).size, 75);
+    assert.deepEqual(
+      materialized.map(({ position, exam_id, source_question_id }) => ({ position, exam_id, source_question_id })),
+      sources.map(({ exam_id, source_question_id }, position) => ({ position, exam_id, source_question_id })),
+    );
+    assert.equal(materialized.filter(({ source_question_id }) => source_question_id === canonicalIds[0]).length, 2);
+    const questionIds = study.question_ids;
 
     for (let index = 0; index < questionIds.length; index += 1) {
       const confirmationId = `20000000-0000-4000-8000-${String(index + 1).padStart(12, "0")}`;
       await db.query(
         "select public.confirm_normal_answer($1, $2, $3, $4, 'B')",
-        [confirmationId, study.id, questionIds[index], index === 1 ? "A" : "B"],
+        [confirmationId, study.id, questionIds[index], index === 40 ? "A" : "B"],
       );
       if (index === 0) {
         await db.query(
@@ -135,11 +147,11 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
       `select (public.start_or_replace_principal_attempt(
         $1, $2, $3, $4, 'normal', false
       )).*`,
-      [packages[0].examId, packages[0].versionId, packages[0].versionPath, [questionIds[2]]],
+      [packages[0].examId, packages[0].versionId, packages[0].versionPath, [canonicalIds[2]]],
     );
     const { rows: [failed] } = await db.query(
       "select (public.start_or_resume_failed_attempt($1, $2::jsonb)).*",
-      [packages[0].examId, JSON.stringify([sources[1]])],
+      [packages[1].examId, JSON.stringify([{ ...sources[40], question_id: sources[40].source_question_id }])],
     );
 
     const timed = await startArtificial(db, "exam", sources);
@@ -155,14 +167,14 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
     await assert.rejects(
       db.query(
         "select public.confirm_normal_answer($1, $2, $3, 'B', 'B')",
-        ["21000000-0000-4000-8000-000000000001", principal.id, questionIds[2]],
+        ["21000000-0000-4000-8000-000000000001", principal.id, canonicalIds[2]],
       ),
       /Modo examen activo/,
     );
     await assert.rejects(
       db.query(
         "select public.confirm_failed_answer($1, $2, $3, 'B', 'B')",
-        ["21000000-0000-4000-8000-000000000002", failed.id, questionIds[1]],
+        ["21000000-0000-4000-8000-000000000002", failed.id, canonicalIds[40]],
       ),
       /Modo examen activo/,
     );
@@ -186,17 +198,17 @@ test("Seam 2: estudio y examen reutilizan motores, fijan 75 orígenes y aplican 
 
     const { rows: progress } = await db.query(
       `select exam_id, question_id, correct_count, wrong_count, current_streak, mastered, pending_failure
-       from public.question_progress where user_id = $1 and question_id = any($2)
-       order by question_id limit 2`,
-      [userId, [questionIds[0], questionIds[1]]],
+       from public.question_progress where user_id = $1 and question_id = $2
+       order by exam_id`,
+      [userId, canonicalIds[0]],
     );
     assert.deepEqual(progress, [
       {
-        exam_id: "exam-a", question_id: questionIds[0], correct_count: 2, wrong_count: 0,
+        exam_id: "exam-a", question_id: canonicalIds[0], correct_count: 2, wrong_count: 0,
         current_streak: 2, mastered: false, pending_failure: false,
       },
       {
-        exam_id: "exam-a", question_id: questionIds[1], correct_count: 0, wrong_count: 2,
+        exam_id: "exam-b", question_id: canonicalIds[0], correct_count: 0, wrong_count: 2,
         current_streak: 0, mastered: false, pending_failure: true,
       },
     ]);

@@ -21,10 +21,10 @@ test("Seam 2: materializa 75 referencias únicas solo desde preguntas activas pu
   const sources = materializeArtificialSources(catalog, () => 0.25);
 
   assert.equal(sources.length, 75);
-  assert.equal(new Set(sources.map(({ exam_id: examId, question_id: questionId }) => `${examId}\0${questionId}`)).size, 75);
+  assert.equal(new Set(sources.map(({ exam_id: examId, source_question_id: questionId }) => `${examId}\0${questionId}`)).size, 75);
   for (const source of sources) {
     const exam = catalog.find(({ id }) => id === source.exam_id);
-    const question = exam.package.questions.find(({ id }) => id === source.question_id);
+    const question = exam.package.questions.find(({ id }) => id === source.source_question_id);
     assert.equal(question.active, true);
     assert.equal(source.exam_version_id, exam.version);
     assert.equal(source.exam_version_path, exam.versionPath);
@@ -45,13 +45,13 @@ test("bloquea claramente el pool menor de 75 sin repetir ni devolver una selecci
   );
 });
 
-test("no aplica deduplicación semántica entre registros de exámenes distintos", () => {
-  const catalog = ["exam-a", "exam-b"].map((examId) => ({
+test("no deduplica registros semánticamente iguales ni IDs canónicos compartidos entre exámenes", () => {
+  const catalog = ["exam-a", "exam-b"].map((examId, examIndex) => ({
     id: examId,
     version: `version-${examId}`,
     versionPath: `${examId}/versions/version-${examId}.json`,
-    questions: Array.from({ length: 75 }, (_, index) => ({
-      id: `${examId}-q${index + 1}`,
+    questions: Array.from({ length: examIndex === 0 ? 38 : 37 }, (_, index) => ({
+      id: index === 0 ? "shared-q1" : `${examId}-q${index + 1}`,
       text: "El mismo enunciado literal",
       active: true,
     })),
@@ -60,4 +60,5 @@ test("no aplica deduplicación semántica entre registros de exámenes distintos
   const sources = materializeArtificialSources(catalog, () => 0);
   assert.equal(sources.length, 75);
   assert.equal(new Set(sources.map(({ exam_id: examId }) => examId)).size, 2);
+  assert.equal(sources.filter(({ source_question_id: id }) => id === "shared-q1").length, 2);
 });

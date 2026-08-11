@@ -65,7 +65,7 @@ export async function loadHistoryReplay(client, fetchImpl, bankBaseUrl, attempt)
 
   const { data: sources, error } = await client
     .from("attempt_question_sources")
-    .select("position,exam_id,exam_version_id,exam_version_path,question_id")
+    .select("position,exam_id,exam_version_id,exam_version_path,question_id,source_question_id")
     .eq("attempt_id", attempt.id)
     .order("position", { ascending: true });
   if (error) throw error;
@@ -83,12 +83,14 @@ export async function loadHistoryReplay(client, fetchImpl, bankBaseUrl, attempt)
   const questions = sources.map((source) => {
     const key = `${source.exam_id}\u0000${source.exam_version_id}\u0000${source.exam_version_path}`;
     const pinned = packages.get(key);
-    const question = pinned.exam.questions.find(({ id }) => id === source.question_id);
+    const question = pinned.exam.questions.find(({ id }) => id === source.source_question_id);
     if (!question) throw new Error("Una pregunta histórica ya no existe en su versión fijada.");
     return {
       ...question,
+      id: source.question_id,
       sourceExamId: source.exam_id,
       sourceExamTitle: pinned.exam.title,
+      sourceQuestionId: source.source_question_id,
       sourceVersionId: source.exam_version_id,
       sourceVersionPath: source.exam_version_path,
     };

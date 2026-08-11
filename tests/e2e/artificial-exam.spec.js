@@ -29,7 +29,11 @@ async function mockArtificialPersistence(page) {
     if (path.endsWith("/rpc/start_or_resume_artificial_attempt")) {
       state.startPayload = request.postDataJSON();
       const startedAt = new Date();
-      state.sources = state.startPayload.p_sources.map((source, position) => ({ position, ...source }));
+      state.sources = state.startPayload.p_sources.map((source, position) => ({
+        position,
+        ...source,
+        question_id: `artificial-q${String(position + 1).padStart(3, "0")}`,
+      }));
       state.attempt = {
         id: "60000000-0000-4000-8000-000000000014",
         user_id: "10000000-0000-4000-8000-000000000001",
@@ -109,9 +113,9 @@ async function login(page) {
 
 function assertMaterializedSources(sources) {
   expect(sources).toHaveLength(75);
-  expect(new Set(sources.map(({ exam_id: examId, question_id: questionId }) => `${examId}\0${questionId}`)).size).toBe(75);
+  expect(new Set(sources.map(({ exam_id: examId, source_question_id: questionId }) => `${examId}\0${questionId}`)).size).toBe(75);
   for (const source of sources) {
-    const record = eligible.find(({ exam, question }) => exam.id === source.exam_id && question.id === source.question_id);
+    const record = eligible.find(({ exam, question }) => exam.id === source.exam_id && question.id === source.source_question_id);
     expect(record).toBeTruthy();
     expect(source.exam_version_id).toBe(record.exam.version.id);
     expect(source.exam_version_path).toBe(record.entry.latestPath);
@@ -129,7 +133,7 @@ test("Seam 2: Examen artificial entra en estudio con 75 orígenes fijados y corr
   assertMaterializedSources(persistence.startPayload.p_sources);
 
   const first = persistence.sources[0];
-  const record = eligible.find(({ exam, question }) => exam.id === first.exam_id && question.id === first.question_id);
+  const record = eligible.find(({ exam, question }) => exam.id === first.exam_id && question.id === first.source_question_id);
   await page.locator(`#answer-options input[value="${record.question.correctOption}"]`).check();
   await page.getByRole("button", { name: "Confirmar respuesta" }).click();
   await expect(page.locator("#correction")).toContainText("Correcta");

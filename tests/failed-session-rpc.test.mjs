@@ -100,7 +100,7 @@ test("Seam 2: una fallada pendiente alcanza dominio y un nuevo fallo reinicia su
     assert.equal(firstRecovery.kind, "failed");
     assert.equal(firstRecovery.principal, false);
     const { rows: firstQueue } = await db.query(
-      `select exam_id, exam_version_id, exam_version_path, question_id
+      `select exam_id, exam_version_id, exam_version_path, question_id, source_question_id
        from public.attempt_question_sources where attempt_id = $1 order by position`,
       [firstRecovery.id],
     );
@@ -109,6 +109,7 @@ test("Seam 2: una fallada pendiente alcanza dominio y un nuevo fallo reinicia su
       exam_version_id: versionId,
       exam_version_path: versionPath,
       question_id: questionId,
+      source_question_id: questionId,
     }]);
     const firstCorrectId = "20000000-0000-4000-8000-000000000002";
     await confirmFailed(db, firstCorrectId, firstRecovery.id, "B");
@@ -201,7 +202,7 @@ test("Seam 2: Todas mis falladas conserva orígenes únicos y reanuda la única 
     assert.deepEqual(allFailed.question_ids, [questionId, secondQuestionId]);
 
     const { rows: queue } = await db.query(
-      `select position, exam_id, exam_version_id, exam_version_path, question_id
+      `select position, exam_id, exam_version_id, exam_version_path, question_id, source_question_id
        from public.attempt_question_sources where attempt_id = $1 order by position`,
       [allFailed.id],
     );
@@ -212,6 +213,7 @@ test("Seam 2: Todas mis falladas conserva orígenes únicos y reanuda la única 
         exam_version_id: versionId,
         exam_version_path: versionPath,
         question_id: questionId,
+        source_question_id: questionId,
       },
       {
         position: 1,
@@ -219,6 +221,7 @@ test("Seam 2: Todas mis falladas conserva orígenes únicos y reanuda la única 
         exam_version_id: secondVersionId,
         exam_version_path: secondVersionPath,
         question_id: secondQuestionId,
+        source_question_id: secondQuestionId,
       },
     ]);
 

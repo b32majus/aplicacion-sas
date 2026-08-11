@@ -210,3 +210,71 @@ test("Seam 2: tras cambiar el catálogo a B, Historial reproduce A sin escribir 
   assert.deepEqual(reads, ["attempt_answers"]);
   assert.equal(requested.some((path) => path.endsWith("version-a.json")), true);
 });
+
+test("Historial reproduce dos orígenes con el mismo ID canónico mediante IDs internos distintos", async () => {
+  const internalIds = ["artificial-q001", "artificial-q002"];
+  const sources = ["exam-a", "exam-b"].map((examId, position) => ({
+    position,
+    exam_id: examId,
+    exam_version_id: `${examId}-version`,
+    exam_version_path: `${examId}/versions/${examId}-version.json`,
+    question_id: internalIds[position],
+    source_question_id: "shared-q1",
+  }));
+  const answers = internalIds.map((questionId, index) => ({
+    id: `answer-${index}`,
+    question_id: questionId,
+    answer_sequence: 1,
+    selected_option: "B",
+    correct_option: "B",
+    is_correct: true,
+    confirmed_at: "2026-08-11T10:00:00Z",
+  }));
+  const packages = Object.fromEntries(sources.map((source) => [source.exam_version_path, {
+    id: source.exam_id,
+    title: source.exam_id,
+    durationMinutes: 90,
+    version: { id: source.exam_version_id },
+    qa: { state: "publicable" },
+    scorableSet: { state: "resolved", count: 1, questionNumbers: [1] },
+    questions: [{
+      id: "shared-q1",
+      sourceNumber: 1,
+      active: true,
+      text: `Texto de ${source.exam_id}`,
+      options: [{ id: "B", text: "Correcta" }],
+      correctOption: "B",
+    }],
+  }]));
+  const client = {
+    from(table) {
+      const builder = {
+        select() { return builder; },
+        eq() { return builder; },
+        order: async () => ({
+          data: structuredClone(table === "attempt_answers" ? answers : sources),
+          error: null,
+        }),
+      };
+      return builder;
+    },
+  };
+  const fetchImpl = async (path) => ({
+    ok: true,
+    status: 200,
+    json: async () => structuredClone(packages[path.replace("/bank/", "")]),
+  });
+
+  const replay = await loadHistoryReplay(client, fetchImpl, "/bank/", {
+    id: "artificial-attempt",
+    exam_id: "__artificial__",
+    question_ids: internalIds,
+    kind: "exam",
+    origin: "artificial",
+  });
+
+  assert.deepEqual(replay.questions.map(({ id }) => id), internalIds);
+  assert.deepEqual(replay.questions.map(({ sourceQuestionId }) => sourceQuestionId), ["shared-q1", "shared-q1"]);
+  assert.deepEqual(replay.questions.map(({ text }) => text), ["Texto de exam-a", "Texto de exam-b"]);
+  assert.deepEqual(replay.answers.map(({ question_id: id }) => id), internalIds);
+});

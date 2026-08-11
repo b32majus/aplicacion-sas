@@ -22,15 +22,16 @@ async function fileFetch(path) {
 
 test("muestra solo las versiones publicables actuales producidas por T01", async () => {
   const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
-  assert.equal(catalog.length, 2);
-  assert.deepEqual(catalog.map(({ id }) => id), [
-    "sas-administrativo-2018-promocion-interna",
-    "sas-administrativo-2021-turno-libre",
-  ]);
-  assert.equal(catalog.every(({ activeCount }) => activeCount === 150), true);
-  assert.equal(catalog.every(({ durationMinutes }) => durationMinutes === 180), true);
+  assert.equal(catalog.length, 12);
+  assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2018-turno-libre"), true);
+  assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2025-turno-libre"), true);
+  assert.equal(catalog.every(({ activeCount, questions }) => activeCount === questions.length), true);
+  assert.equal(catalog.every(({ durationMinutes }) => [120, 180].includes(durationMinutes)), true);
   assert.equal(catalog.every(({ versionPath }) => versionPath.includes("/versions/")), true);
-  assert.equal(catalog.every(({ questions }) => questions.length === 150), true);
+  assert.deepEqual(
+    [...new Set(catalog.map(({ questions }) => questions.length))].sort((a, b) => a - b),
+    [75, 149, 150],
+  );
 });
 
 test("descarta un paquete que no sea la versión publicable indicada", async () => {

@@ -51,6 +51,11 @@
       "type": ["integer", "null"],
       "minimum": 1
     },
+    "nominalQuestionCount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Número ordinario nominal declarado por la fuente. Permite normalizar una versión con menos preguntas efectivas por falta de reservas."
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
@@ -184,6 +189,13 @@
             { "type": "null" },
             { "$ref": "#/$defs/reserveUseEvidence" }
           ]
+        },
+        "orderedReserveResolution": {
+          "description": "Resolución determinista por la regla de negocio aprobada: anuladas y reservas se emparejan por orden.",
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/orderedReserveResolution" }
+          ]
         }
       }
     },
@@ -316,6 +328,42 @@
     }
   ],
   "$defs": {
+    "orderedReserveSubstitution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["annulledNumber", "reserveNumber"],
+      "properties": {
+        "annulledNumber": { "type": "integer", "minimum": 1 },
+        "reserveNumber": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "orderedReserveResolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "substitutions",
+        "unreplacedAnnulledNumbers",
+        "unusedReserveNumbers"
+      ],
+      "properties": {
+        "basis": { "const": "ordered_business_rule" },
+        "substitutions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/orderedReserveSubstitution" }
+        },
+        "unreplacedAnnulledNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "unusedReserveNumbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
     "reserveSubstitutionEvidence": {
       "type": "object",
       "additionalProperties": false,

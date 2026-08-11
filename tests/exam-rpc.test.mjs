@@ -275,6 +275,52 @@ test("Seam 2: finalizar puntúa blancas y aplica el progreso una sola vez", asyn
   }
 });
 
+test("Seam 2: normaliza déficits efectivos y conserva exámenes completos", async () => {
+  const db = await migratedDatabase();
+  try {
+    const { rows: [scores] } = await db.query(`
+      select
+        public.calculate_official_exam_score(149, 0, 149, 150) as short_150,
+        public.calculate_official_exam_score(149, 0, 150, 150) as complete_150,
+        public.calculate_official_exam_score(74, 1, 75, 75) as complete_75
+    `);
+    assert.equal(Number(scores.short_150), 100);
+    assert.equal(Number(scores.complete_150), 99.33);
+    assert.equal(Number(scores.complete_75), 98.33);
+  } finally {
+    await db.close();
+  }
+});
+
+test("Seam 2: respuestas ajenas al conjunto puntuable no alteran la nota", async () => {
+  const db = await migratedDatabase();
+  try {
+    const attempt = await startExam(db);
+    await saveExamAnswer(
+      db,
+      "31000000-0000-4000-8000-000000000001",
+      attempt.id,
+      questionIds[0],
+      "B",
+      0,
+    );
+    await db.query(
+      `insert into public.attempt_answers(
+         id, attempt_id, user_id, question_id, answer_sequence,
+         selected_option, correct_option, is_correct
+       ) values ($1, $2, $3, 'inactive-annulled-or-reserve', 1, 'A', null, null)`,
+      ["31000000-0000-4000-8000-000000000002", attempt.id, userId],
+    );
+    const summary = await finishExam(db, attempt.id);
+    assert.deepEqual(
+      { correct: summary.correct, wrong: summary.wrong, blank: summary.blank, score: summary.score },
+      { correct: 1, wrong: 0, blank: 2, score: 33.33 },
+    );
+  } finally {
+    await db.close();
+  }
+});
+
 test("Seam 2: un Modo examen activo congela estudio sin abandonar sus intentos", async () => {
   const db = await migratedDatabase();
   try {

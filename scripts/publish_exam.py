@@ -16,6 +16,7 @@ from parse_sas_exam import (
     CanonicalPackageError,
     ImportResult,
     _validate_catalog,
+    _set_canonical_version,
     qa_from_exam,
     qa_markdown,
     validate_exam_package,
@@ -113,6 +114,97 @@ def validate_source_metadata(metadata: dict, exam: dict, path: Path) -> str:
     return reference
 
 
+def repair_ordered_reserve_package(exam: dict) -> dict:
+    """Resolve a package blocked only by the superseded reserve ambiguity rule."""
+    reason = exam.get("qa", {}).get("blockedReason")
+    checks = exam.get("qa", {}).get("checks", {})
+    if (
+        exam.get("qa", {}).get("state") != "bloqueado_para_revision"
+        or not isinstance(reason, str)
+        or "anuladas/reservas" not in reason
+        or any(
+            not checks.get(name)
+            for name in (
+                "metadataComplete",
+                "optionsPerQuestionValid",
+                "answerCoverageValid",
+                "countsReconciled",
+                "duplicatesResolved",
+            )
+        )
+        or any(question.get("status") == "unresolved" for question in exam.get("questions", []))
+    ):
+        raise PublicationBlockedError(
+            "el paquete contiene un bloqueo distinto de la antigua resolución de anuladas/reservas"
+        )
+
+    questions = exam["questions"]
+    annulled = [q["sourceNumber"] for q in questions if q["status"] == "annulled"]
+    reserves = [q["sourceNumber"] for q in questions if q["status"] == "reserve"]
+    used = reserves[:len(annulled)]
+    used_set = set(used)
+    labels = {number: f"R{index}" for index, number in enumerate(used, start=1)}
+    for question in questions:
+        status = question["status"]
+        source_answer = question["sourceAnswer"]
+        option_ids = [option["id"] for option in question["options"]]
+        if option_ids != ["A", "B", "C", "D"] or not question["text"]:
+            raise PublicationBlockedError(
+                f"pregunta {question['sourceNumber']} incompleta; no se puede reparar"
+            )
+        if status == "annulled":
+            question.update(active=False, correctOption=None, displayLabel=None)
+        elif source_answer not in option_ids:
+            raise PublicationBlockedError(
+                f"pregunta {question['sourceNumber']} sin respuesta oficial utilizable"
+            )
+        elif status == "valid":
+            question.update(active=True, correctOption=source_answer, displayLabel=None)
+        else:
+            number = question["sourceNumber"]
+            question.update(
+                active=number in used_set,
+                correctOption=source_answer,
+                displayLabel=labels.get(number),
+            )
+
+    active = [q["sourceNumber"] for q in questions if q["active"]]
+    nominal_count = sum(q["status"] != "reserve" for q in questions)
+    exam["nominalQuestionCount"] = nominal_count
+    exam["scorableSet"] = {
+        "state": "resolved",
+        "questionNumbers": active,
+        "count": len(active),
+        "annulledNumbers": annulled,
+        "reserveNumbers": reserves,
+        "reserveUsedNumbers": used,
+        "reserveUsedLabels": {f"R{index}": number for index, number in enumerate(used, start=1)},
+        "annulledCount": len(annulled),
+        "reserveTotal": len(reserves),
+        "reserveUsedCount": len(used),
+        "reserveUnusedCount": len(reserves) - len(used),
+        "reserveUseEvidence": None,
+        "orderedReserveResolution": {
+            "basis": "ordered_business_rule",
+            "substitutions": [
+                {"annulledNumber": annulled_number, "reserveNumber": reserve_number}
+                for annulled_number, reserve_number in zip(annulled, used)
+            ],
+            "unreplacedAnnulledNumbers": annulled[len(used):],
+            "unusedReserveNumbers": reserves[len(used):],
+        },
+    }
+    exam["qa"]["state"] = PUBLICABLE
+    exam["qa"]["blockedReason"] = None
+    exam["qa"]["checks"] = {name: True for name in checks}
+    _set_canonical_version(exam)
+    try:
+        validate_exam_package(exam)
+    except CanonicalPackageError as error:
+        raise PublicationBlockedError(f"el paquete reparado no es publicable: {error}") from error
+    return exam
+
+
 def reviewer_summary(exam: dict, reference: str) -> str:
     scorable = exam["scorableSet"]
     unused = sorted(set(scorable["reserveNumbers"]) - set(scorable["reserveUsedNumbers"]))
@@ -175,6 +267,7 @@ def registration_sql(exam: dict) -> str:
     )
     questions = "array[" + ", ".join(sql_literal(value) for value in question_ids) + "]"
     key = sql_literal(json.dumps(answer_key, ensure_ascii=False, separators=(",", ":")))
+    nominal_count = exam.get("nominalQuestionCount", len(question_ids))
     return f"""do $official_exam_registration$
 begin
   update public.official_exam_versions
@@ -185,10 +278,10 @@ begin
 
   insert into public.official_exam_versions(
     exam_id, exam_version_id, exam_version_path, duration_minutes,
-    question_ids, answer_key, is_published
+    question_ids, answer_key, nominal_question_count, is_published
   ) values (
     {exam_id}, {version_id}, {version_path}, {exam['durationMinutes']},
-    {questions}, {key}::jsonb, true
+    {questions}, {key}::jsonb, {nominal_count}, true
   ) on conflict (exam_id, exam_version_id) do nothing;
 
   if not exists (
@@ -199,6 +292,7 @@ begin
       and duration_minutes = {exam['durationMinutes']}
       and question_ids = {questions}
       and answer_key = {key}::jsonb
+      and nominal_question_count = {nominal_count}
   ) then
     raise exception 'Conflicto con un registro oficial inmutable existente.';
   end if;
@@ -664,6 +758,9 @@ def main() -> None:
     changed_parser.add_argument("--after")
     changed_parser.add_argument("--exam-id")
     changed_parser.add_argument("--github-output", type=Path)
+    repair_parser = subparsers.add_parser("repair-ordered-reserves")
+    repair_parser.add_argument("--package", type=Path, required=True)
+    repair_parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
     try:
@@ -696,10 +793,18 @@ def main() -> None:
                 ) from error
             print("RECORDED" if recorded else "NOT_FOUND")
             raise SystemExit(0 if recorded else 1)
-        else:
+        elif args.command == "changed":
             ids = changed_exam_ids(args.inputs, args.before, args.after, args.exam_id)
             write_github_output(args.github_output, {"exam_ids": json.dumps(ids)})
             print(json.dumps(ids))
+        else:
+            repaired = repair_ordered_reserve_package(load_json(args.package))
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(
+                json.dumps(repaired, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            print(f"REPAIRED: {repaired['id']} {repaired['version']['id']}")
     except (PublicationBlockedError, RuntimeError, subprocess.CalledProcessError) as error:
         print(f"BLOCKED: {error}", file=sys.stderr)
         raise SystemExit(2) from error

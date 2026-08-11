@@ -216,6 +216,15 @@ export class ActiveAttemptPersistence {
       this.inFlightActiveIds.clear();
       if (error) {
         if (isStaleError(error) || isInactiveError(error)) return this.#recoverCanonical();
+        if (isDeadlineError(error) && sent.pending.exam_answers.length > 0) {
+          const recovered = await this.#recoverCanonical();
+          if (recovered.attempt.status !== "active") return recovered;
+          this.queueFinalization({
+            position: recovered.attempt.current_position,
+            isPaused: recovered.attempt.is_paused,
+          });
+          continue;
+        }
         if (isDeadlineError(error) && this.record.pending.finalize && !sent.pending.finalize) {
           if (this.record.retry?.sync_id === sent.sync_id) {
             this.record.retry = null;

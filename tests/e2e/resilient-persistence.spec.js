@@ -11,9 +11,10 @@ function json(route, body, status = 200) {
   return route.fulfill({ status, contentType: "application/json", body: JSON.stringify(body) });
 }
 
-function studyState() {
+function studyState({ nowMs = Date.now() } = {}) {
   return {
     online: true,
+    serverNow: new Date(nowMs).toISOString(),
     successfulSyncs: 0,
     rejectedSyncs: [],
     syncedSnapshots: [],
@@ -43,6 +44,10 @@ async function mockStudyPersistence(page, state = studyState()) {
     const request = route.request();
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
+    if (path.endsWith("/rpc/get_server_now")) return json(route, state.serverNow);
+    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+      exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+    })));
     if (request.method() === "GET" && path.endsWith("/attempts")) return json(route, [state.attempt]);
     if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, state.progress || []);
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
@@ -99,6 +104,8 @@ function examState({ nowMs = Date.now(), deadlineMs = 60 * 60 * 1000 } = {}) {
     syncStarted: false,
     releaseSync: null,
     rejectNonFinalizing: false,
+    rejectExamAnswers: false,
+    rejectedLateAnswers: 0,
     attempt: {
       id: "20000000-0000-4000-8000-000000000072",
       user_id: "10000000-0000-4000-8000-000000000071",
@@ -128,6 +135,10 @@ async function mockExamPersistence(page, state = examState()) {
     const request = route.request();
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
+    if (path.endsWith("/rpc/get_server_now")) return json(route, state.attempt.server_now);
+    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+      exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+    })));
     if (request.method() === "GET" && path.endsWith("/attempts")) return json(route, [state.attempt]);
     if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, []);
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
@@ -139,6 +150,10 @@ async function mockExamPersistence(page, state = examState()) {
         state.blockNextSync = false;
         state.syncStarted = true;
         await new Promise((resolve) => { state.releaseSync = resolve; });
+      }
+      if (state.rejectExamAnswers && payload.p_pending_snapshot.exam_answers.length > 0) {
+        state.rejectedLateAnswers += 1;
+        return json(route, { message: "El deadline del Modo examen ya ha vencido." }, 409);
       }
       if (state.rejectNonFinalizing && !payload.p_pending_snapshot.finalize) {
         return json(route, { message: "El deadline del Modo examen ya ha vencido." }, 409);
@@ -267,10 +282,12 @@ test("Seam 2: corte breve, dos confirmaciones, reapertura y una sincronización"
 });
 
 test("Seam 2 regresión A: conserva 350 segundos activos como incrementos de máximo 300", async ({ page }) => {
-  await page.clock.install({ time: new Date("2026-08-10T10:00:00Z") });
-  const remote = await mockStudyPersistence(page);
+  const serverNow = new Date("2026-08-10T10:00:00Z");
+  await page.clock.install({ time: serverNow });
+  const remote = await mockStudyPersistence(page, studyState({ nowMs: serverNow.getTime() }));
   await login(page);
   await openStudy(page);
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   const pendingSeconds = () => page.evaluate(() => {
     const key = Object.keys(localStorage).find((candidate) => candidate.startsWith("sas-active-attempt:"));
     if (!key) return 0;
@@ -394,10 +411,13 @@ test("Seam 2: expiración offline bloquea, sobrevive a recarga y finaliza una ve
   await expect(page.locator("#sync-status")).toContainText("Cambios pendientes");
   expect(remote.finalizations).toBe(0);
 
+  remote.rejectExamAnswers = true;
   await setBackendOffline(page, remote, false);
   await expect(page.getByText("Intento finalizado")).toBeVisible();
   expect(remote.finalizations).toBe(1);
-  expect(remote.answers).toHaveLength(2);
+  expect(remote.rejectedLateAnswers).toBe(1);
+  expect(remote.answers).toHaveLength(1);
+  expect(remote.syncedSnapshots.at(-1).exam_answers).toEqual([]);
   expect(await page.evaluate(() => Object.keys(localStorage).filter((key) => key.startsWith("sas-active-attempt:")))).toEqual([]);
 });
 
@@ -413,11 +433,14 @@ test("Seam 2: un autoguardado que cruza el deadline reintenta la finalización s
   await expect.poll(() => remote.syncStarted).toBe(true);
   await page.clock.runFor(1_100);
   remote.rejectNonFinalizing = true;
+  remote.rejectExamAnswers = true;
   remote.releaseSync();
 
   await expect(page.getByText("Intento finalizado")).toBeVisible();
   expect(remote.finalizations).toBe(1);
   expect(remote.syncedSnapshots.at(-1).finalize).toBe(true);
+  expect(remote.syncedSnapshots.at(-1).exam_answers).toEqual([]);
+  expect(remote.rejectedLateAnswers).toBe(1);
 });
 
 test("Seam 2: dos dispositivos rechazan la revisión obsoleta y muestran el estado canónico", async ({ page: deviceA, browser }, testInfo) => {

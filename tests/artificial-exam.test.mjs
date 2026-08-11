@@ -6,6 +6,12 @@ import { materializeArtificialSources } from "../app/src/artificial-exam.js";
 import { loadPublishedCatalog } from "../app/src/catalog.js";
 
 const bankUrl = new URL("../app/public/data/exams/", import.meta.url);
+const staticCatalog = JSON.parse(await readFile(new URL("catalog.json", bankUrl), "utf8"));
+const authorizedVersions = staticCatalog.exams.map((entry) => ({
+  exam_id: entry.id,
+  exam_version_id: entry.latestVersion,
+  exam_version_path: entry.latestPath,
+}));
 
 async function fileFetch(path) {
   try {
@@ -17,7 +23,7 @@ async function fileFetch(path) {
 }
 
 test("Seam 2: materializa 75 referencias únicas solo desde preguntas activas publicadas", async () => {
-  const catalog = await loadPublishedCatalog(fileFetch, "./");
+  const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
   const sources = materializeArtificialSources(catalog, () => 0.25);
 
   assert.equal(sources.length, 75);

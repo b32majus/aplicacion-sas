@@ -84,11 +84,11 @@ test("Seam 2: el servidor solo admite la identidad, orden y duración del paquet
   try {
     await assert.rejects(
       startExam(db, { questionIds: [...questionIds].reverse() }),
-      /versión oficial publicable/i,
+      /versión oficial actualmente publicada/i,
     );
     await assert.rejects(
       startExam(db, { durationMinutes: 1440 }),
-      /versión oficial publicable/i,
+      /versión oficial actualmente publicada/i,
     );
     const { rows: [{ can_execute: canExecute }] } = await db.query(
       "select has_function_privilege('authenticated', 'public.finish_exam_attempt_from_official_key(uuid,jsonb)', 'execute') as can_execute",
@@ -275,20 +275,14 @@ test("Seam 2: finalizar puntúa blancas y aplica el progreso una sola vez", asyn
   }
 });
 
-test("Seam 2: un Modo examen activo bloquea respuestas de estudio sin abandonar sus intentos", async () => {
+test("Seam 2: un Modo examen activo congela estudio sin abandonar sus intentos", async () => {
   const db = await migratedDatabase();
   try {
-    const { rows: [completedPrincipal] } = await db.query(
-      `select (public.start_or_replace_principal_attempt(
-        $1, $2, $3, $4, 'normal', false
-      )).*`,
-      [examId, versionId, versionPath, [questionIds[0]]],
-    );
     await db.query(
-      "select public.confirm_normal_answer($1, $2, $3, 'A', 'B')",
-      ["40000000-0000-4000-8000-000000000001", completedPrincipal.id, questionIds[0]],
+      `insert into public.question_progress(user_id, exam_id, question_id, wrong_count, pending_failure)
+       values ($1, $2, $3, 1, true)`,
+      [userId, examId, questionIds[0]],
     );
-    await db.query("select public.complete_normal_attempt($1)", [completedPrincipal.id]);
 
     const source = JSON.stringify([{
       exam_id: examId,
@@ -304,23 +298,51 @@ test("Seam 2: un Modo examen activo bloquea respuestas de estudio sin abandonar 
       `select (public.start_or_replace_principal_attempt(
         $1, $2, $3, $4, 'normal', false
       )).*`,
-      [examId, versionId, versionPath, [questionIds[1]]],
+      [examId, versionId, versionPath, questionIds],
     );
-    await startExam(db);
+    const exam = await startExam(db);
+
+    await assert.rejects(
+      db.query(
+        `select (public.start_or_replace_principal_attempt(
+          $1, $2, $3, $4, 'normal', false
+        )).*`,
+        [examId, versionId, versionPath, questionIds],
+      ),
+      /actividad de estudio.*Modo examen activo/i,
+    );
+    await assert.rejects(
+      db.query("select (public.start_or_resume_failed_attempt($1, '[]'::jsonb)).*", [examId]),
+      /actividad de estudio.*Modo examen activo/i,
+    );
 
     await assert.rejects(
       db.query(
         "select public.confirm_normal_answer($1, $2, $3, 'B', 'B')",
-        ["40000000-0000-4000-8000-000000000002", principal.id, questionIds[1]],
+        ["40000000-0000-4000-8000-000000000001", principal.id, questionIds[1]],
       ),
       /Modo examen activo/,
     );
     await assert.rejects(
       db.query(
         "select public.confirm_failed_answer($1, $2, $3, 'B', 'B')",
-        ["40000000-0000-4000-8000-000000000003", failed.id, questionIds[0]],
+        ["40000000-0000-4000-8000-000000000002", failed.id, questionIds[0]],
       ),
       /Modo examen activo/,
+    );
+    await assert.rejects(
+      db.query(
+        "select public.save_normal_attempt($1, $2, 1, 7, false)",
+        ["40000000-0000-4000-8000-000000000003", principal.id],
+      ),
+      /actividad de estudio.*Modo examen activo/i,
+    );
+    await assert.rejects(
+      db.query(
+        "select public.save_normal_attempt($1, $2, 0, 7, false)",
+        ["40000000-0000-4000-8000-000000000004", failed.id],
+      ),
+      /actividad de estudio.*Modo examen activo/i,
     );
 
     const { rows: stillActive } = await db.query(
@@ -332,6 +354,20 @@ test("Seam 2: un Modo examen activo bloquea respuestas de estudio sin abandonar 
       { id: failed.id, kind: "failed", status: "active" },
       { id: principal.id, kind: "normal", status: "active" },
     ]);
+
+    await finishExam(db, exam.id);
+    await db.query(
+      "select public.save_normal_attempt($1, $2, 1, 7, false)",
+      ["40000000-0000-4000-8000-000000000005", principal.id],
+    );
+    await db.query(
+      "select public.confirm_normal_answer($1, $2, $3, 'B', 'B')",
+      ["40000000-0000-4000-8000-000000000006", principal.id, questionIds[1]],
+    );
+    await db.query(
+      "select public.confirm_failed_answer($1, $2, $3, 'B', 'B')",
+      ["40000000-0000-4000-8000-000000000007", failed.id, questionIds[0]],
+    );
   } finally {
     await db.close();
   }

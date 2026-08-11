@@ -4,6 +4,13 @@ import { materializeArtificialSources } from "./artificial-exam.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
 import {
+  fetchServerClockOffset,
+  isActiveExam,
+  isExamExpired,
+  serverAdjustedNow,
+  serverClockOffset,
+} from "./exam-clock.js";
+import {
   HISTORY_KIND_LABELS,
   HISTORY_MODE_LABELS,
   HISTORY_STATUS_LABELS,
@@ -71,7 +78,7 @@ let routeSerial = 0;
 let savePromise = Promise.resolve();
 let confirmationRetryAvailable = false;
 let pendingStrategyChange = null;
-let examServerOffsetMs = 0;
+let examServerOffsetMs = Number.NaN;
 let examSavePromise = Promise.resolve();
 let examFinalizing = false;
 let persistence;
@@ -463,6 +470,9 @@ function eligibleFailureSources(scopeExamId = null) {
 }
 
 async function refreshStatuses() {
+  examServerOffsetMs = Number.NaN;
+  examServerOffsetMs = await fetchServerClockOffset(supabase);
+
   const { data, error } = await supabase
     .from("attempts")
     .select("id,exam_id,exam_version_id,exam_version_path,question_ids,status,completed_at,strategy,kind,failed_scope_exam_id,current_position,duration_minutes,started_at,deadline_at,score");
@@ -545,11 +555,11 @@ function renderCatalog() {
   elements["all-failed-button"].textContent = activeFailedAttempt
     ? "Continuar Sesión de falladas activa"
     : "Empezar Todas mis falladas";
-  if (activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now()) {
+  if (isActiveExam(activeExamAttempt, examServerOffsetMs)) {
     elements["all-failed-button"].disabled = true;
   }
   const artificialAvailable = catalog.reduce((total, exam) => total + exam.questions.length, 0) >= 75;
-  const examIsActive = activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["artificial-study-button"].disabled = !artificialAvailable || Boolean(examIsActive);
   elements["artificial-exam-button"].disabled = !artificialAvailable;
   elements["artificial-exam-button"].textContent = activeExamAttempt?.origin === "artificial"
@@ -565,7 +575,11 @@ function renderCatalog() {
 
 async function ensureCatalog() {
   if (!catalogPromise) {
-    catalogPromise = loadPublishedCatalog(fetch, bankBaseUrl)
+    catalogPromise = supabase.rpc("get_published_official_exam_versions")
+      .then(({ data, error }) => {
+        if (error) throw error;
+        return loadPublishedCatalog(fetch, bankBaseUrl, data);
+      })
       .then((loaded) => { catalog = loaded; return loaded; })
       .catch((error) => {
         catalogPromise = undefined;
@@ -613,7 +627,7 @@ async function selectExam(id, { updateHash = true } = {}) {
   elements["start-failed-button"].textContent = activeFailedAttempt
     ? "Continuar Sesión de falladas activa"
     : "Empezar Solo falladas";
-  const examIsActive = activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["start-study-button"].disabled = Boolean(examIsActive);
   elements["start-random-study-button"].disabled = Boolean(examIsActive);
   if (examIsActive) elements["start-failed-button"].disabled = true;
@@ -759,21 +773,23 @@ async function startExam() {
     if (error) throw error;
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
-    attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+    attempt.server_clock_offset_ms = serverClockOffset(attempt.server_now, clockRequestAt, clockResponseAt);
     const pinned = attempt.exam_version_id === selectedExam.version && attempt.exam_version_path === selectedExam.versionPath
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const catalogExam = catalog.find(({ id }) => id === attempt.exam_id);
     if (catalogExam) selectedExam = catalogExam;
     const answers = await fetchAttemptAnswers(attempt.id);
-    const view = persistence.begin(attempt, answers);
+    const view = persistence.begin(attempt, answers, {
+      questions: pinned.exam.questions.filter(({ active }) => active),
+    });
     study = new ExamSession(pinned.exam, view.attempt, view.answers);
     applyPendingView(view);
     activeExamAttempt = attempt;
     examServerOffsetMs = view.attempt.server_clock_offset_ms;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
-    const expired = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    const expired = isExamExpired(view.attempt, examServerOffsetMs);
     study.locked = expired;
     window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
     renderStudy();
@@ -786,12 +802,12 @@ async function startExam() {
       return;
     }
     study = new ExamSession(selectedExam.package, view.attempt, view.answers);
-    examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
     applyPendingView(view);
     activeExamAttempt = view.attempt;
     examSavePromise = Promise.resolve();
     examFinalizing = false;
-    study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    study.locked = isExamExpired(view.attempt, examServerOffsetMs);
     window.location.hash = `exam-mode=${encodeURIComponent(view.attempt.exam_id)}`;
     if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
     renderStudy();
@@ -852,7 +868,9 @@ async function startStudy(strategy = activeStrategies.get(selectedExam?.id) || "
       ? { exam: selectedExam.package }
       : await loadPinnedExam(fetch, bankBaseUrl, attempt);
     const answers = await fetchAttemptAnswers(attempt.id);
-    const view = persistence.begin(attempt, answers);
+    const view = persistence.begin(attempt, answers, {
+      questions: pinned.exam.questions.filter(({ active }) => active),
+    });
     study = new NormalStudySession(pinned.exam, view.attempt, view.answers);
     activeStrategies.set(selectedExam.id, attempt.strategy);
     pendingActiveSeconds = 0;
@@ -945,7 +963,7 @@ async function startArtificial(mode) {
     const clockResponseAt = Date.now();
     const attempt = normalizeRow(data);
     if (attempt.kind === "exam") {
-      attempt.server_clock_offset_ms = Date.parse(attempt.server_now) - (clockRequestAt + clockResponseAt) / 2;
+      attempt.server_clock_offset_ms = serverClockOffset(attempt.server_now, clockRequestAt, clockResponseAt);
     }
     const questions = await loadCompositeQuestions(attempt);
     const composedExam = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
@@ -959,7 +977,7 @@ async function startArtificial(mode) {
     if (attempt.kind === "exam") {
       activeExamAttempt = attempt;
       examServerOffsetMs = view.attempt.server_clock_offset_ms;
-      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
       if (study.locked) persistence.queueFinalization(currentPersistenceState());
     } else {
       pendingActiveSeconds = 0;
@@ -986,8 +1004,8 @@ async function startArtificial(mode) {
     applyPendingView(view);
     if (kind === "exam") {
       activeExamAttempt = view.attempt;
-      examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-      study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+      examServerOffsetMs = view.attempt.server_clock_offset_ms;
+      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
     }
     window.location.hash = `artificial-${mode}`;
     renderStudy();
@@ -1095,8 +1113,7 @@ function optionLabel(question, option, latest, corrected) {
   input.value = option.id;
   input.checked = corrected ? latest?.selected_option === option.id : study.selectedOption === option.id;
   const blockedByExam = study.attempt.kind !== "exam"
-    && activeExamAttempt
-    && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+    && isActiveExam(activeExamAttempt, examServerOffsetMs);
   input.disabled = study.attempt.kind === "exam"
     ? study.locked
     : blockedByExam || corrected || study.attempt.is_paused;
@@ -1146,7 +1163,7 @@ function renderStudy() {
     : `Estudio ${strategyName(study.attempt.strategy)}`;
   elements["study-progress"].textContent = `${study.index + 1} de ${study.questions.length}`;
   elements["active-time"].textContent = examMode
-    ? `Tiempo restante: ${formatCountdown(Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs))}`
+    ? `Tiempo restante: ${formatCountdown(Date.parse(study.attempt.deadline_at) - serverAdjustedNow(examServerOffsetMs))}`
     : `Tiempo activo: ${formatActiveTime(study.attempt.active_seconds + pendingActiveSeconds)}`;
   const versionId = question.sourceVersionId || study.attempt.exam_version_id;
   const versionPath = question.sourceVersionPath || study.attempt.exam_version_path;
@@ -1183,7 +1200,7 @@ function renderStudy() {
   const retryVisible = corrected && confirmationRetryAvailable && persistence?.hasPending;
   elements["confirm-button"].hidden = examMode || (corrected && !retryVisible);
   elements["confirm-button"].textContent = retryVisible ? "Reintentar sincronización" : "Confirmar respuesta";
-  const blockedByExam = !examMode && activeExamAttempt && Date.parse(activeExamAttempt.deadline_at) > Date.now();
+  const blockedByExam = !examMode && isActiveExam(activeExamAttempt, examServerOffsetMs);
   elements["confirm-button"].disabled = paused || Boolean(blockedByExam) || (!retryVisible && !study.selectedOption);
   elements["skip-button"].hidden = examMode || corrected;
   elements["skip-button"].disabled = paused;
@@ -1310,7 +1327,7 @@ async function finalizeExam() {
     await refreshStatuses();
   } catch (error) {
     examFinalizing = false;
-    const expired = Date.parse(study.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+    const expired = isExamExpired(study.attempt, examServerOffsetMs);
     study.locked = expired;
     showError(elements["study-error"], `La finalización queda en Cambios pendientes. ${error.message}`);
     renderStudy();
@@ -1436,8 +1453,44 @@ async function routePrivateView() {
         applyPendingView(view);
         if (kind === "exam") {
           activeExamAttempt = view.attempt;
-          examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-          study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms;
+          study.locked = isExamExpired(view.attempt, examServerOffsetMs);
+        }
+        renderStudy();
+        syncPendingAttempt().catch(() => {});
+        return;
+      }
+    }
+    if (persistence?.hasPending && (pendingStudyId || pendingExamId)) {
+      const examId = decodeURIComponent(pendingStudyId || pendingExamId);
+      const kind = pendingExamId ? "exam" : "normal";
+      const view = persistence.restore({ examId, kind });
+      if (view?.questions?.length) {
+        const pinnedExam = {
+          id: view.attempt.exam_id,
+          title: view.attempt.exam_id,
+          version: { id: view.attempt.exam_version_id },
+          questions: view.questions,
+        };
+        selectedExam = {
+          id: pinnedExam.id,
+          title: pinnedExam.title,
+          version: view.attempt.exam_version_id,
+          versionPath: view.attempt.exam_version_path,
+          questions: view.questions,
+          package: pinnedExam,
+        };
+        study = kind === "exam"
+          ? new ExamSession(pinnedExam, view.attempt, view.answers)
+          : new NormalStudySession(pinnedExam, view.attempt, view.answers);
+        applyPendingView(view);
+        if (kind === "exam") {
+          activeExamAttempt = view.attempt;
+          examServerOffsetMs = view.attempt.server_clock_offset_ms;
+          study.locked = isExamExpired(view.attempt, examServerOffsetMs);
+          if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
+        } else {
+          activeStrategies.set(examId, view.attempt.strategy);
         }
         renderStudy();
         syncPendingAttempt().catch(() => {});
@@ -1458,8 +1511,8 @@ async function routePrivateView() {
           applyPendingView(view);
           if (kind === "exam") {
             activeExamAttempt = view.attempt;
-            examServerOffsetMs = view.attempt.server_clock_offset_ms || 0;
-            study.locked = Date.parse(view.attempt.deadline_at) <= Date.now() + examServerOffsetMs;
+            examServerOffsetMs = view.attempt.server_clock_offset_ms;
+            study.locked = isExamExpired(view.attempt, examServerOffsetMs);
             if (study.locked && !view.pending?.finalize) persistence.queueFinalization(currentPersistenceState());
           } else {
             activeStrategies.set(examId, view.attempt.strategy);
@@ -1547,7 +1600,7 @@ function recordActivity() { lastActivityAt = Date.now(); }
 function tickActiveTime() {
   if (study?.attempt.kind === "exam") {
     if (study.attempt.status !== "active") return;
-    const remaining = Date.parse(study.attempt.deadline_at) - (Date.now() + examServerOffsetMs);
+    const remaining = Date.parse(study.attempt.deadline_at) - serverAdjustedNow(examServerOffsetMs);
     elements["active-time"].textContent = `Tiempo restante: ${formatCountdown(remaining)}`;
     if (remaining <= 0 && !study.locked) {
       study.locked = true;

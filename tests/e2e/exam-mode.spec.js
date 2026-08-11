@@ -17,6 +17,7 @@ function json(route, body, status = 200) {
 
 async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDelay = 0 } = {}) {
   const state = {
+    serverNow: new Date().toISOString(),
     attempt: null,
     answers: [],
     startPayload: null,
@@ -27,6 +28,10 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
     const url = new URL(request.url());
     const path = url.pathname;
 
+    if (path.endsWith("/rpc/get_server_now")) return json(route, state.serverNow);
+    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+      exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+    })));
     if (request.method() === "GET" && path.endsWith("/attempts")) {
       return json(route, state.attempt ? [state.attempt] : []);
     }
@@ -40,6 +45,7 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
       state.startPayload = request.postDataJSON();
       if (!state.attempt) {
         const startedAt = new Date();
+        state.serverNow = startedAt.toISOString();
         state.attempt = {
           id: "60000000-0000-4000-8000-000000000001",
           user_id: "10000000-0000-4000-8000-000000000001",
@@ -60,7 +66,8 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
           revision: 0,
         };
       } else {
-        state.attempt.server_now = new Date().toISOString();
+        state.serverNow = new Date().toISOString();
+        state.attempt.server_now = state.serverNow;
       }
       return json(route, state.attempt);
     }
@@ -262,6 +269,7 @@ test("Seam 2: reabrir la ficha tras el deadline cierra el intento sin exigir ent
   await expect(page.getByRole("heading", { name: exam.title })).toBeVisible();
 
   persistence.attempt.deadline_at = new Date(Date.now() - 1000).toISOString();
+  persistence.serverNow = new Date().toISOString();
   await page.reload();
 
   await expect(page.getByRole("heading", { name: "Exámenes oficiales" })).toBeVisible();

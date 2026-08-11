@@ -29,6 +29,12 @@ async function migratedDatabase() {
   }
   await db.query("insert into auth.users(id) values ($1)", [userId]);
   await db.query("select set_config('request.jwt.claim.sub', $1, false)", [userId]);
+  await db.query(
+    `insert into public.official_exam_versions(
+       exam_id, exam_version_id, exam_version_path, duration_minutes, question_ids, answer_key
+     ) values ($1, $2, $3, 90, $4, $5::jsonb)`,
+    [examId, versionId, versionPath, [questionId], JSON.stringify({ [questionId]: "B" })],
+  );
   return db;
 }
 
@@ -167,6 +173,14 @@ test("Seam 2: Todas mis falladas conserva orígenes únicos y reanuda la única 
     const secondQuestionId = "exam-b-q001";
     const secondVersionId = "version-b";
     const secondVersionPath = "exam-b/versions/version-b.json";
+    await db.query(
+      `insert into public.official_exam_versions(
+         exam_id, exam_version_id, exam_version_path, duration_minutes, question_ids, answer_key
+       ) values ($1, $2, $3, 90, $4, $5::jsonb)`,
+      [secondExamId, secondVersionId, secondVersionPath, [secondQuestionId], JSON.stringify({
+        [secondQuestionId]: "B",
+      })],
+    );
     const firstPrincipal = await startPrincipal(db);
     await confirmNormal(db, "40000000-0000-4000-8000-000000000001", firstPrincipal.id, "A");
     const { rows: [secondPrincipal] } = await db.query(

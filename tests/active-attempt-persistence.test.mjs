@@ -62,6 +62,24 @@ test("una respuesta definitiva de deadline retira el retry antiguo y deja avanza
   const calls = [];
   let finalizations = 0;
   const client = {
+    from(table) {
+      const data = table === "attempts" ? [{
+        id: "exam-attempt",
+        exam_id: "exam-A",
+        kind: "exam",
+        revision: 0,
+        status: "active",
+        current_position: 0,
+        is_paused: false,
+      }] : [];
+      const builder = {
+        select() { return builder; },
+        eq() { return builder; },
+        order: async () => ({ data, error: null }),
+        then(resolve) { return resolve({ data, error: null }); },
+      };
+      return builder;
+    },
     async rpc(_name, payload) {
       calls.push(structuredClone(payload));
       if (calls.length === 1) return { data: null, error: { message: "Failed to fetch" } };
@@ -100,6 +118,7 @@ test("una respuesta definitiva de deadline retira el retry antiguo y deja avanza
   assert.equal(result.attempt.status, "completed");
   assert.equal(finalizations, 1);
   assert.deepEqual(calls.map(({ p_pending_snapshot: snapshot }) => snapshot.finalize), [false, false, true]);
+  assert.deepEqual(calls[2].p_pending_snapshot.exam_answers, []);
   assert.equal(calls[1].p_sync_id, calls[0].p_sync_id);
   assert.notEqual(calls[2].p_sync_id, calls[1].p_sync_id);
   assert.equal(storage.values.size, 0);

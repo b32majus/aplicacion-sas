@@ -1,0 +1,135 @@
+name: Prepare exam publication proposal
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "exam-inputs/*.json"
+  workflow_dispatch:
+    inputs:
+      exam_id:
+        description: Canonical exam id already present in exam-inputs
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: exam-publication-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      exam_ids: ${{ steps.inputs.outputs.exam_ids }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-parser.txt
+      - name: Install canonical validator dependencies
+        run: pip install -r requirements-parser.txt
+      - id: inputs
+        name: Select complete canonical inputs
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          MANUAL_EXAM_ID: ${{ inputs.exam_id }}
+        run: >-
+          python scripts/publish_exam.py changed
+          --before "$BEFORE"
+          --after "$AFTER"
+          --exam-id "$MANUAL_EXAM_ID"
+          --github-output "$GITHUB_OUTPUT"
+
+  propose:
+    needs: discover
+    if: needs.discover.outputs.exam_ids != '[]'
+    strategy:
+      max-parallel: 1
+      matrix:
+        exam_id: ${{ fromJSON(needs.discover.outputs.exam_ids) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-parser.txt
+      - name: Install canonical validator dependencies
+        run: pip install -r requirements-parser.txt
+      - id: prepare
+        name: Validate and prepare proposal artifacts
+        env:
+          EXAM_ID: ${{ matrix.exam_id }}
+        run: >-
+          python scripts/publish_exam.py prepare
+          --exam "exam-inputs/$EXAM_ID.json"
+          --metadata "exam-inputs/$EXAM_ID.source.json"
+          --summary "$RUNNER_TEMP/exam-publication.md"
+          --github-output "$GITHUB_OUTPUT"
+      - name: Stop when this version is already current
+        id: changes
+        run: |
+          if git diff --quiet -- app/public/data/exams supabase/official-exam-registrations; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create or reuse publication proposal
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+          EXAM_ID: ${{ steps.prepare.outputs.exam_id }}
+          VERSION: ${{ steps.prepare.outputs.version }}
+        run: |
+          branch="automation/exam-${EXAM_ID}-${VERSION:0:12}"
+          set +e
+          python scripts/publish_exam.py proposal-status \
+            --exam-id "$EXAM_ID" \
+            --version "$VERSION" \
+            --repository "$GH_REPOSITORY"
+          proposal_status=$?
+          set -e
+          case "$proposal_status" in
+            0)
+              echo "A proposal decision already exists for $EXAM_ID $VERSION"
+              exit 0
+              ;;
+            1)
+              echo "No prior proposal decision exists; creation may proceed"
+              ;;
+            *)
+              echo "Proposal lookup failed closed with exit $proposal_status" >&2
+              exit "$proposal_status"
+              ;;
+          esac
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Branch $branch already exists without an open PR; refusing a duplicate proposal" >&2
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add app/public/data/exams supabase/official-exam-registrations
+          git commit -m "data(exams): propose $EXAM_ID $VERSION"
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "data(exams): publish $EXAM_ID $VERSION" \
+            --body-file "$RUNNER_TEMP/exam-publication.md"

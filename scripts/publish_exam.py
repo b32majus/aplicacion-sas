@@ -29,6 +29,16 @@ DEFAULT_REGISTRY = ROOT / "supabase/official-exam-registrations"
 EXAM_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA256_RE = re.compile(r"^[a-f0-9]{64}$")
 LEGACY_PUBLIC_FILES = {"sas-administrativo-2023-turno-libre.json"}
+SEEDED_REGISTRY_EXEMPTIONS = {
+    (
+        "sas-administrativo-2018-promocion-interna",
+        "21c3f7a52114a53dfbdd7ffee2450749e06559a35ce7d4e50afe88ed7bb989ff",
+    ),
+    (
+        "sas-administrativo-2021-turno-libre",
+        "b6b246be9e718d6f5c512ffa433d886401b5ce62997f046d938dc8f2a97e7e92",
+    ),
+}
 SENSITIVE_PATH_WORDS = {
     "apikey", "credential", "credentials", "password", "passwd",
     "secret", "signature", "token",
@@ -211,6 +221,92 @@ def write_registration(exam: dict, registry: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
     return path
+
+
+def expected_registrations(bank: Path) -> dict[Path, str]:
+    expected = {}
+    for package_path in sorted(bank.glob("*/versions/*.json")):
+        exam = load_json(package_path)
+        try:
+            validate_exam_package(exam)
+        except CanonicalPackageError as error:
+            raise PublicationBlockedError(f"paquete versionado inválido {package_path}: {error}") from error
+        exam_id = exam["id"]
+        version = exam["version"]["id"]
+        canonical_package = bank / exam_id / "versions" / f"{version}.json"
+        if package_path != canonical_package:
+            raise PublicationBlockedError(f"paquete versionado fuera de ubicación canónica: {package_path}")
+        if exam["qa"]["state"] != PUBLICABLE or (exam_id, version) in SEEDED_REGISTRY_EXEMPTIONS:
+            continue
+        expected[Path(exam_id) / f"{version}.sql"] = registration_sql(exam)
+    return expected
+
+
+def base_registry_files(base: str, registry: Path, repo: Path) -> list[str]:
+    try:
+        relative_registry = registry.resolve().relative_to(repo.resolve()).as_posix()
+    except ValueError as error:
+        raise PublicationBlockedError("el registro debe estar dentro del repositorio verificado") from error
+    completed = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", base, "--", relative_registry],
+        cwd=repo,
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    return [line for line in completed.stdout.splitlines() if line]
+
+
+def verify_registry(
+    bank: Path = DEFAULT_BANK,
+    registry: Path = DEFAULT_REGISTRY,
+    base: str | None = None,
+    repo: Path = ROOT,
+) -> None:
+    expected = expected_registrations(bank)
+    if registry.is_symlink():
+        raise PublicationBlockedError(f"el registro oficial no puede ser un enlace simbólico: {registry}")
+
+    actual = {}
+    if registry.exists():
+        for path in sorted(registry.rglob("*")):
+            if path.is_symlink():
+                raise PublicationBlockedError(f"el registro oficial no admite enlaces simbólicos: {path}")
+            if path.is_file():
+                relative = path.relative_to(registry)
+                if path.suffix != ".sql" or len(relative.parts) != 2:
+                    raise PublicationBlockedError(f"artefacto de registro inesperado: {relative}")
+                actual[relative] = path.read_text(encoding="utf-8")
+
+    missing = sorted(set(expected) - set(actual))
+    unexpected = sorted(set(actual) - set(expected))
+    if missing:
+        raise PublicationBlockedError(
+            "faltan registros oficiales gobernados: " + ", ".join(path.as_posix() for path in missing)
+        )
+    if unexpected:
+        raise PublicationBlockedError(
+            "registros oficiales huérfanos o inesperados: "
+            + ", ".join(path.as_posix() for path in unexpected)
+        )
+    for relative, content in expected.items():
+        if actual[relative] != content:
+            raise PublicationBlockedError(f"registro oficial no determinista o alterado: {relative}")
+
+    if base:
+        for tracked_path in base_registry_files(base, registry, repo):
+            relative = Path(tracked_path).relative_to(registry.resolve().relative_to(repo.resolve()))
+            current = registry / relative
+            if not current.is_file() or current.is_symlink():
+                raise PublicationBlockedError(f"registro oficial histórico eliminado o renombrado: {relative}")
+            completed = subprocess.run(
+                ["git", "show", f"{base}:{tracked_path}"],
+                cwd=repo,
+                capture_output=True,
+                check=True,
+            )
+            if current.read_bytes() != completed.stdout:
+                raise PublicationBlockedError(f"registro oficial histórico modificado: {relative}")
 
 
 def prepare(
@@ -554,6 +650,10 @@ def main() -> None:
     immutable_parser = subparsers.add_parser("verify-immutable")
     immutable_parser.add_argument("--base", required=True)
     immutable_parser.add_argument("--bank", type=Path, default=DEFAULT_BANK)
+    registry_parser = subparsers.add_parser("verify-registry")
+    registry_parser.add_argument("--bank", type=Path, default=DEFAULT_BANK)
+    registry_parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
+    registry_parser.add_argument("--base")
     proposal_parser = subparsers.add_parser("proposal-status")
     proposal_parser.add_argument("--exam-id", required=True)
     proposal_parser.add_argument("--version", required=True)
@@ -580,6 +680,9 @@ def main() -> None:
         elif args.command == "verify-immutable":
             verify_immutable_changes(args.base, args.bank)
             print("VALID: ninguna versión existente fue modificada o eliminada")
+        elif args.command == "verify-registry":
+            verify_registry(args.bank, args.registry, args.base)
+            print("VALID: registros oficiales deterministas, completos e inmutables")
         elif args.command == "proposal-status":
             try:
                 recorded = lookup_proposal(

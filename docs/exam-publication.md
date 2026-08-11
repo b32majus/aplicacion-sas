@@ -25,7 +25,7 @@ accepts the canonical exam id, not an arbitrary path.
 | Validation | Calls T01 `validate_exam_package`; blocked or invalid input exits with `BLOCKED:` diagnostics before bank writes. |
 | Proposal | Calls T01 `write_outputs`, preserving old immutable versions and preparing QA, alias and catalog together. |
 | Registry | Generates an idempotent SQL registration for the exact exam id, version path, duration, active question identities and server-side answer key. |
-| PR check | Revalidates input pairs, every recognized public artifact, exact QA rendering, aliases and the complete catalog; existing versions and legacy blocked artifacts cannot change or disappear. |
+| PR check | Revalidates input pairs, every recognized public artifact, exact QA rendering, aliases, catalog and deterministic registry SQL; existing versions and registrations cannot change or disappear. |
 | Approval | Validation alone does not publish. Only human merge changes `main`. |
 | Deploy | `pages.yml` builds and deploys merged `main`; proposal automation never deploys. |
 
@@ -34,6 +34,11 @@ metadata-only published registry RPC. Static-first and registry-first deployment
 orders both fail closed: a version is available only when `exam_id`, `version_id`
 and `version_path` agree. The RPC does not expose answer keys, and direct table
 access remains revoked.
+
+Server-authoritative answer key means authoritative persisted scoring is
+server-side; official answer-key confidentiality is not a product requirement.
+Public canonical study packages retain `correctOption` for immediate correction
+and exact historical replay.
 
 The proposal review body shows exam identity, official reference and source
 hash, immutable version, duration, active/annulled/reserve counts and QA

@@ -8,6 +8,7 @@ on:
       - "schemas/exam.schema.json"
       - "scripts/parse_sas_exam.py"
       - "scripts/publish_exam.py"
+      - "supabase/official-exam-registrations/**"
 
 permissions:
   contents: read
@@ -33,3 +34,7 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: python scripts/publish_exam.py verify-immutable --base "$BASE_SHA"
+      - name: Validate deterministic immutable registry SQL
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python scripts/publish_exam.py verify-registry --base "$BASE_SHA"

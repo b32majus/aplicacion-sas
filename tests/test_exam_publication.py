@@ -21,6 +21,7 @@ EXAM_ID = "sas-administrativo-2021-turno-libre"
 SOURCE_FIXTURE = ROOT / "tests/fixtures/publication" / f"{EXAM_ID}.source.json"
 PUBLICATION_WORKFLOW = ROOT / ".github/workflows/exam-publication.yml"
 CHECK_WORKFLOW = ROOT / ".github/workflows/exam-publication-check.yml"
+CI_WORKFLOW = ROOT / ".github/workflows/ci.yml"
 
 
 def load_current() -> dict:
@@ -98,6 +99,22 @@ class TestExamPublication(unittest.TestCase):
     def commit_candidate(self, repo: Path) -> None:
         self.git(repo, "add", "-A")
         self.git(repo, "commit", "-m", "candidate")
+
+    def prepared_registry(self, name: str) -> tuple[Path, Path, Path, dict]:
+        root = self.root / name
+        bank = root / "bank"
+        registry = root / "registry"
+        shutil.copytree(BANK, bank)
+        exam = load_current()
+        exam["title"] += f" - {name}"
+        reversion(exam)
+        exam_path = root / f"{EXAM_ID}.json"
+        metadata_path = root / f"{EXAM_ID}.source.json"
+        exam_path.write_text(json.dumps(exam, ensure_ascii=False), encoding="utf-8")
+        metadata_path.write_bytes(SOURCE_FIXTURE.read_bytes())
+        publish_exam.prepare(exam_path, metadata_path, bank, root / "summary.md", registry)
+        registration = registry / EXAM_ID / f"{exam['version']['id']}.sql"
+        return bank, registry, registration, exam
 
     def test_correction_prepares_reviewable_proposal_without_touching_source_bank(self) -> None:
         source_before = self.snapshot(BANK)
@@ -469,8 +486,22 @@ class TestExamPublication(unittest.TestCase):
         check = CHECK_WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("permissions:\n  contents: read", check)
         self.assertIn("cache-dependency-path: requirements-parser.txt", check)
+        self.assertIn('"supabase/official-exam-registrations/**"', check)
+        self.assertIn("publish_exam.py verify-registry --base", check)
         for forbidden in ("contents: write", "pull-requests: write", "pages: write", "deploy-pages"):
             self.assertNotIn(forbidden, check)
+
+    def test_general_ci_is_read_only_and_credential_free(self) -> None:
+        workflow = CI_WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("pull_request:", workflow)
+        self.assertIn("permissions:\n  contents: read", workflow)
+        for command in ("npm ci", "npm test", "npm run build"):
+            self.assertIn(f"run: {command}", workflow)
+        for forbidden in (
+            "contents: write", "pull-requests: write", "pages: write",
+            "id-token: write", "service_role", "SUPABASE_DB", "playwright test",
+        ):
+            self.assertNotIn(forbidden, workflow)
 
     def test_third_exam_prepares_static_and_registry_artifacts_idempotently(self) -> None:
         third_id = "sas-administrativo-2026-turno-libre"
@@ -508,6 +539,105 @@ class TestExamPublication(unittest.TestCase):
         before = self.snapshot(self.root)
         publish_exam.prepare(exam_path, source_path, self.bank, self.summary, self.registry)
         self.assertEqual(self.snapshot(self.root), before)
+
+    def test_registry_verification_accepts_exact_generation_and_rerun(self) -> None:
+        bank, registry, _, exam = self.prepared_registry("registry-exact")
+        publish_exam.verify_registry(bank, registry)
+        before = self.snapshot(registry)
+        publish_exam.write_registration(exam, registry)
+        publish_exam.verify_registry(bank, registry)
+        self.assertEqual(self.snapshot(registry), before)
+
+    def test_registry_verification_rejects_every_tamper_class(self) -> None:
+        mutations = {
+            "answer-key": lambda content, exam: content.replace(
+                f'"{next(question["id"] for question in exam["questions"] if question["active"])}":',
+                '"tampered-question":',
+                1,
+            ),
+            "duration": lambda content, exam: content.replace(
+                f", {exam['durationMinutes']},\n    array[",
+                f", {exam['durationMinutes'] + 1},\n    array[",
+                1,
+            ),
+            "question-ids": lambda content, exam: content.replace(
+                publish_exam.sql_literal(next(question["id"] for question in exam["questions"] if question["active"])),
+                publish_exam.sql_literal("unexpected-question"),
+                1,
+            ),
+            "version-path": lambda content, exam: content.replace(
+                exam["version"]["id"], "0" * 64, 1
+            ),
+            "appended-sql": lambda content, exam: content + "select current_user;\n",
+        }
+        for index, (name, mutate) in enumerate(mutations.items()):
+            with self.subTest(name=name):
+                bank, registry, registration, exam = self.prepared_registry(f"registry-tamper-{index}")
+                content = registration.read_text(encoding="utf-8")
+                changed = mutate(content, exam)
+                self.assertNotEqual(changed, content)
+                registration.write_text(changed, encoding="utf-8")
+                with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "alterado"):
+                    publish_exam.verify_registry(bank, registry)
+
+    def test_registry_verification_rejects_missing_orphan_and_symlink(self) -> None:
+        bank, registry, registration, _ = self.prepared_registry("registry-shape")
+        exact = registration.read_bytes()
+        registration.unlink()
+        with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "faltan registros"):
+            publish_exam.verify_registry(bank, registry)
+
+        registration.write_bytes(exact)
+        orphan = registry / "orphan-exam" / "orphan-version.sql"
+        orphan.parent.mkdir()
+        orphan.write_text("select 1;\n", encoding="utf-8")
+        with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "huérfanos|inesperados"):
+            publish_exam.verify_registry(bank, registry)
+        orphan.unlink()
+        orphan.parent.rmdir()
+
+        link = registry / "linked.sql"
+        link.symlink_to(registration)
+        with self.assertRaisesRegex(publish_exam.PublicationBlockedError, "enlaces simbólicos"):
+            publish_exam.verify_registry(bank, registry)
+
+    def test_registry_files_present_at_base_are_immutable(self) -> None:
+        repo = self.root / "registry-history"
+        bank = repo / "app/public/data/exams"
+        registry = repo / "supabase/official-exam-registrations"
+        bank.parent.mkdir(parents=True)
+        shutil.copytree(BANK, bank)
+        exam = load_current()
+        exam["title"] += " - registry history"
+        reversion(exam)
+        exam_path = repo / f"{EXAM_ID}.json"
+        metadata_path = repo / f"{EXAM_ID}.source.json"
+        exam_path.write_text(json.dumps(exam, ensure_ascii=False), encoding="utf-8")
+        metadata_path.write_bytes(SOURCE_FIXTURE.read_bytes())
+        publish_exam.prepare(exam_path, metadata_path, bank, repo / "summary.md", registry)
+        exam_path.unlink()
+        metadata_path.unlink()
+        (repo / "summary.md").unlink()
+        self.git(repo, "init", "-b", "main")
+        self.git(repo, "config", "user.name", "T12 Test")
+        self.git(repo, "config", "user.email", "t12@example.invalid")
+        self.git(repo, "add", ".")
+        self.git(repo, "commit", "-m", "registry baseline")
+        base = self.git(repo, "rev-parse", "HEAD")
+        registration = registry / EXAM_ID / f"{exam['version']['id']}.sql"
+        exact = registration.read_bytes()
+
+        registration.write_bytes(exact + b"select 1;\n")
+        with self.assertRaises(publish_exam.PublicationBlockedError):
+            publish_exam.verify_registry(bank, registry, base=base, repo=repo)
+        registration.write_bytes(exact)
+
+        deleted = registration.with_suffix(".deleted.sql")
+        registration.rename(deleted)
+        with self.assertRaises(publish_exam.PublicationBlockedError):
+            publish_exam.verify_registry(bank, registry, base=base, repo=repo)
+        deleted.rename(registration)
+        publish_exam.verify_registry(bank, registry, base=base, repo=repo)
 
 
 if __name__ == "__main__":

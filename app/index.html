@@ -14,6 +14,7 @@
           <span class="brand-name">SAS</span>
         </a>
         <p id="sync-status" class="sync-status" role="status" hidden></p>
+        <button id="dashboard-button" class="text-button" type="button" hidden>Dashboard</button>
         <button id="history-button" class="text-button" type="button" hidden>Historial</button>
         <button id="logout-button" class="text-button" type="button" hidden>Cerrar sesión</button>
       </header>
@@ -62,6 +63,49 @@
           <p id="all-failed-error" class="error" role="alert" hidden></p>
         </article>
         <div id="exam-grid" class="exam-grid" hidden></div>
+      </section>
+
+      <section id="dashboard-view" class="private-view" hidden aria-labelledby="dashboard-title">
+        <button id="dashboard-catalog-button" class="text-button back" type="button">← Volver a exámenes</button>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Progreso y comparación privada</p>
+            <h1 id="dashboard-title">Dashboard</h1>
+          </div>
+          <p>Tu detalle y los agregados comparables de los tres participantes, sin compartir respuestas individuales.</p>
+        </div>
+        <div id="dashboard-status" class="panel compact" aria-live="polite">Cargando Dashboard…</div>
+        <div id="dashboard-content" class="dashboard-content" hidden>
+          <section aria-labelledby="dashboard-global-title">
+            <h2 id="dashboard-global-title">Mi actividad global</h2>
+            <dl id="dashboard-global" class="summary-grid dashboard-metrics"></dl>
+          </section>
+          <section aria-labelledby="dashboard-shared-title">
+            <p class="eyebrow">Solo agregados</p>
+            <h2 id="dashboard-shared-title">Comparación entre participantes</h2>
+            <div id="dashboard-shared" class="table-scroll"></div>
+          </section>
+          <section aria-labelledby="dashboard-ranking-title">
+            <p class="eyebrow">Mejor nota oficial histórica</p>
+            <h2 id="dashboard-ranking-title">Ranking por examen</h2>
+            <div id="dashboard-rankings" class="dashboard-stack"></div>
+          </section>
+          <section aria-labelledby="dashboard-exams-title">
+            <p class="eyebrow">Detalle personal</p>
+            <h2 id="dashboard-exams-title">Mis exámenes oficiales</h2>
+            <div id="dashboard-exams" class="dashboard-stack"></div>
+          </section>
+          <section aria-labelledby="dashboard-questions-title">
+            <p class="eyebrow">Sin temáticas</p>
+            <h2 id="dashboard-questions-title">Mis preguntas</h2>
+            <div id="dashboard-questions" class="table-scroll"></div>
+          </section>
+          <section aria-labelledby="dashboard-common-title">
+            <p class="eyebrow">Dificultad compartida</p>
+            <h2 id="dashboard-common-title">Falladas por los tres</h2>
+            <div id="dashboard-common" class="dashboard-stack"></div>
+          </section>
+        </div>
       </section>
 
       <section id="history-view" class="private-view" hidden aria-labelledby="history-title">

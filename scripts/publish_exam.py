@@ -336,16 +336,30 @@ def lookup_proposal(exam_id: str, version: str, repository: str, runner=None) ->
         or not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)
     ):
         raise PublicationBlockedError("identidad de propuesta o repositorio no válido")
-    _, title = proposal_identity(exam_id, version)
+    owner, name = repository.split("/", maxsplit=1)
+    query = """
+query($owner: String!, $name: String!, $endCursor: String) {
+  repository(owner: $owner, name: $name) {
+    pullRequests(
+      first: 100
+      after: $endCursor
+      states: [OPEN, CLOSED, MERGED]
+      orderBy: {field: CREATED_AT, direction: ASC}
+    ) {
+      nodes { title headRefName state }
+      pageInfo { hasNextPage endCursor }
+    }
+  }
+}
+""".strip()
     run = runner or subprocess.run
     try:
         completed = run(
             [
-                "gh", "pr", "list",
-                "--repo", repository,
-                "--state", "all",
-                "--search", f'"{title}" in:title',
-                "--json", "headRefName,title",
+                "gh", "api", "graphql", "--paginate", "--slurp",
+                "-F", f"owner={owner}",
+                "-F", f"name={name}",
+                "-f", f"query={query}",
             ],
             text=True,
             capture_output=True,
@@ -358,16 +372,51 @@ def lookup_proposal(exam_id: str, version: str, repository: str, runner=None) ->
             f"GitHub no pudo consultar propuestas existentes (exit {completed.returncode})"
         )
     try:
-        records = json.loads(completed.stdout)
+        pages = json.loads(completed.stdout)
     except (TypeError, json.JSONDecodeError) as error:
         raise PublicationBlockedError("GitHub devolvió JSON de propuestas no válido") from error
-    if not isinstance(records, list) or any(
-        not isinstance(record, dict)
-        or not isinstance(record.get("title"), str)
-        or not isinstance(record.get("headRefName"), (str, type(None)))
-        for record in records
-    ):
-        raise PublicationBlockedError("GitHub devolvió registros de propuestas no válidos")
+    if not isinstance(pages, list) or not pages:
+        raise PublicationBlockedError("GitHub no devolvió páginas de propuestas válidas")
+
+    records = []
+    seen_cursors = set()
+    for index, page in enumerate(pages):
+        try:
+            if not isinstance(page, dict) or page.get("errors"):
+                raise KeyError("page/errors")
+            connection = page["data"]["repository"]["pullRequests"]
+            nodes = connection["nodes"]
+            page_info = connection["pageInfo"]
+            has_next = page_info["hasNextPage"]
+            end_cursor = page_info["endCursor"]
+        except (KeyError, TypeError) as error:
+            raise PublicationBlockedError(
+                f"GitHub devolvió esquema GraphQL no válido en página {index + 1}"
+            ) from error
+        if (
+            not isinstance(nodes, list)
+            or not isinstance(page_info, dict)
+            or not isinstance(has_next, bool)
+            or not isinstance(end_cursor, (str, type(None)))
+            or any(
+                not isinstance(record, dict)
+                or not isinstance(record.get("title"), str)
+                or not isinstance(record.get("headRefName"), (str, type(None)))
+                or record.get("state") not in {"OPEN", "CLOSED", "MERGED"}
+                for record in nodes
+            )
+        ):
+            raise PublicationBlockedError(
+                f"GitHub devolvió registros GraphQL no válidos en página {index + 1}"
+            )
+        is_last = index == len(pages) - 1
+        if (not is_last and (not has_next or not end_cursor)) or (is_last and has_next):
+            raise PublicationBlockedError("GitHub devolvió una secuencia de paginación incompleta")
+        if end_cursor is not None:
+            if end_cursor in seen_cursors:
+                raise PublicationBlockedError("GitHub repitió un cursor de paginación")
+            seen_cursors.add(end_cursor)
+        records.extend(nodes)
     return proposal_already_recorded(records, exam_id, version)
 
 

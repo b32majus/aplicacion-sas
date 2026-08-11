@@ -29,6 +29,22 @@ def load_current() -> dict:
     return json.loads((BANK / entry["latestPath"]).read_text(encoding="utf-8"))
 
 
+def graphql_pages(*pages: tuple[list[dict], bool, str | None]) -> str:
+    return json.dumps([
+        {
+            "data": {
+                "repository": {
+                    "pullRequests": {
+                        "nodes": nodes,
+                        "pageInfo": {"hasNextPage": has_next, "endCursor": cursor},
+                    }
+                }
+            }
+        }
+        for nodes, has_next, cursor in pages
+    ])
+
+
 def reversion(exam: dict) -> None:
     content_hash = importer.canonical_content_sha256(exam)
     exam["version"]["contentSha256"] = content_hash
@@ -298,7 +314,7 @@ class TestExamPublication(unittest.TestCase):
             )
         )
 
-    def test_proposal_lookup_is_exact_unbounded_and_all_state(self) -> None:
+    def test_proposal_lookup_paginates_all_states_and_finds_later_closed_match(self) -> None:
         exam = load_current()
         version = exam["version"]["id"]
         _, title = publish_exam.proposal_identity(EXAM_ID, version)
@@ -309,7 +325,10 @@ class TestExamPublication(unittest.TestCase):
             return subprocess.CompletedProcess(
                 arguments,
                 0,
-                stdout=json.dumps([{"headRefName": None, "title": title}]),
+                stdout=graphql_pages(
+                    ([{"headRefName": "other", "title": "other", "state": "OPEN"}], True, "cursor-1"),
+                    ([{"headRefName": None, "title": title, "state": "CLOSED"}], False, "cursor-2"),
+                ),
                 stderr="",
             )
 
@@ -317,14 +336,23 @@ class TestExamPublication(unittest.TestCase):
             publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", recorded_runner)
         )
         arguments, kwargs = calls[0]
-        self.assertIn("all", arguments)
-        self.assertEqual(arguments[arguments.index("--search") + 1], f'"{title}" in:title')
-        self.assertNotIn("--limit", arguments)
-        self.assertEqual(arguments[arguments.index("--repo") + 1], "owner/repository")
+        self.assertEqual(arguments[:3], ["gh", "api", "graphql"])
+        self.assertIn("--paginate", arguments)
+        self.assertIn("--slurp", arguments)
+        self.assertIn("owner=owner", arguments)
+        self.assertIn("name=repository", arguments)
+        query = next(value.removeprefix("query=") for value in arguments if value.startswith("query="))
+        self.assertIn("$endCursor: String", query)
+        self.assertIn("after: $endCursor", query)
+        self.assertIn("pageInfo { hasNextPage endCursor }", query)
+        self.assertIn("states: [OPEN, CLOSED, MERGED]", query)
+        self.assertNotIn("gh pr list", " ".join(arguments))
         self.assertFalse(kwargs["check"])
 
         def missing_runner(arguments, **kwargs):
-            return subprocess.CompletedProcess(arguments, 0, stdout="[]", stderr="")
+            return subprocess.CompletedProcess(
+                arguments, 0, stdout=graphql_pages(([], False, None)), stderr=""
+            )
 
         self.assertFalse(
             publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", missing_runner)
@@ -340,12 +368,30 @@ class TestExamPublication(unittest.TestCase):
             return subprocess.CompletedProcess(arguments, 0, stdout="not-json", stderr="")
 
         def invalid_records(arguments, **kwargs):
-            return subprocess.CompletedProcess(arguments, 0, stdout='[{"title": 7}]', stderr="")
+            return subprocess.CompletedProcess(
+                arguments,
+                0,
+                stdout=graphql_pages(([{"title": 7}], False, None)),
+                stderr="",
+            )
+
+        def graphql_errors(arguments, **kwargs):
+            return subprocess.CompletedProcess(
+                arguments, 0, stdout='[{"errors":[{"message":"denied"}]}]', stderr=""
+            )
+
+        def incomplete_pages(arguments, **kwargs):
+            return subprocess.CompletedProcess(
+                arguments, 0, stdout=graphql_pages(([], True, "more")), stderr=""
+            )
 
         def missing_cli(arguments, **kwargs):
             raise FileNotFoundError("gh missing")
 
-        for runner in (api_failure, invalid_json, invalid_records, missing_cli):
+        for runner in (
+            api_failure, invalid_json, invalid_records, graphql_errors,
+            incomplete_pages, missing_cli,
+        ):
             with self.subTest(runner=runner.__name__):
                 with self.assertRaises(publish_exam.PublicationBlockedError):
                     publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", runner)
@@ -356,12 +402,15 @@ class TestExamPublication(unittest.TestCase):
         fake_bin = self.root / "fake-bin"
         fake_bin.mkdir()
         fake_gh = fake_bin / "gh"
-        recorded = json.dumps([{"headRefName": None, "title": title}])
+        recorded = graphql_pages(([
+            {"headRefName": None, "title": title, "state": "MERGED"}
+        ], False, None))
+        missing = graphql_pages(([], False, None))
         fake_gh.write_text(
             "#!/bin/sh\n"
             "case \"$FAKE_GH_MODE\" in\n"
             f"  recorded) printf '%s\\n' '{recorded}' ;;\n"
-            "  missing) printf '%s\\n' '[]' ;;\n"
+            f"  missing) printf '%s\\n' '{missing}' ;;\n"
             "  invalid) printf '%s\\n' 'not-json' ;;\n"
             "  api) exit 9 ;;\n"
             "esac\n",

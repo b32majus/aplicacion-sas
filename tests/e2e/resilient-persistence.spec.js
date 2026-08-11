@@ -11,9 +11,10 @@ function json(route, body, status = 200) {
   return route.fulfill({ status, contentType: "application/json", body: JSON.stringify(body) });
 }
 
-function studyState() {
+function studyState({ nowMs = Date.now() } = {}) {
   return {
     online: true,
+    serverNow: new Date(nowMs).toISOString(),
     successfulSyncs: 0,
     rejectedSyncs: [],
     syncedSnapshots: [],
@@ -43,6 +44,7 @@ async function mockStudyPersistence(page, state = studyState()) {
     const request = route.request();
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
+    if (path.endsWith("/rpc/get_server_now")) return json(route, state.serverNow);
     if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
       exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
     })));
@@ -133,6 +135,7 @@ async function mockExamPersistence(page, state = examState()) {
     const request = route.request();
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
+    if (path.endsWith("/rpc/get_server_now")) return json(route, state.attempt.server_now);
     if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
       exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
     })));
@@ -279,10 +282,12 @@ test("Seam 2: corte breve, dos confirmaciones, reapertura y una sincronización"
 });
 
 test("Seam 2 regresión A: conserva 350 segundos activos como incrementos de máximo 300", async ({ page }) => {
-  await page.clock.install({ time: new Date("2026-08-10T10:00:00Z") });
-  const remote = await mockStudyPersistence(page);
+  const serverNow = new Date("2026-08-10T10:00:00Z");
+  await page.clock.install({ time: serverNow });
+  const remote = await mockStudyPersistence(page, studyState({ nowMs: serverNow.getTime() }));
   await login(page);
   await openStudy(page);
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   const pendingSeconds = () => page.evaluate(() => {
     const key = Object.keys(localStorage).find((candidate) => candidate.startsWith("sas-active-attempt:"));
     if (!key) return 0;

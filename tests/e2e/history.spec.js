@@ -66,6 +66,7 @@ test("Seam 2: Historial abre A en solo lectura aunque el catálogo vigente sea B
   await page.route("**/rest/v1/**", async (route) => {
     const request = route.request();
     const path = new URL(request.url()).pathname;
+    if (path.endsWith("/rpc/get_server_now")) return json(route, attempt.completed_at);
     if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, [{
       exam_id: packageB.id,
       exam_version_id: packageB.version.id,

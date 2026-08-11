@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
+import { loadDashboard, percent, score } from "./dashboard.js";
 import {
   HISTORY_KIND_LABELS,
   HISTORY_MODE_LABELS,
@@ -30,7 +31,9 @@ const ids = [
   "submit-exam-button", "exam-submit-dialog", "exam-submit-counts", "cancel-exam-submit", "confirm-exam-submit",
   "summary-blank-wrap", "summary-blank", "summary-score-wrap", "summary-score", "summary-record",
   "summary-accuracy-wrap", "summary-time-label", "summary-pending-wrap", "summary-mastered-wrap",
-  "sync-status", "sync-recovery", "history-button", "history-view", "history-catalog-button",
+  "sync-status", "sync-recovery", "dashboard-button", "dashboard-view", "dashboard-catalog-button",
+  "dashboard-status", "dashboard-content", "dashboard-global", "dashboard-shared", "dashboard-rankings",
+  "dashboard-exams", "dashboard-questions", "dashboard-common", "history-button", "history-view", "history-catalog-button",
   "history-status", "history-list", "history-detail-view", "history-detail-back",
   "history-detail-title", "history-detail-meta", "history-detail-metrics", "history-detail-version",
   "history-questions", "history-detail-error",
@@ -38,7 +41,7 @@ const ids = [
 const elements = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
 const privateViews = [
   elements["catalog-view"], elements["exam-view"], elements["study-view"], elements["summary-view"],
-  elements["history-view"], elements["history-detail-view"],
+  elements["dashboard-view"], elements["history-view"], elements["history-detail-view"],
 ];
 const allViews = [elements["loading-view"], elements["login-view"], ...privateViews];
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -70,6 +73,7 @@ let examFinalizing = false;
 let persistence;
 let persistenceUserId;
 let history = [];
+let dashboard;
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -184,6 +188,163 @@ function metricNode(label, value) {
   detail.textContent = value;
   wrapper.append(term, detail);
   return wrapper;
+}
+
+function dashboardExamTitle(examId) {
+  return catalog.find(({ id }) => id === examId)?.title || examId;
+}
+
+function dashboardTable(headers, rows) {
+  const table = document.createElement("table");
+  table.className = "dashboard-table";
+  const head = document.createElement("thead");
+  const heading = document.createElement("tr");
+  heading.append(...headers.map((label) => {
+    const cell = document.createElement("th");
+    cell.scope = "col";
+    cell.textContent = label;
+    return cell;
+  }));
+  head.append(heading);
+  const body = document.createElement("tbody");
+  body.append(...rows.map((values) => {
+    const row = document.createElement("tr");
+    row.append(...values.map((value, index) => {
+      const cell = document.createElement(index === 0 ? "th" : "td");
+      if (index === 0) cell.scope = "row";
+      cell.textContent = value;
+      return cell;
+    }));
+    return row;
+  }));
+  table.append(head, body);
+  return table;
+}
+
+function dashboardEmpty(message) {
+  const empty = document.createElement("p");
+  empty.className = "panel compact dashboard-empty";
+  empty.textContent = message;
+  return empty;
+}
+
+function renderDashboard() {
+  const global = dashboard.personal.global;
+  elements["dashboard-global"].replaceChildren(
+    metricNode("Respuestas", global.answer_count),
+    metricNode("Tasa de acierto", percent(global.accuracy)),
+    metricNode("Tiempo activo de estudio", formatActiveTime(global.study_active_seconds)),
+    metricNode("Nota media oficial", score(global.average_score)),
+    metricNode("Mejor nota oficial", score(global.best_score)),
+    metricNode("Preguntas dominadas", global.dominated_count),
+  );
+
+  elements["dashboard-shared"].replaceChildren(dashboardTable(
+    ["Participante", "Respuestas", "Acierto", "Estudio", "Nota media", "Mejor nota", "Dominadas"],
+    dashboard.shared.profiles.map((profile) => [
+      profile.alias,
+      profile.answer_count,
+      percent(profile.accuracy),
+      formatActiveTime(profile.study_active_seconds),
+      score(profile.average_score),
+      score(profile.best_score),
+      profile.dominated_count,
+    ]),
+  ));
+
+  const rankings = new Map();
+  dashboard.shared.official_exam_rankings.forEach((entry) => {
+    if (!rankings.has(entry.exam_id)) rankings.set(entry.exam_id, []);
+    rankings.get(entry.exam_id).push(entry);
+  });
+  elements["dashboard-rankings"].replaceChildren(...(
+    rankings.size ? [...rankings].map(([examId, entries]) => {
+      const card = document.createElement("article");
+      card.className = "panel compact dashboard-card";
+      const title = document.createElement("h3");
+      title.textContent = dashboardExamTitle(examId);
+      card.append(title, dashboardTable(
+        ["Posición", "Participante", "Mejor nota", "Tiempo del récord"],
+        entries.map((entry) => [
+          entry.rank,
+          entry.alias,
+          score(entry.score),
+          formatActiveTime(entry.exam_elapsed_ms / 1000),
+        ]),
+      ));
+      return card;
+    }) : [dashboardEmpty("Todavía no hay intentos oficiales puntuados para construir un ranking.")]
+  ));
+
+  elements["dashboard-exams"].replaceChildren(...dashboard.personal.official_exams.map((exam) => {
+    const card = document.createElement("article");
+    card.className = "panel compact dashboard-card";
+    const title = document.createElement("h3");
+    title.textContent = dashboardExamTitle(exam.exam_id);
+    const latest = exam.latest_attempt_at
+      ? `${formatHistoryDate(exam.latest_attempt_at)} · ${HISTORY_STATUS_LABELS[exam.latest_attempt_status] || exam.latest_attempt_status}${exam.latest_attempt_score == null ? "" : ` · ${score(exam.latest_attempt_score)}`}`
+      : "Sin intentos";
+    const metrics = document.createElement("dl");
+    metrics.className = "dashboard-exam-metrics";
+    metrics.append(
+      metricNode("Intentos", exam.attempt_count),
+      metricNode("Mejor nota", score(exam.best_score)),
+      metricNode("Nota media", score(exam.average_score)),
+      metricNode("Mejor tiempo", exam.best_time_ms == null ? "Sin intentos" : formatActiveTime(exam.best_time_ms / 1000)),
+      metricNode("Tasa de acierto", percent(exam.accuracy)),
+      metricNode("Falladas pendientes", exam.pending_failures),
+      metricNode("Dominadas", exam.dominated_count),
+      metricNode("Último intento", latest),
+    );
+    card.append(title, metrics);
+    return card;
+  }));
+
+  elements["dashboard-questions"].replaceChildren(...(
+    dashboard.personal.questions.length ? [dashboardTable(
+      ["Pregunta", "Intentos", "Aciertos", "Errores", "Acierto", "Dominio"],
+      dashboard.personal.questions.map((question) => [
+        question.question_id,
+        question.attempts,
+        question.correct,
+        question.wrong,
+        percent(question.accuracy),
+        { mastered: "Dominada", pending: "Fallada pendiente", never_failed: "Nunca fallada" }[question.mastery],
+      ]),
+    )] : [dashboardEmpty("Todavía no hay progreso por pregunta.")]
+  ));
+
+  elements["dashboard-common"].replaceChildren(...(
+    dashboard.shared.failed_by_all.length ? dashboard.shared.failed_by_all.map((question) => {
+      const item = document.createElement("article");
+      item.className = "dashboard-common-item";
+      const title = document.createElement("strong");
+      title.textContent = question.question_id;
+      const context = document.createElement("span");
+      context.textContent = `${dashboardExamTitle(question.exam_id)} · Fallada por 3 de 3`;
+      item.append(title, context);
+      return item;
+    }) : [dashboardEmpty("No hay preguntas falladas por los tres participantes.")]
+  ));
+  elements["dashboard-status"].hidden = true;
+  elements["dashboard-content"].hidden = false;
+}
+
+async function showDashboard() {
+  ++routeSerial;
+  study = undefined;
+  window.location.hash = "dashboard";
+  showOnly(elements["dashboard-view"]);
+  elements["dashboard-status"].hidden = false;
+  elements["dashboard-status"].textContent = "Cargando Dashboard…";
+  elements["dashboard-content"].hidden = true;
+  try {
+    await ensureCatalog();
+    dashboard = await loadDashboard(supabase);
+    renderDashboard();
+  } catch (error) {
+    showError(elements["dashboard-status"], `No se pudo cargar el Dashboard. ${error.message}`);
+  }
 }
 
 function renderHistoryQuestions(replay) {
@@ -1115,6 +1276,10 @@ async function routePrivateView() {
     const pendingExamId = window.location.hash.match(/^#exam-mode=([^&]+)$/)?.[1];
     const pendingFailedScope = window.location.hash.match(/^#failed=([^&]+)$/)?.[1];
     const requestedHistoryId = window.location.hash.match(/^#history=([^&]+)$/)?.[1];
+    if (window.location.hash === "#dashboard") {
+      await showDashboard();
+      return;
+    }
     if (requestedHistoryId) {
       history = await loadPersonalHistory(supabase);
       await showHistoryDetail(decodeURIComponent(requestedHistoryId));
@@ -1217,6 +1382,7 @@ async function routePrivateView() {
 function renderAuthSession(session) {
   elements["logout-button"].hidden = !session;
   elements["history-button"].hidden = !session;
+  elements["dashboard-button"].hidden = !session;
   elements["sync-status"].hidden = !session;
   elements["login-error"].hidden = true;
   if (!session) {
@@ -1286,6 +1452,8 @@ async function boot() {
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);
   elements["history-button"].addEventListener("click", showHistory);
+  elements["dashboard-button"].addEventListener("click", showDashboard);
+  elements["dashboard-catalog-button"].addEventListener("click", showCatalog);
   elements["history-catalog-button"].addEventListener("click", showCatalog);
   elements["history-detail-back"].addEventListener("click", showHistory);
   elements["start-study-button"].addEventListener("click", () => startStudy("normal"));

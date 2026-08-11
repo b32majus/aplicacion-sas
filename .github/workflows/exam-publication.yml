@@ -91,16 +91,31 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
           EXAM_ID: ${{ steps.prepare.outputs.exam_id }}
           VERSION: ${{ steps.prepare.outputs.version }}
         run: |
           branch="automation/exam-${EXAM_ID}-${VERSION:0:12}"
-          if gh pr list --state all --limit 1000 --json headRefName,title |
-            python scripts/publish_exam.py proposal-recorded --exam-id "$EXAM_ID" --version "$VERSION"
-          then
-            echo "A proposal decision already exists for $EXAM_ID $VERSION"
-            exit 0
-          fi
+          set +e
+          python scripts/publish_exam.py proposal-status \
+            --exam-id "$EXAM_ID" \
+            --version "$VERSION" \
+            --repository "$GH_REPOSITORY"
+          proposal_status=$?
+          set -e
+          case "$proposal_status" in
+            0)
+              echo "A proposal decision already exists for $EXAM_ID $VERSION"
+              exit 0
+              ;;
+            1)
+              echo "No prior proposal decision exists; creation may proceed"
+              ;;
+            *)
+              echo "Proposal lookup failed closed with exit $proposal_status" >&2
+              exit "$proposal_status"
+              ;;
+          esac
           if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
             echo "Branch $branch already exists without an open PR; refusing a duplicate proposal" >&2
             exit 1

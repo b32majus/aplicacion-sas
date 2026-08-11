@@ -329,6 +329,48 @@ def proposal_already_recorded(records: list[dict], exam_id: str, version: str) -
     )
 
 
+def lookup_proposal(exam_id: str, version: str, repository: str, runner=None) -> bool:
+    if (
+        not EXAM_ID_RE.fullmatch(exam_id)
+        or not SHA256_RE.fullmatch(version)
+        or not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)
+    ):
+        raise PublicationBlockedError("identidad de propuesta o repositorio no válido")
+    _, title = proposal_identity(exam_id, version)
+    run = runner or subprocess.run
+    try:
+        completed = run(
+            [
+                "gh", "pr", "list",
+                "--repo", repository,
+                "--state", "all",
+                "--search", f'"{title}" in:title',
+                "--json", "headRefName,title",
+            ],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+    except OSError as error:
+        raise PublicationBlockedError(f"no se pudo ejecutar GitHub CLI: {error}") from error
+    if completed.returncode != 0:
+        raise PublicationBlockedError(
+            f"GitHub no pudo consultar propuestas existentes (exit {completed.returncode})"
+        )
+    try:
+        records = json.loads(completed.stdout)
+    except (TypeError, json.JSONDecodeError) as error:
+        raise PublicationBlockedError("GitHub devolvió JSON de propuestas no válido") from error
+    if not isinstance(records, list) or any(
+        not isinstance(record, dict)
+        or not isinstance(record.get("title"), str)
+        or not isinstance(record.get("headRefName"), (str, type(None)))
+        for record in records
+    ):
+        raise PublicationBlockedError("GitHub devolvió registros de propuestas no válidos")
+    return proposal_already_recorded(records, exam_id, version)
+
+
 def changed_exam_ids(inputs: Path, before: str | None, after: str | None, exam_id: str | None) -> list[str]:
     if exam_id:
         if not EXAM_ID_RE.fullmatch(exam_id):
@@ -384,9 +426,10 @@ def main() -> None:
     immutable_parser = subparsers.add_parser("verify-immutable")
     immutable_parser.add_argument("--base", required=True)
     immutable_parser.add_argument("--bank", type=Path, default=DEFAULT_BANK)
-    proposal_parser = subparsers.add_parser("proposal-recorded")
+    proposal_parser = subparsers.add_parser("proposal-status")
     proposal_parser.add_argument("--exam-id", required=True)
     proposal_parser.add_argument("--version", required=True)
+    proposal_parser.add_argument("--repository", required=True)
     changed_parser = subparsers.add_parser("changed")
     changed_parser.add_argument("--inputs", type=Path, default=DEFAULT_INPUTS)
     changed_parser.add_argument("--before")
@@ -409,13 +452,19 @@ def main() -> None:
         elif args.command == "verify-immutable":
             verify_immutable_changes(args.base, args.bank)
             print("VALID: ninguna versión existente fue modificada o eliminada")
-        elif args.command == "proposal-recorded":
-            if not EXAM_ID_RE.fullmatch(args.exam_id) or not SHA256_RE.fullmatch(args.version):
-                raise PublicationBlockedError("identidad de propuesta no válida")
-            records = json.load(sys.stdin)
-            if not isinstance(records, list):
-                raise PublicationBlockedError("respuesta de PR no válida")
-            raise SystemExit(0 if proposal_already_recorded(records, args.exam_id, args.version) else 1)
+        elif args.command == "proposal-status":
+            try:
+                recorded = lookup_proposal(
+                    args.exam_id, args.version, args.repository
+                )
+            except PublicationBlockedError:
+                raise
+            except Exception as error:
+                raise PublicationBlockedError(
+                    f"fallo operativo inesperado al consultar propuestas: {error}"
+                ) from error
+            print("RECORDED" if recorded else "NOT_FOUND")
+            raise SystemExit(0 if recorded else 1)
         else:
             ids = changed_exam_ids(args.inputs, args.before, args.after, args.exam_id)
             write_github_output(args.github_output, {"exam_ids": json.dumps(ids)})

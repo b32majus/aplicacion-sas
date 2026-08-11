@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import sys
 import tempfile
@@ -297,6 +298,95 @@ class TestExamPublication(unittest.TestCase):
             )
         )
 
+    def test_proposal_lookup_is_exact_unbounded_and_all_state(self) -> None:
+        exam = load_current()
+        version = exam["version"]["id"]
+        _, title = publish_exam.proposal_identity(EXAM_ID, version)
+        calls = []
+
+        def recorded_runner(arguments, **kwargs):
+            calls.append((arguments, kwargs))
+            return subprocess.CompletedProcess(
+                arguments,
+                0,
+                stdout=json.dumps([{"headRefName": None, "title": title}]),
+                stderr="",
+            )
+
+        self.assertTrue(
+            publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", recorded_runner)
+        )
+        arguments, kwargs = calls[0]
+        self.assertIn("all", arguments)
+        self.assertEqual(arguments[arguments.index("--search") + 1], f'"{title}" in:title')
+        self.assertNotIn("--limit", arguments)
+        self.assertEqual(arguments[arguments.index("--repo") + 1], "owner/repository")
+        self.assertFalse(kwargs["check"])
+
+        def missing_runner(arguments, **kwargs):
+            return subprocess.CompletedProcess(arguments, 0, stdout="[]", stderr="")
+
+        self.assertFalse(
+            publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", missing_runner)
+        )
+
+    def test_proposal_lookup_fails_closed_on_api_json_and_helper_errors(self) -> None:
+        version = load_current()["version"]["id"]
+
+        def api_failure(arguments, **kwargs):
+            return subprocess.CompletedProcess(arguments, 9, stdout="", stderr="API unavailable")
+
+        def invalid_json(arguments, **kwargs):
+            return subprocess.CompletedProcess(arguments, 0, stdout="not-json", stderr="")
+
+        def invalid_records(arguments, **kwargs):
+            return subprocess.CompletedProcess(arguments, 0, stdout='[{"title": 7}]', stderr="")
+
+        def missing_cli(arguments, **kwargs):
+            raise FileNotFoundError("gh missing")
+
+        for runner in (api_failure, invalid_json, invalid_records, missing_cli):
+            with self.subTest(runner=runner.__name__):
+                with self.assertRaises(publish_exam.PublicationBlockedError):
+                    publish_exam.lookup_proposal(EXAM_ID, version, "owner/repository", runner)
+
+    def test_proposal_status_cli_distinguishes_recorded_missing_and_errors(self) -> None:
+        version = load_current()["version"]["id"]
+        _, title = publish_exam.proposal_identity(EXAM_ID, version)
+        fake_bin = self.root / "fake-bin"
+        fake_bin.mkdir()
+        fake_gh = fake_bin / "gh"
+        recorded = json.dumps([{"headRefName": None, "title": title}])
+        fake_gh.write_text(
+            "#!/bin/sh\n"
+            "case \"$FAKE_GH_MODE\" in\n"
+            f"  recorded) printf '%s\\n' '{recorded}' ;;\n"
+            "  missing) printf '%s\\n' '[]' ;;\n"
+            "  invalid) printf '%s\\n' 'not-json' ;;\n"
+            "  api) exit 9 ;;\n"
+            "esac\n",
+            encoding="utf-8",
+        )
+        fake_gh.chmod(0o755)
+        command = [
+            sys.executable,
+            str(ROOT / "scripts/publish_exam.py"),
+            "proposal-status",
+            "--exam-id", EXAM_ID,
+            "--version", version,
+            "--repository", "owner/repository",
+        ]
+        expected = {"recorded": 0, "missing": 1, "invalid": 2, "api": 2}
+        for mode, returncode in expected.items():
+            with self.subTest(mode=mode):
+                env = os.environ.copy()
+                env["PATH"] = f"{fake_bin}:{env['PATH']}"
+                env["FAKE_GH_MODE"] = mode
+                completed = subprocess.run(
+                    command, cwd=ROOT, env=env, text=True, capture_output=True, check=False
+                )
+                self.assertEqual(completed.returncode, returncode, completed.stderr)
+
     def test_workflow_contract_uses_reviewed_main_and_least_permissions(self) -> None:
         workflow = PUBLICATION_WORKFLOW.read_text(encoding="utf-8")
         discover, propose = workflow.split("  propose:", maxsplit=1)
@@ -307,8 +397,13 @@ class TestExamPublication(unittest.TestCase):
         self.assertLess(discover.index("pip install"), discover.index("publish_exam.py changed"))
         self.assertIn("permissions:\n  contents: read", workflow)
         self.assertIn("contents: write\n      pull-requests: write", propose)
-        self.assertIn("gh pr list --state all", propose)
-        self.assertIn("proposal-recorded", propose)
+        self.assertIn("proposal-status", propose)
+        self.assertIn("proposal_status=$?", propose)
+        self.assertIn('case "$proposal_status" in', propose)
+        self.assertIn("1)\n              echo \"No prior proposal decision exists", propose)
+        self.assertIn('exit "$proposal_status"', propose)
+        self.assertNotIn("--limit", propose)
+        self.assertNotIn("|\n            python scripts/publish_exam.py proposal", propose)
         self.assertIn("group: exam-publication-main", workflow)
         for forbidden in ("pages: write", "id-token: write", "deploy-pages", "configure-pages"):
             self.assertNotIn(forbidden, workflow)

@@ -99,6 +99,17 @@ catálogo tras login, reutilizando el motor existente sin reescritura.
 
 ## Open questions
 
+- **Verificación del contrato SQL de forma estructural.** El entorno de
+  verificación de Metis ejecuta el oráculo y los witnesses sobre una copia limpia
+  del checkout, sin `node_modules` ni motor PostgreSQL, por lo que el contrato de
+  la migración (hechos 1–4) se comprueba de forma estructural sobre el archivo
+  `20261113090000_opposition_registry.sql` (tablas, siembra exacta de los 12
+  mapeos, columnas y grants de la RPC v2, conservación de la v1, ausencia de
+  operaciones sobre los registros oficiales). La verificación conductual en
+  PostgreSQL (RPC v2/v1, fail-closed en runtime) queda cubierta por la suite
+  general del repositorio con PGlite (`npm test`), que el escritor debe mantener
+  en verde; si la persona que aprueba exige ejecución SQL conductual dentro del
+  oráculo, hace falta que el entorno de verificación instale dependencias.
 - La redacción exacta de los textos de UI (hint del selector, encabezados) es
   libre siempre que el control sea accesible con la etiqueta exacta
   «Oposición» y las opciones usen el nombre público del servidor; toda la UI en
@@ -115,18 +126,18 @@ catálogo tras login, reutilizando el motor existente sin reescritura.
 
 | Requisito | Verificación |
 |---|---|
-| 1. Tablas de oposición propiedad administrativa | Oráculo: «la migración registra la oposición…» (+ privilegios en «la RPC v2 autenticada…») |
-| 2. Siembra exacta de 12 mapeos explícitos, sin prefijos, sin tocar registros oficiales | Oráculo: «la migración registra…» y «la RPC v2 falla cerrado…» (examen prefijo-mapeado sin fila queda excluido) |
-| 3. RPC v2 metadata publicada, columnas exactas, sin answer_key, grants | Oráculo: «la RPC v2 autenticada devuelve solo metadata…» y «…falla cerrado…» |
-| 4. RPC v1 operativa | Oráculo: «la RPC v2 autenticada…» (v1 con 3 columnas y grants) + witness `tests/third-exam-registry.test.mjs` en suite general |
+| 1. Tablas de oposición propiedad administrativa | Oráculo (estructural): «la migración nueva crea el registro…» (+ revoke de tablas en «la migración crea la RPC v2…») |
+| 2. Siembra exacta de 12 mapeos explícitos, sin prefijos, sin tocar registros oficiales | Oráculo (estructural): «la migración siembra exactamente los 12…» (mapeo literal contra `catalog.json`, sin insert/update/delete sobre `official_exam_versions`) |
+| 3. RPC v2 metadata publicada, columnas exactas, sin answer_key, grants | Oráculo (estructural): «la migración crea la RPC v2…» (5 columnas metadata, cuerpo con registro publicado + oposición + `is_published`, revoke/grant a authenticated) |
+| 4. RPC v1 operativa | Oráculo (estructural): «la migración crea la RPC v2…» (sin revoke/drop de la v1); conductual: suite general del repositorio (`tests/third-exam-registry.test.mjs`) |
 | 5. opposition_id solo por tuplo exacto, fallo cerrado sin fallback estático | Oráculo: «el frontend incorpora opposition_id…» |
 | 6. Export `listPublishedOppositions` / `filterCatalogByOpposition` | Oráculo: «el selector deriva las oposiciones…» |
-| 7. Catálogo completo separado de la proyección; consumidores intactos | Oráculo: «el selector deriva…» + witnesses `tests/catalog.test.mjs`, `tests/history.test.mjs`, `tests/artificial-exam.test.mjs`, `tests/active-attempt-persistence.test.mjs` |
+| 7. Catálogo completo separado de la proyección; consumidores intactos | Oráculo: «el selector deriva…» y «los consumidores históricos conservan su contrato…» + witnesses `tests/catalog.test.mjs`, `tests/artificial-exam.test.mjs`, `tests/active-attempt-persistence.test.mjs` |
 | 8. Selector accesible «Oposición» y proyección por oposición en UI | Receta visual: `catalogo-administrativo` (C1), `catalogo-radiodiagnostico` (C2), `examen-seleccionado-radiodiagnostico` (C3) |
 | 9. Preferencia local sin valor de ACL | Oráculo: proyección siempre derivada del catálogo del servidor (misma prueba del selector); criterio C2 |
-| 10. Guard y reloj conservados; reanudación intacta | Oráculo: «el guard y el reloj oficiales se conservan…» + witness `tests/exam-clock.test.mjs`, `tests/active-attempt-persistence.test.mjs` |
+| 10. Guard y reloj conservados; reanudación intacta | Oráculo: «los consumidores históricos conservan su contrato…» + witness `tests/exam-clock.test.mjs`, `tests/active-attempt-persistence.test.mjs` |
 | 11. `catalog.json` intacto (esquema 1.0, sin oposición) | Oráculo: `readStaticCatalog` en todas las pruebas de frontend |
-| 12. Fixtures adaptados sin debilitar aserciones; nuevo contrato en `tests/multiopposition-catalog.test.mjs` | Witnesses `tests/catalog.test.mjs`, `tests/artificial-exam.test.mjs`, `tests/history.test.mjs` (ejecutan las aserciones originales adaptadas) |
+| 12. Fixtures adaptados sin debilitar aserciones; nuevo contrato en `tests/multiopposition-catalog.test.mjs` | Witnesses `tests/catalog.test.mjs`, `tests/artificial-exam.test.mjs` (ejecutan las aserciones originales adaptadas); `tests/history.test.mjs` y `tests/multiopposition-catalog.test.mjs` se ejecutan en `npm test` (requieren PGlite, fuera del entorno de witnesses) |
 
 ```metis-unit
 {
@@ -156,7 +167,7 @@ catálogo tras login, reutilizando el motor existente sin reescritura.
     {
       "id": "oracle-oposicion-oficial",
       "cmd": ["node", "--test", "metis/oracles/oposicion-oficial.test.mjs"],
-      "timeoutSec": 420,
+      "timeoutSec": 120,
       "mustFailAtBase": true
     },
     {
@@ -169,12 +180,6 @@ catálogo tras login, reutilizando el motor existente sin reescritura.
       "id": "witness-artificial-exam",
       "cmd": ["node", "--test", "tests/artificial-exam.test.mjs"],
       "timeoutSec": 120,
-      "mustFailAtBase": false
-    },
-    {
-      "id": "witness-history",
-      "cmd": ["node", "--test", "tests/history.test.mjs"],
-      "timeoutSec": 180,
       "mustFailAtBase": false
     },
     {

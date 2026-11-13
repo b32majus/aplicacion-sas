@@ -13,7 +13,7 @@
 - **Fuente RX:** `EXAMENES RX(1).pdf`, 353 págs., SHA256 5e5c65f056386f37fa6fb7903d89c866a72c4547f28434eb3caa6db5c0a5118e. Aún NO transferida/verificada en VPS.
 - **Puntos críticos:** conservar 12 versiones e históricos Admin; relación oposición-examen verificada por servidor; no mezclar fuente artificial/falladas; Dashboard v1 limitado a tres aliases; soporte de casos con imágenes.
 - **Plan propuesto:** M01 selector+catálogo+estudio/examen; M02 falladas/artificial/dashboard por oposición; M03 examen RX con media+historia+publicación. Resto del corpus RX por lotes manuales después.
-- **Estado KairOS:** diseño redactado; NO ejecutados `plan-units`, `prep-train`, oráculos, train, CI hosted ni migraciones. Issue v2 pendiente de aprobación humana.
+- **Estado KairOS:** diseño en commit `5d4a02c`, rama remota `plan/multioposicion-v2`; [Issue #32](https://github.com/b32majus/aplicacion-sas/issues/32) pendiente de aprobación; [PR #33](https://github.com/b32majus/aplicacion-sas/pull/33) DRAFT. NO ejecutados `plan-units`, `prep-train`, oráculos, train, CI hosted ni migraciones.
 - **Próximo paso:** revisar PR documental + aprobar Issue/plan; después `plan-units` con Metis 9.9 y GO correspondiente. No nuevos ciclos de auditoría fuera de KairOS.
 - **Preflight al retomar:** leer ARRANQUE, PROTOCOLOS, metis/README, luego este bloque; contrastar GitHub (`gh pr list`, `gh issue list`) y `git worktree list` / `git log`.
 - **GO:** push/PR sólo para documentación si autorizado; PR merge y despliegue de producción requieren autorización explícita según KairOS.

@@ -1,5 +1,7 @@
 # PROJECT — Aplicación SAS
 
+> **ESTADO ACTUAL (2026-11-13):** la v1 de Administrativo está en producción (12 exámenes, usuarios reales y técnicos). Lo que sigue documenta principalmente el **alcance histórico v1**, no el estado de trabajo presente. Para v2: `docs/multioposicion-v2/CONTRATO_Y_ARQUITECTURA.md`, `PLAN_KAIROS_METIS.md` y `HANDOFF.md`. Confirmado por Sil: login común y libre elección de oposición para cualquier usuario autenticado.
+
 ## Purpose / problem
 Tres usuarios necesitan preparar Administrativo/a del SAS con exámenes oficiales en una aplicación pequeña, privada y fiel a la fuente, con continuidad de estudio, simulación cronometrada, recuperación de falladas, historial y comparación agregada.
 

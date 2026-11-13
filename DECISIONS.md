@@ -117,3 +117,50 @@ Current upstream `/implement` ends with `/code-review`, while the KairOS workflo
 
 ### Revisit when
 - The installed `/implement` is intentionally adapted to delegate its final review exclusively to KairOS, or KairOS review policy changes.
+
+---
+
+## D-006 — Evolución multioposición sin clonar producto
+
+```text
+DATE: 2026-11-13
+STATUS: ACTIVE — decisión de Sil
+```
+
+Una app, un login y un backend: Administrativo y Radiodiagnóstico comparten motor. Cualquier persona autenticada puede entrar y alternar libremente entre oposiciones disponibles; no hay roles/ACL por oposición. Los historiales y las estadísticas de cada oposición se mantienen separados. Diseño y aceptación en `docs/multioposicion-v2/CONTRATO_Y_ARQUITECTURA.md`.
+
+---
+
+## D-007 — No reabrir decisiones v1 supersedidas
+
+```text
+DATE: 2026-11-13
+STATUS: ACTIVE — decisiones anteriores reiteradas
+```
+
+- Publicación de exámenes nuevos a partir de **JSON canónico preparado/revisado manualmente**, no parser universal PDF de producción.
+- Uso por **enlace GitHub Pages**; la instalación nativa PWA no es objetivo funcional.
+- Regla de anuladas/reservas: sustitución por orden, restantes anuladas sin puntuación y normalización nominal/efectivo; fuente oficial y plantilla definitiva prevalecen.
+- No abrir una nueva auditoría general del motor T01–T12 por añadir otra oposición.
+
+---
+
+## D-008 — Metis para v2; revisión una vez y cierre acotado
+
+```text
+DATE: 2026-11-13
+STATUS: PROPOSED — pendiente de Issue/plan aprobado
+```
+
+Se propone Metis 9.9 para implementar v2 por alcance y riesgo (RLS, migraciones y exámenes en producción). Unidades verticales M01–M03, preparación con oráculos demostrados BASE-falla/referencia-pasa 3/3, **una** auditoría de preparación y corrección por `prep-check`/`train-resume`. Esta decisión no autoriza ni un train ni un deploy. Véase `docs/multioposicion-v2/PLAN_KAIROS_METIS.md`.
+
+---
+
+## D-009 — Radiodiagnóstico incluye media radiológica versionada
+
+```text
+DATE: 2026-11-13
+STATUS: PROPOSED — validación de diseño pendiente
+```
+
+El PDF RX adjunto contiene cuadernillos visuales vinculados a casos prácticos. La nueva arquitectura precisa referencias inmutables a media/casos, visor responsive y trazabilidad de página/hash sin alterar paquetes históricos de Administrativo. Cada paquete RX sigue una validación manual de imágenes y plantilla antes de PR/registro. Véase `docs/multioposicion-v2/FUENTE_RX.md`.

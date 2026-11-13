@@ -13,10 +13,10 @@
 - **Fuente RX:** `EXAMENES RX(1).pdf`, 353 págs., SHA256 5e5c65f056386f37fa6fb7903d89c866a72c4547f28434eb3caa6db5c0a5118e. Aún NO transferida/verificada en VPS.
 - **Puntos críticos:** conservar 12 versiones e históricos Admin; relación oposición-examen verificada por servidor; no mezclar fuente artificial/falladas; Dashboard v1 limitado a tres aliases; soporte de casos con imágenes.
 - **Plan propuesto REVISADO, PENDIENTE DE GO:** cinco verticales M01 selector+catálogo/estudio oficial conservando RPCs; M02 falladas por oposición; M03 artificiales por oposición; M04 historial+dashboard/privacidad por oposición; M05 imágenes y QA con fixture, sin publicar examen RX incompleto. Dos lotes Metis (A: M01–M03; B: M04–M05); luego DIA para el primer examen RX real y los demás paquetes manuales.
-- **Estado KairOS:** Sil dio GO al plan de cinco unidades; push a PR #33 e Issue #32 actualizados. `plan-units sas-v2a-p1` paró con `PLANNER_STOP` (el importador exige esquema exacto de `catalog.json`). Decisión técnica acotada: **NO añadir oposición al catálogo estático**, recuperarla de RPC v2 tras cruzar tuplo autorizado; se corrigió el issue privado y documentos y se prepara `sas-v2a-p2`. No ejecutados `prep-train`, train, CI hosted ni migraciones.
-- **Próximo paso:** revisar PR documental + aprobar Issue/plan; después `plan-units` con Metis 9.9 y GO correspondiente. No nuevos ciclos de auditoría fuera de KairOS.
+- **Estado KairOS:** Sil dio GO al plan de cinco unidades; Issue #32 y PR #33 actualizados. `plan-units sas-v2a-p1` -> `PLANNER_STOP` por esquema cerrado de catálogo, corregido sin tocar parser. `plan-units sas-v2a-p2` -> **PLAN_READY**, 3 unidades M complejas, dependencia M01→M02→M03. Archivos `docs/multioposicion-v2/PLAN_METIS_TREN_A_GENERADO.md` y `PLAN_METIS_TREN_A.json`. Pendiente aprobación humana del plan concreto. No ejecutados prep-train, train, SQL hosted ni deploy.
+- **Próximo paso:** Sil revisa el PLAN_READY generado; tras su aprobación, preparar **sólo** tren A con `prep-train`, después auditoría única y GO a train. Tren B se planifica contra canon integrado de A.
 - **Preflight al retomar:** leer ARRANQUE, PROTOCOLOS, metis/README, luego este bloque; contrastar GitHub (`gh pr list`, `gh issue list`) y `git worktree list` / `git log`.
-- **GO:** push/PR sólo para documentación si autorizado; PR merge y despliegue de producción requieren autorización explícita según KairOS.
+- **GO:** GO de documentación y plan-units ya usado; prep-train, train, merge y deploy NO ejecutados. Producción necesita GO específico según KairOS.
 
 ## Fuentes antiguas
 

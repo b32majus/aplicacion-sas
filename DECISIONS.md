@@ -164,3 +164,14 @@ STATUS: PROPOSED — validación de diseño pendiente
 ```
 
 El PDF RX adjunto contiene cuadernillos visuales vinculados a casos prácticos. La nueva arquitectura precisa referencias inmutables a media/casos, visor responsive y trazabilidad de página/hash sin alterar paquetes históricos de Administrativo. Cada paquete RX sigue una validación manual de imágenes y plantilla antes de PR/registro. Véase `docs/multioposicion-v2/FUENTE_RX.md`.
+
+---
+
+## D-010 — Resolver oposición desde el registro autenticado, sin ampliar catalog.json
+
+```text
+DATE: 2026-11-13
+STATUS: ACTIVE — resolución técnica acotada del primer PLANNER_STOP de Metis
+```
+
+El validador canónico exige campos exactos en `catalog.json`. No modificar ese formato ni el parser histórico para v2: la RPC autenticada de registro v2 añade `opposition_id` y el frontend sólo lo utiliza **tras** la coincidencia exacta del tuplo `exam_id`/`version_id`/`path` con el catálogo estático. Fallo cerrado sin acuerdo. Esto evita una migración innecesaria de los 12 paquetes existentes.

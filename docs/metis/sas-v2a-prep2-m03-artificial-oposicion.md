@@ -204,12 +204,12 @@ intactos.
     "timeoutSec": 480,
     "shots": [
       "catalogo-artificial-administrativo",
-      "catalogo-artificial-bloqueado-radiodiagnostico",
+      "catalogo-artificial-bloqueado",
       "artificial-estudio-75-preguntas"
     ],
     "criteria": [
       "C1: En catalogo-artificial-administrativo se ve la vista privada de catálogo con la oposición «Administrativo» seleccionada y la sección «Examen artificial» disponible: botones «Generar en Modo estudio» y «Generar en Modo examen» activos y sin mensaje de error del artificial; toda la interfaz en español.",
-      "C2: En catalogo-artificial-bloqueado-radiodiagnostico, tras cambiar la oposición a una con solo 74 preguntas activas, la sección «Examen artificial» aparece bloqueada con un mensaje claro en español que menciona las «75 Preguntas activas distintas» de la oposición seleccionada y que no se completa con otro banco ni se duplican preguntas; solo se muestran exámenes de esa oposición.",
+      "C2: En catalogo-artificial-bloqueado (Radiodiagnóstico de fixture con solo 74 preguntas activas), la sección «Examen artificial» aparece bloqueada con un mensaje claro en español que menciona las «75 Preguntas activas distintas» de la oposición seleccionada y que no se completa con otro banco ni se duplican preguntas; solo se muestran exámenes de esa oposición.",
       "C3: En artificial-estudio-75-preguntas se ve la vista de estudio del Examen artificial con el progreso «1 de 75», el enunciado con sus opciones y las acciones del motor de estudio existente, generado solo con fuentes de la oposición solicitada."
     ]
   }

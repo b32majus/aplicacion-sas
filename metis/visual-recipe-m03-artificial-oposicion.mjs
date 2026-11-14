@@ -295,7 +295,7 @@ try {
   await page
     .locator("#artificial-error", { hasText: "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas." })
     .waitFor({ state: "visible" });
-  await shot(page, "catalogo-artificial-bloqueado-radiodiagnostico");
+  await shot(page, "catalogo-artificial-bloqueado");
 
   // Estado 3 · Administrativo: el artificial de estudio entra con 75 preguntas.
   await page.locator("#opposition-select").selectOption({ label: "Administrativo" });

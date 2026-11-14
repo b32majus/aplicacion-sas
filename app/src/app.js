@@ -1,7 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
 import { materializeArtificialSources } from "./artificial-exam.js";
-import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
+import {
+  filterCatalogByOpposition,
+  listPublishedOppositions,
+  loadPinnedExam,
+  loadPublishedCatalog,
+} from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
 import {
   fetchServerClockOffset,
@@ -26,6 +31,7 @@ import "./styles.css";
 const ids = [
   "loading-view", "login-view", "catalog-view", "exam-view", "study-view", "summary-view",
   "login-form", "login-button", "login-error", "logout-button", "catalog-status", "exam-grid",
+  "opposition-select", "opposition-hint",
   "back-button", "exam-title", "exam-count", "exam-duration", "exam-study-status", "exam-error",
   "start-study-button", "start-random-study-button", "start-exam-button", "exit-study-button", "pause-button", "study-panel", "study-exam-title",
   "study-progress", "active-time", "version-pin", "pause-message", "question-content",
@@ -64,6 +70,7 @@ let supabase;
 let catalog = [];
 let catalogPromise;
 let selectedExam;
+let selectedOppositionId;
 let study;
 let statuses = new Map();
 let activeStrategies = new Map();
@@ -85,6 +92,35 @@ let persistence;
 let persistenceUserId;
 let history = [];
 let dashboard;
+const OPPOSITION_PREFERENCE_KEY = "oposicion-preferida";
+
+function readOppositionPreference() {
+  try {
+    return window.localStorage.getItem(OPPOSITION_PREFERENCE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+// La preferencia local es solo conveniencia: nunca autoriza contenido ni
+// sustituye al registro del servidor; si deja de estar publicada se descarta.
+function storeOppositionPreference(oppositionId) {
+  try {
+    window.localStorage.setItem(OPPOSITION_PREFERENCE_KEY, oppositionId);
+  } catch {
+    /* La preferencia local es prescindible. */
+  }
+}
+
+function resolveOppositionSelection() {
+  const oppositions = listPublishedOppositions(catalog);
+  const stored = readOppositionPreference();
+  const preferred = oppositions.find(({ id }) => id === stored) || oppositions[0];
+  selectedOppositionId = preferred?.id;
+  if (selectedOppositionId && selectedOppositionId !== stored) {
+    storeOppositionPreference(selectedOppositionId);
+  }
+}
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -519,8 +555,31 @@ async function refreshStatuses() {
   }
 }
 
+// El catálogo autorizado completo permanece en memoria con todas las
+// oposiciones; esta vista solo proyecta la oposición elegida. Los recuentos
+// globales (Todas mis falladas, artificial) siguen usando el catálogo completo.
 function renderCatalog() {
-  elements["exam-grid"].replaceChildren(...catalog.map((exam) => {
+  const oppositions = listPublishedOppositions(catalog);
+  const select = elements["opposition-select"];
+  select.replaceChildren(...oppositions.map(({ id, name }) => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = name;
+    return option;
+  }));
+  select.disabled = oppositions.length === 0;
+  if (oppositions.length && !oppositions.some(({ id }) => id === selectedOppositionId)) {
+    selectedOppositionId = oppositions[0].id;
+    storeOppositionPreference(selectedOppositionId);
+  }
+  select.value = selectedOppositionId || "";
+  const selectedOpposition = oppositions.find(({ id }) => id === selectedOppositionId);
+  elements["opposition-hint"].hidden = !selectedOpposition;
+  elements["opposition-hint"].textContent = selectedOpposition
+    ? `La cuadrícula muestra solo los exámenes publicados de «${selectedOpposition.name}».`
+    : "";
+
+  elements["exam-grid"].replaceChildren(...filterCatalogByOpposition(catalog, selectedOppositionId).map((exam) => {
     const card = document.createElement("article");
     card.className = "exam-card";
     card.dataset.examId = exam.id;
@@ -575,12 +634,16 @@ function renderCatalog() {
 
 async function ensureCatalog() {
   if (!catalogPromise) {
-    catalogPromise = supabase.rpc("get_published_official_exam_versions")
+    catalogPromise = supabase.rpc("get_published_official_exam_versions_v2")
       .then(({ data, error }) => {
         if (error) throw error;
         return loadPublishedCatalog(fetch, bankBaseUrl, data);
       })
-      .then((loaded) => { catalog = loaded; return loaded; })
+      .then((loaded) => {
+        catalog = loaded;
+        resolveOppositionSelection();
+        return loaded;
+      })
       .catch((error) => {
         catalogPromise = undefined;
         showError(elements["catalog-status"], error.message);
@@ -1643,6 +1706,13 @@ async function boot() {
   elements["login-form"].addEventListener("submit", submitLogin);
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);
+  elements["opposition-select"].addEventListener("change", () => {
+    const next = elements["opposition-select"].value;
+    if (!next || next === selectedOppositionId) return;
+    selectedOppositionId = next;
+    storeOppositionPreference(next);
+    renderCatalog();
+  });
   elements["history-button"].addEventListener("click", showHistory);
   elements["dashboard-button"].addEventListener("click", showDashboard);
   elements["dashboard-catalog-button"].addEventListener("click", showCatalog);

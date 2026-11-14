@@ -493,8 +493,14 @@ async function showHistoryDetail(attemptId) {
   }
 }
 
+// Sin ámbito, el recorrido «Todas mis falladas» queda acotado a la oposición
+// seleccionada: la cola y su recuento («N Falladas pendientes») se derivan
+// exclusivamente de la proyección por oposición del catálogo autorizado
+// completo. Con ámbito (Solo falladas de un examen) el recorrido no cambia.
 function eligibleFailureSources(scopeExamId = null) {
-  const exams = scopeExamId ? catalog.filter(({ id }) => id === scopeExamId) : catalog;
+  const exams = scopeExamId
+    ? catalog.filter(({ id }) => id === scopeExamId)
+    : filterCatalogByOpposition(catalog, selectedOppositionId);
   return exams.flatMap((exam) => exam.questions
     .filter(({ id }) => pendingFailures.get(exam.id)?.has(id))
     .map(({ id }) => ({
@@ -556,8 +562,9 @@ async function refreshStatuses() {
 }
 
 // El catálogo autorizado completo permanece en memoria con todas las
-// oposiciones; esta vista solo proyecta la oposición elegida. Los recuentos
-// globales (Todas mis falladas, artificial) siguen usando el catálogo completo.
+// oposiciones; esta vista solo proyecta la oposición elegida. El recuento de
+// «Todas mis falladas» (y su cola) queda acotado a la oposición seleccionada;
+// el artificial conserva su pool global sobre el catálogo completo.
 function renderCatalog() {
   const oppositions = listPublishedOppositions(catalog);
   const select = elements["opposition-select"];
@@ -1088,7 +1095,8 @@ async function startFailedStudy(scopeExamId = null) {
   try {
     const eligible = eligibleFailureSources(scopeExamId);
     const sources = scopeExamId ? eligible : shuffled(eligible);
-    const { data, error } = await supabase.rpc("start_or_resume_failed_attempt", {
+    const { data, error } = await supabase.rpc("start_or_resume_failed_attempt_v2", {
+      p_opposition_id: selectedOppositionId,
       p_scope_exam_id: scopeExamId,
       p_sources: sources,
     });

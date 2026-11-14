@@ -54,7 +54,7 @@ async function mockStudyPersistence(page, state = studyState()) {
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
     if (request.method() === "GET" && path.endsWith("/attempt_question_sources")) return json(route, state.sources || []);
     if (path.endsWith("/rpc/start_or_replace_principal_attempt")) return json(route, state.attempt);
-    if (path.endsWith("/rpc/start_or_resume_failed_attempt")) return json(route, state.attempt);
+    if (path.endsWith("/rpc/start_or_resume_failed_attempt_v2")) return json(route, state.attempt);
     if (path.endsWith("/rpc/sync_active_attempt")) {
       const payload = request.postDataJSON();
       if (payload.p_base_revision !== state.attempt.revision) {

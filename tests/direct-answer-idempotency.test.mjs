@@ -63,6 +63,12 @@ async function register(db, examId, questionIds) {
      ) values ($1, $2, $3, 90, $4, $5::jsonb, true)`,
     [examId, versionId, versionPath, questionIds, JSON.stringify(answerKey)],
   );
+  // Mapeo administrativo explícito del examen de fixture hacia la única
+  // oposición sembrada; sin fila de mapeo el servidor no materializa falladas.
+  await db.query(
+    "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+    [examId],
+  );
   return { examId, versionId, versionPath, questionIds };
 }
 

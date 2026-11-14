@@ -1,7 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
-import { materializeArtificialSources } from "./artificial-exam.js";
-import { loadPinnedExam, loadPublishedCatalog } from "./catalog.js";
+import { ARTIFICIAL_QUESTION_COUNT, materializeArtificialSources } from "./artificial-exam.js";
+import {
+  filterCatalogByOpposition,
+  listPublishedOppositions,
+  loadPinnedExam,
+  loadPublishedCatalog,
+} from "./catalog.js";
 import { loadDashboard, percent, score } from "./dashboard.js";
 import {
   fetchServerClockOffset,
@@ -26,6 +31,7 @@ import "./styles.css";
 const ids = [
   "loading-view", "login-view", "catalog-view", "exam-view", "study-view", "summary-view",
   "login-form", "login-button", "login-error", "logout-button", "catalog-status", "exam-grid",
+  "opposition-select", "opposition-hint",
   "back-button", "exam-title", "exam-count", "exam-duration", "exam-study-status", "exam-error",
   "start-study-button", "start-random-study-button", "start-exam-button", "exit-study-button", "pause-button", "study-panel", "study-exam-title",
   "study-progress", "active-time", "version-pin", "pause-message", "question-content",
@@ -64,6 +70,7 @@ let supabase;
 let catalog = [];
 let catalogPromise;
 let selectedExam;
+let selectedOppositionId;
 let study;
 let statuses = new Map();
 let activeStrategies = new Map();
@@ -85,6 +92,35 @@ let persistence;
 let persistenceUserId;
 let history = [];
 let dashboard;
+const OPPOSITION_PREFERENCE_KEY = "oposicion-preferida";
+
+function readOppositionPreference() {
+  try {
+    return window.localStorage.getItem(OPPOSITION_PREFERENCE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+// La preferencia local es solo conveniencia: nunca autoriza contenido ni
+// sustituye al registro del servidor; si deja de estar publicada se descarta.
+function storeOppositionPreference(oppositionId) {
+  try {
+    window.localStorage.setItem(OPPOSITION_PREFERENCE_KEY, oppositionId);
+  } catch {
+    /* La preferencia local es prescindible. */
+  }
+}
+
+function resolveOppositionSelection() {
+  const oppositions = listPublishedOppositions(catalog);
+  const stored = readOppositionPreference();
+  const preferred = oppositions.find(({ id }) => id === stored) || oppositions[0];
+  selectedOppositionId = preferred?.id;
+  if (selectedOppositionId && selectedOppositionId !== stored) {
+    storeOppositionPreference(selectedOppositionId);
+  }
+}
 
 function showOnly(view) {
   allViews.forEach((candidate) => { candidate.hidden = candidate !== view; });
@@ -457,8 +493,14 @@ async function showHistoryDetail(attemptId) {
   }
 }
 
+// Sin ámbito, el recorrido «Todas mis falladas» queda acotado a la oposición
+// seleccionada: la cola y su recuento («N Falladas pendientes») se derivan
+// exclusivamente de la proyección por oposición del catálogo autorizado
+// completo. Con ámbito (Solo falladas de un examen) el recorrido no cambia.
 function eligibleFailureSources(scopeExamId = null) {
-  const exams = scopeExamId ? catalog.filter(({ id }) => id === scopeExamId) : catalog;
+  const exams = scopeExamId
+    ? catalog.filter(({ id }) => id === scopeExamId)
+    : filterCatalogByOpposition(catalog, selectedOppositionId);
   return exams.flatMap((exam) => exam.questions
     .filter(({ id }) => pendingFailures.get(exam.id)?.has(id))
     .map(({ id }) => ({
@@ -519,8 +561,32 @@ async function refreshStatuses() {
   }
 }
 
+// El catálogo autorizado completo permanece en memoria con todas las
+// oposiciones; esta vista solo proyecta la oposición elegida. El recuento de
+// «Todas mis falladas» (y su cola) queda acotado a la oposición seleccionada;
+// el Examen artificial también deriva su pool de esa misma proyección.
 function renderCatalog() {
-  elements["exam-grid"].replaceChildren(...catalog.map((exam) => {
+  const oppositions = listPublishedOppositions(catalog);
+  const select = elements["opposition-select"];
+  select.replaceChildren(...oppositions.map(({ id, name }) => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = name;
+    return option;
+  }));
+  select.disabled = oppositions.length === 0;
+  if (oppositions.length && !oppositions.some(({ id }) => id === selectedOppositionId)) {
+    selectedOppositionId = oppositions[0].id;
+    storeOppositionPreference(selectedOppositionId);
+  }
+  select.value = selectedOppositionId || "";
+  const selectedOpposition = oppositions.find(({ id }) => id === selectedOppositionId);
+  elements["opposition-hint"].hidden = !selectedOpposition;
+  elements["opposition-hint"].textContent = selectedOpposition
+    ? `La cuadrícula muestra solo los exámenes publicados de «${selectedOpposition.name}».`
+    : "";
+
+  elements["exam-grid"].replaceChildren(...filterCatalogByOpposition(catalog, selectedOppositionId).map((exam) => {
     const card = document.createElement("article");
     card.className = "exam-card";
     card.dataset.examId = exam.id;
@@ -558,29 +624,54 @@ function renderCatalog() {
   if (isActiveExam(activeExamAttempt, examServerOffsetMs)) {
     elements["all-failed-button"].disabled = true;
   }
-  const artificialAvailable = catalog.reduce((total, exam) => total + exam.questions.length, 0) >= 75;
-  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
-  elements["artificial-study-button"].disabled = !artificialAvailable || Boolean(examIsActive);
-  elements["artificial-exam-button"].disabled = !artificialAvailable;
-  elements["artificial-exam-button"].textContent = activeExamAttempt?.origin === "artificial"
-    ? "Continuar Modo examen artificial"
-    : "Generar en Modo examen";
-  if (!artificialAvailable) {
-    showError(elements["artificial-error"], "El Banco publicado no contiene al menos 75 Preguntas activas distintas.");
+  // El pool del Examen artificial deriva exclusivamente de la oposición
+  // seleccionada: la proyección del catálogo autorizado, nunca el banco global.
+  // Con menos de 75 Preguntas activas en esa oposición la creación nueva se
+  // bloquea (sin completar con otro banco ni duplicar preguntas), salvo que
+  // exista un intento artificial activo que se pueda continuar.
+  if (!syncArtificialButtons()) {
+    showError(
+      elements["artificial-error"],
+      "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
+    );
   } else {
     clearError(elements["artificial-error"]);
   }
   elements["exam-grid"].hidden = false;
 }
 
+// Disponibilidad del Examen artificial según la oposición seleccionada, los
+// intentos activos y el guard del Modo examen: la creación nueva exige 75
+// Preguntas activas distintas en la proyección de la oposición, y solo un
+// intento artificial activo mantiene su botón accesible con pool corto.
+function syncArtificialButtons() {
+  const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
+  const artificialAvailable = artificialPool.reduce((total, exam) => total + exam.questions.length, 0)
+    >= ARTIFICIAL_QUESTION_COUNT;
+  const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
+  const activeArtificialStudy = activeStrategies.get("__artificial__") === "artificial_study";
+  const activeArtificialExam = activeExamAttempt?.origin === "artificial";
+  elements["artificial-study-button"].disabled =
+    (!artificialAvailable && !activeArtificialStudy) || Boolean(examIsActive);
+  elements["artificial-exam-button"].disabled = !artificialAvailable && !activeArtificialExam;
+  elements["artificial-exam-button"].textContent = activeArtificialExam
+    ? "Continuar Modo examen artificial"
+    : "Generar en Modo examen";
+  return artificialAvailable;
+}
+
 async function ensureCatalog() {
   if (!catalogPromise) {
-    catalogPromise = supabase.rpc("get_published_official_exam_versions")
+    catalogPromise = supabase.rpc("get_published_official_exam_versions_v2")
       .then(({ data, error }) => {
         if (error) throw error;
         return loadPublishedCatalog(fetch, bankBaseUrl, data);
       })
-      .then((loaded) => { catalog = loaded; return loaded; })
+      .then((loaded) => {
+        catalog = loaded;
+        resolveOppositionSelection();
+        return loaded;
+      })
       .catch((error) => {
         catalogPromise = undefined;
         showError(elements["catalog-status"], error.message);
@@ -952,11 +1043,30 @@ async function startArtificial(mode) {
   if (!await flushPendingBeforeAttemptChange(elements["artificial-error"])) return;
   elements["artificial-study-button"].disabled = true;
   elements["artificial-exam-button"].disabled = true;
+  const kind = mode === "exam" ? "exam" : "normal";
+  let creationBlocked = false;
   try {
-    const sources = materializeArtificialSources(catalog);
+    // El pool del Examen artificial procede exclusivamente de la oposición
+    // seleccionada: la proyección del catálogo autorizado, nunca el catálogo
+    // completo. La creación nueva exige 75 Preguntas activas en esa proyección;
+    // la reanudación precede a ese bloqueo: con la cola vacía la RPC v2
+    // consulta el único intento artificial activo fijado en servidor y, si
+    // existe, se navega a él con su composición persistida vía
+    // loadCompositeQuestions, sin re-materializar el pool actual.
+    const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
+    creationBlocked = artificialPool.reduce((total, exam) => total + exam.questions.length, 0)
+      < ARTIFICIAL_QUESTION_COUNT;
+    const sources = creationBlocked ? [] : materializeArtificialSources(artificialPool);
+    if (creationBlocked) {
+      showError(
+        elements["artificial-error"],
+        "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
+      );
+    }
     const clockRequestAt = Date.now();
-    const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt", {
+    const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt_v2", {
       p_mode: mode,
+      p_opposition_id: selectedOppositionId,
       p_sources: sources,
     });
     if (error) throw error;
@@ -986,34 +1096,49 @@ async function startArtificial(mode) {
     renderStudy();
     if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    const kind = mode === "exam" ? "exam" : "normal";
     const view = persistence?.restore({ kind });
-    if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) {
-      showError(elements["artificial-error"], `No se pudo generar el Examen artificial. ${error.message}`);
+    if (view && view.attempt.origin === "artificial" && view.questions?.length) {
+      recoverPersistedArtificial(kind, mode, view);
+      showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
       return;
     }
-    const composedExam = {
-      id: view.attempt.exam_id,
-      version: { id: view.attempt.exam_version_id },
-      questions: view.questions,
-    };
-    study = kind === "exam"
-      ? new ExamSession(composedExam, view.attempt, view.answers)
-      : new NormalStudySession(composedExam, view.attempt, view.answers);
-    selectedExam = undefined;
-    applyPendingView(view);
-    if (kind === "exam") {
-      activeExamAttempt = view.attempt;
-      examServerOffsetMs = view.attempt.server_clock_offset_ms;
-      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
-    }
-    window.location.hash = `artificial-${mode}`;
-    renderStudy();
-    showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
+    showError(
+      elements["artificial-error"],
+      creationBlocked
+        ? "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas."
+        : `No se pudo generar el Examen artificial. ${error.message}`,
+    );
   } finally {
-    elements["artificial-study-button"].disabled = false;
-    elements["artificial-exam-button"].disabled = false;
+    // La disponibilidad se restablece según el pool de la oposición
+    // seleccionada, los intentos activos y el guard del Modo examen, nunca de
+    // forma incondicional.
+    syncArtificialButtons();
   }
+}
+
+// Recupera el intento artificial persistido en este dispositivo con su
+// composición fijada (fuentes, identidades de origen y versiones por
+// exam_version_path), sin re-materializar el pool de la oposición actual.
+function recoverPersistedArtificial(kind, mode, view = persistence?.restore({ kind })) {
+  if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) return false;
+  const composedExam = {
+    id: view.attempt.exam_id,
+    version: { id: view.attempt.exam_version_id },
+    questions: view.questions,
+  };
+  study = kind === "exam"
+    ? new ExamSession(composedExam, view.attempt, view.answers)
+    : new NormalStudySession(composedExam, view.attempt, view.answers);
+  selectedExam = undefined;
+  applyPendingView(view);
+  if (kind === "exam") {
+    activeExamAttempt = view.attempt;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
+    study.locked = isExamExpired(view.attempt, examServerOffsetMs);
+  }
+  window.location.hash = `artificial-${mode}`;
+  renderStudy();
+  return true;
 }
 
 async function startFailedStudy(scopeExamId = null) {
@@ -1025,7 +1150,8 @@ async function startFailedStudy(scopeExamId = null) {
   try {
     const eligible = eligibleFailureSources(scopeExamId);
     const sources = scopeExamId ? eligible : shuffled(eligible);
-    const { data, error } = await supabase.rpc("start_or_resume_failed_attempt", {
+    const { data, error } = await supabase.rpc("start_or_resume_failed_attempt_v2", {
+      p_opposition_id: selectedOppositionId,
       p_scope_exam_id: scopeExamId,
       p_sources: sources,
     });
@@ -1643,6 +1769,13 @@ async function boot() {
   elements["login-form"].addEventListener("submit", submitLogin);
   elements["logout-button"].addEventListener("click", () => supabase.auth.signOut());
   elements["back-button"].addEventListener("click", showCatalog);
+  elements["opposition-select"].addEventListener("change", () => {
+    const next = elements["opposition-select"].value;
+    if (!next || next === selectedOppositionId) return;
+    selectedOppositionId = next;
+    storeOppositionPreference(next);
+    renderCatalog();
+  });
   elements["history-button"].addEventListener("click", showHistory);
   elements["dashboard-button"].addEventListener("click", showDashboard);
   elements["dashboard-catalog-button"].addEventListener("click", showCatalog);

@@ -39,6 +39,12 @@ async function migratedDatabase() {
      ) values ($1, $2, $3, 120, $4, $5::jsonb, true)`,
     [examId, versionId, versionPath, questionIds, JSON.stringify(answerKey)],
   );
+  // Mapeo administrativo explícito del registro de fixture: sin fila de mapeo
+  // el servidor no materializa el artificial de la firma antigua endurecida.
+  await db.query(
+    "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+    [examId],
+  );
   return db;
 }
 

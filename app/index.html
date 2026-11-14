@@ -61,6 +61,22 @@
           <p>Últimas versiones publicadas y verificadas.</p>
         </div>
         <div id="catalog-status" class="panel compact" aria-live="polite">Cargando catálogo…</div>
+        <div
+          id="opposition-picker"
+          class="panel compact"
+          style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 24px; margin-bottom:24px;"
+        >
+          <div style="min-width:0;">
+            <p class="eyebrow" style="margin-bottom:8px;">Proyección del Banco publicado</p>
+            <label for="opposition-select">Oposición</label>
+          </div>
+          <select
+            id="opposition-select"
+            aria-describedby="opposition-hint"
+            style="font:inherit; flex:1 1 260px; min-width:min(300px, 100%); max-width:460px; min-height:48px; padding:10px 12px; border:1px solid #aebfb9; border-radius:10px; color:inherit; background:white;"
+          ></select>
+          <p id="opposition-hint" class="card-facts" style="flex-basis:100%; margin:0;" hidden></p>
+        </div>
         <article class="panel compact all-failed-entry">
           <div>
             <p class="eyebrow">Recuperación entre exámenes</p>

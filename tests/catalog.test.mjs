@@ -9,6 +9,8 @@ const authorizedVersions = staticCatalog.exams.map((entry) => ({
   exam_id: entry.id,
   exam_version_id: entry.latestVersion,
   exam_version_path: entry.latestPath,
+  opposition_id: "administrativo",
+  opposition_name: "Administrativo",
 }));
 
 async function fileFetch(path) {
@@ -57,6 +59,7 @@ test("descarta un paquete que no sea la versión publicable indicada", async () 
   };
   assert.deepEqual(await loadPublishedCatalog(fakeFetch, "/bank/", [{
     exam_id: "exam", exam_version_id: "current", exam_version_path: "exam.json",
+    opposition_id: "administrativo", opposition_name: "Administrativo",
   }]), []);
 });
 
@@ -87,6 +90,8 @@ test("el catálogo estático y el registro oficial se intersectan por identidad 
     exam_id: third.id,
     exam_version_id: third.latestVersion,
     exam_version_path: third.latestPath,
+    opposition_id: "administrativo",
+    opposition_name: "Administrativo",
   }];
 
   assert.deepEqual(await loadPublishedCatalog(fetchWithThird, "/bank/", []), []);
@@ -94,10 +99,23 @@ test("el catálogo estático y el registro oficial se intersectan por identidad 
     ok: true, status: 200, json: async () => ({ exams: [] }),
   }), "/bank/", exact), []);
   assert.equal((await loadPublishedCatalog(fetchWithThird, "/bank/", exact))[0].id, third.id);
+  assert.equal(
+    (await loadPublishedCatalog(fetchWithThird, "/bank/", exact))[0].oppositionId,
+    "administrativo",
+  );
   assert.deepEqual(await loadPublishedCatalog(fetchWithThird, "/bank/", [{
     ...exact[0], exam_version_path: "exam-third/versions/other.json",
   }]), []);
   assert.deepEqual(await loadPublishedCatalog(fetchWithThird, "/bank/", [{
     ...exact[0], exam_version_id: "other-version",
   }]), []);
+  assert.deepEqual(
+    await loadPublishedCatalog(fetchWithThird, "/bank/", [{
+      exam_id: third.id,
+      exam_version_id: third.latestVersion,
+      exam_version_path: third.latestPath,
+    }]),
+    [],
+    "una fila del registro sin oposición explícita no autoriza la entrada",
+  );
 });

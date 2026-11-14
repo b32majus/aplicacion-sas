@@ -42,6 +42,12 @@ async function registerPackage(db, source) {
      ) values ($1, $2, $3, 180, $4, $5::jsonb)`,
     [source.examId, source.versionId, source.versionPath, source.questionIds, JSON.stringify(source.answerKey)],
   );
+  // Mapeo administrativo explícito del paquete de fixture hacia la única
+  // oposición sembrada; sin fila de mapeo el servidor no materializa falladas.
+  await db.query(
+    "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+    [source.examId],
+  );
 }
 
 function sourceRows(packages) {

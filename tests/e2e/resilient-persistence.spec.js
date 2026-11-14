@@ -45,15 +45,16 @@ async function mockStudyPersistence(page, state = studyState()) {
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
     if (path.endsWith("/rpc/get_server_now")) return json(route, state.serverNow);
-    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+    if (path.endsWith("/rpc/get_published_official_exam_versions_v2")) return json(route, catalog.exams.map((item) => ({
       exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+      opposition_id: "administrativo", opposition_name: "Administrativo",
     })));
     if (request.method() === "GET" && path.endsWith("/attempts")) return json(route, [state.attempt]);
     if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, state.progress || []);
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
     if (request.method() === "GET" && path.endsWith("/attempt_question_sources")) return json(route, state.sources || []);
     if (path.endsWith("/rpc/start_or_replace_principal_attempt")) return json(route, state.attempt);
-    if (path.endsWith("/rpc/start_or_resume_failed_attempt")) return json(route, state.attempt);
+    if (path.endsWith("/rpc/start_or_resume_failed_attempt_v2")) return json(route, state.attempt);
     if (path.endsWith("/rpc/sync_active_attempt")) {
       const payload = request.postDataJSON();
       if (payload.p_base_revision !== state.attempt.revision) {
@@ -136,8 +137,9 @@ async function mockExamPersistence(page, state = examState()) {
     const path = new URL(request.url()).pathname;
     if (!state.online) return route.abort("connectionreset");
     if (path.endsWith("/rpc/get_server_now")) return json(route, state.attempt.server_now);
-    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+    if (path.endsWith("/rpc/get_published_official_exam_versions_v2")) return json(route, catalog.exams.map((item) => ({
       exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+      opposition_id: "administrativo", opposition_name: "Administrativo",
     })));
     if (request.method() === "GET" && path.endsWith("/attempts")) return json(route, [state.attempt]);
     if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, []);

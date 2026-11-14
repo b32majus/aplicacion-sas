@@ -5,12 +5,17 @@
 // (Administrativo real del catálogo estático + una oposición Radiodiagnóstico
 // ficticia servida desde la receta), sin tocar producción ni los archivos del banco.
 // La receta solo navega y fotografía: no contiene aserciones.
+//
+// El entorno de verificación ejecuta esta receta sobre una copia limpia del
+// checkout, sin node_modules: la receta restaura primero las dependencias
+// declaradas del repositorio (npm ci, preferentemente offline con la caché de
+// npm) y solo después arranca el servidor y el navegador.
 import { spawn, spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
-import { chromium } from "@playwright/test";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = Number(process.env.E2E_PORT || 4310);
@@ -19,6 +24,27 @@ const base = `http://127.0.0.1:${port}/aplicacion-sas/`;
 if (!process.env.METIS_SHOT_KIT) {
   throw new Error("Falta METIS_SHOT_KIT: Metis debe proporcionar el kit de capturas.");
 }
+
+async function ensureDependencies() {
+  const viteBin = path.join(repoRoot, "node_modules", ".bin", "vite");
+  let playwrightReady = false;
+  try {
+    await import(pathToFileURL(path.join(repoRoot, "node_modules", "@playwright", "test", "index.js")));
+    playwrightReady = true;
+  } catch { playwrightReady = false; }
+  if (playwrightReady && existsSync(viteBin)) return;
+  const install = spawnSync("npm", ["ci", "--prefer-offline", "--no-audit", "--no-fund", "--loglevel=error"], {
+    cwd: repoRoot,
+    timeout: 300_000,
+    stdio: "inherit",
+  });
+  if (install.status !== 0) {
+    throw new Error(`No se pudieron restaurar las dependencias del repositorio (npm ci, estado ${install.status}).`);
+  }
+}
+
+await ensureDependencies();
+const { chromium } = await import("@playwright/test");
 const { watch, shot } = await import(process.env.METIS_SHOT_KIT);
 
 // --- Fixture aislada: dos oposiciones publicadas ---------------------------------
@@ -164,7 +190,11 @@ async function launchBrowser() {
   try {
     return await chromium.launch();
   } catch {
-    spawnSync("npx", ["playwright", "install", "chromium"], { cwd: repoRoot, stdio: "inherit" });
+    spawnSync(
+      process.execPath,
+      [path.join(repoRoot, "node_modules", "playwright", "cli.js"), "install", "chromium"],
+      { cwd: repoRoot, stdio: "inherit", timeout: 240_000 },
+    );
     return await chromium.launch();
   }
 }

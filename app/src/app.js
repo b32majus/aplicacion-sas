@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { ActiveAttemptPersistence } from "./active-attempt-persistence.js";
-import { materializeArtificialSources } from "./artificial-exam.js";
+import { ARTIFICIAL_QUESTION_COUNT, materializeArtificialSources } from "./artificial-exam.js";
 import {
   filterCatalogByOpposition,
   listPublishedOppositions,
@@ -564,7 +564,7 @@ async function refreshStatuses() {
 // El catálogo autorizado completo permanece en memoria con todas las
 // oposiciones; esta vista solo proyecta la oposición elegida. El recuento de
 // «Todas mis falladas» (y su cola) queda acotado a la oposición seleccionada;
-// el artificial conserva su pool global sobre el catálogo completo.
+// el Examen artificial también deriva su pool de esa misma proyección.
 function renderCatalog() {
   const oppositions = listPublishedOppositions(catalog);
   const select = elements["opposition-select"];
@@ -624,15 +624,28 @@ function renderCatalog() {
   if (isActiveExam(activeExamAttempt, examServerOffsetMs)) {
     elements["all-failed-button"].disabled = true;
   }
-  const artificialAvailable = catalog.reduce((total, exam) => total + exam.questions.length, 0) >= 75;
+  // El pool del Examen artificial deriva exclusivamente de la oposición
+  // seleccionada: la proyección del catálogo autorizado, nunca el banco global.
+  // Con menos de 75 Preguntas activas en esa oposición el inicio se bloquea
+  // (sin completar con otro banco ni duplicar preguntas), salvo que exista un
+  // intento artificial activo que se pueda continuar.
+  const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
+  const artificialAvailable = artificialPool.reduce((total, exam) => total + exam.questions.length, 0)
+    >= ARTIFICIAL_QUESTION_COUNT;
   const examIsActive = isActiveExam(activeExamAttempt, examServerOffsetMs);
-  elements["artificial-study-button"].disabled = !artificialAvailable || Boolean(examIsActive);
-  elements["artificial-exam-button"].disabled = !artificialAvailable;
-  elements["artificial-exam-button"].textContent = activeExamAttempt?.origin === "artificial"
+  const activeArtificialStudy = activeStrategies.get("__artificial__") === "artificial_study";
+  const activeArtificialExam = activeExamAttempt?.origin === "artificial";
+  elements["artificial-study-button"].disabled =
+    (!artificialAvailable && !activeArtificialStudy) || Boolean(examIsActive);
+  elements["artificial-exam-button"].disabled = !artificialAvailable && !activeArtificialExam;
+  elements["artificial-exam-button"].textContent = activeArtificialExam
     ? "Continuar Modo examen artificial"
     : "Generar en Modo examen";
   if (!artificialAvailable) {
-    showError(elements["artificial-error"], "El Banco publicado no contiene al menos 75 Preguntas activas distintas.");
+    showError(
+      elements["artificial-error"],
+      "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
+    );
   } else {
     clearError(elements["artificial-error"]);
   }
@@ -1022,11 +1035,28 @@ async function startArtificial(mode) {
   if (!await flushPendingBeforeAttemptChange(elements["artificial-error"])) return;
   elements["artificial-study-button"].disabled = true;
   elements["artificial-exam-button"].disabled = true;
+  const kind = mode === "exam" ? "exam" : "normal";
   try {
-    const sources = materializeArtificialSources(catalog);
+    // El pool del Examen artificial procede exclusivamente de la oposición
+    // seleccionada: la proyección del catálogo autorizado, nunca el catálogo
+    // completo. Con menos de 75 Preguntas activas la generación se bloquea.
+    const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
+    if (artificialPool.reduce((total, exam) => total + exam.questions.length, 0) < ARTIFICIAL_QUESTION_COUNT) {
+      showError(
+        elements["artificial-error"],
+        "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
+      );
+      // La reanudación no depende del pool: un intento artificial activo con
+      // su composición persistida se conserva aunque la oposición seleccionada
+      // no llegue a 75 Preguntas activas.
+      recoverPersistedArtificial(kind, mode);
+      return;
+    }
+    const sources = materializeArtificialSources(artificialPool);
     const clockRequestAt = Date.now();
-    const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt", {
+    const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt_v2", {
       p_mode: mode,
+      p_opposition_id: selectedOppositionId,
       p_sources: sources,
     });
     if (error) throw error;
@@ -1056,34 +1086,42 @@ async function startArtificial(mode) {
     renderStudy();
     if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
-    const kind = mode === "exam" ? "exam" : "normal";
     const view = persistence?.restore({ kind });
     if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) {
       showError(elements["artificial-error"], `No se pudo generar el Examen artificial. ${error.message}`);
       return;
     }
-    const composedExam = {
-      id: view.attempt.exam_id,
-      version: { id: view.attempt.exam_version_id },
-      questions: view.questions,
-    };
-    study = kind === "exam"
-      ? new ExamSession(composedExam, view.attempt, view.answers)
-      : new NormalStudySession(composedExam, view.attempt, view.answers);
-    selectedExam = undefined;
-    applyPendingView(view);
-    if (kind === "exam") {
-      activeExamAttempt = view.attempt;
-      examServerOffsetMs = view.attempt.server_clock_offset_ms;
-      study.locked = isExamExpired(view.attempt, examServerOffsetMs);
-    }
-    window.location.hash = `artificial-${mode}`;
-    renderStudy();
+    recoverPersistedArtificial(kind, mode, view);
     showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
   } finally {
     elements["artificial-study-button"].disabled = false;
     elements["artificial-exam-button"].disabled = false;
   }
+}
+
+// Recupera el intento artificial persistido en este dispositivo con su
+// composición fijada (fuentes, identidades de origen y versiones por
+// exam_version_path), sin re-materializar el pool de la oposición actual.
+function recoverPersistedArtificial(kind, mode, view = persistence?.restore({ kind })) {
+  if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) return false;
+  const composedExam = {
+    id: view.attempt.exam_id,
+    version: { id: view.attempt.exam_version_id },
+    questions: view.questions,
+  };
+  study = kind === "exam"
+    ? new ExamSession(composedExam, view.attempt, view.answers)
+    : new NormalStudySession(composedExam, view.attempt, view.answers);
+  selectedExam = undefined;
+  applyPendingView(view);
+  if (kind === "exam") {
+    activeExamAttempt = view.attempt;
+    examServerOffsetMs = view.attempt.server_clock_offset_ms;
+    study.locked = isExamExpired(view.attempt, examServerOffsetMs);
+  }
+  window.location.hash = `artificial-${mode}`;
+  renderStudy();
+  return true;
 }
 
 async function startFailedStudy(scopeExamId = null) {

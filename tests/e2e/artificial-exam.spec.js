@@ -30,8 +30,9 @@ async function mockArtificialPersistence(page) {
     if (request.method() === "GET" && path.endsWith("/question_progress")) return json(route, []);
     if (request.method() === "GET" && path.endsWith("/attempt_answers")) return json(route, state.answers);
     if (request.method() === "GET" && path.endsWith("/attempt_question_sources")) return json(route, state.sources);
-    if (path.endsWith("/rpc/start_or_resume_artificial_attempt")) {
+    if (path.endsWith("/rpc/start_or_resume_artificial_attempt_v2")) {
       state.startPayload = request.postDataJSON();
+      state.startOppositionId = state.startPayload.p_opposition_id || null;
       const startedAt = new Date();
       state.sources = state.startPayload.p_sources.map((source, position) => ({
         position,
@@ -134,6 +135,7 @@ test("Seam 2: Examen artificial entra en estudio con 75 orígenes fijados y corr
   await expect(page.locator("#study-panel")).toHaveAttribute("data-origin", "artificial");
   await expect(page.locator("#study-panel")).toHaveAttribute("data-kind", "normal");
   await expect(page.locator("#study-progress")).toHaveText("1 de 75");
+  expect(persistence.startOppositionId).toBe("administrativo");
   assertMaterializedSources(persistence.startPayload.p_sources);
 
   const first = persistence.sources[0];
@@ -153,6 +155,7 @@ test("Seam 2: Examen artificial entra en T06 con deadline de 120 minutos, blanca
   await expect(page.locator("#study-panel")).toHaveAttribute("data-kind", "exam");
   await expect(page.locator("#study-progress")).toHaveText("1 de 75");
   expect(persistence.attempt.duration_minutes).toBe(120);
+  expect(persistence.startOppositionId).toBe("administrativo");
   assertMaterializedSources(persistence.startPayload.p_sources);
 
   await page.getByRole("button", { name: "Pregunta 75: pendiente" }).click();

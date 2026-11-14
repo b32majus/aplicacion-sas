@@ -203,18 +203,10 @@ test("la ruta del artificial genera el pool de la oposición seleccionada y bloq
   );
   assert.match(catalogSource, /75 Preguntas activas distintas/, "el catálogo avisa en español cuando la oposición no llega a 75");
 
-  const selectOppositionStart = source.indexOf("function selectOpposition");
-  assert.ok(selectOppositionStart > -1, "app.js conserva el cambio de oposición");
-  const selectOppositionSource = source.slice(selectOppositionStart, source.indexOf("\nfunction renderCatalog()", selectOppositionStart));
-  assert.match(
-    selectOppositionSource,
-    /renderCatalog\(\)/,
-    "cambiar de oposición reevalúa la disponibilidad del artificial para el pool de esa oposición",
-  );
-
-  // Superficies de M01/M02 conservadas.
-  assert.match(source, /listPublishedOppositions/, "el selector de oposiciones de M01 se conserva");
-  assert.match(source, /"opposition-select"/, "el control de selección de oposición se conserva");
+  // Reutilizar el filtro de oposición en la vista es el contrato observable;
+  // ningún ticket impone un identificador DOM ni el nombre de su callback.
+  assert.match(source, /listPublishedOppositions/, "se conservan las opciones públicas del servidor");
+  assert.match(catalogSource, /filterCatalogByOpposition/, "el catálogo visible se recalcula desde la oposición seleccionada");
 });
 
 test("el materializador devuelto como módulo produce 75 orígenes únicos del pool proyectado y rechaza el pool corto", () => {
@@ -411,6 +403,13 @@ test("el servidor aplica la frontera: homogénea pasa, 74 bloquea, mezcla y extr
       startV2("study", "administrativo", mixed),
       /oposición/i,
       "una fuente RX manipulada en una selección Administrativo se rechaza",
+    );
+    const duplicated = [...adminSeventyFive.slice(0, 74), { ...adminSeventyFive[0] }];
+    assert.equal(duplicated.length, 75);
+    await assert.rejects(
+      startV2("study", "administrativo", duplicated),
+      /repetir|duplicad/i,
+      "75 referencias con una duplicada son inválidas aunque la oposición y versión sean correctas",
     );
     const extrinsicVersion = [...adminSeventyFive.slice(0, 74), {
       exam_id: adminA.examId,

@@ -173,6 +173,11 @@ test("la ruta de falladas materializa la oposición seleccionada y conserva la r
   assert.match(eligibleSource, /scopeExamId/, "Solo falladas conserva su ámbito por examen");
   assert.match(eligibleSource, /pendingFailures/, "la cola sigue derivarse del progreso de falladas pendientes");
   assert.match(eligibleSource, /selectedOppositionId/, "sin ámbito, el recuento y la cola proceden de la oposición seleccionada");
+  assert.match(
+    eligibleSource,
+    /filterCatalogByOpposition|\.oppositionId\s*===\s*selectedOppositionId|selectedOppositionId\s*===\s*[^\n]*\.oppositionId/,
+    "la cola y su recuento deben filtrar EXÁMENES por oposición, no solo mencionar la selección",
+  );
 
   const catalogStart = source.indexOf("function renderCatalog()");
   const catalogSource = source.slice(catalogStart, source.indexOf("\nasync function selectExam", catalogStart));
@@ -185,7 +190,6 @@ test("la ruta de falladas materializa la oposición seleccionada y conserva la r
   // Superficies de M01 conservadas (catálogo completo separado de la proyección).
   assert.match(source, /filterCatalogByOpposition/, "el catálogo autorizado completo sigue disponible con su proyección por oposición");
   assert.match(source, /listPublishedOppositions/, "el selector de oposiciones de M01 se conserva");
-  assert.match(source, /"opposition-select"/, "el control de selección de oposición se conserva");
 });
 
 const behavioralOptions = PGlite ? {} : {
@@ -230,7 +234,8 @@ test("el servidor acepta fuentes homogéneas, rechaza una fuente de otra oposici
     const adminA = await registerExam("oracle-admin-a", "oracle-admin-a-q001", "administrativo");
     const adminB = await registerExam("oracle-admin-b", "oracle-admin-b-q001", "administrativo");
     const rxFixture = await registerExam("oracle-rx-fixture", "oracle-rx-fixture-q001", "radiodiagnostico-fixture");
-    for (const source of [adminA, adminB, rxFixture]) {
+    const unmapped = await registerExam("oracle-unmapped", "oracle-unmapped-q001", null);
+    for (const source of [adminA, adminB, rxFixture, unmapped]) {
       await db.query(
         `insert into public.question_progress(user_id, exam_id, question_id, wrong_count, pending_failure)
          values ($1, $2, $3, 1, true)`,
@@ -260,15 +265,25 @@ test("el servidor acepta fuentes homogéneas, rechaza una fuente de otra oposici
       /oposición/,
       "la firma antigua tampoco permite crear una sesión mezclada",
     );
-    assert.deepEqual(await snapshot(), baseline, "el rechazo no deja rastro en intentos, fuentes, progreso o respuestas");
+    await assert.rejects(
+      db.query("select (public.start_or_resume_failed_attempt_v2($1, $2, $3::jsonb)).*", ["administrativo", null, JSON.stringify([adminA, unmapped])]),
+      /oposición|mapeo/i,
+      "una fuente oficialmente publicada SIN mapeo se rechaza sin crear sesiones",
+    );
+    assert.deepEqual(await snapshot(), baseline, "los rechazos no dejan rastro en intentos, fuentes, progreso o respuestas");
 
-    // Dos fuentes Administrativo válidas pasan.
+    // Compatibilidad positiva: la FIRMA ANTIGUA crea una cola homogénea.
     const attempt = (await db.query(
+      "select (public.start_or_resume_failed_attempt($1, $2::jsonb)).*",
+      [null, JSON.stringify([adminA, adminB])],
+    )).rows[0];
+    assert.equal(attempt.kind, "failed");
+    assert.equal((await snapshot()).sources.length, 2, "la firma antigua inicia una cola homogénea");
+    const v2Resumed = (await db.query(
       "select (public.start_or_resume_failed_attempt_v2($1, $2, $3::jsonb)).*",
       ["administrativo", null, JSON.stringify([adminA, adminB])],
     )).rows[0];
-    assert.equal(attempt.kind, "failed");
-    assert.equal((await snapshot()).sources.length, 2, "el intento y sus fuentes se crean con la cola homogénea");
+    assert.equal(v2Resumed.id, attempt.id, "la RPC v2 reanuda la sesión creada por la firma antigua");
     const afterCreation = await snapshot();
 
     // Reanudación fijada aunque se cambie de oposición.

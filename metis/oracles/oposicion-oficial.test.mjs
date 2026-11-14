@@ -144,6 +144,23 @@ test("la migración nueva crea el registro de oposiciones con nombre público y 
   assert.match(mappingStatement, /exam_id/i, "el mapeo debe ser por exam_id");
   assert.match(mappingStatement, /opposition_id/i, "el mapeo debe referenciar la oposición");
   assert.match(mappingStatement, /references/i, "el mapeo debe ser una referencia verificable por servidor");
+
+  // Ambas tablas son administrativas: ni anon ni authenticated pueden leerlas
+  // directamente; solo la RPC v2 expone metadata publicada y permitida.
+  for (const name of ["oppositions", "opposition_exams"]) {
+    assert.match(
+      sql,
+      new RegExp(`alter\\s+table\\s+public\\.${name}\\s+enable\\s+row\\s+level\\s+security`, "i"),
+      `RLS debe estar activada en public.${name}`,
+    );
+    const revoke = sql.split(";").find((statement) =>
+      /revoke\s+all/i.test(statement)
+      && new RegExp(`\\bpublic\\.${name}\\b`, "i").test(statement)
+    );
+    assert.ok(revoke, `public.${name} debe revocar permisos directos`);
+    assert.match(revoke, /\banon\b/i, `public.${name} debe excluir anon`);
+    assert.match(revoke, /\bauthenticated\b/i, `public.${name} debe excluir authenticated`);
+  }
 });
 
 test("la migración siembra exactamente los 12 Administrativo y no toca los registros oficiales inmutables", async () => {
@@ -159,9 +176,21 @@ test("la migración siembra exactamente los 12 Administrativo y no toca los regi
   assert.ok(oppositionSeed, "falta la siembra de la oposición con nombre público");
   assert.match(oppositionSeed, /'administrativo'/i, "falta la oposición sembrada con id administrativo");
   assert.match(oppositionSeed, /'Administrativo'/, "falta el nombre público «Administrativo»");
+  assert.equal(
+    [...sql.matchAll(/insert\s+into\s+public\.oppositions\b/gi)].length,
+    1,
+    "prohibida una segunda sentencia que siembre otra oposición en producción",
+  );
+  const oppositionLiterals = [...oppositionSeed.matchAll(/'([^']*)'/g)].map((m) => m[1]);
+  assert.deepEqual(oppositionLiterals.sort(), ["Administrativo", "administrativo"].sort(), "solo se siembra Administrativo");
 
   const mappingSeed = statementAfter(sql, /insert\s+into\s+public\.opposition_exams\b/i);
   assert.ok(mappingSeed, "falta la siembra del mapeo de exámenes a oposiciones");
+  assert.equal(
+    [...sql.matchAll(/insert\s+into\s+public\.opposition_exams\b/gi)].length,
+    1,
+    "prohibida una segunda sentencia que añada mapeos ajenos a los doce oficiales",
+  );
   const literals = [...mappingSeed.matchAll(/'([^']*)'/g)].map((match) => match[1]);
   const mappedExamIds = literals.filter((literal) => expectedExamIds.includes(literal));
   assert.deepEqual(
@@ -191,9 +220,18 @@ test("la migración crea la RPC v2 de metadata publicada con grants de autentica
   const functionMatch = sql.match(/create\s+(or\s+replace\s+)?function\s+public\.get_published_official_exam_versions_v2\s*\(\)/i);
   assert.ok(functionMatch, "falta la RPC v2 public.get_published_official_exam_versions_v2()");
   const signature = sql.slice(functionMatch.index, sql.indexOf("$$", functionMatch.index));
-  for (const column of ["exam_id", "exam_version_id", "exam_version_path", "opposition_id", "opposition_name"]) {
-    assert.match(signature, new RegExp(`${column}\\s+text`, "i"), `la RPC v2 debe exponer la columna ${column}`);
+  const output = signature.match(/returns\s+table\s*\(([^)]*)\)/i);
+  assert.ok(output, "la RPC debe declarar explícitamente RETURNS TABLE");
+  const actualColumns = output[1].split(",").map((part) => part.trim().split(/\s+/)[0]);
+  assert.deepEqual(
+    actualColumns,
+    ["exam_id", "exam_version_id", "exam_version_path", "opposition_id", "opposition_name"],
+    "la RPC no puede exponer answer_key ni columnas adicionales",
+  );
+  for (const column of actualColumns) {
+    assert.match(output[1], new RegExp(`${column}\\s+text`, "i"));
   }
+  assert.doesNotMatch(signature, /answer_key/i, "la clave oficial nunca sale en metadata");
   const bodyMatch = sql.slice(functionMatch.index).match(/\$\$([\s\S]*?)\$\$/);
   assert.ok(bodyMatch, "falta el cuerpo SQL de la RPC v2");
   assert.match(bodyMatch[1], /official_exam_versions/i, "la RPC v2 debe proyectar el registro oficial publicado");
@@ -347,4 +385,23 @@ test("los consumidores históricos conservan su contrato: reanudación con versi
   };
   assert.equal(isActiveExam(activeExam, Number.NaN), true);
   assert.equal(isActiveExam({ ...activeExam, status: "completed" }, Number.NaN), false);
+
+  // Cambiar la proyección del catálogo NO cambia ni el examen fijado ni el
+  // bloqueo global. El catálogo solo proyecta, no sustituye el attempt activo.
+  const staticCatalog = await readStaticCatalog();
+  const { fetchImpl, registry } = twoOppositionFixture(staticCatalog);
+  const completeBank = await catalogModule.loadPublishedCatalog(fetchImpl, "./", registry);
+  const rxOnly = catalogModule.filterCatalogByOpposition(completeBank, "radiodiagnostico");
+  assert.equal(rxOnly.length, 1);
+  assert.equal(isActiveExam(activeExam, Number.NaN), true, "cambiar de oposición no habilita estudiar con reloj sin offset");
+  assert.equal(activeExam.exam_id, "sas-administrativo-2023-turno-libre", "la reanudación conserva el examen original");
+  const appSource = await readFile(new URL("../../app/src/app.js", import.meta.url), "utf8");
+  const renderStart = appSource.indexOf("function renderCatalog()");
+  const renderEnd = appSource.indexOf("\nasync function selectExam", renderStart);
+  assert.ok(renderStart > -1 && renderEnd > renderStart, "la proyección mantiene renderCatalog");
+  assert.match(
+    appSource.slice(renderStart, renderEnd),
+    /isActiveExam\(\s*activeExamAttempt\s*,\s*examServerOffsetMs\s*\)/,
+    "la UI sigue consultando el intento global al mostrar los botones de estudio/examen",
+  );
 });

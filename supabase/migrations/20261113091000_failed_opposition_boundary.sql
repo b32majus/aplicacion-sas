@@ -14,9 +14,10 @@
 --   2. La reanudación precede a toda verificación: si el usuario ya tiene su
 --      única Sesión de falladas activa (índice único
 --      attempts_one_active_failed_session) la RPC la devuelve con sus fuentes y
---      versiones fijadas aunque se solicite otra oposición o la cola venga
---      vacía; no se crea ninguna sesión adicional y los intentos históricos no
---      se reinterpretan ni se filtran por la selección actual.
+--      versiones fijadas aunque se solicite otra oposición, la oposición venga
+--      nula o vacía, el ámbito sea inválido o la cola venga vacía; no se crea
+--      ninguna sesión adicional y los intentos históricos no se reinterpretan
+--      ni se filtran por la selección actual.
 --   3. La firma antigua public.start_or_resume_failed_attempt(ámbito, fuentes)
 --      sigue operativa con su privilegio authenticated (compatibilidad con el
 --      frontend antiguo, cuyo despliegue precede a la UI), pero ya no permite
@@ -50,19 +51,14 @@ declare
   v_has_attempt boolean;
 begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
-  if p_opposition_id is null or length(p_opposition_id) not between 1 and 200 then
-    raise exception 'La oposición solicitada no es válida.';
-  end if;
-  if p_scope_exam_id is not null and length(p_scope_exam_id) not between 1 and 200 then
-    raise exception 'El ámbito de falladas no es válido.';
-  end if;
 
   insert into public.profiles(id) values (v_user_id) on conflict (id) do nothing;
   perform 1 from public.profiles where id = v_user_id for update;
 
-  -- La reanudación precede a toda verificación: la única Sesión de falladas
-  -- activa se devuelve fijada aunque se solicite otra oposición o la cola venga
-  -- vacía; los intentos históricos no se reinterpretan.
+  -- La reanudación precede a TODA verificación: la única Sesión de falladas
+  -- activa se devuelve fijada aunque se solicite otra oposición, la oposición
+  -- venga nula o vacía, el ámbito sea inválido o la cola venga vacía; los
+  -- intentos históricos no se reinterpretan.
   select * into v_attempt
   from public.attempts
   where user_id = v_user_id and status = 'active' and kind = 'failed'
@@ -72,6 +68,15 @@ begin
   perform public.reject_study_interaction_during_active_exam(v_user_id);
 
   if v_has_attempt then return v_attempt; end if;
+
+  -- Validaciones de forma de la oposición y del ámbito: obligatorias antes de
+  -- crear nada, pero jamás antes de la reanudación fijada.
+  if p_opposition_id is null or length(p_opposition_id) not between 1 and 200 then
+    raise exception 'La oposición solicitada no es válida.';
+  end if;
+  if p_scope_exam_id is not null and length(p_scope_exam_id) not between 1 and 200 then
+    raise exception 'El ámbito de falladas no es válido.';
+  end if;
 
   if jsonb_typeof(p_sources) <> 'array' then
     raise exception 'La cola de Falladas pendientes no es válida.';
@@ -214,9 +219,6 @@ declare
   v_opposition_ids text[];
 begin
   if v_user_id is null then raise exception 'Se requiere autenticación.'; end if;
-  if p_scope_exam_id is not null and length(p_scope_exam_id) not between 1 and 200 then
-    raise exception 'El ámbito de falladas no es válido.';
-  end if;
 
   insert into public.profiles(id) values (v_user_id) on conflict (id) do nothing;
   perform 1 from public.profiles where id = v_user_id for update;
@@ -230,6 +232,12 @@ begin
   perform public.reject_study_interaction_during_active_exam(v_user_id);
 
   if v_has_attempt then return v_attempt; end if;
+
+  -- La validación del ámbito obliga antes de crear nada, pero nunca antes de la
+  -- reanudación fijada.
+  if p_scope_exam_id is not null and length(p_scope_exam_id) not between 1 and 200 then
+    raise exception 'El ámbito de falladas no es válido.';
+  end if;
 
   if jsonb_typeof(p_sources) <> 'array' then
     raise exception 'La cola de Falladas pendientes no es válida.';

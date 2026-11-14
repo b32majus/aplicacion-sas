@@ -218,6 +218,73 @@ test("la firma antigua conserva la compatibilidad homogénea y las fuentes no pu
   }
 });
 
+test("la reanudación fijada precede incluso a las validaciones de oposición y de ámbito", async () => {
+  const db = await migratedDatabase();
+  try {
+    const adminA = await registerExam(db, "resume-admin-a", "resume-admin-a-q001", { opposition: "administrativo" });
+    const rx = await registerExam(db, "resume-rx-fixture", "resume-rx-q001", { opposition: "radiodiagnostico-fixture" });
+    for (const source of [adminA, rx]) await queuePending(db, source);
+
+    const attempt = (await startV2(db, "administrativo", null, [adminA])).rows[0];
+    const afterCreation = await snapshot(db);
+    const invalidScope = "x".repeat(201);
+
+    // Con sesión activa, la oposición nula o vacía y el ámbito inválido no
+    // bloquean la reanudación: la sesión fijada se devuelve antes de verificar.
+    const resumedNullOpposition = (await startV2(db, null, null, [])).rows[0];
+    assert.equal(resumedNullOpposition.id, attempt.id);
+    const resumedEmptyOpposition = (await startV2(db, "", null, [])).rows[0];
+    assert.equal(resumedEmptyOpposition.id, attempt.id);
+    assert.deepEqual(resumedEmptyOpposition.question_ids, attempt.question_ids);
+    const resumedInvalidScope = (await startV2(db, "administrativo", invalidScope, [])).rows[0];
+    assert.equal(resumedInvalidScope.id, attempt.id);
+    const resumedEmptyScope = (await startV2(db, "administrativo", "", [])).rows[0];
+    assert.equal(resumedEmptyScope.id, attempt.id);
+    const legacyInvalidScope = (await startLegacy(db, invalidScope, [])).rows[0];
+    assert.equal(legacyInvalidScope.id, attempt.id);
+
+    assert.deepEqual(
+      await snapshot(db),
+      afterCreation,
+      "las reanudaciones fijadas no alteran intentos, fuentes, progreso o respuestas",
+    );
+    assert.equal(await failedSessionCount(db), 1, "no se crea ninguna sesión adicional");
+
+    // Sin sesión activa, las mismas solicitudes fallan cerrado antes de crear nada.
+    await db.query(
+      "select public.confirm_failed_answer($1, $2, $3, 'B', 'B')",
+      ["20000000-0000-4000-8000-000000000032", attempt.id, adminA.question_id],
+    );
+    await db.query("select public.complete_failed_attempt($1)", [attempt.id]);
+    const afterCompletion = await snapshot(db);
+
+    await assert.rejects(
+      startV2(db, null, null, [adminA]),
+      /oposición solicitada no es válida/,
+      "sin sesión activa, una oposición nula no crea nada",
+    );
+    await assert.rejects(
+      startV2(db, "", null, [adminA]),
+      /oposición solicitada no es válida/,
+      "sin sesión activa, una oposición vacía no crea nada",
+    );
+    await assert.rejects(
+      startV2(db, "administrativo", invalidScope, [adminA]),
+      /ámbito de falladas no es válido/,
+      "sin sesión activa, un ámbito inválido no crea nada",
+    );
+    await assert.rejects(
+      startLegacy(db, invalidScope, [adminA]),
+      /ámbito de falladas no es válido/,
+      "la firma antigua también falla cerrado con un ámbito inválido",
+    );
+    assert.deepEqual(await snapshot(db), afterCompletion, "los rechazos no dejan rastro");
+    assert.equal(await failedSessionCount(db), 1);
+  } finally {
+    await db.close();
+  }
+});
+
 test("la RPC v2 y la firma antigua exigen autenticación", async () => {
   const db = await migratedDatabase();
   try {

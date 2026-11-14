@@ -626,9 +626,25 @@ function renderCatalog() {
   }
   // El pool del Examen artificial deriva exclusivamente de la oposición
   // seleccionada: la proyección del catálogo autorizado, nunca el banco global.
-  // Con menos de 75 Preguntas activas en esa oposición el inicio se bloquea
-  // (sin completar con otro banco ni duplicar preguntas), salvo que exista un
-  // intento artificial activo que se pueda continuar.
+  // Con menos de 75 Preguntas activas en esa oposición la creación nueva se
+  // bloquea (sin completar con otro banco ni duplicar preguntas), salvo que
+  // exista un intento artificial activo que se pueda continuar.
+  if (!syncArtificialButtons()) {
+    showError(
+      elements["artificial-error"],
+      "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
+    );
+  } else {
+    clearError(elements["artificial-error"]);
+  }
+  elements["exam-grid"].hidden = false;
+}
+
+// Disponibilidad del Examen artificial según la oposición seleccionada, los
+// intentos activos y el guard del Modo examen: la creación nueva exige 75
+// Preguntas activas distintas en la proyección de la oposición, y solo un
+// intento artificial activo mantiene su botón accesible con pool corto.
+function syncArtificialButtons() {
   const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
   const artificialAvailable = artificialPool.reduce((total, exam) => total + exam.questions.length, 0)
     >= ARTIFICIAL_QUESTION_COUNT;
@@ -641,15 +657,7 @@ function renderCatalog() {
   elements["artificial-exam-button"].textContent = activeArtificialExam
     ? "Continuar Modo examen artificial"
     : "Generar en Modo examen";
-  if (!artificialAvailable) {
-    showError(
-      elements["artificial-error"],
-      "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
-    );
-  } else {
-    clearError(elements["artificial-error"]);
-  }
-  elements["exam-grid"].hidden = false;
+  return artificialAvailable;
 }
 
 async function ensureCatalog() {
@@ -1036,23 +1044,25 @@ async function startArtificial(mode) {
   elements["artificial-study-button"].disabled = true;
   elements["artificial-exam-button"].disabled = true;
   const kind = mode === "exam" ? "exam" : "normal";
+  let creationBlocked = false;
   try {
     // El pool del Examen artificial procede exclusivamente de la oposición
     // seleccionada: la proyección del catálogo autorizado, nunca el catálogo
-    // completo. Con menos de 75 Preguntas activas la generación se bloquea.
+    // completo. La creación nueva exige 75 Preguntas activas en esa proyección;
+    // la reanudación precede a ese bloqueo: con la cola vacía la RPC v2
+    // consulta el único intento artificial activo fijado en servidor y, si
+    // existe, se navega a él con su composición persistida vía
+    // loadCompositeQuestions, sin re-materializar el pool actual.
     const artificialPool = filterCatalogByOpposition(catalog, selectedOppositionId);
-    if (artificialPool.reduce((total, exam) => total + exam.questions.length, 0) < ARTIFICIAL_QUESTION_COUNT) {
+    creationBlocked = artificialPool.reduce((total, exam) => total + exam.questions.length, 0)
+      < ARTIFICIAL_QUESTION_COUNT;
+    const sources = creationBlocked ? [] : materializeArtificialSources(artificialPool);
+    if (creationBlocked) {
       showError(
         elements["artificial-error"],
         "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas.",
       );
-      // La reanudación no depende del pool: un intento artificial activo con
-      // su composición persistida se conserva aunque la oposición seleccionada
-      // no llegue a 75 Preguntas activas.
-      recoverPersistedArtificial(kind, mode);
-      return;
     }
-    const sources = materializeArtificialSources(artificialPool);
     const clockRequestAt = Date.now();
     const { data, error } = await supabase.rpc("start_or_resume_artificial_attempt_v2", {
       p_mode: mode,
@@ -1087,15 +1097,22 @@ async function startArtificial(mode) {
     if (persistence.hasPending) syncPendingAttempt().catch(() => {});
   } catch (error) {
     const view = persistence?.restore({ kind });
-    if (!view || view.attempt.origin !== "artificial" || !view.questions?.length) {
-      showError(elements["artificial-error"], `No se pudo generar el Examen artificial. ${error.message}`);
+    if (view && view.attempt.origin === "artificial" && view.questions?.length) {
+      recoverPersistedArtificial(kind, mode, view);
+      showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
       return;
     }
-    recoverPersistedArtificial(kind, mode, view);
-    showError(elements["study-error"], "Sin conexión. El Examen artificial conserva sus Cambios pendientes en este dispositivo.");
+    showError(
+      elements["artificial-error"],
+      creationBlocked
+        ? "La oposición seleccionada no contiene al menos 75 Preguntas activas distintas. El Examen artificial no se completa con otro banco ni se duplican preguntas."
+        : `No se pudo generar el Examen artificial. ${error.message}`,
+    );
   } finally {
-    elements["artificial-study-button"].disabled = false;
-    elements["artificial-exam-button"].disabled = false;
+    // La disponibilidad se restablece según el pool de la oposición
+    // seleccionada, los intentos activos y el guard del Modo examen, nunca de
+    // forma incondicional.
+    syncArtificialButtons();
   }
 }
 

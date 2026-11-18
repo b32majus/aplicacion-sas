@@ -80,7 +80,12 @@ Dashboard legacy de Administrativo intactos.
    (botones existentes). Ninguna vista presenta datos de una selección
    anterior durante cargas o cambios de navegación: guard de navegación
    (`routeSerial`) en Historial y Dashboard y descarte de respuestas
-   obsoletas.
+   obsoletas. A 390 px ninguna vista genera scroll horizontal de página: las
+   tablas amplias del Dashboard (comparativa, rankings, preguntas) se
+   desplazan dentro de su contenedor `.table-scroll` y la rejilla del
+   contenido (`#dashboard-content`) nunca se dimensiona por el ancho mínimo
+   de una tabla (`grid-template-columns: minmax(0, 1fr)`), todo ello sin
+   tocar `styles.css`.
 7. **Pruebas aisladas y receta visual.** Se añaden pruebas SQL/JS
    (`tests/multiopposition-history-dashboard.test.mjs`, PGlite y módulos,
    sin red) y pruebas de navegador exclusivamente aisladas
@@ -164,7 +169,7 @@ Dashboard legacy de Administrativo intactos.
 | 3. Comparativas solo de participantes reales activos; umbrales 0/1/2 | Oráculo estructural (rol `participant`, actividad por intentos, `>= 2`, agregación de progreso); conductual: perfiles exactos por oposición (P3 sin actividad fuera, admin/test fuera), `failed_by_all` con grupo 3/2/1/0 y preguntas falladas por subconjuntos fuera |
 | 4. Migración forward-only, autorización real, EXECUTE restringido, RLS y legacy intactos | Oráculo estructural: «la migración es forward-only y conserva el Dashboard legacy…» (sin drop/alter/DML, sin redefinir `get_dashboard` ni motores, sin grants administrativos); conductual: `get_dashboard` idéntico antes/después, RLS y `permission denied` verificados con rol authenticated |
 | 5. Revisión fijada por enlace directo tras cambiar selección, sin escrituras; reanudación fijada y bloqueo global | Oráculo estructural: «la ruta de Historial consulta la oposición seleccionada…» (fallback sin filtro, sin `rpc(`/escrituras en la revisión, `restore` fijado, `isActiveExam`); módulo: revisión con paquete/versiones originarias y respuestas sin mutar; conductual: snapshot estable entre lecturas |
-| 6. Oposición visible, vacíos y errores coherentes, vuelta al catálogo, sin datos obsoletos | Oráculo estructural: «la ruta de Dashboard usa la RPC v2…» y prueba de Historial (guard `routeSerial` en ambas vistas, etiquetas `history-opposition`/`dashboard-opposition`, vacío con oposición, `dashboardLoadStatus` conservado, botones de vuelta) + Receta visual: `historial-administrativo-1280` (C1), `dashboard-administrativo-1280` (C2), `historial-vacio-radiodiagnostico-1280` (C3), `dashboard-vacio-radiodiagnostico-1280` (C4), `historial-vacio-390` (C5) |
+| 6. Oposición visible, vacíos y errores coherentes, vuelta al catálogo, sin datos obsoletos, sin scroll horizontal a 390 px | Oráculo estructural: «la ruta de Dashboard usa la RPC v2…» y prueba de Historial (guard `routeSerial` en ambas vistas, etiquetas `history-opposition`/`dashboard-opposition`, vacío con oposición, `dashboardLoadStatus` conservado, botones de vuelta) + Receta visual: `historial-administrativo-1280` (C1), `dashboard-administrativo-1280` (C2), `historial-vacio-radiodiagnostico-1280` (C3), `dashboard-vacio-radiodiagnostico-1280` (C4), `historial-vacio-390` (C5) y la medición del kit de capturas (sin scroll horizontal de página a 390 px) |
 | 7. Pruebas SQL/JS y navegador aisladas; compatibilidad legacy y sin mutaciones | Witness `multiopposition-history-dashboard` (regression-js) + spec de navegador con fixtures (`tests/e2e/opposition-history-dashboard.spec.js`, escrituras vigiladas) + receta visual sin credenciales |
 | 8. Oráculo discriminante único M04 (falla en BASE, pasa 3/3) | Witness `oracle-m04-historial-dashboard` (`metis/oracles/opposition-history-dashboard.test.mjs`, `mustFailAtBase: true`) |
 
@@ -227,7 +232,7 @@ legacy), `tests/e2e/dashboard.spec.js` y `tests/e2e/history.spec.js`
       "C2: En dashboard-administrativo-1280 se ve «Oposición consultada: Administrativo», el resumen personal, la comparación entre participantes con alias de participantes reales y las secciones por examen/pregunta de esa oposición.",
       "C3: En historial-vacio-radiodiagnostico-1280, con la segunda oposición seleccionada, el Historial muestra «Oposición consultada: Radiodiagnóstico (fixture)» y un estado vacío en español que menciona la oposición consultada, sin ningún intento de la selección anterior.",
       "C4: En dashboard-vacio-radiodiagnostico-1280 el Dashboard de la segunda oposición muestra la oposición consultada y estados vacíos coherentes (sin exámenes oficiales publicados, sin comparativas ni «Falladas por todos»), sin datos de otra oposición.",
-      "C5: En historial-vacio-390 y dashboard-390 los mismos estados permanecen legibles y navegables a 390 px, con la identificación de la oposición visible y los accesos de vuelta al catálogo.",
+      "C5: En historial-vacio-390 y dashboard-390 los mismos estados permanecen legibles y navegables a 390 px, con la identificación de la oposición visible y los accesos de vuelta al catálogo, sin scroll horizontal de página (las tablas amplias del Dashboard se desplazan dentro de su contenedor, nunca la página).",
       "C6: En historial-detalle-fijado-1280 y revision-enlace-directo-1280 la revisión histórica muestra el paquete/versiones originarios («Versión histórica fijada: …»), las respuestas persistidas en solo lectura y conserva la navegación de vuelta, tras abrirse incluso por enlace directo con la otra oposición seleccionada."
     ]
   }

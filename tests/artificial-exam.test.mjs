@@ -11,6 +11,8 @@ const authorizedVersions = staticCatalog.exams.map((entry) => ({
   exam_id: entry.id,
   exam_version_id: entry.latestVersion,
   exam_version_path: entry.latestPath,
+  opposition_id: "administrativo",
+  opposition_name: "Administrativo",
 }));
 
 async function fileFetch(path) {

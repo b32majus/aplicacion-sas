@@ -44,6 +44,12 @@ async function migratedDatabase() {
   );
   await db.query("insert into auth.users(id) values ($1)", [userId]);
   await db.query("select set_config('request.jwt.claim.sub', $1, false)", [userId]);
+  // Mapeo administrativo explícito del examen de fixture hacia la única
+  // oposición sembrada; sin fila de mapeo el servidor no materializa falladas.
+  await db.query(
+    "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+    [examId],
+  );
   return db;
 }
 

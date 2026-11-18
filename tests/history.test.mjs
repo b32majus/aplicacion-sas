@@ -207,6 +207,8 @@ test("Seam 2: tras cambiar el catálogo a B, Historial reproduce A sin escribir 
     exam_id: "exam-a",
     exam_version_id: "version-b",
     exam_version_path: "exam-a/versions/version-b.json",
+    opposition_id: "administrativo",
+    opposition_name: "Administrativo",
   }]);
   const replay = await loadHistoryReplay(client, fetchImpl, "/bank/", {
     id: "attempt-a",

@@ -67,10 +67,12 @@ test("Seam 2: Historial abre A en solo lectura aunque el catálogo vigente sea B
     const request = route.request();
     const path = new URL(request.url()).pathname;
     if (path.endsWith("/rpc/get_server_now")) return json(route, attempt.completed_at);
-    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, [{
+    if (path.endsWith("/rpc/get_published_official_exam_versions_v2")) return json(route, [{
       exam_id: packageB.id,
       exam_version_id: packageB.version.id,
       exam_version_path: catalogB.exams[0].latestPath,
+      opposition_id: "administrativo",
+      opposition_name: "Administrativo",
     }]);
     if (request.method() !== "GET") {
       writes.push({ method: request.method(), path });

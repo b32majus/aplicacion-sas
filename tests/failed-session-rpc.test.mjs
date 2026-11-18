@@ -35,6 +35,12 @@ async function migratedDatabase() {
      ) values ($1, $2, $3, 90, $4, $5::jsonb)`,
     [examId, versionId, versionPath, [questionId], JSON.stringify({ [questionId]: "B" })],
   );
+  // Mapeo administrativo explícito del examen de fixture hacia la única
+  // oposición sembrada; sin fila de mapeo el servidor no materializa falladas.
+  await db.query(
+    "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+    [examId],
+  );
   return db;
 }
 
@@ -180,6 +186,10 @@ test("Seam 2: Todas mis falladas conserva orígenes únicos y reanuda la única 
       [secondExamId, secondVersionId, secondVersionPath, [secondQuestionId], JSON.stringify({
         [secondQuestionId]: "B",
       })],
+    );
+    await db.query(
+      "insert into public.opposition_exams(exam_id, opposition_id) values ($1, 'administrativo')",
+      [secondExamId],
     );
     const firstPrincipal = await startPrincipal(db);
     await confirmNormal(db, "40000000-0000-4000-8000-000000000001", firstPrincipal.id, "A");

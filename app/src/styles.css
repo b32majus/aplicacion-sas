@@ -148,7 +148,9 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 
 @media (max-width: 720px) {
   .shell { padding-top: 22px; }
-  .brand { margin-bottom: 42px; }
+  .brand { flex-wrap: wrap; gap: 12px; margin-bottom: 42px; }
+  .brand-mark { flex: 1 1 100%; min-width: 0; }
+  .brand > .text-button { min-width: 0; }
   .pwa-status { align-items: stretch; flex-direction: column; margin-top: -24px; }
   .sync-status { order: 3; flex-basis: 100%; margin-left: 0; text-align: center; }
   .login-layout { grid-template-columns: 1fr; }

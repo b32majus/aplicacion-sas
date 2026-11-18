@@ -121,7 +121,10 @@ async function forcePendingFailure(request, token, exam, question) {
 }
 
 async function startIsolatedFailed(request, token, scopeExamId, sources) {
-  return postRpc(request, token, "start_or_resume_failed_attempt", {
+  // RPC de inicio v2: la oposición Administrativo acompaña al ámbito y a la
+  // cola, que ahora queda acotada a la oposición seleccionada en el servidor.
+  return postRpc(request, token, "start_or_resume_failed_attempt_v2", {
+    p_opposition_id: "administrativo",
     p_scope_exam_id: scopeExamId,
     p_sources: sources,
   });

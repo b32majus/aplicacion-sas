@@ -1,0 +1,15 @@
+{
+  "schema": "metis.train/v1",
+  "train": "SAS v2 · Tren A: oposición, falladas y artificial",
+  "units": [
+    {
+      "ticket": "docs/metis/sas-v2a-prep2-m01-oposicion-oficial.md"
+    },
+    {
+      "ticket": "docs/metis/sas-v2a-prep2-m02-falladas-oposicion.md"
+    },
+    {
+      "ticket": "docs/metis/sas-v2a-prep2-m03-artificial-oposicion.md"
+    }
+  ]
+}

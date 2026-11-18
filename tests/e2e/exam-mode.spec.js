@@ -29,8 +29,9 @@ async function mockExamPersistence(page, { deadlineMs = 60 * 60 * 1000, finishDe
     const path = url.pathname;
 
     if (path.endsWith("/rpc/get_server_now")) return json(route, state.serverNow);
-    if (path.endsWith("/rpc/get_published_official_exam_versions")) return json(route, catalog.exams.map((item) => ({
+    if (path.endsWith("/rpc/get_published_official_exam_versions_v2")) return json(route, catalog.exams.map((item) => ({
       exam_id: item.id, exam_version_id: item.latestVersion, exam_version_path: item.latestPath,
+      opposition_id: "administrativo", opposition_name: "Administrativo",
     })));
     if (request.method() === "GET" && path.endsWith("/attempts")) {
       return json(route, state.attempt ? [state.attempt] : []);

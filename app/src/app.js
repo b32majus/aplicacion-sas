@@ -387,6 +387,15 @@ function renderDashboard() {
   elements["dashboard-content"].hidden = false;
 }
 
+// La ausencia del perfil en el grupo compartido es una restricción prevista,
+// no un fallo de carga. Los errores reales siguen teniendo su aviso técnico.
+function dashboardLoadStatus(error) {
+  if (error?.message?.trim() === "El perfil no pertenece al Dashboard compartido.") {
+    return "El Dashboard comparativo está disponible exclusivamente para los tres participantes. Tu perfil no forma parte de esta comparación.";
+  }
+  return `No se pudo cargar el Dashboard. ${error?.message || "Inténtalo de nuevo más tarde."}`;
+}
+
 async function showDashboard() {
   ++routeSerial;
   study = undefined;
@@ -400,7 +409,7 @@ async function showDashboard() {
     dashboard = await loadDashboard(supabase);
     renderDashboard();
   } catch (error) {
-    showError(elements["dashboard-status"], `No se pudo cargar el Dashboard. ${error.message}`);
+    showError(elements["dashboard-status"], dashboardLoadStatus(error));
   }
 }
 

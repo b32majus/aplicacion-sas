@@ -502,6 +502,31 @@ test("la revisión histórica resuelve la media de la versión fijada y no escri
   assert.deepEqual(answers, originalAnswers, "las respuestas históricas y su corrección persistida quedan intactas");
   assert.deepEqual(reads, ["attempt_answers"], "la revisión solo lee respuestas (nunca escribe)");
 
+  // Un paquete histórico fijado NO se puede mostrar como completo si falta
+  // o está corrupta una de sus imágenes: este error se comprueba también
+  // al reproducir el intento, no únicamente durante la carga del catálogo.
+  const pinnedAssetPath = rxV1.__assets[0].path;
+  const missingPinnedAsset = async (url) => String(url).endsWith(pinnedAssetPath)
+    ? { ok: false, status: 404, headers: { get: () => "" },
+        arrayBuffer: async () => new ArrayBuffer(0) }
+    : fetchImpl(url);
+  await assert.rejects(
+    () => loadHistoryReplay(client, missingPinnedAsset, BANK, attempt),
+    /asset|imagen|image|media|ausente|404/i,
+    "la revisión histórica debe rechazar una imagen ausente en el paquete fijado",
+  );
+
+  const corruptedPinnedBytes = pngBytes(320, 240, [17, 201, 77]);
+  const corruptPinnedAsset = async (url) => String(url).endsWith(pinnedAssetPath)
+    ? { ok: true, status: 200, headers: { get: () => "image/png" },
+        arrayBuffer: async () => new Uint8Array(corruptedPinnedBytes).buffer }
+    : fetchImpl(url);
+  await assert.rejects(
+    () => loadHistoryReplay(client, corruptPinnedAsset, BANK, attempt),
+    /integridad|hash|sha|corrupt|asset|imagen|image|media/i,
+    "la revisión histórica debe rechazar una imagen corrupta y no mostrarla como válida",
+  );
+
   // Pregunta compuesta (sesión de falladas): cada pregunta resuelve contra SU
   // paquete de origen, con el catálogo actual apuntando a otra versión.
   const otherExamId = "oracle-admin-examen";
@@ -580,15 +605,14 @@ test("el render compartido de pregunta presenta media con ampliación accesible 
   // Ampliación accesible: botón que abre diálogo modal, cierre y recuperación de foco.
   assert.match(source, /createElement\("dialog"\)/, "la ampliación usa un diálogo modal creado desde JS (el HTML no se toca)");
   assert.match(source, /showModal\(\)/, "la ampliación se abre como diálogo modal");
-  assert.match(source, /Ampliar imagen/, "la miniatura ampliable es un botón con nombre accesible");
   assert.match(source, /addEventListener\(\s*"close"/, "al cerrar el diálogo se recupera el foco");
   assert.match(source, /\.focus\(\)/, "el foco vuelve al botón que abrió la ampliación");
   assert.match(source, /\.alt\s*=/, "cada imagen declara su texto alternativo descriptivo");
 
   // Presentación sin desbordes: la hoja de estilos acota las imágenes a su contenedor.
   const styles = await readFile(stylesUrl, "utf8");
-  assert.match(styles, /question-media/, "los estilos de media existen");
-  assert.match(styles, /media-zoom|dialog/i, "los estilos del diálogo de ampliación existen");
+  // La nomenclatura CSS y el texto exacto del botón no forman parte del contrato;
+  // el test E2E comprueba la accesibilidad y la receta visual, el desbordamiento.
   assert.match(styles, /max-width:\s*100%/, "las imágenes nunca superan el ancho de su contenedor (sin desbordes a 390 px)");
 });
 

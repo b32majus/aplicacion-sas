@@ -747,10 +747,11 @@ test("escenario integrado: aislamiento por oposición, umbrales de grupo, autori
     const dataBefore = await snapshot();
     const firstRead = await historyRows(participants[0], "administrativo");
     const secondRead = await historyRows(participants[0], "rx-fixture");
+    const repeatedFirstRead = await historyRows(participants[0], "administrativo");
     assert.deepEqual(
+      repeatedFirstRead.map(({ id, opposition_id: oppositionId }) => [id, oppositionId]),
       firstRead.map(({ id, opposition_id: oppositionId }) => [id, oppositionId]),
-      firstRead.map(({ id, opposition_id: oppositionId }) => [id, oppositionId]),
-      "la oposición resuelta de cada intento es estable entre selecciones",
+      "la oposición resuelta de cada intento es estable al volver tras consultar otra oposición",
     );
     assert.equal(secondRead.length, 1, "cambiar la selección solo cambia el filtro, no los intentos");
     await setAuth(participants[0]);

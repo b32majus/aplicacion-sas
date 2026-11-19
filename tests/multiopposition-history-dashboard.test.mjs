@@ -268,6 +268,10 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     await seedProgress(db)(participants[1], admExam.examId, "history-adm-qC", 1);
     await seedProgress(db)(participants[2], admExam.examId, "history-adm-qA", 1);
     await seedProgress(db)(adminUser, admExam.examId, "history-adm-qA", 1);
+    // Tres participantes activos y una pregunta (qD) fallada EXACTAMENTE por
+    // dos de ellos: no está fallada por TODOS, no puede exponerse.
+    await seedProgress(db)(participants[0], admExam.examId, "history-adm-qD", 1);
+    await seedProgress(db)(participants[1], admExam.examId, "history-adm-qD", 1);
     await seedAnswer(db)("31000000-0000-4000-8000-000000000301", "21000000-0000-4000-8000-000000000301", participants[0], "history-adm-qA", "B", true);
     await seedAnswer(db)("31000000-0000-4000-8000-000000000302", "21000000-0000-4000-8000-000000000301", participants[0], "history-adm-qB", "A", false);
     await seedAnswer(db)("31000000-0000-4000-8000-000000000303", "21000000-0000-4000-8000-000000000302", participants[1], "history-adm-qA", "A", false);
@@ -276,6 +280,15 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     await seedAttempt(db)("21000000-0000-4000-8000-000000000309", participants[0], admExam, {
       kind: "failed", strategy: "failed",
       sources: [sourceOf(admExam, "history-adm-qA"), sourceOf(rxExam, "history-rx-qR2")],
+    });
+    // Fallada y artificial SIN fuentes persistidas sobre un exam_id mapeado: se
+    // resuelven exclusivamente por sus fuentes, así que no reciben oposición
+    // aunque su exam_id esté registrado (nunca se reclasifican).
+    await seedAttempt(db)("21000000-0000-4000-8000-000000000318", participants[0], admExam, {
+      kind: "failed", strategy: "failed",
+    });
+    await seedAttempt(db)("21000000-0000-4000-8000-000000000319", participants[0], admExam, {
+      kind: "normal", strategy: "artificial_study", origin: "artificial",
     });
 
     const setAuth = (userId) => db.query("select set_config('request.jwt.claim.sub', $1, false)", [userId]);
@@ -307,6 +320,8 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     assert.equal(byId["21000000-0000-4000-8000-000000000306"].opposition_id, "administrativo", "la sesión de falladas se resuelve por sus fuentes persistidas");
     assert.equal(byId["21000000-0000-4000-8000-000000000307"].opposition_id, "administrativo", "el intento artificial se resuelve por sus fuentes persistidas");
     assert.equal(byId["21000000-0000-4000-8000-000000000309"].opposition_id, null, "un intento mezclado no pertenece a ninguna oposición");
+    assert.equal(byId["21000000-0000-4000-8000-000000000318"].opposition_id, null, "una fallada sin fuentes no se reclasifica por su exam_id mapeado");
+    assert.equal(byId["21000000-0000-4000-8000-000000000319"].opposition_id, null, "un artificial sin fuentes no se reclasifica por su exam_id mapeado");
 
     const p1Adm = await historyRows(participants[0], "administrativo");
     assert.deepEqual(
@@ -368,7 +383,7 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     assert.equal(admDash.personal.official_exams.some(({ exam_id: examId }) => examId === rxExam.examId), false, "ningún examen de la otra oposición aparece en administrativo");
     assert.deepEqual(
       admDash.personal.questions.map(({ question_id: questionId }) => questionId).sort(),
-      ["history-adm-qA", "history-adm-qB"],
+      ["history-adm-qA", "history-adm-qB", "history-adm-qD"],
       "las preguntas personales pertenecen exclusivamente a la oposición solicitada",
     );
     assert.equal(admDash.personal.global.answer_count, 2, "el resumen personal deriva sus respuestas solo de intentos de esa oposición");
@@ -382,6 +397,11 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
       admDash.shared.failed_by_all,
       [{ exam_id: admExam.examId, question_id: "history-adm-qA", failed_profile_count: 3 }],
       "«Falladas por todos» solo incluye la pregunta fallada por TODOS los participantes activos (grupo de 3)",
+    );
+    assert.equal(
+      admDash.shared.failed_by_all.some(({ question_id: questionId }) => questionId === "history-adm-qD"),
+      false,
+      "con tres participantes activos, la pregunta fallada exactamente por dos NO aparece (no está fallada por todos)",
     );
     assert.deepEqual(
       admDash.shared.official_exam_rankings.map(({ alias, rank }) => [alias, rank]),
@@ -401,7 +421,7 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     assert.deepEqual(
       rxDash.shared.failed_by_all,
       [{ exam_id: rxExam.examId, question_id: "history-rx-qR1", failed_profile_count: 2 }],
-      "con dos participantes activos, la pregunta fallada por los dos aparece (umbral 2)",
+      "con dos participantes activos, la pregunta fallada por TODOS ellos aparece (grupo de 2, recuento igual al total)",
     );
     assert.equal(rxDash.shared.failed_by_all.some(({ question_id: questionId }) => questionId === "history-rx-qR2"), false, "la pregunta fallada por uno solo del grupo de dos no se expone");
     assert.deepEqual(rxDash.personal.questions.map(({ question_id: questionId }) => questionId).sort(), ["history-rx-qR1", "history-rx-qR2"], "las preguntas personales de rx-fixture son solo suyas");

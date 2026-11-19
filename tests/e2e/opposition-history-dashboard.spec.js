@@ -262,6 +262,35 @@ test("Historial y Dashboard consultan la oposición seleccionada con estados vac
   expect(writes).toEqual([]);
 });
 
+test("Dashboard poblado a 390 px: sin scroll horizontal de página y tablas desplazándose dentro de su contenedor", async ({ page }) => {
+  const { writes } = await interceptApplication(page);
+  await login(page);
+
+  await page.getByRole("button", { name: "Dashboard" }).click();
+  await expect(page.locator("#dashboard-opposition")).toHaveText("Oposición consultada: Administrativo");
+  await expect(page.getByRole("rowheader", { name: "Participante 1" })).toBeVisible();
+  await expect(page.locator("#dashboard-exams h3")).toHaveText("Examen Administrativo (fixture)");
+
+  // La rejilla del contenido nunca se dimensiona por el ancho mínimo de una
+  // tabla: grid-template-columns: minmax(0, 1fr) reservado en el marcado.
+  expect(await page.locator("#dashboard-content").getAttribute("style"))
+    .toContain("minmax(0, 1fr)");
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator("#dashboard-content")).toBeVisible();
+  const overflow = await page.evaluate(() => {
+    const doc = document.documentElement;
+    const shared = document.getElementById("dashboard-shared");
+    return {
+      pageOverflow: doc.scrollWidth - doc.clientWidth,
+      sharedInternalScroll: shared.scrollWidth > shared.clientWidth,
+    };
+  });
+  expect(overflow.pageOverflow).toBeLessThanOrEqual(0);
+  expect(overflow.sharedInternalScroll).toBe(true);
+  expect(writes).toEqual([]);
+});
+
 test("compatibilidad legacy: endpoint del Historial, RPC v2 por oposición y aviso contextual del Dashboard", async ({ page }) => {
   const { historyRequests, dashboardRequests, writes } = await interceptApplication(page, {
     dashboardError: { status: 400, message: "El perfil no pertenece al Dashboard compartido." },

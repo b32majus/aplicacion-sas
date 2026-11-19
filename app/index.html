@@ -112,7 +112,12 @@
           <p>Tu detalle y los agregados comparables de los participantes con actividad en la oposición consultada, sin compartir respuestas individuales.</p>
         </div>
         <div id="dashboard-status" class="panel compact" aria-live="polite">Cargando Dashboard…</div>
-        <div id="dashboard-content" class="dashboard-content" hidden>
+        <div
+          id="dashboard-content"
+          class="dashboard-content"
+          style="grid-template-columns: minmax(0, 1fr);"
+          hidden
+        >
           <section aria-labelledby="dashboard-global-title">
             <h2 id="dashboard-global-title">Mi actividad global</h2>
             <dl id="dashboard-global" class="summary-grid dashboard-metrics"></dl>

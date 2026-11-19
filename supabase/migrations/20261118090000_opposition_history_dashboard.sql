@@ -7,11 +7,13 @@
 --      security definer que verifica autorización real: el intento debe
 --      pertenecer a `auth.uid()`; para intentos ajenos devuelve NULL sin
 --      revelar nada. Para intentos oficiales y de estudio la oposición sale del
---      mapeo administrativo `public.opposition_exams` por `exam_id`; para
---      falladas y artificiales sale de `public.attempt_question_sources`, y
---      solo cuando TODAS las fuentes resuelven a una misma oposición: un
---      intento mezclado o sin mapeo no pertenece a ninguna oposición y ningún
---      selector lo reclasifica.
+--      mapeo administrativo `public.opposition_exams` por `exam_id`; las
+--      sesiones de falladas y los intentos artificiales (identificados por sus
+--      propios campos kind/origin, nunca por la existencia de fuentes) se
+--      resuelven EXCLUSIVAMENTE por `public.attempt_question_sources`, y solo
+--      cuando TODAS las fuentes resuelven a una misma oposición: un intento
+--      sin fuentes resolubles, mezclado o sin mapeo no pertenece a ninguna
+--      oposición y ningún selector lo reclasifica.
 --   2. La vista se recrea con `create or replace view` (nunca se destruye ni se
 --      renombra): conserva todas sus columnas (incluida `origin`, añadida por
 --      la migración del examen artificial), su `security_invoker = true`
@@ -30,8 +32,10 @@
 --      en `public.app_access_roles` con actividad persistida (intentos) en ESA
 --      oposición: excluye admin/test y participantes sin actividad. «Falladas
 --      por todos» solo aparece cuando la pregunta está fallada por TODOS los
---      participantes activos y hay al menos DOS: con grupo 0 o 1 no se expone
---      nada y ningún agregado permite inferir respuestas de un grupo unitario.
+--      participantes activos (el recuento de quienes la fallaron coincide con
+--      el grupo activo completo) y hay al menos DOS: con grupo 0 o 1 no se
+--      expone nada y ningún agregado permite inferir respuestas de un grupo
+--      unitario.
 --   5. Migración forward-only: no contiene `drop`, ni `alter table`, ni
 --      operaciones sobre filas; no redefine `get_dashboard`, los tres alias de
 --      `shared_profile_aliases`, el registro oficial ni ninguna RPC de
@@ -82,6 +86,8 @@ security definer
 set search_path = ''
 as $$
 declare
+  v_kind text;
+  v_origin text;
   v_source_total integer;
   v_opposition_id text;
 begin
@@ -89,15 +95,32 @@ begin
     return null;
   end if;
 
-  -- Intento compuesto (falladas/artificial): la oposición existe solo cuando
-  -- TODAS sus fuentes persistidas resuelven a la misma oposición. Con fuentes
-  -- mezcladas o sin mapeo administrativo el intento no pertenece a ninguna.
-  select count(*) into v_source_total
-  from public.attempt_question_sources source
-  where source.attempt_id = p_attempt_id
-    and source.user_id = p_owner;
+  -- El TIPO del intento lo deciden sus propios campos (kind/origin), nunca la
+  -- existencia de fuentes: una fallada o un artificial sin fuentes no puede
+  -- heredar la oposición de su exam_id.
+  select attempt.kind, coalesce(attempt.origin, 'official')
+    into v_kind, v_origin
+  from public.attempts attempt
+  where attempt.id = p_attempt_id
+    and attempt.user_id = p_owner;
 
-  if v_source_total > 0 then
+  if v_kind is null then
+    return null;
+  end if;
+
+  -- Falladas y artificiales se resuelven EXCLUSIVAMENTE por sus fuentes
+  -- persistidas: sin fuentes resolubles o con fuentes mezcladas el intento no
+  -- pertenece a ninguna oposición (nunca se reclasifica por su exam_id).
+  if v_kind = 'failed' or v_origin = 'artificial' then
+    select count(*) into v_source_total
+    from public.attempt_question_sources source
+    where source.attempt_id = p_attempt_id
+      and source.user_id = p_owner;
+
+    if v_source_total = 0 then
+      return null;
+    end if;
+
     select mapped.opposition_id into v_opposition_id
     from public.attempt_question_sources source
     join public.opposition_exams mapped
@@ -109,8 +132,8 @@ begin
     return v_opposition_id;
   end if;
 
-  -- Intento no compuesto (oficial o de estudio): decide el mapeo
-  -- administrativo explícito del exam_id, nunca un prefijo ni una etiqueta.
+  -- Intento oficial o de estudio no compuesto: decide el mapeo administrativo
+  -- explícito del exam_id, nunca un prefijo ni una etiqueta.
   select mapped.opposition_id into v_opposition_id
   from public.attempts attempt
   join public.opposition_exams mapped
@@ -430,6 +453,7 @@ begin
     where progress.wrong_count > 0
     group by progress.exam_id, progress.question_id
     having count(distinct progress.user_id) >= 2
+       and count(distinct progress.user_id) = (select count(*) from active_participants)
   )
   select jsonb_build_object(
     'personal', jsonb_build_object(

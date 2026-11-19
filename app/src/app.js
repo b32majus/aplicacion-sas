@@ -7,7 +7,7 @@ import {
   loadPinnedExam,
   loadPublishedCatalog,
 } from "./catalog.js";
-import { loadDashboard, percent, score } from "./dashboard.js";
+import { loadOppositionDashboard, percent, score } from "./dashboard.js";
 import {
   fetchServerClockOffset,
   isActiveExam,
@@ -47,8 +47,9 @@ const ids = [
   "summary-blank-wrap", "summary-blank", "summary-score-wrap", "summary-score", "summary-record",
   "summary-accuracy-wrap", "summary-time-label", "summary-pending-wrap", "summary-mastered-wrap",
   "sync-status", "sync-recovery", "dashboard-button", "dashboard-view", "dashboard-catalog-button",
-  "dashboard-status", "dashboard-content", "dashboard-global", "dashboard-shared", "dashboard-rankings",
-  "dashboard-exams", "dashboard-questions", "dashboard-common", "history-button", "history-view", "history-catalog-button",
+  "dashboard-status", "dashboard-opposition", "dashboard-content", "dashboard-global", "dashboard-shared",
+  "dashboard-rankings", "dashboard-exams", "dashboard-questions", "dashboard-common",
+  "history-button", "history-view", "history-catalog-button", "history-opposition",
   "history-status", "history-list", "history-detail-view", "history-detail-back",
   "history-detail-title", "history-detail-meta", "history-detail-metrics", "history-detail-version",
   "history-questions", "history-detail-error",
@@ -120,6 +121,13 @@ function resolveOppositionSelection() {
   if (selectedOppositionId && selectedOppositionId !== stored) {
     storeOppositionPreference(selectedOppositionId);
   }
+}
+
+// Nombre público de la oposición consultada tal y como lo publicó el servidor
+// en el registro oficial (columna opposition_name de la RPC de metadata),
+// nunca una etiqueta local del frontend.
+function selectedOppositionName() {
+  return catalog.find((entry) => entry?.oppositionId === selectedOppositionId)?.oppositionName || "";
 }
 
 function showOnly(view) {
@@ -218,22 +226,33 @@ function renderHistory() {
     return entry;
   }));
   elements["history-status"].hidden = history.length > 0;
-  elements["history-status"].textContent = history.length ? "" : "Todavía no hay intentos persistidos.";
+  elements["history-status"].textContent = history.length
+    ? ""
+    : `Todavía no hay intentos persistidos en la oposición consultada: ${selectedOppositionName() || "desconocida"}.`;
   elements["history-list"].hidden = history.length === 0;
 }
 
 async function showHistory() {
+  const serial = ++routeSerial;
   study = undefined;
   window.location.hash = "history";
   showOnly(elements["history-view"]);
+  elements["history-opposition"].textContent = "";
   elements["history-status"].hidden = false;
   elements["history-status"].textContent = "Cargando Historial…";
   elements["history-list"].hidden = true;
   try {
-    history = await loadPersonalHistory(supabase);
+    await ensureCatalog();
+    if (serial !== routeSerial) return;
+    // El Historial cargado es el de la oposición seleccionada: el filtro viaja
+    // al servidor sobre la columna opposition_id resuelta en servidor.
+    elements["history-opposition"].textContent = `Oposición consultada: ${selectedOppositionName()}`;
+    history = await loadPersonalHistory(supabase, selectedOppositionId);
+    if (serial !== routeSerial) return;
     renderHistory();
   } catch (error) {
-    showError(elements["history-status"], `No se pudo cargar el Historial personal. ${error.message}`);
+    if (serial !== routeSerial) return;
+    showError(elements["history-status"], `No se pudo cargar el Historial de la oposición consultada. ${error.message}`);
   }
 }
 
@@ -296,17 +315,23 @@ function renderDashboard() {
     metricNode("Preguntas dominadas", global.dominated_count),
   );
 
-  elements["dashboard-shared"].replaceChildren(dashboardTable(
-    ["Participante", "Respuestas", "Acierto", "Estudio", "Nota media", "Mejor nota", "Dominadas"],
-    dashboard.shared.profiles.map((profile) => [
-      profile.alias,
-      profile.answer_count,
-      percent(profile.accuracy),
-      formatActiveTime(profile.study_active_seconds),
-      score(profile.average_score),
-      score(profile.best_score),
-      profile.dominated_count,
-    ]),
+  // La comparativa solo contiene participantes reales con actividad en la
+  // oposición consultada (el servidor excluye admin/test y sin actividad).
+  const oppositionName = selectedOppositionName();
+  const participantCount = dashboard.shared.profiles.length;
+  elements["dashboard-shared"].replaceChildren(...(
+    participantCount ? [dashboardTable(
+      ["Participante", "Respuestas", "Acierto", "Estudio", "Nota media", "Mejor nota", "Dominadas"],
+      dashboard.shared.profiles.map((profile) => [
+        profile.alias,
+        profile.answer_count,
+        percent(profile.accuracy),
+        formatActiveTime(profile.study_active_seconds),
+        score(profile.average_score),
+        score(profile.best_score),
+        profile.dominated_count,
+      ]),
+    )] : [dashboardEmpty(`Todavía no hay participantes con actividad en la oposición consultada: ${oppositionName || "desconocida"}.`)]
   ));
 
   const rankings = new Map();
@@ -320,7 +345,11 @@ function renderDashboard() {
       card.className = "panel compact dashboard-card";
       const title = document.createElement("h3");
       title.textContent = dashboardExamTitle(examId);
-      card.append(title, dashboardTable(
+      // La tabla ancha se desplaza dentro de su contenedor .table-scroll,
+      // nunca por la página.
+      const scroll = document.createElement("div");
+      scroll.className = "table-scroll";
+      scroll.append(dashboardTable(
         ["Posición", "Participante", "Mejor nota", "Tiempo del récord"],
         entries.map((entry) => [
           entry.rank,
@@ -329,33 +358,36 @@ function renderDashboard() {
           formatActiveTime(entry.exam_elapsed_ms / 1000),
         ]),
       ));
+      card.append(title, scroll);
       return card;
-    }) : [dashboardEmpty("Todavía no hay intentos oficiales puntuados para construir un ranking.")]
+    }) : [dashboardEmpty(`Todavía no hay intentos oficiales puntuados en la oposición consultada: ${oppositionName || "desconocida"}.`)]
   ));
 
-  elements["dashboard-exams"].replaceChildren(...dashboard.personal.official_exams.map((exam) => {
-    const card = document.createElement("article");
-    card.className = "panel compact dashboard-card";
-    const title = document.createElement("h3");
-    title.textContent = dashboardExamTitle(exam.exam_id);
-    const latest = exam.latest_attempt_at
-      ? `${formatHistoryDate(exam.latest_attempt_at)} · ${HISTORY_STATUS_LABELS[exam.latest_attempt_status] || exam.latest_attempt_status}${exam.latest_attempt_score == null ? "" : ` · ${score(exam.latest_attempt_score)}`}`
-      : "Sin intentos";
-    const metrics = document.createElement("dl");
-    metrics.className = "dashboard-exam-metrics";
-    metrics.append(
-      metricNode("Intentos", exam.attempt_count),
-      metricNode("Mejor nota", score(exam.best_score)),
-      metricNode("Nota media", score(exam.average_score)),
-      metricNode("Mejor tiempo", exam.best_time_ms == null ? "Sin intentos" : formatActiveTime(exam.best_time_ms / 1000)),
-      metricNode("Tasa de acierto", percent(exam.accuracy)),
-      metricNode("Falladas pendientes", exam.pending_failures),
-      metricNode("Dominadas", exam.dominated_count),
-      metricNode("Último intento", latest),
-    );
-    card.append(title, metrics);
-    return card;
-  }));
+  elements["dashboard-exams"].replaceChildren(...(
+    dashboard.personal.official_exams.length ? dashboard.personal.official_exams.map((exam) => {
+      const card = document.createElement("article");
+      card.className = "panel compact dashboard-card";
+      const title = document.createElement("h3");
+      title.textContent = dashboardExamTitle(exam.exam_id);
+      const latest = exam.latest_attempt_at
+        ? `${formatHistoryDate(exam.latest_attempt_at)} · ${HISTORY_STATUS_LABELS[exam.latest_attempt_status] || exam.latest_attempt_status}${exam.latest_attempt_score == null ? "" : ` · ${score(exam.latest_attempt_score)}`}`
+        : "Sin intentos";
+      const metrics = document.createElement("dl");
+      metrics.className = "dashboard-exam-metrics";
+      metrics.append(
+        metricNode("Intentos", exam.attempt_count),
+        metricNode("Mejor nota", score(exam.best_score)),
+        metricNode("Nota media", score(exam.average_score)),
+        metricNode("Mejor tiempo", exam.best_time_ms == null ? "Sin intentos" : formatActiveTime(exam.best_time_ms / 1000)),
+        metricNode("Tasa de acierto", percent(exam.accuracy)),
+        metricNode("Falladas pendientes", exam.pending_failures),
+        metricNode("Dominadas", exam.dominated_count),
+        metricNode("Último intento", latest),
+      );
+      card.append(title, metrics);
+      return card;
+    }) : [dashboardEmpty(`La oposición consultada (${oppositionName || "desconocida"}) todavía no tiene exámenes oficiales publicados.`)]
+  ));
 
   elements["dashboard-questions"].replaceChildren(...(
     dashboard.personal.questions.length ? [dashboardTable(
@@ -368,9 +400,12 @@ function renderDashboard() {
         percent(question.accuracy),
         { mastered: "Dominada", pending: "Fallada pendiente", never_failed: "Nunca fallada" }[question.mastery],
       ]),
-    )] : [dashboardEmpty("Todavía no hay progreso por pregunta.")]
+    )] : [dashboardEmpty(`Todavía no hay progreso por pregunta en la oposición consultada: ${oppositionName || "desconocida"}.`)]
   ));
 
+  // «Falladas por todos» usa el grupo real de participantes activos de la
+  // oposición: el servidor solo expone preguntas falladas por todos cuando hay
+  // al menos dos participantes activos, nunca con un grupo unitario.
   elements["dashboard-common"].replaceChildren(...(
     dashboard.shared.failed_by_all.length ? dashboard.shared.failed_by_all.map((question) => {
       const item = document.createElement("article");
@@ -378,10 +413,10 @@ function renderDashboard() {
       const title = document.createElement("strong");
       title.textContent = question.question_id;
       const context = document.createElement("span");
-      context.textContent = `${dashboardExamTitle(question.exam_id)} · Fallada por 3 de 3`;
+      context.textContent = `${dashboardExamTitle(question.exam_id)} · Fallada por ${question.failed_profile_count} de ${participantCount}`;
       item.append(title, context);
       return item;
-    }) : [dashboardEmpty("No hay preguntas falladas por los tres participantes.")]
+    }) : [dashboardEmpty(`No hay preguntas falladas por todos los participantes de la oposición consultada: ${oppositionName || "desconocida"}.`)]
   ));
   elements["dashboard-status"].hidden = true;
   elements["dashboard-content"].hidden = false;
@@ -397,18 +432,25 @@ function dashboardLoadStatus(error) {
 }
 
 async function showDashboard() {
-  ++routeSerial;
+  const serial = ++routeSerial;
   study = undefined;
   window.location.hash = "dashboard";
   showOnly(elements["dashboard-view"]);
+  elements["dashboard-opposition"].textContent = "";
   elements["dashboard-status"].hidden = false;
   elements["dashboard-status"].textContent = "Cargando Dashboard…";
   elements["dashboard-content"].hidden = true;
   try {
     await ensureCatalog();
-    dashboard = await loadDashboard(supabase);
+    if (serial !== routeSerial) return;
+    // El Dashboard consultado es el de la oposición seleccionada, mediante la
+    // RPC v2 que resuelve y acota todo en servidor.
+    elements["dashboard-opposition"].textContent = `Oposición consultada: ${selectedOppositionName()}`;
+    dashboard = await loadOppositionDashboard(supabase, selectedOppositionId);
+    if (serial !== routeSerial) return;
     renderDashboard();
   } catch (error) {
+    if (serial !== routeSerial) return;
     showError(elements["dashboard-status"], dashboardLoadStatus(error));
   }
 }

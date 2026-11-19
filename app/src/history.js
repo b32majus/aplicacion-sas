@@ -32,11 +32,16 @@ export function historyDurationSeconds(attempt, now = Date.now()) {
   return Math.max(0, (Math.min(endedAt, deadlineAt) - startedAt) / 1000);
 }
 
-export async function loadPersonalHistory(client) {
-  const { data, error } = await client
-    .from("personal_attempt_history")
-    .select("*")
-    .order("created_at", { ascending: false });
+// Lectura del Historial por oposición: el filtro viaja al SERVIDOR sobre la
+// columna `opposition_id` resuelta en servidor (nunca se reclasifica en
+// cliente). Sin oposición (fallback del enlace directo de revisión) la carga
+// no filtra: recupera el Historial propio completo para encontrar el intento.
+export async function loadPersonalHistory(client, oppositionId) {
+  let query = client.from("personal_attempt_history").select("*");
+  if (oppositionId != null) {
+    query = query.eq("opposition_id", oppositionId);
+  }
+  const { data, error } = await query.order("created_at", { ascending: false });
   if (error) throw error;
   return data;
 }

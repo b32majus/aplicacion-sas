@@ -455,6 +455,77 @@ async function showDashboard() {
   }
 }
 
+function buildQuestionMediaList(question) {
+  return Array.isArray(question?.media)
+    ? question.media.filter((item) => item && typeof item.url === "string" && item.url)
+    : [];
+}
+
+function openQuestionMedia(item, opener) {
+  let dialog = document.getElementById("question-media-dialog");
+  if (!dialog) {
+    dialog = document.createElement("dialog");
+    dialog.id = "question-media-dialog";
+    dialog.className = "media-dialog";
+    dialog.setAttribute("aria-label", "Imagen ampliada");
+    document.body.append(dialog);
+  }
+  const image = document.createElement("img");
+  image.src = item.url;
+  image.alt = item.alt || "";
+  const caption = document.createElement("p");
+  caption.className = "media-dialog-caption";
+  caption.textContent = item.alt || "";
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "secondary media-dialog-close";
+  closeButton.textContent = "Cerrar imagen ampliada";
+  closeButton.addEventListener("click", () => dialog.close());
+  dialog.replaceChildren(image, caption, closeButton);
+  dialog.addEventListener("close", () => {
+    try {
+      opener?.focus();
+    } catch {
+      /* El botón de origen puede haber dejado la vista. */
+    }
+  }, { once: true });
+  dialog.showModal();
+}
+
+// Presenta la media resuelta en el orden declarado. Cada imagen es un botón
+// (toque y teclado) que abre un diálogo modal accesible; el alt es descriptivo
+// y nunca revela la solución.
+function renderQuestionMedia(question, { containerId = null } = {}) {
+  const items = buildQuestionMediaList(question);
+  const container = document.createElement("div");
+  container.className = "question-media";
+  if (containerId) container.id = containerId;
+  if (items.length === 0) {
+    container.hidden = true;
+    return container;
+  }
+  container.replaceChildren(...items.map((item) => {
+    const figure = document.createElement("figure");
+    figure.className = "question-media-figure";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "question-media-item";
+    button.setAttribute("aria-label", `Ampliar imagen: ${item.alt}`);
+    const image = document.createElement("img");
+    image.src = item.url;
+    image.alt = item.alt;
+    image.loading = "lazy";
+    button.append(image);
+    button.addEventListener("click", () => openQuestionMedia(item, button));
+    const caption = document.createElement("figcaption");
+    caption.className = "question-media-alt";
+    caption.textContent = item.alt;
+    figure.append(button, caption);
+    return figure;
+  }));
+  return container;
+}
+
 function renderHistoryQuestions(replay) {
   const latestAnswers = new Map();
   replay.answers.forEach((answer) => latestAnswers.set(answer.question_id, answer));
@@ -469,6 +540,8 @@ function renderHistoryQuestions(replay) {
       : question.displayLabel || `Pregunta ${question.sourceNumber || index + 1}`;
     const title = document.createElement("h2");
     title.textContent = question.text;
+    const media = buildQuestionMediaList(question);
+    const mediaNode = renderQuestionMedia({ ...question, media });
     const options = document.createElement("div");
     options.className = "answer-options";
     options.replaceChildren(...question.options.map((option) => {
@@ -494,7 +567,7 @@ function renderHistoryQuestions(replay) {
       : answer.is_correct
       ? `Correcta · Respuesta oficial: ${answer.correct_option}`
       : `Incorrecta · Respuesta oficial: ${answer.correct_option}`;
-    card.append(source, title, options, state);
+    card.append(source, title, mediaNode, options, state);
     return card;
   });
 }
@@ -843,10 +916,19 @@ async function applyPersistenceResult(result) {
   if (!result || !study || result.attempt.id !== study.attempt.id) return;
   const questions = study.questions;
   const attempt = result.attempt;
+  const currentQuestionId = study.currentQuestion?.id;
   const pinned = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
-  study = attempt.kind === "exam"
+  const nextStudy = attempt.kind === "exam"
     ? new ExamSession(pinned, attempt, result.answers)
     : new NormalStudySession(pinned, attempt, result.answers);
+  // Sincronizar no debe mover al usuario de la pregunta que está viendo: la
+  // respuesta del servidor puede no reflejar aún el último salto local. Un
+  // conflicto real sí reconstruye desde el estado canónico del servidor.
+  if (!result.conflict && currentQuestionId) {
+    const index = nextStudy.questions.findIndex(({ id }) => id === currentQuestionId);
+    if (index >= 0) nextStudy.goTo(index);
+  }
+  study = nextStudy;
   pendingActiveSeconds = persistence?.pendingActiveSeconds || 0;
   if (result.conflict) {
     elements["sync-recovery"].textContent = "Otro dispositivo guardó un avance más reciente. Se ha recargado el estado de Supabase sin mezclar ni sobrescribir cambios. La edición simultánea del mismo intento no está soportada.";
@@ -1353,6 +1435,11 @@ function renderStudy() {
     : "";
   elements["question-label"].textContent = question.displayLabel || `Pregunta ${question.sourceNumber}`;
   elements["question-text"].textContent = question.text;
+  const questionMedia = buildQuestionMediaList(question);
+  const mediaNode = renderQuestionMedia({ ...question, media: questionMedia }, { containerId: "question-media" });
+  const previousMedia = document.getElementById("question-media");
+  if (previousMedia) previousMedia.replaceWith(mediaNode);
+  else elements["question-text"].after(mediaNode);
   elements["answer-options"].replaceChildren(...question.options.map((option) => optionLabel(question, option, latest, corrected)));
   elements["pause-message"].hidden = !paused;
   elements["question-content"].classList.toggle("paused", paused);

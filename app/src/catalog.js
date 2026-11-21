@@ -1,3 +1,8 @@
+import {
+  resolveQuestionMedia,
+  verifyPackageMedia,
+} from "./exam-media.js";
+
 function isSafeLatestPath(path) {
   return typeof path === "string"
     && !path.startsWith("/")
@@ -23,6 +28,16 @@ function validatePublishedVersion(exam, { id, version, path }) {
     throw new Error("La versión fijada del examen no es válida.");
   }
   return { exam, activeQuestions };
+}
+
+function packageWithResolvedMedia(exam, bankBaseUrl) {
+  return {
+    ...exam,
+    questions: (exam.questions ?? []).map((question) => ({
+      ...question,
+      media: resolveQuestionMedia(question, exam, bankBaseUrl),
+    })),
+  };
 }
 
 async function fetchJson(fetchImpl, url, label) {
@@ -89,6 +104,13 @@ export async function loadPublishedCatalog(fetchImpl, bankBaseUrl, authorizedVer
     } catch {
       return null;
     }
+    // La media declarada se valida y verifica contra SU paquete: un asset
+    // ausente, corrupto o una referencia errónea rechaza la carga del catálogo
+    // en lugar de entregar una pregunta aparentemente completa sin su imagen.
+    await verifyPackageMedia(exam, fetchImpl, bankBaseUrl);
+    const resolvedExam = packageWithResolvedMedia(exam, bankBaseUrl);
+    const resolvedById = new Map(resolvedExam.questions.map((question) => [question.id, question]));
+    const resolvedActiveQuestions = activeQuestions.map((question) => resolvedById.get(question.id));
     return {
       id: exam.id,
       title: exam.title,
@@ -98,8 +120,8 @@ export async function loadPublishedCatalog(fetchImpl, bankBaseUrl, authorizedVer
       versionPath: entry.latestPath,
       oppositionId: opposition.oppositionId,
       oppositionName: opposition.oppositionName,
-      questions: activeQuestions,
-      package: exam,
+      questions: resolvedActiveQuestions,
+      package: resolvedExam,
     };
   }));
 
@@ -141,9 +163,18 @@ export async function loadPinnedExam(fetchImpl, bankBaseUrl, attempt) {
     `${bankBaseUrl}${attempt.exam_version_path}`,
     "la versión fijada del examen",
   );
-  return validatePublishedVersion(exam, {
+  const { activeQuestions } = validatePublishedVersion(exam, {
     id: attempt.exam_id,
     version: attempt.exam_version_id,
     path: attempt.exam_version_path,
   });
+  // La revisión histórica re-verifica los bytes de la versión FIJADA: nunca
+  // presenta como completa una pregunta cuya imagen falta o está corrupta.
+  await verifyPackageMedia(exam, fetchImpl, bankBaseUrl);
+  const resolvedExam = packageWithResolvedMedia(exam, bankBaseUrl);
+  const resolvedById = new Map(resolvedExam.questions.map((question) => [question.id, question]));
+  return {
+    exam: resolvedExam,
+    activeQuestions: activeQuestions.map((question) => resolvedById.get(question.id)),
+  };
 }

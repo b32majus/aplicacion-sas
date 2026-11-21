@@ -26,6 +26,9 @@ export default defineConfig(({ command, mode }) => {
         registerType: "prompt",
         injectManifest: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+          // Los PNG oficiales RX, sus hashes y el banco entero se descargan
+          // bajo demanda: nunca se precargan en la caché del shell PWA.
+          globIgnores: ["**/data/exams/**"],
         },
         manifest: {
           id: appBase,

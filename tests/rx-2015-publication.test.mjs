@@ -10,9 +10,9 @@ const cancelled = {
 };
 test("RX 2015: los dos ejercicios conservan 6 anuladas y sustitución ordenada con 3 reservas", () => {
  const cat=load("catalog.json");
- assert.equal(cat.exams.length,16);
+ assert.equal(cat.exams.length,19);
  assert.equal(cat.exams.filter(e=>e.id.startsWith("sas-administrativo-")).length,12);
- assert.equal(cat.exams.filter(e=>e.id.startsWith("sas-radiodiagnostico-")).length,4);
+ assert.equal(cat.exams.filter(e=>e.id.startsWith("sas-radiodiagnostico-")).length,7);
  for(const id of ids){
   const c=cat.exams.find(e=>e.id===id);
   assert.ok(c,id);

@@ -24,9 +24,9 @@ async function fileFetch(path) {
 
 test("muestra solo las versiones publicables actuales producidas por T01", async () => {
   const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
-  assert.equal(catalog.length, 14);
+  assert.equal(catalog.length, 16);
   assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "administrativo").length, 12);
-  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 2);
+  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 4);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2018-turno-libre"), true);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2025-turno-libre"), true);
   assert.equal(catalog.every(({ activeCount, questions }) => activeCount === questions.length), true);
@@ -34,7 +34,7 @@ test("muestra solo las versiones publicables actuales producidas por T01", async
   assert.equal(catalog.every(({ versionPath }) => versionPath.includes("/versions/")), true);
   assert.deepEqual(
     [...new Set(catalog.map(({ questions }) => questions.length))].sort((a, b) => a - b),
-    [75, 149, 150],
+    [75, 147, 149, 150],
   );
 });
 

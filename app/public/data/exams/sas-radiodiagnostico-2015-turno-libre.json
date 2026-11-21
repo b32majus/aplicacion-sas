@@ -1,0 +1,4684 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-radiodiagnostico-2015-turno-libre",
+  "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2015 - Turno Libre (OEP 2013-2015)",
+  "category": "Técnico/a Especialista en Radiodiagnóstico",
+  "access": "Turno Libre",
+  "variant": null,
+  "year": 2015,
+  "durationMinutes": 180,
+  "source": {
+    "pdf": "sas-radiodiagnostico-2015-turno-libre.pdf",
+    "sha256": "9ec7cccb11dc7d8bce81206fcea32b89b78910a2efefdf276b9d611f68e0972e",
+    "answerKeyPage": 33
+  },
+  "version": {
+    "id": "b3d4c1b4bdc3ea00b67396230fede5946424bef8e5ed2da1ecc6d1e0721486a0",
+    "contentSha256": "35d22c7686a374c943ed7cc71d9aeb12479c3703d419c4dc6fea37dd20abb980"
+  },
+  "questions": [
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q001",
+      "sourceNumber": 1,
+      "text": "La misión de garantizar la soberanía e independencia de España la atribuye nuestra Constitución a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Rey"
+        },
+        {
+          "id": "B",
+          "text": "Las Fuerzas Armadas"
+        },
+        {
+          "id": "C",
+          "text": "El Gobierno de la Nación"
+        },
+        {
+          "id": "D",
+          "text": "El Parlamento de la Nación"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q002",
+      "sourceNumber": 2,
+      "text": "El órgano de control externo de la actividad económica y presupuestaria de la Junta de Andalucía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Consejo Económico y Social"
+        },
+        {
+          "id": "B",
+          "text": "El Defensor del Pueblo"
+        },
+        {
+          "id": "C",
+          "text": "La Cámara de Cuentas"
+        },
+        {
+          "id": "D",
+          "text": "El Parlamento"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q003",
+      "sourceNumber": 3,
+      "text": "¿Cuál es la identificación de la Ley General de Sanidad?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 14/1985, de 25 de abril."
+        },
+        {
+          "id": "B",
+          "text": "Ley 15/1986, de 25 de abril."
+        },
+        {
+          "id": "C",
+          "text": "Ley 14/1986, de 25 de abril."
+        },
+        {
+          "id": "D",
+          "text": "Ley 14/1986, de 26 de abril."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q004",
+      "sourceNumber": 4,
+      "text": "De conformidad con el Decreto 208/2015 el Servicio Andaluz de Salud es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un Organismo Autónomo independiente"
+        },
+        {
+          "id": "B",
+          "text": "Un Organismo Autónomo adscrito a la Consejería de Salud"
+        },
+        {
+          "id": "C",
+          "text": "Una Agencia administrativa independiente"
+        },
+        {
+          "id": "D",
+          "text": "Una Agencia administrativa adscrita a la Consejería de Salud"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q005",
+      "sourceNumber": 5,
+      "text": "Según el Decreto 197/2007, el marco territorial para la prestación de la atención primaria de salud se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Distrito de atención primaria"
+        },
+        {
+          "id": "B",
+          "text": "Área de Salud"
+        },
+        {
+          "id": "C",
+          "text": "Zona Básica de Salud"
+        },
+        {
+          "id": "D",
+          "text": "Dispositivo de Apoyo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 2
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q006",
+      "sourceNumber": 6,
+      "text": "El Decreto 197/2007 regula la estructura, organización y funcionamiento de los servicios de atención primaria de salud en el ámbito del S.A.S.. En él no se contempla como órgano directivo unipersonal:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Dirección Gerencia"
+        },
+        {
+          "id": "B",
+          "text": "La Dirección de Salud"
+        },
+        {
+          "id": "C",
+          "text": "La Dirección de Cuidados de Enfermería"
+        },
+        {
+          "id": "D",
+          "text": "La Dirección de Gestión de los Recursos Humanos"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q007",
+      "sourceNumber": 7,
+      "text": "El Decreto 197/2007, no menciona como Centro de Atención Primaria:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Centro de Salud"
+        },
+        {
+          "id": "B",
+          "text": "El Consultorio local"
+        },
+        {
+          "id": "C",
+          "text": "El Consultorio auxiliar"
+        },
+        {
+          "id": "D",
+          "text": "El Ambulatorio"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q008",
+      "sourceNumber": 8,
+      "text": "De conformidad con la Ley Orgánica de Protección de Datos \"todo conjunto de datos de carácter personal, cualquiera que fuere la forma o modalidad de su creación, almacenamiento, organización y acceso”, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Archivo"
+        },
+        {
+          "id": "B",
+          "text": "Fichero"
+        },
+        {
+          "id": "C",
+          "text": "Base de datos"
+        },
+        {
+          "id": "D",
+          "text": "Datos de privacidad"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q009",
+      "sourceNumber": 9,
+      "text": "La Ley para la promoción de la igualdad de género en Andalucía se identifica como:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ley 12/2007"
+        },
+        {
+          "id": "B",
+          "text": "Ley 13/2007"
+        },
+        {
+          "id": "C",
+          "text": "Ley orgánica 3/2007"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de ellas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q010",
+      "sourceNumber": 10,
+      "text": "Cuando un personal estatutario fijo incurre en incapacidad temporal, su situación administrativa mientras perdure la misma es la de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Suspensión temporal de funciones"
+        },
+        {
+          "id": "B",
+          "text": "Licencia por enfermedad"
+        },
+        {
+          "id": "C",
+          "text": "Servicio activo"
+        },
+        {
+          "id": "D",
+          "text": "Excedencia forzosa temporal"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q011",
+      "sourceNumber": 11,
+      "text": "Una de las siguientes afirmaciones no se encuentra entre los principios básicos consignados como tal en la Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Todo paciente o usuario tiene derecho a negarse al tratamiento, ya sea verbalmente o por escrito"
+        },
+        {
+          "id": "B",
+          "text": "El paciente o usuario tiene derecho a decidir libremente, después de recibir la información adecuada, entre las opciones clínicas disponibles."
+        },
+        {
+          "id": "C",
+          "text": "Toda actuación en el ámbito de la sanidad requiere, con carácter general, el previo consentimiento de los pacientes o usuarios."
+        },
+        {
+          "id": "D",
+          "text": "El consentimiento, que debe obtenerse después de que el paciente reciba una información adecuada, se hará por escrito en los supuestos previstos en la Ley."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q012",
+      "sourceNumber": 12,
+      "text": "Según se recoge en el artículo 16 de la Ley 31/95 de Prevención de Riesgos Laborales, el Plan de Prevención de Riesgos Laborales deberá incluir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La estructura organizativa de la empresa."
+        },
+        {
+          "id": "B",
+          "text": "Las responsabilidades, las funciones, las prácticas, los procedimientos y los procesos."
+        },
+        {
+          "id": "C",
+          "text": "Los recursos necesarios para realizar la acción de prevención de riesgos en la empresa, en los términos que reglamentariamente se establezcan."
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q013",
+      "sourceNumber": 13,
+      "text": "A los solos efectos de la organización y gestión de la prevención de riesgos laborales en sus Centros Asistenciales, el ámbito territorial del Servicio Andaluz de Salud se divide en demarcaciones geográficas que se denominan:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Unidades de Prevención."
+        },
+        {
+          "id": "B",
+          "text": "Áreas de Prevención de Riesgos Laborales."
+        },
+        {
+          "id": "C",
+          "text": "Comités de Seguridad y Salud"
+        },
+        {
+          "id": "D",
+          "text": "Áreas de Seguridad y Salud Laboral"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q014",
+      "sourceNumber": 14,
+      "text": "Cuando exista riesgo por exposición a agentes biológicos para los que haya vacunas eficaces, según se indica en el Real Decreto 664/97 sobre la protección de los trabajadores contra los riesgos relacionados con la exposición a agentes biológicos durante el trabajo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las vacunas no deben ponerse a disposición de los trabajadores."
+        },
+        {
+          "id": "B",
+          "text": "El ofrecimiento al trabajador de la medida correspondiente y su aceptación de la misma deberán constar por escrito."
+        },
+        {
+          "id": "C",
+          "text": "Se informará a los trabajadores exclusivamente de los inconvenientes de la vacunación."
+        },
+        {
+          "id": "D",
+          "text": "El ofrecimiento al trabajador de la medida correspondiente y su aceptación de la misma deberán constar por escrito en caso de agentes biológicos del grupo 4."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q015",
+      "sourceNumber": 15,
+      "text": "La Organización Mundial de la Salud (OMS) establece cinco momentos para la Higiene de Manos, que son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Antes de entrar en la habitación,antes de tocar al paciente, antes de realizar una tarea limpia/aséptica, después del riesgo de exposición a líquidos corporales y después de tocar al paciente."
+        },
+        {
+          "id": "B",
+          "text": "No son cinco momentos, son los cuatro siguientes: Antes de entrar en la habitación, antes de realizar una tarea limpia/aséptica, después del riesgo de exposición a líquidos corporales y después de tocar al paciente."
+        },
+        {
+          "id": "C",
+          "text": "Antes de tocar al paciente, antes de realizar una tarea limpia/aséptica, después del riesgo de exposición a líquidos corporales,después de tocar al paciente y después del contacto con el entorno del paciente."
+        },
+        {
+          "id": "D",
+          "text": "Antes de tocar al paciente, después del riesgo de exposición a líquidos corporales,después de tocar al paciente, después del contacto con el entorno del paciente y antes de abandonar el puesto de trabajo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q016",
+      "sourceNumber": 16,
+      "text": "¿Qué significa el número 1 como digito en el sistema binario?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ese valor numérico"
+        },
+        {
+          "id": "B",
+          "text": "El valor de la letra A"
+        },
+        {
+          "id": "C",
+          "text": "Estado de encendido"
+        },
+        {
+          "id": "D",
+          "text": "Estado de apagado"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q017",
+      "sourceNumber": 17,
+      "text": "¿Qué sistema emplean los ordenadores como medio de procesado de información?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Binario"
+        },
+        {
+          "id": "B",
+          "text": "Hexadecimal"
+        },
+        {
+          "id": "C",
+          "text": "Decimal"
+        },
+        {
+          "id": "D",
+          "text": "Ninguno de los anteriores"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q018",
+      "sourceNumber": 18,
+      "text": "¿Qué componentes del sistema informático esta formado por los elementos físicos con los que se contruye el ordenador?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hardware"
+        },
+        {
+          "id": "B",
+          "text": "SOFTWARE"
+        },
+        {
+          "id": "C",
+          "text": "CPU"
+        },
+        {
+          "id": "D",
+          "text": "WINDOWS"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q019",
+      "sourceNumber": 19,
+      "text": "¿Qué elementos de estos no es Hardware?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Teclado"
+        },
+        {
+          "id": "B",
+          "text": "Windows 8.0"
+        },
+        {
+          "id": "C",
+          "text": "Monitor"
+        },
+        {
+          "id": "D",
+          "text": "Impresora"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q020",
+      "sourceNumber": 20,
+      "text": "La tasa media recibida por la radiación de fondo es aproximadamente",
+      "options": [
+        {
+          "id": "A",
+          "text": "0,01mSv"
+        },
+        {
+          "id": "B",
+          "text": "0,05mSv"
+        },
+        {
+          "id": "C",
+          "text": "0,1mSv"
+        },
+        {
+          "id": "D",
+          "text": "0,5mSv"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q021",
+      "sourceNumber": 21,
+      "text": "¿Cuál de estas informaciones de la operatividad del técnico no es correcta en la protección radiológica del paciente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una vez posicionado el paciente y centrado el estudio, el técnico debe diafragmar de manera correcta"
+        },
+        {
+          "id": "B",
+          "text": "La distancia foco-piel nunca debe ser menor a 25 cm"
+        },
+        {
+          "id": "C",
+          "text": "La zona de vestuario de los pacientes debe estar blindada por la parte adyacente a la sala de examen"
+        },
+        {
+          "id": "D",
+          "text": "No debe haber ningún paciente en la sala cuando se explora a otro"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q022",
+      "sourceNumber": 22,
+      "text": "¿Cuál es el objetivo principal de colocación de un filtro en el haz primario de un tubo de RX?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aumentar el número de fotones de alta energía que recibe el paciente"
+        },
+        {
+          "id": "B",
+          "text": "Disminuir el número de fotones de alta energía que recibe el paciente"
+        },
+        {
+          "id": "C",
+          "text": "Aumentar el número de fotones de baja energía que recibe el paciente"
+        },
+        {
+          "id": "D",
+          "text": "Disminuir el número de fotones de baja energía que recibe el paciente"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q023",
+      "sourceNumber": 23,
+      "text": "De los siguientes factores: ¿Cuál es el que no afecta a la dosis recibida por el paciente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tamaño del foco"
+        },
+        {
+          "id": "B",
+          "text": "KV"
+        },
+        {
+          "id": "C",
+          "text": "mAs"
+        },
+        {
+          "id": "D",
+          "text": "Filtración"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q024",
+      "sourceNumber": 24,
+      "text": "Los efectos biológicos estocásticos producidos por las radiacioines ionizantes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se caracterizan por una relación dosis/efecto de naturaleza probabilística"
+        },
+        {
+          "id": "B",
+          "text": "Se caracterizan por una relación dosis/efecto correlacionable"
+        },
+        {
+          "id": "C",
+          "text": "Su gravedad depende de la dosis recibida"
+        },
+        {
+          "id": "D",
+          "text": "A y C son ciertas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q025",
+      "sourceNumber": 25,
+      "text": "¿Cuál de los siguientes tejidos es mas radiosensible?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cardíaco"
+        },
+        {
+          "id": "B",
+          "text": "Hepático"
+        },
+        {
+          "id": "C",
+          "text": "Mucosa"
+        },
+        {
+          "id": "D",
+          "text": "Renal"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q026",
+      "sourceNumber": 26,
+      "text": "¿¿A que grupo de riesgo pertenecen las personas que reciben dosis bajas o muy bajas de radiación, en espacios de tiempo relativamente largos o intermedios con una exposición a un gran volumen corporal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "De alto riesgo"
+        },
+        {
+          "id": "B",
+          "text": "De riesgo intermedio"
+        },
+        {
+          "id": "C",
+          "text": "De bajo riesgo"
+        },
+        {
+          "id": "D",
+          "text": "De riesgo especial"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q027",
+      "sourceNumber": 27,
+      "text": "¿De que dependen esencialmente los factores determinantes del riesgo frente a radiaciones ionizantes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "De la dosis de Absorción"
+        },
+        {
+          "id": "B",
+          "text": "Del volumen irradiado"
+        },
+        {
+          "id": "C",
+          "text": "Del tiempo de exposición a la radiación"
+        },
+        {
+          "id": "D",
+          "text": "Todos los anteriores"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q028",
+      "sourceNumber": 28,
+      "text": "¿La radiación secundaria que se escapa por la carcasa del tubo de rx es radiación?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dispersa"
+        },
+        {
+          "id": "B",
+          "text": "Difusa"
+        },
+        {
+          "id": "C",
+          "text": "De fuga"
+        },
+        {
+          "id": "D",
+          "text": "Útil"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q029",
+      "sourceNumber": 29,
+      "text": "A una señora se le ha solicitado una Tomografia Axial computerizada, (TAc). En la realización de éste, ¿debemos colimar el área de estudio?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En los TAC no se usa el colimador."
+        },
+        {
+          "id": "B",
+          "text": "No, puesto que la colimación en el TAC no reduce la dosis que recibe el paciente."
+        },
+        {
+          "id": "C",
+          "text": "Si, la colimación reduce la dosis que recibe el paciente al disminuir el área de tejido irradiada, mejorando también el contraste."
+        },
+        {
+          "id": "D",
+          "text": "Si, la colimación reduce la dosis que recibe el paciente al disminuir el área de tejido irradiada, aunque disminuye también el contraste."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q030",
+      "sourceNumber": 30,
+      "text": "En el estudio del TAC y con respecto a la calidad de la imagen, la resolución espacial será mayor cuanto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mayor sea el número de píxeles."
+        },
+        {
+          "id": "B",
+          "text": "Menor sea el número de píxeles."
+        },
+        {
+          "id": "C",
+          "text": "Menos detectores tenga el equipo."
+        },
+        {
+          "id": "D",
+          "text": "Menor sea el contraste del sujeto."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q031",
+      "sourceNumber": 31,
+      "text": "Las ventajas que presenta la TC con respecto a la radiología convencional es que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No hay superposición de imágenes."
+        },
+        {
+          "id": "B",
+          "text": "No hay radiación difusa."
+        },
+        {
+          "id": "C",
+          "text": "Una sola exposición permite diversas representaciones al poder cambiar las ventanas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y C son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q032",
+      "sourceNumber": 32,
+      "text": "Para la correcta posición del paciente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se debe inmovilizar siempre."
+        },
+        {
+          "id": "B",
+          "text": "Inmovilizar el cuerpo y cabeza siempre que se sospeche que el enfermo puede moverse."
+        },
+        {
+          "id": "C",
+          "text": "No es necesario si el TC es de nueva generación."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es correcta."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q033",
+      "sourceNumber": 33,
+      "text": "Cual de estas afirmaciones son ciertas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En los equipos de TC de primera generación se utilizaba una matriz curva de detectores."
+        },
+        {
+          "id": "B",
+          "text": "En los equipos de TC de segunda y tercera generación se utiliza una matriz recta de detectores."
+        },
+        {
+          "id": "C",
+          "text": "En los equipos de tercera y cuarta generación se utiliza una matriz curva de detectores."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es cierta."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q034",
+      "sourceNumber": 34,
+      "text": "¿A qué se llama en TC anchura de ventana?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A la escala de grises."
+        },
+        {
+          "id": "B",
+          "text": "A la escala de blancos."
+        },
+        {
+          "id": "C",
+          "text": "A la escala de negros."
+        },
+        {
+          "id": "D",
+          "text": "Al negro del aire."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q035",
+      "sourceNumber": 35,
+      "text": "¿Qué tipo de contraste es el utilizado en el TC?:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Contraste ferromagnetico."
+        },
+        {
+          "id": "B",
+          "text": "Contraste yodado hidrosoluble."
+        },
+        {
+          "id": "C",
+          "text": "Contrastes baritados."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es cierta."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q036",
+      "sourceNumber": 36,
+      "text": "Los cortes axiales en una exploración con TAC corresponden con:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Plano sagital medio."
+        },
+        {
+          "id": "B",
+          "text": "Plano transversal."
+        },
+        {
+          "id": "C",
+          "text": "Plano coronal medio."
+        },
+        {
+          "id": "D",
+          "text": "Plano anterosuperior."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q037",
+      "sourceNumber": 37,
+      "text": "La matriz de detectores en el TAC de tercera generación es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lineal"
+        },
+        {
+          "id": "B",
+          "text": "Circular"
+        },
+        {
+          "id": "C",
+          "text": "En forma de corona"
+        },
+        {
+          "id": "D",
+          "text": "Curvilínea"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q038",
+      "sourceNumber": 38,
+      "text": "Para minimizar las dosis al paciente en Radiología Intervencionista, se recomienda:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Minimizar los tiempos de exposición."
+        },
+        {
+          "id": "B",
+          "text": "Subir los kilovoltajes y bajar los miliamperajes, alcanzando un compromiso entre calidad de imagen y baja dosis a paciente."
+        },
+        {
+          "id": "C",
+          "text": "Alejar el tubo de Rx del paciente y acercar el intensificador de imagen al paciente."
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q039",
+      "sourceNumber": 39,
+      "text": "Los equipos de Radiología Intervencionista:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Son Rx de baja energía (hasta 150 kVp)"
+        },
+        {
+          "id": "B",
+          "text": "b) Son Rx de alta energía (3 a 15 MV)"
+        },
+        {
+          "id": "C",
+          "text": "Son haces de electrones de alta energía (3 a 12 MeV)"
+        },
+        {
+          "id": "D",
+          "text": "Todas son falsas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q040",
+      "sourceNumber": 40,
+      "text": "En la Flebografía renal, la cateterización se realiza, generalmente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A través de una arteria del miembro superior hasta llegar a la vena renal."
+        },
+        {
+          "id": "B",
+          "text": "A través de una vena del miembro superior hasta llegar a la vena renal."
+        },
+        {
+          "id": "C",
+          "text": "A través del conducto urinario, uréter y hasta la vena renal."
+        },
+        {
+          "id": "D",
+          "text": "Realizando una Punción lumbar hasta la vena renal."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q041",
+      "sourceNumber": 41,
+      "text": "¿Qué pH suele tener el estómago humano en condiciones normales?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q042",
+      "sourceNumber": 42,
+      "text": "En los estudios de colon el contraste negativa (aire) se administra mediante:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Administrando un producto efervescente por vía oral."
+        },
+        {
+          "id": "B",
+          "text": "Administrando cápsulas de Flatoril."
+        },
+        {
+          "id": "C",
+          "text": "Insuflándolo por vía rectal."
+        },
+        {
+          "id": "D",
+          "text": "El aire es un contraste positivo."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q043",
+      "sourceNumber": 43,
+      "text": "La vesícula biliar recibe su contenido (bilis) a través de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conducto cístico."
+        },
+        {
+          "id": "B",
+          "text": "Conducto de Wharton."
+        },
+        {
+          "id": "C",
+          "text": "Conducto duodenal."
+        },
+        {
+          "id": "D",
+          "text": "Conducto de Wirsung."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q044",
+      "sourceNumber": 44,
+      "text": "En una sala tele comandada acaban de diagnosticar diverticulosis colónica. ¿Cuál de las siguientes pruebas es más probable que se la haya realizado al paciente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Enema opaco."
+        },
+        {
+          "id": "B",
+          "text": "CPRE (Colangio-pancreatografía retrógrada endoscópica)."
+        },
+        {
+          "id": "C",
+          "text": "Cistografía."
+        },
+        {
+          "id": "D",
+          "text": "TEGD."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q045",
+      "sourceNumber": 45,
+      "text": "¿Cuál de la siguiente es una glándula aneja del tubo digestivo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El bazo"
+        },
+        {
+          "id": "B",
+          "text": "Las glándulas sudoríparas"
+        },
+        {
+          "id": "C",
+          "text": "El páncreas"
+        },
+        {
+          "id": "D",
+          "text": "El apéndice vermiforme"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q046",
+      "sourceNumber": 46,
+      "text": "Respecto al páncreas, ¿cuál de las siguientes opciones es falsa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se encuentra entre el duodeno y el bazo"
+        },
+        {
+          "id": "B",
+          "text": "La cabeza es la porción más ancha del órgano"
+        },
+        {
+          "id": "C",
+          "text": "Se localiza por encima del píloro"
+        },
+        {
+          "id": "D",
+          "text": "La cola termina cerca del bazo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q047",
+      "sourceNumber": 47,
+      "text": "De las siguientes porciones o partes, ¿cuál pertenece a la nefrona?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Glomérulo"
+        },
+        {
+          "id": "B",
+          "text": "Tubulo proximal"
+        },
+        {
+          "id": "C",
+          "text": "Asa de Henle"
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q048",
+      "sourceNumber": 48,
+      "text": "¿Cual de estos túbulos son productores de espermatozoides?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Túbulos rectos"
+        },
+        {
+          "id": "B",
+          "text": "Red de Haller"
+        },
+        {
+          "id": "C",
+          "text": "Túbulos efectores"
+        },
+        {
+          "id": "D",
+          "text": "Ninguno de los anteriores"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q049",
+      "sourceNumber": 49,
+      "text": "¿Cual de las siguientes estructuras forman parte de las glándulas accesorias del aparato genital masculino?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Vesículas seminales"
+        },
+        {
+          "id": "B",
+          "text": "Próstata"
+        },
+        {
+          "id": "C",
+          "text": "Glándulas de Crowper"
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q050",
+      "sourceNumber": 50,
+      "text": "¿Qué exploración está indicada si tenemos sospecha de que hay reflujo vesical?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Urografía I.V."
+        },
+        {
+          "id": "B",
+          "text": "Cistografía"
+        },
+        {
+          "id": "C",
+          "text": "Urografía minutada"
+        },
+        {
+          "id": "D",
+          "text": "Nefrotomografía"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q051",
+      "sourceNumber": 51,
+      "text": "¿ Que es una jaula de Faraday?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El sistema de aislamiento de una sala de R.M."
+        },
+        {
+          "id": "B",
+          "text": "La carcasa que rodea el iman"
+        },
+        {
+          "id": "C",
+          "text": "Un lugar especial para dejar las antenas que no se utilicen."
+        },
+        {
+          "id": "D",
+          "text": "El recipiente de almacenaje de los elementos criogenos."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q052",
+      "sourceNumber": 52,
+      "text": "Se consideran contrastes positivos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las sales de bario."
+        },
+        {
+          "id": "B",
+          "text": "Los compuestos yodados."
+        },
+        {
+          "id": "C",
+          "text": "Los gases."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas a y b son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q053",
+      "sourceNumber": 53,
+      "text": "El Gadolinio es un agente de contraste, que según su mecanismo de acción, se clasifica como:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Contrastes Negativos."
+        },
+        {
+          "id": "B",
+          "text": "Contrastes Positivos."
+        },
+        {
+          "id": "C",
+          "text": "Contrastes Neutro."
+        },
+        {
+          "id": "D",
+          "text": "a y b son verdaderas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q054",
+      "sourceNumber": 54,
+      "text": "Para que se utiliza el contraste intravenoso en tomografia axial computerizada (TAC):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para resaltar las zonas patológicas."
+        },
+        {
+          "id": "B",
+          "text": "Para visualizar vasos."
+        },
+        {
+          "id": "C",
+          "text": "Para diferenciar patológias según captación."
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q055",
+      "sourceNumber": 55,
+      "text": "Las técnicas Doppler de ultrasonidos tienen su indicación principal en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La colecistitis."
+        },
+        {
+          "id": "B",
+          "text": "El estudio articular."
+        },
+        {
+          "id": "C",
+          "text": "El estudio de los vasos."
+        },
+        {
+          "id": "D",
+          "text": "Pacientes poco colaboradores."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q056",
+      "sourceNumber": 56,
+      "text": "El principio fundamental de todos los ultrasonidos médicos es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El efecto ionizante."
+        },
+        {
+          "id": "B",
+          "text": "El efecto piezoeléctrico."
+        },
+        {
+          "id": "C",
+          "text": ")El efecto fotoeléctrico."
+        },
+        {
+          "id": "D",
+          "text": "El efecto fotográfico."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q057",
+      "sourceNumber": 57,
+      "text": "-En la imagen ecográfica de un quiste hepático simple.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Veremos una imagen redondeada hipoecoica, con multitud de ecos internos,con sombra acústica posterior."
+        },
+        {
+          "id": "B",
+          "text": "Veremos una imagen redondeada anecoica, bien delimitada con sombra acústica posterior."
+        },
+        {
+          "id": "C",
+          "text": "Veremos una imagen redondeada, anecoica, bien delimitada, con refuerzo posterior."
+        },
+        {
+          "id": "D",
+          "text": "Todas son falsas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q058",
+      "sourceNumber": 58,
+      "text": "Porque en una exploración ecográfica para estudio ginecológico, se debe tener la vejiga de la paciente a máxima repleción",
+      "options": [
+        {
+          "id": "A",
+          "text": "Porque se debe visualizar bien las paredes de la vejiga, sobre todo en su parte posterior"
+        },
+        {
+          "id": "B",
+          "text": ".Porque comprime todo el sistema ginecológico, viendo una estructuración mucho más uniforme."
+        },
+        {
+          "id": "C",
+          "text": "Porque la utilizaremos de ventana ecográfica y asi tendremos una mejor información al tener una mejor señal de retorno."
+        },
+        {
+          "id": "D",
+          "text": "Porque es mejor."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q059",
+      "sourceNumber": 59,
+      "text": "Indicar el órgano que se utiliza como ventana ecográfica para el estudio del riñón derecho.",
+      "options": [
+        {
+          "id": "A",
+          "text": "El estómago."
+        },
+        {
+          "id": "B",
+          "text": "El hígado."
+        },
+        {
+          "id": "C",
+          "text": "El páncreas."
+        },
+        {
+          "id": "D",
+          "text": "El bazo."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q060",
+      "sourceNumber": 60,
+      "text": "Que técnica de imagen debe emplearse para el estudio del manguito de los rotadores:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ecografia"
+        },
+        {
+          "id": "B",
+          "text": "TC"
+        },
+        {
+          "id": "C",
+          "text": "RM"
+        },
+        {
+          "id": "D",
+          "text": "las a y c son ciertas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q061",
+      "sourceNumber": 61,
+      "text": "Son contrastes negativos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sulfato de bario."
+        },
+        {
+          "id": "B",
+          "text": "Oxigeno."
+        },
+        {
+          "id": "C",
+          "text": "Aire."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas b y c son correctas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q062",
+      "sourceNumber": 62,
+      "text": "¿ Cúales son las vias por las que podemos introducir un contraste baritado.?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Via oral."
+        },
+        {
+          "id": "B",
+          "text": "Via oral, intestinal y rectal."
+        },
+        {
+          "id": "C",
+          "text": "Via oral, intestinal, rectal e intravenosa."
+        },
+        {
+          "id": "D",
+          "text": "Todas son falsas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q063",
+      "sourceNumber": 63,
+      "text": "La palidez, la caida brusca de la presión arterial, la taquicardia, la arritmia cardiaca, etc....son manifestaciónes de las reacciones adversas a los medios de contraste de tipo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Leves."
+        },
+        {
+          "id": "B",
+          "text": "Graves cardiovasculares."
+        },
+        {
+          "id": "C",
+          "text": "Graves respiratorias."
+        },
+        {
+          "id": "D",
+          "text": "Graves generales."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q064",
+      "sourceNumber": 64,
+      "text": "¿Cuál de las siguientes funciones no es desarrollada por un Técnico Superior en Radiodiagnóstico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Control y gestión de programa de citas a pacientes."
+        },
+        {
+          "id": "B",
+          "text": "Procesamiento de peliculas de rayos x."
+        },
+        {
+          "id": "C",
+          "text": "Preparación de dosis de radiofármacos."
+        },
+        {
+          "id": "D",
+          "text": "Sedación de pacientes para técnicas especiales."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q065",
+      "sourceNumber": 65,
+      "text": "¿Puede el Técnico Superior validar los resultados técnicos de un estudio radiológico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En ningún caso."
+        },
+        {
+          "id": "B",
+          "text": "Si y debe hacerlo."
+        },
+        {
+          "id": "C",
+          "text": "Sólo bajo la supervisión del jefe de servicio."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna es cierta."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q066",
+      "sourceNumber": 66,
+      "text": "¿Cuál de las siguientes no es función del supervisor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Elaboración de plantillas de trabajo."
+        },
+        {
+          "id": "B",
+          "text": "Garantizar el cumplimiento del control de calidad."
+        },
+        {
+          "id": "C",
+          "text": "Supervisar el trabajo del personal facultativo y no facultativo."
+        },
+        {
+          "id": "D",
+          "text": "Todas son funciones del Supervisor."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q067",
+      "sourceNumber": 67,
+      "text": "¿Qué tareas dentro del marco laboral no puede realizar el Técnico Superior?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Realización de técnicas de digitalización de imágenes."
+        },
+        {
+          "id": "B",
+          "text": "Realización de técnicas de digitalización de Medicina Nuclear."
+        },
+        {
+          "id": "C",
+          "text": "Vigilancia de constantes vitales a pacientes criticos."
+        },
+        {
+          "id": "D",
+          "text": "Puede realizar todas ellas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q068",
+      "sourceNumber": 68,
+      "text": "Dentro del servicio de radiologia, qué áreas de trabajo no están incluidas.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tomografia Computerizada."
+        },
+        {
+          "id": "B",
+          "text": "Resonancia Magnética."
+        },
+        {
+          "id": "C",
+          "text": "Telemando."
+        },
+        {
+          "id": "D",
+          "text": "Medicina Nuclear."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q069",
+      "sourceNumber": 69,
+      "text": "Organizar el plan de mantenimiento del equipo es funcion del:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Supervisor."
+        },
+        {
+          "id": "B",
+          "text": "Técnico Superior."
+        },
+        {
+          "id": "C",
+          "text": "Personal de Apoyo."
+        },
+        {
+          "id": "D",
+          "text": "Jefe de Servicio."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q070",
+      "sourceNumber": 70,
+      "text": "En cuanto la metodologia de la investigación, las limitaciones del método cientefico son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "No tiene limitaciones."
+        },
+        {
+          "id": "B",
+          "text": "El consentimiento informado de los participantes no es obligatorio."
+        },
+        {
+          "id": "C",
+          "text": "Problemas morales o éticos."
+        },
+        {
+          "id": "D",
+          "text": "Las opciones a y b son verdaderas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q071",
+      "sourceNumber": 71,
+      "text": "¿Cúal de las siguientes opciones no es caracteristica del metodo cientifico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Control."
+        },
+        {
+          "id": "B",
+          "text": "Empirismo."
+        },
+        {
+          "id": "C",
+          "text": "Sistematización."
+        },
+        {
+          "id": "D",
+          "text": "Todas las opciones anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q072",
+      "sourceNumber": 72,
+      "text": "¿Cúal de las siguientes no constituyen una etapa en un proceso de investigación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Recogidas de datos"
+        },
+        {
+          "id": "B",
+          "text": "Fase preliminar."
+        },
+        {
+          "id": "C",
+          "text": "Fase de planificación."
+        },
+        {
+          "id": "D",
+          "text": "Fase de la hipótesis."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q073",
+      "sourceNumber": 73,
+      "text": "¿Qué no se entiende por material biológico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los organismos vivos."
+        },
+        {
+          "id": "B",
+          "text": "Las células de los organismos vivos."
+        },
+        {
+          "id": "C",
+          "text": "Los genes y la información relativa de las células."
+        },
+        {
+          "id": "D",
+          "text": "Se entiende por material biológico todos los aspectos anteriores. *"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q074",
+      "sourceNumber": 74,
+      "text": "¿Quién promueve y financia la Red Nacional de Biobancos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La Universidad Alfonso X el Sabio."
+        },
+        {
+          "id": "B",
+          "text": "El Instituto de Salud Carlos III."
+        },
+        {
+          "id": "C",
+          "text": "El Ente Público Intersectorial de Salud."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q075",
+      "sourceNumber": 75,
+      "text": "¿Qué evalúa el denominado Proyecto Ibérico (1989)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La capacidad docente de los Hospitales."
+        },
+        {
+          "id": "B",
+          "text": "La calidad en la atención especializada."
+        },
+        {
+          "id": "C",
+          "text": "La calidad cientifico-técnica de una red sanitaria."
+        },
+        {
+          "id": "D",
+          "text": "La calida en atención primaria."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q076",
+      "sourceNumber": 76,
+      "text": "¿Qué término define a aquel concepto que se produce cuando una empresa autorizada de la conformidad con relación al cumplimiento de unas normas, siendo su finalidad la de garantizar que se documenten y sigan unos procedimientos concretos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acreditación."
+        },
+        {
+          "id": "B",
+          "text": "Certificación."
+        },
+        {
+          "id": "C",
+          "text": "Autorización."
+        },
+        {
+          "id": "D",
+          "text": "Auditoria."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q077",
+      "sourceNumber": 77,
+      "text": "¿Qué tipo de radiación ionizante de tipo natural hay que tener en cuenta siempre en dosimetria?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las empleadas en el PET."
+        },
+        {
+          "id": "B",
+          "text": "Las utilizadas en Radiologia digital."
+        },
+        {
+          "id": "C",
+          "text": "Las radiación de fondo."
+        },
+        {
+          "id": "D",
+          "text": "No hay que tener en cuenta ninguna de las anteriores."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q078",
+      "sourceNumber": 78,
+      "text": "Respecto de la vigilancia de la salud, es correcto afirmar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El empresario deberá garantizar la vigilancia de la salud a todos los trabajadores que voluntariamente quieran someterse a ella o que, en su caso, deban en los supuestos especificados en el articulo 22 de la LPRL"
+        },
+        {
+          "id": "B",
+          "text": "Soló puede ser realizad por los servicios de prevención que dispongan de profesionales sanitarios con la titulación adecuada ( Médicos Diplomados en Medicina del trabajo o facultativos con Diploma de Medicina de Empresa y Enfermeros Diplomados en Enfermeria de Empresa )"
+        },
+        {
+          "id": "C",
+          "text": "La salvaguarda y el respeto del derecho a la intimidad y la dignidad del trabajador y la confidencialidad de los resultados es fundamental."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q079",
+      "sourceNumber": 79,
+      "text": "¿Qué es un pixel?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es sinónimo de vóxel."
+        },
+        {
+          "id": "B",
+          "text": "Elemento más grande con información en una imagen digital."
+        },
+        {
+          "id": "C",
+          "text": "Elemento más pequeño con información en una imagen digital."
+        },
+        {
+          "id": "D",
+          "text": "Nada es correcto."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q080",
+      "sourceNumber": 80,
+      "text": "¿Donde vienen recogidas las bases para trabajar bajo marcos de calidad asistencial en España?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la Ley General de Sanidad de 1986."
+        },
+        {
+          "id": "B",
+          "text": "En el marco de la Constitución Española."
+        },
+        {
+          "id": "C",
+          "text": "En el Código Civil."
+        },
+        {
+          "id": "D",
+          "text": "En la Ley General de Sanidad de 2002."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q081",
+      "sourceNumber": 81,
+      "text": "¿Qué periodo de tiempo se deben archivar los informes que se refieren a los datos clinicos de un paciente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 años."
+        },
+        {
+          "id": "B",
+          "text": "10 años."
+        },
+        {
+          "id": "C",
+          "text": "20 años."
+        },
+        {
+          "id": "D",
+          "text": "30 años."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q082",
+      "sourceNumber": 82,
+      "text": "En la proyección de Towne",
+      "options": [
+        {
+          "id": "A",
+          "text": "El haz central de rayos X se dirige a un punto situado a unos 8 cms por encima de la glabela y en la línea media"
+        },
+        {
+          "id": "B",
+          "text": "La línea orbitomeatal es perpendicular a la película"
+        },
+        {
+          "id": "C",
+          "text": "El haz central de rayos Xtiene una angulación caudal de 30 grados"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q083",
+      "sourceNumber": 83,
+      "text": "La proyección de Stenvers sirve para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Agujero óptico"
+        },
+        {
+          "id": "B",
+          "text": "Conducto auditivo interno"
+        },
+        {
+          "id": "C",
+          "text": "Hendidura esfenoidal"
+        },
+        {
+          "id": "D",
+          "text": "Agujero rasgado posterior"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q084",
+      "sourceNumber": 84,
+      "text": "¿En que proyección de craneo visualizaremos: silla turca, apófisis mastoides, techo de las órbitas, seno frontal y seno esfenoidal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Towne"
+        },
+        {
+          "id": "B",
+          "text": "Stenvers"
+        },
+        {
+          "id": "C",
+          "text": "Guillen"
+        },
+        {
+          "id": "D",
+          "text": "Lateral"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q085",
+      "sourceNumber": 85,
+      "text": "En la proyección AP de columna lumbar:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El paciente se encuentra en decúbito prono"
+        },
+        {
+          "id": "B",
+          "text": "El haz de rayos X es paralelo a la película"
+        },
+        {
+          "id": "C",
+          "text": "El plano sagital medio del paciente es paralelo a la mesa"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas son falsas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q086",
+      "sourceNumber": 86,
+      "text": "para un centraje correcto en la radiografía simple de abdomen, el haz de rayos X central se debe dirigir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sobre la sínfisi púbica"
+        },
+        {
+          "id": "B",
+          "text": "sobre el ombligo"
+        },
+        {
+          "id": "C",
+          "text": "En la línea media a nivel de las crestas iliácas"
+        },
+        {
+          "id": "D",
+          "text": "En la linea media sobre un punto situado a 5 cms por debajo del apéndice xifoides"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q087",
+      "sourceNumber": 87,
+      "text": "Dentro del patrón aéreo normal de la radiografía de abdomen simple, se puede apreciar presencia de gas en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cámara gastrica"
+        },
+        {
+          "id": "B",
+          "text": "Bulbo duadenal"
+        },
+        {
+          "id": "C",
+          "text": "Recto"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q088",
+      "sourceNumber": 88,
+      "text": "La filtración total equivalente en el haz útil de radiación para equipos que trabajen a una tensión superior a 70 kVp, debe ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menor de 2mm de Al"
+        },
+        {
+          "id": "B",
+          "text": "Menor de 2,5mm de Al"
+        },
+        {
+          "id": "C",
+          "text": "Menor o igual a 2,5 mm de Al"
+        },
+        {
+          "id": "D",
+          "text": "Mayor o igual a 2,5mm de Al"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q089",
+      "sourceNumber": 89,
+      "text": "El TER sabrá que la variación máxima de la tensión con cambios en la corriente del tubo debe ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inferior al 10%"
+        },
+        {
+          "id": "B",
+          "text": "Inferiro al 15%"
+        },
+        {
+          "id": "C",
+          "text": "Inferior al 20%"
+        },
+        {
+          "id": "D",
+          "text": "Entre el 10 y el 15%"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q090",
+      "sourceNumber": 90,
+      "text": "Las pruebas para el control de calidad que revistan especial complejidad deberá realizarlas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La empresa que suministro el equipo"
+        },
+        {
+          "id": "B",
+          "text": "El Técnico Especialista en Radiodiagnóstico"
+        },
+        {
+          "id": "C",
+          "text": "El Especialista en Radiofísica Hospitalaria"
+        },
+        {
+          "id": "D",
+          "text": "El Médico Especialista en Radiodiágnostico"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q091",
+      "sourceNumber": 91,
+      "text": "En el Sistema de Intercomunicación con el paciente",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se tendrá siempre un contacto visual y auditivo con el paciente"
+        },
+        {
+          "id": "B",
+          "text": "El paciente durante la prueba tendrá a su alcance un timbre de llamada que podrá activar cuando quiera"
+        },
+        {
+          "id": "C",
+          "text": "Antes de ser sometido al estudio, el paciente será siempre informado de estos pasos a seguir durante el examen"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuesta anteriores son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q092",
+      "sourceNumber": 92,
+      "text": "Entre los efectos tardíos de las radiaciones ionizantes se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El síndrome de irradiación aguda"
+        },
+        {
+          "id": "B",
+          "text": "La carcinogénesis"
+        },
+        {
+          "id": "C",
+          "text": "El acortamiento de la vida"
+        },
+        {
+          "id": "D",
+          "text": "B y C son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q093",
+      "sourceNumber": 93,
+      "text": "El factor que expresa la calidad de una radiación y que se incluye en la dosis equivalente para expresar el daño asociado a la misma, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Factor de exposición"
+        },
+        {
+          "id": "B",
+          "text": "Factor de cantidad"
+        },
+        {
+          "id": "C",
+          "text": "Factor de ponderación o calidad"
+        },
+        {
+          "id": "D",
+          "text": "Factor de locomoción"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q094",
+      "sourceNumber": 94,
+      "text": "La fase del síndrome de irradiación aguda en la que aparecen los primeros síntomas, que suelen ser náuseas, diarreas y vómitos, se denomina:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fase de latencia"
+        },
+        {
+          "id": "B",
+          "text": "Fase de estado"
+        },
+        {
+          "id": "C",
+          "text": "Fase prodrómica"
+        },
+        {
+          "id": "D",
+          "text": "NInguna es correcta"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q095",
+      "sourceNumber": 95,
+      "text": "¿ Cuál de la siguentes estructuras se localiza a nivel del interespacio entre la 2ª y 3ª vértebra cervical?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cartilago tiroides"
+        },
+        {
+          "id": "B",
+          "text": "Apófisis Xifoides"
+        },
+        {
+          "id": "C",
+          "text": "Gonión"
+        },
+        {
+          "id": "D",
+          "text": "Apófisis mastoides"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q096",
+      "sourceNumber": 96,
+      "text": "¿Cuál de los siguientes puntos de referencia óseos está en el mismo plano transverso que la sínfisis púbica?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tuberosidad isquiática"
+        },
+        {
+          "id": "B",
+          "text": "Prominencia del trocánter mayor"
+        },
+        {
+          "id": "C",
+          "text": "Espina ilíaca anterosuperior"
+        },
+        {
+          "id": "D",
+          "text": "Cresta ilíaca"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q097",
+      "sourceNumber": 97,
+      "text": "¿Cuál es la angulación correcta al realizar una radiografía lateral de rodilla?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Perpendicular al plano sagital medio de la rodilla"
+        },
+        {
+          "id": "B",
+          "text": "5º de angulación craneal"
+        },
+        {
+          "id": "C",
+          "text": "5º de angulación caudal"
+        },
+        {
+          "id": "D",
+          "text": "10º de angulación caudal"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q098",
+      "sourceNumber": 98,
+      "text": "¿Cuál de las siguientes es una glándula aneja del tubo digestivo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El bazo"
+        },
+        {
+          "id": "B",
+          "text": "El páncreas"
+        },
+        {
+          "id": "C",
+          "text": "El apéndice vermiforme"
+        },
+        {
+          "id": "D",
+          "text": "Las glándulas sudoríparas"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q099",
+      "sourceNumber": 99,
+      "text": "¿Donde comienza el esófago?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la primera vértebra cervical"
+        },
+        {
+          "id": "B",
+          "text": "Entre la 7ª cervical y la 1ª dorsal"
+        },
+        {
+          "id": "C",
+          "text": "A la altura de la 6ª cervical"
+        },
+        {
+          "id": "D",
+          "text": "Justo por debajo de la 1ª dorsal"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q100",
+      "sourceNumber": 100,
+      "text": "Si queremos demostrar todo el ángulo esplénico del colon; la posición en la que tomaremos la radiografía es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "OAD"
+        },
+        {
+          "id": "B",
+          "text": "OPI"
+        },
+        {
+          "id": "C",
+          "text": "OAI"
+        },
+        {
+          "id": "D",
+          "text": "Decúbito laterall izqiuerdo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q101",
+      "sourceNumber": 101,
+      "text": "El objetivo principal de la protección radiológica es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Prevenir la ocurrencia de efectos estocásticos."
+        },
+        {
+          "id": "B",
+          "text": "Prevenir la ocurrencia de efectos no estocásticos y limitar la probabilidad de incidencia de los efectos estocásticos."
+        },
+        {
+          "id": "C",
+          "text": "Limitar la probabilidad de incidencia de los efectos no estocásticos."
+        },
+        {
+          "id": "D",
+          "text": "Conjuntamente A y C"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q102",
+      "sourceNumber": 102,
+      "text": "Un Técnico Superior en Imagen para el Diagnóstico desempeña su trabajo en el Servicio de Medicina Física y Radioprotección de un centro Hospitalario. Esto supone que tenga que demarcar y señalizar debidamente todas las zonas del centro susceptibles de irradiación y contaminación externa. Además de un control rutinario del cumplimiento de las señalizaciones y actualización si fuese necesario. ¿Qué zona señalizará el TSID con un trébol amarillo con puntas radiales sobre fondo blanco?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona de permanencia limitada con riesgo de irradiación"
+        },
+        {
+          "id": "B",
+          "text": "Zona de acceso prohibido con riesgo de contaminación"
+        },
+        {
+          "id": "C",
+          "text": "Zona vigilada con riesgo de irradiación"
+        },
+        {
+          "id": "D",
+          "text": "Zona vigilada con riesgo de contaminación"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q103",
+      "sourceNumber": 103,
+      "text": "La zona vigilada se identificará con un trebol de color:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amarillo"
+        },
+        {
+          "id": "B",
+          "text": "Verde"
+        },
+        {
+          "id": "C",
+          "text": "Gris azulado"
+        },
+        {
+          "id": "D",
+          "text": "Rojo"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q104",
+      "sourceNumber": 104,
+      "text": "La formación del personal que realice los controles y mediciones de dosimetria de área será acreditada por:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Director Gerente del Centro Hospitalario"
+        },
+        {
+          "id": "B",
+          "text": "Consejo de Seguridad Nuclear"
+        },
+        {
+          "id": "C",
+          "text": "Jefe del Servicio de Física y Protección Radiológica"
+        },
+        {
+          "id": "D",
+          "text": "Supervisor de la instalación"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q105",
+      "sourceNumber": 105,
+      "text": "¿Cuál de las siguientes afirmaciones sobre Dosimetría de área, es falsa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Su finalidad es evaluar el riesgo radiológico de un area determinada"
+        },
+        {
+          "id": "B",
+          "text": "También se denomina dosimetría ambiental"
+        },
+        {
+          "id": "C",
+          "text": "Las mediciones se realizan siempre con detectores fijos"
+        },
+        {
+          "id": "D",
+          "text": "En la gammateca se realiza dosimetría de área"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q106",
+      "sourceNumber": 106,
+      "text": "El TSID debe conocer que dependiendo del riesgo de exposición la zona controlada puede ser de varios tipos, indíquelos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona controlada con riesgo y sin riesgo"
+        },
+        {
+          "id": "B",
+          "text": "Zona de permanencia limitada y zona vigilada"
+        },
+        {
+          "id": "C",
+          "text": "Zona vigilada y zona de acceso prohibido"
+        },
+        {
+          "id": "D",
+          "text": "Zona de permanencia limitada, zona de permanencia reglamentada y zona de acceso prohibido"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q107",
+      "sourceNumber": 107,
+      "text": "Indique la definición correcta de zona de libre acceso",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona en la que es muy improbable recibir dosis superior a 1/10 de los límites anuales permitidos"
+        },
+        {
+          "id": "B",
+          "text": "Zona en la que no es improbable recibir dosis superior a 1/10 de los límites anuales permitidos, siendo muy improbable recibir dosis superiores a 3/10 de dichos límites."
+        },
+        {
+          "id": "C",
+          "text": "Zona en la que existe el riesgo de recibir en una exposición única, dosis superiores a los límites anuales permitidos."
+        },
+        {
+          "id": "D",
+          "text": "Zona en la que es muy improbable recibir dosis superior a 1/10 de los límites anuales permitidos"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q108",
+      "sourceNumber": 108,
+      "text": "En que zona es obligatorio el uso de dosimetría personal",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona Vigilada"
+        },
+        {
+          "id": "B",
+          "text": "Zona de libre acceso"
+        },
+        {
+          "id": "C",
+          "text": "Zona controlada"
+        },
+        {
+          "id": "D",
+          "text": "Todas son ciertas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q109",
+      "sourceNumber": 109,
+      "text": "A las zonas controladas solo pueden acceder los trabajadores de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Categoría A"
+        },
+        {
+          "id": "B",
+          "text": "Categoría B"
+        },
+        {
+          "id": "C",
+          "text": "Categoria C"
+        },
+        {
+          "id": "D",
+          "text": "Categoría B y C"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q110",
+      "sourceNumber": 110,
+      "text": "El TSID del Servicio de Protección Radiológica debe conocer la definición correcta de zona controlada, indiquela:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona en la que es muy improbable recibir dosis superior a 1/10 de los límites anuales permitidos"
+        },
+        {
+          "id": "B",
+          "text": "Zona en la que no es improbable recibir dosis superiores a 1/10 de los límites anuales de dosis, siendo muy improbable recibir dosis superiores a 3/10 de dichos límites"
+        },
+        {
+          "id": "C",
+          "text": "Zona en la que exista la posibilidad de recibir una dosis equivalente superior a 3/10 de los límites de dosis equivalente establecidos para cristalino, la piel y las extremidades"
+        },
+        {
+          "id": "D",
+          "text": "Zona en la que existe el riesgo de recibir en una única exposición, dosis superiores a los limites anuales permitidos"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q111",
+      "sourceNumber": 111,
+      "text": "¿Qué zona clasificará el TSID con un trébol rojo con su campo punteado, sobre fondo blanco?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona de permanencia limitada con riesgo de irradiación"
+        },
+        {
+          "id": "B",
+          "text": "Zona vigilada con riesgo de contaminación"
+        },
+        {
+          "id": "C",
+          "text": "Zona de acceso prohibido con riesgo de contaminación"
+        },
+        {
+          "id": "D",
+          "text": "Zona de libre acceso con riesgo de irradiación"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q112",
+      "sourceNumber": 112,
+      "text": "La señalización de zonas, además del símbolo internacional de la radiactividad, debe incluir leyenda:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tipo de zona en la parte superior y el tipo de riesgo en la inferior"
+        },
+        {
+          "id": "B",
+          "text": "Sistema de acceso en la parte superior y tipo de riesgo en la inferior"
+        },
+        {
+          "id": "C",
+          "text": "Tipo de riesgo en la zona superior"
+        },
+        {
+          "id": "D",
+          "text": "Clase de personal que puede acceder a la zona (en la parte superior) y tipo de zona en la parte inferior"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q113",
+      "sourceNumber": 113,
+      "text": "Respecto a las zonas vigiladas es cierto que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Solo pueden acceder trabajadores de categoría A"
+        },
+        {
+          "id": "B",
+          "text": "Pueden acceder trabajadores de categoría A, B y C"
+        },
+        {
+          "id": "C",
+          "text": "Pueden acceder trabajadores de categoría B si existe dosimetría de área"
+        },
+        {
+          "id": "D",
+          "text": "Solo accede el personal de categoría B"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q114",
+      "sourceNumber": 114,
+      "text": "Para el TSID cuál es la definición de Zona Vigilada",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona en la que es muy improbable recibir dosis superior a 1/10 de los límites anuales permitidos"
+        },
+        {
+          "id": "B",
+          "text": "Zona en la que no es improbable recibir dosis superiores a 3/10 de los límites anuales permitidos"
+        },
+        {
+          "id": "C",
+          "text": "Zona en la que existe el riesgo de recibir en una única exposición, dosis superiores a los límites anuales permitidos"
+        },
+        {
+          "id": "D",
+          "text": "Zona en la que exista la posibilidad de recibir una dosis equivalente superior a 1/10 de los limites de dosis equivalente establecidos para el cristalino, la piel y las exremidades"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q115",
+      "sourceNumber": 115,
+      "text": "Respecto a los sistemas de control de zonas, indique la respuesta correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la zona de permanencia limitada solo existirá dosimetría de área"
+        },
+        {
+          "id": "B",
+          "text": "En las zonas vigiladas no es necesario ningún tipo de control"
+        },
+        {
+          "id": "C",
+          "text": "En las zonas de acceso prohibido solo es obligatorio la dosimetría de área"
+        },
+        {
+          "id": "D",
+          "text": "En las zonas controladas es obligatorio la dosimetría personal"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q116",
+      "sourceNumber": 116,
+      "text": "¿Qué zona señalizará el TSID del Serivicio de Física y Protección radiológica, con un trébol de color rojo con puntas radiales y su campo punteado?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zona de acceso prohibido con riesgo de irradiación y contaminación"
+        },
+        {
+          "id": "B",
+          "text": "Zona peligrosa por irradiación"
+        },
+        {
+          "id": "C",
+          "text": "Zona peligrosa de contaminación"
+        },
+        {
+          "id": "D",
+          "text": "B y C son correctas"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q117",
+      "sourceNumber": 117,
+      "text": "La dosimetría de área:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diferencia los espacios sometidos en dos zonas: zona vigilada y controlada."
+        },
+        {
+          "id": "B",
+          "text": "Diferencia cuatro zonas: zona vigilada, zona controlada, zona de tránsito y zona de trabajo."
+        },
+        {
+          "id": "C",
+          "text": "Sólo mide las dosis en las salas de Rx."
+        },
+        {
+          "id": "D",
+          "text": "Sólo existe la dosimetría personal para profesionales"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q118",
+      "sourceNumber": 118,
+      "text": "En las zonas vigiladas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Será obligatorio el uso de dosímetros individuales"
+        },
+        {
+          "id": "B",
+          "text": "Se requerirá vestir ropas especiales de trabajo"
+        },
+        {
+          "id": "C",
+          "text": "Serán excluidos totalmente, los menores de 18 años"
+        },
+        {
+          "id": "D",
+          "text": "No es obligatorio el uso de dosímetro siempre y cuando exista dosimetría de área"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q119",
+      "sourceNumber": 119,
+      "text": "En relación a los profesionales que trabajan en salas de radiodiagnóstico. El Límite de Dosis Equivalente para el cristalino en estos trabajadores expuestos es de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 mSv por año oficial"
+        },
+        {
+          "id": "B",
+          "text": "100 mSv por año oficial"
+        },
+        {
+          "id": "C",
+          "text": "150 mSv por año oficial"
+        },
+        {
+          "id": "D",
+          "text": "250 mSv por año oficial"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q120",
+      "sourceNumber": 120,
+      "text": "El titular del centro sanitario, donde esté ubicada la unidad asistencial de radiodiagnóstico, deberá archivar los informes relacionados con las dosis impartidas y los niveles de radiación durante un periodo de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 años"
+        },
+        {
+          "id": "B",
+          "text": "10 años"
+        },
+        {
+          "id": "C",
+          "text": "20 años"
+        },
+        {
+          "id": "D",
+          "text": "30 años"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q121",
+      "sourceNumber": 121,
+      "text": "Según el criterio ALARA cualquier dosis de radiación por debajo de los límites anuales establecidos en la reglamentación estará:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Permitida, siempre en condiciones habituales"
+        },
+        {
+          "id": "B",
+          "text": "Tolerada incondicionalmente"
+        },
+        {
+          "id": "C",
+          "text": "Permitida, sólo para trabajadores expuestos"
+        },
+        {
+          "id": "D",
+          "text": "Permitida, si su recepción está justificada y la operación que da lugar a la misma,ha sido perfeccionada para hacerla lo mejor posible."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q122",
+      "sourceNumber": 122,
+      "text": "Habitualmente, en radiodiagnóstico, el grosor del elemento de protección de un delantal plomado es equivalente a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 mm de Pb"
+        },
+        {
+          "id": "B",
+          "text": "0,75 mm de Pb."
+        },
+        {
+          "id": "C",
+          "text": "0,50 mm de Pb."
+        },
+        {
+          "id": "D",
+          "text": "0,25 mm de Pb."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q123",
+      "sourceNumber": 123,
+      "text": "Los profesionales expuestos a radiaciones ionizantes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Están clasificados en función del riesgo y dosis que reciben."
+        },
+        {
+          "id": "B",
+          "text": "Están clasificados de acuerdo con la categoría profesional"
+        },
+        {
+          "id": "C",
+          "text": "El límite de dosis que pueden recibir depende de la edad y el sexo"
+        },
+        {
+          "id": "D",
+          "text": "Todas son falsas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q124",
+      "sourceNumber": 124,
+      "text": "¿Qué célula germinal es más radiosensible?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Espermatocito"
+        },
+        {
+          "id": "B",
+          "text": "Espermio"
+        },
+        {
+          "id": "C",
+          "text": "Espermátide"
+        },
+        {
+          "id": "D",
+          "text": "Espermatogonia"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q125",
+      "sourceNumber": 125,
+      "text": "Nos situamos en una clase dentro de un curso organizado por la sección Sindical de un Centro Hospitalario X, donde se va a impartir, conocimientos básicos sobre los efectos de la radiación sobre el organismo. Las células que conforman el parenquima:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Realizan la función del organo"
+        },
+        {
+          "id": "B",
+          "text": "Se encargan del aporte vascular"
+        },
+        {
+          "id": "C",
+          "text": "Se encargan de dar sosten al conjunto"
+        },
+        {
+          "id": "D",
+          "text": "Se encargan de dar cohesión"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q126",
+      "sourceNumber": 126,
+      "text": "La radiosensibilidad de un tejido está relacionada:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Con un número de mitosis bajo"
+        },
+        {
+          "id": "B",
+          "text": "Directamente con su indice mitótico"
+        },
+        {
+          "id": "C",
+          "text": "Directamente con su grado de diferenciación"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q127",
+      "sourceNumber": 127,
+      "text": "El principal efecto de la radiación es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El aumento de la capacidad proliferativa"
+        },
+        {
+          "id": "B",
+          "text": "La pérdida de la capacidad de renovación"
+        },
+        {
+          "id": "C",
+          "text": "La pérdida de la capacidad proliferativa"
+        },
+        {
+          "id": "D",
+          "text": "El aumento de la capacidad de renovación"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q128",
+      "sourceNumber": 128,
+      "text": "Se llama \"tiempo de tránsito\":",
+      "options": [
+        {
+          "id": "A",
+          "text": "Al tiempo que tarda una célula en madurar"
+        },
+        {
+          "id": "B",
+          "text": "Al tiempo que tarda una célula en morir"
+        },
+        {
+          "id": "C",
+          "text": "Al tiempo que tarda una célula en reparar las lesiones"
+        },
+        {
+          "id": "D",
+          "text": "Al tiempo que tarda una célula en diferenciarse"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q129",
+      "sourceNumber": 129,
+      "text": "En los síndromes de irradiación aguda:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los síntomas gastrointestinales se producen antes que los hematológicos"
+        },
+        {
+          "id": "B",
+          "text": "Los síntomas hematólogicos se producen antes que los gastrointestinales"
+        },
+        {
+          "id": "C",
+          "text": "Los síntomas gastrointestinales y hematologicos se producen al mismo tiempo"
+        },
+        {
+          "id": "D",
+          "text": "El tiempo de la reparación de las lesiones tambien es mas largo para la mucosa intestinal"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q130",
+      "sourceNumber": 130,
+      "text": "Cual es la afirmación correcta en la fase de latencia:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los síntomas suelen presentarse en forma de náuseas, vómitos y diarreas"
+        },
+        {
+          "id": "B",
+          "text": "Se presentan síntomas generales como cefalea, astenia, vértigo y leucopenia."
+        },
+        {
+          "id": "C",
+          "text": "La gravedad de los síntomas está relacionada con la dosis"
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q131",
+      "sourceNumber": 131,
+      "text": "El síndrome neurológico requiere dosis:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mayores de 1500 cGy"
+        },
+        {
+          "id": "B",
+          "text": "Menores de 5000 cGy"
+        },
+        {
+          "id": "C",
+          "text": "Mayores de 5000 cGy"
+        },
+        {
+          "id": "D",
+          "text": "Menores de 4000 cGy"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q132",
+      "sourceNumber": 132,
+      "text": "El síndrome gastrointestinal se presenta tras:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dosis de 500 cGy con un periodo de latencia de 5 dias"
+        },
+        {
+          "id": "B",
+          "text": "Dosis de 1500 cGy con un periodo de latencia de 15 dias"
+        },
+        {
+          "id": "C",
+          "text": "Dosis de 5000 cGy con un periodo de latencia de 25 dias"
+        },
+        {
+          "id": "D",
+          "text": "Dosis de 2500 cGy con un periodo de latencia de 15 dias"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q133",
+      "sourceNumber": 133,
+      "text": "El síndrome hematológico se produce con dosis entre:",
+      "options": [
+        {
+          "id": "A",
+          "text": "200 cGy y 1000 cGy y aparece tras un periodo de latencia de 15 días"
+        },
+        {
+          "id": "B",
+          "text": "100 cGy y 200 cGy y aparece tras un periodo de latencia de 10 días"
+        },
+        {
+          "id": "C",
+          "text": "150 cGy y 300 cGy y aparece tras un periodo de latencia de 20 días"
+        },
+        {
+          "id": "D",
+          "text": "50 cGy y 400 cGy y aparece tras un periodo de latencia de 25 días"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q134",
+      "sourceNumber": 134,
+      "text": "El periodo de latencia propio del síndrome hematológico es de",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hasta cinco semanas"
+        },
+        {
+          "id": "B",
+          "text": "Hasta dos semanas"
+        },
+        {
+          "id": "C",
+          "text": "Hasta tres semanas"
+        },
+        {
+          "id": "D",
+          "text": "Hasta cuatro semanas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q135",
+      "sourceNumber": 135,
+      "text": "La dosis recibida para que se produzca el síndrome gastrointestinal es suficiente para que aparezca:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Resistencia al tratamiento con antibióticos"
+        },
+        {
+          "id": "B",
+          "text": "El síndrome hematológico"
+        },
+        {
+          "id": "C",
+          "text": "Rechazo al tratamiento de soporte"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las anteriores"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q136",
+      "sourceNumber": 136,
+      "text": "En la fase de organogénesis, las alteraciones como consecuencia de la interacción con radiaciones ionizantes pueden ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aborto espontáneo"
+        },
+        {
+          "id": "B",
+          "text": "Alteraciones en el esqueleto y en los órganos internos"
+        },
+        {
+          "id": "C",
+          "text": "Alteraciones en el sistema nervioso central"
+        },
+        {
+          "id": "D",
+          "text": "Las opciones B y C son ciertas"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q137",
+      "sourceNumber": 137,
+      "text": "Segunda parte del curso de Radiologia, impartido por la seccion sindical del Hospital X, donde se van a impartir conocimientos de proyecciones habituales. Incluidos en el temario OPE desde el tema 31 al 38. Indique la posición errónea. Para la realización de la proyección lateral de los senos paranasales se coloca la cabeza de forma que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El plano sagital sea paralelo al chasis"
+        },
+        {
+          "id": "B",
+          "text": "La linea interpupilar sea perpendicular al chasis"
+        },
+        {
+          "id": "C",
+          "text": "Se apoye el mentón sobre el chasis"
+        },
+        {
+          "id": "D",
+          "text": "El rayo central es perpendicular al chasis"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q138",
+      "sourceNumber": 138,
+      "text": "La línea orbitomeatal debe ser perpendicular al chasis en la proyección de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Waters"
+        },
+        {
+          "id": "B",
+          "text": "Shüller"
+        },
+        {
+          "id": "C",
+          "text": "Caldwell"
+        },
+        {
+          "id": "D",
+          "text": "Rhese"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q139",
+      "sourceNumber": 139,
+      "text": "El estudio radiológico de la cintura escapular debe incluir:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Escápula"
+        },
+        {
+          "id": "B",
+          "text": "Clavícula y húmero"
+        },
+        {
+          "id": "C",
+          "text": "Cúbito y radio"
+        },
+        {
+          "id": "D",
+          "text": "Escápula, clavícula y húmero"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q140",
+      "sourceNumber": 140,
+      "text": "Las proyecciones radiológicas básicas son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Anterior"
+        },
+        {
+          "id": "B",
+          "text": "Anteroposterior"
+        },
+        {
+          "id": "C",
+          "text": "Lateral de la zona de estudio"
+        },
+        {
+          "id": "D",
+          "text": "B y C son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q141",
+      "sourceNumber": 141,
+      "text": "En el estudio radiológico de la extremidad superior es importante:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dejar fuera del haz primario las piernas"
+        },
+        {
+          "id": "B",
+          "text": "Dejar fuera del haz primario las gónadas"
+        },
+        {
+          "id": "C",
+          "text": "Colimar todo lo que sea preciso"
+        },
+        {
+          "id": "D",
+          "text": "Todas Son correctas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q142",
+      "sourceNumber": 142,
+      "text": "En el Antebrazo es un punto de referencia de posición correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Epicóndilo del radio"
+        },
+        {
+          "id": "B",
+          "text": "Epitróclea del cíbito"
+        },
+        {
+          "id": "C",
+          "text": "Estiloides del radio"
+        },
+        {
+          "id": "D",
+          "text": "Todas son correctas"
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q143",
+      "sourceNumber": 143,
+      "text": "Para valorar el tórax en niños y lactantes se emplea:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La AP"
+        },
+        {
+          "id": "B",
+          "text": "La PA en inspiración forzada"
+        },
+        {
+          "id": "C",
+          "text": "PA en decúbito lateral"
+        },
+        {
+          "id": "D",
+          "text": "Pa en inspiración"
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q144",
+      "sourceNumber": 144,
+      "text": "Señale la opción incorrecta. Forman parte de la pelvis:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Isquion"
+        },
+        {
+          "id": "B",
+          "text": "Ilion"
+        },
+        {
+          "id": "C",
+          "text": "Pubis"
+        },
+        {
+          "id": "D",
+          "text": "Rótula"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q145",
+      "sourceNumber": 145,
+      "text": "La proyección lórdotica apical de tórax nos sirve:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para descartar Neumotórax"
+        },
+        {
+          "id": "B",
+          "text": "Para ver derrames pleurales"
+        },
+        {
+          "id": "C",
+          "text": "Para ver libres de superposición los vértices pulmonares"
+        },
+        {
+          "id": "D",
+          "text": "Para ver Enfisemas"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q146",
+      "sourceNumber": 146,
+      "text": "En la PA de tórax la DFP (Distancia Foco Placa) será de:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1,20 metros"
+        },
+        {
+          "id": "B",
+          "text": "1,50 metros"
+        },
+        {
+          "id": "C",
+          "text": "2,55 metros"
+        },
+        {
+          "id": "D",
+          "text": "1,80 metros"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q147",
+      "sourceNumber": 147,
+      "text": "En la PA de tórax el Kv tiene que ser:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Medio"
+        },
+        {
+          "id": "B",
+          "text": "Alto"
+        },
+        {
+          "id": "C",
+          "text": "Reducido"
+        },
+        {
+          "id": "D",
+          "text": "Mínimo"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q148",
+      "sourceNumber": 148,
+      "text": "La PA de tórax se realiza:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En cualquier momento de la respiración"
+        },
+        {
+          "id": "B",
+          "text": "En inspiración máxima"
+        },
+        {
+          "id": "C",
+          "text": "En espiración"
+        },
+        {
+          "id": "D",
+          "text": "Con el pulso acelerado"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q149",
+      "sourceNumber": 149,
+      "text": "Un tórax en espiración forzada, se solicita cuando se sopecha:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ca de Pulmon de estadio avanzado"
+        },
+        {
+          "id": "B",
+          "text": "Pancreatitis aguda"
+        },
+        {
+          "id": "C",
+          "text": "Neumotórax"
+        },
+        {
+          "id": "D",
+          "text": "VIH +"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q150",
+      "sourceNumber": 150,
+      "text": "La proyección útil para visualizar las articulaciones intertarsianas:",
+      "options": [
+        {
+          "id": "A",
+          "text": "AP de tobillo"
+        },
+        {
+          "id": "B",
+          "text": "Lateral de tobillo"
+        },
+        {
+          "id": "C",
+          "text": "AP en estrés de tobillo"
+        },
+        {
+          "id": "D",
+          "text": "Ninguna son ciertas"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q151",
+      "sourceNumber": 151,
+      "text": "¿Para qué sirven realizar radiografías de abdomen en inspiración y espiración?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para valorar una apendicitis"
+        },
+        {
+          "id": "B",
+          "text": "Para visualizar mejor la vejiga urinaria"
+        },
+        {
+          "id": "C",
+          "text": "Para localizar opacidades en algún órgano abdominal"
+        },
+        {
+          "id": "D",
+          "text": "No tiene sentido realizar estas radiografías"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q152",
+      "sourceNumber": 152,
+      "text": "Para que en una placa de tórax las clavículas queden situadas por encima de los vértices, ¿que proyección utilizarías?",
+      "options": [
+        {
+          "id": "A",
+          "text": "AP"
+        },
+        {
+          "id": "B",
+          "text": "PA"
+        },
+        {
+          "id": "C",
+          "text": "Lordótica Apical"
+        },
+        {
+          "id": "D",
+          "text": "AP en decúbito supino"
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R2",
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-radiodiagnostico-2015-turno-libre-q153",
+      "sourceNumber": 153,
+      "text": "¿Qué es cierto sobre los pacientes claustrofóbicos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Son obesos."
+        },
+        {
+          "id": "B",
+          "text": "Necesitan mas tiempo para informarlos."
+        },
+        {
+          "id": "C",
+          "text": "Suelen ser irritables."
+        },
+        {
+          "id": "D",
+          "text": "Son ciertas b y c."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R3",
+      "sourcePage": 31
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      131,
+      132,
+      133,
+      134,
+      135,
+      137,
+      138,
+      139,
+      140,
+      141,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153
+    ],
+    "count": 147,
+    "annulledNumbers": [
+      20,
+      35,
+      107,
+      130,
+      136,
+      142
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedLabels": {
+      "R1": 151,
+      "R2": 152,
+      "R3": 153
+    },
+    "annulledCount": 6,
+    "reserveTotal": 3,
+    "reserveUsedCount": 3,
+    "reserveUnusedCount": 0,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 20,
+          "reserveNumber": 151
+        },
+        {
+          "annulledNumber": 35,
+          "reserveNumber": 152
+        },
+        {
+          "annulledNumber": 107,
+          "reserveNumber": 153
+        }
+      ],
+      "unreplacedAnnulledNumbers": [
+        130,
+        136,
+        142
+      ],
+      "unusedReserveNumbers": []
+    }
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [
+      {
+        "question": null,
+        "option": null,
+        "flag": "seis_anuladas_solo_tres_reservas_tres_no_sustituidas_con_notacion_nominal",
+        "sourcePage": 33
+      }
+    ],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  },
+  "nominalQuestionCount": 150
+}

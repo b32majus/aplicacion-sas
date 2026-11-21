@@ -132,6 +132,28 @@
       "questionCount": 75,
       "latestVersion": "19bdbd901db59637e7dfa5642de53009223866bf1d8f686e7706b8773d3dd335",
       "latestPath": "sas-administrativo-2025-turno-libre/versions/19bdbd901db59637e7dfa5642de53009223866bf1d8f686e7706b8773d3dd335.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2018-promocion-interna",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2018 - Promoción Interna (OEP 2016-2017 y Estabilización)",
+      "year": 2018,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "968a7f2b1aa5dbae7d1f8bdb3220294718d62ac57f2b50dea59fb3fefe85914e",
+      "latestPath": "sas-radiodiagnostico-2018-promocion-interna/versions/968a7f2b1aa5dbae7d1f8bdb3220294718d62ac57f2b50dea59fb3fefe85914e.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2018-turno-libre",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2018 - Turno Libre (OEP 2016-2017 y Estabilización)",
+      "year": 2018,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "2adcac6a764f0318673886d178976c62d2cc82afedb9c7f994db63e905cb219c",
+      "latestPath": "sas-radiodiagnostico-2018-turno-libre/versions/2adcac6a764f0318673886d178976c62d2cc82afedb9c7f994db63e905cb219c.json"
     }
   ]
 }

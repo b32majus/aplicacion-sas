@@ -15,8 +15,14 @@ const authorizedVersions = staticCatalog.exams.map((entry) => ({
 
 async function fileFetch(path) {
   try {
-    const body = await readFile(new URL(path, bankUrl), "utf8");
-    return { ok: true, status: 200, json: async () => JSON.parse(body) };
+    const body = await readFile(new URL(path, bankUrl));
+    if (path.endsWith(".png")) {
+      return {
+        ok: true, status: 200,
+        arrayBuffer: async () => body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength),
+      };
+    }
+    return { ok: true, status: 200, json: async () => JSON.parse(body.toString("utf8")) };
   } catch {
     return { ok: false, status: 404 };
   }
@@ -24,9 +30,9 @@ async function fileFetch(path) {
 
 test("muestra solo las versiones publicables actuales producidas por T01", async () => {
   const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
-  assert.equal(catalog.length, 16);
+  assert.equal(catalog.length, 19);
   assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "administrativo").length, 12);
-  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 4);
+  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 7);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2018-turno-libre"), true);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2025-turno-libre"), true);
   assert.equal(catalog.every(({ activeCount, questions }) => activeCount === questions.length), true);

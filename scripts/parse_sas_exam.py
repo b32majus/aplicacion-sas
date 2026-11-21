@@ -1048,11 +1048,64 @@ def validate_exam_package(exam: dict[str, Any], source_pdf: Path | None = None) 
     conserva la fuente, permite comprobar además que ``source.sha256`` y el
     nombre trazado corresponden realmente al PDF recibido.
     """
+    # M05: la extensión multimedia se valida con su propio esquema, sin
+    # ampliar el esquema histórico (que sigue siendo estricto para todos los
+    # exámenes antiguos). La proyección elimina SOLAMENTE las propiedades
+    # permitidas en el contrato de media; los demás campos adicionales siguen
+    # rechazándose por exam.schema.json.
+    has_media_extension = "media" in exam or any(
+        "media" in question or "caseId" in question
+        for question in exam.get("questions", [])
+        if isinstance(question, dict)
+    )
     try:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
-        jsonschema.Draft202012Validator(schema).validate(exam)
+        canonical = json.loads(json.dumps(exam)) if has_media_extension else exam
+        if has_media_extension:
+            canonical.pop("media", None)
+            for question in canonical.get("questions", []):
+                if isinstance(question, dict):
+                    question.pop("media", None)
+                    question.pop("caseId", None)
+        jsonschema.Draft202012Validator(schema).validate(canonical)
+        if has_media_extension:
+            extension_path = SCHEMA_PATH.parent / "exam-media.schema.json"
+            extension = json.loads(extension_path.read_text(encoding="utf-8"))
+            payload = {
+                "questions": [
+                    {key: q[key] for key in ("media", "caseId") if key in q}
+                    for q in exam["questions"]
+                ],
+            }
+            if "media" in exam:
+                payload["media"] = exam["media"]
+            jsonschema.Draft202012Validator(extension).validate(payload)
     except (OSError, json.JSONDecodeError, jsonschema.ValidationError, jsonschema.SchemaError) as error:
-        raise CanonicalPackageError(f"schema canónico inválido: {error}") from error
+        raise CanonicalPackageError(f"schema canónico o multimedia inválido: {error}") from error
+
+    if has_media_extension:
+        declared = exam.get("media")
+        if not isinstance(declared, dict):
+            raise CanonicalPackageError("pregunta multimedia sin assets de paquete")
+        assets = declared.get("assets", [])
+        asset_ids = [asset["id"] for asset in assets]
+        if len(asset_ids) != len(set(asset_ids)):
+            raise CanonicalPackageError("asset multimedia duplicado")
+        allowed_ids = set(asset_ids)
+        case_ids = [case["id"] for case in declared.get("cases", [])]
+        if len(case_ids) != len(set(case_ids)):
+            raise CanonicalPackageError("caseId multimedia duplicado")
+        for asset in assets:
+            if not asset["path"].startswith(exam["id"] + "/media/"):
+                raise CanonicalPackageError("asset multimedia fuera del examen")
+        for question in exam["questions"]:
+            if "caseId" in question and question["caseId"] not in case_ids:
+                raise CanonicalPackageError("caseId multimedia inexistente")
+            for reference in question.get("media", []):
+                if reference["asset"] not in allowed_ids:
+                    raise CanonicalPackageError("referencia multimedia inexistente")
+                if re.search(r"respuesta|correcta|soluci[oó]n|spoiler", reference["alt"], re.I):
+                    raise CanonicalPackageError("texto alternativo revela respuesta")
 
     questions = exam["questions"]
     numbers = [question["sourceNumber"] for question in questions]

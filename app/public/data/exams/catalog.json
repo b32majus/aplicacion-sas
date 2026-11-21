@@ -176,6 +176,39 @@
       "questionCount": 150,
       "latestVersion": "2adcac6a764f0318673886d178976c62d2cc82afedb9c7f994db63e905cb219c",
       "latestPath": "sas-radiodiagnostico-2018-turno-libre/versions/2adcac6a764f0318673886d178976c62d2cc82afedb9c7f994db63e905cb219c.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2023-turno-libre",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2023 - Turno Libre",
+      "year": 2023,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "04a53ceab25b748fcf3904e68945b2c87ddc0e153e016a2510bf1bf93b47d33d",
+      "latestPath": "sas-radiodiagnostico-2023-turno-libre/versions/04a53ceab25b748fcf3904e68945b2c87ddc0e153e016a2510bf1bf93b47d33d.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2025-promocion-interna",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2025 - Promoción Interna",
+      "year": 2025,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "964a278b416d70baf3348c633657fb9553ae43fdf43b92ed3dabf86a3c256ce7",
+      "latestPath": "sas-radiodiagnostico-2025-promocion-interna/versions/964a278b416d70baf3348c633657fb9553ae43fdf43b92ed3dabf86a3c256ce7.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2025-turno-libre",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2025 - Turno Libre",
+      "year": 2025,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 120,
+      "questionCount": 75,
+      "latestVersion": "994a38dd4c48cb053cb17eafbd06637ce78185ea8084e401b432d4e9dfa7984c",
+      "latestPath": "sas-radiodiagnostico-2025-turno-libre/versions/994a38dd4c48cb053cb17eafbd06637ce78185ea8084e401b432d4e9dfa7984c.json"
     }
   ]
 }

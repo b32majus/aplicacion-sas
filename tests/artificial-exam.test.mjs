@@ -17,8 +17,14 @@ const authorizedVersions = staticCatalog.exams.map((entry) => ({
 
 async function fileFetch(path) {
   try {
-    const body = await readFile(new URL(path, bankUrl), "utf8");
-    return { ok: true, status: 200, json: async () => JSON.parse(body) };
+    const body = await readFile(new URL(path, bankUrl));
+    if (path.endsWith(".png")) {
+      return {
+        ok: true, status: 200,
+        arrayBuffer: async () => body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength),
+      };
+    }
+    return { ok: true, status: 200, json: async () => JSON.parse(body.toString("utf8")) };
   } catch {
     return { ok: false, status: 404 };
   }

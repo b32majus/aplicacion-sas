@@ -40,6 +40,12 @@ test("RX 2021: tres exámenes, 153 preguntas cada uno y 70 figuras completas",()
    assert.deepEqual(q.options.map(o=>o.id),["A","B","C","D"]);
    assert.equal(q.correctOption,q.sourceAnswer==="ANULADA"?null:q.sourceAnswer);
    if(q.media)for(const ref of q.media)usedAssets.add(ref.asset);
+   // Relación exacta: no basta con que exista la imagen; debe coincidir
+   // con su numeración en la pregunta del cuadernillo oficial.
+   const cited=[...new Set([...q.text.matchAll(/\bIMAGEN(?:ES)?\s*(\d+)/gi)].map(m=>+m[1]))];
+   const linked=(q.media??[]).map(ref=>ref.asset);
+   assert.deepEqual(linked,cited.map(n=>"figure-"+String(n).padStart(2,"0")),
+     "image-to-question mismatch at source q"+q.sourceNumber);
   }
   assert.equal(usedAssets.size,figureCount,"every source figure used by at least one real question");
   for(const start of [101,111,121,131,141]){

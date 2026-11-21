@@ -232,10 +232,18 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
       await db.query("insert into public.app_access_roles(user_id, role) values ($1, $2)", [userId, role]);
       await db.query("delete from public.profiles where id = $1", [userId]);
     }
+    // Producción: los participantes normales no necesitan fila explícita de rol.
+    // Un participante conserva la fila explícita para cubrir ambos contratos.
     for (const userId of participants) {
       await db.query("insert into auth.users(id) values ($1)", [userId]);
-      await db.query("insert into public.app_access_roles(user_id, role) values ($1, 'participant')", [userId]);
     }
+    await db.query("insert into public.app_access_roles(user_id, role) values ($1, 'participant')", [participants[1]]);
+    const { rows: implicitRoles } = await db.query(
+      "select count(*)::integer as total from public.profiles profile " +
+      "left join public.app_access_roles access on access.user_id = profile.id " +
+      "where access.user_id is null",
+    );
+    assert.equal(implicitRoles[0].total, 2, "dos participantes reales sin rol explícito, como en producción");
     await db.query("insert into public.profiles(id) values ($1), ($2)", [adminUser, testUser]);
 
     // Segunda oposición SOLO de fixture, aislada de producción.
@@ -310,6 +318,7 @@ test("escenario integrado: Historial y Dashboard por oposición con umbrales de 
     await setAuth(participants[0]);
     const legacyBefore = JSON.stringify(await legacy());
     await db.exec(await readFile(new URL(migrationName, migrationsUrl), "utf8"));
+    await db.exec(await readFile(new URL("20261121120000_dashboard_implicit_participants.sql", migrationsUrl), "utf8"));
     assert.equal(JSON.stringify(await legacy()), legacyBefore, "get_dashboard devuelve exactamente el mismo resultado antes y después de la migración");
 
     // HISTORIAL: la oposición de cada intento la resuelve el SERVIDOR.

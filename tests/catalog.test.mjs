@@ -30,9 +30,9 @@ async function fileFetch(path) {
 
 test("muestra solo las versiones publicables actuales producidas por T01", async () => {
   const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
-  assert.equal(catalog.length, 19);
+  assert.equal(catalog.length, 22);
   assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "administrativo").length, 12);
-  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 7);
+  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 10);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2018-turno-libre"), true);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2025-turno-libre"), true);
   assert.equal(catalog.every(({ activeCount, questions }) => activeCount === questions.length), true);

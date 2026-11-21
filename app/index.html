@@ -107,11 +107,17 @@
           <div>
             <p class="eyebrow">Progreso y comparación privada</p>
             <h1 id="dashboard-title">Dashboard</h1>
+            <p id="dashboard-opposition" class="card-facts" style="margin:0;"></p>
           </div>
-          <p>Tu detalle y los agregados comparables de los tres participantes, sin compartir respuestas individuales.</p>
+          <p>Tu detalle y los agregados comparables de los participantes con actividad en la oposición consultada, sin compartir respuestas individuales.</p>
         </div>
         <div id="dashboard-status" class="panel compact" aria-live="polite">Cargando Dashboard…</div>
-        <div id="dashboard-content" class="dashboard-content" hidden>
+        <div
+          id="dashboard-content"
+          class="dashboard-content"
+          style="grid-template-columns: minmax(0, 1fr);"
+          hidden
+        >
           <section aria-labelledby="dashboard-global-title">
             <h2 id="dashboard-global-title">Mi actividad global</h2>
             <dl id="dashboard-global" class="summary-grid dashboard-metrics"></dl>
@@ -138,7 +144,7 @@
           </section>
           <section aria-labelledby="dashboard-common-title">
             <p class="eyebrow">Dificultad compartida</p>
-            <h2 id="dashboard-common-title">Falladas por los tres</h2>
+            <h2 id="dashboard-common-title">Falladas por todos</h2>
             <div id="dashboard-common" class="dashboard-stack"></div>
           </section>
         </div>
@@ -150,8 +156,9 @@
           <div>
             <p class="eyebrow">Actividad personal inmutable</p>
             <h1 id="history-title">Historial</h1>
+            <p id="history-opposition" class="card-facts" style="margin:0;"></p>
           </div>
-          <p>Intentos finalizados, abandonados y en curso. Abrirlos nunca reanuda ni modifica su estado.</p>
+          <p>Intentos finalizados, abandonados y en curso de la oposición consultada. Abrirlos nunca reanuda ni modifica su estado.</p>
         </div>
         <div id="history-status" class="panel compact" aria-live="polite">Cargando Historial…</div>
         <div id="history-list" class="history-list" hidden></div>

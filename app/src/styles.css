@@ -112,6 +112,17 @@ input:focus { outline: 3px solid rgba(23, 130, 101, .2); border-color: #178265; 
 .version-pin { margin: 0 0 28px; color: #697b75; font-family: ui-monospace, monospace; font-size: .75rem; overflow-wrap: anywhere; }
 .study-source { margin: -18px 0 28px; color: #3d7768; font-weight: 800; }
 #question-text { max-width: 850px; margin-bottom: 24px; font-size: clamp(1.25rem, 3vw, 1.8rem); }
+.question-media { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; margin: 0 0 24px; min-width: 0; }
+.question-media-figure { display: grid; gap: 6px; min-width: 0; margin: 0; }
+.question-media-item { display: block; width: 100%; max-width: 100%; min-width: 0; padding: 0; overflow: hidden; border: 1px solid #bdcec7; border-radius: 12px; background: white; }
+.question-media-item:hover, .question-media-item:focus-visible { border-color: #0b7056; }
+.question-media-item img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 260px; object-fit: contain; background: #f8fbf9; }
+.question-media-alt { color: #536963; font-size: .86rem; font-weight: 650; line-height: 1.45; overflow-wrap: anywhere; }
+.media-dialog { width: min(920px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100% - 24px); padding: 18px; overflow: auto; border: 1px solid #b8cac3; border-radius: 18px; color: inherit; background: #fffdf8; box-shadow: 0 24px 70px rgba(24, 51, 46, .24); }
+.media-dialog::backdrop { background: rgba(18, 39, 34, .62); }
+.media-dialog img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 12px; }
+.media-dialog-caption { font-weight: 700; overflow-wrap: anywhere; }
+.media-dialog-close { margin-top: 4px; }
 .answer-options { display: grid; gap: 12px; margin: 0; padding: 0; border: 0; }
 .answer-option { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 12px; padding: 15px 16px; border: 1px solid #bdcec7; border-radius: 12px; background: white; font-weight: 650; line-height: 1.5; cursor: pointer; }
 .answer-option:has(input:checked) { border-color: #0b7056; box-shadow: 0 0 0 2px rgba(11, 112, 86, .15); }

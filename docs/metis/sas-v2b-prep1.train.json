@@ -1,0 +1,12 @@
+{
+  "schema": "metis.train/v1",
+  "train": "Tren B: Historial/Dashboard por oposición y casos multimedia",
+  "units": [
+    {
+      "ticket": "docs/metis/sas-v2b-prep1-m04-historial-dashboard.md"
+    },
+    {
+      "ticket": "docs/metis/sas-v2b-prep1-m05-casos-multimedia.md"
+    }
+  ]
+}

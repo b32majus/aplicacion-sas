@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aplicacion-sas.local/schemas/exam-media.schema.json",
+  "title": "Extensión multimedia del paquete canónico de examen",
+  "description": "Extensión OPCIONAL y separada del esquema canónico histórico (exam.schema.json). Un paquete nuevo puede declarar el bloque media y, por pregunta, caseId y referencias exactas y ordenadas a imágenes compartidas. Los paquetes sin media no declaran nada de este documento y conservan el comportamiento histórico.",
+  "type": "object",
+  "properties": {
+    "media": { "$ref": "#/$defs/packageMedia" },
+    "questions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/questionMedia" }
+    }
+  },
+  "$defs": {
+    "packageMedia": {
+      "type": "object",
+      "description": "Recursos multimedia inmutables del paquete y agrupaciones de caso que los comparten.",
+      "required": ["assets"],
+      "additionalProperties": false,
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/asset" }
+        },
+        "cases": {
+          "type": "array",
+          "description": "Agrupación de caso: preguntas del mismo caso comparten su contexto de imágenes.",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "label": { "type": "string" },
+              "assets": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "description": "Imagen interna, inmutable y direccionable del paquete. La ruta es relativa al banco, sin .., sin rutas absolutas y sin URL remotas.",
+      "required": ["id", "path", "mime", "width", "height", "sha256", "source", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*://)(?!//)[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*\\.(?:png|jpg|jpeg|gif)$",
+          "description": "Ruta interna relativa e inmutable dentro del paquete (por ejemplo, <exam-id>/media/<asset>.png). El patrón rechaza .., rutas absolutas y URL remotas."
+        },
+        "mime": {
+          "type": "string",
+          "enum": ["image/png", "image/jpeg", "image/gif"]
+        },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Origen trazable del asset. Nunca se publican imágenes de la fuente RX sin autorización expresa."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Versión del paquete a la que pertenece la imagen; la revisión histórica resuelve siempre contra la versión fijada."
+        }
+      }
+    },
+    "questionMedia": {
+      "type": "object",
+      "description": "Extensión opcional por pregunta: caso compartido y lista ORDENADA de referencias exactas.",
+      "additionalProperties": false,
+      "properties": {
+        "caseId": { "type": "string", "minLength": 1 },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["asset", "alt"],
+            "additionalProperties": false,
+            "properties": {
+              "asset": { "type": "string", "minLength": 1 },
+              "alt": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Texto alternativo descriptivo, no diagnóstico y sin revelar la solución: nunca incluye palabras como respuesta, correcta, solución o spoiler."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

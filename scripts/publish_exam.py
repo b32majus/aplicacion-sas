@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import ipaddress
 import json
+import struct
 import re
 import subprocess
 import sys
@@ -461,6 +463,27 @@ def verify_bank(bank: Path) -> None:
             raise PublicationBlockedError(f"QA versionado ausente: {qa_path}") from error
         if actual_qa != expected_qa:
             raise PublicationBlockedError(f"QA versionado no corresponde al paquete: {qa_path}")
+        # M05: only the images declared by a valid immutable package are
+        # allowed in the public bank. Verify PNG signature, dimensions and
+        # exact bytes hash; an undeclared extra image remains a hard failure.
+        for asset in (package.get("media") or {}).get("assets", []):
+            relative_asset = asset["path"]
+            if not relative_asset.startswith(f"{package['id']}/media/"):
+                raise PublicationBlockedError("media fuera de la identidad de examen")
+            if asset["mime"] != "image/png" or not relative_asset.endswith(".png"):
+                raise PublicationBlockedError("media con tipo no soportado por verificador PNG")
+            asset_file = bank / relative_asset
+            if asset_file.is_symlink() or not asset_file.is_file():
+                raise PublicationBlockedError(f"media ausente o symlink: {relative_asset}")
+            raw = asset_file.read_bytes()
+            if not raw.startswith(b"\x89PNG\r\n\x1a\n") or len(raw) < 24:
+                raise PublicationBlockedError(f"media no es PNG auténtico: {relative_asset}")
+            w, h = struct.unpack(">II", raw[16:24])
+            if (w, h) != (asset["width"], asset["height"]):
+                raise PublicationBlockedError(f"media con dimensiones distintas: {relative_asset}")
+            if hashlib.sha256(raw).hexdigest() != asset["sha256"]:
+                raise PublicationBlockedError(f"media con SHA256 distinto: {relative_asset}")
+            allowed_files.add(relative_asset)
         relative = package_path.relative_to(bank).as_posix()
         if relative in current_paths:
             alias = bank / f"{package['id']}.json"
@@ -560,6 +583,13 @@ def verify_immutable_changes(base: str, bank: Path, repo: Path = ROOT, head: str
         for entry in catalog["exams"]
         for path in (entry["latestPath"], str(Path(entry["latestPath"]).with_suffix(".qa.md")))
     }
+    # Media assets may be ADDED only, when listed by a pinned canonical
+    # version. Modifying an existing asset is not allowed even if rehashed.
+    new_media = set()
+    for entry in catalog["exams"]:
+        exam = load_json(bank / entry["latestPath"])
+        for asset in (exam.get("media") or {}).get("assets", []):
+            new_media.add(f"{relative_bank}/{asset['path']}")
     catalog_name = f"{relative_bank}/catalog.json"
     violations = []
     for line in completed.stdout.splitlines():
@@ -572,7 +602,7 @@ def verify_immutable_changes(base: str, bank: Path, repo: Path = ROOT, head: str
         allowed = (
             status == "M" and changed_path in {catalog_name, *current_aliases}
         ) or (
-            status == "A" and changed_path in {catalog_name, *current_aliases, *current_versions}
+            status == "A" and changed_path in {catalog_name, *current_aliases, *current_versions, *new_media}
         )
         if not allowed:
             violations.append(line)

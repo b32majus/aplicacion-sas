@@ -9,8 +9,8 @@ const authorizedVersions = staticCatalog.exams.map((entry) => ({
   exam_id: entry.id,
   exam_version_id: entry.latestVersion,
   exam_version_path: entry.latestPath,
-  opposition_id: "administrativo",
-  opposition_name: "Administrativo",
+  opposition_id: entry.id.startsWith("sas-radiodiagnostico-") ? "radiodiagnostico" : "administrativo",
+  opposition_name: entry.id.startsWith("sas-radiodiagnostico-") ? "Radiodiagnóstico" : "Administrativo",
 }));
 
 async function fileFetch(path) {
@@ -24,7 +24,9 @@ async function fileFetch(path) {
 
 test("muestra solo las versiones publicables actuales producidas por T01", async () => {
   const catalog = await loadPublishedCatalog(fileFetch, "./", authorizedVersions);
-  assert.equal(catalog.length, 12);
+  assert.equal(catalog.length, 14);
+  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "administrativo").length, 12);
+  assert.equal(catalog.filter(({ oppositionId }) => oppositionId === "radiodiagnostico").length, 2);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2018-turno-libre"), true);
   assert.equal(catalog.some(({ id }) => id === "sas-administrativo-2025-turno-libre"), true);
   assert.equal(catalog.every(({ activeCount, questions }) => activeCount === questions.length), true);

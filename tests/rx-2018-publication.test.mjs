@@ -43,3 +43,12 @@ test("RX 2018: versioned originals, exact answers, five cases and legacy bank", 
     assert.equal(alias.questions[65].correctOption, "D");
   }
 });
+
+test("RX 2018: oposición independiente con mapeo servidor explícito", () => {
+  const migrationUrl = new URL("../supabase/migrations/20261121143000_register_radiodiagnostico_2018.sql", import.meta.url);
+  const sql = readFileSync(migrationUrl, "utf8");
+  assert.match(sql, /insert into public\.oppositions \(id, public_name\)/i);
+  assert.match(sql, /'radiodiagnostico', 'Radiodiagnóstico'/);
+  for (const id of ids) assert.ok(sql.includes("'" + id + "', 'radiodiagnostico'"));
+  assert.doesNotMatch(sql, /delete\s+from|drop\s+table|update\s+public\.attempts|update\s+public\.app_access_roles/i);
+});

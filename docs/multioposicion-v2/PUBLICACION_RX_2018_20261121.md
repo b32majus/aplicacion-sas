@@ -8,6 +8,6 @@ Verificación exhaustiva 21/11: por cada examen, 153 de 153 enunciados cotejados
 
 Cada paquete tiene 153 entradas, 150 ordinarias activas, reservas 151-153 inactivas, cero anuladas y 180 minutos; metadatos y hashes de versiones inmutables. Se utiliza el pipeline existente de publicación; validadores obligatorios: verify-bank, verify-inputs, verify-immutable, verify-registry y el test rx-2018-publication. El reporte detallado de comparación queda privado en staging-2018/QA_PREPUBLICACION_2018_20261121.json.
 
-Publicación segura: CI y merge, Pages JSON HTTP 200, aplicar registros SQL de los dos exam IDs/versiones con Supabase, verificar oposición y mapeo, catálogo autenticado y selector, sin alterar los doce Administrativo. No publicar examen RX incompleto ni el PDF privado.
+Publicación segura: CI y merge, Pages JSON HTTP 200, aplicar registros SQL de los dos exam IDs/versiones y migración 20261121143000 de registro de oposición en Supabase, verificar oposición y mapeo, catálogo autenticado y selector, sin alterar los doce Administrativo. No publicar examen RX incompleto ni el PDF privado.
 
 Los demás ocho bloques del PDF (2015, 2021, 2023, 2025) siguen pendientes de QA específica, en especial los cuadernillos de imágenes de 2021.

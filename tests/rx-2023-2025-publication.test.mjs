@@ -16,9 +16,9 @@ const variants = [
 ];
 test("RX 2023/2025: 3 versiones con 75 preguntas y 26 imágenes íntegras", () => {
   const catalog = load("catalog.json");
-  assert.equal(catalog.exams.length, 19);
+  assert.equal(catalog.exams.length, 22);
   assert.equal(catalog.exams.filter(e=>e.id.startsWith("sas-administrativo-")).length, 12);
-  assert.equal(catalog.exams.filter(e=>e.id.startsWith("sas-radiodiagnostico-")).length, 7);
+  assert.equal(catalog.exams.filter(e=>e.id.startsWith("sas-radiodiagnostico-")).length, 10);
   for (const [id, year, mediaNumbers] of variants) {
     const entry = catalog.exams.find(e=>e.id===id);
     assert.ok(entry, id);

@@ -1,0 +1,5035 @@
+{
+  "schemaVersion": "2.0",
+  "id": "sas-radiodiagnostico-2021-turno-libre",
+  "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2021 - Turno Libre",
+  "category": "Técnico/a Especialista en Radiodiagnóstico",
+  "year": 2021,
+  "access": "Turno Libre",
+  "variant": null,
+  "durationMinutes": 180,
+  "nominalQuestionCount": 150,
+  "source": {
+    "pdf": "sas-radiodiagnostico-2021-turno-libre.pdf",
+    "sha256": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480",
+    "answerKeyPage": 53
+  },
+  "version": {
+    "id": "6d07a91a4aba0f474c7e3c020d2a948603591defca6d58e54076353b70cfcbf6",
+    "contentSha256": "1138ba92a412dca1884375becc7d1f7c7775ff247c1a2d18da9ad49ee24ff391"
+  },
+  "questions": [
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q001",
+      "sourceNumber": 1,
+      "text": "Según la vigente Constitución Española de 1978, son deberes de todos los españoles los señalados a continuación, EXCEPTO:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Defender a España."
+        },
+        {
+          "id": "B",
+          "text": "Trabajar."
+        },
+        {
+          "id": "C",
+          "text": "Contribuir al sostenimiento de los gastos públicos."
+        },
+        {
+          "id": "D",
+          "text": "Usar el castellano, como lengua oficial del Estado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q002",
+      "sourceNumber": 2,
+      "text": "El Consejo de Gobierno de la Junta de Andalucía, según el artículo 119 del vigente Estatuto de Autonomía (Ley Orgánica 2/2007, de 19 de marzo), es el órgano colegiado que ejerce la dirección política de la Comunidad Autónoma, dirige la Administración y desarrolla las funciones ejecutivas y administrativas de la Junta de Andalucía. Indique por quiénes está constituido el citado Consejo de Gobierno:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El Presidente, los Vicepresidentes en su caso y los Consejeros."
+        },
+        {
+          "id": "B",
+          "text": "El Presidente y los Vicepresidentes en su caso."
+        },
+        {
+          "id": "C",
+          "text": "El Presidente, los Vicepresidentes en su caso, los Consejeros y una representación de los miembros electos del Parlamento de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "El Presidente, los Vicepresidentes en su caso, los Consejeros y los Viceconsejeros."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q003",
+      "sourceNumber": 3,
+      "text": "La promulgación del Estatuto de Autonomía de Andalucía fue acompañada de las transferencias desde el Estado de una serie de materias y competencias, recogidas en el Titulo II. ¿En cuál de los siguientes artículos de la Ley 2/2007, de 19 de marzo, de reforma del Estatuto de Autonomía de Andalucía, se contemplan las transferencias a nuestra Comunidad Autónoma de las competencias sobre Salud, Sanidad y Farmacia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Articulo 43."
+        },
+        {
+          "id": "B",
+          "text": "Artículo 2."
+        },
+        {
+          "id": "C",
+          "text": "Artículo 55."
+        },
+        {
+          "id": "D",
+          "text": "Estas competencias no se contemplan en el articulado del Estatuto de Autonomía vigente para Andalucía."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 3
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q004",
+      "sourceNumber": 4,
+      "text": "La Ley General de Sanidad (Ley 14/1986, de 25 de abril) tiene por objeto la regulación general de todas las acciones que permitan hacer efectivo el derecho a la protección de la salud reconocido en la Constitución Española. Entre ellos, la Ley establece, en su artículo tercero, que los medios y actuaciones del sistema sanitario estarán orientados prioritariamente:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A superar los desequilibrios territoriales y sociales."
+        },
+        {
+          "id": "B",
+          "text": "A la promoción de la salud y a la prevención de las enfermedades."
+        },
+        {
+          "id": "C",
+          "text": "Al tratamiento de los procesos clínicos, tanto quirúrgicos como médicos y rehabilitadores."
+        },
+        {
+          "id": "D",
+          "text": "A la educación sobre la salud, la prevención de las enfermedades y la protección del medio ambiente."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q005",
+      "sourceNumber": 5,
+      "text": "El Reglamento (UE) 2016/679, Europeo de Protección de Datos Personales, ha requerido modificar la legislación española en esta materia, materializada en la Ley Orgánica 3/2018, de 5 de diciembre. Según estas normativas legales vigentes, se entiende por \"dato de carácter personal\" a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cualquier información concerniente a personas físicas o jurídicas, identificadas o identificables."
+        },
+        {
+          "id": "B",
+          "text": "Cualquier información concerniente a personas físicas o jurídicas, identificadas o identificables, siempre y cuando no afecten a un tercero."
+        },
+        {
+          "id": "C",
+          "text": "Cualquier información concerniente a personas físicas, identificadas o identificables."
+        },
+        {
+          "id": "D",
+          "text": "Cualquier información en soporte papel concerniente a personas físicas, identificadas o identificables."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q006",
+      "sourceNumber": 6,
+      "text": "Según se recoge en el artículo 29 de la Ley 31/1995, de 8 de noviembre, de prevención de Riesgos Laborales, es obligación de los trabajadores, con arreglo a su formación y siguiendo las instrucciones del empresario:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Informar, una vez terminada la jornada laboral, a su superior jerárquico directo, y a los trabajadores designados para realizar actividades de protección y de prevención o, en su caso, al servicio de prevención, acerca de cualquier situación que, a su juicio, entrañe, por motivos razonables, un riesgo para la seguridad y la salud de los trabajadores."
+        },
+        {
+          "id": "B",
+          "text": "Utilizar correctamente los dispositivos de seguridad existentes o que se instalen en los medios relacionados con su actividad o en los lugares de trabajo en los que ésta tenga lugar, y poner fuera de funcionamiento aquellos que no le resulten cómodos para el trabajo, informando de ello a su inmediato superior."
+        },
+        {
+          "id": "C",
+          "text": "La Ley no recoge deberes de los trabajadores, solo sus derechos en materia de protección frente a los riesgos laborales."
+        },
+        {
+          "id": "D",
+          "text": "Utilizar correctamente los medios y equipos de protección facilitados por el empresario, de acuerdo con las instrucciones recibidas de éste."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 4
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q007",
+      "sourceNumber": 7,
+      "text": "Siguiendo las recomendaciones de la Organización Mundial de la Salud (OMS) - \"DIRECTRICES DE LA OMS SOBRE HIGIENE DE LAS MANOS EN LA ATENCIÓN SANITARIA\"-, ¿en qué momento de los siguientes se debe realizar higiene de manos mediante lavado de las mismas con agua y jabón?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cuando estén visiblemente sucias o contaminadas con material proteináceo, o visiblemente manchadas con sangre u otros líquidos corporales."
+        },
+        {
+          "id": "B",
+          "text": "Cuando haya sospechas fundadas o pruebas de exposición a organismos con capacidad de esporular."
+        },
+        {
+          "id": "C",
+          "text": "Después de ir al baño."
+        },
+        {
+          "id": "D",
+          "text": "En todos los casos anteriores."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q008",
+      "sourceNumber": 8,
+      "text": "La Ley 13/2007, de 26 de noviembre, de Prevención y Protección Integral contra la Violencia de Género, establece en su artículo 24, que los planes y programas de salud deberán incluir la formación del personal del Sistema Sanitario Público de Andalucía, para abordar de forma adecuada la detección precoz, la atención a la violencia de género en sus múltiples manifestaciones y sus efectos en la salud de las mujeres, la rehabilitación de éstas, y la atención a los grupos de mujeres con especiales dificultades; y que dicha formación se dirigirá prioritariamente a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los servicios de atención primaria y de atención especializada con mayor relevancia para la salud de las mujeres."
+        },
+        {
+          "id": "B",
+          "text": "El personal sanitario, exclusivamente, que atienda a mujeres dentro de su ámbito de actuación."
+        },
+        {
+          "id": "C",
+          "text": "Los servicios de urgencias, tanto de atención primaria como de hospitales."
+        },
+        {
+          "id": "D",
+          "text": "Todas las trabajadoras mujeres del SSPA."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q009",
+      "sourceNumber": 9,
+      "text": "La ley 12/2007, de 26 de noviembre, para la promoción de la igualdad de género en Andalucía, en su artículo 1 recoge como objeto:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hacer efectivo el derecho de igualdad de trato y oportunidades entre mujeres y hombres."
+        },
+        {
+          "id": "B",
+          "text": "Evitar las agresiones y abusos sexuales realizados por hombres contra las mujeres en el ámbito doméstico."
+        },
+        {
+          "id": "C",
+          "text": "Promover políticas de empleo orientadas a las mujeres, y políticas educativas necesarias para reducir y evitar el acoso sexual."
+        },
+        {
+          "id": "D",
+          "text": "Todas las anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q010",
+      "sourceNumber": 10,
+      "text": "El principio bioético de autonomía se materializa, en la atención sanitaria, en el derecho que tienen las personas a decidir libremente sobre las actuaciones sanitarias que se le propongan, como son las exploraciones físicas, las pruebas diagnósticas o los tratamientos, tras ser adecuadamente informados sobre ellos. ¿En qué norma legal de las siguientes se recoge este derecho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En la Ley 41/2002, de 14 de noviembre."
+        },
+        {
+          "id": "B",
+          "text": "En la Ley 2/1998, de 15 de junio, de Salud de Andalucía."
+        },
+        {
+          "id": "C",
+          "text": "En la ley 2/2007, de 19 de marzo, de reforma del Estatuto de Autonomía de Andalucía."
+        },
+        {
+          "id": "D",
+          "text": "En todas las anteriores normas legales se recoge este derecho, materializado en el consentimiento informado."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 5
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q011",
+      "sourceNumber": 11,
+      "text": "¿Qué hace la modulación de la dosis en tiempo real, cuando es seleccionada por el TER / TSID en un TC?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La modulación se hace de forma tardía durante la rotación del tubo."
+        },
+        {
+          "id": "B",
+          "text": "Ajusta la intensidad de corriente del tubo, según las características patológicas del paciente."
+        },
+        {
+          "id": "C",
+          "text": "Con esta técnica se puede realizar estudios de TC con altas dosis de radiación, sin disminuir significativamente la calidad del examen."
+        },
+        {
+          "id": "D",
+          "text": "Ajusta la intensidad de la corriente del tubo, según las características morfológicas del paciente o la zona anatómica del estudio."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q012",
+      "sourceNumber": 12,
+      "text": "En la relajación T2 o relajación transversal, cuando más alejados estén los protones, la interacción entre los campos magnéticos que generan es menor; por este motivo...",
+      "options": [
+        {
+          "id": "A",
+          "text": "El agua libre tiene una relajación T2 más lenta (T2 largo)."
+        },
+        {
+          "id": "B",
+          "text": "En el agua ligada se favorece el desfase (T2 corto)."
+        },
+        {
+          "id": "C",
+          "text": "El tiempo T2 de la grasa es mucho más corto que el del agua."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q013",
+      "sourceNumber": 13,
+      "text": "Señala la respuesta correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "La vena cava superior recoge la sangre venosa de la región cefálica y ambos miembros superiores, y drena en la aurícula izquierda."
+        },
+        {
+          "id": "B",
+          "text": "La vena cava superior recoge la sangre venosa de la región pélvica y ambos miembros inferiores, y drena en la aurícula derecha."
+        },
+        {
+          "id": "C",
+          "text": "La vena cava superior recoge la sangre venosa de la región cefálica y ambos miembros superiores, y drena en la aurícula derecha."
+        },
+        {
+          "id": "D",
+          "text": "La vena cava superior recoge la sangre venosa de la región caudal y ambos miembros inferiores, y drena en la aurícula izquierda."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q014",
+      "sourceNumber": 14,
+      "text": "¿Qué zona anatómica se estudia con el método de Swimmers/Twining?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Columna cérvico-dorsal."
+        },
+        {
+          "id": "B",
+          "text": "Espinas intercondileas."
+        },
+        {
+          "id": "C",
+          "text": "Túnel carpiano."
+        },
+        {
+          "id": "D",
+          "text": "Apófisis odontoides."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q015",
+      "sourceNumber": 15,
+      "text": "Se le solicita al TER / TSID la realización de una radiografía a una niña de 5 años, para determinar la edad ósea. ¿Qué le debe hacer el TER / TSID?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mano y muñeca izquierda siempre."
+        },
+        {
+          "id": "B",
+          "text": "Mano y muñeca derecha siempre."
+        },
+        {
+          "id": "C",
+          "text": "Mano y muñeca no dominante."
+        },
+        {
+          "id": "D",
+          "text": "Manos y muñecas comparadas siempre."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q016",
+      "sourceNumber": 16,
+      "text": "La carcasa de un tubo de Rayos X sirve para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Proteger al tubo de las radiaciones externas."
+        },
+        {
+          "id": "B",
+          "text": "Evitar que salga al exterior la radiación no útil."
+        },
+        {
+          "id": "C",
+          "text": "Es un aislante térmico y eléctrico."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 6
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q017",
+      "sourceNumber": 17,
+      "text": "¿Con qué otro nombre son conocidas las UH (Unidades Hounsfield)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Píxel."
+        },
+        {
+          "id": "B",
+          "text": "Vóxel."
+        },
+        {
+          "id": "C",
+          "text": "Número Tc."
+        },
+        {
+          "id": "D",
+          "text": "Ancho de Ventana."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q018",
+      "sourceNumber": 18,
+      "text": "La proyección P.A. oblicua de la articulación del hombro o en “Y” de la escapula, descrita por Rubin, Gray y Green, sirve fundamentalmente para:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sospecha de luxaciones del hombro."
+        },
+        {
+          "id": "B",
+          "text": "Fracturas de la parte distal de la clavícula."
+        },
+        {
+          "id": "C",
+          "text": "Valorar el tendón supraespinoso."
+        },
+        {
+          "id": "D",
+          "text": "Valorar el tendón infraespinoso."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q019",
+      "sourceNumber": 19,
+      "text": "Se le solicita al TER / TSID una radiografía de tórax con portátil en la Unidad de Medicina Interna, y en la solicitud/petición viene reflejado que el paciente tiene un Glasgow de 8. ¿Qué nos está aportando esa información (Glasgow 8) sobre el paciente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nivel de saturación."
+        },
+        {
+          "id": "B",
+          "text": "Nivel de glucemia."
+        },
+        {
+          "id": "C",
+          "text": "Nivel de conciencia."
+        },
+        {
+          "id": "D",
+          "text": "Nivel de oxigenación."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q020",
+      "sourceNumber": 20,
+      "text": "¿Qué zona anatómica se estudia con el método de Pearson?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Articulaciones de las caderas."
+        },
+        {
+          "id": "B",
+          "text": "Articulaciones sacroiliacas."
+        },
+        {
+          "id": "C",
+          "text": "Articulaciones acromioclaviculares."
+        },
+        {
+          "id": "D",
+          "text": "Articulaciones rotulianas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q021",
+      "sourceNumber": 21,
+      "text": "En ecografía, el artefacto de ancho del haz…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un efecto de volumen parcial y también es conocido como artefacto de grosor de corte."
+        },
+        {
+          "id": "B",
+          "text": "Se produce cuando un objeto altamente reflectante, localizado dentro del plano de la imagen pero fuera del área estrecha del haz, se representa sobre una estructura adyacente."
+        },
+        {
+          "id": "C",
+          "text": "Se reconoce como la presencia de ecos que ensucian una estructura que deber ser anecogénica, disminuyendo el contraste de la imagen."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q022",
+      "sourceNumber": 22,
+      "text": "¿Qué es el shimming en RM?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un sistema de refrigeración."
+        },
+        {
+          "id": "B",
+          "text": "Un sistema de homogeneización del campo magnético."
+        },
+        {
+          "id": "C",
+          "text": "Un tipo de imán usado en resonancia."
+        },
+        {
+          "id": "D",
+          "text": "Un sistema de protección de los campos residuales."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 7
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q023",
+      "sourceNumber": 23,
+      "text": "En los Servicios de Radiología, la garantía de calidad se enfoca…",
+      "options": [
+        {
+          "id": "A",
+          "text": "En conseguir la optimización de las imágenes radiológicas, la protección radiológica del paciente y conseguir que la dosis absorbida por los trabajadores expuestos no esté por debajo de los 100 Sievert al año."
+        },
+        {
+          "id": "B",
+          "text": "En conseguir la optimización de las imágenes radiológicas, la protección radiológica del paciente y que las dosis recibidas por los trabajadores expuestos y público en general tienda a valores tan bajos como pueda razonablemente conseguirse."
+        },
+        {
+          "id": "C",
+          "text": "En conseguir la protección neurológica del paciente, que las dosis no recibidas por los trabajadores expuestos cuenten como radiación absorbida y conseguir la optimización de las imágenes radiológicas."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q024",
+      "sourceNumber": 24,
+      "text": "Las apófisis clinoides posteriores se encuentran en el hueso:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Occipital."
+        },
+        {
+          "id": "B",
+          "text": "Esfenoides."
+        },
+        {
+          "id": "C",
+          "text": "Temporal."
+        },
+        {
+          "id": "D",
+          "text": "Parietal."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q025",
+      "sourceNumber": 25,
+      "text": "En el TC, referido al artefacto de error por volumen parcial o promediación, ¿qué respuesta es FALSA?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es cuando dentro de un mismo vóxel hay estructuras con atenuaciones muy diferentes."
+        },
+        {
+          "id": "B",
+          "text": "Es cuando la imagen se muestra un promedio de atenuación que no coincide con el de ninguna de las estructuras reales."
+        },
+        {
+          "id": "C",
+          "text": "Se corrige aumentando el grosor de corte (vóxel más grande) para separar los distintos componentes."
+        },
+        {
+          "id": "D",
+          "text": "Cuando realizamos un cráneo y se incluye hueso y cerebro, la atenuación promedio puede ser similar a un hematoma."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q026",
+      "sourceNumber": 26,
+      "text": "¿Dónde se encuentra el hueso cuboides?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En el tarso."
+        },
+        {
+          "id": "B",
+          "text": "En el tobillo."
+        },
+        {
+          "id": "C",
+          "text": "En las falanges del pie."
+        },
+        {
+          "id": "D",
+          "text": "En el carpo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q027",
+      "sourceNumber": 27,
+      "text": "Respecto a las normas básicas de protección radiológica en equipos móviles de Rx, señale la respuesta INCORRECTA:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El TER / TSID llevará siempre un mandil plomado."
+        },
+        {
+          "id": "B",
+          "text": "El dosímetro deberá colocarse encima del delantal plomado."
+        },
+        {
+          "id": "C",
+          "text": "El disparador irá montado sobre un cable extensible, que permita alejarse lo máximo posible."
+        },
+        {
+          "id": "D",
+          "text": "La distancia del tubo de Rx al paciente no debería ser inferior a 30 cm."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q028",
+      "sourceNumber": 28,
+      "text": "En una proyección oblicua posterior de sacroiliacas, ¿qué lado se estudia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El lado que levanta de la mesa."
+        },
+        {
+          "id": "B",
+          "text": "El lado que apoya a la mesa."
+        },
+        {
+          "id": "C",
+          "text": "Se realiza el lado contrario al que levanta."
+        },
+        {
+          "id": "D",
+          "text": "Se apoyan los dos lados y se angula 30° cefálico."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 8
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q029",
+      "sourceNumber": 29,
+      "text": "En la proyección OPD de ilion, es FALSO que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se coloca el paciente en decúbito prono."
+        },
+        {
+          "id": "B",
+          "text": "Se eleva el lado izquierdo unos 40º."
+        },
+        {
+          "id": "C",
+          "text": "Se centra el plano sagital atravesando la articulación de la cadera derecha."
+        },
+        {
+          "id": "D",
+          "text": "Respiración en apnea."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q030",
+      "sourceNumber": 30,
+      "text": "Una complicación potencial de la inyección intravenosa de contraste es la extravasación en los tejidos circundantes. ¿Qué afirmación es FALSA?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La inyección manual de contraste conlleva un menor control de la inyección y un mayor riesgo de extravasación."
+        },
+        {
+          "id": "B",
+          "text": "Se produce la extravasación cuando la vena se rompe por incorrecta manipulación o exceso de presión, o cuando el contraste se inyecta directamente fuera de la vena."
+        },
+        {
+          "id": "C",
+          "text": "Con las bombas de inyección el control es más difícil y el riesgo de extravasación aumenta."
+        },
+        {
+          "id": "D",
+          "text": "La extravasación produce dolor en la zona de la inyección, edema y resistencia a la administración de contraste."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q031",
+      "sourceNumber": 31,
+      "text": "¿Cuál de los siguientes métodos se utiliza para inmovilizar en radiología pediátrica?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una sábana."
+        },
+        {
+          "id": "B",
+          "text": "Pigg-o-stat."
+        },
+        {
+          "id": "C",
+          "text": "Sacos de arena."
+        },
+        {
+          "id": "D",
+          "text": "Todos son métodos para inmovilizar pacientes pediátricos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q032",
+      "sourceNumber": 32,
+      "text": "Referidos a los efectos biológicos deterministas asociados con la exposición a radiaciones ionizantes, señale la respuesta FALSA:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se producen cuando la exposición a radiaciones ionizantes origina la muerte de tal cantidad de células que da lugar a un mal funcionamiento de un tejido u órgano."
+        },
+        {
+          "id": "B",
+          "text": "La aparición de estos efectos se produce sólo cuando la dosis supera un cierto valor denominado umbral de dosis."
+        },
+        {
+          "id": "C",
+          "text": "La gravedad del efecto no va a depender de la dosis recibida."
+        },
+        {
+          "id": "D",
+          "text": "Entre los tejidos celulares más radiosensibles a estos efectos están los ovarios, testículos, cristalino y médula ósea."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q033",
+      "sourceNumber": 33,
+      "text": "¿Cuáles son las principales características de los parámetros que definen los gradientes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Blindajes activo y pasivo."
+        },
+        {
+          "id": "B",
+          "text": "Amplitud y tiempo de eco."
+        },
+        {
+          "id": "C",
+          "text": "Amplitud, aceleración y tiempo de subida."
+        },
+        {
+          "id": "D",
+          "text": "Aceleración, tiempo de subida y tiempo de repetición."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q034",
+      "sourceNumber": 34,
+      "text": "En una radiografía oblicua de columna lumbar se muestra el efecto del Perro Escocés/La Chapelle. ¿A qué estructura corresponde el ojo del perrito?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apófisis articular superior."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis transversa o longitudinales."
+        },
+        {
+          "id": "C",
+          "text": "Pedículo."
+        },
+        {
+          "id": "D",
+          "text": "Apófisis articular inferior."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 9
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q035",
+      "sourceNumber": 35,
+      "text": "¿Qué zona anatómica se estudia con el método de Gaynor – Hart?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Canal o túnel carpiano."
+        },
+        {
+          "id": "B",
+          "text": "Cavidad gleniodea de los hombros."
+        },
+        {
+          "id": "C",
+          "text": "Corredera del tendón del bíceps."
+        },
+        {
+          "id": "D",
+          "text": "Agujero magno occipital."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q036",
+      "sourceNumber": 36,
+      "text": "La Técnica de Seldinger es utilizada principalmente en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Estudios con contraste baritado."
+        },
+        {
+          "id": "B",
+          "text": "Angiografía intervencionista."
+        },
+        {
+          "id": "C",
+          "text": "Medición de miembros."
+        },
+        {
+          "id": "D",
+          "text": "Estudios de tórax con portátil en pacientes con covid-19."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q037",
+      "sourceNumber": 37,
+      "text": "Dentro de los Organismos Competentes en Radioprotección Nacionales, que tienen responsabilidades estatutarias en materia de protección radiológica, se encuentran:",
+      "options": [
+        {
+          "id": "A",
+          "text": "EURATOM, I.C.R.P. y SEPR."
+        },
+        {
+          "id": "B",
+          "text": "I.C.R.P., CSN y EURATOM."
+        },
+        {
+          "id": "C",
+          "text": "CSN, SEPR y CIEMAT."
+        },
+        {
+          "id": "D",
+          "text": "UNCEAR, CSN y OMS."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q038",
+      "sourceNumber": 38,
+      "text": "Los servicios DICOM (Digital Imaging and Communications in Medicine) automatizan las comunicaciones entre el RIS (Radiology Information System) y las modalidades, fundamentalmente gracias a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "DICOM worklist (lista de trabajo DICOM). Trasfiere la lista de exploraciones pendientes desde el RIS a la modalidad, haciendo innecesaria la introducción manual de ningún dato en la modalidad."
+        },
+        {
+          "id": "B",
+          "text": "DICOM MPPS (Modality Performend Procedure Step, paso realizado del procedimiento en la modalidad). Cada modalidad envía automáticamente mensajes al RIS para actualizar el estado de cada procedimiento (iniciado, interrumpido, finalizado, etc,..)."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son ciertas."
+        },
+        {
+          "id": "D",
+          "text": "Los servicios DICOM no automatizan las comunicaciones entre el RIS y las modalidades, los encargados de realizar dicha acción es el PACS junto al FLAG PANGEL."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q039",
+      "sourceNumber": 39,
+      "text": "En TC, los filtros de convolución o filtros Kernel:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Realizan la función de paso del dominio espacial al dominio frecuencial de los datos adquiridos por los detectores."
+        },
+        {
+          "id": "B",
+          "text": "Modifican cada perfil proyectado para evitar el artefacto en estrella."
+        },
+        {
+          "id": "C",
+          "text": "Son un método interactivo de reconstrucción de imagen."
+        },
+        {
+          "id": "D",
+          "text": "Se aplican a la imagen adquirida, nunca a los Raw Data."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q040",
+      "sourceNumber": 40,
+      "text": "Respecto a la ecuación de Larmor en RM, el TER / TSID debe saber que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se usa para calcular la velocidad de giro del espín nuclear."
+        },
+        {
+          "id": "B",
+          "text": "Sirve para calcular la frecuencia de precesión de los protones."
+        },
+        {
+          "id": "C",
+          "text": "Sirve para calcular la carga eléctrica del átomo."
+        },
+        {
+          "id": "D",
+          "text": "La constante giromagnética es la misma para todos los átomos."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 10
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q041",
+      "sourceNumber": 41,
+      "text": "En la TC, es FALSO que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El diámetro de reconstrucción de la imagen se llame área de visión o FOV."
+        },
+        {
+          "id": "B",
+          "text": "El pixel es una representación en dos dimensiones del correspondiente volumen hístico."
+        },
+        {
+          "id": "C",
+          "text": "Cuando se incrementa la FOV para un tamaño de matriz fijo, el tamaño de cada pixel aumenta de forma proporcional."
+        },
+        {
+          "id": "D",
+          "text": "Cuando el tamaño de matriz se aumenta para una FOV fija, el tamaño del pixel es mayor."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q042",
+      "sourceNumber": 42,
+      "text": "En la reconstrucción multiplanar MPR curva, ¿qué es cierto?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lo que se hace es ir siguiendo la dirección de una estructura anatómica que atraviesa múltiples planos y después mostrarla aplanada o estirada en una imagen bidimensional."
+        },
+        {
+          "id": "B",
+          "text": "Lo que se hace es ir siguiendo la dirección de una estructura anatómica que atraviesa un solo plano y después mostrarla aplanada o estirada en una imagen bidimensional."
+        },
+        {
+          "id": "C",
+          "text": "Lo que se hace es ir siguiendo la dirección de una estructura anatómica que atraviesa múltiples planos y después mostrarla aplanada o estirada en una imagen en 5 dimensiones."
+        },
+        {
+          "id": "D",
+          "text": "Lo que se hace es ir siguiendo la dirección de una estructura anatómica que atraviesa una sola imagen y después mostrarla aplanada o estirada en múltiples imágenes."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q043",
+      "sourceNumber": 43,
+      "text": "En una radiografía oblicua de columna lumbar se muestra el efecto del Perro Escocés/La Chapelle. ¿A qué estructura corresponde el cuello del perrito?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apófisis articular superior o intrafacetaria."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis transversa o longitudinales."
+        },
+        {
+          "id": "C",
+          "text": "Istmo vertebral / porción interarticular / lámina entre facetas."
+        },
+        {
+          "id": "D",
+          "text": "Apófisis articular inferior o intrafacetaria."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q044",
+      "sourceNumber": 44,
+      "text": "¿Qué zona anatómica se estudia con el método de Lawrence?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cabeza proximal del cubito y radio."
+        },
+        {
+          "id": "B",
+          "text": "Meseta tibial."
+        },
+        {
+          "id": "C",
+          "text": "Articulación interfalángica."
+        },
+        {
+          "id": "D",
+          "text": "Articulación glenohumeral / húmero proximal."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q045",
+      "sourceNumber": 45,
+      "text": "El conducto de Wharton se encuentra en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las glándulas salivares."
+        },
+        {
+          "id": "B",
+          "text": "El páncreas."
+        },
+        {
+          "id": "C",
+          "text": "El sistema reproductor masculino."
+        },
+        {
+          "id": "D",
+          "text": "El riñón."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q046",
+      "sourceNumber": 46,
+      "text": "¿Qué objetivo persigue la protocolización de los estudios mediante tomografía computarizada?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La justificación de prueba mediante radiación ionizante."
+        },
+        {
+          "id": "B",
+          "text": "La valoración de la espera del estudio, priorizando los más urgentes."
+        },
+        {
+          "id": "C",
+          "text": "El control sobre el número de pruebas realizadas en cada instalación de tomografía computarizada."
+        },
+        {
+          "id": "D",
+          "text": "La optimización de la dosis recibida por el paciente y la obtención de imágenes de calidad."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 11
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q047",
+      "sourceNumber": 47,
+      "text": "El PACS (Picture Archive and Communication System) se encarga de almacenar y transferir de forma organizada todo tipo de imágenes médicas. Los principales componentes del PACS son los siguientes, EXCEPTO:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El servidor central y la red de transmisión de datos."
+        },
+        {
+          "id": "B",
+          "text": "El sistema o sistemas de archivo a corto, medio y largo plazo."
+        },
+        {
+          "id": "C",
+          "text": "Las modalidades que no generan imágenes."
+        },
+        {
+          "id": "D",
+          "text": "Las estaciones de diagnóstico y revisión."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q048",
+      "sourceNumber": 48,
+      "text": "Dentro de los sistemas de control de calidad de las instalaciones radiológicas, las pruebas de constancia...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Su objetivo es asegurar la estabilidad del funcionamiento del equipo en el tiempo."
+        },
+        {
+          "id": "B",
+          "text": "Deben ser fáciles de realizar y establecerán unas tolerancias que no deben ser sobrepasadas."
+        },
+        {
+          "id": "C",
+          "text": "Los valores obtenidos se compararan con los de referencia."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q049",
+      "sourceNumber": 49,
+      "text": "En la urografía retrógrada, es FALSO que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se utiliza para la búsqueda de algún tipo de obstrucción."
+        },
+        {
+          "id": "B",
+          "text": "Se realiza mediante una sonda ureteral."
+        },
+        {
+          "id": "C",
+          "text": "Es una prueba funcional."
+        },
+        {
+          "id": "D",
+          "text": "Se utiliza cada vez con menos frecuencia, debido al mayor empleo del TC."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q050",
+      "sourceNumber": 50,
+      "text": "Según las respuestas dadas, ¿qué es la reconstrucción de proyección de máxima intensidad MIP (maximun intensity projection)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un tipo específico de reconstrucción bidimensional en la que los pixeles más brillantes (con números TC más altos) se proyectan en una imagen tridimensional."
+        },
+        {
+          "id": "B",
+          "text": "Es un tipo específico de reconstrucción tridimensional en la que los voxeles menos brillantes (con números TC más altos) se proyectan en una imagen tridimensional."
+        },
+        {
+          "id": "C",
+          "text": "Es un tipo específico de reconstrucción bidimensional en la que los pixeles más brillantes (con números TC más altos) se proyectan en una imagen tridimensional."
+        },
+        {
+          "id": "D",
+          "text": "Es un tipo específico de reconstrucción tridimensional en la que los voxeles más brillantes (con números TC más altos) se proyectan en una imagen bidimensional."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q051",
+      "sourceNumber": 51,
+      "text": "En una radiografía oblicua de columna lumbar se muestra el efecto del Perro Escocés/La Chapelle. ¿A qué estructura corresponde la pata delantera del perrito?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pedículo."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis transversa."
+        },
+        {
+          "id": "C",
+          "text": "Apófisis o proceso articular superior."
+        },
+        {
+          "id": "D",
+          "text": "Apófisis o proceso articular inferior."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q052",
+      "sourceNumber": 52,
+      "text": "En RM, ¿cuál/es de los siguientes es un modo de llenado del espacio K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keyhole, Eco parcial"
+        },
+        {
+          "id": "B",
+          "text": "Lectura espiral segmentada, Half Scan (HF)."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son correctas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son falsas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 12
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q053",
+      "sourceNumber": 53,
+      "text": "Para realizar un estudio de TC, se necesita una primera imagen general del área anatómica a estudiar, para poder acotar la zona concreta para explorar. Esta imagen localizadora se conoce con distintos nombres según el fabricante; los más comunes son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Anatomograma, scan view y scan range."
+        },
+        {
+          "id": "B",
+          "text": "Topograma, escanograma, scan view y scout view."
+        },
+        {
+          "id": "C",
+          "text": "Scan view, localizograma y over ranger."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q054",
+      "sourceNumber": 54,
+      "text": "¿Qué zona anatómica se estudia con el método de Settegast?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rotula."
+        },
+        {
+          "id": "B",
+          "text": "Hueso ganchoso."
+        },
+        {
+          "id": "C",
+          "text": "Escafoides plantar."
+        },
+        {
+          "id": "D",
+          "text": "Odontoides."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q055",
+      "sourceNumber": 55,
+      "text": "En RM, los gradientes…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Son variaciones lineales del campo magnético a lo largo de cualquiera de los tres ejes."
+        },
+        {
+          "id": "B",
+          "text": "Se aplican mediante unas bobinas específicas que suman un campo magnético al propio del imán en cualquier dirección del espacio."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son ciertas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son falsas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q056",
+      "sourceNumber": 56,
+      "text": "En los sistemas de modulación automática de exposición de los TC, se ajusta la corriente del tubo en función de la atenuación de los tejidos en cada giro alrededor del paciente. ¿Cuándo son menos eficaces en reducir dosis, estos sistemas de modulación automática de exposición?",
+      "options": [
+        {
+          "id": "A",
+          "text": "En tórax y abdomen de adultos."
+        },
+        {
+          "id": "B",
+          "text": "En cráneo."
+        },
+        {
+          "id": "C",
+          "text": "Menos eficaces en niños que en adultos"
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas B y C son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q057",
+      "sourceNumber": 57,
+      "text": "En las medidas para disminuir y optimizar la dosis en la TC, se deben aplicar los mismos principios que en cualquier técnica de imagen médica que emplee radiaciones ionizantes, y estos son:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Justificación, optimización y extensión."
+        },
+        {
+          "id": "B",
+          "text": "Limitación, justificación y optimización."
+        },
+        {
+          "id": "C",
+          "text": "Justificación, relativización y limitación."
+        },
+        {
+          "id": "D",
+          "text": "Limitación, justificación y presunción."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q058",
+      "sourceNumber": 58,
+      "text": "Una de las principales ventajas del formato de imágenes DICOM es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interrelaciona los sistemas de información en un Hospital: PACS, RIS e HIS."
+        },
+        {
+          "id": "B",
+          "text": "No Influye en la interrelación de sistemas de información en un Hospital: PACS, RIS e HIS."
+        },
+        {
+          "id": "C",
+          "text": "No interrelaciona los sistemas de información en un Hospital: PACS e HIS."
+        },
+        {
+          "id": "D",
+          "text": "Interrelaciona los sistemas de información en un Hospital: PACS y RIS pero no HIS."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 13
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q059",
+      "sourceNumber": 59,
+      "text": "Los TER / TSID, en el desarrollo de su labor dentro del ámbito hospitalario, se ven expuestos a algunos riesgos para su salud. Señale la afirmación INCORRECTA:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Son accidentes de riesgos físico: electrocución, incendio, explosión, ruido, traumatismos, exposición a radiaciones ionizantes y no ionizantes."
+        },
+        {
+          "id": "B",
+          "text": "Los riesgos en el ámbito hospitalarios son inevitables y es innecesario tomar medidas de prevención."
+        },
+        {
+          "id": "C",
+          "text": "Riesgos hospitalarios a los que están expuestos los profesionales pueden clasificarse en: físicos, químicos, biológicos, psíquicos y sociales."
+        },
+        {
+          "id": "D",
+          "text": "La materialización del riesgo se traduce en una pérdida de salud: accidentes de trabajo, incidentes, enfermedad profesional o común, fatiga, insatisfacción,…"
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q060",
+      "sourceNumber": 60,
+      "text": "Según la legislación española, los lugares de trabajo serán clasificados, por los Servicios de Protección Radiológicas, en Zonas…………... y Zonas..……….., que deberán estar delimitadas adecuadamente y señalizadas de forma que se ponga de manifiesto perfectamente, tanto en la entrada como en sus lugares más significativos, el riesgo de exposición que existe en ellas. ¿Cuáles serían las dos palabras que faltan para completar el enunciado (línea de puntos) de esta pregunta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Controladas - Vigiladas."
+        },
+        {
+          "id": "B",
+          "text": "Vigiladas - Prohibidas."
+        },
+        {
+          "id": "C",
+          "text": "Controladas – Limitadas."
+        },
+        {
+          "id": "D",
+          "text": "Limitadas – Prohibidas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q061",
+      "sourceNumber": 61,
+      "text": "¿Qué es el DIRAYA?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el sistema que se usa en el Sistema Nacional de Salud como soporte del PACs."
+        },
+        {
+          "id": "B",
+          "text": "Es el sistema que se usa en el Sistema Nacional de Salud como soporte RIS."
+        },
+        {
+          "id": "C",
+          "text": "Es el sistema que se usa en el Sistema Sanitario Público de Andalucía como soporte de la Historia Clínica electrónica."
+        },
+        {
+          "id": "D",
+          "text": "Es el sistema que se usa en el Seguridad Social como soporte del PACs, RIS e HIS."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q062",
+      "sourceNumber": 62,
+      "text": "¿Qué zona anatómica se estudia con la posición de Löwenstein / Lauenstein?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Articulación glenohumeral."
+        },
+        {
+          "id": "B",
+          "text": "Articulación de las caderas."
+        },
+        {
+          "id": "C",
+          "text": "Articulación escapulohumeral."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y C son ciertas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q063",
+      "sourceNumber": 63,
+      "text": "¿Cómo se mejora la resolución espacial de la imagen por TC?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Disminuyendo el campo de visión y dejando igual o aumentando el tamaño de la matriz."
+        },
+        {
+          "id": "B",
+          "text": "Disminuyendo el tamaño de la matriz y dejando igual o aumentando el campo de visión."
+        },
+        {
+          "id": "C",
+          "text": "Aumentando el campo de visión y aumentando el tamaño de la matriz."
+        },
+        {
+          "id": "D",
+          "text": "Disminuyendo el campo de visión y disminuyendo el tamaño de la matriz."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 14
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q064",
+      "sourceNumber": 64,
+      "text": "En RM, ¿qué se debe hacer para que una secuencia esté muy potenciada en difusión?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las secuencias de difusión siempre tienen el mismo grado de potenciación."
+        },
+        {
+          "id": "B",
+          "text": "Introducir contraste paramagnético intravenoso."
+        },
+        {
+          "id": "C",
+          "text": "Disminuir el factor b."
+        },
+        {
+          "id": "D",
+          "text": "Aumentar el factor b."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q065",
+      "sourceNumber": 65,
+      "text": "¿Cuál de los siguientes factores favorece la aparición de la fibrosis nefrogénica sistémica por la utilización de contrastes basados en gadolinio?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La miocardiopatía dilatada."
+        },
+        {
+          "id": "B",
+          "text": "La mononucleosis infecciosa."
+        },
+        {
+          "id": "C",
+          "text": "La inmunodepresión."
+        },
+        {
+          "id": "D",
+          "text": "La insuficiencia renal avanzada."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q066",
+      "sourceNumber": 66,
+      "text": "En una imagen potenciada en T2, el LCR (líquido cefalorraquídeo) es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Negro."
+        },
+        {
+          "id": "B",
+          "text": "Gris."
+        },
+        {
+          "id": "C",
+          "text": "Blanco."
+        },
+        {
+          "id": "D",
+          "text": "No da señal en T2."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q067",
+      "sourceNumber": 67,
+      "text": "Según la Sociedad Española de Protección Radiológica (SEPR) y la Sociedad Española de Radiología Pediátrica (SERPE), en referencia a las recomendaciones actuales en materia de protectores gonadales en pacientes pediátricos, elija la afirmación FALSA:",
+      "options": [
+        {
+          "id": "A",
+          "text": "En algunos casos en que los órganos críticos estén dentro del campo de radiación (mamas, cristalino, etc..), en lugar de utilizar material de protección, la reducción de dosis en dichos órganos se puede obtener realizando proyecciones postero-anterior en lugar de antero-posterior."
+        },
+        {
+          "id": "B",
+          "text": "Durante la realización de exploraciones que afecten a la región pélvico-abdominal en niñas, no es recomendable la utilización de protectores gonadales, ya que no supone una aportación significativa en cuanto a la protección radiológica de la paciente."
+        },
+        {
+          "id": "C",
+          "text": "Durante la realización de exploraciones que afecten a la región pélvico-abdominal en niñas, sí es recomendable la utilización de protectores gonadales, ya que supone una aportación significativa en cuanto a la protección radiológica de la paciente."
+        },
+        {
+          "id": "D",
+          "text": "Estudios han demostrado la ineficacia de esta protección."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q068",
+      "sourceNumber": 68,
+      "text": "Un TER / TSID realiza, en la ejecución de un proceso radiológico, una maniobra/técnica de Eklund. Indique cuál de las siguientes afirmaciones es la correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se realiza en defecografía mediante resonancia magnética para estudio anatómico y funcional del suelo pélvico."
+        },
+        {
+          "id": "B",
+          "text": "Se realiza en ecografías de cribado de displasia evolutiva de cadera en pacientes pediátricos."
+        },
+        {
+          "id": "C",
+          "text": "Se realiza en estudios de TC para valoración de las hernias de pared abdominal."
+        },
+        {
+          "id": "D",
+          "text": "Se realiza en mamografía a pacientes portadoras de prótesis de mama."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 15
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q069",
+      "sourceNumber": 69,
+      "text": "Con respecto a los riesgos derivados de una exposición prenatal y su distribución en el tiempo:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una dosis repartida a lo largo del tiempo es más perjudicial que si es recibida de forma simultánea."
+        },
+        {
+          "id": "B",
+          "text": "Una dosis repartida a lo largo del tiempo es menos perjudicial que si es recibida de forma simultánea."
+        },
+        {
+          "id": "C",
+          "text": "Una dosis repartida a lo largo del tiempo es igual de perjudicial que si es recibida de forma simultánea."
+        },
+        {
+          "id": "D",
+          "text": "El tiempo no es un parámetro que influya de forma perjudicial en una exposición prenatal."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q070",
+      "sourceNumber": 70,
+      "text": "En TC, ¿cómo evitar algo el artefacto de endurecimiento del haz?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se debe aumentar el tamaño del campo de visión."
+        },
+        {
+          "id": "B",
+          "text": "Se debe disminuir el Kvp."
+        },
+        {
+          "id": "C",
+          "text": "Se deben evitar los filtros de corrección."
+        },
+        {
+          "id": "D",
+          "text": "Se debe aumentar el Kvp."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q071",
+      "sourceNumber": 71,
+      "text": "En RM, ¿cuál de las siguientes afirmaciones es la respuesta cierta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los tejidos con un T2 corto se ven brillantes en la imagen."
+        },
+        {
+          "id": "B",
+          "text": "Los tejidos con un T1 corto aparecen oscuros en la imagen."
+        },
+        {
+          "id": "C",
+          "text": "Los tejidos con un T2 corto se ven oscuros en la imagen."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son ciertas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q072",
+      "sourceNumber": 72,
+      "text": "En RM, una imagen potenciada en T1, la grasa es…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Negra."
+        },
+        {
+          "id": "B",
+          "text": "Gris."
+        },
+        {
+          "id": "C",
+          "text": "Blanca."
+        },
+        {
+          "id": "D",
+          "text": "La grasa en T1 no se ve."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q073",
+      "sourceNumber": 73,
+      "text": "En un TC de abdomen en fase venosa/portal, a un paciente adulto, de 80 kg, 1,75 m de altura, ¿cuál sería el tiempo de retardo/retraso más idóneo (entre las respuestas dadas) para empezar la adquisición, tras el bolus de contraste yodado de 110 ml de yodo y 30 ml de suero salino a un velocidad de 3 ml/s?",
+      "options": [
+        {
+          "id": "A",
+          "text": "De 25 a 35 segundos."
+        },
+        {
+          "id": "B",
+          "text": "De 15 a 25 segundos."
+        },
+        {
+          "id": "C",
+          "text": "De 65 a 70 segundos, u 85 segundos si el paciente tiene insuficiencia cardíaca."
+        },
+        {
+          "id": "D",
+          "text": "35 segundos exactos."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q074",
+      "sourceNumber": 74,
+      "text": "Los efectos del gadolinio en RM:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acorta T1: hipointensidad en imágenes potenciadas en T1."
+        },
+        {
+          "id": "B",
+          "text": "Acorta T2: hiperintensidad en imágenes potenciadas en T2."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son falsas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son ciertas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 16
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q075",
+      "sourceNumber": 75,
+      "text": "¿Qué zona anatómica se estudia con el método de Danelius – Miller?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rodillas."
+        },
+        {
+          "id": "B",
+          "text": "Pies."
+        },
+        {
+          "id": "C",
+          "text": "Codos."
+        },
+        {
+          "id": "D",
+          "text": "Caderas y fémur proximal."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q076",
+      "sourceNumber": 76,
+      "text": "Respecto a los contrastes ecográficos...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Son microburbujas de gas, se pueden administrar por vía intravenosa."
+        },
+        {
+          "id": "B",
+          "text": "Aumentan la señal ecográfica, se pueden administrar por vía endocavitaria."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son ciertas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son falsas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q077",
+      "sourceNumber": 77,
+      "text": "¿En qué consiste, en TC, la detección de llegada del bolo (bolus tracking, bolus triggering, smartPrep,..)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es la mejor técnica para calcular el tiempo de retraso óptimo."
+        },
+        {
+          "id": "B",
+          "text": "Se basa en monitorizar el área de interés de la arteria que se estudie en tiempo real."
+        },
+        {
+          "id": "C",
+          "text": "Se determina un umbral de realce a partir del cual se inicia la adquisición angiográfica definitiva."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q078",
+      "sourceNumber": 78,
+      "text": "En RM, ¿cuál es la respuesta correcta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los tejidos con un T1 corto aparecen brillantes en la imagen."
+        },
+        {
+          "id": "B",
+          "text": "Los tejidos con un T1 corto aparecen oscuros en la imagen."
+        },
+        {
+          "id": "C",
+          "text": "Los tejidos con un T2 corto se ven brillantes en la imagen."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas B y C son ciertas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q079",
+      "sourceNumber": 79,
+      "text": "¿Cómo se puede planificar la exploración de TC torácica para reducir el artefacto producido por la alta concentración del contraste I.V. (intravenoso) en la vena subclavia y vena cava superior?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Disminuir el volumen de contraste I.V."
+        },
+        {
+          "id": "B",
+          "text": "El paciente debe realizar una apnea de 30 segundos."
+        },
+        {
+          "id": "C",
+          "text": "Realizar el estudio / adquisición en una dirección caudocraneal (de abajo a arriba)."
+        },
+        {
+          "id": "D",
+          "text": "Realizar el estudio en espiración."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q080",
+      "sourceNumber": 80,
+      "text": "Los estudios de angio-TC coronario se adquieren con sincronización cardíaca por ECG (gating cardíaco); dicha adquisición de datos puede realizarse de forma...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Helicoidal o secuencial."
+        },
+        {
+          "id": "B",
+          "text": "Solo en helicoidal."
+        },
+        {
+          "id": "C",
+          "text": "Solo en secuencial."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q081",
+      "sourceNumber": 81,
+      "text": "Entre las reacciones adversas a los medios de contraste yodado se incluyen, entre otras:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dificultad para respirar, paro cardíaco, convulsiones."
+        },
+        {
+          "id": "B",
+          "text": "Dificultad para respirar, urticaria, dolor de cabeza."
+        },
+        {
+          "id": "C",
+          "text": "Sibilancias, hinchazón de la garganta, picazón"
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 17
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q082",
+      "sourceNumber": 82,
+      "text": "En referencia a la historia clínica de un paciente, señale respuesta FALSA:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Los médicos y enfermeros que asisten al paciente tendrán en todo momento el acceso a la historia clínica de cada paciente, habilitándoles esta posibilidad los centros sanitarios."
+        },
+        {
+          "id": "B",
+          "text": "El paciente tiene derecho de acceso a la documentación de la historia clínica y a obtener copia de los datos que figuran en ella, pudiendo acceder por medio de representación debidamente acreditada."
+        },
+        {
+          "id": "C",
+          "text": "Según la Ley básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica, una historia clínica es el conjunto de documentos que contiene los datos, valoraciones e informaciones de cualquier índole sobre la situación y la evolución clínica de un paciente a lo largo del proceso asistencial."
+        },
+        {
+          "id": "D",
+          "text": "El paciente no tiene derecho a solicitar copia de sus radiografías si van a ser valoradas en consultas privadas, ya que se trata de datos de carácter personal y, por tanto, protegidos y normativizados."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q083",
+      "sourceNumber": 83,
+      "text": "De una proyección radiológica transtorácica de hombro, señale cuál es la afirmación correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es, junto con la proyección AP de hombro, la prueba inicial adecuada ante la sospecha de luxación de hombro."
+        },
+        {
+          "id": "B",
+          "text": "Es la que se debe realizar junto a una axial pura ante la sospecha de fractura de cabeza de húmero."
+        },
+        {
+          "id": "C",
+          "text": "Se realiza igual que una lateral de tórax pero a 1 metro de distancia."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas anteriores es correcta."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q084",
+      "sourceNumber": 84,
+      "text": "¿Qué es la densitometría?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es un equipo de rayos dental."
+        },
+        {
+          "id": "B",
+          "text": "Técnica de medición y calibración de equipos de radiodiagnóstico."
+        },
+        {
+          "id": "C",
+          "text": "Técnica de medición de calcificaciones y placas de ateroma en los vasos sanguíneos, a través de algoritmos de la TC"
+        },
+        {
+          "id": "D",
+          "text": "La densitometría es una prueba diagnóstica que mide el grado de mineralización del hueso."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q085",
+      "sourceNumber": 85,
+      "text": "El consentimiento informado, ya sea escrito u oral, tiene básicamente tres objetivos. ¿Cuál de los siguientes NO es uno de esos objetivos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dar información con calidad y cantidad suficiente sobre el procedimiento, sus posibles alternativas, consecuencias y los riesgos derivados del mismo."
+        },
+        {
+          "id": "B",
+          "text": "Obtener la aceptación del riesgo informado. En el caso de procedimientos de alta dosis (intervencionismo) donde pudieran producirse lesiones en piel, así como en el caso de paciente gestante debería incluirse el riesgo por radiación."
+        },
+        {
+          "id": "C",
+          "text": "Proteger a los profesionales sanitarios de las quejas y reclamaciones que los usuarios puedan realizar una vez terminado el procedimiento radiológico, independientemente de los resultados obtenidos en la prueba."
+        },
+        {
+          "id": "D",
+          "text": "Formalizar la autorización libre y voluntaria del paciente para la realización del procedimiento propuesto. Esta actividad se exterioriza a través de formularios escritos, o dejando constancia escrita en la historia clínica, si la forma de obtención es verbal."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 18
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q086",
+      "sourceNumber": 86,
+      "text": "Los controles de calidad que se realizan sobre los equipos emisores de rayos X para fines médicos, se hacen con una periodicidad:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mensual."
+        },
+        {
+          "id": "B",
+          "text": "Bianual."
+        },
+        {
+          "id": "C",
+          "text": "Semestral."
+        },
+        {
+          "id": "D",
+          "text": "Anual."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q087",
+      "sourceNumber": 87,
+      "text": "¿Cuál de éstas es filtración inherente del haz de rayos X?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La que añadimos en forma de láminas de aluminio."
+        },
+        {
+          "id": "B",
+          "text": "Los filtros de compensación (cuñas) que colocamos para estudios con estructuras diferentes."
+        },
+        {
+          "id": "C",
+          "text": "La filtración inherente es la propia de la carcasa de vidrio o de metal."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q088",
+      "sourceNumber": 88,
+      "text": "Los dosímetros son instrumentos diseñados para detectar y medir la radiación. Hay varios tipos de dispositivos altamente precisos para medir la radiación, entre los que encontramos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cámaras de ionización."
+        },
+        {
+          "id": "B",
+          "text": "Contador Geiger-Muller."
+        },
+        {
+          "id": "C",
+          "text": "Detectores de centelleo."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q089",
+      "sourceNumber": 89,
+      "text": "¿Qué inclinación debemos dar en la proyección axial de calcáneo (plantodorsal)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15."
+        },
+        {
+          "id": "B",
+          "text": "25."
+        },
+        {
+          "id": "C",
+          "text": "40."
+        },
+        {
+          "id": "D",
+          "text": "60."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q090",
+      "sourceNumber": 90,
+      "text": "¿Deben las mujeres comunicar, al profesional sanitario habilitado, si está embarazada o cree estarlo, o en período de lactancia, antes de someterse al procedimiento con radiaciones?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No es necesario."
+        },
+        {
+          "id": "B",
+          "text": "Solo si ella lo considera importante."
+        },
+        {
+          "id": "C",
+          "text": "Si, y el titular del centro sanitario donde esté ubicada la correspondiente unidad asistencial adoptará las medidas necesarias, como la colocación de carteles en los lugares adecuados u otras, para informar a las mujeres de la necesidad de informar."
+        },
+        {
+          "id": "D",
+          "text": "En ningún caso."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 19
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q091",
+      "sourceNumber": 91,
+      "text": "Zona controlada es aquella zona en la que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Exista la posibilidad de recibir dosis efectivas superiores a 60 mSv por año oficial o una dosis equivalente superior a 3/10 de los límites de dosis equivalentes para el cristalino, la piel y las extremidades"
+        },
+        {
+          "id": "B",
+          "text": "Exista la posibilidad de recibir dosis efectivas superiores a 106 mSv por año oficial o una dosis equivalente superior a 3/10 de los límites de dosis equivalentes para el cristalino, la piel y las extremidades"
+        },
+        {
+          "id": "C",
+          "text": "Exista la posibilidad de recibir dosis efectivas superiores a 8 mSv por año oficial o una dosis equivalente superior a 3/10 de los límites de dosis equivalentes para el cristalino, la piel y las extremidades"
+        },
+        {
+          "id": "D",
+          "text": "Exista la posibilidad de recibir dosis efectivas superiores a 6 mSv por año oficial o una dosis equivalente superior a 3/10 de los límites de dosis equivalentes para el cristalino, la piel y las extremidades"
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q092",
+      "sourceNumber": 92,
+      "text": "Las zonas controladas se podrán subdividir en las siguientes: (señale la FALSA)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zonas de permanencia limitada."
+        },
+        {
+          "id": "B",
+          "text": "Zona vigilada."
+        },
+        {
+          "id": "C",
+          "text": "Zonas de permanencia reglamentada."
+        },
+        {
+          "id": "D",
+          "text": "Zonas de acceso prohibido."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q093",
+      "sourceNumber": 93,
+      "text": "En la proyección del antebrazo, debemos ver:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un mínimo de huesos del carpo de la hilera proximal."
+        },
+        {
+          "id": "B",
+          "text": "Radio y cúbito completos."
+        },
+        {
+          "id": "C",
+          "text": "Húmero completo."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q094",
+      "sourceNumber": 94,
+      "text": "De las siguientes radiaciones, ¿cuál NO es un tipo de radiación por partículas?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rayos X."
+        },
+        {
+          "id": "B",
+          "text": "Alfa."
+        },
+        {
+          "id": "C",
+          "text": "Beta."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q095",
+      "sourceNumber": 95,
+      "text": "En las salas de radiografía hay dos tipos de barreras de protección radiológica, primarias y secundarias. Señale la respuesta correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las primarias interceptan el haz útil de rayos X."
+        },
+        {
+          "id": "B",
+          "text": "Las secundarias protegen al personal de la radiación dispersa."
+        },
+        {
+          "id": "C",
+          "text": "Las secundarias protegen al personal de la radiación de fuga."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q096",
+      "sourceNumber": 96,
+      "text": "El espacio K es...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un espacio virtual donde se almacenan las frecuencias espaciales."
+        },
+        {
+          "id": "B",
+          "text": "Un programa de ordenador."
+        },
+        {
+          "id": "C",
+          "text": "El espacio entre el paciente y la antena."
+        },
+        {
+          "id": "D",
+          "text": "El ordenador de las reconstrucciones."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 20
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q097",
+      "sourceNumber": 97,
+      "text": "Los trabajadores profesionalmente expuestos de categoría A son los que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pertenecen a esta categoría los que puedan recibir una dosis efectiva superior a 6 mSv por año oficial, o una dosis equivalente superior a 3/10 de los límites de dosis equivalente para el cristalino, la piel y las extremidades."
+        },
+        {
+          "id": "B",
+          "text": "Pertenecen a esta categoría aquellos que es muy improbable que reciban dosis efectivas superiores a 6 mSv por año oficial, o a 3/10 de los límites de dosis equivalente para el cristalino, la piel y las extremidades."
+        },
+        {
+          "id": "C",
+          "text": "Todos los trabajadores de un área de radiología."
+        },
+        {
+          "id": "D",
+          "text": "Los trabajadores del área de TAC."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q098",
+      "sourceNumber": 98,
+      "text": "En ecografía, la frecuencia de una onda es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El número de oscilaciones o crestas de la onda que pasan por un observador estacionario en una unidad de tiempo."
+        },
+        {
+          "id": "B",
+          "text": "La distancia entre dos puntos sucesivos equivalentes de la onda."
+        },
+        {
+          "id": "C",
+          "text": "El tiempo que tarda un punto de la onda en repetirse."
+        },
+        {
+          "id": "D",
+          "text": "La presión a la que se somete cada partícula con el tiempo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q099",
+      "sourceNumber": 99,
+      "text": "¿Cómo se ven los líquidos estacionarios en RM, en secuencias potenciadas en T1?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hiperintensos."
+        },
+        {
+          "id": "B",
+          "text": "Hipointensos."
+        },
+        {
+          "id": "C",
+          "text": "Es indiferente."
+        },
+        {
+          "id": "D",
+          "text": "Brillantes."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q100",
+      "sourceNumber": 100,
+      "text": "En ecografía, ¿cuál de las siguientes afirmaciones es FALSA?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las ondas sonoras son una forma de transmisión de energía."
+        },
+        {
+          "id": "B",
+          "text": "La energía se mide en julios."
+        },
+        {
+          "id": "C",
+          "text": "La potencia es el cociente entre la energía y la longitud de onda."
+        },
+        {
+          "id": "D",
+          "text": "Julios y watios son medidas del sistema internacional."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 21
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q101",
+      "sourceNumber": 101,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias. El lema o eslogan en las campañas de prevención del ictus, es:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El “Cerebro cogido a tiempo”."
+        },
+        {
+          "id": "B",
+          "text": "El “Tiempo es cerebro”."
+        },
+        {
+          "id": "C",
+          "text": "El “Podemos llegar a tiempo”."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas anteriores es cierta."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q102",
+      "sourceNumber": 102,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nEl médico de urgencias, tras evaluar al paciente Y, solicita a Radiología la realización de un TC de cráneo CON contraste I.V. por posible Ictus. El TER / TSID inicialmente le hace un TC de cráneo SIN contraste. ¿Qué observa el TER / TSID en la imagen del TC de cráneo realizado (IMAGEN 1)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un TC de cráneo sin alteraciones apreciables."
+        },
+        {
+          "id": "B",
+          "text": "Un TC de cráneo con imagen sugestiva de ictus isquémico."
+        },
+        {
+          "id": "C",
+          "text": "Un TC de cráneo con imagen sugestiva de ictus hemorrágico."
+        },
+        {
+          "id": "D",
+          "text": "Un TC de cráneo totalmente normal."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22,
+      "media": [
+        {
+          "asset": "figure-01",
+          "alt": "Imagen 1 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q103",
+      "sourceNumber": 103,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nSi la imagen del TC de cráneo sin contraste I.V. hubiera sido la que se muestra en la imagen (IMAGEN 2), ¿qué tipo de ictus/hemorragia/hematoma puede ser el que se observa en la imagen señalada con flechas del TC de cráneo mostrado en esta pregunta (IMAGEN 2)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ictus isquémico del lado derecho del paciente."
+        },
+        {
+          "id": "B",
+          "text": "Ictus por hemorragia/hematoma subdural."
+        },
+        {
+          "id": "C",
+          "text": "Ictus por hemorragia/hematoma epidural."
+        },
+        {
+          "id": "D",
+          "text": "Ictus por hemorragia subaracnoidea."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 22,
+      "media": [
+        {
+          "asset": "figure-02",
+          "alt": "Imagen 2 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q104",
+      "sourceNumber": 104,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nEl facultativo de radiología le indicada al TER / TSID, tras visualizar el TC craneal inicial, que una de las cosas que se observa es un sangrado en los surcos del cerebro, por lo que considera que es un ictus hemorrágico, y le pregunta al TER / TSID. ¿Qué tipo de hemorragia/hematoma se visualiza en los surcos cerebrales que se ve en la imagen (IMAGEN 3)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hemorragia de TSA (troncos supraaórticos)."
+        },
+        {
+          "id": "B",
+          "text": "Hemorragia subdural."
+        },
+        {
+          "id": "C",
+          "text": "Hemorragia epidural."
+        },
+        {
+          "id": "D",
+          "text": "Hemorragia subaracnoidea."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23,
+      "media": [
+        {
+          "asset": "figure-03",
+          "alt": "Imagen 3 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q105",
+      "sourceNumber": 105,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nEl hematoma/hemorragia parenquimatosa tiene una densidad diferente según el tiempo de evolución de la sangre, y se puede resumir que:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una hemorragia intraparenquimatosa aguda es hiperdensa (más blanca) respecto al parenquima cerebral los tres primeros días."
+        },
+        {
+          "id": "B",
+          "text": "De los cuatro a los diez días siguientes, la zona periférica se suele hacer isodensa con respecto al resto del parénquima cerebral, persistiendo un área hiperdensa central."
+        },
+        {
+          "id": "C",
+          "text": "Desde el día once hasta los seis meses, el centro se va haciendo isodenso rodeado de áreas de tejido hipodenso. A partir de los seis meses todo hematoma será hipodenso (más negro) con respecto al parénquima cerebral."
+        },
+        {
+          "id": "D",
+          "text": "Son ciertas todas las respuestas anteriores."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q106",
+      "sourceNumber": 106,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nEl Ictus se origina por una alteración circulatoria cerebral, que da lugar a un trastorno transitorio o definitivo de la función de una o varias partes del encéfalo. Según la naturaleza de la lesión, se clasifican en isquemia cerebral y hemorragia cerebral. ¿A qué se corresponde la imagen de esta pregunta (IMAGEN 4)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hemorragia/hematoma intraparenquimatosa."
+        },
+        {
+          "id": "B",
+          "text": "Hemorragia/hematoma subdural."
+        },
+        {
+          "id": "C",
+          "text": "Hemorragia/hematoma epidural."
+        },
+        {
+          "id": "D",
+          "text": "Isquemia intraparenquimatosa."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23,
+      "media": [
+        {
+          "asset": "figure-04",
+          "alt": "Imagen 4 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q107",
+      "sourceNumber": 107,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nSeñala la respuesta INCORRECTA respecto del polígono de Willis:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es el sistema venoso responsable de la vascularización cerebral."
+        },
+        {
+          "id": "B",
+          "text": "Se localiza de manera preferente en la región basal cerebral."
+        },
+        {
+          "id": "C",
+          "text": "Está formado por una circulación anterior y otra circulación posterior."
+        },
+        {
+          "id": "D",
+          "text": "Es el sistema arterial principal que vasculariza el cerebro."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q108",
+      "sourceNumber": 108,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nSi el facultativo de radiología hubiera indicado al TER / TSID que el ictus es hemorrágico tras visualizar el TC craneal inicial, y le pregunta al TER / TSID ¿qué tipo de ictus/hemorragia/hematoma es la que se intuye en la imagen (IMAGEN 5)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hemorragia/hematoma de TSA (troncos supraaórticos)."
+        },
+        {
+          "id": "B",
+          "text": "Hemorragia/hematoma subdural."
+        },
+        {
+          "id": "C",
+          "text": "Hemorragia/hematoma epidural."
+        },
+        {
+          "id": "D",
+          "text": "Hemorragia/hematoma subaracnoidea."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 23,
+      "media": [
+        {
+          "asset": "figure-05",
+          "alt": "Imagen 5 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q109",
+      "sourceNumber": 109,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nUna vez detectado el ictus isquémico, se le prosigue con la planificación radiológica de los códigos ictus, iniciándose la realización, por parte del TER / TSID, de una TC de perfusión cerebral. ¿Qué es FALSO?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es fundamental en el infarto isquémico agudo."
+        },
+        {
+          "id": "B",
+          "text": "Se basa en el primer paso de un bolo de contraste a través del parénquima cerebral."
+        },
+        {
+          "id": "C",
+          "text": "El volumen de tejido cerebral incluido depende de la anchura de los detectores del TC."
+        },
+        {
+          "id": "D",
+          "text": "Las adquisiciones se repiten a determinados intervalos de tiempo con una duración mínima de 10 segundos."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q110",
+      "sourceNumber": 110,
+      "text": "CASO PRACTICO 1: Paciente Y que es encontrado por un familiar en su domicilio tendido en el suelo inconsciente y con heridas en la cabeza sangrantes. El familiar indica al 061 que no sabe cuánto tiempo lleva tendido en el suelo. El paciente es llevado a Urgencias activando el 061 el código ICTUS. Aunque no es papel del TER / TSID interpretar las imágenes, sin embargo es importante que sea capaz de reconocer lesiones que puedan comprometer la vida del paciente o que requieran la realización de exploraciones complementarias.\n\nUna vez realizada la perfusión cerebral se debe realizar un post-proceso de las imágenes adquiridas, que se puede hacer de forma manual, semiautomática y automática. Los métodos automáticos los puede realizar el TER / TSID, para ganar tiempo en el triaje de pacientes con infarto cerebral. ¿Qué es cierto?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es frecuente que se realice un cribado rápido para evaluar el parénquima cerebral."
+        },
+        {
+          "id": "B",
+          "text": "Es frecuente que se realice un cribado rápido para evaluar las arterias que irrigan el parénquima cerebral."
+        },
+        {
+          "id": "C",
+          "text": "Es frecuente que se realice un cribado rápido para cuantificar la cantidad de sangre que está llegando a una determinada parte del cerebro."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q111",
+      "sourceNumber": 111,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica. ¿Qué estructura anatómica se representa en la imagen con contraste en su interior (IMAGEN 6)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aorta."
+        },
+        {
+          "id": "B",
+          "text": "Vena cava superior e inferior."
+        },
+        {
+          "id": "C",
+          "text": "Esófago."
+        },
+        {
+          "id": "D",
+          "text": "Arteria paravertebral anterior."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24,
+      "media": [
+        {
+          "asset": "figure-06",
+          "alt": "Imagen 6 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q112",
+      "sourceNumber": 112,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nRadiografías en proyección AP y OPD de la cadera derecha. ¿A qué zona anatómica se corresponde lo marcado con las puntas de las flechas hueca (IMAGEN 7)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Espina ilíaca antero superior derecha."
+        },
+        {
+          "id": "B",
+          "text": "Protuberancia coxal derecha."
+        },
+        {
+          "id": "C",
+          "text": "Espina ciática derecha."
+        },
+        {
+          "id": "D",
+          "text": "Protuberancia iliaco-femoral derecha."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 24,
+      "media": [
+        {
+          "asset": "figure-07",
+          "alt": "Imagen 7 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q113",
+      "sourceNumber": 113,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nDurante una CPRE (colangiopancreatografía retrograda endoscópica), se le solicita al TER / TSID que centre la imagen, ya que va a introducir contraste. ¿A qué zona anatómica se corresponde el número 3 de la imagen obtenida (IMAGEN 8)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conducto hepático común."
+        },
+        {
+          "id": "B",
+          "text": "Conducto colédoco."
+        },
+        {
+          "id": "C",
+          "text": "Conducto pancreático."
+        },
+        {
+          "id": "D",
+          "text": "Conducto cístico."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25,
+      "media": [
+        {
+          "asset": "figure-08",
+          "alt": "Imagen 8 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q114",
+      "sourceNumber": 114,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nEcografía abdominal a nivel del hígado en un corte subcostal en la línea media, en donde (VCI) se corresponde a la vena cava inferior. ¿A qué zona anatómica se corresponden los números 1, 2 y 3 respectivamente de la imagen obtenida (IMAGEN 9)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, vena hepática derecha; 2, vena hepática media; 3, vena hepática izquierda)."
+        },
+        {
+          "id": "B",
+          "text": "(1, vena hepática izquierda; 2, vena hepática media; 3, vena hepática derecha)."
+        },
+        {
+          "id": "C",
+          "text": "(1, vena hepática inferior; 2, vena hepática intermedial; 3, vena hepática superior)."
+        },
+        {
+          "id": "D",
+          "text": "(1, vena hepática intraluminal; 2, vena hepática transluminal; 3, vena hepática supraluminal)."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25,
+      "media": [
+        {
+          "asset": "figure-09",
+          "alt": "Imagen 9 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q115",
+      "sourceNumber": 115,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nTC de alta resolución de Tórax en corte axial. ¿A qué número se corresponde la vena ácigos (IMAGEN 10)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34."
+        },
+        {
+          "id": "B",
+          "text": "33."
+        },
+        {
+          "id": "C",
+          "text": "25."
+        },
+        {
+          "id": "D",
+          "text": "8."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25,
+      "media": [
+        {
+          "asset": "figure-10",
+          "alt": "Imagen 10 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q116",
+      "sourceNumber": 116,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nCorte ecográfico del abdomen, transversal a nivel de epigastrio. En la imagen puede verse el páncreas (P) cortado longitudinalmente. En la parte posterior de la cabeza del páncreas se ve el colédoco intrahepático (Co), cortado transversalmente, se ven también el eje esplénico (E), la arteria aorta (A) y la vena cava inferior (C). Limitando la cabeza del páncreas se puede ver eco fuerte (D), correspondiente al duodeno, con aire, dejando sombra acústica (S). Delante del páncreas (P) se ve corte trasversal del hígado (H). ¿A qué estructura anatómica se corresponde la marcada con el numero 1 (IMAGEN 11)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Arteria mesentérica superior."
+        },
+        {
+          "id": "B",
+          "text": "Vena porta."
+        },
+        {
+          "id": "C",
+          "text": "Arteria del tronco celiaco."
+        },
+        {
+          "id": "D",
+          "text": "Vena suprahepática."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 25,
+      "media": [
+        {
+          "asset": "figure-11",
+          "alt": "Imagen 11 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q117",
+      "sourceNumber": 117,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nRadiografía de Tórax PA, según la esquematización de la localización de las cámaras cardíacas, ¿a cuál cámara corresponden aproximadamente los círculos representados (IMAGEN 12)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "(D, aurícula izquierda; A, aurícula derecha; B, ventrículo derecho; C, ventrículo izquierdo)."
+        },
+        {
+          "id": "B",
+          "text": "(A, aurícula izquierda; D, aurícula derecha; B, ventrículo derecho; C, ventrículo izquierdo)."
+        },
+        {
+          "id": "C",
+          "text": "(D, aurícula izquierda; A, aurícula derecha; C, ventrículo derecho; B, ventrículo izquierdo)."
+        },
+        {
+          "id": "D",
+          "text": "(A, aurícula izquierda; B, aurícula derecha; C, ventrículo derecho; D, ventrículo izquierdo)."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26,
+      "media": [
+        {
+          "asset": "figure-12",
+          "alt": "Imagen 12 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q118",
+      "sourceNumber": 118,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nEstudio grastroduodenal en estomago normal. Identifique anatómicamente los números referenciados en la imagen (IMAGEN 13):",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, cuerpo gástrico; 2, fundus gástrico; 3, antro gástrico; 4, canal pilórico; 5, bulbo duodenal; 6, segunda porción del duodeno)."
+        },
+        {
+          "id": "B",
+          "text": "(1, fundus gástrico; 2, cuerpo gástrico; 3, antro gástrico; 4, canal pilórico; 5, bulbo duodenal; 6, segunda porción del duodeno)."
+        },
+        {
+          "id": "C",
+          "text": "(1, fundus gástrico; 2, antro gástrico; 3, cuerpo gástrico; 4, canal pilórico; 5, bulbo duodenal; 6, segunda porción del duodeno)."
+        },
+        {
+          "id": "D",
+          "text": "(1, fundus gástrico; 2, cuerpo gástrico; 3, antro gástrico; 4, canal pilórico; 5, segunda porción del duodeno; 6, bulbo duodenal )."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26,
+      "media": [
+        {
+          "asset": "figure-13",
+          "alt": "Imagen 13 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q119",
+      "sourceNumber": 119,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nArteriografía del tronco celiaco, vista anteroposterior. ¿Qué estructuras arteriales indican los números (IMAGEN 14)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, Arteria hepática común; 2, Tronco celiaco; 3, Arteria pancreática; 4, Arteria hepática derecha; 5, Arteria hepática izquierda)."
+        },
+        {
+          "id": "B",
+          "text": "(1, Tronco celiaco; 2, Arteria hepática común; 3, Arteria esplénica; 4, Arteria gastroduodenal; 5, Arteria hepática izquierda)."
+        },
+        {
+          "id": "C",
+          "text": "(1, Tronco celiaco; 2, Arteria hepática común; 3, Arteria pancreática; 4, Arteria gastroduodenal; 5, Arteria hepática izquierda)."
+        },
+        {
+          "id": "D",
+          "text": "(1, Arteria hepática común; 2, Tronco celiaco; 3, Arteria esplénica; 4, Arteria hepática derecha; 5, Arteria hepática superior)."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26,
+      "media": [
+        {
+          "asset": "figure-14",
+          "alt": "Imagen 14 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q120",
+      "sourceNumber": 120,
+      "text": "CASO PRÁCTICO 2: El Coordinador/a Técnico del Servicio de Radiología, debido a las nuevas incorporaciones de personal en formación, selecciona a un TER / TSID de la plantilla para que imparta clases docentes a las nuevas incorporaciones, en materia de anatomía radiológica.\n\nEn la siguiente imagen de RM de un axial de hombro, ¿a qué tendón se corresponde la zona anatómica que está en el centro del circulo (IMAGEN 15)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tendón del musculo tríceps braquial."
+        },
+        {
+          "id": "B",
+          "text": "Tendón del musculo bíceps braquial."
+        },
+        {
+          "id": "C",
+          "text": "Tendón del musculo deltoides."
+        },
+        {
+          "id": "D",
+          "text": "Tendón del supraespinoso."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 26,
+      "media": [
+        {
+          "asset": "figure-15",
+          "alt": "Imagen 15 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q121",
+      "sourceNumber": 121,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia. El TER / TSID le realiza una mamografía a la paciente H, en donde la compresión de la mama es necesaria porque..., (señale la respuesta ERRÓNEA)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Consigue menor grosor y, por tanto, mayor radiación dispersa y mayor dosis de radiación."
+        },
+        {
+          "id": "B",
+          "text": "Consigue un espesor más homogéneo."
+        },
+        {
+          "id": "C",
+          "text": "Disminuye la posibilidad de solapamiento de las estructuras."
+        },
+        {
+          "id": "D",
+          "text": "Reduce el movimiento, disminuyendo así la borrosidad."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q122",
+      "sourceNumber": 122,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nLa mama está situada entre los siguientes músculos:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Serrato externo y esternocleidomastoideo."
+        },
+        {
+          "id": "B",
+          "text": "Pectoral mayor y serrato mayor."
+        },
+        {
+          "id": "C",
+          "text": "Pectoral menor y serrato mayor."
+        },
+        {
+          "id": "D",
+          "text": "Pectoral menor y serrato menor."
+        }
+      ],
+      "sourceAnswer": "ANULADA",
+      "correctOption": null,
+      "status": "annulled",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q123",
+      "sourceNumber": 123,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nLa tomosíntesis en mama es una exploración:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que ha demostrado mejoría en la detectabilidad de patología mamaria, y su uso se ha extendido para el cribado poblacional, no utilizándose para mamografía diagnóstica."
+        },
+        {
+          "id": "B",
+          "text": "Que ha demostrado mejoría en la detectabilidad de patología mamaria, y su uso se ha extendido tanto para el cribado poblacional como para la mamografía diagnóstica."
+        },
+        {
+          "id": "C",
+          "text": "Que ha demostrado mejoría en la detectabilidad de patología mamaria, y su uso se ha extendido para la mamografía diagnóstica, no utilizándose para el cribado poblacional."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q124",
+      "sourceNumber": 124,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nMediante la tomosíntesis digital…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se obtienen planos tomográficos de una estructura con técnica radiográfica o mamográfica convencional, que permiten aproximarse a la imagen volumétrica de una estructura."
+        },
+        {
+          "id": "B",
+          "text": "Se pueden juntar estructuras que, en la imagen convencional, aparecen separadas."
+        },
+        {
+          "id": "C",
+          "text": "Las respuestas A y B son ciertas."
+        },
+        {
+          "id": "D",
+          "text": "Las respuestas A y B son falsas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 27
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q125",
+      "sourceNumber": 125,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nSegún las recomendaciones de la Sociedad Española de Protección Radiológica (SEPR) y la Sociedad Española de Diagnóstico por Imagen de la Mama (SEDIM), indique cuál de las siguientes afirmaciones es correcta:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se debe utilizar protector plomado de tiroides siembre que la paciente lo solicite."
+        },
+        {
+          "id": "B",
+          "text": "Se considera que la elevada radiación dispersa que recibe el tiroides durante la mamografía justifica el uso de protector plomado de tiroides."
+        },
+        {
+          "id": "C",
+          "text": "Se considera que durante la realización de la mamografía no es necesario utilizar el protector plomado de tiroides, y su uso puede ser perjudicial para la paciente."
+        },
+        {
+          "id": "D",
+          "text": "Coinciden con las recomendaciones de la “American College of Radiology”, en que el protector plomado de tiroides no afecta en ningún caso a la calidad de imagen en mamografía."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q126",
+      "sourceNumber": 126,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nLa ecografía de mama realizada a la paciente H tiene una indicación especial en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diferenciación entre tumor solido o un quiste."
+        },
+        {
+          "id": "B",
+          "text": "Estudio de microcalcificaciones."
+        },
+        {
+          "id": "C",
+          "text": "Distinción entre benignidad y malignidad."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q127",
+      "sourceNumber": 127,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nSegún la clasificación BI-RADS ®, los hallazgos muy probablemente benignos (probabilidad de malignidad no superior al 2%) en exámenes de mama, se incluirían en la categoría:",
+      "options": [
+        {
+          "id": "A",
+          "text": "BI-RADS ® 3."
+        },
+        {
+          "id": "B",
+          "text": "BI-RADS ® 1."
+        },
+        {
+          "id": "C",
+          "text": "BI-RADS ® 2."
+        },
+        {
+          "id": "D",
+          "text": "BI-RADS ® 4."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q128",
+      "sourceNumber": 128,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nUna vez realizada la mamografía, el facultativo de radiología necesita realizar una galactografía a la paciente H. ¿Qué se pretende con la galactrografía?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Identificar un fibroadenoma adiposo."
+        },
+        {
+          "id": "B",
+          "text": "Identificar la existencia de microcalcificaciones glandulares."
+        },
+        {
+          "id": "C",
+          "text": "Identificar una masa intraductal."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son correctas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q129",
+      "sourceNumber": 129,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\n¿Qué proyecciones se le realizarán a la paciente H (de las respuesta dadas), en la mama seleccionada, para comprobar la colocación de un arpón para biopsia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Craneo-caudal y lateral."
+        },
+        {
+          "id": "B",
+          "text": "Caudo-craneal y antero-posterior."
+        },
+        {
+          "id": "C",
+          "text": "Craneo-caudal y Eklund."
+        },
+        {
+          "id": "D",
+          "text": "Craneo-caudal y caudo-craneal."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 28
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q130",
+      "sourceNumber": 130,
+      "text": "CASO PRACTICO 3: Paciente H de 57 años, que acude a su médico de familia al detectarse en auto exploración un bultoma en la mama izquierda. El médico de familia le solicita una mamografía y la deriva a la Unidad de Mama de su hospital de referencia.\n\nEl oncólogo solicita a la paciente H, un TC de extensión de tórax y abdomen. Se observa en dicho TC una imagen que tiene un centro medido por ROI (Return on Investment) con un valor de +1.000 en unidades Hounsfield (UH). ¿A qué tejido corresponde dicho valor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aire libre."
+        },
+        {
+          "id": "B",
+          "text": "Aire en visera hueca."
+        },
+        {
+          "id": "C",
+          "text": "Aire en pulmón."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas anteriores es cierta."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q131",
+      "sourceNumber": 131,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico. Se le realiza al paciente X radiografías de cráneo. En la imagen lateral de cráneo, ¿qué zona anatómica ósea marca la punta de la flecha (IMAGEN 17)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hipófisis."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis clinoides posteriores."
+        },
+        {
+          "id": "C",
+          "text": "Espina laminar del etmoides."
+        },
+        {
+          "id": "D",
+          "text": "Apófisis terigoideas del esfenoides."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29,
+      "media": [
+        {
+          "asset": "figure-17",
+          "alt": "Imagen 17 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q132",
+      "sourceNumber": 132,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nSe le realiza al paciente X un TC de SPN con ventana de hueso (Bone). En la imagen axial, ¿a qué zona anatómica se corresponde el número 1, que indica la fecha hueca (IMAGEN 18)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apófisis del maxilar superior."
+        },
+        {
+          "id": "B",
+          "text": "Protuberancia arcuata."
+        },
+        {
+          "id": "C",
+          "text": "Clivus."
+        },
+        {
+          "id": "D",
+          "text": "Unión petrosa de las mastoides."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29,
+      "media": [
+        {
+          "asset": "figure-18",
+          "alt": "Imagen 18 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q133",
+      "sourceNumber": 133,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nSe le realiza al paciente X, una RM de cráneo. En la imagen axial, ¿a qué zona anatómica se corresponde lo que marcan las puntas de las flechas huecas (IMAGEN 19)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nervios óptico, segmento intraocular."
+        },
+        {
+          "id": "B",
+          "text": "Nervios óptico, segmento intracanalicular."
+        },
+        {
+          "id": "C",
+          "text": "Nervios óptico, porción intracraneal."
+        },
+        {
+          "id": "D",
+          "text": "Nervios oculomotor común."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 29,
+      "media": [
+        {
+          "asset": "figure-19",
+          "alt": "Imagen 19 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q134",
+      "sourceNumber": 134,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nEl paciente X tiene diplopia en el ojo derecho, debido al traumatismo, y el oftalmólogo le solicita una radiografía simple del agujero óptico para descartar erosiones de dicho canal. ¿Qué proyección de las respuestas dadas es especifica de agujero óptico?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chausse VIII."
+        },
+        {
+          "id": "B",
+          "text": "Stenvers."
+        },
+        {
+          "id": "C",
+          "text": "Chausse III."
+        },
+        {
+          "id": "D",
+          "text": "Ninguna de las respuestas anteriores es correcta."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q135",
+      "sourceNumber": 135,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nEl paciente X está muy dolorido a la altura de la región lumbosacra. ¿Qué modalidades de técnicas de imagen podríamos utilizar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Las radiografías simples se utilizan para evaluar las fracturas, los cambios degenerativos y la alineación."
+        },
+        {
+          "id": "B",
+          "text": "La TC se usa para evaluar la patología ósea, especialmente las fracturas."
+        },
+        {
+          "id": "C",
+          "text": "La RM es la mejor técnica para valorar la médula espinal, la médula ósea y los espacios epidural y subdural."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q136",
+      "sourceNumber": 136,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nSe le realiza al paciente X una AP y lateral de columna lumbosacra; en la imagen lateral focalizada en el sacro, indique la zona anatómica marcada con un círculo (IMAGEN 20):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Espina anterior del sacro."
+        },
+        {
+          "id": "B",
+          "text": "Eminencia arcuata."
+        },
+        {
+          "id": "C",
+          "text": "Ala anterior del sacro."
+        },
+        {
+          "id": "D",
+          "text": "Promontorio del sacro."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30,
+      "media": [
+        {
+          "asset": "figure-20",
+          "alt": "Imagen 20 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q137",
+      "sourceNumber": 137,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nEn la exploración por parte del traumatólogo, el paciente X muestra dolor a la dígito-punción en el hombro izquierdo, por lo que se solicita una radiografía simple de dicho hombro. Indique la zona anatómica marcada con una flecha hueca y con el número 1 (IMAGEN 21):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acromion de la escapula."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis coracoides de la escapula."
+        },
+        {
+          "id": "C",
+          "text": "Tubérculo mayor de la escapula."
+        },
+        {
+          "id": "D",
+          "text": "Tubérculo menor de la escapula."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30,
+      "media": [
+        {
+          "asset": "figure-21",
+          "alt": "Imagen 21 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q138",
+      "sourceNumber": 138,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nEl traumatólogo no ve nada patológico en la radiografía simple de hombro, por lo que solicita una RM del mismo. ¿Qué indica la zona anatómica marcada con la punta de la flecha hueca (IMAGEN 22)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acromion."
+        },
+        {
+          "id": "B",
+          "text": "Apófisis coracoides."
+        },
+        {
+          "id": "C",
+          "text": "Tendón del musculo deltoides."
+        },
+        {
+          "id": "D",
+          "text": "Clavícula."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 30,
+      "media": [
+        {
+          "asset": "figure-22",
+          "alt": "Imagen 22 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q139",
+      "sourceNumber": 139,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nEl paciente X, de forma súbita, presenta signos de rectorragia, por lo que se le realiza enema opaco. En la radiografía de abdomen completa del enema de bario con doble contraste, identifique las porciones del colon enumeradas (IMAGEN 23):",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, apéndice; 2, colon ascendente; 3, flexura hepática; 4, colon transverso medio; 5, flexura esplénica; 6, colon descendente; 7, colon sigmoide, 8, recto)."
+        },
+        {
+          "id": "B",
+          "text": "(1, ciego; 2, colon ascendente; 3, flexura hepática; 4, colon transverso medio; 5, flexura esplénica; 6, colon descendente; 7, recto, 8, colon sigmoide)."
+        },
+        {
+          "id": "C",
+          "text": "(1, ciego; 2, colon ascendente; 3, flexura esplénica; 4, colon transverso medio; 5, flexura hepática; 6, colon descendente; 7, colon sigmoide, 8, recto)."
+        },
+        {
+          "id": "D",
+          "text": "(1, ciego; 2, colon ascendente; 3, flexura hepática; 4, colon transverso medio; 5, flexura esplénica; 6, colon descendente; 7, colon sigmoide, 8, recto)."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31,
+      "media": [
+        {
+          "asset": "figure-23",
+          "alt": "Imagen 23 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q140",
+      "sourceNumber": 140,
+      "text": "CASO PRACTICO 4: Paciente X que es traído por la ambulancia al Servicio de Urgencias, por accidente de tráfico, que presenta multicontusiones por traumatismo en cráneo, miembros superiores e inferiores, con dolor torácico y gran hematoma abdominopélvico.\n\nAl no ser concluyente el enema opaco del paciente X, se opta por realizar TC de zona pélvica. En la imagen del TC en plano sagital, identifique la anatomía de los números indicados (IMAGEN 24):",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, próstata; 2, vejiga urinaria; 3, colon sigmoideo; 4, recto)."
+        },
+        {
+          "id": "B",
+          "text": "(1, vejiga urinaria; 2, útero; 3, colon sigmoideo; 4, recto)."
+        },
+        {
+          "id": "C",
+          "text": "(1, vejiga urinaria; 2, próstata; 3, colon sigmoideo; 4, recto)."
+        },
+        {
+          "id": "D",
+          "text": "(1, hueso del pubis; 2, vejiga urinaria; 3, útero; 4, recto)."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31,
+      "media": [
+        {
+          "asset": "figure-24",
+          "alt": "Imagen 24 del cuadernillo oficial de Radiodiagnóstico 2021. Mantiene las marcas anatómicas y flechas originales."
+        }
+      ]
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q141",
+      "sourceNumber": 141,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente… La capacidad de disipación térmica de un tubo de Rx es…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Una característica de calidad en su fabricación."
+        },
+        {
+          "id": "B",
+          "text": "Una función genérica de aislamiento mecánico."
+        },
+        {
+          "id": "C",
+          "text": "Una asimilación de las normas básicas de aislamiento térmico-ambiental."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q142",
+      "sourceNumber": 142,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nLa radiación que se emite por excitación o ionización de los átomos del material anódico se llama…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Radiación difusa."
+        },
+        {
+          "id": "B",
+          "text": "Radiación dispersa."
+        },
+        {
+          "id": "C",
+          "text": "Radiación eficaz."
+        },
+        {
+          "id": "D",
+          "text": "Radiación característica."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q143",
+      "sourceNumber": 143,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nLa intensidad del haz de Rx…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Es menor en el lado del ánodo que en la del cátodo."
+        },
+        {
+          "id": "B",
+          "text": "Es menor en el lado del cátodo que en la del ánodo."
+        },
+        {
+          "id": "C",
+          "text": "Es mayor en la zona media entre el ánodo y el cátodo."
+        },
+        {
+          "id": "D",
+          "text": "Es idéntica en el lado del ánodo y del cátodo."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 31
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q144",
+      "sourceNumber": 144,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nDe los siguientes componentes del tubo de Rx, ¿cuál NO realiza una filtración del haz del tipo inherente?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aceite que rodea el tubo de Rx."
+        },
+        {
+          "id": "B",
+          "text": "Vidrio del tubo de Rx."
+        },
+        {
+          "id": "C",
+          "text": "Cristal de la ventana de la carcasa del tubo de Rx."
+        },
+        {
+          "id": "D",
+          "text": "Colimador del tubo de Rx."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q145",
+      "sourceNumber": 145,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nEl factor de calidad (Q) es un indicativo de contribución de cada tipo de radiación al daño biológico. Depende de la energía cedida por la radiación por unidad de recorrido, lo que se conoce por...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dosis absorbida."
+        },
+        {
+          "id": "B",
+          "text": "Factor de cualificación."
+        },
+        {
+          "id": "C",
+          "text": "Transferencia lineal de energía."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son falsas."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q146",
+      "sourceNumber": 146,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nComo consecuencia de la irradiación en los testículos, se produce una despoblación de…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Espermatozoides."
+        },
+        {
+          "id": "B",
+          "text": "Andrógenos."
+        },
+        {
+          "id": "C",
+          "text": "Espermatogonias."
+        },
+        {
+          "id": "D",
+          "text": "Testosterona."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q147",
+      "sourceNumber": 147,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nEn un embarazo, la radiosensibilidad es mayor en:",
+      "options": [
+        {
+          "id": "A",
+          "text": "El primer trimestre."
+        },
+        {
+          "id": "B",
+          "text": "El segundo trimestre."
+        },
+        {
+          "id": "C",
+          "text": "El tercer trimestre."
+        },
+        {
+          "id": "D",
+          "text": "En un embarazo nunca se hace una exposición a los Rx."
+        }
+      ],
+      "sourceAnswer": "A",
+      "correctOption": "A",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q148",
+      "sourceNumber": 148,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nEn la radiología pediátrica hay que tener en cuenta…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que la radiosensibilidad de los niños es mayor que en los adultos."
+        },
+        {
+          "id": "B",
+          "text": "Que tienen mayor probabilidad de efectos deterministas tardíos."
+        },
+        {
+          "id": "C",
+          "text": "Que las dosis se mantendrán lo más bajas posible."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q149",
+      "sourceNumber": 149,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\n¿Cuál es la medida de energía de los fotones de Rx?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kv."
+        },
+        {
+          "id": "B",
+          "text": "Kvp."
+        },
+        {
+          "id": "C",
+          "text": "KeV."
+        },
+        {
+          "id": "D",
+          "text": "Kw."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q150",
+      "sourceNumber": 150,
+      "text": "CASO PRÁCTICO 5: El Coordinador/a Técnico del Servicio de Radiología decide realizar un curso sobre Tecnología Radiológica y Radioprotección, por lo que se les presenta a los miembros TER / TSID a su cargo, un cuestionario previo para valorar sus conocimientos. Siendo el cuestionario el siguiente…\n\nLas modificaciones biológicas que los Rx ocasionan son siempre lesivas. Esta es la razón de ser de la…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dosimetría."
+        },
+        {
+          "id": "B",
+          "text": "Radiobiología."
+        },
+        {
+          "id": "C",
+          "text": "Protección radiológica."
+        },
+        {
+          "id": "D",
+          "text": "Radiología."
+        }
+      ],
+      "sourceAnswer": "C",
+      "correctOption": "C",
+      "status": "valid",
+      "active": true,
+      "displayLabel": null,
+      "sourcePage": 32
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q151",
+      "sourceNumber": 151,
+      "text": "En los estudios de TC de órbitas…",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se deben realizar reconstrucciones coronales y sagitales con filtro, tanto de hueso como de partes blandas."
+        },
+        {
+          "id": "B",
+          "text": "Cuando el estudio se realiza para descartar la presencia de un cuerpo extraño, en estudio de un traumatismo facial o de una enfermedad de Graves (oftalmopatía tiroidea), se realizará el estudio sin contraste I.V."
+        },
+        {
+          "id": "C",
+          "text": "Se administran entre 90 y 100 mL de contraste yodado con un retardo 60 segundos para adquisición, cuando se sospeche infección, absceso, tumor, lesión vascular o patología de la glándula lacrimal."
+        },
+        {
+          "id": "D",
+          "text": "Todas las respuestas anteriores son ciertas."
+        }
+      ],
+      "sourceAnswer": "D",
+      "correctOption": "D",
+      "status": "reserve",
+      "active": true,
+      "displayLabel": "R1",
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q152",
+      "sourceNumber": 152,
+      "text": "Respecto a la Acreditación de Centros y Unidades Sanitarias, las fases del proceso de certificación de servicios sanitarios y sociales son las siguientes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Preparación, enfoque interno, enfoque externo y deliberación."
+        },
+        {
+          "id": "B",
+          "text": "Preparación, enfoque interno, enfoque externo y seguimiento."
+        },
+        {
+          "id": "C",
+          "text": "Preparación, enfoque interno, enfoque externo y simulación."
+        },
+        {
+          "id": "D",
+          "text": "Preparación, enfoque interno, enfoque externo y evaluación."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 33
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-q153",
+      "sourceNumber": 153,
+      "text": "En un dosímetro personal de termo-luminiscencia (TLD) se aprovecha del fenómeno de termo-luminiscencia asociado a la emisión de luz cuando un material que ha sido expuesto a la radiación ionizante es calentado. ¿Cuáles son las ventajas de los TLD?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reutilizables con desvanecimiento o “fading” de la señal por estimulación óptica o térmica."
+        },
+        {
+          "id": "B",
+          "text": "Permiten la evaluación de dosis en campos mixtos, mediante la combinación de distintos materiales y el empleo de filtros adecuados."
+        },
+        {
+          "id": "C",
+          "text": "La información almacenada se destruye en el proceso de lectura, aunque la curva de luz emitida puede conservarse de forma permanente."
+        },
+        {
+          "id": "D",
+          "text": "Estructura compleja de la curva de luz con linealidad en un estrecho margen de energía."
+        }
+      ],
+      "sourceAnswer": "B",
+      "correctOption": "B",
+      "status": "reserve",
+      "active": false,
+      "displayLabel": null,
+      "sourcePage": 33
+    }
+  ],
+  "scorableSet": {
+    "state": "resolved",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151
+    ],
+    "count": 150,
+    "annulledNumbers": [
+      122
+    ],
+    "reserveNumbers": [
+      151,
+      152,
+      153
+    ],
+    "reserveUsedNumbers": [
+      151
+    ],
+    "reserveUsedLabels": {
+      "R1": 151
+    },
+    "annulledCount": 1,
+    "reserveTotal": 3,
+    "reserveUsedCount": 1,
+    "reserveUnusedCount": 2,
+    "reserveUseEvidence": null,
+    "orderedReserveResolution": {
+      "basis": "ordered_business_rule",
+      "substitutions": [
+        {
+          "annulledNumber": 122,
+          "reserveNumber": 151
+        }
+      ],
+      "unreplacedAnnulledNumbers": [],
+      "unusedReserveNumbers": [
+        152,
+        153
+      ]
+    }
+  },
+  "media": {
+    "assets": [
+      {
+        "id": "figure-01",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-01-64459238df126146.png",
+        "mime": "image/png",
+        "width": 492,
+        "height": 621,
+        "sha256": "64459238df1261469009cd6f5131c9809879ced8495f7abdd4908c142f0f75da",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 38, Caso Práctico 1, imagen 1",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-02",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-02-44f894298016aba2.png",
+        "mime": "image/png",
+        "width": 492,
+        "height": 614,
+        "sha256": "44f894298016aba2b613cfed626fc4207b18b1318aa397e3814ee07e419ca529",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 38, Caso Práctico 1, imagen 2",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-03",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-03-102e275ee2919c4b.png",
+        "mime": "image/png",
+        "width": 890,
+        "height": 551,
+        "sha256": "102e275ee2919c4bf1ec775c67d3988ec08ea949090e7e1f65b47ebf38961e2e",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 39, Caso Práctico 1, imagen 3",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-04",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-04-797ecc7d2b126504.png",
+        "mime": "image/png",
+        "width": 555,
+        "height": 644,
+        "sha256": "797ecc7d2b1265045ccfaedd2ee0857cd3466dc4d29c9ab4ede0e729194db1bf",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 39, Caso Práctico 1, imagen 4",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-05",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-05-fc261e29f798a4e3.png",
+        "mime": "image/png",
+        "width": 546,
+        "height": 658,
+        "sha256": "fc261e29f798a4e3b4fe912c1e90a8f744a60b78caa09bdbc9f45efda8fc9926",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 40, Caso Práctico 1, imagen 5",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-06",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-06-7c820e862a60efe9.png",
+        "mime": "image/png",
+        "width": 540,
+        "height": 629,
+        "sha256": "7c820e862a60efe9e0582ee71da7a02e93fab57ec851c605e3e9b4cb1e31a3fe",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 42, Caso Práctico 2, imagen 6",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-07",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-07-e7ffb14e67786e80.png",
+        "mime": "image/png",
+        "width": 893,
+        "height": 545,
+        "sha256": "e7ffb14e67786e808db38772b7ad0cb91339f2ea4193df31a938e35224754684",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 42, Caso Práctico 2, imagen 7",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-08",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-08-3e44e6dfb990e235.png",
+        "mime": "image/png",
+        "width": 599,
+        "height": 624,
+        "sha256": "3e44e6dfb990e23593305cbdf811b987b4170162ff44121088c9672fa195fefe",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 43, Caso Práctico 2, imagen 8",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-09",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-09-10294a51676aa7cf.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 496,
+        "sha256": "10294a51676aa7cf9b1b61562b7384adcbad209b53ce75ca0aacffaafc331355",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 43, Caso Práctico 2, imagen 9",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-10",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-10-aca80211a35141d5.png",
+        "mime": "image/png",
+        "width": 720,
+        "height": 619,
+        "sha256": "aca80211a35141d5c9d7a2cef6e55dfd7659936cc937c06e75de99ecd0a38359",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 44, Caso Práctico 2, imagen 10",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-11",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-11-3ecf36d9f38b6efe.png",
+        "mime": "image/png",
+        "width": 888,
+        "height": 509,
+        "sha256": "3ecf36d9f38b6efefc9310ad6cdfc76786eec75bc3b67c8e682a320a33b638c6",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 44, Caso Práctico 2, imagen 11",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-12",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-12-0ef9a3689251fd9e.png",
+        "mime": "image/png",
+        "width": 564,
+        "height": 584,
+        "sha256": "0ef9a3689251fd9e89d9ae7a19374d9abb988c45d91e41393ef6ea12c57e1623",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 45, Caso Práctico 2, imagen 12",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-13",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-13-ec049c03bdb7b7bb.png",
+        "mime": "image/png",
+        "width": 555,
+        "height": 556,
+        "sha256": "ec049c03bdb7b7bb63fb23b1b9dda610bac7d51aca7a6f2f396586d71ce4bd53",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 45, Caso Práctico 2, imagen 13",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-14",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-14-37426c64e8e34445.png",
+        "mime": "image/png",
+        "width": 744,
+        "height": 561,
+        "sha256": "37426c64e8e34445d52b515a75fc989f20fdf1fb366edd26c2e6c798fe330559",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 46, Caso Práctico 2, imagen 14",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-15",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-15-4f6bd3c1a36a6b4c.png",
+        "mime": "image/png",
+        "width": 742,
+        "height": 567,
+        "sha256": "4f6bd3c1a36a6b4c12f0682438c4635e90bdd99fa7a0e82f52adb6196f4d1a73",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 46, Caso Práctico 2, imagen 15",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-17",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-17-2648b49ed4136810.png",
+        "mime": "image/png",
+        "width": 684,
+        "height": 569,
+        "sha256": "2648b49ed4136810450255e330abc3f848b6fda428841e25c01ebbfa95797017",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 48, Caso Práctico 4, imagen 17",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-18",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-18-ab624737ef9a8bec.png",
+        "mime": "image/png",
+        "width": 551,
+        "height": 569,
+        "sha256": "ab624737ef9a8bec7fefe13e7263b73a3cc0f93ed4d85f73d67733c2463ca693",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 48, Caso Práctico 4, imagen 18",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-19",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-19-37b1b5fc33dd5c50.png",
+        "mime": "image/png",
+        "width": 539,
+        "height": 673,
+        "sha256": "37b1b5fc33dd5c504d11e0dbb655857ffb793685b1369277195c4677d4f3b545",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 49, Caso Práctico 4, imagen 19",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-20",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-20-d8519a7523e12234.png",
+        "mime": "image/png",
+        "width": 534,
+        "height": 512,
+        "sha256": "d8519a7523e122340db13cded1df3844e27dc0a1fed785529516b52c92fb6db7",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 49, Caso Práctico 4, imagen 20",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-21",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-21-a1105f1005e48fac.png",
+        "mime": "image/png",
+        "width": 729,
+        "height": 553,
+        "sha256": "a1105f1005e48faccfe8096f0c449b0664169406736fbc08566b6e147265cd7d",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 50, Caso Práctico 4, imagen 21",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-22",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-22-02525e15c6112257.png",
+        "mime": "image/png",
+        "width": 566,
+        "height": 576,
+        "sha256": "02525e15c611225768ed6bc62f0ccf672369dcb9704a6352559f289a87ae3330",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 50, Caso Práctico 4, imagen 22",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-23",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-23-bc73f88165efe99c.png",
+        "mime": "image/png",
+        "width": 801,
+        "height": 994,
+        "sha256": "bc73f88165efe99c582e10586ffe14e008d7fb2686d960911e3051dac516acf6",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 51, Caso Práctico 4, imagen 23",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      },
+      {
+        "id": "figure-24",
+        "path": "sas-radiodiagnostico-2021-turno-libre/media/image-24-b4630f89df1ab7ea.png",
+        "mime": "image/png",
+        "width": 876,
+        "height": 1024,
+        "sha256": "b4630f89df1ab7ea46b0c1f328c9264aaf7588def4ef6e9df64cba8dd329791f",
+        "source": "sas-radiodiagnostico-2021-turno-libre.pdf, page 52, Caso Práctico 4, imagen 24",
+        "version": "67f0eb38b99470e513cf346a8f6efa3f90d11157b942fbd3969d32b14ca03480"
+      }
+    ],
+    "cases": []
+  },
+  "qa": {
+    "state": "publicable",
+    "blockedReason": null,
+    "flags": [],
+    "checks": {
+      "metadataComplete": true,
+      "optionsPerQuestionValid": true,
+      "answerCoverageValid": true,
+      "countsReconciled": true,
+      "annulledHandlingResolved": true,
+      "reserveHandlingResolved": true,
+      "duplicatesResolved": true
+    }
+  }
+}

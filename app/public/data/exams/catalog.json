@@ -178,6 +178,39 @@
       "latestPath": "sas-radiodiagnostico-2018-turno-libre/versions/2adcac6a764f0318673886d178976c62d2cc82afedb9c7f994db63e905cb219c.json"
     },
     {
+      "id": "sas-radiodiagnostico-2021-promocion-interna",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2021 - Promoción Interna",
+      "year": 2021,
+      "access": "Promoción Interna",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "a4c5f3b5b2264ea9194ee346bedcad9504e35bbf9b72f82b29d295c9e3d871bf",
+      "latestPath": "sas-radiodiagnostico-2021-promocion-interna/versions/a4c5f3b5b2264ea9194ee346bedcad9504e35bbf9b72f82b29d295c9e3d871bf.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2021 - Turno Libre",
+      "year": 2021,
+      "access": "Turno Libre",
+      "variant": null,
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "6d07a91a4aba0f474c7e3c020d2a948603591defca6d58e54076353b70cfcbf6",
+      "latestPath": "sas-radiodiagnostico-2021-turno-libre/versions/6d07a91a4aba0f474c7e3c020d2a948603591defca6d58e54076353b70cfcbf6.json"
+    },
+    {
+      "id": "sas-radiodiagnostico-2021-turno-libre-aplazada",
+      "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2021 - Turno Libre - Prueba Aplazada",
+      "year": 2021,
+      "access": "Turno Libre",
+      "variant": "Prueba Aplazada",
+      "durationMinutes": 180,
+      "questionCount": 150,
+      "latestVersion": "ef65f802a61a6b452b4e503db9c6fd740f3e13577570582dfc45f19b86b80fe4",
+      "latestPath": "sas-radiodiagnostico-2021-turno-libre-aplazada/versions/ef65f802a61a6b452b4e503db9c6fd740f3e13577570582dfc45f19b86b80fe4.json"
+    },
+    {
       "id": "sas-radiodiagnostico-2023-turno-libre",
       "title": "SAS Técnico/a Especialista en Radiodiagnóstico 2023 - Turno Libre",
       "year": 2023,

@@ -205,6 +205,7 @@ test("la extensión multimedia vive en un esquema separado y no toca el canónic
   assert.equal(pathPattern.test(`${EXAM_ID}/../escape.png`), false);
   assert.equal(pathPattern.test("https://cdn.example.net/imagen.png"), false);
   assert.equal(pathPattern.test("/absoluta.png"), false);
+  assert.equal(pathPattern.test(`${EXAM_ID}/%2e%2e/%2e%2e/escape.png`), false);
   assert.deepEqual(defs.questionMedia.properties.media.items.required, ["asset", "alt"]);
   assert.ok(defs.packageMedia.properties.assets);
   assert.ok(defs.packageMedia.properties.cases);
@@ -221,6 +222,11 @@ test("validatePackageMedia exige rutas seguras, referencias exactas y alt sin sp
   assert.throws(
     () => validatePackageMedia(cloneWithoutFixtures(base, (pkg) => { pkg.media.assets[0].path = "https://cdn.example.net/imagen.png"; })),
     /remota|ruta/i,
+  );
+  assert.throws(
+    () => validatePackageMedia(cloneWithoutFixtures(base, (pkg) => { pkg.media.assets[0].path = `${EXAM_ID}/%2e%2e/%2e%2e/escape.png`; })),
+    /ruta|segura|\.\./i,
+    "rechaza traversal codificado (%2e%2e) además del literal ..",
   );
   assert.throws(
     () => validatePackageMedia(cloneWithoutFixtures(base, (pkg) => { pkg.questions[1].media[1].asset = "asset-inexistente"; })),
@@ -289,6 +295,19 @@ test("verifyPackageMedia comprueba existencia, hash, MIME y dimensiones reales",
     /dimens/i,
   );
 
+  const encodedTraversal = structuredClone(base);
+  encodedTraversal.media.assets[0].path = `${EXAM_ID}/%2e%2e/%2e%2e/escape.png`;
+  let encodedFetches = 0;
+  await assert.rejects(
+    () => verifyPackageMedia(encodedTraversal, async () => {
+      encodedFetches += 1;
+      return { ok: true, status: 200, headers: { get: () => "" }, arrayBuffer: async () => new ArrayBuffer(0) };
+    }, BANK),
+    /ruta|segura|\.\./i,
+    "la ruta codificada se rechaza antes de descargar",
+  );
+  assert.equal(encodedFetches, 0, "ninguna ruta insegura llega a la red");
+
   const withoutMedia = structuredClone(base);
   delete withoutMedia.media;
   let fetches = 0;
@@ -307,6 +326,14 @@ test("resolveQuestionMedia conserva el orden y el alt contra el paquete de orige
   const broken = structuredClone(base);
   broken.questions[1].media[1].asset = "otro-asset";
   assert.throws(() => resolveQuestionMedia(broken.questions[1], broken, BANK), /referencia|asset/i);
+
+  const encodedTraversal = structuredClone(base);
+  encodedTraversal.media.assets[0].path = `${EXAM_ID}/%2e%2e/%2e%2e/escape.png`;
+  assert.throws(
+    () => resolveQuestionMedia(encodedTraversal.questions[0], encodedTraversal, BANK),
+    /ruta|segura|\.\./i,
+    "la resolución tampoco acepta traversal codificado",
+  );
 });
 
 test("el catálogo valida e integra la media con error explícito y conserva los exámenes sin imágenes", async () => {

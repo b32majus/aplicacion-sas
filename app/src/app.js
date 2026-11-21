@@ -916,19 +916,10 @@ async function applyPersistenceResult(result) {
   if (!result || !study || result.attempt.id !== study.attempt.id) return;
   const questions = study.questions;
   const attempt = result.attempt;
-  const currentQuestionId = study.currentQuestion?.id;
   const pinned = { id: attempt.exam_id, version: { id: attempt.exam_version_id }, questions };
-  const nextStudy = attempt.kind === "exam"
+  study = attempt.kind === "exam"
     ? new ExamSession(pinned, attempt, result.answers)
     : new NormalStudySession(pinned, attempt, result.answers);
-  // Sincronizar no debe mover al usuario de la pregunta que está viendo: la
-  // respuesta del servidor puede no reflejar aún el último salto local. Un
-  // conflicto real sí reconstruye desde el estado canónico del servidor.
-  if (!result.conflict && currentQuestionId) {
-    const index = nextStudy.questions.findIndex(({ id }) => id === currentQuestionId);
-    if (index >= 0) nextStudy.goTo(index);
-  }
-  study = nextStudy;
   pendingActiveSeconds = persistence?.pendingActiveSeconds || 0;
   if (result.conflict) {
     elements["sync-recovery"].textContent = "Otro dispositivo guardó un avance más reciente. Se ha recargado el estado de Supabase sin mezclar ni sobrescribir cambios. La edición simultánea del mismo intento no está soportada.";

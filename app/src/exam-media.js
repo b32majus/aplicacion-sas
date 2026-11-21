@@ -10,17 +10,27 @@
 const ALLOWED_MIME = new Set(["image/png", "image/jpeg", "image/gif"]);
 const SHA256_PATTERN = /^[0-9a-f]{64}$/i;
 const SPOILER_PATTERN = /(respuesta|correcta|soluci[oó]n|spoiler)/i;
-const REMOTE_PATH_PATTERN = /^[a-z][a-z0-9+.-]*:/i;
+// Misma política que el patrón de `schemas/exam-media.schema.json`: solo
+// segmentos relativos simples y una extensión de imagen. Rechaza `%2e%2e`,
+// `%2f`, barras invertidas, esquemas y segmentos vacíos antes de tocar la red.
+const SAFE_ASSET_PATH_PATTERN = /^[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)*\.(?:png|jpg|jpeg|gif)$/;
 
 function isSafeAssetPath(value) {
   if (typeof value !== "string" || value.length === 0) return false;
-  if (value.startsWith("/") || value.startsWith("\\")) return false;
-  if (value.startsWith("//") || value.includes("\\")) return false;
-  if (REMOTE_PATH_PATTERN.test(value)) return false;
-  if (/[?#]/.test(value)) return false;
-  const segments = value.split("/");
-  if (segments.some((segment) => segment === "" || segment === "." || segment === "..")) return false;
-  return true;
+  if (!SAFE_ASSET_PATH_PATTERN.test(value)) return false;
+  // Defensa en profundidad: ningún segmento (ni su forma decodificada) puede
+  // ser `.` o `..` ni contener separadores.
+  return value.split("/").every((segment) => {
+    if (segment === "." || segment === ".." || segment === "") return false;
+    let decoded = segment;
+    try {
+      decoded = decodeURIComponent(segment);
+    } catch {
+      return false;
+    }
+    return decoded !== "." && decoded !== ".."
+      && !decoded.includes("/") && !decoded.includes("\\");
+  });
 }
 
 function assetById(pkg) {
@@ -220,7 +230,20 @@ async function sha256Hex(bytes) {
 }
 
 function joinUrl(bankBaseUrl, path) {
-  return `${String(bankBaseUrl).endsWith("/") ? bankBaseUrl : `${bankBaseUrl}/`}${path}`;
+  if (!isSafeAssetPath(path)) {
+    throw new Error(`La ruta del asset "${path}" no es una ruta interna relativa segura: se rechazan "..", rutas absolutas, URL remotas y traversal codificado.`);
+  }
+  const origin = globalThis.location?.href || "http://localhost/";
+  const base = new URL(String(bankBaseUrl), origin);
+  if (!base.pathname.endsWith("/")) base.pathname = `${base.pathname}/`;
+  const url = new URL(path, base);
+  // La URL normalizada debe permanecer dentro del banco: ninguna variante
+  // codificada puede escapar de /data/exams/ antes de descargar o resolver.
+  if (url.origin !== base.origin || !url.pathname.startsWith(base.pathname)) {
+    throw new Error(`La ruta del asset "${path}" escapa del banco de exámenes (ruta insegura).`);
+  }
+  const baseString = String(bankBaseUrl);
+  return `${baseString.endsWith("/") ? baseString : `${baseString}/`}${path}`;
 }
 
 // Verificación de integridad real: cada asset se descarga y debe existir, su

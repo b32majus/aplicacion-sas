@@ -1,5 +1,7 @@
 # START HERE — Aplicación SAS
 
+> **ACTUALIZACIÓN 2026-11-13:** la sección histórica de abajo describe el plan original T01–T12, que ya se integró. La v1 de Administrativo está publicada con **12 exámenes**; `origin/main` verificado en `39b1252`. La evolución activa es **multioposición v2**. Para retomar trabajo leer primero `/srv/kairos-lab/KairOS_Protocol/ARRANQUE.md`, `PROTOCOLOS.md`, `metis/README.md`, después `HANDOFF.md` (EMPEZAR AQUÍ) y `docs/multioposicion-v2/CONTRATO_Y_ARQUITECTURA.md`. **No ejecutar los pasos T01–T12 de esta página como próximos trabajos.**
+
 ## Purpose
 PWA privada para tres usuarios que preparan Administrativo/a del SAS con exámenes oficiales, estudio, simulación cronometrada, recuperación de falladas, historial y comparación agregada.
 
